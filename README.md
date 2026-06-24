@@ -17,3 +17,7 @@
 
 * **Email**: `Jockeyvb@gmail.com`
 * **WeChat / 微信**: `Jockeyvb1` *(Please specify "CompassEx" when adding / 添加请备注罗盘库)*
+
+# 调用范例
+需要在加载时首先调用全局静态方法：
+``` CompassEx.Comm.Comm.AllInit();//初始化数据 ```
