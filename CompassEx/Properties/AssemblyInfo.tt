@@ -1,0 +1,20 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+<#
+// 自定义主、次版本，手动修改这里即可
+int major = 1;
+int minor = 0;
+DateTime now = DateTime.Now;
+// Build=月日 MMdd，Revision=时分 HHmm，每次编译自动变
+int build = now.Month * 100 + now.Day;
+int revision = now.Hour * 100 + now.Minute;
+#>
+// 自动生成，手动修改会被覆盖
+using System.Reflection;
+
+[assembly: AssemblyVersion("<#=major#>.<#=minor#>.<#=build#>.<#=revision#>")]
+[assembly: AssemblyFileVersion("<#=major#>.<#=minor#>.<#=build#>.<#=revision#>")]
+[assembly: AssemblyCopyright("Copyright (c) 2026 [Jockeyvb]. All rights reserved.")]
+[assembly: AssemblyDescription("Distributed under AGPL-3.0-or-later license.")]
+[assembly: AssemblyCompany("[CompassEx]")]
+[assembly: AssemblyProduct("CompassEx")]

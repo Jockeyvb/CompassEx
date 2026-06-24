@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <LangVersion>8.0</LangVersion>
+    <UseMaui>true</UseMaui>
+    <Nullable>enable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
+    <AssemblyCopyright>Copyright (c) 2026 [Jockeyvb]. All rights reserved.</AssemblyCopyright>
+    <AssemblyDescription>Distributed under AGPL-3.0-or-later license.</AssemblyDescription>
+    <!-- 开启生成转换 -->
+    <TransformOnBuild>true</TransformOnBuild>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Title>CompassEX(太乙玄空风水罗盘)</Title>
+    <Company>太乙玄空工作室</Company>
+    <Description>关于风水罗盘的类库，包括三合和三元罗盘。</Description>
+    <Copyright>Copyright (c) 2026 [Jockeyvb]. All rights reserved.\n\nThis file is part of [CompassEx].\n[CompassEx] is free software: you can redistribute it and/or modify\nit under the terms of the GNU Affero General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nFor commercial use, you must obtain a commercial license from the author.\nContact: [Jockeyvb@gmail.com/微信:Jockeyvb1]\n</Copyright>
+    <PackageProjectUrl>https://github.com/Jockeyvb/CompassEx</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Jockeyvb/CompassEx</RepositoryUrl>
+    <PackageTags>风水,罗盘,三合盘,三元盘,三合,三元</PackageTags>
+    <PackageId>Jockeyvb.$(AssemblyName)</PackageId>
+  </PropertyGroup>
+
+  <!-- T4模板仅标记为None，禁止加入Compile编译项 -->
+  <ItemGroup>
+    <None Include="Properties\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <TransformOnBuild>true</TransformOnBuild>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <!-- 自动生成的AssemblyInfo.cs 依赖tt，仅更新标记，不要Include -->
+
+  <ItemGroup>
+    <ProjectReference Include="..\Generator\Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="tyme4net" Version="1.5.0" />
+  </ItemGroup>
+
+  <!-- editorconfig 简化配置，移除错误的Compile包含tt -->
+  <ItemGroup>
+    <EditorConfigFiles Remove=".editorconfig" />
+    <None Include=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+
+</Project>
