@@ -1,10 +1,19 @@
-## ⚖️ 开源与商业授权声明 (Dual Licensing)
+## ⚖️ 开源与商业授权声明 / Dual Licensing
 
-本项目采用**双重许可**模式分发：
+本项目采用**双重许可 (Dual Licensing)** 模式分发。
 
-1. **开源用途**：采用 **AGPL 3.0** 协议。如果您将本项目用于非盈利、研究或您的个人/商业项目**也完全采用 AGPL 3.0 开源（包括您依托本项目构建的云服务、小程序、App源码）**，您可以免费使用。
-2. **商业用途**：如果您希望将本项目嵌入到**闭源商业软件、付费下载的应用、带有广告的小程序、商业风水/算命 SaaS 服务**中，为了保护您的商业核心机密，您**必须**购买我们的 **【商业闭源授权】**。
+### 💡 开源用途 / Open Source Use
+* **协议 / License**: `GNU AGPLv3`
+* **说明**: 如果您的项目完全开源、非盈利，或者您的商业项目**也完全采用 AGPL 3.0 协议开源**（包括您依托本项目构建的云端服务、小程序、App 源码），您可以免费使用。
+* *If your project is open-source, non-commercial, or your repository is also licensed under AGPLv3 (including your cloud backend, mini-programs, or App source code), you can use this library for free.*
 
-📬 **购买商业授权 / 商务合作联系方式**：
-- 邮箱：`Jockeyvb@gmail.com` 
-- 微信：`Jockeyvb1`  
+### 💰 商业用途 / Commercial Use
+* **说明**: 如果您希望将本项目嵌入到**闭源商业软件、付费下载的应用、带有广告的小程序、商业风水/算命 SaaS 服务**中，为了保护您的商业核心机密，您**必须**购买我们的 **【商业闭源授权】**。
+* *If you wish to integrate this library into closed-source commercial software, paid applications, mini-programs with ads, or commercial SaaS services, you **MUST** purchase a **Commercial License** to protect your own proprietary source code.*
+
+---
+
+## 📬 商务合作联系 / Contact
+
+* **Email**: `Jockeyvb@gmail.com`
+* **WeChat / 微信**: `Jockeyvb1` *(Please specify "CompassEx" when adding / 添加请备注罗盘库)*
