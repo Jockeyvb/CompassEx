@@ -27,7 +27,7 @@
 ```
 
 # 算法说明
-	<a href="CompassEx类库算法说明.md" target="_blank">算法说明</a>
+	[算法说明](CompassEx类库算法说明.md)
 
 # 示例
 <div align="center">
