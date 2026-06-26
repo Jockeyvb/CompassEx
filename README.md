@@ -27,7 +27,6 @@
 ```
 
 # 示例
-
-<p align="center">
-  <img src="images/images1.png" width="800">
-</p>
+<div align="center">
+  <img src="images/images1.png" width="800"> 
+</div>
