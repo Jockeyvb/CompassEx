@@ -28,4 +28,6 @@
 
 # 示例
 
-![示例](images/image1.png)
+<p align="center">
+  <img src="images/images1.png" width="800">
+</p>
