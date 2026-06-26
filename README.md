@@ -28,5 +28,5 @@
 
 # 示例
 <div align="center">
-  <img src="Images/Images1.png" width="800"> 
+  <img src="Images/Image1.png" width="800"> 
 </div>
