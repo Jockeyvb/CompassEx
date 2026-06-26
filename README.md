@@ -25,3 +25,7 @@
 	CompassEx.Comm.Comm.AllInit();//初始化数据 
 	
 ```
+
+# 示例
+
+![示例](images/image1.png)

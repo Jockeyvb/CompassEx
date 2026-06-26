@@ -1,0 +1,45 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CompassExTest.Pages"
+           xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
+             x:Class="CompassExTest.Pages.TestPage"
+             Title="原生代码绘制罗盘">
+
+    <VerticalStackLayout Spacing="30" HorizontalOptions="Center" VerticalOptions="Center">
+
+        <Label Text="{Binding HeadingText}" 
+               FontSize="26" 
+               FontAttributes="Bold"
+               TextColor="DarkSlateGray"
+               HorizontalOptions="Center"/>
+
+        <Entry Placeholder="输入度数" Text="180" TextChanged="Entry_TextChanged" x:Name="tDegree" />
+      
+        <Border StrokeShape="RoundRectangle 20" 
+                Stroke="LightGray" 
+                StrokeThickness="1"
+                Padding="10"
+                BackgroundColor="White"
+                HorizontalOptions="Center">
+
+
+            <skia:SKCanvasView x:Name="SkiaCompassView" PaintSurface="OnPaintSurface"  Touch="OnCanvasTouch"  WidthRequest="800" HeightRequest="800"/>
+
+            <!--<GraphicsView x:Name="CompassCanvas"
+                          Drawable="{Binding CompassPainter}"
+                          WidthRequest="900" 
+                          HeightRequest="640">
+                <GraphicsView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCompassTapped" />
+                </GraphicsView.GestureRecognizers>
+            </GraphicsView>-->
+
+        </Border>
+
+        <Label Text="💡 提示：用鼠标在圆圈内任意位置点击，盘面会自动旋转对齐" 
+               FontSize="12" 
+               TextColor="Gray" 
+               HorizontalOptions="Center"/>
+
+    </VerticalStackLayout>
+</ContentPage>

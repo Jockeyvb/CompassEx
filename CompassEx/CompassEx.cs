@@ -36,13 +36,10 @@ namespace CompassEx
         /// <summary>
         /// 先天八卦序列
         /// </summary>
-        public static readonly string[] CompassBeforGuoSubNames = { "艮", "坤", "震", "离", "兑", "乾", "巽", "坎" };
+        public static readonly string[] CompassBeforGuoSubNames = { "坤", "震", "离", "兑", "乾", "巽", "坎", "艮" };
 
 
-        /// <summary>
-        /// 罗盘的24山名称，按照顺时针方向排列，从壬山开始，每15度一个山，共24个山
-        /// </summary>
-        public static readonly String[] Compass24Hills = { "壬", "子", "癸", "丑", "艮", "寅", "甲", "卯", "乙", "辰", "巽", "巳", "丙", "午", "丁", "未", "坤", "申", "庚", "酉", "辛", "戌", "乾", "亥" };
+
 
 
 
@@ -55,14 +52,14 @@ namespace CompassEx
         /// <summary>
         /// 每15度一个山
         /// </summary>
-        public const double Compass24HillDegree = 15;
+        public const double CHillDegree = 15;
 
 
-        private Compass24Hill c24Hill;
+        private CHill c24Hill;
         /// <summary>
         /// 根据当前罗盘的度数，获得对应的24山对象
         /// </summary>
-        public Compass24Hill C24Hill { get => c24Hill; }
+        public CHill C24Hill { get => c24Hill; }
 
         private double degree;
 
@@ -312,14 +309,14 @@ namespace CompassEx
         ///  根据当前罗盘的度数，获得对应的24山对象
         /// </summary>
         /// <returns></returns>
-        public Compass24Hill Get24Hill()
+        public CHill Get24Hill()
         {
-            foreach (string sN in Compass24Hills)
+            foreach (string sN in CHill.C24Hills)
             {
                 CompassRangEX range = Get24HillDegree(sN);
                 if (range.IsInRange(this.degree))
                 {
-                    Compass24Hill hill = new Compass24Hill(sN);
+                    CHill hill = new CHill(sN);
 
                     return hill;
                 }
@@ -338,11 +335,11 @@ namespace CompassEx
         {
             double baseDegree = 337.5;//罗盘24山的度数起点为壬山的337.5度
 
-            int GIndex = Compass24Hills.IndexOf(HillName);//获得罗盘后天八卦的索引位置
-            double degree = baseDegree + GIndex * Compass24HillDegree;//根据索引位置计算度数
+            int GIndex = CHill.C24Hills.IndexOf(HillName);//获得罗盘后天八卦的索引位置
+            double degree = baseDegree + GIndex * CHillDegree;//根据索引位置计算度数
             double fStart = degree;
             if (fStart > 360) fStart -= 360;//如果超过360度，调整到0-360范围内
-            double fEnd = degree + Compass24HillDegree;
+            double fEnd = degree + CHillDegree;
             if (fEnd > 360) fEnd -= 360;//如果超过360度，调整到0-360范围内
 
             CompassRangEX range = new CompassRangEX(fStart, fEnd);
@@ -397,9 +394,9 @@ namespace CompassEx
         /// <returns></returns>
         public static CompassRangEX GetBeforGuoSubDegree(string GuoSubName)
         {
-            double baseDegree = 337.5;//先天八卦的度数起点为坎卦的337.5度
+            double baseDegree = 337.5;//先天八卦的度数起点为艮卦的337.5度
 
-            int GIndex = CompassAfterGuoSubNames.IndexOf(GuoSubName);//获得罗盘先天八卦的索引位置
+            int GIndex = CompassBeforGuoSubNames.IndexOf(GuoSubName);//获得罗盘先天八卦的索引位置
             double degree = baseDegree + GIndex * GuoSubDegree;//根据索引位置计算度数
             double fStart = degree;
             if (fStart > 360) fStart -= 360;//如果超过360度，调整到0-360范围内

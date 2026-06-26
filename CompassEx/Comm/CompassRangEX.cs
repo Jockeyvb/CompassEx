@@ -44,5 +44,32 @@ namespace CompassEx.Comm
 
 
         }
+
+        /// <summary>
+        /// 在圆中取得距离值 
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <returns></returns>
+        public static double AngleRangeValue(double start, double end)
+        {
+            // 差值模360
+            double diff = (end - start) % 360;
+            // 修正负数模
+            if (diff < 0) diff += 360;
+            // 取短弧
+            return diff > 180 ? 360 - diff : diff;
+        }
+        /// <summary>
+        /// 在圆中取得距离值 
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <returns></returns>
+        public double AngleRangeValue()
+        {
+            return AngleRangeValue(this.Start, this.End);
+        }
+
     }
 }

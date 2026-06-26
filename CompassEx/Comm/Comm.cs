@@ -21,13 +21,6 @@ namespace CompassEx.Comm
 
 
 
-    public static class ArrayExtensions
-    {
-        public static int IndexOf<T>(this T[] array, T value)
-        {
-            return Array.IndexOf(array, value);
-        }
-    }
 
     public static class Comm
     {
@@ -68,5 +61,14 @@ namespace CompassEx.Comm
             }
         }
 
+    }
+
+
+    public static class ArrayExtensions
+    {
+        public static int IndexOf<T>(this T[] array, T value)
+        {
+            return Array.IndexOf(array, value);
+        }
     }
 }

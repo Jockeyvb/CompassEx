@@ -10,17 +10,33 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
+using CompassEx.Comm;
 using CompassEx.Guo;
 using System;
 using System.Collections.Generic;
 
-namespace CompassEx.Comm
+namespace CompassEx
 {
-
-    public class Compass24Hill
+    /// <summary>
+    /// 表示罗盘的24山及其相关属性和方法。
+    /// </summary>
+    public class CHill
     {
 
+        /// <summary>
+        /// 罗盘的24山名称，按照顺时针方向排列，从壬山开始，每15度一个山，共24个山(正针)
+        /// </summary>
+        public static readonly String[] C24Hills = { "壬", "子", "癸", "丑", "艮", "寅", "甲", "卯", "乙", "辰", "巽", "巳", "丙", "午", "丁", "未", "坤", "申", "庚", "酉", "辛", "戌", "乾", "亥" };
 
+        /// <summary>
+        /// 属阳的二十四山
+        /// </summary>
+        public static readonly string[] CSun24Hills = { "壬", "丙", "甲", "庚", "巽", "巳", "亥", "乾", "坤", "申", "艮", "寅" };
+
+        /// <summary>
+        /// 是否为阳
+        /// </summary>
+        public bool IsSun { get { return CSun24Hills.IndexOf(this.Name) > -1; } }
 
         /// <summary>
         /// 罗盘24山的名称，例如：壬、子等
@@ -62,29 +78,8 @@ namespace CompassEx.Comm
         }
 
 
-        /// <summary>
-        /// 24山中五行是否是为阳
-        /// </summary>
-        public bool IsSun
-        {
-            get
-            {
-                int iPos = CompassEx.Compass24Hills.IndexOf(this.Name);
 
-
-                if (iPos == 0 || iPos > 3 && iPos < 7 || iPos > 9 && iPos < 13 || iPos > 15 && iPos < 19 || iPos > 21) //阳
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
-            }
-        }
-
-        public Compass24Hill(string sName) { this.Name = sName; }
+        public CHill(string sName) { this.Name = sName; }
     }
 
 }

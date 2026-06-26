@@ -20,21 +20,33 @@ namespace CompassEx.Guo
 {
     public class GuoSubClass
     {
-        public static String[] BeforeGuoSubAttrNames = { "天", "泽", "火", "雷", "风", "水", "山", "地" };//先天八卦的属性
-        public static String[] BeforeGuoSubReluNames = { "父", "少女", "中女", "长男", "长女", "中男", "少男", "母" };//先天八卦的伦理关系
-        public static String[] BeforeGuoSubNames = { "乾", "兑", "离", "震", "巽", "坎", "艮", "坤" };//先天八卦的卦名
-        public static String[] BeforeGuoSubNumerics = { "一", "二", "三", "四", "五", "六", "七", "八" };//先天八卦的卦数
-        public static String[] AfterGuoSubAttrNames = { "水", "地", "雷", "风", "黄", "天", "泽", "山", "火" };//后天八卦的属性
-        public static String[] AfterGuoSubNames = { "坎", "坤", "震", "巽", "黄", "乾", "兑", "艮", "离" };//后天八卦的卦名
+        public readonly static String[] BeforeGuoSubAttrNames = { "天", "泽", "火", "雷", "风", "水", "山", "地" };//先天八卦的属性
+        public readonly static String[] BeforeGuoSubReluNames = { "父", "少女", "中女", "长男", "长女", "中男", "少男", "母" };//先天八卦的伦理关系
+        public readonly static String[] BeforeGuoSubNames = { "乾", "兑", "离", "震", "巽", "坎", "艮", "坤" };//先天八卦的卦名
+        public readonly static String[] BeforeGuoSubNumerics = { "一", "二", "三", "四", "五", "六", "七", "八" };//先天八卦的卦数
+        public readonly static String[] AfterGuoSubAttrNames = { "水", "地", "雷", "风", "黄", "天", "泽", "山", "火" };//后天八卦的属性
+        public readonly static String[] AfterGuoSubNames = { "坎", "坤", "震", "巽", "黄", "乾", "兑", "艮", "离" };//后天八卦的卦名
+        //☯️
+        public readonly static String[] Symbols = {
+
+"\u2630" ,	//乾 (天)
+"\u2631"    ,//兑 (泽)
+"\u2632"    ,//离 (火)
+"\u2633"    ,//震 (雷)
+"\u2634"    ,//巽 (风)
+"\u2635"    ,//坎 (水)
+"\u2636"    ,//艮 (山)
+"\u2637"    ,//坤 (地)
+
+        
+        };//后天八卦的卦名
 
 
 
-
-
-        public static String[] AfterGuoSubNumerics = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };//后天八卦的卦数
-        public static String[] AfterGuoSubReluNames = { "中男", "母", "长男", "长女", "黄中", "父", "少女", "少男", "中女" };//先天八卦的伦理关系
-        public static String[] AfterGuoSubColors = { "白", "黑", "碧", "绿", "黄", "白", "赤", "白", "紫" };//后天八卦的颜色
-        public static Color[] AfterGuoSubColorClasses = { Color.White, Color.Black, Color.DarkGreen, Color.Green, Color.BurlyWood, Color.White, Color.Red, Color.White, Color.Purple };//后天八卦的颜色
+        public readonly static String[] AfterGuoSubNumerics = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };//后天八卦的卦数
+        public readonly static String[] AfterGuoSubReluNames = { "中男", "母", "长男", "长女", "黄中", "父", "少女", "少男", "中女" };//先天八卦的伦理关系
+        public readonly static String[] AfterGuoSubColors = { "白", "黑", "碧", "绿", "黄", "白", "赤", "白", "紫" };//后天八卦的颜色
+        public readonly static Color[] AfterGuoSubColorClasses = { Color.White, Color.Black, Color.DarkGreen, Color.Green, Color.BurlyWood, Color.White, Color.Red, Color.White, Color.Purple };//后天八卦的颜色
 
         public int[] Yaos = { 0, 0, 0 };//爻数组
         public String SkyName;//爻的纳甲天干
@@ -47,6 +59,18 @@ namespace CompassEx.Guo
         public String GuoSubName;//卦名，例如：乾
         public String GuoSubAttrName;//卦的属性名,例如：天
         public String FiveAttrName;//卦的属性
+
+
+        public string BeforeGuoSubCNQuantity { get { return BeforeGuoSubNumerics[this.BeforeGuoSubIndex]; } }
+
+        public string AfterGuoSubCNQuantity { get { return AfterGuoSubNumerics[this.AfterGuoSubIndex]; } }
+
+
+        public int BeforeGuoSubIndex { get { return BeforeGuoSubNames.IndexOf(this.GuoSubName); } }
+
+        public int AfterGuoSubIndex { get { return AfterGuoSubNames.IndexOf(this.GuoSubName); } }
+
+        public string Symbol { get { return Symbols[this.BeforeGuoSubIndex]; } }
 
         /// <summary>
         /// 根据本卦从罗盘获得后天八卦中的度数范围对象 
@@ -62,16 +86,16 @@ namespace CompassEx.Guo
         /// 获得后天八卦的中包含所有的正针24山
         /// </summary>
         /// <returns></returns>       
-        public Dictionary<CompassRangEX, Compass24Hill> GetC24Hills()
+        public Dictionary<CompassRangEX, CHill> GetC24Hills()
         {
-            Dictionary<CompassRangEX, Compass24Hill> dc = new Dictionary<CompassRangEX, Compass24Hill>();
+            Dictionary<CompassRangEX, CHill> dc = new Dictionary<CompassRangEX, CHill>();
             CompassRangEX CRE = this.CAfterRangeDegree;
-            foreach (string sN in CompassEx.Compass24Hills)
+            foreach (string sN in CHill.C24Hills)
             {
                 CompassRangEX range = CompassEx.Get24HillDegree(sN);
                 if (CRE.IsInRange(range.Start))
                 {
-                    Compass24Hill hill = new Compass24Hill(sN);
+                    CHill hill = new CHill(sN);
                     dc.Add(range, hill);
 
                 }
@@ -103,7 +127,6 @@ namespace CompassEx.Guo
             }
             return dc;
         }
-
 
         /**
         * 取反卦
@@ -211,7 +234,7 @@ namespace CompassEx.Guo
         * String sAttrOrGuoName 属性名或卦名
         * @boolean IsDownGuo 是否为下卦(内卦)
         */
-        public static GuoSubClass GetGuoSub(String sAttrOrGuoName, bool IsDownGuo)
+        public static GuoSubClass GetGuoSub(String sAttrOrGuoName, bool IsDownGuo = true)
         {
             int iPos = Array.IndexOf(BeforeGuoSubAttrNames, sAttrOrGuoName);
 

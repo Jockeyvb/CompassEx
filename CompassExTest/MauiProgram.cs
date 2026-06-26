@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 using Syncfusion.Maui.Toolkit.Hosting;
-
 namespace CompassExTest
 {
     public static class MauiProgram
@@ -12,6 +12,7 @@ namespace CompassExTest
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
+                .UseSkiaSharp()
                 .ConfigureSyncfusionToolkit()
                 .ConfigureMauiHandlers(handlers =>
                 {
@@ -28,8 +29,8 @@ namespace CompassExTest
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
-    		builder.Services.AddLogging(configure => configure.AddDebug());
+            builder.Logging.AddDebug();
+            builder.Services.AddLogging(configure => configure.AddDebug());
 #endif
 
             builder.Services.AddSingleton<ProjectRepository>();
@@ -44,6 +45,9 @@ namespace CompassExTest
 
             builder.Services.AddTransientWithShellRoute<ProjectDetailPage, ProjectDetailPageModel>("project");
             builder.Services.AddTransientWithShellRoute<TaskDetailPage, TaskDetailPageModel>("task");
+
+            CompassEx.Comm.Comm.AllInit();//初始化数据
+
 
             return builder.Build();
         }

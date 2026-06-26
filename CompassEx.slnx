@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/解决方案项/">
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="CompassEx/CompassEx.csproj" />
+  <Project Path="CompassExTest/CompassExTest.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+  <Project Path="Generator/Generator.csproj" />
+</Solution>
