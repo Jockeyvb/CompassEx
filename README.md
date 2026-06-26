@@ -8,7 +8,7 @@
 * *If your project is open-source, non-commercial, or your repository is also licensed under AGPLv3 (including your cloud backend, mini-programs, or App source code), you can use this library for free.*
 
 ### 💰 商业用途 / Commercial Use
-* **说明**: 如果您希望将本项目嵌入到**闭源商业软件、付费下载的应用、带有广告的小程序、商业风水/算命 SaaS 服务**中，为了保护您的商业核心机密，您**必须**购买我们的 **【商业闭源授权】**。
+* **说明**: 如果您希望将本项目嵌入到**闭源商业软件、付费下载的应用、带有广告的小程序、商业营利应用 SaaS 服务**中，为了保护您的商业核心机密，您**必须**购买我们的 **【商业闭源授权】**。
 * *If you wish to integrate this library into closed-source commercial software, paid applications, mini-programs with ads, or commercial SaaS services, you **MUST** purchase a **Commercial License** to protect your own proprietary source code.*
 
 ---
@@ -25,6 +25,9 @@
 	CompassEx.Comm.Comm.AllInit();//初始化数据 
 	
 ```
+
+# 算法说明
+	<a href="CompassEx类库算法说明.md" target="_blank">算法说明</a>
 
 # 示例
 <div align="center">
