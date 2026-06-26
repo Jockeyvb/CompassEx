@@ -27,7 +27,7 @@
 ```
 
 # 算法说明
-	[算法说明](CompassEx类库算法说明.md)
+[算法说明文档](./CompassEx类库算法说明.md)
 
 # 示例
 <div align="center">
