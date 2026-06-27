@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.C3Y
+  commentId: N:CompassEx.C3Y
+  id: CompassEx.C3Y
+  children:
+  - CompassEx.C3Y.C3Y
+  langs:
+  - csharp
+  - vb
+  name: CompassEx.C3Y
+  nameWithType: CompassEx.C3Y
+  fullName: CompassEx.C3Y
+  type: Namespace
+  assemblies:
+  - CompassEx
+references:
+- uid: CompassEx.C3Y.C3Y
+  commentId: T:CompassEx.C3Y.C3Y
+  href: CompassEx.C3Y.C3Y.html
+  name: C3Y
+  nameWithType: C3Y
+  fullName: CompassEx.C3Y.C3Y

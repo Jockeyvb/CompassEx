@@ -14,9 +14,21 @@ namespace CompassEx.Comm
 {
     public class CompassRangEX
     {
+        /// <summary>
+        /// 范围的开始值
+        /// </summary>
         public double Start { get; set; }
+        /// <summary>
+        /// 范围的结束值
+        /// </summary>
         public double End { get; set; }
 
+
+        /// <summary>
+        /// 初始化 CompassRangEX 类的新实例，指定起始和结束角度。
+        /// </summary>
+        /// <param name="start">范围的起始角度。</param>
+        /// <param name="end">范围的结束角度。</param>
         public CompassRangEX(double start, double end)
         {
             Start = start;

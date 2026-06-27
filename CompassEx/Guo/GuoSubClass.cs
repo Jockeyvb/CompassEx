@@ -20,13 +20,35 @@ namespace CompassEx.Guo
 {
     public class GuoSubClass
     {
+
+        /// <summary>
+        /// 先天八卦的属性
+        /// </summary>
         public readonly static String[] BeforeGuoSubAttrNames = { "天", "泽", "火", "雷", "风", "水", "山", "地" };//先天八卦的属性
+        /// <summary>
+        /// 先天八卦的伦理关系
+        /// </summary>
         public readonly static String[] BeforeGuoSubReluNames = { "父", "少女", "中女", "长男", "长女", "中男", "少男", "母" };//先天八卦的伦理关系
+        /// <summary>
+        /// 先天八卦的卦名
+        /// </summary>
         public readonly static String[] BeforeGuoSubNames = { "乾", "兑", "离", "震", "巽", "坎", "艮", "坤" };//先天八卦的卦名
+        /// <summary>
+        /// 先天八卦的卦数
+        /// </summary>
         public readonly static String[] BeforeGuoSubNumerics = { "一", "二", "三", "四", "五", "六", "七", "八" };//先天八卦的卦数
+        /// <summary>
+        /// 后天八卦的属性
+        /// </summary>
         public readonly static String[] AfterGuoSubAttrNames = { "水", "地", "雷", "风", "黄", "天", "泽", "山", "火" };//后天八卦的属性
+        /// <summary>
+        /// 后天八卦的卦名
+        /// </summary>
         public readonly static String[] AfterGuoSubNames = { "坎", "坤", "震", "巽", "黄", "乾", "兑", "艮", "离" };//后天八卦的卦名
-        //☯️
+        public readonly static string TiJiSymbol = "☯️";
+        /// <summary>
+        /// 按先天卦序的卦象符号
+        /// </summary>
         public readonly static String[] Symbols = {
 
 "\u2630" ,	//乾 (天)
@@ -42,34 +64,95 @@ namespace CompassEx.Guo
         };//后天八卦的卦名
 
 
-
+        /// <summary>
+        /// 后天八卦的卦数
+        /// </summary>
         public readonly static String[] AfterGuoSubNumerics = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };//后天八卦的卦数
-        public readonly static String[] AfterGuoSubReluNames = { "中男", "母", "长男", "长女", "黄中", "父", "少女", "少男", "中女" };//先天八卦的伦理关系
+        /// <summary>
+        /// 后天八卦的伦理关系
+        /// </summary>
+        public readonly static String[] AfterGuoSubReluNames = { "中男", "母", "长男", "长女", "黄中", "父", "少女", "少男", "中女" };//
+        /// <summary>
+        /// 后天八卦的颜色
+        /// </summary>
         public readonly static String[] AfterGuoSubColors = { "白", "黑", "碧", "绿", "黄", "白", "赤", "白", "紫" };//后天八卦的颜色
+        /// <summary>
+        /// 后天八卦的颜色类(Color)
+        /// </summary>
         public readonly static Color[] AfterGuoSubColorClasses = { Color.White, Color.Black, Color.DarkGreen, Color.Green, Color.BurlyWood, Color.White, Color.Red, Color.White, Color.Purple };//后天八卦的颜色
 
+        /// <summary>
+        /// 爻数组
+        /// </summary>
         public int[] Yaos = { 0, 0, 0 };//爻数组
+        /// <summary>
+        /// 爻的纳甲天干
+        /// </summary>        
         public String SkyName;//爻的纳甲天干
+        /// <summary>
+        /// 地支地爻位列表，同下而上
+        /// </summary>
         public List<LocClass> Locs;//地支地爻位列表，同下而上
+
+        /// <summary>
+        /// 地支开始的位置
+        /// </summary>
         public int LocIndex;//地支开始的位置
+        /// <summary>
+        /// 卦的伦理关系
+        /// </summary>
         public String GuoSubReluName;//卦的伦理关系
+        /// <summary>
+        /// 后天八卦的颜色属性
+        /// </summary>
         public String AfterGuoSubColor;//后天八卦的颜色属性
-        public int AfterQuantity;//后天八卦数
-        public int BeforeQuanity;//先天八卦数
+
+
+
+        /// <summary>
+        /// 后天八卦数
+        /// </summary>
+        public int AfterQuantity { get { return AfterGuoSubNumerics.IndexOf(this.AfterGuoSubCNQuantity); } }//后天八卦数
+
+        /// <summary>
+        /// 先天八卦数
+        /// </summary>
+        public int BeforeQuanity { get { return BeforeGuoSubNumerics.IndexOf(this.BeforeGuoSubCNQuantity); } }//先天八卦数
+        /// <summary>
+        /// 卦名，例如：乾
+        /// </summary>
         public String GuoSubName;//卦名，例如：乾
+        /// <summary>
+        /// 卦的属性名,例如：天
+        /// </summary>
         public String GuoSubAttrName;//卦的属性名,例如：天
+        /// <summary>
+        /// 卦的五行属性
+        /// </summary>
         public String FiveAttrName;//卦的属性
 
-
+        /// <summary>
+        /// 先天八卦数中文
+        /// </summary>
         public string BeforeGuoSubCNQuantity { get { return BeforeGuoSubNumerics[this.BeforeGuoSubIndex]; } }
 
+        /// <summary>
+        /// 后天八卦数中文
+        /// </summary>
         public string AfterGuoSubCNQuantity { get { return AfterGuoSubNumerics[this.AfterGuoSubIndex]; } }
 
-
+        /// <summary>
+        /// 先天八卦索引位置
+        /// </summary>
         public int BeforeGuoSubIndex { get { return BeforeGuoSubNames.IndexOf(this.GuoSubName); } }
 
+        /// <summary>
+        /// 后天八卦索引位置
+        /// </summary>
         public int AfterGuoSubIndex { get { return AfterGuoSubNames.IndexOf(this.GuoSubName); } }
-
+        /// <summary>
+        /// 卦象符号
+        /// </summary>
         public string Symbol { get { return Symbols[this.BeforeGuoSubIndex]; } }
 
         /// <summary>
@@ -128,9 +211,10 @@ namespace CompassEx.Guo
             return dc;
         }
 
-        /**
-        * 取反卦
-        */
+        /// <summary>
+        /// 取反卦
+        /// </summary>
+        /// <returns></returns>
         public GuoSubClass GetXorGuo()
         {
             int[] iYaos = { 0, 0, 0 };
@@ -143,9 +227,9 @@ namespace CompassEx.Guo
             return GetGuoSub(iYaos[0], iYaos[1], iYaos[2], true);
         }
 
-        /**
-        * 加载地支列表，由下而上
-        */
+        /// <summary>
+        /// 加载地支列表，由下而上
+        /// </summary>
         public void LoadLocs()
         {
             List<LocClass> lcs = new List<LocClass>();
@@ -161,32 +245,17 @@ namespace CompassEx.Guo
             this.Locs = lcs;//加载到本类中
         }
 
-        /**
-        * 获得卦的（后天数，中文)
-        */
-        public String GetBeforeQuantityCNName()
-        {
-            String s = Defined.CNDayName[this.BeforeQuanity];
-            return s;
-        }
 
 
-        /**
-        * 获得卦的（先天数，中文)
-        */
-        public String GetAfterQuantityCNName()
-        {
-            String s = Defined.CNDayName[this.AfterQuantity];
-            return s;
-        }
 
-        /**
-        * 根据卦的前三爻(由下而上）,获得三爻卦类（先天)
-        * @Int iYao1 一爻
-        * @Int iYao2 二爻
-        * @Int iYao3三爻
-        * @boolean IsDownGuo 是否为下卦(内卦)
-        */
+        /// <summary>
+        /// 根据卦的前三爻(由下而上）,获得三爻卦类（先天)
+        /// </summary>
+        /// <param name="iYao1"></param>
+        /// <param name="iYao2"></param>
+        /// <param name="iYao3"></param>
+        /// <param name="IsDownGuo">是否为下卦</param>
+        /// <returns></returns>
         public static GuoSubClass GetGuoSub(int iYao1, int iYao2, int iYao3, bool IsDownGuo)
         {
             GuoSubClass gsc;
@@ -248,11 +317,12 @@ namespace CompassEx.Guo
 
             return gsc;
         }
-        /**
-        * 根据卦的属性索引,获得三爻卦类(先天)
-        * @Int iAttrIndex 索引 
-        * @boolean IsDownGuo 是否为下卦(内卦)
-        */
+        /// <summary>
+        /// 根据卦的属性索引,获得三爻卦类(先天)
+        /// </summary>
+        /// <param name="iAttrIndex">卦索引</param>
+        /// <param name="IsDownGuo">是否为下卦</param>
+        /// <returns></returns>
         public static GuoSubClass GetGuoSub(int iAttrIndex, bool IsDownGuo)
         {
             GuoSubClass gsc = new GuoSubClass();
@@ -278,7 +348,7 @@ namespace CompassEx.Guo
                     gsc.Yaos[1] = 0;
                     gsc.Yaos[2] = 1;
                     iSkyIndex = 5;//内己
-                    gsc.LocIndex = IsDownGuo ? 3 : 9;//内卯外西
+                    gsc.LocIndex = IsDownGuo ? 3 : 9;//内卯外酉
                     break;
                 case 3: //震卦
                     gsc.Yaos[0] = 1;
@@ -320,10 +390,10 @@ namespace CompassEx.Guo
             gsc.GuoSubAttrName = BeforeGuoSubAttrNames[iAttrIndex];//卦的属性名称
             gsc.GuoSubReluName = BeforeGuoSubReluNames[iAttrIndex];//伦理关系
             gsc.GuoSubName = BeforeGuoSubNames[iAttrIndex];//卦名
-            gsc.BeforeQuanity = iAttrIndex;//先天数
+
             int iPos = Array.IndexOf(AfterGuoSubNames, gsc.GuoSubName);//找到后天位置
             gsc.AfterGuoSubColor = AfterGuoSubColors[iPos];//获得后天颜色
-            gsc.AfterQuantity = iPos;//后天数
+
             gsc.FiveAttrName = GetFiveAttrName(gsc.GuoSubName);
             gsc.LoadLocs();
             gsc.SkyName = SkyClass.SkyNames[iSkyIndex];
@@ -331,10 +401,11 @@ namespace CompassEx.Guo
             return gsc;
         }
 
-        /**
-        * 获得卦的五行属性
-        * @String sGuoSubName //卦名
-        */
+        /// <summary>
+        /// 获得卦的五行属性
+        /// </summary>
+        /// <param name="sGuoSubName"></param>
+        /// <returns></returns>
         public static String GetFiveAttrName(String sGuoSubName)
         {
             if (sGuoSubName.Equals("乾") || sGuoSubName.Equals("兑")) return "金";

@@ -1,0 +1,83 @@
+### YamlMime:TableOfContent
+items:
+- uid: CompassEx
+  name: CompassEx
+  type: Namespace
+  items:
+  - uid: CompassEx.CHill
+    name: CHill
+    type: Class
+  - uid: CompassEx.CompassEx
+    name: CompassEx
+    type: Class
+- uid: CompassEx.C3H
+  name: CompassEx.C3H
+  type: Namespace
+  items:
+  - uid: CompassEx.C3H.C3H
+    name: C3H
+    type: Class
+- uid: CompassEx.C3Y
+  name: CompassEx.C3Y
+  type: Namespace
+  items:
+  - uid: CompassEx.C3Y.C3Y
+    name: C3Y
+    type: Class
+- uid: CompassEx.Comm
+  name: CompassEx.Comm
+  type: Namespace
+  items:
+  - uid: CompassEx.Comm.ArrayExtensions
+    name: ArrayExtensions
+    type: Class
+  - uid: CompassEx.Comm.Comm
+    name: Comm
+    type: Class
+  - uid: CompassEx.Comm.CompassRangEX
+    name: CompassRangEX
+    type: Class
+  - uid: CompassEx.Comm.Defined
+    name: Defined
+    type: Class
+  - uid: CompassEx.Comm.Defined.FactYearEnum
+    name: Defined.FactYearEnum
+    type: Enum
+  - uid: CompassEx.Comm.Defined.SkyLoc
+    name: Defined.SkyLoc
+    type: Struct
+  - uid: CompassEx.Comm.LocClass
+    name: LocClass
+    type: Class
+  - uid: CompassEx.Comm.SkyClass
+    name: SkyClass
+    type: Class
+  - uid: CompassEx.Comm.TymeTimeExtensions
+    name: TymeTimeExtensions
+    type: Class
+- uid: CompassEx.Guo
+  name: CompassEx.Guo
+  type: Namespace
+  items:
+  - uid: CompassEx.Guo.FateGuo
+    name: FateGuo
+    type: Class
+  - uid: CompassEx.Guo.FiveAttr
+    name: FiveAttr
+    type: Class
+  - uid: CompassEx.Guo.FiveAttr.FiveAttrRule
+    name: FiveAttr.FiveAttrRule
+    type: Enum
+  - uid: CompassEx.Guo.GuoClass
+    name: GuoClass
+    type: Class
+  - uid: CompassEx.Guo.GuoSubClass
+    name: GuoSubClass
+    type: Class
+  - uid: CompassEx.Guo.SixGodClass
+    name: SixGodClass
+    type: Class
+  - uid: CompassEx.Guo.SixRelativeClass
+    name: SixRelativeClass
+    type: Class
+memberLayout: SamePage

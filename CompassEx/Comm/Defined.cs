@@ -49,7 +49,6 @@ namespace CompassEx.Comm
 
         }
 
-
         public readonly static String[] CNMonthName = { "正", "二", "三", "四", "五", "六", "七", "八", "九", "十", "冬", "腊" };//十二个月名称
         public readonly static String[] CNLocTwelve = { "建", "除", "满", "平", "定", "执", "破", "危", "成", "收", "开", "闭" };//地支十二决
         public readonly static String[] CNDayName = { "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二", "十三", "十四", "十五", "十六", "十七", "十八", "十九", "二十", "廿一", "廿二", "廿三", "廿四", "廿五", "廿六", "廿七", "廿八", "廿九", "三十" };//农历的日期

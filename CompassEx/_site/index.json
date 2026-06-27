@@ -1,0 +1,22 @@
+{
+  "README.html": {
+    "href": "README.html",
+    "title": "调用范例",
+    "summary": "⚖️ 开源与商业授权声明 / Dual Licensing 本项目采用双重许可 (Dual Licensing) 模式分发。 \uD83D\uDCA1 开源用途 / Open Source Use 协议 / License: GNU AGPLv3 说明: 如果您的项目完全开源、非盈利，或者您的商业项目也完全采用 AGPL 3.0 协议开源（包括您依托本项目构建的云端服务、小程序、App 源码），您可以免费使用。 If your project is open-source, non-commercial, or your repository is also licensed under AGPLv3 (including your cloud backend, mini-programs, or App source code), you can use this library for free. \uD83D\uDCB0 商业用途 / Commercial Use 说明: 如果您希望将本项目嵌入到闭源商业软件、付费下载的应用、带有广告的小程序、商业风水/算命 SaaS 服务中，为了保护您的商业核心机密，您必须购买我们的 【商业闭源授权】。 If you wish to integrate this library into closed-source commercial software, paid applications, mini-programs with ads, or commercial SaaS services, you MUST purchase a Commercial License to protect your own proprietary source code. \uD83D\uDCEC 商务合作联系 / Contact Email: Jockeyvb@gmail.com WeChat / 微信: Jockeyvb1 (Please specify \"CompassEx\" when adding / 添加请备注罗盘库) 调用范例"
+  },
+  "docs/getting-started.html": {
+    "href": "docs/getting-started.html",
+    "title": "Getting Started",
+    "summary": "Getting Started"
+  },
+  "docs/introduction.html": {
+    "href": "docs/introduction.html",
+    "title": "Introduction",
+    "summary": "Introduction"
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "This is the HOMEPAGE.",
+    "summary": "This is the HOMEPAGE. Refer to Markdown for how to write markdown files. Quick Start Notes: Add images to the images folder if the file is referencing an image."
+  }
+}

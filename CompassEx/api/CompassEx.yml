@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx
+  commentId: N:CompassEx
+  id: CompassEx
+  children:
+  - CompassEx.CHill
+  - CompassEx.CompassEx
+  langs:
+  - csharp
+  - vb
+  name: CompassEx
+  nameWithType: CompassEx
+  fullName: CompassEx
+  type: Namespace
+  assemblies:
+  - CompassEx
+references:
+- uid: CompassEx.CHill
+  commentId: T:CompassEx.CHill
+  parent: CompassEx
+  href: CompassEx.CHill.html
+  name: CHill
+  nameWithType: CHill
+  fullName: CompassEx.CHill
+- uid: CompassEx.CompassEx
+  commentId: T:CompassEx.CompassEx
+  href: CompassEx.CompassEx.html
+  name: CompassEx
+  nameWithType: CompassEx
+  fullName: CompassEx.CompassEx
+- uid: CompassEx
+  commentId: N:CompassEx
+  href: CompassEx.html
+  name: CompassEx
+  nameWithType: CompassEx
+  fullName: CompassEx

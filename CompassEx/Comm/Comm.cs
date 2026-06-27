@@ -26,7 +26,7 @@ namespace CompassEx.Comm
     {
 
         /// <summary>
-        /// 初始化一些基本数据
+        /// 初始化罗盘中的基本数据
         /// </summary>
         public static void AllInit()
         {

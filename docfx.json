@@ -1,0 +1,51 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  "metadata": [
+    {
+      "src": [
+        {
+           "files": [ "CompassEx/*.csproj" ],
+          "exclude": [ "**/bin/**", "**/obj/**" ]
+        }
+      ],
+      "dest": "api"
+    }
+  ],
+    "build": {
+    "content": [
+      {
+        "files": [
+          "toc.yml",
+          "index.md",
+          "*.md",
+          "api/**/*.yml",
+          "api/toc.yml"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+   "output": "_site",
+    "template": [
+      "default",
+      "modern"
+    ],
+    "globalMetadata": {
+      "_appName": "CompassEx 罗盘算法类库",
+      "_appTitle": "CompassEx API文档",
+      "_enableSearch": true,
+      "_appLogoPath": "",
+      "pdf": true
+    }
+  }
+}
+
+

@@ -1,9 +1,12 @@
 <Solution>
   <Folder Name="/解决方案项/">
+    <File Path="CompassEx类库算法说明.md" />
     <File Path="LICENSE" />
     <File Path="README.md" />
   </Folder>
-  <Project Path="CompassEx/CompassEx.csproj" />
+  <Project Path="CompassEx/CompassEx.csproj">
+    <BuildType Project="Release" />
+  </Project>
   <Project Path="CompassExTest/CompassExTest.csproj">
     <Deploy Solution="Debug|*" />
   </Project>

@@ -373,6 +373,18 @@ public class CompassSkiaRenderer
             };
             dcs.OuterRadius = dcs.InnerRadius + ysplace;
 
+
+            if (G.GuoFate == "一")
+            {
+                dcs.ForceColor = SKColors.Red;
+
+            }
+            else if (G.GuoFate == "九")
+            {
+                dcs.ForceColor = SKColors.Blue;
+            }
+
+
             // 生成路径（核心修复）
             SKPath sectorPath = CreateRingSectorPath(cx, cy, dcs.InnerRadius, dcs.OuterRadius, start, end);
             dcs.Path = sectorPath;
@@ -389,10 +401,14 @@ public class CompassSkiaRenderer
 
 
         }
-        //===============================画地盘六十四卦(后天)===========================
+
+
+
+
 
 
         LastR = LastR + ysplace;
+
         //===============================画天盘六十四卦(先天)===========================
         foreach (var dc in CompassEx.CompassEx.CBeforGuos)
         {
@@ -412,6 +428,16 @@ public class CompassSkiaRenderer
                 AddTextSize = G.GuoName.Length > 1 ? -10 : -20,
 
             };
+            if (G.GuoFate == "一")
+            {
+                dcs.ForceColor = SKColors.Red;
+
+            }
+            else if (G.GuoFate == "九")
+            {
+                dcs.ForceColor = SKColors.Blue;
+            }
+
             dcs.OuterRadius = dcs.InnerRadius + ysplace;
 
             // 生成路径（核心修复）
@@ -431,6 +457,54 @@ public class CompassSkiaRenderer
 
         }
         //===============================画天盘六十四卦(先天)===========================
+
+
+        //===============================画地盘六十四卦(后天)===========================
+
+        LastR = LastR + ysplace;
+
+        ysplace = 20;
+        //===============================画卦气===========================
+        foreach (var dc in CompassEx.CompassEx.CBeforGuos)
+        {
+            var CR = dc.Key;
+            var G = dc.Value;
+
+
+            if (G == null) continue;
+
+            float start = (float)CR.Start;
+            float end = (float)CR.End;
+
+            var dcs = new DrawContextStru
+            {
+                CR = CR,
+                InnerRadius = LastR,
+
+
+            };
+            dcs.OuterRadius = dcs.InnerRadius + ysplace;
+
+
+
+            // 生成路径（核心修复）
+            SKPath sectorPath = CreateRingSectorPath(cx, cy, dcs.InnerRadius, dcs.OuterRadius, start, end);
+            dcs.Path = sectorPath;
+
+
+
+            canvas.DrawPath(sectorPath, PathPaint);//画边
+
+            //PathFillP.Color = SKColors.Red.WithAlpha(10);
+            //canvas.DrawPath(sectorPath, PathFillP);//填充
+
+            // 文字
+            DrawLabel(canvas, dcs, G.GuoQi.ToString(), false);
+
+
+        }
+
+        //===============================画卦气===========================
     }
 
     private void DrawLabel(SKCanvas canvas, DrawContextStru dcs, string text, bool IsSymbol = false)

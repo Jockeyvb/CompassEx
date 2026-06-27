@@ -20,6 +20,10 @@
     <RepositoryUrl>https://github.com/Jockeyvb/CompassEx</RepositoryUrl>
     <PackageTags>风水,罗盘,三合盘,三元盘,三合,三元</PackageTags>
     <PackageId>Jockeyvb.$(AssemblyName)</PackageId>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+	<GenerateDocumentationFile>true</GenerateDocumentationFile>
+<NoWarn>$(NoWarn);1591</NoWarn>
   </PropertyGroup>
 
   <!-- T4模板仅标记为None，禁止加入Compile编译项 -->

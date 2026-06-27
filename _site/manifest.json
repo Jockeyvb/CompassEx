@@ -1,0 +1,435 @@
+{
+  "source_base_path": "F:/Project/Program/CompassEx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "CompassEx类库算法说明.md",
+      "output": {
+        ".html": {
+          "relative_path": "CompassEx类库算法说明.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/image1.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/image1.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.C3H.C3H.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.C3H.C3H.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.C3H.C3H",
+      "Summary": "<p sourcefile=\"api/CompassEx.C3H.C3H.yml\" sourcestartlinenumber=\"1\">三合罗盘的类</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.C3H.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.C3H.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.C3H",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.C3Y.C3Y.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.C3Y.C3Y.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.C3Y.C3Y",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.C3Y.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.C3Y.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.C3Y",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.CHill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.CHill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.CHill",
+      "Summary": "<p sourcefile=\"api/CompassEx.CHill.yml\" sourcestartlinenumber=\"1\">表示罗盘的24山及其相关属性和方法。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Comm.ArrayExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Comm.ArrayExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Comm.ArrayExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Comm.Comm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Comm.Comm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Comm.Comm",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Comm.CompassRangEX.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Comm.CompassRangEX.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Comm.CompassRangEX",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Comm.Defined.FactYearEnum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Comm.Defined.FactYearEnum.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Comm.Defined.FactYearEnum",
+      "Summary": "<p sourcefile=\"api/CompassEx.Comm.Defined.FactYearEnum.yml\" sourcestartlinenumber=\"1\">是否为真实年(龄),0为立春后，1立春前</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Comm.Defined.SkyLoc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Comm.Defined.SkyLoc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Comm.Defined.SkyLoc",
+      "Summary": "<p sourcefile=\"api/CompassEx.Comm.Defined.SkyLoc.yml\" sourcestartlinenumber=\"1\">天干地支类</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Comm.Defined.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Comm.Defined.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Comm.Defined",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Comm.LocClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Comm.LocClass.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Comm.LocClass",
+      "Summary": "<p sourcefile=\"api/CompassEx.Comm.LocClass.yml\" sourcestartlinenumber=\"1\">地支类</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Comm.SkyClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Comm.SkyClass.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Comm.SkyClass",
+      "Summary": "<p sourcefile=\"api/CompassEx.Comm.SkyClass.yml\" sourcestartlinenumber=\"1\">天干类</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Comm.TymeTimeExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Comm.TymeTimeExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Comm.TymeTimeExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Comm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Comm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Comm",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.CompassEx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.CompassEx.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.CompassEx",
+      "Summary": "<p sourcefile=\"api/CompassEx.CompassEx.yml\" sourcestartlinenumber=\"1\">罗盘的基本类</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Guo.FateGuo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Guo.FateGuo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Guo.FateGuo",
+      "Summary": "<p sourcefile=\"api/CompassEx.Guo.FateGuo.yml\" sourcestartlinenumber=\"1\">是命卦的结构类型，包含了命卦的六爻纯卦和一些相关属性，例如：命卦的五行属性，命卦的运等</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Guo.FiveAttr.FiveAttrRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Guo.FiveAttr.FiveAttrRule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Guo.FiveAttr.FiveAttrRule",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Guo.FiveAttr.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Guo.FiveAttr.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Guo.FiveAttr",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Guo.GuoClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Guo.GuoClass.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Guo.GuoClass",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Guo.GuoSubClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Guo.GuoSubClass.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Guo.GuoSubClass",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Guo.SixGodClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Guo.SixGodClass.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Guo.SixGodClass",
+      "Summary": "<p sourcefile=\"api/CompassEx.Guo.SixGodClass.yml\" sourcestartlinenumber=\"1\">六神类</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Guo.SixRelativeClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Guo.SixRelativeClass.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Guo.SixRelativeClass",
+      "Summary": "<p sourcefile=\"api/CompassEx.Guo.SixRelativeClass.yml\" sourcestartlinenumber=\"1\">六亲类</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Guo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Guo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Guo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -1,0 +1,3111 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Guo.GuoClass
+  commentId: T:CompassEx.Guo.GuoClass
+  id: GuoClass
+  parent: CompassEx.Guo
+  children:
+  - CompassEx.Guo.GuoClass.BeforGuoDC
+  - CompassEx.Guo.GuoClass.CBeforRangeDegree
+  - CompassEx.Guo.GuoClass.ChangedYao
+  - CompassEx.Guo.GuoClass.DownGuo
+  - CompassEx.Guo.GuoClass.ExchangeGuo
+  - CompassEx.Guo.GuoClass.FlowerGuoClass(System.Int32,System.Int32)
+  - CompassEx.Guo.GuoClass.Get6HereYaoGuo
+  - CompassEx.Guo.GuoClass.GetChangeGuo
+  - CompassEx.Guo.GuoClass.GetChangeGuoFace
+  - CompassEx.Guo.GuoClass.GetGuoClass(System.Collections.Generic.List{System.Int32})
+  - CompassEx.Guo.GuoClass.GetGuoClass(System.Int32)
+  - CompassEx.Guo.GuoClass.GetGuoClass(System.Int32[])
+  - CompassEx.Guo.GuoClass.GetGuoClass(System.String)
+  - CompassEx.Guo.GuoClass.GetGuoClassBySkyLoc(System.String)
+  - CompassEx.Guo.GuoClass.GetGuoFace
+  - CompassEx.Guo.GuoClass.GetGuoFace(System.Collections.Generic.List{System.Int32})
+  - CompassEx.Guo.GuoClass.GetHereThereStr
+  - CompassEx.Guo.GuoClass.GetHideRelativeStr
+  - CompassEx.Guo.GuoClass.GetLostLocs(System.String,System.String)
+  - CompassEx.Guo.GuoClass.GetSixGodStr
+  - CompassEx.Guo.GuoClass.GetSixRelativeStr(System.Boolean)
+  - CompassEx.Guo.GuoClass.GetSixRelativeStr(System.String,System.Boolean)
+  - CompassEx.Guo.GuoClass.GetStringYaos
+  - CompassEx.Guo.GuoClass.GetSykStr
+  - CompassEx.Guo.GuoClass.GetYaos
+  - CompassEx.Guo.GuoClass.GetYaosSkyLocStr
+  - CompassEx.Guo.GuoClass.GetYaosSkyLocStrShort
+  - CompassEx.Guo.GuoClass.GuoAliasName
+  - CompassEx.Guo.GuoClass.GuoAttr
+  - CompassEx.Guo.GuoClass.GuoFate
+  - CompassEx.Guo.GuoClass.GuoFateNames
+  - CompassEx.Guo.GuoClass.GuoFullName
+  - CompassEx.Guo.GuoClass.GuoFullNames
+  - CompassEx.Guo.GuoClass.GuoIndex
+  - CompassEx.Guo.GuoClass.GuoName
+  - CompassEx.Guo.GuoClass.GuoNames
+  - CompassEx.Guo.GuoClass.GuoQi
+  - CompassEx.Guo.GuoClass.GuoSelf
+  - CompassEx.Guo.GuoClass.GuoSkyLoc
+  - CompassEx.Guo.GuoClass.GuoSkyLocs
+  - CompassEx.Guo.GuoClass.HereYao
+  - CompassEx.Guo.GuoClass.HideRelative
+  - CompassEx.Guo.GuoClass.HideRelativeYaos
+  - CompassEx.Guo.GuoClass.LoadAll(System.String,System.String)
+  - CompassEx.Guo.GuoClass.LoadGuoAliasName
+  - CompassEx.Guo.GuoClass.LoadGuoSelfandHereThere
+  - CompassEx.Guo.GuoClass.LoadHideRelative
+  - CompassEx.Guo.GuoClass.LoadLostLoc(System.String,System.String)
+  - CompassEx.Guo.GuoClass.LoadNoAvg
+  - CompassEx.Guo.GuoClass.LoadSixGod(System.String)
+  - CompassEx.Guo.GuoClass.LoadSixRelative
+  - CompassEx.Guo.GuoClass.LostLocs
+  - CompassEx.Guo.GuoClass.SixGods
+  - CompassEx.Guo.GuoClass.SixRelative
+  - CompassEx.Guo.GuoClass.Symbols
+  - CompassEx.Guo.GuoClass.ThereYao
+  - CompassEx.Guo.GuoClass.UpGuo
+  - CompassEx.Guo.GuoClass.YaoDoing
+  langs:
+  - csharp
+  - vb
+  name: GuoClass
+  nameWithType: GuoClass
+  fullName: CompassEx.Guo.GuoClass
+  type: Class
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoClass
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 25
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  syntax:
+    content: public class GuoClass
+    content.vb: Public Class GuoClass
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - CompassEx.Guo.GuoClass.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CompassEx.Guo.GuoClass.GuoNames
+  commentId: F:CompassEx.Guo.GuoClass.GuoNames
+  id: GuoNames
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GuoNames
+  nameWithType: GuoClass.GuoNames
+  fullName: CompassEx.Guo.GuoClass.GuoNames
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoNames
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 31
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 64卦全卦简名
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public static readonly string[] GuoNames
+    return:
+      type: System.String[]
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Shared ReadOnly GuoNames As String()
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: CompassEx.Guo.GuoClass.GuoFullNames
+  commentId: F:CompassEx.Guo.GuoClass.GuoFullNames
+  id: GuoFullNames
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GuoFullNames
+  nameWithType: GuoClass.GuoFullNames
+  fullName: CompassEx.Guo.GuoClass.GuoFullNames
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoFullNames
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 37
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 64卦全卦名字
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public static readonly string[] GuoFullNames
+    return:
+      type: System.String[]
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Shared ReadOnly GuoFullNames As String()
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: CompassEx.Guo.GuoClass.GuoSkyLocs
+  commentId: F:CompassEx.Guo.GuoClass.GuoSkyLocs
+  id: GuoSkyLocs
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GuoSkyLocs
+  nameWithType: GuoClass.GuoSkyLocs
+  fullName: CompassEx.Guo.GuoClass.GuoSkyLocs
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoSkyLocs
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 43
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 64卦对应60甲子
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public static readonly string[] GuoSkyLocs
+    return:
+      type: System.String[]
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Shared ReadOnly GuoSkyLocs As String()
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: CompassEx.Guo.GuoClass.Symbols
+  commentId: F:CompassEx.Guo.GuoClass.Symbols
+  id: Symbols
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: Symbols
+  nameWithType: GuoClass.Symbols
+  fullName: CompassEx.Guo.GuoClass.Symbols
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Symbols
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 48
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 64卦符号
+  example: []
+  syntax:
+    content: public static readonly string[] Symbols
+    return:
+      type: System.String[]
+    content.vb: Public Shared ReadOnly Symbols As String()
+- uid: CompassEx.Guo.GuoClass.GuoQi
+  commentId: P:CompassEx.Guo.GuoClass.GuoQi
+  id: GuoQi
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GuoQi
+  nameWithType: GuoClass.GuoQi
+  fullName: CompassEx.Guo.GuoClass.GuoQi
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoQi
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 120
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 卦气（洛数）
+  example: []
+  syntax:
+    content: public int GuoQi { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property GuoQi As Integer
+  overload: CompassEx.Guo.GuoClass.GuoQi*
+- uid: CompassEx.Guo.GuoClass.DownGuo
+  commentId: F:CompassEx.Guo.GuoClass.DownGuo
+  id: DownGuo
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: DownGuo
+  nameWithType: GuoClass.DownGuo
+  fullName: CompassEx.Guo.GuoClass.DownGuo
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: DownGuo
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 142
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 下卦（内卦），三爻卦
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public GuoSubClass DownGuo
+    return:
+      type: CompassEx.Guo.GuoSubClass
+    content.vb: >-
+      <JsonIgnore>
+
+      Public DownGuo As GuoSubClass
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: CompassEx.Guo.GuoClass.UpGuo
+  commentId: F:CompassEx.Guo.GuoClass.UpGuo
+  id: UpGuo
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: UpGuo
+  nameWithType: GuoClass.UpGuo
+  fullName: CompassEx.Guo.GuoClass.UpGuo
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: UpGuo
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 147
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 上卦（外卦），三爻卦
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public GuoSubClass UpGuo
+    return:
+      type: CompassEx.Guo.GuoSubClass
+    content.vb: >-
+      <JsonIgnore>
+
+      Public UpGuo As GuoSubClass
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: CompassEx.Guo.GuoClass.GuoName
+  commentId: F:CompassEx.Guo.GuoClass.GuoName
+  id: GuoName
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GuoName
+  nameWithType: GuoClass.GuoName
+  fullName: CompassEx.Guo.GuoClass.GuoName
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoName
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 151
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 六爻卦，卦名(简)
+  example: []
+  syntax:
+    content: public string GuoName
+    return:
+      type: System.String
+    content.vb: Public GuoName As String
+- uid: CompassEx.Guo.GuoClass.GuoFullName
+  commentId: F:CompassEx.Guo.GuoClass.GuoFullName
+  id: GuoFullName
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GuoFullName
+  nameWithType: GuoClass.GuoFullName
+  fullName: CompassEx.Guo.GuoClass.GuoFullName
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoFullName
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 155
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 六爻卦的全名
+  example: []
+  syntax:
+    content: public string GuoFullName
+    return:
+      type: System.String
+    content.vb: Public GuoFullName As String
+- uid: CompassEx.Guo.GuoClass.GuoIndex
+  commentId: F:CompassEx.Guo.GuoClass.GuoIndex
+  id: GuoIndex
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GuoIndex
+  nameWithType: GuoClass.GuoIndex
+  fullName: CompassEx.Guo.GuoClass.GuoIndex
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoIndex
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 159
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 卦的所在索引
+  example: []
+  syntax:
+    content: public int GuoIndex
+    return:
+      type: System.Int32
+    content.vb: Public GuoIndex As Integer
+- uid: CompassEx.Guo.GuoClass.SixGods
+  commentId: F:CompassEx.Guo.GuoClass.SixGods
+  id: SixGods
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: SixGods
+  nameWithType: GuoClass.SixGods
+  fullName: CompassEx.Guo.GuoClass.SixGods
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SixGods
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 164
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 六神
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public List<SixGodClass> SixGods
+    return:
+      type: System.Collections.Generic.List{CompassEx.Guo.SixGodClass}
+    content.vb: >-
+      <JsonIgnore>
+
+      Public SixGods As List(Of SixGodClass)
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: CompassEx.Guo.GuoClass.SixRelative
+  commentId: F:CompassEx.Guo.GuoClass.SixRelative
+  id: SixRelative
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: SixRelative
+  nameWithType: GuoClass.SixRelative
+  fullName: CompassEx.Guo.GuoClass.SixRelative
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SixRelative
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 169
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 六亲
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public List<SixRelativeClass> SixRelative
+    return:
+      type: System.Collections.Generic.List{CompassEx.Guo.SixRelativeClass}
+    content.vb: >-
+      <JsonIgnore>
+
+      Public SixRelative As List(Of SixRelativeClass)
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: CompassEx.Guo.GuoClass.LostLocs
+  commentId: F:CompassEx.Guo.GuoClass.LostLocs
+  id: LostLocs
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: LostLocs
+  nameWithType: GuoClass.LostLocs
+  fullName: CompassEx.Guo.GuoClass.LostLocs
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: LostLocs
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 174
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 空亡的两个地支
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public List<LocClass> LostLocs
+    return:
+      type: System.Collections.Generic.List{CompassEx.Comm.LocClass}
+    content.vb: >-
+      <JsonIgnore>
+
+      Public LostLocs As List(Of LocClass)
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: CompassEx.Guo.GuoClass.HereYao
+  commentId: F:CompassEx.Guo.GuoClass.HereYao
+  id: HereYao
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: HereYao
+  nameWithType: GuoClass.HereYao
+  fullName: CompassEx.Guo.GuoClass.HereYao
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: HereYao
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 178
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 世爻
+  example: []
+  syntax:
+    content: public int HereYao
+    return:
+      type: System.Int32
+    content.vb: Public HereYao As Integer
+- uid: CompassEx.Guo.GuoClass.ThereYao
+  commentId: F:CompassEx.Guo.GuoClass.ThereYao
+  id: ThereYao
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: ThereYao
+  nameWithType: GuoClass.ThereYao
+  fullName: CompassEx.Guo.GuoClass.ThereYao
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ThereYao
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 182
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 应爻
+  example: []
+  syntax:
+    content: public int ThereYao
+    return:
+      type: System.Int32
+    content.vb: Public ThereYao As Integer
+- uid: CompassEx.Guo.GuoClass.ChangedYao
+  commentId: F:CompassEx.Guo.GuoClass.ChangedYao
+  id: ChangedYao
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: ChangedYao
+  nameWithType: GuoClass.ChangedYao
+  fullName: CompassEx.Guo.GuoClass.ChangedYao
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ChangedYao
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 188
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 已变化后的爻
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public List<int> ChangedYao
+    return:
+      type: System.Collections.Generic.List{System.Int32}
+    content.vb: >-
+      <JsonIgnore>
+
+      Public ChangedYao As List(Of Integer)
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: CompassEx.Guo.GuoClass.GuoAliasName
+  commentId: F:CompassEx.Guo.GuoClass.GuoAliasName
+  id: GuoAliasName
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GuoAliasName
+  nameWithType: GuoClass.GuoAliasName
+  fullName: CompassEx.Guo.GuoClass.GuoAliasName
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoAliasName
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 193
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 卦的所属别名，例如：归魂卦，游魂卦，纯卦等
+  example: []
+  syntax:
+    content: public string GuoAliasName
+    return:
+      type: System.String
+    content.vb: Public GuoAliasName As String
+- uid: CompassEx.Guo.GuoClass.GuoSelf
+  commentId: F:CompassEx.Guo.GuoClass.GuoSelf
+  id: GuoSelf
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GuoSelf
+  nameWithType: GuoClass.GuoSelf
+  fullName: CompassEx.Guo.GuoClass.GuoSelf
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoSelf
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 198
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 卦宫(三爻卦),名称
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public GuoSubClass GuoSelf
+    return:
+      type: CompassEx.Guo.GuoSubClass
+    content.vb: >-
+      <JsonIgnore>
+
+      Public GuoSelf As GuoSubClass
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: CompassEx.Guo.GuoClass.HideRelative
+  commentId: F:CompassEx.Guo.GuoClass.HideRelative
+  id: HideRelative
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: HideRelative
+  nameWithType: GuoClass.HideRelative
+  fullName: CompassEx.Guo.GuoClass.HideRelative
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: HideRelative
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 203
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 伏神
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public List<SixRelativeClass> HideRelative
+    return:
+      type: System.Collections.Generic.List{CompassEx.Guo.SixRelativeClass}
+    content.vb: >-
+      <JsonIgnore>
+
+      Public HideRelative As List(Of SixRelativeClass)
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: CompassEx.Guo.GuoClass.HideRelativeYaos
+  commentId: F:CompassEx.Guo.GuoClass.HideRelativeYaos
+  id: HideRelativeYaos
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: HideRelativeYaos
+  nameWithType: GuoClass.HideRelativeYaos
+  fullName: CompassEx.Guo.GuoClass.HideRelativeYaos
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: HideRelativeYaos
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 208
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 伏神位置
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public List<int> HideRelativeYaos
+    return:
+      type: System.Collections.Generic.List{System.Int32}
+    content.vb: >-
+      <JsonIgnore>
+
+      Public HideRelativeYaos As List(Of Integer)
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: CompassEx.Guo.GuoClass.YaoDoing
+  commentId: F:CompassEx.Guo.GuoClass.YaoDoing
+  id: YaoDoing
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: YaoDoing
+  nameWithType: GuoClass.YaoDoing
+  fullName: CompassEx.Guo.GuoClass.YaoDoing
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: YaoDoing
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 213
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 爻动 [0,1]表示动初、二爻
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public List<int> YaoDoing
+    return:
+      type: System.Collections.Generic.List{System.Int32}
+    content.vb: >-
+      <JsonIgnore>
+
+      Public YaoDoing As List(Of Integer)
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: CompassEx.Guo.GuoClass.CBeforRangeDegree
+  commentId: P:CompassEx.Guo.GuoClass.CBeforRangeDegree
+  id: CBeforRangeDegree
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: CBeforRangeDegree
+  nameWithType: GuoClass.CBeforRangeDegree
+  fullName: CompassEx.Guo.GuoClass.CBeforRangeDegree
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: CBeforRangeDegree
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 218
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 罗盘中的度数范围对象，表示这个卦在罗盘中的位置范围
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public CompassRangEX CBeforRangeDegree { get; }
+    parameters: []
+    return:
+      type: CompassEx.Comm.CompassRangEX
+    content.vb: >-
+      <JsonIgnore>
+
+      Public ReadOnly Property CBeforRangeDegree As CompassRangEX
+  overload: CompassEx.Guo.GuoClass.CBeforRangeDegree*
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: CompassEx.Guo.GuoClass.BeforGuoDC
+  commentId: F:CompassEx.Guo.GuoClass.BeforGuoDC
+  id: BeforGuoDC
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: BeforGuoDC
+  nameWithType: GuoClass.BeforGuoDC
+  fullName: CompassEx.Guo.GuoClass.BeforGuoDC
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: BeforGuoDC
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 225
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 先天64卦名与符号
+  example: []
+  syntax:
+    content: public static readonly Dictionary<string, string> BeforGuoDC
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.String}
+    content.vb: Public Shared ReadOnly BeforGuoDC As Dictionary(Of String, String)
+- uid: CompassEx.Guo.GuoClass.ExchangeGuo
+  commentId: M:CompassEx.Guo.GuoClass.ExchangeGuo
+  id: ExchangeGuo
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: ExchangeGuo()
+  nameWithType: GuoClass.ExchangeGuo()
+  fullName: CompassEx.Guo.GuoClass.ExchangeGuo()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ExchangeGuo
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 231
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 本卦中的通卦
+  example: []
+  syntax:
+    content: public GuoClass ExchangeGuo()
+    return:
+      type: CompassEx.Guo.GuoClass
+      description: ''
+    content.vb: Public Function ExchangeGuo() As GuoClass
+  overload: CompassEx.Guo.GuoClass.ExchangeGuo*
+- uid: CompassEx.Guo.GuoClass.Get6HereYaoGuo
+  commentId: M:CompassEx.Guo.GuoClass.Get6HereYaoGuo
+  id: Get6HereYaoGuo
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: Get6HereYaoGuo()
+  nameWithType: GuoClass.Get6HereYaoGuo()
+  fullName: CompassEx.Guo.GuoClass.Get6HereYaoGuo()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Get6HereYaoGuo
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 247
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获得当前卦的6世飞爻卦,京房易卦变(7世飞爻荡出，用于计算命命的入卦,此是64卦变卦规则)，一般用于六冲（纯）卦
+  example: []
+  syntax:
+    content: public List<GuoClass> Get6HereYaoGuo()
+    return:
+      type: System.Collections.Generic.List{CompassEx.Guo.GuoClass}
+      description: ''
+    content.vb: Public Function Get6HereYaoGuo() As List(Of GuoClass)
+  overload: CompassEx.Guo.GuoClass.Get6HereYaoGuo*
+- uid: CompassEx.Guo.GuoClass.GuoSkyLoc
+  commentId: P:CompassEx.Guo.GuoClass.GuoSkyLoc
+  id: GuoSkyLoc
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GuoSkyLoc
+  nameWithType: GuoClass.GuoSkyLoc
+  fullName: CompassEx.Guo.GuoClass.GuoSkyLoc
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoSkyLoc
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 309
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 返回卦对应原天干地去结构类型
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public Defined.SkyLoc GuoSkyLoc { get; }
+    parameters: []
+    return:
+      type: CompassEx.Comm.Defined.SkyLoc
+    content.vb: >-
+      <JsonIgnore>
+
+      Public ReadOnly Property GuoSkyLoc As Defined.SkyLoc
+  overload: CompassEx.Guo.GuoClass.GuoSkyLoc*
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: CompassEx.Guo.GuoClass.GuoAttr
+  commentId: P:CompassEx.Guo.GuoClass.GuoAttr
+  id: GuoAttr
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GuoAttr
+  nameWithType: GuoClass.GuoAttr
+  fullName: CompassEx.Guo.GuoClass.GuoAttr
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoAttr
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 329
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 返回复卦的五行(上卦所在位置的后天数)
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public int GuoAttr { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <JsonIgnore>
+
+      Public ReadOnly Property GuoAttr As Integer
+  overload: CompassEx.Guo.GuoClass.GuoAttr*
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: CompassEx.Guo.GuoClass.GuoFateNames
+  commentId: F:CompassEx.Guo.GuoClass.GuoFateNames
+  id: GuoFateNames
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GuoFateNames
+  nameWithType: GuoClass.GuoFateNames
+  fullName: CompassEx.Guo.GuoClass.GuoFateNames
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoFateNames
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 372
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 卦运名称
+  example: []
+  syntax:
+    content: public static readonly string[] GuoFateNames
+    return:
+      type: System.String[]
+    content.vb: Public Shared ReadOnly GuoFateNames As String()
+- uid: CompassEx.Guo.GuoClass.GuoFate
+  commentId: P:CompassEx.Guo.GuoClass.GuoFate
+  id: GuoFate
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GuoFate
+  nameWithType: GuoClass.GuoFate
+  fullName: CompassEx.Guo.GuoClass.GuoFate
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoFate
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 376
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 返回复卦运
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public string GuoFate { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonIgnore>
+
+      Public ReadOnly Property GuoFate As String
+  overload: CompassEx.Guo.GuoClass.GuoFate*
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: CompassEx.Guo.GuoClass.GetStringYaos
+  commentId: M:CompassEx.Guo.GuoClass.GetStringYaos
+  id: GetStringYaos
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetStringYaos()
+  nameWithType: GuoClass.GetStringYaos()
+  fullName: CompassEx.Guo.GuoClass.GetStringYaos()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetStringYaos
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 430
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获得爻的字符排列
+  example: []
+  syntax:
+    content: public string GetStringYaos()
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Function GetStringYaos() As String
+  overload: CompassEx.Guo.GuoClass.GetStringYaos*
+- uid: CompassEx.Guo.GuoClass.GetYaos
+  commentId: M:CompassEx.Guo.GuoClass.GetYaos
+  id: GetYaos
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetYaos()
+  nameWithType: GuoClass.GetYaos()
+  fullName: CompassEx.Guo.GuoClass.GetYaos()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetYaos
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 445
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 返回本卦(复卦)的六爻数组
+  example: []
+  syntax:
+    content: public int[] GetYaos()
+    return:
+      type: System.Int32[]
+      description: ''
+    content.vb: Public Function GetYaos() As Integer()
+  overload: CompassEx.Guo.GuoClass.GetYaos*
+- uid: CompassEx.Guo.GuoClass.GetChangeGuo
+  commentId: M:CompassEx.Guo.GuoClass.GetChangeGuo
+  id: GetChangeGuo
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetChangeGuo()
+  nameWithType: GuoClass.GetChangeGuo()
+  fullName: CompassEx.Guo.GuoClass.GetChangeGuo()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetChangeGuo
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 467
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 根据本卦的动爻取得变卦
+  example: []
+  syntax:
+    content: public GuoClass GetChangeGuo()
+    return:
+      type: CompassEx.Guo.GuoClass
+      description: ''
+    content.vb: Public Function GetChangeGuo() As GuoClass
+  overload: CompassEx.Guo.GuoClass.GetChangeGuo*
+- uid: CompassEx.Guo.GuoClass.GetSykStr
+  commentId: M:CompassEx.Guo.GuoClass.GetSykStr
+  id: GetSykStr
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetSykStr()
+  nameWithType: GuoClass.GetSykStr()
+  fullName: CompassEx.Guo.GuoClass.GetSykStr()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetSykStr
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 507
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获得天干的字符形式
+  example: []
+  syntax:
+    content: public string GetSykStr()
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Function GetSykStr() As String
+  overload: CompassEx.Guo.GuoClass.GetSykStr*
+- uid: CompassEx.Guo.GuoClass.GetHereThereStr
+  commentId: M:CompassEx.Guo.GuoClass.GetHereThereStr
+  id: GetHereThereStr
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetHereThereStr()
+  nameWithType: GuoClass.GetHereThereStr()
+  fullName: CompassEx.Guo.GuoClass.GetHereThereStr()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetHereThereStr
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 518
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获得世应的字符形式
+  example: []
+  syntax:
+    content: public string GetHereThereStr()
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Function GetHereThereStr() As String
+  overload: CompassEx.Guo.GuoClass.GetHereThereStr*
+- uid: CompassEx.Guo.GuoClass.GetHideRelativeStr
+  commentId: M:CompassEx.Guo.GuoClass.GetHideRelativeStr
+  id: GetHideRelativeStr
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetHideRelativeStr()
+  nameWithType: GuoClass.GetHideRelativeStr()
+  fullName: CompassEx.Guo.GuoClass.GetHideRelativeStr()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetHideRelativeStr
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 536
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获得伏神的字符形式
+  example: []
+  syntax:
+    content: public string GetHideRelativeStr()
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Function GetHideRelativeStr() As String
+  overload: CompassEx.Guo.GuoClass.GetHideRelativeStr*
+- uid: CompassEx.Guo.GuoClass.GetYaosSkyLocStrShort
+  commentId: M:CompassEx.Guo.GuoClass.GetYaosSkyLocStrShort
+  id: GetYaosSkyLocStrShort
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetYaosSkyLocStrShort()
+  nameWithType: GuoClass.GetYaosSkyLocStrShort()
+  fullName: CompassEx.Guo.GuoClass.GetYaosSkyLocStrShort()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetYaosSkyLocStrShort
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 566
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获得六爻的天干地支字符形式(不加入五行)
+  example: []
+  syntax:
+    content: public string GetYaosSkyLocStrShort()
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Function GetYaosSkyLocStrShort() As String
+  overload: CompassEx.Guo.GuoClass.GetYaosSkyLocStrShort*
+- uid: CompassEx.Guo.GuoClass.GetYaosSkyLocStr
+  commentId: M:CompassEx.Guo.GuoClass.GetYaosSkyLocStr
+  id: GetYaosSkyLocStr
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetYaosSkyLocStr()
+  nameWithType: GuoClass.GetYaosSkyLocStr()
+  fullName: CompassEx.Guo.GuoClass.GetYaosSkyLocStr()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetYaosSkyLocStr
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 588
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获得六爻的天干地支字符形式
+  example: []
+  syntax:
+    content: public string GetYaosSkyLocStr()
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Function GetYaosSkyLocStr() As String
+  overload: CompassEx.Guo.GuoClass.GetYaosSkyLocStr*
+- uid: CompassEx.Guo.GuoClass.GetSixGodStr
+  commentId: M:CompassEx.Guo.GuoClass.GetSixGodStr
+  id: GetSixGodStr
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetSixGodStr()
+  nameWithType: GuoClass.GetSixGodStr()
+  fullName: CompassEx.Guo.GuoClass.GetSixGodStr()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetSixGodStr
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 610
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获得六神的字符形式
+  example: []
+  syntax:
+    content: public string GetSixGodStr()
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Function GetSixGodStr() As String
+  overload: CompassEx.Guo.GuoClass.GetSixGodStr*
+- uid: CompassEx.Guo.GuoClass.GetSixRelativeStr(System.String,System.Boolean)
+  commentId: M:CompassEx.Guo.GuoClass.GetSixRelativeStr(System.String,System.Boolean)
+  id: GetSixRelativeStr(System.String,System.Boolean)
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetSixRelativeStr(string, bool)
+  nameWithType: GuoClass.GetSixRelativeStr(string, bool)
+  fullName: CompassEx.Guo.GuoClass.GetSixRelativeStr(string, bool)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetSixRelativeStr
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 628
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获得六亲的字符形式
+  example: []
+  syntax:
+    content: public string GetSixRelativeStr(string GuoSelfAttr, bool IsHadFateAttr = false)
+    parameters:
+    - id: GuoSelfAttr
+      type: System.String
+      description: ''
+    - id: IsHadFateAttr
+      type: System.Boolean
+      description: ''
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Function GetSixRelativeStr(GuoSelfAttr As String, IsHadFateAttr As Boolean = False) As String
+  overload: CompassEx.Guo.GuoClass.GetSixRelativeStr*
+  nameWithType.vb: GuoClass.GetSixRelativeStr(String, Boolean)
+  fullName.vb: CompassEx.Guo.GuoClass.GetSixRelativeStr(String, Boolean)
+  name.vb: GetSixRelativeStr(String, Boolean)
+- uid: CompassEx.Guo.GuoClass.GetSixRelativeStr(System.Boolean)
+  commentId: M:CompassEx.Guo.GuoClass.GetSixRelativeStr(System.Boolean)
+  id: GetSixRelativeStr(System.Boolean)
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetSixRelativeStr(bool)
+  nameWithType: GuoClass.GetSixRelativeStr(bool)
+  fullName: CompassEx.Guo.GuoClass.GetSixRelativeStr(bool)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetSixRelativeStr
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 657
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获得六亲的字符形式
+  example: []
+  syntax:
+    content: public string GetSixRelativeStr(bool IsHadFateAttr = false)
+    parameters:
+    - id: IsHadFateAttr
+      type: System.Boolean
+      description: ''
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Function GetSixRelativeStr(IsHadFateAttr As Boolean = False) As String
+  overload: CompassEx.Guo.GuoClass.GetSixRelativeStr*
+  nameWithType.vb: GuoClass.GetSixRelativeStr(Boolean)
+  fullName.vb: CompassEx.Guo.GuoClass.GetSixRelativeStr(Boolean)
+  name.vb: GetSixRelativeStr(Boolean)
+- uid: CompassEx.Guo.GuoClass.LoadAll(System.String,System.String)
+  commentId: M:CompassEx.Guo.GuoClass.LoadAll(System.String,System.String)
+  id: LoadAll(System.String,System.String)
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: LoadAll(string, string)
+  nameWithType: GuoClass.LoadAll(string, string)
+  fullName: CompassEx.Guo.GuoClass.LoadAll(string, string)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: LoadAll
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 680
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 加载所有参数
+  example: []
+  syntax:
+    content: public void LoadAll(string sSkyName, string sLocName)
+    parameters:
+    - id: sSkyName
+      type: System.String
+      description: ''
+    - id: sLocName
+      type: System.String
+      description: ''
+    content.vb: Public Sub LoadAll(sSkyName As String, sLocName As String)
+  overload: CompassEx.Guo.GuoClass.LoadAll*
+  nameWithType.vb: GuoClass.LoadAll(String, String)
+  fullName.vb: CompassEx.Guo.GuoClass.LoadAll(String, String)
+  name.vb: LoadAll(String, String)
+- uid: CompassEx.Guo.GuoClass.LoadNoAvg
+  commentId: M:CompassEx.Guo.GuoClass.LoadNoAvg
+  id: LoadNoAvg
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: LoadNoAvg()
+  nameWithType: GuoClass.LoadNoAvg()
+  fullName: CompassEx.Guo.GuoClass.LoadNoAvg()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: LoadNoAvg
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 689
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 无参数加载：世应、别名、六亲、伏神
+  example: []
+  syntax:
+    content: public void LoadNoAvg()
+    content.vb: Public Sub LoadNoAvg()
+  overload: CompassEx.Guo.GuoClass.LoadNoAvg*
+- uid: CompassEx.Guo.GuoClass.GetGuoFace(System.Collections.Generic.List{System.Int32})
+  commentId: M:CompassEx.Guo.GuoClass.GetGuoFace(System.Collections.Generic.List{System.Int32})
+  id: GetGuoFace(System.Collections.Generic.List{System.Int32})
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetGuoFace(List<int>)
+  nameWithType: GuoClass.GetGuoFace(List<int>)
+  fullName: CompassEx.Guo.GuoClass.GetGuoFace(System.Collections.Generic.List<int>)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetGuoFace
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 704
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 把爻转成卦的图形形式
+  example: []
+  syntax:
+    content: public static string GetGuoFace(List<int> al)
+    parameters:
+    - id: al
+      type: System.Collections.Generic.List{System.Int32}
+      description: ''
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Shared Function GetGuoFace(al As List(Of Integer)) As String
+  overload: CompassEx.Guo.GuoClass.GetGuoFace*
+  nameWithType.vb: GuoClass.GetGuoFace(List(Of Integer))
+  fullName.vb: CompassEx.Guo.GuoClass.GetGuoFace(System.Collections.Generic.List(Of Integer))
+  name.vb: GetGuoFace(List(Of Integer))
+- uid: CompassEx.Guo.GuoClass.GetGuoFace
+  commentId: M:CompassEx.Guo.GuoClass.GetGuoFace
+  id: GetGuoFace
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetGuoFace()
+  nameWithType: GuoClass.GetGuoFace()
+  fullName: CompassEx.Guo.GuoClass.GetGuoFace()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetGuoFace
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 722
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 把卦转成图形形式
+  example: []
+  syntax:
+    content: public string GetGuoFace()
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Function GetGuoFace() As String
+  overload: CompassEx.Guo.GuoClass.GetGuoFace*
+- uid: CompassEx.Guo.GuoClass.GetChangeGuoFace
+  commentId: M:CompassEx.Guo.GuoClass.GetChangeGuoFace
+  id: GetChangeGuoFace
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetChangeGuoFace()
+  nameWithType: GuoClass.GetChangeGuoFace()
+  fullName: CompassEx.Guo.GuoClass.GetChangeGuoFace()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetChangeGuoFace
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 766
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 把卦转成图形形式
+  example: []
+  syntax:
+    content: public string GetChangeGuoFace()
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Function GetChangeGuoFace() As String
+  overload: CompassEx.Guo.GuoClass.GetChangeGuoFace*
+- uid: CompassEx.Guo.GuoClass.LoadHideRelative
+  commentId: M:CompassEx.Guo.GuoClass.LoadHideRelative
+  id: LoadHideRelative
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: LoadHideRelative()
+  nameWithType: GuoClass.LoadHideRelative()
+  fullName: CompassEx.Guo.GuoClass.LoadHideRelative()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: LoadHideRelative
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 794
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 加载伏神
+  example: []
+  syntax:
+    content: public void LoadHideRelative()
+    content.vb: Public Sub LoadHideRelative()
+  overload: CompassEx.Guo.GuoClass.LoadHideRelative*
+- uid: CompassEx.Guo.GuoClass.LoadSixRelative
+  commentId: M:CompassEx.Guo.GuoClass.LoadSixRelative
+  id: LoadSixRelative
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: LoadSixRelative()
+  nameWithType: GuoClass.LoadSixRelative()
+  fullName: CompassEx.Guo.GuoClass.LoadSixRelative()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: LoadSixRelative
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 837
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 加载卦六亲
+  example: []
+  syntax:
+    content: public void LoadSixRelative()
+    content.vb: Public Sub LoadSixRelative()
+  overload: CompassEx.Guo.GuoClass.LoadSixRelative*
+- uid: CompassEx.Guo.GuoClass.LoadGuoAliasName
+  commentId: M:CompassEx.Guo.GuoClass.LoadGuoAliasName
+  id: LoadGuoAliasName
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: LoadGuoAliasName()
+  nameWithType: GuoClass.LoadGuoAliasName()
+  fullName: CompassEx.Guo.GuoClass.LoadGuoAliasName()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: LoadGuoAliasName
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 862
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 加载卦宫的别名
+  example: []
+  syntax:
+    content: public void LoadGuoAliasName()
+    content.vb: Public Sub LoadGuoAliasName()
+  overload: CompassEx.Guo.GuoClass.LoadGuoAliasName*
+- uid: CompassEx.Guo.GuoClass.LoadGuoSelfandHereThere
+  commentId: M:CompassEx.Guo.GuoClass.LoadGuoSelfandHereThere
+  id: LoadGuoSelfandHereThere
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: LoadGuoSelfandHereThere()
+  nameWithType: GuoClass.LoadGuoSelfandHereThere()
+  fullName: CompassEx.Guo.GuoClass.LoadGuoSelfandHereThere()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: LoadGuoSelfandHereThere
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 889
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 定卦宫 和世应
+  example: []
+  syntax:
+    content: public void LoadGuoSelfandHereThere()
+    content.vb: Public Sub LoadGuoSelfandHereThere()
+  overload: CompassEx.Guo.GuoClass.LoadGuoSelfandHereThere*
+- uid: CompassEx.Guo.GuoClass.GetLostLocs(System.String,System.String)
+  commentId: M:CompassEx.Guo.GuoClass.GetLostLocs(System.String,System.String)
+  id: GetLostLocs(System.String,System.String)
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetLostLocs(string, string)
+  nameWithType: GuoClass.GetLostLocs(string, string)
+  fullName: CompassEx.Guo.GuoClass.GetLostLocs(string, string)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetLostLocs
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 964
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获得空亡的两个地支
+  example: []
+  syntax:
+    content: public static List<LocClass> GetLostLocs(string sSkyName, string sLocName)
+    parameters:
+    - id: sSkyName
+      type: System.String
+      description: ''
+    - id: sLocName
+      type: System.String
+      description: ''
+    return:
+      type: System.Collections.Generic.List{CompassEx.Comm.LocClass}
+      description: ''
+    content.vb: Public Shared Function GetLostLocs(sSkyName As String, sLocName As String) As List(Of LocClass)
+  overload: CompassEx.Guo.GuoClass.GetLostLocs*
+  nameWithType.vb: GuoClass.GetLostLocs(String, String)
+  fullName.vb: CompassEx.Guo.GuoClass.GetLostLocs(String, String)
+  name.vb: GetLostLocs(String, String)
+- uid: CompassEx.Guo.GuoClass.LoadLostLoc(System.String,System.String)
+  commentId: M:CompassEx.Guo.GuoClass.LoadLostLoc(System.String,System.String)
+  id: LoadLostLoc(System.String,System.String)
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: LoadLostLoc(string, string)
+  nameWithType: GuoClass.LoadLostLoc(string, string)
+  fullName: CompassEx.Guo.GuoClass.LoadLostLoc(string, string)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: LoadLostLoc
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 987
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 加载空亡(由下而上)
+  example: []
+  syntax:
+    content: public void LoadLostLoc(string sSkyName, string sLocName)
+    parameters:
+    - id: sSkyName
+      type: System.String
+      description: ''
+    - id: sLocName
+      type: System.String
+      description: ''
+    content.vb: Public Sub LoadLostLoc(sSkyName As String, sLocName As String)
+  overload: CompassEx.Guo.GuoClass.LoadLostLoc*
+  nameWithType.vb: GuoClass.LoadLostLoc(String, String)
+  fullName.vb: CompassEx.Guo.GuoClass.LoadLostLoc(String, String)
+  name.vb: LoadLostLoc(String, String)
+- uid: CompassEx.Guo.GuoClass.LoadSixGod(System.String)
+  commentId: M:CompassEx.Guo.GuoClass.LoadSixGod(System.String)
+  id: LoadSixGod(System.String)
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: LoadSixGod(string)
+  nameWithType: GuoClass.LoadSixGod(string)
+  fullName: CompassEx.Guo.GuoClass.LoadSixGod(string)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: LoadSixGod
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 997
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 加载六神(由下而上)
+  example: []
+  syntax:
+    content: public void LoadSixGod(string sSkyName)
+    parameters:
+    - id: sSkyName
+      type: System.String
+      description: ''
+    content.vb: Public Sub LoadSixGod(sSkyName As String)
+  overload: CompassEx.Guo.GuoClass.LoadSixGod*
+  nameWithType.vb: GuoClass.LoadSixGod(String)
+  fullName.vb: CompassEx.Guo.GuoClass.LoadSixGod(String)
+  name.vb: LoadSixGod(String)
+- uid: CompassEx.Guo.GuoClass.GetGuoClassBySkyLoc(System.String)
+  commentId: M:CompassEx.Guo.GuoClass.GetGuoClassBySkyLoc(System.String)
+  id: GetGuoClassBySkyLoc(System.String)
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetGuoClassBySkyLoc(string)
+  nameWithType: GuoClass.GetGuoClassBySkyLoc(string)
+  fullName: CompassEx.Guo.GuoClass.GetGuoClassBySkyLoc(string)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetGuoClassBySkyLoc
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 1086
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 根据天干地支创建卦象类
+  example: []
+  syntax:
+    content: public static GuoClass GetGuoClassBySkyLoc(string sSkyLocName)
+    parameters:
+    - id: sSkyLocName
+      type: System.String
+      description: ''
+    return:
+      type: CompassEx.Guo.GuoClass
+      description: ''
+    content.vb: Public Shared Function GetGuoClassBySkyLoc(sSkyLocName As String) As GuoClass
+  overload: CompassEx.Guo.GuoClass.GetGuoClassBySkyLoc*
+  nameWithType.vb: GuoClass.GetGuoClassBySkyLoc(String)
+  fullName.vb: CompassEx.Guo.GuoClass.GetGuoClassBySkyLoc(String)
+  name.vb: GetGuoClassBySkyLoc(String)
+- uid: CompassEx.Guo.GuoClass.GetGuoClass(System.String)
+  commentId: M:CompassEx.Guo.GuoClass.GetGuoClass(System.String)
+  id: GetGuoClass(System.String)
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetGuoClass(string)
+  nameWithType: GuoClass.GetGuoClass(string)
+  fullName: CompassEx.Guo.GuoClass.GetGuoClass(string)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetGuoClass
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 1101
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 根据卦名来创建卦类(六爻卦)
+  example: []
+  syntax:
+    content: public static GuoClass GetGuoClass(string sGuoName)
+    parameters:
+    - id: sGuoName
+      type: System.String
+      description: ''
+    return:
+      type: CompassEx.Guo.GuoClass
+      description: ''
+    content.vb: Public Shared Function GetGuoClass(sGuoName As String) As GuoClass
+  overload: CompassEx.Guo.GuoClass.GetGuoClass*
+  nameWithType.vb: GuoClass.GetGuoClass(String)
+  fullName.vb: CompassEx.Guo.GuoClass.GetGuoClass(String)
+  name.vb: GetGuoClass(String)
+- uid: CompassEx.Guo.GuoClass.GetGuoClass(System.Int32)
+  commentId: M:CompassEx.Guo.GuoClass.GetGuoClass(System.Int32)
+  id: GetGuoClass(System.Int32)
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetGuoClass(int)
+  nameWithType: GuoClass.GetGuoClass(int)
+  fullName: CompassEx.Guo.GuoClass.GetGuoClass(int)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetGuoClass
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 1120
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 根据卦的索引来创建卦类(六爻卦)
+  example: []
+  syntax:
+    content: public static GuoClass GetGuoClass(int iGuoIndex)
+    parameters:
+    - id: iGuoIndex
+      type: System.Int32
+      description: ''
+    return:
+      type: CompassEx.Guo.GuoClass
+      description: ''
+    content.vb: Public Shared Function GetGuoClass(iGuoIndex As Integer) As GuoClass
+  overload: CompassEx.Guo.GuoClass.GetGuoClass*
+  nameWithType.vb: GuoClass.GetGuoClass(Integer)
+  fullName.vb: CompassEx.Guo.GuoClass.GetGuoClass(Integer)
+  name.vb: GetGuoClass(Integer)
+- uid: CompassEx.Guo.GuoClass.GetGuoClass(System.Int32[])
+  commentId: M:CompassEx.Guo.GuoClass.GetGuoClass(System.Int32[])
+  id: GetGuoClass(System.Int32[])
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetGuoClass(int[])
+  nameWithType: GuoClass.GetGuoClass(int[])
+  fullName: CompassEx.Guo.GuoClass.GetGuoClass(int[])
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetGuoClass
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 1142
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 根据爻的数据，只能是6个爻来创建卦类(六爻卦)
+  example: []
+  syntax:
+    content: public static GuoClass GetGuoClass(int[] iYaos)
+    parameters:
+    - id: iYaos
+      type: System.Int32[]
+      description: ''
+    return:
+      type: CompassEx.Guo.GuoClass
+      description: ''
+    content.vb: Public Shared Function GetGuoClass(iYaos As Integer()) As GuoClass
+  overload: CompassEx.Guo.GuoClass.GetGuoClass*
+  nameWithType.vb: GuoClass.GetGuoClass(Integer())
+  fullName.vb: CompassEx.Guo.GuoClass.GetGuoClass(Integer())
+  name.vb: GetGuoClass(Integer())
+- uid: CompassEx.Guo.GuoClass.GetGuoClass(System.Collections.Generic.List{System.Int32})
+  commentId: M:CompassEx.Guo.GuoClass.GetGuoClass(System.Collections.Generic.List{System.Int32})
+  id: GetGuoClass(System.Collections.Generic.List{System.Int32})
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GetGuoClass(List<int>)
+  nameWithType: GuoClass.GetGuoClass(List<int>)
+  fullName: CompassEx.Guo.GuoClass.GetGuoClass(System.Collections.Generic.List<int>)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetGuoClass
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 1157
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 根据爻的数据，只能是6个爻来创建卦类(六爻卦)
+  example: []
+  syntax:
+    content: public static GuoClass GetGuoClass(List<int> iYaos)
+    parameters:
+    - id: iYaos
+      type: System.Collections.Generic.List{System.Int32}
+      description: ''
+    return:
+      type: CompassEx.Guo.GuoClass
+      description: ''
+    content.vb: Public Shared Function GetGuoClass(iYaos As List(Of Integer)) As GuoClass
+  overload: CompassEx.Guo.GuoClass.GetGuoClass*
+  nameWithType.vb: GuoClass.GetGuoClass(List(Of Integer))
+  fullName.vb: CompassEx.Guo.GuoClass.GetGuoClass(System.Collections.Generic.List(Of Integer))
+  name.vb: GetGuoClass(List(Of Integer))
+- uid: CompassEx.Guo.GuoClass.FlowerGuoClass(System.Int32,System.Int32)
+  commentId: M:CompassEx.Guo.GuoClass.FlowerGuoClass(System.Int32,System.Int32)
+  id: FlowerGuoClass(System.Int32,System.Int32)
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: FlowerGuoClass(int, int)
+  nameWithType: GuoClass.FlowerGuoClass(int, int)
+  fullName: CompassEx.Guo.GuoClass.FlowerGuoClass(int, int)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FlowerGuoClass
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 1190
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 梅花占卦（先天），返回这个卦(注意，返回的卦，六亲，六神等没有加载)
+  example: []
+  syntax:
+    content: public static GuoClass FlowerGuoClass(int iv1, int iv2)
+    parameters:
+    - id: iv1
+      type: System.Int32
+      description: 为上卦
+    - id: iv2
+      type: System.Int32
+      description: 为下卦
+    return:
+      type: CompassEx.Guo.GuoClass
+      description: ''
+    content.vb: Public Shared Function FlowerGuoClass(iv1 As Integer, iv2 As Integer) As GuoClass
+  overload: CompassEx.Guo.GuoClass.FlowerGuoClass*
+  nameWithType.vb: GuoClass.FlowerGuoClass(Integer, Integer)
+  fullName.vb: CompassEx.Guo.GuoClass.FlowerGuoClass(Integer, Integer)
+  name.vb: FlowerGuoClass(Integer, Integer)
+references:
+- uid: CompassEx.Guo
+  commentId: N:CompassEx.Guo
+  href: CompassEx.html
+  name: CompassEx.Guo
+  nameWithType: CompassEx.Guo
+  fullName: CompassEx.Guo
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Guo
+    name: Guo
+    href: CompassEx.Guo.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Guo
+    name: Guo
+    href: CompassEx.Guo.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CompassEx.Guo.GuoClass.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<GuoClass, TBase>(GuoClass, TBase)
+  nameWithType: Comm.ApplyBaseProperties<GuoClass, TBase>(GuoClass, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.Guo.GuoClass, TBase>(CompassEx.Guo.GuoClass, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of GuoClass, TBase)(GuoClass, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.Guo.GuoClass, TBase)(CompassEx.Guo.GuoClass, TBase)
+  name.vb: ApplyBaseProperties(Of GuoClass, TBase)(GuoClass, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Guo.GuoClass,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.Guo.GuoClass
+    name: GuoClass
+    href: CompassEx.Guo.GuoClass.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.Guo.GuoClass
+    name: GuoClass
+    href: CompassEx.Guo.GuoClass.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Guo.GuoClass,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Guo.GuoClass
+    name: GuoClass
+    href: CompassEx.Guo.GuoClass.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.Guo.GuoClass
+    name: GuoClass
+    href: CompassEx.Guo.GuoClass.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: CompassEx.Guo.GuoClass.GuoQi*
+  commentId: Overload:CompassEx.Guo.GuoClass.GuoQi
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GuoQi
+  name: GuoQi
+  nameWithType: GuoClass.GuoQi
+  fullName: CompassEx.Guo.GuoClass.GuoQi
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: CompassEx.Guo.GuoSubClass
+  commentId: T:CompassEx.Guo.GuoSubClass
+  parent: CompassEx.Guo
+  href: CompassEx.Guo.GuoSubClass.html
+  name: GuoSubClass
+  nameWithType: GuoSubClass
+  fullName: CompassEx.Guo.GuoSubClass
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Collections.Generic.List{CompassEx.Guo.SixGodClass}
+  commentId: T:System.Collections.Generic.List{CompassEx.Guo.SixGodClass}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<SixGodClass>
+  nameWithType: List<SixGodClass>
+  fullName: System.Collections.Generic.List<CompassEx.Guo.SixGodClass>
+  nameWithType.vb: List(Of SixGodClass)
+  fullName.vb: System.Collections.Generic.List(Of CompassEx.Guo.SixGodClass)
+  name.vb: List(Of SixGodClass)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: CompassEx.Guo.SixGodClass
+    name: SixGodClass
+    href: CompassEx.Guo.SixGodClass.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Guo.SixGodClass
+    name: SixGodClass
+    href: CompassEx.Guo.SixGodClass.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.List{CompassEx.Guo.SixRelativeClass}
+  commentId: T:System.Collections.Generic.List{CompassEx.Guo.SixRelativeClass}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<SixRelativeClass>
+  nameWithType: List<SixRelativeClass>
+  fullName: System.Collections.Generic.List<CompassEx.Guo.SixRelativeClass>
+  nameWithType.vb: List(Of SixRelativeClass)
+  fullName.vb: System.Collections.Generic.List(Of CompassEx.Guo.SixRelativeClass)
+  name.vb: List(Of SixRelativeClass)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: CompassEx.Guo.SixRelativeClass
+    name: SixRelativeClass
+    href: CompassEx.Guo.SixRelativeClass.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Guo.SixRelativeClass
+    name: SixRelativeClass
+    href: CompassEx.Guo.SixRelativeClass.html
+  - name: )
+- uid: System.Collections.Generic.List{CompassEx.Comm.LocClass}
+  commentId: T:System.Collections.Generic.List{CompassEx.Comm.LocClass}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<LocClass>
+  nameWithType: List<LocClass>
+  fullName: System.Collections.Generic.List<CompassEx.Comm.LocClass>
+  nameWithType.vb: List(Of LocClass)
+  fullName.vb: System.Collections.Generic.List(Of CompassEx.Comm.LocClass)
+  name.vb: List(Of LocClass)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: CompassEx.Comm.LocClass
+    name: LocClass
+    href: CompassEx.Comm.LocClass.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Comm.LocClass
+    name: LocClass
+    href: CompassEx.Comm.LocClass.html
+  - name: )
+- uid: System.Collections.Generic.List{System.Int32}
+  commentId: T:System.Collections.Generic.List{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<int>
+  nameWithType: List<int>
+  fullName: System.Collections.Generic.List<int>
+  nameWithType.vb: List(Of Integer)
+  fullName.vb: System.Collections.Generic.List(Of Integer)
+  name.vb: List(Of Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: CompassEx.Guo.GuoClass.CBeforRangeDegree*
+  commentId: Overload:CompassEx.Guo.GuoClass.CBeforRangeDegree
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_CBeforRangeDegree
+  name: CBeforRangeDegree
+  nameWithType: GuoClass.CBeforRangeDegree
+  fullName: CompassEx.Guo.GuoClass.CBeforRangeDegree
+- uid: CompassEx.Comm.CompassRangEX
+  commentId: T:CompassEx.Comm.CompassRangEX
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.CompassRangEX.html
+  name: CompassRangEX
+  nameWithType: CompassRangEX
+  fullName: CompassEx.Comm.CompassRangEX
+- uid: System.Collections.Generic.Dictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, string>
+  nameWithType: Dictionary<string, string>
+  fullName: System.Collections.Generic.Dictionary<string, string>
+  nameWithType.vb: Dictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, String)
+  name.vb: Dictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: CompassEx.Guo.GuoClass.ExchangeGuo*
+  commentId: Overload:CompassEx.Guo.GuoClass.ExchangeGuo
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_ExchangeGuo
+  name: ExchangeGuo
+  nameWithType: GuoClass.ExchangeGuo
+  fullName: CompassEx.Guo.GuoClass.ExchangeGuo
+- uid: CompassEx.Guo.GuoClass
+  commentId: T:CompassEx.Guo.GuoClass
+  parent: CompassEx.Guo
+  href: CompassEx.Guo.GuoClass.html
+  name: GuoClass
+  nameWithType: GuoClass
+  fullName: CompassEx.Guo.GuoClass
+- uid: CompassEx.Guo.GuoClass.Get6HereYaoGuo*
+  commentId: Overload:CompassEx.Guo.GuoClass.Get6HereYaoGuo
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_Get6HereYaoGuo
+  name: Get6HereYaoGuo
+  nameWithType: GuoClass.Get6HereYaoGuo
+  fullName: CompassEx.Guo.GuoClass.Get6HereYaoGuo
+- uid: System.Collections.Generic.List{CompassEx.Guo.GuoClass}
+  commentId: T:System.Collections.Generic.List{CompassEx.Guo.GuoClass}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<GuoClass>
+  nameWithType: List<GuoClass>
+  fullName: System.Collections.Generic.List<CompassEx.Guo.GuoClass>
+  nameWithType.vb: List(Of GuoClass)
+  fullName.vb: System.Collections.Generic.List(Of CompassEx.Guo.GuoClass)
+  name.vb: List(Of GuoClass)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: CompassEx.Guo.GuoClass
+    name: GuoClass
+    href: CompassEx.Guo.GuoClass.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Guo.GuoClass
+    name: GuoClass
+    href: CompassEx.Guo.GuoClass.html
+  - name: )
+- uid: CompassEx.Guo.GuoClass.GuoSkyLoc*
+  commentId: Overload:CompassEx.Guo.GuoClass.GuoSkyLoc
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GuoSkyLoc
+  name: GuoSkyLoc
+  nameWithType: GuoClass.GuoSkyLoc
+  fullName: CompassEx.Guo.GuoClass.GuoSkyLoc
+- uid: CompassEx.Comm.Defined.SkyLoc
+  commentId: T:CompassEx.Comm.Defined.SkyLoc
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Defined.html
+  name: Defined.SkyLoc
+  nameWithType: Defined.SkyLoc
+  fullName: CompassEx.Comm.Defined.SkyLoc
+  spec.csharp:
+  - uid: CompassEx.Comm.Defined
+    name: Defined
+    href: CompassEx.Comm.Defined.html
+  - name: .
+  - uid: CompassEx.Comm.Defined.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.Defined.SkyLoc.html
+  spec.vb:
+  - uid: CompassEx.Comm.Defined
+    name: Defined
+    href: CompassEx.Comm.Defined.html
+  - name: .
+  - uid: CompassEx.Comm.Defined.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.Defined.SkyLoc.html
+- uid: CompassEx.Guo.GuoClass.GuoAttr*
+  commentId: Overload:CompassEx.Guo.GuoClass.GuoAttr
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GuoAttr
+  name: GuoAttr
+  nameWithType: GuoClass.GuoAttr
+  fullName: CompassEx.Guo.GuoClass.GuoAttr
+- uid: CompassEx.Guo.GuoClass.GuoFate*
+  commentId: Overload:CompassEx.Guo.GuoClass.GuoFate
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GuoFate
+  name: GuoFate
+  nameWithType: GuoClass.GuoFate
+  fullName: CompassEx.Guo.GuoClass.GuoFate
+- uid: CompassEx.Guo.GuoClass.GetStringYaos*
+  commentId: Overload:CompassEx.Guo.GuoClass.GetStringYaos
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetStringYaos
+  name: GetStringYaos
+  nameWithType: GuoClass.GetStringYaos
+  fullName: CompassEx.Guo.GuoClass.GetStringYaos
+- uid: CompassEx.Guo.GuoClass.GetYaos*
+  commentId: Overload:CompassEx.Guo.GuoClass.GetYaos
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetYaos
+  name: GetYaos
+  nameWithType: GuoClass.GetYaos
+  fullName: CompassEx.Guo.GuoClass.GetYaos
+- uid: System.Int32[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int[]
+  nameWithType: int[]
+  fullName: int[]
+  nameWithType.vb: Integer()
+  fullName.vb: Integer()
+  name.vb: Integer()
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: (
+  - name: )
+- uid: CompassEx.Guo.GuoClass.GetChangeGuo*
+  commentId: Overload:CompassEx.Guo.GuoClass.GetChangeGuo
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetChangeGuo
+  name: GetChangeGuo
+  nameWithType: GuoClass.GetChangeGuo
+  fullName: CompassEx.Guo.GuoClass.GetChangeGuo
+- uid: CompassEx.Guo.GuoClass.GetSykStr*
+  commentId: Overload:CompassEx.Guo.GuoClass.GetSykStr
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetSykStr
+  name: GetSykStr
+  nameWithType: GuoClass.GetSykStr
+  fullName: CompassEx.Guo.GuoClass.GetSykStr
+- uid: CompassEx.Guo.GuoClass.GetHereThereStr*
+  commentId: Overload:CompassEx.Guo.GuoClass.GetHereThereStr
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetHereThereStr
+  name: GetHereThereStr
+  nameWithType: GuoClass.GetHereThereStr
+  fullName: CompassEx.Guo.GuoClass.GetHereThereStr
+- uid: CompassEx.Guo.GuoClass.GetHideRelativeStr*
+  commentId: Overload:CompassEx.Guo.GuoClass.GetHideRelativeStr
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetHideRelativeStr
+  name: GetHideRelativeStr
+  nameWithType: GuoClass.GetHideRelativeStr
+  fullName: CompassEx.Guo.GuoClass.GetHideRelativeStr
+- uid: CompassEx.Guo.GuoClass.GetYaosSkyLocStrShort*
+  commentId: Overload:CompassEx.Guo.GuoClass.GetYaosSkyLocStrShort
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetYaosSkyLocStrShort
+  name: GetYaosSkyLocStrShort
+  nameWithType: GuoClass.GetYaosSkyLocStrShort
+  fullName: CompassEx.Guo.GuoClass.GetYaosSkyLocStrShort
+- uid: CompassEx.Guo.GuoClass.GetYaosSkyLocStr*
+  commentId: Overload:CompassEx.Guo.GuoClass.GetYaosSkyLocStr
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetYaosSkyLocStr
+  name: GetYaosSkyLocStr
+  nameWithType: GuoClass.GetYaosSkyLocStr
+  fullName: CompassEx.Guo.GuoClass.GetYaosSkyLocStr
+- uid: CompassEx.Guo.GuoClass.GetSixGodStr*
+  commentId: Overload:CompassEx.Guo.GuoClass.GetSixGodStr
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetSixGodStr
+  name: GetSixGodStr
+  nameWithType: GuoClass.GetSixGodStr
+  fullName: CompassEx.Guo.GuoClass.GetSixGodStr
+- uid: CompassEx.Guo.GuoClass.GetSixRelativeStr*
+  commentId: Overload:CompassEx.Guo.GuoClass.GetSixRelativeStr
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetSixRelativeStr_System_String_System_Boolean_
+  name: GetSixRelativeStr
+  nameWithType: GuoClass.GetSixRelativeStr
+  fullName: CompassEx.Guo.GuoClass.GetSixRelativeStr
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: CompassEx.Guo.GuoClass.LoadAll*
+  commentId: Overload:CompassEx.Guo.GuoClass.LoadAll
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_LoadAll_System_String_System_String_
+  name: LoadAll
+  nameWithType: GuoClass.LoadAll
+  fullName: CompassEx.Guo.GuoClass.LoadAll
+- uid: CompassEx.Guo.GuoClass.LoadNoAvg*
+  commentId: Overload:CompassEx.Guo.GuoClass.LoadNoAvg
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_LoadNoAvg
+  name: LoadNoAvg
+  nameWithType: GuoClass.LoadNoAvg
+  fullName: CompassEx.Guo.GuoClass.LoadNoAvg
+- uid: CompassEx.Guo.GuoClass.GetGuoFace*
+  commentId: Overload:CompassEx.Guo.GuoClass.GetGuoFace
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetGuoFace_System_Collections_Generic_List_System_Int32__
+  name: GetGuoFace
+  nameWithType: GuoClass.GetGuoFace
+  fullName: CompassEx.Guo.GuoClass.GetGuoFace
+- uid: CompassEx.Guo.GuoClass.GetChangeGuoFace*
+  commentId: Overload:CompassEx.Guo.GuoClass.GetChangeGuoFace
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetChangeGuoFace
+  name: GetChangeGuoFace
+  nameWithType: GuoClass.GetChangeGuoFace
+  fullName: CompassEx.Guo.GuoClass.GetChangeGuoFace
+- uid: CompassEx.Guo.GuoClass.LoadHideRelative*
+  commentId: Overload:CompassEx.Guo.GuoClass.LoadHideRelative
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_LoadHideRelative
+  name: LoadHideRelative
+  nameWithType: GuoClass.LoadHideRelative
+  fullName: CompassEx.Guo.GuoClass.LoadHideRelative
+- uid: CompassEx.Guo.GuoClass.LoadSixRelative*
+  commentId: Overload:CompassEx.Guo.GuoClass.LoadSixRelative
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_LoadSixRelative
+  name: LoadSixRelative
+  nameWithType: GuoClass.LoadSixRelative
+  fullName: CompassEx.Guo.GuoClass.LoadSixRelative
+- uid: CompassEx.Guo.GuoClass.LoadGuoAliasName*
+  commentId: Overload:CompassEx.Guo.GuoClass.LoadGuoAliasName
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_LoadGuoAliasName
+  name: LoadGuoAliasName
+  nameWithType: GuoClass.LoadGuoAliasName
+  fullName: CompassEx.Guo.GuoClass.LoadGuoAliasName
+- uid: CompassEx.Guo.GuoClass.LoadGuoSelfandHereThere*
+  commentId: Overload:CompassEx.Guo.GuoClass.LoadGuoSelfandHereThere
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_LoadGuoSelfandHereThere
+  name: LoadGuoSelfandHereThere
+  nameWithType: GuoClass.LoadGuoSelfandHereThere
+  fullName: CompassEx.Guo.GuoClass.LoadGuoSelfandHereThere
+- uid: CompassEx.Guo.GuoClass.GetLostLocs*
+  commentId: Overload:CompassEx.Guo.GuoClass.GetLostLocs
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetLostLocs_System_String_System_String_
+  name: GetLostLocs
+  nameWithType: GuoClass.GetLostLocs
+  fullName: CompassEx.Guo.GuoClass.GetLostLocs
+- uid: CompassEx.Guo.GuoClass.LoadLostLoc*
+  commentId: Overload:CompassEx.Guo.GuoClass.LoadLostLoc
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_LoadLostLoc_System_String_System_String_
+  name: LoadLostLoc
+  nameWithType: GuoClass.LoadLostLoc
+  fullName: CompassEx.Guo.GuoClass.LoadLostLoc
+- uid: CompassEx.Guo.GuoClass.LoadSixGod*
+  commentId: Overload:CompassEx.Guo.GuoClass.LoadSixGod
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_LoadSixGod_System_String_
+  name: LoadSixGod
+  nameWithType: GuoClass.LoadSixGod
+  fullName: CompassEx.Guo.GuoClass.LoadSixGod
+- uid: CompassEx.Guo.GuoClass.GetGuoClassBySkyLoc*
+  commentId: Overload:CompassEx.Guo.GuoClass.GetGuoClassBySkyLoc
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetGuoClassBySkyLoc_System_String_
+  name: GetGuoClassBySkyLoc
+  nameWithType: GuoClass.GetGuoClassBySkyLoc
+  fullName: CompassEx.Guo.GuoClass.GetGuoClassBySkyLoc
+- uid: CompassEx.Guo.GuoClass.GetGuoClass*
+  commentId: Overload:CompassEx.Guo.GuoClass.GetGuoClass
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetGuoClass_System_String_
+  name: GetGuoClass
+  nameWithType: GuoClass.GetGuoClass
+  fullName: CompassEx.Guo.GuoClass.GetGuoClass
+- uid: CompassEx.Guo.GuoClass.FlowerGuoClass*
+  commentId: Overload:CompassEx.Guo.GuoClass.FlowerGuoClass
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_FlowerGuoClass_System_Int32_System_Int32_
+  name: FlowerGuoClass
+  nameWithType: GuoClass.FlowerGuoClass
+  fullName: CompassEx.Guo.GuoClass.FlowerGuoClass

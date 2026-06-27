@@ -47,7 +47,7 @@ namespace CompassEx.Guo
         public List<GuoSubClass> OutGuoSubs { get; set; } = null;
 
         /// <summary>
-        /// 6世飞爻卦（由初爻开始往上变，以后最卦接着变出共变7次，共8个卦）
+        /// 7世飞爻卦(京房易卦法)（由初爻开始往上变，以后最卦接着变出共变7次，共8个卦）
         /// </summary>
         public List<GuoClass> GuoList { get; set; } = null;
 
@@ -139,7 +139,7 @@ namespace CompassEx.Guo
 
 
         /// <summary>
-        /// 获得当前日期的命卦（三爻卦）后天
+        /// 获得当前日期的三元命卦（三爻卦）后天
         /// </summary>
         /// <param name="d">出生日期（公历）</param>
         /// <param name="Sex">性别</param>
