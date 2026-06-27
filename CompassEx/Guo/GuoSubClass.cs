@@ -84,28 +84,28 @@ namespace CompassEx.Guo
         /// <summary>
         /// 爻数组
         /// </summary>
-        public int[] Yaos = { 0, 0, 0 };//爻数组
+        public int[] Yaos { get; set; } = { 0, 0, 0 }; //爻数组
         /// <summary>
         /// 爻的纳甲天干
         /// </summary>        
-        public String SkyName;//爻的纳甲天干
+        public String SkyName { get; set; } //爻的纳甲天干
         /// <summary>
         /// 地支地爻位列表，同下而上
         /// </summary>
-        public List<LocClass> Locs;//地支地爻位列表，同下而上
+        public List<LocClass> Locs { get; set; } //地支地爻位列表，同下而上
 
         /// <summary>
         /// 地支开始的位置
         /// </summary>
-        public int LocIndex;//地支开始的位置
+        public int LocIndex { get; set; } //地支开始的位置
         /// <summary>
         /// 卦的伦理关系
         /// </summary>
-        public String GuoSubReluName;//卦的伦理关系
+        public String GuoSubReluName { get; set; } //卦的伦理关系
         /// <summary>
         /// 后天八卦的颜色属性
         /// </summary>
-        public String AfterGuoSubColor;//后天八卦的颜色属性
+        public String AfterGuoSubColor { get; set; } //后天八卦的颜色属性
 
 
 
@@ -121,15 +121,15 @@ namespace CompassEx.Guo
         /// <summary>
         /// 卦名，例如：乾
         /// </summary>
-        public String GuoSubName;//卦名，例如：乾
+        public String GuoSubName { get; set; } //卦名，例如：乾
         /// <summary>
         /// 卦的属性名,例如：天
         /// </summary>
-        public String GuoSubAttrName;//卦的属性名,例如：天
+        public String GuoSubAttrName { get; set; } //卦的属性名,例如：天
         /// <summary>
         /// 卦的五行属性
         /// </summary>
-        public String FiveAttrName;//卦的属性
+        public String FiveAttrName { get; set; } //卦的属性
 
         /// <summary>
         /// 先天八卦数中文

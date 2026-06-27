@@ -116,7 +116,7 @@ namespace CompassEx.Guo
 
 
         /// <summary>
-        /// 卦气（洛数）
+        /// 64卦气（洛数）
         /// </summary>
         public int GuoQi
         {
@@ -140,78 +140,78 @@ namespace CompassEx.Guo
         /// 下卦（内卦），三爻卦
         /// </summary>
         [JsonIgnore]
-        public GuoSubClass DownGuo;//下卦（内卦），三爻卦
+        public GuoSubClass DownGuo { get; set; } //下卦（内卦），三爻卦
         /// <summary>
         /// 上卦（外卦），三爻卦
         /// </summary>
         [JsonIgnore]
-        public GuoSubClass UpGuo;//上卦（外卦），三爻卦
+        public GuoSubClass UpGuo { get; set; } //上卦（外卦），三爻卦
         /// <summary>
         /// 六爻卦，卦名(简)
         /// </summary>
-        public String GuoName;//六爻卦，卦名
+        public String GuoName { get; set; } //六爻卦，卦名
         /// <summary>
         /// 六爻卦的全名
         /// </summary>
-        public String GuoFullName;//六爻卦的全名
+        public String GuoFullName { get; set; } //六爻卦的全名
         /// <summary>
         /// 卦的所在索引
         /// </summary>
-        public int GuoIndex = -1;//卦的所在索引
+        public int GuoIndex { get; set; } = -1; //卦的所在索引
         /// <summary>
         /// 六神
         /// </summary>
         [JsonIgnore]
-        public List<SixGodClass> SixGods;//六神
+        public List<SixGodClass> SixGods { get; set; } //六神
         /// <summary>
         /// 六亲
         /// </summary>
         [JsonIgnore]
-        public List<SixRelativeClass> SixRelative;//六亲
+        public List<SixRelativeClass> SixRelative { get; set; } //六亲
         /// <summary>
         /// 空亡的两个地支
         /// </summary>
         [JsonIgnore]
-        public List<LocClass> LostLocs;//空亡的两个地支
+        public List<LocClass> LostLocs { get; set; } //空亡的两个地支
         /// <summary>
         /// 世爻
         /// </summary>
-        public int HereYao;//世
+        public int HereYao { get; set; } //世
         /// <summary>
         /// 应爻
         /// </summary>
-        public int ThereYao;//应
+        public int ThereYao { get; set; } //应
 
         /// <summary>
         /// 已变化后的爻
         /// </summary>
         [JsonIgnore]
-        public List<int> ChangedYao;//变化后的爻
+        public List<int> ChangedYao { get; set; } //变化后的爻
 
         /// <summary>
         /// 卦的所属别名，例如：归魂卦，游魂卦，纯卦等
         /// </summary>
-        public String GuoAliasName = "";//卦的所属别名，例如：归魂卦，游魂卦，纯卦等
+        public String GuoAliasName { get; set; } = ""; //卦的所属别名，例如：归魂卦，游魂卦，纯卦等
         /// <summary>
         /// 卦宫(三爻卦),名称
         /// </summary>
         [JsonIgnore]
-        public GuoSubClass GuoSelf;//卦宫(三爻卦),名称
+        public GuoSubClass GuoSelf { get; set; } //卦宫(三爻卦),名称
         /// <summary>
         /// 伏神
         /// </summary>
         [JsonIgnore]
-        public List<SixRelativeClass> HideRelative;//伏神
+        public List<SixRelativeClass> HideRelative { get; set; } //伏神
         /// <summary>
         /// 伏神位置
         /// </summary>
         [JsonIgnore]
-        public List<int> HideRelativeYaos;//伏神位置
+        public List<int> HideRelativeYaos { get; set; } //伏神位置
         /// <summary>
         /// 爻动 [0,1]表示动初、二爻
         /// </summary>
         [JsonIgnore]
-        public List<int> YaoDoing;//爻动
+        public List<int> YaoDoing { get; set; } //爻动
 
         /// <summary>
         /// 罗盘中的度数范围对象，表示这个卦在罗盘中的位置范围

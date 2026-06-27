@@ -8,7 +8,10 @@
     <BuildType Project="Release" />
   </Project>
   <Project Path="CompassExTest/CompassExTest.csproj">
-    <Deploy Solution="Debug|*" />
+    <BuildType Project="Debug" />
+    <Deploy />
   </Project>
-  <Project Path="Generator/Generator.csproj" />
+  <Project Path="Generator/Generator.csproj">
+    <BuildType Project="Debug" />
+  </Project>
 </Solution>

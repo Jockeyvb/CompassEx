@@ -637,15 +637,22 @@ public class CompassSkiaRenderer
     #region 点击检测
     public string? HitTestGua(SKPoint touchPt, float canvasCenterX, float canvasCenterY)
     {
+        // 1. 依然计算当前旋转的弧度
         float rad = (float)DegToRad(Rotation);
+
+        // 触摸点相对圆心的偏移
         float dx = touchPt.X - canvasCenterX;
         float dy = touchPt.Y - canvasCenterY;
 
-        float rx = (float)(dx * Math.Cos(rad) + dy * Math.Sin(rad));
-        float ry = (float)(-dx * Math.Sin(rad) + dy * Math.Cos(rad));
+        // 2. 💥 核心修正：标准的二维逆矩阵变换（将触摸点反向旋转 rad 弧度还原）
+        // cos(-rad) = cos(rad),  sin(-rad) = -sin(rad)
+        float rx = (float)(dx * Math.Cos(rad) - dy * Math.Sin(rad));
+        float ry = (float)(dx * Math.Sin(rad) + dy * Math.Cos(rad));
 
+        // 3. 还原回未旋转时的原始画布坐标
         SKPoint rawTouch = new SKPoint(canvasCenterX + rx, canvasCenterY + ry);
 
+        // 4. 此时的 rawTouch 坐标系已完美对齐你的静态 Sector 缓存
         foreach (var item in GuaSectorCache)
         {
             if (item.Sector.Contains(rawTouch.X, rawTouch.Y))

@@ -23,7 +23,7 @@
                 HorizontalOptions="Center">
 
 
-            <skia:SKCanvasView x:Name="SkiaCompassView" PaintSurface="OnPaintSurface"  Touch="OnCanvasTouch"  WidthRequest="800" HeightRequest="800"/>
+            <skia:SKCanvasView x:Name="SkiaCompassView" PaintSurface="OnPaintSurface" EnableTouchEvents="True" Background="Transparent"  Touch="OnCanvasTouch"  WidthRequest="800" HeightRequest="800"   />
 
             <!--<GraphicsView x:Name="CompassCanvas"
                           Drawable="{Binding CompassPainter}"

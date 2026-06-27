@@ -67,35 +67,47 @@ public partial class TestPage : ContentPage, INotifyPropertyChanged
 
     private void OnCanvasTouch(object sender, SKTouchEventArgs e)
     {
-        // 仅响应按下操作
-        if (e.ActionType != SKTouchAction.Pressed)
-            return;
-
-        SKPoint touch = e.Location;
-        // 统一使用渲染器画布尺寸，不再硬编码取SkiaCompassView宽高
-        float cx = SkiaCompassView.CanvasSize.Width / 2f;
-        float cy = SkiaCompassView.CanvasSize.Height / 2f;
-
-        // 计算点击对应的罗盘刻度
-        double panelDegree = GetTouchPanelDegree(touch, cx, cy, _renderer.Rotation);
-        // 检测命中卦象
-        string? hitGua = _renderer.HitTestGua(touch, cx, cy);
-        string dirText = GetDirectionText(panelDegree);
-
-        // 执行旋转
-        _renderer.Rotation = panelDegree;
-        SkiaCompassView.InvalidateSurface();
-        // UI赋值切主线程，避免跨线程异常
-        MainThread.BeginInvokeOnMainThread(() =>
+        try
         {
-            string info = $"{panelDegree:F1}° 方位:{dirText}";
-            if (!string.IsNullOrEmpty(hitGua))
-            {
-                info += $" 选中卦:{hitGua}";
-            }
-            HeadingText = info;
-        });
 
+
+            // 仅响应按下操作
+            if (e.ActionType != SKTouchAction.Pressed)
+                return;
+
+            SKPoint touch = e.Location;
+            // 统一使用渲染器画布尺寸，不再硬编码取SkiaCompassView宽高
+            float cx = SkiaCompassView.CanvasSize.Width / 2f;
+            float cy = SkiaCompassView.CanvasSize.Height / 2f;
+
+            // 计算点击对应的罗盘刻度
+            double panelDegree = GetTouchPanelDegree(touch, cx, cy, _renderer.Rotation);
+            // 检测命中卦象
+            string? hitGua = _renderer.HitTestGua(touch, cx, cy);
+            string dirText = GetDirectionText(panelDegree);
+
+            // 执行旋转
+            _renderer.Rotation = panelDegree;
+            SkiaCompassView.InvalidateSurface();
+            // UI赋值切主线程，避免跨线程异常
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                string info = $"{panelDegree:F1}° 方位:{dirText}（先天）";
+                if (!string.IsNullOrEmpty(hitGua))
+                {
+                    info += $" 选中卦:{hitGua}";
+                }
+                HeadingText = info;
+            });
+        }
+        catch (Exception ex)
+        {
+
+        }
+        finally
+        {
+            e.Handled = true;
+        }
     }
 
     /// <summary>
@@ -108,20 +120,24 @@ public partial class TestPage : ContentPage, INotifyPropertyChanged
     /// <returns>0~360 罗盘刻度度数</returns>
     private double GetTouchPanelDegree(SKPoint touchPt, float cx, float cy, double rotateTotal)
     {
-        // 触摸点相对圆心偏移
+        // 1. 触摸点相对圆心的偏移量
         float dx = touchPt.X - cx;
         float dy = touchPt.Y - cy;
 
-        // Math.Atan2 标准：X右、Y下，转换为你的罗盘坐标系（0正北，顺时针）
-        // 原始弧度：正北向上为0，顺时针递增
+        // 防止用户极其精准地点中了圆心导致 dx 和 dy 均为 0，引发数学错误
+        if (Math.Abs(dx) < 0.001f && Math.Abs(dy) < 0.001f)
+            return rotateTotal;
+
+        // 2. 计算点击位置的绝对屏幕角度（正北向上为0，顺时针 0 ~ 360）
         double rad = Math.Atan2(dx, -dy);
         double rawAngle = rad * 180 / Math.PI;
         if (rawAngle < 0) rawAngle += 360;
 
-        // 抵消罗盘旋转：罗盘顺时针转 rotateTotal，面板刻度就要反向减
-        double target = rawAngle - rotateTotal;
+        // 3. 💥 核心修正：加上罗盘旋转角度
+        // 盘面顺时针转，等于点击的刻度逆时针移，所以盘面上的真实刻度需要累加当前转过去的度数
+        double target = rawAngle + rotateTotal;
 
-        // 规范到 0 ~ 360
+        // 4. 规范到 0 ~ 360 范围
         target %= 360;
         if (target < 0) target += 360;
 
