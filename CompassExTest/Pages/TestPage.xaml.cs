@@ -95,7 +95,7 @@ public partial class TestPage : ContentPage, INotifyPropertyChanged
                 string info = $"{panelDegree:F1}° 方位:{dirText}（先天）";
                 if (!string.IsNullOrEmpty(hitGua))
                 {
-                    info += $" 选中卦:{hitGua}";
+                    info += $" 选中:{hitGua}";
                 }
                 HeadingText = info;
             });

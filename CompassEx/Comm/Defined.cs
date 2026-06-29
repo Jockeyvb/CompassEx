@@ -13,41 +13,31 @@
 using System;
 
 namespace CompassEx.Comm
-{
+{  /// <summary>
+   /// 是否为真实年(龄),0为立春后，1立春前
+   /// </summary>
+    public enum FactYearEnum : uint
+    {
+
+        /// <summary>
+        /// 立春后
+        /// </summary>
+        SpringAfter = 0,
+        /// <summary>
+        /// 立春前
+        /// </summary>
+        SpringBefore = 1,
+
+    }
     public static class Defined
     {
 
         /// <summary>
         /// 太极符号
         /// </summary>
-        public static readonly string TaiChiSymbol = "\u262F";	//太极图
+        public static readonly string TaiChiSymbol = "\u262F";  //太极图
 
-        /// <summary>
-        /// 是否为真实年(龄),0为立春后，1立春前
-        /// </summary>
-        public enum FactYearEnum : uint
-        {
 
-            /// <summary>
-            /// 立春后
-            /// </summary>
-            SpringAfter = 0,
-            /// <summary>
-            /// 立春前
-            /// </summary>
-            SpringBefore = 1,
-
-        }
-        /// <summary>
-        /// 天干地支类
-        /// </summary>
-        public struct SkyLoc
-        {
-            public string SkyLocName;
-            public SkyClass Sky;
-            public LocClass Loc;
-
-        }
 
         public readonly static String[] CNMonthName = { "正", "二", "三", "四", "五", "六", "七", "八", "九", "十", "冬", "腊" };//十二个月名称
         public readonly static String[] CNLocTwelve = { "建", "除", "满", "平", "定", "执", "破", "危", "成", "收", "开", "闭" };//地支十二决

@@ -5,7 +5,9 @@ items:
   id: SkyClass
   parent: CompassEx.Comm
   children:
-  - CompassEx.Comm.SkyClass.FiveAttrName
+  - CompassEx.Comm.SkyClass.#ctor(System.Int32)
+  - CompassEx.Comm.SkyClass.#ctor(System.String)
+  - CompassEx.Comm.SkyClass.FiveAttr
   - CompassEx.Comm.SkyClass.GetSkyClass(System.Int32)
   - CompassEx.Comm.SkyClass.GetSkyClass(System.String)
   - CompassEx.Comm.SkyClass.Index
@@ -64,17 +66,19 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SkyNames
     path: CompassEx/Comm/SkyClass.cs
-    startLine: 21
+    startLine: 24
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
+  summary: 天干名称列表
+  example: []
   syntax:
     content: public static string[] SkyNames
     return:
       type: System.String[]
     content.vb: Public Shared SkyNames As String()
 - uid: CompassEx.Comm.SkyClass.SkyName
-  commentId: F:CompassEx.Comm.SkyClass.SkyName
+  commentId: P:CompassEx.Comm.SkyClass.SkyName
   id: SkyName
   parent: CompassEx.Comm.SkyClass
   langs:
@@ -83,7 +87,7 @@ items:
   name: SkyName
   nameWithType: SkyClass.SkyName
   fullName: CompassEx.Comm.SkyClass.SkyName
-  type: Field
+  type: Property
   source:
     remote:
       path: CompassEx/Comm/SkyClass.cs
@@ -91,17 +95,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SkyName
     path: CompassEx/Comm/SkyClass.cs
-    startLine: 22
+    startLine: 29
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
+  summary: 地支名称
+  example: []
   syntax:
-    content: public string SkyName
+    content: public string SkyName { get; }
+    parameters: []
     return:
       type: System.String
-    content.vb: Public SkyName As String
+    content.vb: Public Property SkyName As String
+  overload: CompassEx.Comm.SkyClass.SkyName*
 - uid: CompassEx.Comm.SkyClass.Index
-  commentId: F:CompassEx.Comm.SkyClass.Index
+  commentId: P:CompassEx.Comm.SkyClass.Index
   id: Index
   parent: CompassEx.Comm.SkyClass
   langs:
@@ -110,7 +118,7 @@ items:
   name: Index
   nameWithType: SkyClass.Index
   fullName: CompassEx.Comm.SkyClass.Index
-  type: Field
+  type: Property
   source:
     remote:
       path: CompassEx/Comm/SkyClass.cs
@@ -118,42 +126,128 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Index
     path: CompassEx/Comm/SkyClass.cs
-    startLine: 23
+    startLine: 34
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
+  summary: 天干索引
+  example: []
   syntax:
-    content: public int Index
+    content: public int Index { get; }
+    parameters: []
     return:
       type: System.Int32
-    content.vb: Public Index As Integer
-- uid: CompassEx.Comm.SkyClass.FiveAttrName
-  commentId: F:CompassEx.Comm.SkyClass.FiveAttrName
-  id: FiveAttrName
+    content.vb: Public Property Index As Integer
+  overload: CompassEx.Comm.SkyClass.Index*
+- uid: CompassEx.Comm.SkyClass.FiveAttr
+  commentId: P:CompassEx.Comm.SkyClass.FiveAttr
+  id: FiveAttr
   parent: CompassEx.Comm.SkyClass
   langs:
   - csharp
   - vb
-  name: FiveAttrName
-  nameWithType: SkyClass.FiveAttrName
-  fullName: CompassEx.Comm.SkyClass.FiveAttrName
-  type: Field
+  name: FiveAttr
+  nameWithType: SkyClass.FiveAttr
+  fullName: CompassEx.Comm.SkyClass.FiveAttr
+  type: Property
   source:
     remote:
       path: CompassEx/Comm/SkyClass.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: FiveAttrName
+    id: FiveAttr
     path: CompassEx/Comm/SkyClass.cs
-    startLine: 24
+    startLine: 39
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
+  summary: 五行属性名
+  example: []
   syntax:
-    content: public string FiveAttrName
+    content: public FiveAttr FiveAttr { get; }
+    parameters: []
     return:
+      type: CompassEx.Comm.FiveAttr
+    content.vb: Public Property FiveAttr As FiveAttr
+  overload: CompassEx.Comm.SkyClass.FiveAttr*
+- uid: CompassEx.Comm.SkyClass.#ctor(System.String)
+  commentId: M:CompassEx.Comm.SkyClass.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: CompassEx.Comm.SkyClass
+  langs:
+  - csharp
+  - vb
+  name: SkyClass(string)
+  nameWithType: SkyClass.SkyClass(string)
+  fullName: CompassEx.Comm.SkyClass.SkyClass(string)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Comm/SkyClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Comm/SkyClass.cs
+    startLine: 46
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 天干构造函数
+  example: []
+  syntax:
+    content: public SkyClass(string sSkyName)
+    parameters:
+    - id: sSkyName
       type: System.String
-    content.vb: Public FiveAttrName As String
+      description: 天干名称
+    content.vb: Public Sub New(sSkyName As String)
+  overload: CompassEx.Comm.SkyClass.#ctor*
+  exceptions:
+  - type: System.IndexOutOfRangeException
+    commentId: T:System.IndexOutOfRangeException
+    description: ''
+  nameWithType.vb: SkyClass.New(String)
+  fullName.vb: CompassEx.Comm.SkyClass.New(String)
+  name.vb: New(String)
+- uid: CompassEx.Comm.SkyClass.#ctor(System.Int32)
+  commentId: M:CompassEx.Comm.SkyClass.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: CompassEx.Comm.SkyClass
+  langs:
+  - csharp
+  - vb
+  name: SkyClass(int)
+  nameWithType: SkyClass.SkyClass(int)
+  fullName: CompassEx.Comm.SkyClass.SkyClass(int)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Comm/SkyClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Comm/SkyClass.cs
+    startLine: 56
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 天干构造函数
+  example: []
+  syntax:
+    content: public SkyClass(int iSkyIndex)
+    parameters:
+    - id: iSkyIndex
+      type: System.Int32
+      description: 天干所在的索引，参考：【<xref href="CompassEx.Comm.SkyClass.SkyNames" data-throw-if-not-resolved="false"></xref>】
+    content.vb: Public Sub New(iSkyIndex As Integer)
+  overload: CompassEx.Comm.SkyClass.#ctor*
+  exceptions:
+  - type: System.IndexOutOfRangeException
+    commentId: T:System.IndexOutOfRangeException
+    description: ''
+  nameWithType.vb: SkyClass.New(Integer)
+  fullName.vb: CompassEx.Comm.SkyClass.New(Integer)
+  name.vb: New(Integer)
 - uid: CompassEx.Comm.SkyClass.GetSkyClass(System.String)
   commentId: M:CompassEx.Comm.SkyClass.GetSkyClass(System.String)
   id: GetSkyClass(System.String)
@@ -172,7 +266,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSkyClass
     path: CompassEx/Comm/SkyClass.cs
-    startLine: 30
+    startLine: 89
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -210,7 +304,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSkyClass
     path: CompassEx/Comm/SkyClass.cs
-    startLine: 41
+    startLine: 100
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -616,6 +710,12 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: (
   - name: )
+- uid: CompassEx.Comm.SkyClass.SkyName*
+  commentId: Overload:CompassEx.Comm.SkyClass.SkyName
+  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_SkyName
+  name: SkyName
+  nameWithType: SkyClass.SkyName
+  fullName: CompassEx.Comm.SkyClass.SkyName
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -627,6 +727,12 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: CompassEx.Comm.SkyClass.Index*
+  commentId: Overload:CompassEx.Comm.SkyClass.Index
+  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_Index
+  name: Index
+  nameWithType: SkyClass.Index
+  fullName: CompassEx.Comm.SkyClass.Index
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -638,6 +744,41 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: CompassEx.Comm.SkyClass.FiveAttr*
+  commentId: Overload:CompassEx.Comm.SkyClass.FiveAttr
+  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_FiveAttr
+  name: FiveAttr
+  nameWithType: SkyClass.FiveAttr
+  fullName: CompassEx.Comm.SkyClass.FiveAttr
+- uid: CompassEx.Comm.FiveAttr
+  commentId: T:CompassEx.Comm.FiveAttr
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.FiveAttr.html
+  name: FiveAttr
+  nameWithType: FiveAttr
+  fullName: CompassEx.Comm.FiveAttr
+- uid: System.IndexOutOfRangeException
+  commentId: T:System.IndexOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception
+  name: IndexOutOfRangeException
+  nameWithType: IndexOutOfRangeException
+  fullName: System.IndexOutOfRangeException
+- uid: CompassEx.Comm.SkyClass.#ctor*
+  commentId: Overload:CompassEx.Comm.SkyClass.#ctor
+  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass__ctor_System_String_
+  name: SkyClass
+  nameWithType: SkyClass.SkyClass
+  fullName: CompassEx.Comm.SkyClass.SkyClass
+  nameWithType.vb: SkyClass.New
+  fullName.vb: CompassEx.Comm.SkyClass.New
+  name.vb: New
+- uid: CompassEx.Comm.SkyClass.SkyNames
+  commentId: F:CompassEx.Comm.SkyClass.SkyNames
+  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_SkyNames
+  name: SkyNames
+  nameWithType: SkyClass.SkyNames
+  fullName: CompassEx.Comm.SkyClass.SkyNames
 - uid: CompassEx.Comm.SkyClass.GetSkyClass*
   commentId: Overload:CompassEx.Comm.SkyClass.GetSkyClass
   href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_GetSkyClass_System_String_

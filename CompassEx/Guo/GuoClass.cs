@@ -14,6 +14,7 @@ using CompassEx.Comm;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
 
 
@@ -115,22 +116,19 @@ namespace CompassEx.Guo
     };
 
 
+
+
+
+
         /// <summary>
-        /// 64卦气（洛数）
+        /// 64卦气（洛数）先天五行数
         /// </summary>
-        public int GuoQi
+        public GuoQi GuoQi
         {
             get
             {
 
-                foreach (string sn in GuoSubClass.BeforeGuoSubNames)
-                {
-                    var gs = GuoSubClass.GetGuoSub(sn);
-                    var CR = gs.CAfterRangeDegree;
-                    if (this.UpGuo.CBeforRangeDegree.IsInRange(CR.Start))
-                        return gs.AfterQuantity + 1;
-                }
-                return -1;
+                return this.UpGuo.GuoQi;//上卦洛数为卦气
             }
 
         }
@@ -140,73 +138,73 @@ namespace CompassEx.Guo
         /// 下卦（内卦），三爻卦
         /// </summary>
         [JsonIgnore]
-        public GuoSubClass DownGuo { get; set; } //下卦（内卦），三爻卦
+        public GuoSubClass DownGuo { get; private set; } //下卦（内卦），三爻卦
         /// <summary>
         /// 上卦（外卦），三爻卦
         /// </summary>
         [JsonIgnore]
-        public GuoSubClass UpGuo { get; set; } //上卦（外卦），三爻卦
+        public GuoSubClass UpGuo { get; private set; } //上卦（外卦），三爻卦
         /// <summary>
         /// 六爻卦，卦名(简)
         /// </summary>
-        public String GuoName { get; set; } //六爻卦，卦名
+        public String GuoName { get; private set; } //六爻卦，卦名
         /// <summary>
         /// 六爻卦的全名
         /// </summary>
-        public String GuoFullName { get; set; } //六爻卦的全名
+        public String GuoFullName { get; private set; } //六爻卦的全名
         /// <summary>
         /// 卦的所在索引
         /// </summary>
-        public int GuoIndex { get; set; } = -1; //卦的所在索引
+        public int GuoIndex { get; private set; } = -1; //卦的所在索引
         /// <summary>
         /// 六神
         /// </summary>
         [JsonIgnore]
-        public List<SixGodClass> SixGods { get; set; } //六神
+        public List<SixGodClass> SixGods { get; private set; } //六神
         /// <summary>
         /// 六亲
         /// </summary>
         [JsonIgnore]
-        public List<SixRelativeClass> SixRelative { get; set; } //六亲
+        public List<SixRelativeClass> SixRelative { get; private set; } //六亲
         /// <summary>
         /// 空亡的两个地支
         /// </summary>
         [JsonIgnore]
-        public List<LocClass> LostLocs { get; set; } //空亡的两个地支
+        public List<LocClass> LostLocs { get; private set; } //空亡的两个地支
         /// <summary>
         /// 世爻
         /// </summary>
-        public int HereYao { get; set; } //世
+        public int HereYao { get; private set; } //世
         /// <summary>
         /// 应爻
         /// </summary>
-        public int ThereYao { get; set; } //应
+        public int ThereYao { get; private set; } //应
 
         /// <summary>
         /// 已变化后的爻
         /// </summary>
         [JsonIgnore]
-        public List<int> ChangedYao { get; set; } //变化后的爻
+        public List<int> ChangedYao { get; private set; } //变化后的爻
 
         /// <summary>
         /// 卦的所属别名，例如：归魂卦，游魂卦，纯卦等
         /// </summary>
-        public String GuoAliasName { get; set; } = ""; //卦的所属别名，例如：归魂卦，游魂卦，纯卦等
+        public String GuoAliasName { get; private set; } = ""; //卦的所属别名，例如：归魂卦，游魂卦，纯卦等
         /// <summary>
         /// 卦宫(三爻卦),名称
         /// </summary>
         [JsonIgnore]
-        public GuoSubClass GuoSelf { get; set; } //卦宫(三爻卦),名称
+        public GuoSubClass GuoSelf { get; private set; } //卦宫(三爻卦),名称
         /// <summary>
         /// 伏神
         /// </summary>
         [JsonIgnore]
-        public List<SixRelativeClass> HideRelative { get; set; } //伏神
+        public List<SixRelativeClass> HideRelative { get; private set; } //伏神
         /// <summary>
         /// 伏神位置
         /// </summary>
         [JsonIgnore]
-        public List<int> HideRelativeYaos { get; set; } //伏神位置
+        public List<int> HideRelativeYaos { get; private set; } //伏神位置
         /// <summary>
         /// 爻动 [0,1]表示动初、二爻
         /// </summary>
@@ -223,7 +221,42 @@ namespace CompassEx.Guo
         /// <summary>
         /// 先天64卦名与符号
         /// </summary>
-        public static readonly Dictionary<string, string> BeforGuoDC = new Dictionary<string, string> { { "坤", "\u4DC1" }, { "剥", "\u4DFE" }, { "比", "\u4DC7" }, { "观", "\u4DD3" }, { "豫", "\u4DFB" }, { "晋", "\u4DFA" }, { "萃", "\u4DF9" }, { "否", "\u4DCB" }, { "谦", "\u4DCF" }, { "艮", "\u4DF6" }, { "蹇", "\u4DF5" }, { "渐", "\u4DF4" }, { "小过", "\u4DF3" }, { "旅", "\u4DF2" }, { "咸", "\u4DDE" }, { "遯", "\u4DF0" }, { "师", "\u4DC6" }, { "蒙", "\u4DDE" }, { "坎", "\u4DDC" }, { "涣", "\u4DEC" }, { "解", "\u4DEB" }, { "未济", "\u4DEA" }, { "困", "\u4DE9" }, { "讼", "\u4DC5" }, { "升", "\u4DE7" }, { "蛊", "\u4DD1" }, { "井", "\u4DE5" }, { "巽", "\u4DE4" }, { "恒", "\u4DDF" }, { "鼎", "\u4DE2" }, { "大过", "\u4DDB" }, { "姤", "\u4DE0" }, { "乾", "\u4DC0" }, { "夬", "\u4DE8" }, { "大有", "\u4DCD" }, { "大壮", "\u4DDB" }, { "小畜", "\u4DC8" }, { "需", "\u4DC4" }, { "大畜", "\u4DD9" }, { "泰", "\u4DCA" }, { "履", "\u4DC9" }, { "兑", "\u4DDF" }, { "睽", "\u4DE6" }, { "归妹", "\u4DE5" }, { "中孚", "\u4DDC" }, { "节", "\u4DEB" }, { "损", "\u4DD9" }, { "临", "\u4DD2" }, { "同人", "\u4DCC" }, { "革", "\u4DE3" }, { "离", "\u4DDD" }, { "丰", "\u4DCD" }, { "家人", "\u4DE4" }, { "既济", "\u4DE9" }, { "贲", "\u4DD5" }, { "明夷", "\u4DCE" }, { "无妄", "\u4DD8" }, { "随", "\u4DD0" }, { "噬嗑", "\u4DD4" }, { "震", "\u4DC6" }, { "益", "\u4DCF" }, { "屯", "\u4DC2" }, { "颐", "\u4DDA" }, { "复", "\u4DD7" } };
+        public static readonly Dictionary<string, string> BeforGuoICONs = new Dictionary<string, string> { { "坤", "\u4DC1" }, { "剥", "\u4DFE" }, { "比", "\u4DC7" }, { "观", "\u4DD3" }, { "豫", "\u4DFB" }, { "晋", "\u4DFA" }, { "萃", "\u4DF9" }, { "否", "\u4DCB" }, { "谦", "\u4DCF" }, { "艮", "\u4DF6" }, { "蹇", "\u4DF5" }, { "渐", "\u4DF4" }, { "小过", "\u4DF3" }, { "旅", "\u4DF2" }, { "咸", "\u4DDE" }, { "遯", "\u4DF0" }, { "师", "\u4DC6" }, { "蒙", "\u4DDE" }, { "坎", "\u4DDC" }, { "涣", "\u4DEC" }, { "解", "\u4DEB" }, { "未济", "\u4DEA" }, { "困", "\u4DE9" }, { "讼", "\u4DC5" }, { "升", "\u4DE7" }, { "蛊", "\u4DD1" }, { "井", "\u4DE5" }, { "巽", "\u4DE4" }, { "恒", "\u4DDF" }, { "鼎", "\u4DE2" }, { "大过", "\u4DDB" }, { "姤", "\u4DE0" }, { "乾", "\u4DC0" }, { "夬", "\u4DE8" }, { "大有", "\u4DCD" }, { "大壮", "\u4DDB" }, { "小畜", "\u4DC8" }, { "需", "\u4DC4" }, { "大畜", "\u4DD9" }, { "泰", "\u4DCA" }, { "履", "\u4DC9" }, { "兑", "\u4DDF" }, { "睽", "\u4DE6" }, { "归妹", "\u4DE5" }, { "中孚", "\u4DDC" }, { "节", "\u4DEB" }, { "损", "\u4DD9" }, { "临", "\u4DD2" }, { "同人", "\u4DCC" }, { "革", "\u4DE3" }, { "离", "\u4DDD" }, { "丰", "\u4DCD" }, { "家人", "\u4DE4" }, { "既济", "\u4DE9" }, { "贲", "\u4DD5" }, { "明夷", "\u4DCE" }, { "无妄", "\u4DD8" }, { "随", "\u4DD0" }, { "噬嗑", "\u4DD4" }, { "震", "\u4DC6" }, { "益", "\u4DCF" }, { "屯", "\u4DC2" }, { "颐", "\u4DDA" }, { "复", "\u4DD7" } };
+
+
+
+        /// <summary>
+        /// 复卦（六爻卦）结构函数
+        /// </summary>
+        /// <param name="GuoName">先天64卦名</param>
+        /// <exception cref="IndexOutOfRangeException"></exception>
+        public GuoClass(string GuoName) : this(GuoNames.IndexOf(GuoName))
+        {
+
+        }
+
+
+        /// <summary>
+        /// 复卦（六爻卦）结构函数
+        /// </summary>
+        /// <param name="BeforGuoIndex">先天64卦的索引</param>
+        /// <exception cref="IndexOutOfRangeException"></exception>
+        public GuoClass(int BeforGuoIndex)
+        {
+            if (BeforGuoIndex < 0 || BeforGuoIndex > GuoNames.Length) throw new IndexOutOfRangeException(nameof(BeforGuoIndex));
+            string sGuoName = GuoFullNames[BeforGuoIndex];
+            this.GuoFullName = GetFullGuoName(sGuoName);
+            String sUpGuoName = GetGuoSubName(this.GuoFullName, true);
+            String sDownGuoName = GetGuoSubName(this.GuoFullName, false);
+
+            this.UpGuo = GuoSubClass.GetGuoSub(sUpGuoName, false);
+            this.DownGuo = GuoSubClass.GetGuoSub(sDownGuoName, true);
+            this.GuoIndex = Array.IndexOf(GuoClass.GuoFullNames, this.GuoFullName);
+            this.GuoName = GuoClass.GuoNames[this.GuoIndex];
+
+
+        }
+
 
         /// <summary>
         /// 本卦中的通卦
@@ -241,38 +274,41 @@ namespace CompassEx.Guo
 
 
 
+
+
+
         /// <summary>
-        /// 获得当前卦的6世飞爻卦,京房易卦变(7世飞爻荡出，用于计算命命的入卦,此是64卦变卦规则)，一般用于六冲（纯）卦
+        /// 获得当前卦的7世飞爻卦,京房易卦变(7世飞爻荡出，用于计算命命的入卦,此是64卦变卦规则)，一般采用六爻卦之卦宫（纯）卦推演
         /// </summary>
         /// <returns></returns>
-        public List<GuoClass> Get6HereYaoGuo()
+        public List<GuoClass> Get7HereYaoGuo()
         {
             //64卦变卦规则:初爻变出第一世飞爻卦,以后的飞爻卦由上一个飞爻卦的初爻变出,共变5次后，再返回第5爻变（游魂卦），再把下卦三爻全变（归魂卦），
+            if (this.UpGuo != this.DownGuo) throw new Exception("本卦不是纯卦，不能用于计算7世飞爻卦");
+
             List<GuoClass> GuoIns = new List<GuoClass>();
             GuoIns.Add(this);
-            var g = new GuoClass();
-            g.ApplyBaseProperties(this);//复制本卦
+            GuoClass g = new GuoClass(this.GuoName);
+
             GuoClass ng;
             for (int i = 0; i < 5; i++)
             {
-                ng = new GuoClass();
-                ng.ApplyBaseProperties(g);//复制上次的卦
+                ng = new GuoClass(g.GuoName);
+
                 ng.YaoDoing = new List<int>() { i }; //变爻
                 g = ng.GetChangeGuo();//变卦
                 GuoIns.Add(g);//加入变出的卦
 
             }
             //第7个卦为游魂卦(再返回第5爻变 ）
-            ng = new GuoClass();
-            ng.ApplyBaseProperties(g);//复制上次的卦
+            ng = new GuoClass(g.GuoName);
             ng.YaoDoing = new List<int>() { 3 }; //变4爻
             g = ng.GetChangeGuo();//变卦
             GuoIns.Add(g);//加入变出的卦
 
 
             //第8个卦为归魂卦(再把下卦三爻全变 ）
-            ng = new GuoClass();
-            ng.ApplyBaseProperties(g);//复制上次的卦
+            ng = new GuoClass(g.GuoName);
             ng.YaoDoing = new List<int>() { 0, 1, 2 }; //变123爻
             g = ng.GetChangeGuo();//变卦
             GuoIns.Add(g);//加入变出的卦
@@ -305,19 +341,17 @@ namespace CompassEx.Guo
 
 
         /// <summary>
-        /// 返回卦对应原天干地去结构类型
+        ///（64卦对应60甲子）返回卦对应原天干地支结构类型
         /// </summary>
         [JsonIgnore]
-        public Defined.SkyLoc GuoSkyLoc
+        public SkyLoc GuoSkyLoc
         {
             get
             {
-                Defined.SkyLoc ls = new Defined.SkyLoc();
+                SkyLoc sl = new SkyLoc(GuoSkyLocs[this.GuoIndex]); //天干地支顺序与卦序相同(易经卦序)
                 string s = GuoSkyLocs[this.GuoIndex];
-                ls.SkyLocName = s;
-                ls.Sky = SkyClass.GetSkyClass(s.Substring(0, 1));
-                ls.Loc = LocClass.GetLocClass(s.Substring(1, 1));
-                return ls;
+
+                return sl;
             }
         }
 
@@ -502,7 +536,7 @@ namespace CompassEx.Guo
         }
 
         /// <summary>
-        /// 获得天干的字符形式
+        /// （京房卦象纳甲，非杨公纳甲）获得天干的字符形式
         /// </summary>
         /// <returns></returns>
         public String GetSykStr()
@@ -551,7 +585,7 @@ namespace CompassEx.Guo
                     {
                         if (i < 3) gsc = gc.DownGuo; else gsc = gc.UpGuo;
                         LocClass lc = gsc.Locs[i % 3];
-                        s += lc.LocName + lc.FiveAttrName + gc.SixRelative[i].RelativeName + "(伏)";
+                        s += lc.LocName + lc.FiveAttr.Name + gc.SixRelative[i].RelativeName + "(伏)";
                     }
                 }
                 s += "\n";
@@ -593,12 +627,12 @@ namespace CompassEx.Guo
             for (int i = this.UpGuo.Locs.Count - 1; i >= 0; i--)
             {//由上而下
                 LocClass lc = this.UpGuo.Locs[i];
-                s += lc.LocName + lc.FiveAttrName + "\n";
+                s += lc.LocName + lc.FiveAttr.Name + "\n";
             }
             for (int i = this.DownGuo.Locs.Count - 1; i >= 0; i--)
             {//由上而下
                 LocClass lc = this.DownGuo.Locs[i];
-                s += lc.LocName + lc.FiveAttrName + "\n";
+                s += lc.LocName + lc.FiveAttr.Name + "\n";
             }
             if (s.Length > 1) s = s.Substring(0, s.Length - 1);
             return s;
@@ -635,7 +669,7 @@ namespace CompassEx.Guo
             for (int i = al.Count - 1; i >= 0; i--)
             {//由上而下
                 LocClass lc = al[i];
-                FiveAttr.FiveAttrRule far = FiveAttr.GetBothAttrRule(GuoSelfAttr, lc.FiveAttrName);
+                FiveAttrRule far = FiveAttr.GetBothAttrRule(GuoSelfAttr, lc.FiveAttr.Name);
                 SixRelativeClass src = SixRelativeClass.GetSixRelative(far);
                 s += src.RelativeName + "\n";
             }
@@ -844,21 +878,21 @@ namespace CompassEx.Guo
             for (int i = 0; i < 3; i++)
             {
                 LocClass lc = this.DownGuo.Locs[i];
-                FiveAttr.FiveAttrRule far = FiveAttr.GetBothAttrRule(this.GuoSelf.FiveAttrName, lc.FiveAttrName);
+                FiveAttrRule far = FiveAttr.GetBothAttrRule(this.GuoSelf.FiveAttr.Name, lc.FiveAttr.Name);
                 SixRelativeClass src = SixRelativeClass.GetSixRelative(far);
                 srcs.Add(src);
             }
             for (int i = 0; i < 3; i++)
             {
                 LocClass lc = this.UpGuo.Locs[i];
-                FiveAttr.FiveAttrRule far = FiveAttr.GetBothAttrRule(this.GuoSelf.FiveAttrName, lc.FiveAttrName);
+                FiveAttrRule far = FiveAttr.GetBothAttrRule(this.GuoSelf.FiveAttr.Name, lc.FiveAttr.Name);
                 SixRelativeClass src = SixRelativeClass.GetSixRelative(far);
                 srcs.Add(src);
             }
             this.SixRelative = srcs;
         }
         /// <summary>
-        /// 加载卦宫的别名
+        /// 加载卦的别名
         /// </summary>
         public void LoadGuoAliasName()
         {
@@ -887,7 +921,7 @@ namespace CompassEx.Guo
         /// <summary>
         /// 定卦宫 和世应
         /// </summary>
-        public void LoadGuoSelfandHereThere()
+        private void LoadGuoSelfandHereThere()
         {
             if (this.DownGuo == null || this.UpGuo == null) return;
             int[] Yaos = { 0, 0, 0 };
@@ -985,7 +1019,7 @@ namespace CompassEx.Guo
         /// </summary>
         /// <param name="sSkyName"></param>
         /// <param name="sLocName"></param>
-        public void LoadLostLoc(String sSkyName, String sLocName)
+        private void LoadLostLoc(String sSkyName, String sLocName)
         {
 
             this.LostLocs = GetLostLocs(sSkyName, sLocName);
@@ -995,7 +1029,7 @@ namespace CompassEx.Guo
         /// 加载六神(由下而上)
         /// </summary>
         /// <param name="sSkyName"></param>
-        public void LoadSixGod(String sSkyName)
+        private void LoadSixGod(String sSkyName)
         {
 
             this.SixGods = SixGodClass.GetSixGod(sSkyName);
@@ -1101,16 +1135,8 @@ namespace CompassEx.Guo
         /// <returns></returns>
         public static GuoClass GetGuoClass(String sGuoName)
         {
-            GuoClass gc = new GuoClass();
-            gc.GuoFullName = GetFullGuoName(sGuoName);
-            String sUpGuoName = GetGuoSubName(gc.GuoFullName, true);
-            String sDownGuoName = GetGuoSubName(gc.GuoFullName, false);
+            return new GuoClass(sGuoName);
 
-            gc.UpGuo = GuoSubClass.GetGuoSub(sUpGuoName, false);
-            gc.DownGuo = GuoSubClass.GetGuoSub(sDownGuoName, true);
-            gc.GuoIndex = Array.IndexOf(GuoClass.GuoFullNames, gc.GuoFullName);
-            gc.GuoName = GuoClass.GuoNames[gc.GuoIndex];
-            return gc;
         }
 
         /// <summary>
@@ -1120,18 +1146,10 @@ namespace CompassEx.Guo
         /// <returns></returns>
         public static GuoClass GetGuoClass(int iGuoIndex)
         {
-            String sGuoFullName = GuoFullNames[iGuoIndex];
 
-            GuoClass gc = new GuoClass();
-            gc.GuoFullName = sGuoFullName;
-            String sUpGuoName = GetGuoSubName(sGuoFullName, true);
-            String sDownGuoName = GetGuoSubName(sGuoFullName, false);
 
-            gc.UpGuo = GuoSubClass.GetGuoSub(sUpGuoName, false);
-            gc.DownGuo = GuoSubClass.GetGuoSub(sDownGuoName, true);
-            gc.GuoIndex = Array.IndexOf(GuoClass.GuoFullNames, gc.GuoFullName);
-            gc.GuoName = GuoClass.GuoNames[gc.GuoIndex];
-            return gc;
+            return new GuoClass(iGuoIndex);
+
         }
 
 
@@ -1142,12 +1160,8 @@ namespace CompassEx.Guo
         /// <returns></returns>
         public static GuoClass GetGuoClass(int[] iYaos)
         {
-            List<int> al = new List<int>();
-            for (int i = 0; i < iYaos.Length; i++)
-            {
-                al.Add(iYaos[i]);
-            }
-            return GetGuoClass(al);
+
+            return GetGuoClass(iYaos.ToList());
         }
 
         /// <summary>
@@ -1160,10 +1174,10 @@ namespace CompassEx.Guo
 
             if (iYaos.Count != 6) return null;
 
-            GuoSubClass gsc = GuoSubClass.GetGuoSub(iYaos[0] % 2, iYaos[1] % 2, iYaos[2] % 2, true);
+            GuoSubClass gsc = GuoSubClass.GetGuoSub(iYaos[0] % 2, iYaos[1] % 2, iYaos[2] % 2, true); //下卦
             if (gsc == null) return null;
             String sAttrName2 = gsc.GuoSubAttrName;
-            gsc = GuoSubClass.GetGuoSub(iYaos[3] % 2, iYaos[4] % 2, iYaos[5] % 2, false);
+            gsc = GuoSubClass.GetGuoSub(iYaos[3] % 2, iYaos[4] % 2, iYaos[5] % 2, false); //上卦
             if (gsc == null) return null;
             String sAttrName1 = gsc.GuoSubAttrName;
             String sAttrName = "";
@@ -1172,7 +1186,7 @@ namespace CompassEx.Guo
             if (gc.YaoDoing == null) gc.YaoDoing = new List<int>();
             for (int i = 0; i < 6; i++)
             {
-                if (iYaos[i] == 3 || iYaos[i] == 4)
+                if (iYaos[i] == 3 || iYaos[i] == 4)//3为阳爻动，4为阴爻动
                 {
                     gc.YaoDoing.Add(i);//如果爻值是3或4，都是动爻，保存起来。
                     int iMod = i % 3;

@@ -570,7 +570,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadAllBeforGuos
     path: CompassEx/CompassEx.cs
-    startLine: 251
+    startLine: 203
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -598,7 +598,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Get24Hill
     path: CompassEx/CompassEx.cs
-    startLine: 311
+    startLine: 221
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -629,7 +629,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Get24HillDegree
     path: CompassEx/CompassEx.cs
-    startLine: 333
+    startLine: 243
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -666,7 +666,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBeforGuoSub
     path: CompassEx/CompassEx.cs
-    startLine: 358
+    startLine: 268
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -697,7 +697,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBeforGuoSubDegree
     path: CompassEx/CompassEx.cs
-    startLine: 384
+    startLine: 294
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -732,7 +732,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBeforGuoSubDegree
     path: CompassEx/CompassEx.cs
-    startLine: 394
+    startLine: 304
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -769,7 +769,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAfterGuoSub
     path: CompassEx/CompassEx.cs
-    startLine: 417
+    startLine: 327
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -800,7 +800,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAfterGuoSubDegree
     path: CompassEx/CompassEx.cs
-    startLine: 445
+    startLine: 355
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -835,7 +835,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAfterGuoSubDegree
     path: CompassEx/CompassEx.cs
-    startLine: 455
+    startLine: 365
   assemblies:
   - CompassEx
   namespace: CompassEx

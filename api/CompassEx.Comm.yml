@@ -8,10 +8,12 @@ items:
   - CompassEx.Comm.Comm
   - CompassEx.Comm.CompassRangEX
   - CompassEx.Comm.Defined
-  - CompassEx.Comm.Defined.FactYearEnum
-  - CompassEx.Comm.Defined.SkyLoc
+  - CompassEx.Comm.FactYearEnum
+  - CompassEx.Comm.FiveAttr
+  - CompassEx.Comm.FiveAttrRule
   - CompassEx.Comm.LocClass
   - CompassEx.Comm.SkyClass
+  - CompassEx.Comm.SkyLoc
   - CompassEx.Comm.TymeTimeExtensions
   langs:
   - csharp
@@ -43,58 +45,33 @@ references:
   name: CompassRangEX
   nameWithType: CompassRangEX
   fullName: CompassEx.Comm.CompassRangEX
+- uid: CompassEx.Comm.FactYearEnum
+  commentId: T:CompassEx.Comm.FactYearEnum
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.FactYearEnum.html
+  name: FactYearEnum
+  nameWithType: FactYearEnum
+  fullName: CompassEx.Comm.FactYearEnum
 - uid: CompassEx.Comm.Defined
   commentId: T:CompassEx.Comm.Defined
   href: CompassEx.Comm.Defined.html
   name: Defined
   nameWithType: Defined
   fullName: CompassEx.Comm.Defined
-- uid: CompassEx.Comm.Defined.FactYearEnum
-  commentId: T:CompassEx.Comm.Defined.FactYearEnum
+- uid: CompassEx.Comm.FiveAttrRule
+  commentId: T:CompassEx.Comm.FiveAttrRule
   parent: CompassEx.Comm
-  href: CompassEx.Comm.Defined.html
-  name: Defined.FactYearEnum
-  nameWithType: Defined.FactYearEnum
-  fullName: CompassEx.Comm.Defined.FactYearEnum
-  spec.csharp:
-  - uid: CompassEx.Comm.Defined
-    name: Defined
-    href: CompassEx.Comm.Defined.html
-  - name: .
-  - uid: CompassEx.Comm.Defined.FactYearEnum
-    name: FactYearEnum
-    href: CompassEx.Comm.Defined.FactYearEnum.html
-  spec.vb:
-  - uid: CompassEx.Comm.Defined
-    name: Defined
-    href: CompassEx.Comm.Defined.html
-  - name: .
-  - uid: CompassEx.Comm.Defined.FactYearEnum
-    name: FactYearEnum
-    href: CompassEx.Comm.Defined.FactYearEnum.html
-- uid: CompassEx.Comm.Defined.SkyLoc
-  commentId: T:CompassEx.Comm.Defined.SkyLoc
+  href: CompassEx.Comm.FiveAttrRule.html
+  name: FiveAttrRule
+  nameWithType: FiveAttrRule
+  fullName: CompassEx.Comm.FiveAttrRule
+- uid: CompassEx.Comm.FiveAttr
+  commentId: T:CompassEx.Comm.FiveAttr
   parent: CompassEx.Comm
-  href: CompassEx.Comm.Defined.html
-  name: Defined.SkyLoc
-  nameWithType: Defined.SkyLoc
-  fullName: CompassEx.Comm.Defined.SkyLoc
-  spec.csharp:
-  - uid: CompassEx.Comm.Defined
-    name: Defined
-    href: CompassEx.Comm.Defined.html
-  - name: .
-  - uid: CompassEx.Comm.Defined.SkyLoc
-    name: SkyLoc
-    href: CompassEx.Comm.Defined.SkyLoc.html
-  spec.vb:
-  - uid: CompassEx.Comm.Defined
-    name: Defined
-    href: CompassEx.Comm.Defined.html
-  - name: .
-  - uid: CompassEx.Comm.Defined.SkyLoc
-    name: SkyLoc
-    href: CompassEx.Comm.Defined.SkyLoc.html
+  href: CompassEx.Comm.FiveAttr.html
+  name: FiveAttr
+  nameWithType: FiveAttr
+  fullName: CompassEx.Comm.FiveAttr
 - uid: CompassEx.Comm.LocClass
   commentId: T:CompassEx.Comm.LocClass
   parent: CompassEx.Comm
@@ -109,6 +86,13 @@ references:
   name: SkyClass
   nameWithType: SkyClass
   fullName: CompassEx.Comm.SkyClass
+- uid: CompassEx.Comm.SkyLoc
+  commentId: T:CompassEx.Comm.SkyLoc
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.SkyLoc.html
+  name: SkyLoc
+  nameWithType: SkyLoc
+  fullName: CompassEx.Comm.SkyLoc
 - uid: CompassEx.Comm.TymeTimeExtensions
   commentId: T:CompassEx.Comm.TymeTimeExtensions
   href: CompassEx.Comm.TymeTimeExtensions.html

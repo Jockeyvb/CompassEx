@@ -475,15 +475,32 @@ public class CompassSkiaRenderer
 
             float start = (float)CR.Start;
             float end = (float)CR.End;
-
+            GuoQi gq = G.GuoQi;
             var dcs = new DrawContextStru
             {
                 CR = CR,
                 InnerRadius = LastR,
-
+                AddTextSize = 6
 
             };
             dcs.OuterRadius = dcs.InnerRadius + ysplace;
+            string sFA = gq.FiveAttr.Name;
+            if (sFA == "金")
+            {
+                dcs.ForceColor = SKColors.Goldenrod;
+            }
+            else if (sFA == "木")
+            {
+                dcs.ForceColor = SKColors.DarkGreen;
+            }
+            else if (sFA == "水")
+            {
+                dcs.ForceColor = SKColors.Black;
+            }
+            else if (sFA == "火")
+            {
+                dcs.ForceColor = SKColors.Red;
+            }
 
 
 
@@ -499,7 +516,9 @@ public class CompassSkiaRenderer
             //canvas.DrawPath(sectorPath, PathFillP);//填充
 
             // 文字
-            DrawLabel(canvas, dcs, G.GuoQi.ToString(), false);
+
+            string st = gq.GuoQiNumber.ToString() + gq.FiveAttr.ToString();
+            DrawLabel(canvas, dcs, st, false);
 
 
         }

@@ -1,0 +1,261 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Guo.NaJia.NaJiaType
+  commentId: T:CompassEx.Guo.NaJia.NaJiaType
+  id: NaJia.NaJiaType
+  parent: CompassEx.Guo
+  children:
+  - CompassEx.Guo.NaJia.NaJiaType.JingFang
+  - CompassEx.Guo.NaJia.NaJiaType.YangGong
+  langs:
+  - csharp
+  - vb
+  name: NaJia.NaJiaType
+  nameWithType: NaJia.NaJiaType
+  fullName: CompassEx.Guo.NaJia.NaJiaType
+  type: Enum
+  source:
+    remote:
+      path: CompassEx/Guo/NaJia.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: NaJiaType
+    path: CompassEx/Guo/NaJia.cs
+    startLine: 26
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 纳甲类型
+  example: []
+  syntax:
+    content: public enum NaJia.NaJiaType
+    content.vb: Public Enum NaJia.NaJiaType
+  extensionMethods:
+  - CompassEx.Guo.NaJia.NaJiaType.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CompassEx.Guo.NaJia.NaJiaType.JingFang
+  commentId: F:CompassEx.Guo.NaJia.NaJiaType.JingFang
+  id: JingFang
+  parent: CompassEx.Guo.NaJia.NaJiaType
+  langs:
+  - csharp
+  - vb
+  name: JingFang
+  nameWithType: NaJia.NaJiaType.JingFang
+  fullName: CompassEx.Guo.NaJia.NaJiaType.JingFang
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/NaJia.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: JingFang
+    path: CompassEx/Guo/NaJia.cs
+    startLine: 31
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 京房纳甲
+  example: []
+  syntax:
+    content: JingFang = 0
+    return:
+      type: CompassEx.Guo.NaJia.NaJiaType
+- uid: CompassEx.Guo.NaJia.NaJiaType.YangGong
+  commentId: F:CompassEx.Guo.NaJia.NaJiaType.YangGong
+  id: YangGong
+  parent: CompassEx.Guo.NaJia.NaJiaType
+  langs:
+  - csharp
+  - vb
+  name: YangGong
+  nameWithType: NaJia.NaJiaType.YangGong
+  fullName: CompassEx.Guo.NaJia.NaJiaType.YangGong
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/NaJia.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: YangGong
+    path: CompassEx/Guo/NaJia.cs
+    startLine: 35
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 杨公纳甲
+  example: []
+  syntax:
+    content: YangGong = 1
+    return:
+      type: CompassEx.Guo.NaJia.NaJiaType
+references:
+- uid: CompassEx.Guo
+  commentId: N:CompassEx.Guo
+  href: CompassEx.html
+  name: CompassEx.Guo
+  nameWithType: CompassEx.Guo
+  fullName: CompassEx.Guo
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Guo
+    name: Guo
+    href: CompassEx.Guo.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Guo
+    name: Guo
+    href: CompassEx.Guo.html
+- uid: CompassEx.Guo.NaJia.NaJiaType.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<NaJiaType, TBase>(NaJiaType, TBase)
+  nameWithType: Comm.ApplyBaseProperties<NaJia.NaJiaType, TBase>(NaJia.NaJiaType, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.Guo.NaJia.NaJiaType, TBase>(CompassEx.Guo.NaJia.NaJiaType, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of NaJia.NaJiaType, TBase)(NaJia.NaJiaType, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.Guo.NaJia.NaJiaType, TBase)(CompassEx.Guo.NaJia.NaJiaType, TBase)
+  name.vb: ApplyBaseProperties(Of NaJiaType, TBase)(NaJiaType, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Guo.NaJia.NaJiaType,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.Guo.NaJia.NaJiaType
+    name: NaJiaType
+    href: CompassEx.Guo.NaJia.NaJiaType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.Guo.NaJia.NaJiaType
+    name: NaJiaType
+    href: CompassEx.Guo.NaJia.NaJiaType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Guo.NaJia.NaJiaType,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Guo.NaJia.NaJiaType
+    name: NaJiaType
+    href: CompassEx.Guo.NaJia.NaJiaType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.Guo.NaJia.NaJiaType
+    name: NaJiaType
+    href: CompassEx.Guo.NaJia.NaJiaType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: CompassEx.Guo.NaJia.NaJiaType
+  commentId: T:CompassEx.Guo.NaJia.NaJiaType
+  parent: CompassEx.Guo
+  href: CompassEx.Guo.NaJia.html
+  name: NaJia.NaJiaType
+  nameWithType: NaJia.NaJiaType
+  fullName: CompassEx.Guo.NaJia.NaJiaType
+  spec.csharp:
+  - uid: CompassEx.Guo.NaJia
+    name: NaJia
+    href: CompassEx.Guo.NaJia.html
+  - name: .
+  - uid: CompassEx.Guo.NaJia.NaJiaType
+    name: NaJiaType
+    href: CompassEx.Guo.NaJia.NaJiaType.html
+  spec.vb:
+  - uid: CompassEx.Guo.NaJia
+    name: NaJia
+    href: CompassEx.Guo.NaJia.html
+  - name: .
+  - uid: CompassEx.Guo.NaJia.NaJiaType
+    name: NaJiaType
+    href: CompassEx.Guo.NaJia.NaJiaType.html

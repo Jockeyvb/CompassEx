@@ -32,7 +32,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Defined
     path: CompassEx/Comm/Defined.cs
-    startLine: 16
+    startLine: 31
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -67,7 +67,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TaiChiSymbol
     path: CompassEx/Comm/Defined.cs
-    startLine: 22
+    startLine: 37
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -96,7 +96,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CNMonthName
     path: CompassEx/Comm/Defined.cs
-    startLine: 51
+    startLine: 41
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -123,7 +123,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CNLocTwelve
     path: CompassEx/Comm/Defined.cs
-    startLine: 52
+    startLine: 42
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -150,7 +150,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CNDayName
     path: CompassEx/Comm/Defined.cs
-    startLine: 53
+    startLine: 43
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -177,7 +177,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Star
     path: CompassEx/Comm/Defined.cs
-    startLine: 55
+    startLine: 45
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -204,7 +204,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GoodDays
     path: CompassEx/Comm/Defined.cs
-    startLine: 57
+    startLine: 47
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -231,7 +231,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BadDays
     path: CompassEx/Comm/Defined.cs
-    startLine: 58
+    startLine: 48
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -258,7 +258,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SeasonNames
     path: CompassEx/Comm/Defined.cs
-    startLine: 65
+    startLine: 55
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -287,7 +287,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: DayBuilds
     path: CompassEx/Comm/Defined.cs
-    startLine: 71
+    startLine: 61
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -316,7 +316,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SkyPardonDays
     path: CompassEx/Comm/Defined.cs
-    startLine: 77
+    startLine: 67
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -345,7 +345,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FourScrapDays
     path: CompassEx/Comm/Defined.cs
-    startLine: 82
+    startLine: 72
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -374,7 +374,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TenDefeatDays
     path: CompassEx/Comm/Defined.cs
-    startLine: 88
+    startLine: 78
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -403,7 +403,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TenSpiritDays
     path: CompassEx/Comm/Defined.cs
-    startLine: 92
+    startLine: 82
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm

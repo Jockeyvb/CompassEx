@@ -13,7 +13,7 @@
       <meta name="docfx:navrel" content="../toc.html">
       <meta name="docfx:tocrel" content="toc.html">
       
-      <meta name="docfx:rel" content="../">
+      
       
       
       <meta name="docfx:docurl" content="https://github.com/Jockeyvb/CompassEx/new/master/apiSpec/new?filename=CompassEx_Guo_GuoSubClass.md&amp;value=---%0Auid%3A%20CompassEx.Guo.GuoSubClass%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
@@ -52,10 +52,6 @@
           </button>
           <div class="collapse navbar-collapse" id="navpanel">
             <div id="navbar">
-              <form class="search" role="search" id="search">
-                <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
-              </form>
             </div>
           </div>
         </div>
@@ -155,6 +151,90 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
 
 
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="CompassEx_Guo_GuoSubClass__ctor_" data-uid="CompassEx.Guo.GuoSubClass.#ctor*"></a>
+
+  <h3 id="CompassEx_Guo_GuoSubClass__ctor_System_Int32_" data-uid="CompassEx.Guo.GuoSubClass.#ctor(System.Int32)">
+  GuoSubClass(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>三爻卦构造函数<br>
+使用此方法创建的类默认为下卦
+创建复卦（六爻卦）时请使用<a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_String_System_Boolean_">GetGuoSub(string, bool)</a>方法,明确指定属于上卦还是下卦
+<a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_String_System_Boolean_">GetGuoSub(string, bool)</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GuoSubClass(int iBeforGuoIndex)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>iBeforGuoIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>先天卦索引</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception">IndexOutOfRangeException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <a id="CompassEx_Guo_GuoSubClass__ctor_" data-uid="CompassEx.Guo.GuoSubClass.#ctor*"></a>
+
+  <h3 id="CompassEx_Guo_GuoSubClass__ctor_System_String_" data-uid="CompassEx.Guo.GuoSubClass.#ctor(System.String)">
+  GuoSubClass(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>三爻卦构造函数<br>
+使用此方法创建的类默认为下卦或结构复卦（六爻卦）时请使用<a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_String_System_Boolean_">GetGuoSub(string, bool)</a>方法,明确指定属于上卦还是下卦</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GuoSubClass(string GuoName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>GuoName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>卦名</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception">IndexOutOfRangeException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <h2 class="section" id="fields">Fields
 </h2>
 
@@ -191,40 +271,9 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
 
 
-  <h3 id="CompassEx_Guo_GuoSubClass_AfterGuoSubColor" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubColor">
-  AfterGuoSubColor
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L108"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>后天八卦的颜色属性</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AfterGuoSubColor</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="CompassEx_Guo_GuoSubClass_AfterGuoSubColorClasses" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubColorClasses">
   AfterGuoSubColorClasses
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L109"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>后天八卦的颜色类(Color)</p>
@@ -255,7 +304,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_AfterGuoSubColors" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubColors">
   AfterGuoSubColors
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L105"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>后天八卦的颜色</p>
@@ -317,7 +366,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_AfterGuoSubNumerics" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubNumerics">
   AfterGuoSubNumerics
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L97"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>后天八卦的卦数</p>
@@ -348,7 +397,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_AfterGuoSubReluNames" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubReluNames">
   AfterGuoSubReluNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L101"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>后天八卦的伦理关系</p>
@@ -501,226 +550,9 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
 
 
-  <h3 id="CompassEx_Guo_GuoSubClass_FiveAttrName" data-uid="CompassEx.Guo.GuoSubClass.FiveAttrName">
-  FiveAttrName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L132"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>卦的五行属性</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string FiveAttrName</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="CompassEx_Guo_GuoSubClass_GuoSubAttrName" data-uid="CompassEx.Guo.GuoSubClass.GuoSubAttrName">
-  GuoSubAttrName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L128"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>卦的属性名,例如：天</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string GuoSubAttrName</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="CompassEx_Guo_GuoSubClass_GuoSubName" data-uid="CompassEx.Guo.GuoSubClass.GuoSubName">
-  GuoSubName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L124"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>卦名，例如：乾</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string GuoSubName</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="CompassEx_Guo_GuoSubClass_GuoSubReluName" data-uid="CompassEx.Guo.GuoSubClass.GuoSubReluName">
-  GuoSubReluName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L104"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>卦的伦理关系</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string GuoSubReluName</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="CompassEx_Guo_GuoSubClass_LocIndex" data-uid="CompassEx.Guo.GuoSubClass.LocIndex">
-  LocIndex
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L100"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>地支开始的位置</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int LocIndex</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="CompassEx_Guo_GuoSubClass_Locs" data-uid="CompassEx.Guo.GuoSubClass.Locs">
-  Locs
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L95"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>地支地爻位列表，同下而上</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;LocClass&gt; Locs</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="CompassEx_Guo_GuoSubClass_SkyName" data-uid="CompassEx.Guo.GuoSubClass.SkyName">
-  SkyName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L91"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>爻的纳甲天干</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SkyName</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="CompassEx_Guo_GuoSubClass_Symbols" data-uid="CompassEx.Guo.GuoSubClass.Symbols">
   Symbols
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L56"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>按先天卦序的卦象符号</p>
@@ -751,7 +583,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_TiJiSymbol" data-uid="CompassEx.Guo.GuoSubClass.TiJiSymbol">
   TiJiSymbol
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -778,37 +610,6 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
 
 
-
-  <h3 id="CompassEx_Guo_GuoSubClass_Yaos" data-uid="CompassEx.Guo.GuoSubClass.Yaos">
-  Yaos
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L87"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>爻数组</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int[] Yaos</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
   <h2 class="section" id="properties">Properties
 </h2>
 
@@ -817,7 +618,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_AfterGuoSubCNQuantity" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubCNQuantity">
   AfterGuoSubCNQuantity
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L142"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L273"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>后天八卦数中文</p>
@@ -845,11 +646,43 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
 
 
+  <a id="CompassEx_Guo_GuoSubClass_AfterGuoSubColor_" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubColor*"></a>
+
+  <h3 id="CompassEx_Guo_GuoSubClass_AfterGuoSubColor" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubColor">
+  AfterGuoSubColor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L235"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>后天八卦的颜色属性</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AfterGuoSubColor { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="CompassEx_Guo_GuoSubClass_AfterGuoSubIndex_" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubIndex*"></a>
 
   <h3 id="CompassEx_Guo_GuoSubClass_AfterGuoSubIndex" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubIndex">
   AfterGuoSubIndex
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L152"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L283"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>后天八卦索引位置</p>
@@ -881,7 +714,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_AfterQuantity" data-uid="CompassEx.Guo.GuoSubClass.AfterQuantity">
   AfterQuantity
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L242"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>后天八卦数</p>
@@ -913,7 +746,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_BeforeGuoSubCNQuantity" data-uid="CompassEx.Guo.GuoSubClass.BeforeGuoSubCNQuantity">
   BeforeGuoSubCNQuantity
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L268"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>先天八卦数中文</p>
@@ -945,7 +778,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_BeforeGuoSubIndex" data-uid="CompassEx.Guo.GuoSubClass.BeforeGuoSubIndex">
   BeforeGuoSubIndex
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L147"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L278"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>先天八卦索引位置</p>
@@ -977,7 +810,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_BeforeQuanity" data-uid="CompassEx.Guo.GuoSubClass.BeforeQuanity">
   BeforeQuanity
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L247"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>先天八卦数</p>
@@ -1009,7 +842,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_CAfterRangeDegree" data-uid="CompassEx.Guo.GuoSubClass.CAfterRangeDegree">
   CAfterRangeDegree
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L292"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据本卦从罗盘获得后天八卦中的度数范围对象</p>
@@ -1041,7 +874,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_CBeforRangeDegree" data-uid="CompassEx.Guo.GuoSubClass.CBeforRangeDegree">
   CBeforRangeDegree
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L297"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据本卦从罗盘获得先天天八卦中的度数范围对象</p>
@@ -1069,11 +902,362 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
 
 
+  <a id="CompassEx_Guo_GuoSubClass_FiveAttr_" data-uid="CompassEx.Guo.GuoSubClass.FiveAttr*"></a>
+
+  <h3 id="CompassEx_Guo_GuoSubClass_FiveAttr" data-uid="CompassEx.Guo.GuoSubClass.FiveAttr">
+  FiveAttr
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L259"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>卦的五行属性</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FiveAttr FiveAttr { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Comm.FiveAttr.html">FiveAttr</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Guo_GuoSubClass_GuoQi_" data-uid="CompassEx.Guo.GuoSubClass.GuoQi*"></a>
+
+  <h3 id="CompassEx_Guo_GuoSubClass_GuoQi" data-uid="CompassEx.Guo.GuoSubClass.GuoQi">
+  GuoQi
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>卦气（洛数）先天五行数</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GuoQi GuoQi { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Guo.GuoQi.html">GuoQi</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Guo_GuoSubClass_GuoSubAttrName_" data-uid="CompassEx.Guo.GuoSubClass.GuoSubAttrName*"></a>
+
+  <h3 id="CompassEx_Guo_GuoSubClass_GuoSubAttrName" data-uid="CompassEx.Guo.GuoSubClass.GuoSubAttrName">
+  GuoSubAttrName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L255"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>卦的属性名,例如：天</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GuoSubAttrName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Guo_GuoSubClass_GuoSubName_" data-uid="CompassEx.Guo.GuoSubClass.GuoSubName*"></a>
+
+  <h3 id="CompassEx_Guo_GuoSubClass_GuoSubName" data-uid="CompassEx.Guo.GuoSubClass.GuoSubName">
+  GuoSubName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L251"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>卦名，例如：乾</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GuoSubName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Guo_GuoSubClass_GuoSubReluName_" data-uid="CompassEx.Guo.GuoSubClass.GuoSubReluName*"></a>
+
+  <h3 id="CompassEx_Guo_GuoSubClass_GuoSubReluName" data-uid="CompassEx.Guo.GuoSubClass.GuoSubReluName">
+  GuoSubReluName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L231"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>卦的伦理关系</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GuoSubReluName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Guo_GuoSubClass_IsDownGuo_" data-uid="CompassEx.Guo.GuoSubClass.IsDownGuo*"></a>
+
+  <h3 id="CompassEx_Guo_GuoSubClass_IsDownGuo" data-uid="CompassEx.Guo.GuoSubClass.IsDownGuo">
+  IsDownGuo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>是否为下卦</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsDownGuo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Guo_GuoSubClass_IsSun_" data-uid="CompassEx.Guo.GuoSubClass.IsSun*"></a>
+
+  <h3 id="CompassEx_Guo_GuoSubClass_IsSun" data-uid="CompassEx.Guo.GuoSubClass.IsSun">
+  IsSun
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>是否为阳卦（后天卦前4位为阳)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSun { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Guo_GuoSubClass_LocIndex_" data-uid="CompassEx.Guo.GuoSubClass.LocIndex*"></a>
+
+  <h3 id="CompassEx_Guo_GuoSubClass_LocIndex" data-uid="CompassEx.Guo.GuoSubClass.LocIndex">
+  LocIndex
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L227"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>地支开始的位置</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int LocIndex { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Guo_GuoSubClass_Locs_" data-uid="CompassEx.Guo.GuoSubClass.Locs*"></a>
+
+  <h3 id="CompassEx_Guo_GuoSubClass_Locs" data-uid="CompassEx.Guo.GuoSubClass.Locs">
+  Locs
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L222"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>地支地爻位列表，同下而上</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;LocClass&gt; Locs { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Guo_GuoSubClass_Sky_" data-uid="CompassEx.Guo.GuoSubClass.Sky*"></a>
+
+  <h3 id="CompassEx_Guo_GuoSubClass_Sky" data-uid="CompassEx.Guo.GuoSubClass.Sky">
+  Sky
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L214"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SkyClass Sky { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Comm.SkyClass.html">SkyClass</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Guo_GuoSubClass_SkyName_" data-uid="CompassEx.Guo.GuoSubClass.SkyName*"></a>
+
+  <h3 id="CompassEx_Guo_GuoSubClass_SkyName" data-uid="CompassEx.Guo.GuoSubClass.SkyName">
+  SkyName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L212"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>爻的纳甲天干</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SkyName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="CompassEx_Guo_GuoSubClass_Symbol_" data-uid="CompassEx.Guo.GuoSubClass.Symbol*"></a>
 
   <h3 id="CompassEx_Guo_GuoSubClass_Symbol" data-uid="CompassEx.Guo.GuoSubClass.Symbol">
   Symbol
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L287"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>卦象符号</p>
@@ -1101,6 +1285,38 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
 
 
+  <a id="CompassEx_Guo_GuoSubClass_Yaos_" data-uid="CompassEx.Guo.GuoSubClass.Yaos*"></a>
+
+  <h3 id="CompassEx_Guo_GuoSubClass_Yaos" data-uid="CompassEx.Guo.GuoSubClass.Yaos">
+  Yaos
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L208"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>爻数组</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int[] Yaos { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -1109,7 +1325,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetAfterGuoSub_System_Int32_System_Boolean_" data-uid="CompassEx.Guo.GuoSubClass.GetAfterGuoSub(System.Int32,System.Boolean)">
   GetAfterGuoSub(int, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L283"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L412"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据后天八卦索引获得三爻卦类</p>
@@ -1125,7 +1341,8 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
     <dt><code>GuoSubIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
     <dt><code>IsDownGuo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>是否为下卦</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
@@ -1148,7 +1365,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetBeforGuoSub_System_Int32_System_Boolean_" data-uid="CompassEx.Guo.GuoSubClass.GetBeforGuoSub(System.Int32,System.Boolean)">
   GetBeforGuoSub(int, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L295"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L425"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据先天八卦索引获得三爻卦类</p>
@@ -1162,9 +1379,11 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>GuoSubIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>先天卦的索引</p>
+</dd>
     <dt><code>IsDownGuo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>是否为下卦</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
@@ -1187,7 +1406,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetC24Hills" data-uid="CompassEx.Guo.GuoSubClass.GetC24Hills">
   GetC24Hills()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L172"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L303"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获得后天八卦的中包含所有的正针24山</p>
@@ -1219,7 +1438,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetCBeforGuos" data-uid="CompassEx.Guo.GuoSubClass.GetCBeforGuos">
   GetCBeforGuos()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L200"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L328"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获得后天八卦的中包含所有的先天64卦</p>
@@ -1251,7 +1470,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetFiveAttrName_System_String_" data-uid="CompassEx.Guo.GuoSubClass.GetFiveAttrName(System.String)">
   GetFiveAttrName(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L409"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L525"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获得卦的五行属性</p>
@@ -1259,7 +1478,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string GetFiveAttrName(string sGuoSubName)</code></pre>
+    <pre><code class="lang-csharp hljs">public static FiveAttr GetFiveAttrName(string sGuoSubName)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -1270,7 +1489,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><a class="xref" href="CompassEx.Comm.FiveAttr.html">FiveAttr</a></dt>
     <dd></dd>
   </dl>
 
@@ -1288,7 +1507,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetGuoSub_System_Int32_System_Boolean_" data-uid="CompassEx.Guo.GuoSubClass.GetGuoSub(System.Int32,System.Boolean)">
   GetGuoSub(int, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L326"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L457"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据卦的属性索引,获得三爻卦类(先天)</p>
@@ -1329,7 +1548,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetGuoSub_System_Int32_System_Int32_System_Int32_System_Boolean_" data-uid="CompassEx.Guo.GuoSubClass.GetGuoSub(System.Int32,System.Int32,System.Int32,System.Boolean)">
   GetGuoSub(int, int, int, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L259"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L387"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据卦的前三爻(由下而上）,获得三爻卦类（先天)</p>
@@ -1373,10 +1592,11 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetGuoSub_System_String_System_Boolean_" data-uid="CompassEx.Guo.GuoSubClass.GetGuoSub(System.String,System.Boolean)">
   GetGuoSub(string, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L306"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L437"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>根据卦的属性或名称,获得三爻卦类</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1386,9 +1606,11 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>sAttrOrGuoName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>属性名或卦名</p>
+</dd>
     <dt><code>IsDownGuo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>是否为下卦(内卦)</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
@@ -1411,7 +1633,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetXorGuo" data-uid="CompassEx.Guo.GuoSubClass.GetXorGuo">
   GetXorGuo()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L218"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L346"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>取反卦</p>
@@ -1443,7 +1665,7 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="CompassEx_Guo_GuoSubClass_LoadLocs" data-uid="CompassEx.Guo.GuoSubClass.LoadLocs">
   LoadLocs()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L233"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L361"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>加载地支列表，由下而上</p>
@@ -1481,7 +1703,6 @@ Class GuoSubClass  <a class="header-action link-secondary" title="View source" h
       </div>
     </main>
 
-    <div class="container-xxl search-results" id="search-results"></div>
 
     <footer class="border-top text-secondary">
       <div class="container-xxl">

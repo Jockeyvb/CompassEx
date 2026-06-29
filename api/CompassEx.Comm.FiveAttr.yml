@@ -1,0 +1,1127 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Comm.FiveAttr
+  commentId: T:CompassEx.Comm.FiveAttr
+  id: FiveAttr
+  parent: CompassEx.Comm
+  children:
+  - CompassEx.Comm.FiveAttr.#ctor(System.Int32)
+  - CompassEx.Comm.FiveAttr.#ctor(System.String)
+  - CompassEx.Comm.FiveAttr.BothConflict(System.String,System.String)
+  - CompassEx.Comm.FiveAttr.BothHarm(System.String,System.String)
+  - CompassEx.Comm.FiveAttr.BothTorture(System.String,System.String)
+  - CompassEx.Comm.FiveAttr.FiveAttrBothbirth
+  - CompassEx.Comm.FiveAttr.FiveAttrNames
+  - CompassEx.Comm.FiveAttr.GetBothAttrRule(System.Int32,System.Int32)
+  - CompassEx.Comm.FiveAttr.GetBothAttrRule(System.String,System.String)
+  - CompassEx.Comm.FiveAttr.GetBothLocRule(System.Int32,System.Int32)
+  - CompassEx.Comm.FiveAttr.GetBothLocRule(System.String,System.String)
+  - CompassEx.Comm.FiveAttr.LocCombine(System.String,System.String)
+  - CompassEx.Comm.FiveAttr.Name
+  - CompassEx.Comm.FiveAttr.SkyCombine(System.String,System.String)
+  - CompassEx.Comm.FiveAttr.ToString
+  langs:
+  - csharp
+  - vb
+  name: FiveAttr
+  nameWithType: FiveAttr
+  fullName: CompassEx.Comm.FiveAttr
+  type: Class
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FiveAttr
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 47
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  syntax:
+    content: public class FiveAttr
+    content.vb: Public Class FiveAttr
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  extensionMethods:
+  - CompassEx.Comm.FiveAttr.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CompassEx.Comm.FiveAttr.ToString
+  commentId: M:CompassEx.Comm.FiveAttr.ToString
+  id: ToString
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: FiveAttr.ToString()
+  fullName: CompassEx.Comm.FiveAttr.ToString()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToString
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 53
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 返回五行名称
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: CompassEx.Comm.FiveAttr.ToString*
+- uid: CompassEx.Comm.FiveAttr.Name
+  commentId: P:CompassEx.Comm.FiveAttr.Name
+  id: Name
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: FiveAttr.Name
+  fullName: CompassEx.Comm.FiveAttr.Name
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Name
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 62
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 五行名称
+  example: []
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: CompassEx.Comm.FiveAttr.Name*
+- uid: CompassEx.Comm.FiveAttr.FiveAttrNames
+  commentId: F:CompassEx.Comm.FiveAttr.FiveAttrNames
+  id: FiveAttrNames
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: FiveAttrNames
+  nameWithType: FiveAttr.FiveAttrNames
+  fullName: CompassEx.Comm.FiveAttr.FiveAttrNames
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FiveAttrNames
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 67
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 五行名称数组
+  example: []
+  syntax:
+    content: public static readonly string[] FiveAttrNames
+    return:
+      type: System.String[]
+    content.vb: Public Shared ReadOnly FiveAttrNames As String()
+- uid: CompassEx.Comm.FiveAttr.#ctor(System.String)
+  commentId: M:CompassEx.Comm.FiveAttr.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: FiveAttr(string)
+  nameWithType: FiveAttr.FiveAttr(string)
+  fullName: CompassEx.Comm.FiveAttr.FiveAttr(string)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 77
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 构造五行
+  example: []
+  syntax:
+    content: public FiveAttr(string Name)
+    parameters:
+    - id: Name
+      type: System.String
+      description: 五行名称,参考：【<xref href="CompassEx.Comm.FiveAttr.FiveAttrNames" data-throw-if-not-resolved="false"></xref>】
+    content.vb: Public Sub New(Name As String)
+  overload: CompassEx.Comm.FiveAttr.#ctor*
+  exceptions:
+  - type: System.IndexOutOfRangeException
+    commentId: T:System.IndexOutOfRangeException
+    description: 若传入的不是五行的名称，则抛出异常
+  nameWithType.vb: FiveAttr.New(String)
+  fullName.vb: CompassEx.Comm.FiveAttr.New(String)
+  name.vb: New(String)
+- uid: CompassEx.Comm.FiveAttr.#ctor(System.Int32)
+  commentId: M:CompassEx.Comm.FiveAttr.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: FiveAttr(int)
+  nameWithType: FiveAttr.FiveAttr(int)
+  fullName: CompassEx.Comm.FiveAttr.FiveAttr(int)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 88
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 构造五行
+  example: []
+  syntax:
+    content: public FiveAttr(int iFiveAttrIndex)
+    parameters:
+    - id: iFiveAttrIndex
+      type: System.Int32
+      description: 五行所在的索引,参考：【<xref href="CompassEx.Comm.FiveAttr.FiveAttrNames" data-throw-if-not-resolved="false"></xref>】
+    content.vb: Public Sub New(iFiveAttrIndex As Integer)
+  overload: CompassEx.Comm.FiveAttr.#ctor*
+  exceptions:
+  - type: System.IndexOutOfRangeException
+    commentId: T:System.IndexOutOfRangeException
+    description: 若传入的小于0 或大于5，则抛出异常
+  nameWithType.vb: FiveAttr.New(Integer)
+  fullName.vb: CompassEx.Comm.FiveAttr.New(Integer)
+  name.vb: New(Integer)
+- uid: CompassEx.Comm.FiveAttr.GetBothLocRule(System.String,System.String)
+  commentId: M:CompassEx.Comm.FiveAttr.GetBothLocRule(System.String,System.String)
+  id: GetBothLocRule(System.String,System.String)
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: GetBothLocRule(string, string)
+  nameWithType: FiveAttr.GetBothLocRule(string, string)
+  fullName: CompassEx.Comm.FiveAttr.GetBothLocRule(string, string)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetBothLocRule
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 101
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: " 根据名称获得两个地支之间的五行的关系：我克、我生、我同、克我、生我的关系。<br />\r\n0表示我克，1表示我生，2表示我同，3表示克我，4表示生我"
+  example: []
+  syntax:
+    content: public static FiveAttrRule GetBothLocRule(string MeLocName, string LocName)
+    parameters:
+    - id: MeLocName
+      type: System.String
+      description: 地支1
+    - id: LocName
+      type: System.String
+      description: 地支2
+    return:
+      type: CompassEx.Comm.FiveAttrRule
+      description: ''
+    content.vb: Public Shared Function GetBothLocRule(MeLocName As String, LocName As String) As FiveAttrRule
+  overload: CompassEx.Comm.FiveAttr.GetBothLocRule*
+  nameWithType.vb: FiveAttr.GetBothLocRule(String, String)
+  fullName.vb: CompassEx.Comm.FiveAttr.GetBothLocRule(String, String)
+  name.vb: GetBothLocRule(String, String)
+- uid: CompassEx.Comm.FiveAttr.GetBothLocRule(System.Int32,System.Int32)
+  commentId: M:CompassEx.Comm.FiveAttr.GetBothLocRule(System.Int32,System.Int32)
+  id: GetBothLocRule(System.Int32,System.Int32)
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: GetBothLocRule(int, int)
+  nameWithType: FiveAttr.GetBothLocRule(int, int)
+  fullName: CompassEx.Comm.FiveAttr.GetBothLocRule(int, int)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetBothLocRule
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 125
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: "   /// <summary>\r\n 根据名称获得两个地支之间的五行的关系：我克、我生、我同、克我、生我的关系。<br />\r\n0表示我克，1表示我生，2表示我同，3表示克我，4表示生我\r\n</summary>"
+  example: []
+  syntax:
+    content: public static FiveAttrRule GetBothLocRule(int iMeLoc1, int iLoc2)
+    parameters:
+    - id: iMeLoc1
+      type: System.Int32
+      description: 地支1索引
+    - id: iLoc2
+      type: System.Int32
+      description: 地支2索引
+    return:
+      type: CompassEx.Comm.FiveAttrRule
+      description: ''
+    content.vb: Public Shared Function GetBothLocRule(iMeLoc1 As Integer, iLoc2 As Integer) As FiveAttrRule
+  overload: CompassEx.Comm.FiveAttr.GetBothLocRule*
+  nameWithType.vb: FiveAttr.GetBothLocRule(Integer, Integer)
+  fullName.vb: CompassEx.Comm.FiveAttr.GetBothLocRule(Integer, Integer)
+  name.vb: GetBothLocRule(Integer, Integer)
+- uid: CompassEx.Comm.FiveAttr.GetBothAttrRule(System.String,System.String)
+  commentId: M:CompassEx.Comm.FiveAttr.GetBothAttrRule(System.String,System.String)
+  id: GetBothAttrRule(System.String,System.String)
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: GetBothAttrRule(string, string)
+  nameWithType: FiveAttr.GetBothAttrRule(string, string)
+  fullName: CompassEx.Comm.FiveAttr.GetBothAttrRule(string, string)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetBothAttrRule
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 195
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: >-
+    根据属性名称获得五行之间的五行的关系：我克、我生、我同、克我、生我的关系。<br />
+
+    0表示我克，1表示我生，2表示我同，3表示克我，4表示生我
+  example: []
+  syntax:
+    content: public static FiveAttrRule GetBothAttrRule(string MeAttrName, string OtherAttrName)
+    parameters:
+    - id: MeAttrName
+      type: System.String
+      description: 五行名称1
+    - id: OtherAttrName
+      type: System.String
+      description: 五行名称2
+    return:
+      type: CompassEx.Comm.FiveAttrRule
+      description: ''
+    content.vb: Public Shared Function GetBothAttrRule(MeAttrName As String, OtherAttrName As String) As FiveAttrRule
+  overload: CompassEx.Comm.FiveAttr.GetBothAttrRule*
+  nameWithType.vb: FiveAttr.GetBothAttrRule(String, String)
+  fullName.vb: CompassEx.Comm.FiveAttr.GetBothAttrRule(String, String)
+  name.vb: GetBothAttrRule(String, String)
+- uid: CompassEx.Comm.FiveAttr.GetBothAttrRule(System.Int32,System.Int32)
+  commentId: M:CompassEx.Comm.FiveAttr.GetBothAttrRule(System.Int32,System.Int32)
+  id: GetBothAttrRule(System.Int32,System.Int32)
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: GetBothAttrRule(int, int)
+  nameWithType: FiveAttr.GetBothAttrRule(int, int)
+  fullName: CompassEx.Comm.FiveAttr.GetBothAttrRule(int, int)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetBothAttrRule
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 211
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: >-
+    根据属性名称获得五行之间的五行的关系：我克、我生、我同、克我、生我的关系。<br />
+
+    0表示我克，1表示我生，2表示我同，3表示克我，4表示生我
+  example: []
+  syntax:
+    content: public static FiveAttrRule GetBothAttrRule(int iMeAttr, int iOtherAttr)
+    parameters:
+    - id: iMeAttr
+      type: System.Int32
+      description: 五行名称1索引
+    - id: iOtherAttr
+      type: System.Int32
+      description: 五行名称1索引
+    return:
+      type: CompassEx.Comm.FiveAttrRule
+      description: ''
+    content.vb: Public Shared Function GetBothAttrRule(iMeAttr As Integer, iOtherAttr As Integer) As FiveAttrRule
+  overload: CompassEx.Comm.FiveAttr.GetBothAttrRule*
+  nameWithType.vb: FiveAttr.GetBothAttrRule(Integer, Integer)
+  fullName.vb: CompassEx.Comm.FiveAttr.GetBothAttrRule(Integer, Integer)
+  name.vb: GetBothAttrRule(Integer, Integer)
+- uid: CompassEx.Comm.FiveAttr.FiveAttrBothbirth
+  commentId: M:CompassEx.Comm.FiveAttr.FiveAttrBothbirth
+  id: FiveAttrBothbirth
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: FiveAttrBothbirth()
+  nameWithType: FiveAttr.FiveAttrBothbirth()
+  fullName: CompassEx.Comm.FiveAttr.FiveAttrBothbirth()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FiveAttrBothbirth
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 286
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 五行相生的顺序，可以一个字符取出后转为int后，FiveAttrNames[i],这样读出
+  example: []
+  syntax:
+    content: public static string FiveAttrBothbirth()
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Shared Function FiveAttrBothbirth() As String
+  overload: CompassEx.Comm.FiveAttr.FiveAttrBothbirth*
+- uid: CompassEx.Comm.FiveAttr.BothHarm(System.String,System.String)
+  commentId: M:CompassEx.Comm.FiveAttr.BothHarm(System.String,System.String)
+  id: BothHarm(System.String,System.String)
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: BothHarm(string, string)
+  nameWithType: FiveAttr.BothHarm(string, string)
+  fullName: CompassEx.Comm.FiveAttr.BothHarm(string, string)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: BothHarm
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 300
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 地支相害
+  example: []
+  syntax:
+    content: public static string BothHarm(string sLoc1, string sLoc2)
+    parameters:
+    - id: sLoc1
+      type: System.String
+      description: 地支1
+    - id: sLoc2
+      type: System.String
+      description: 地支2
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Shared Function BothHarm(sLoc1 As String, sLoc2 As String) As String
+  overload: CompassEx.Comm.FiveAttr.BothHarm*
+  nameWithType.vb: FiveAttr.BothHarm(String, String)
+  fullName.vb: CompassEx.Comm.FiveAttr.BothHarm(String, String)
+  name.vb: BothHarm(String, String)
+- uid: CompassEx.Comm.FiveAttr.BothTorture(System.String,System.String)
+  commentId: M:CompassEx.Comm.FiveAttr.BothTorture(System.String,System.String)
+  id: BothTorture(System.String,System.String)
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: BothTorture(string, string)
+  nameWithType: FiveAttr.BothTorture(string, string)
+  fullName: CompassEx.Comm.FiveAttr.BothTorture(string, string)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: BothTorture
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 353
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 地支相刑
+  example: []
+  syntax:
+    content: public static string BothTorture(string sLoc1, string sLoc2)
+    parameters:
+    - id: sLoc1
+      type: System.String
+      description: 地支1
+    - id: sLoc2
+      type: System.String
+      description: 地支2
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Shared Function BothTorture(sLoc1 As String, sLoc2 As String) As String
+  overload: CompassEx.Comm.FiveAttr.BothTorture*
+  nameWithType.vb: FiveAttr.BothTorture(String, String)
+  fullName.vb: CompassEx.Comm.FiveAttr.BothTorture(String, String)
+  name.vb: BothTorture(String, String)
+- uid: CompassEx.Comm.FiveAttr.BothConflict(System.String,System.String)
+  commentId: M:CompassEx.Comm.FiveAttr.BothConflict(System.String,System.String)
+  id: BothConflict(System.String,System.String)
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: BothConflict(string, string)
+  nameWithType: FiveAttr.BothConflict(string, string)
+  fullName: CompassEx.Comm.FiveAttr.BothConflict(string, string)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: BothConflict
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 413
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 地支相冲
+  example: []
+  syntax:
+    content: public static string BothConflict(string sLoc1, string sLoc2)
+    parameters:
+    - id: sLoc1
+      type: System.String
+      description: 地支1
+    - id: sLoc2
+      type: System.String
+      description: 地支2
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Shared Function BothConflict(sLoc1 As String, sLoc2 As String) As String
+  overload: CompassEx.Comm.FiveAttr.BothConflict*
+  nameWithType.vb: FiveAttr.BothConflict(String, String)
+  fullName.vb: CompassEx.Comm.FiveAttr.BothConflict(String, String)
+  name.vb: BothConflict(String, String)
+- uid: CompassEx.Comm.FiveAttr.LocCombine(System.String,System.String)
+  commentId: M:CompassEx.Comm.FiveAttr.LocCombine(System.String,System.String)
+  id: LocCombine(System.String,System.String)
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: LocCombine(string, string)
+  nameWithType: FiveAttr.LocCombine(string, string)
+  fullName: CompassEx.Comm.FiveAttr.LocCombine(string, string)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: LocCombine
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 435
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 地支六合
+  example: []
+  syntax:
+    content: public static string LocCombine(string sLoc1, string sLoc2)
+    parameters:
+    - id: sLoc1
+      type: System.String
+      description: 地支1
+    - id: sLoc2
+      type: System.String
+      description: 地支1
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Shared Function LocCombine(sLoc1 As String, sLoc2 As String) As String
+  overload: CompassEx.Comm.FiveAttr.LocCombine*
+  nameWithType.vb: FiveAttr.LocCombine(String, String)
+  fullName.vb: CompassEx.Comm.FiveAttr.LocCombine(String, String)
+  name.vb: LocCombine(String, String)
+- uid: CompassEx.Comm.FiveAttr.SkyCombine(System.String,System.String)
+  commentId: M:CompassEx.Comm.FiveAttr.SkyCombine(System.String,System.String)
+  id: SkyCombine(System.String,System.String)
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: SkyCombine(string, string)
+  nameWithType: FiveAttr.SkyCombine(string, string)
+  fullName: CompassEx.Comm.FiveAttr.SkyCombine(string, string)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SkyCombine
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 484
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 天干五合
+  example: []
+  syntax:
+    content: public static string SkyCombine(string sSky1, string sSky2)
+    parameters:
+    - id: sSky1
+      type: System.String
+      description: 天干1
+    - id: sSky2
+      type: System.String
+      description: 天干2
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Shared Function SkyCombine(sSky1 As String, sSky2 As String) As String
+  overload: CompassEx.Comm.FiveAttr.SkyCombine*
+  nameWithType.vb: FiveAttr.SkyCombine(String, String)
+  fullName.vb: CompassEx.Comm.FiveAttr.SkyCombine(String, String)
+  name.vb: SkyCombine(String, String)
+references:
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: CompassEx.Comm.FiveAttr.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<FiveAttr, TBase>(FiveAttr, TBase)
+  nameWithType: Comm.ApplyBaseProperties<FiveAttr, TBase>(FiveAttr, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.Comm.FiveAttr, TBase>(CompassEx.Comm.FiveAttr, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of FiveAttr, TBase)(FiveAttr, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.Comm.FiveAttr, TBase)(CompassEx.Comm.FiveAttr, TBase)
+  name.vb: ApplyBaseProperties(Of FiveAttr, TBase)(FiveAttr, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Comm.FiveAttr,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.Comm.FiveAttr
+    name: FiveAttr
+    href: CompassEx.Comm.FiveAttr.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.Comm.FiveAttr
+    name: FiveAttr
+    href: CompassEx.Comm.FiveAttr.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Comm.FiveAttr,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Comm.FiveAttr
+    name: FiveAttr
+    href: CompassEx.Comm.FiveAttr.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.Comm.FiveAttr
+    name: FiveAttr
+    href: CompassEx.Comm.FiveAttr.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CompassEx.Comm.FiveAttr.ToString*
+  commentId: Overload:CompassEx.Comm.FiveAttr.ToString
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_ToString
+  name: ToString
+  nameWithType: FiveAttr.ToString
+  fullName: CompassEx.Comm.FiveAttr.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CompassEx.Comm.FiveAttr.Name*
+  commentId: Overload:CompassEx.Comm.FiveAttr.Name
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_Name
+  name: Name
+  nameWithType: FiveAttr.Name
+  fullName: CompassEx.Comm.FiveAttr.Name
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: CompassEx.Comm.FiveAttr.FiveAttrNames
+  commentId: F:CompassEx.Comm.FiveAttr.FiveAttrNames
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_FiveAttrNames
+  name: FiveAttrNames
+  nameWithType: FiveAttr.FiveAttrNames
+  fullName: CompassEx.Comm.FiveAttr.FiveAttrNames
+- uid: System.IndexOutOfRangeException
+  commentId: T:System.IndexOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception
+  name: IndexOutOfRangeException
+  nameWithType: IndexOutOfRangeException
+  fullName: System.IndexOutOfRangeException
+- uid: CompassEx.Comm.FiveAttr.#ctor*
+  commentId: Overload:CompassEx.Comm.FiveAttr.#ctor
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr__ctor_System_String_
+  name: FiveAttr
+  nameWithType: FiveAttr.FiveAttr
+  fullName: CompassEx.Comm.FiveAttr.FiveAttr
+  nameWithType.vb: FiveAttr.New
+  fullName.vb: CompassEx.Comm.FiveAttr.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: CompassEx.Comm.FiveAttr.GetBothLocRule*
+  commentId: Overload:CompassEx.Comm.FiveAttr.GetBothLocRule
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_GetBothLocRule_System_String_System_String_
+  name: GetBothLocRule
+  nameWithType: FiveAttr.GetBothLocRule
+  fullName: CompassEx.Comm.FiveAttr.GetBothLocRule
+- uid: CompassEx.Comm.FiveAttrRule
+  commentId: T:CompassEx.Comm.FiveAttrRule
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.FiveAttrRule.html
+  name: FiveAttrRule
+  nameWithType: FiveAttrRule
+  fullName: CompassEx.Comm.FiveAttrRule
+- uid: CompassEx.Comm.FiveAttr.GetBothAttrRule*
+  commentId: Overload:CompassEx.Comm.FiveAttr.GetBothAttrRule
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_GetBothAttrRule_System_String_System_String_
+  name: GetBothAttrRule
+  nameWithType: FiveAttr.GetBothAttrRule
+  fullName: CompassEx.Comm.FiveAttr.GetBothAttrRule
+- uid: CompassEx.Comm.FiveAttr.FiveAttrBothbirth*
+  commentId: Overload:CompassEx.Comm.FiveAttr.FiveAttrBothbirth
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_FiveAttrBothbirth
+  name: FiveAttrBothbirth
+  nameWithType: FiveAttr.FiveAttrBothbirth
+  fullName: CompassEx.Comm.FiveAttr.FiveAttrBothbirth
+- uid: CompassEx.Comm.FiveAttr.BothHarm*
+  commentId: Overload:CompassEx.Comm.FiveAttr.BothHarm
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_BothHarm_System_String_System_String_
+  name: BothHarm
+  nameWithType: FiveAttr.BothHarm
+  fullName: CompassEx.Comm.FiveAttr.BothHarm
+- uid: CompassEx.Comm.FiveAttr.BothTorture*
+  commentId: Overload:CompassEx.Comm.FiveAttr.BothTorture
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_BothTorture_System_String_System_String_
+  name: BothTorture
+  nameWithType: FiveAttr.BothTorture
+  fullName: CompassEx.Comm.FiveAttr.BothTorture
+- uid: CompassEx.Comm.FiveAttr.BothConflict*
+  commentId: Overload:CompassEx.Comm.FiveAttr.BothConflict
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_BothConflict_System_String_System_String_
+  name: BothConflict
+  nameWithType: FiveAttr.BothConflict
+  fullName: CompassEx.Comm.FiveAttr.BothConflict
+- uid: CompassEx.Comm.FiveAttr.LocCombine*
+  commentId: Overload:CompassEx.Comm.FiveAttr.LocCombine
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_LocCombine_System_String_System_String_
+  name: LocCombine
+  nameWithType: FiveAttr.LocCombine
+  fullName: CompassEx.Comm.FiveAttr.LocCombine
+- uid: CompassEx.Comm.FiveAttr.SkyCombine*
+  commentId: Overload:CompassEx.Comm.FiveAttr.SkyCombine
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_SkyCombine_System_String_System_String_
+  name: SkyCombine
+  nameWithType: FiveAttr.SkyCombine
+  fullName: CompassEx.Comm.FiveAttr.SkyCombine

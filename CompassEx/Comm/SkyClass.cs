@@ -19,10 +19,69 @@ namespace CompassEx.Comm
     /// </summary>
     public class SkyClass
     {
+        /// <summary>
+        /// 天干名称列表
+        /// </summary>
         public static string[] SkyNames = { "甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸" };//天干
-        public string SkyName;//地支名称
-        public int Index;//天干位置
-        public string FiveAttrName;//五行属性名
+
+        /// <summary>
+        /// 地支名称
+        /// </summary>
+        public string SkyName { get; private set; }//
+
+        /// <summary>
+        /// 天干索引
+        /// </summary>
+        public int Index { get; private set; }//
+
+        /// <summary>
+        /// 五行属性名
+        /// </summary>
+        public FiveAttr FiveAttr { get; private set; }//五行属性名
+
+        /// <summary>
+        /// 天干构造函数
+        /// </summary>
+        /// <param name="sSkyName">天干名称</param>
+        /// <exception cref="IndexOutOfRangeException"></exception>
+        public SkyClass(string sSkyName) : this(Array.IndexOf(SkyNames, sSkyName))
+        {
+
+        }
+
+        /// <summary>
+        ///  天干构造函数
+        /// </summary>
+        /// <param name="iSkyIndex">天干所在的索引，参考：【<see cref="SkyNames"/>】</param>
+        /// <exception cref="IndexOutOfRangeException"></exception>
+        public SkyClass(int iSkyIndex)
+        {
+            if (iSkyIndex < 0 || iSkyIndex > SkyNames.Length) throw new IndexOutOfRangeException();
+            if (iSkyIndex < 2)
+            {
+                this.FiveAttr = new FiveAttr("木");
+            }
+            else if (iSkyIndex == 2 || iSkyIndex == 3)
+            {
+                this.FiveAttr = new FiveAttr("火");
+            }
+            else if (iSkyIndex == 4 || iSkyIndex == 5)
+            {
+                this.FiveAttr = new FiveAttr("土");
+            }
+            else if (iSkyIndex == 6 || iSkyIndex == 7)
+            {
+                this.FiveAttr = new FiveAttr("金");
+            }
+            else
+            {
+                this.FiveAttr = new FiveAttr("土");
+            }
+            this.Index = iSkyIndex;
+            this.SkyName = SkyNames[iSkyIndex];
+        }
+
+
         /// <summary>
         /// 根据天干的索引返回天干类
         /// </summary>
@@ -41,30 +100,8 @@ namespace CompassEx.Comm
         /// <returns></returns>
         public static SkyClass GetSkyClass(int iSkyIndex)
         {
-            SkyClass sc = new SkyClass();
-            if (iSkyIndex < 2)
-            {
-                sc.FiveAttrName = "木";
-            }
-            else if (iSkyIndex == 2 || iSkyIndex == 3)
-            {
-                sc.FiveAttrName = "火";
-            }
-            else if (iSkyIndex == 4 || iSkyIndex == 5)
-            {
-                sc.FiveAttrName = "土";
-            }
-            else if (iSkyIndex == 6 || iSkyIndex == 7)
-            {
-                sc.FiveAttrName = "金";
-            }
-            else
-            {
-                sc.FiveAttrName = "土";
-            }
-            sc.Index = iSkyIndex;
-            sc.SkyName = SkyNames[iSkyIndex];
-            return sc;
+            return new SkyClass(iSkyIndex);
+
         }
 
 

@@ -13,7 +13,7 @@
       <meta name="docfx:navrel" content="../toc.html">
       <meta name="docfx:tocrel" content="toc.html">
       
-      <meta name="docfx:rel" content="../">
+      
       
       
       <meta name="docfx:docurl" content="https://github.com/Jockeyvb/CompassEx/new/master/apiSpec/new?filename=CompassEx_Comm_LocClass.md&amp;value=---%0Auid%3A%20CompassEx.Comm.LocClass%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
@@ -52,10 +52,6 @@
           </button>
           <div class="collapse navbar-collapse" id="navpanel">
             <div id="navbar">
-              <form class="search" role="search" id="search">
-                <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
-              </form>
             </div>
           </div>
         </div>
@@ -156,111 +152,102 @@ Class LocClass  <a class="header-action link-secondary" title="View source" href
 
 
 
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="CompassEx_Comm_LocClass__ctor_" data-uid="CompassEx.Comm.LocClass.#ctor*"></a>
+
+  <h3 id="CompassEx_Comm_LocClass__ctor_System_Int32_" data-uid="CompassEx.Comm.LocClass.#ctor(System.Int32)">
+  LocClass(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>地支构造函数</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LocClass(int LocIndex)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>LocIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>地支所在的索引，参考：【<a class="xref" href="CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_LocNames">LocNames</a>】</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception">IndexOutOfRangeException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <a id="CompassEx_Comm_LocClass__ctor_" data-uid="CompassEx.Comm.LocClass.#ctor*"></a>
+
+  <h3 id="CompassEx_Comm_LocClass__ctor_System_String_" data-uid="CompassEx.Comm.LocClass.#ctor(System.String)">
+  LocClass(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>地支构造函数</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LocClass(string LocName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>LocName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>地支名称</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception">IndexOutOfRangeException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <h2 class="section" id="fields">Fields
 </h2>
 
 
 
-  <h3 id="CompassEx_Comm_LocClass_FiveAttrName" data-uid="CompassEx.Comm.LocClass.FiveAttrName">
-  FiveAttrName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L27"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string FiveAttrName</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="CompassEx_Comm_LocClass_Index" data-uid="CompassEx.Comm.LocClass.Index">
-  Index
+  <h3 id="CompassEx_Comm_LocClass_LocNames" data-uid="CompassEx.Comm.LocClass.LocNames">
+  LocNames
   <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>地支名称数组</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Index</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="CompassEx_Comm_LocClass_LocName" data-uid="CompassEx.Comm.LocClass.LocName">
-  LocName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L25"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string LocName</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="CompassEx_Comm_LocClass_LocNames" data-uid="CompassEx.Comm.LocClass.LocNames">
-  LocNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L23"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string[] LocNames</code></pre>
+    <pre><code class="lang-csharp hljs">public static readonly string[] LocNames</code></pre>
   </div>
 
 
@@ -269,36 +256,6 @@ Class LocClass  <a class="header-action link-secondary" title="View source" href
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="CompassEx_Comm_LocClass_LocTimeValue" data-uid="CompassEx.Comm.LocClass.LocTimeValue">
-  LocTimeValue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L28"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string LocTimeValue</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -313,14 +270,15 @@ Class LocClass  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="CompassEx_Comm_LocClass_LocTimeValues" data-uid="CompassEx.Comm.LocClass.LocTimeValues">
   LocTimeValues
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>地支对应的时间值</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string[] LocTimeValues</code></pre>
+    <pre><code class="lang-csharp hljs">public static readonly string[] LocTimeValues</code></pre>
   </div>
 
 
@@ -332,6 +290,138 @@ Class LocClass  <a class="header-action link-secondary" title="View source" href
     <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="CompassEx_Comm_LocClass_FiveAttr_" data-uid="CompassEx.Comm.LocClass.FiveAttr*"></a>
+
+  <h3 id="CompassEx_Comm_LocClass_FiveAttr" data-uid="CompassEx.Comm.LocClass.FiveAttr">
+  FiveAttr
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>五行属</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FiveAttr FiveAttr { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Comm.FiveAttr.html">FiveAttr</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_LocClass_Index_" data-uid="CompassEx.Comm.LocClass.Index*"></a>
+
+  <h3 id="CompassEx_Comm_LocClass_Index" data-uid="CompassEx.Comm.LocClass.Index">
+  Index
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>地支索引</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Index { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_LocClass_LocName_" data-uid="CompassEx.Comm.LocClass.LocName*"></a>
+
+  <h3 id="CompassEx_Comm_LocClass_LocName" data-uid="CompassEx.Comm.LocClass.LocName">
+  LocName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>地支名称</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LocName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_LocClass_LocTimeValue_" data-uid="CompassEx.Comm.LocClass.LocTimeValue*"></a>
+
+  <h3 id="CompassEx_Comm_LocClass_LocTimeValue" data-uid="CompassEx.Comm.LocClass.LocTimeValue">
+  LocTimeValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>地支的时间值</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LocTimeValue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -348,7 +438,7 @@ Class LocClass  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="CompassEx_Comm_LocClass_GetAllLocClass" data-uid="CompassEx.Comm.LocClass.GetAllLocClass">
   GetAllLocClass()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L137"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获得所有地支类集合</p>
@@ -380,7 +470,7 @@ Class LocClass  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="CompassEx_Comm_LocClass_GetLocClass_System_Int32_" data-uid="CompassEx.Comm.LocClass.GetLocClass(System.Int32)">
   GetLocClass(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L166"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -416,7 +506,7 @@ Class LocClass  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="CompassEx_Comm_LocClass_GetLocClass_System_String_" data-uid="CompassEx.Comm.LocClass.GetLocClass(System.String)">
   GetLocClass(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L152"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -452,7 +542,7 @@ Class LocClass  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="CompassEx_Comm_LocClass_TimeValueInRangIndex_System_DateTime_" data-uid="CompassEx.Comm.LocClass.TimeValueInRangIndex(System.DateTime)">
   TimeValueInRangIndex(DateTime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L104"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>返回时间是否在这个地支上</p>
@@ -490,7 +580,7 @@ Class LocClass  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="CompassEx_Comm_LocClass_TimeValueInRangIndex_System_String_" data-uid="CompassEx.Comm.LocClass.TimeValueInRangIndex(System.String)">
   TimeValueInRangIndex(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L114"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>返回时间是否在这个地支上</p>
@@ -539,7 +629,6 @@ Class LocClass  <a class="header-action link-secondary" title="View source" href
       </div>
     </main>
 
-    <div class="container-xxl search-results" id="search-results"></div>
 
     <footer class="border-top text-secondary">
       <div class="container-xxl">

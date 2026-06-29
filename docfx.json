@@ -4,14 +4,14 @@
     {
       "src": [
         {
-           "files": [ "CompassEx/*.csproj" ],
+          "files": [ "CompassEx/*.csproj" ],
           "exclude": [ "**/bin/**", "**/obj/**" ]
         }
       ],
       "dest": "api"
     }
   ],
-    "build": {
+  "build": {
     "content": [
       {
         "files": [
@@ -33,19 +33,17 @@
         ]
       }
     ],
-   "output": "_site",
+    "output": "_site",
     "template": [
-      "default",
-      "modern"
+      "default", "modern",
+      "templates"
     ],
     "globalMetadata": {
       "_appName": "CompassEx 罗盘算法类库",
       "_appTitle": "CompassEx API文档",
-      "_enableSearch": true,
+      "_enableSearch": false, 
       "_appLogoPath": "",
       "pdf": true
     }
   }
 }
-
-

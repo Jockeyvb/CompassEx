@@ -10,6 +10,7 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
+using CompassEx.Comm;
 using System;
 
 namespace CompassEx.Guo
@@ -51,7 +52,7 @@ namespace CompassEx.Guo
         /**
 		* 根据关系获得获得六亲类
 		*/
-        public static SixRelativeClass GetSixRelative(FiveAttr.FiveAttrRule far)
+        public static SixRelativeClass GetSixRelative(FiveAttrRule far)
         {
             SixRelativeClass src = new SixRelativeClass();
             src.RelativeName = SixRelatives[(int)far];

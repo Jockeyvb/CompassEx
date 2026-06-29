@@ -20,12 +20,81 @@ namespace CompassEx.Comm
     /// </summary>
     public class LocClass
     {
-        public static string[] LocNames = { "子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥" };//地支
-        public static string[] LocTimeValues = { "23:00-00:59", "01:00-02:59", "03:00-04:59", "05:00-06:59", "07:00-08:59", "09:00-10:49", "11:00-12:59", "13:00-14:59", "15:00-16:59", "17:00-18:59", "19:00-20:59", "21:00-22:59" };
-        public string LocName;//地支名称
-        public int Index;//地支位置
-        public string FiveAttrName;//五行属性名 
-        public string LocTimeValue;//时间值
+        /// <summary>
+        /// 地支名称数组
+        /// </summary>
+        public readonly static string[] LocNames = { "子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥" };//地支
+        /// <summary>
+        /// 地支对应的时间值
+        /// </summary>
+        public readonly static string[] LocTimeValues = { "23:00-00:59", "01:00-02:59", "03:00-04:59", "05:00-06:59", "07:00-08:59", "09:00-10:49", "11:00-12:59", "13:00-14:59", "15:00-16:59", "17:00-18:59", "19:00-20:59", "21:00-22:59" };
+
+        /// <summary>
+        /// 地支名称
+        /// </summary>
+        public string LocName { get; private set; }//地支名称
+        /// <summary>
+        /// 地支索引
+        /// </summary>
+        public int Index { get; private set; }//地支位置
+
+        /// <summary>
+        /// 五行属
+        /// </summary>
+        public FiveAttr FiveAttr { get; private set; }//五行属性名 
+
+        /// <summary>
+        /// 地支的时间值
+        /// </summary>
+        public string LocTimeValue { get; private set; }//时间值
+
+
+
+
+
+
+        /// <summary>
+        /// 地支构造函数
+        /// </summary>
+        /// <param name="LocName">地支名称</param>
+        /// <exception cref="IndexOutOfRangeException"></exception>
+        public LocClass(string LocName) : this(Array.IndexOf(LocNames, LocName))
+        {
+
+        }
+
+        /// <summary>
+        /// 地支构造函数
+        /// </summary>
+        /// <param name="LocIndex">地支所在的索引，参考：【<see cref="LocNames"/>】</param>
+        /// <exception cref="IndexOutOfRangeException"></exception>
+        public LocClass(int LocIndex)
+        {
+            if (LocIndex < 0 || LocIndex > LocNames.Length) throw new IndexOutOfRangeException();
+            if (LocIndex == 0 || LocIndex == 11)//子亥
+            {
+                this.FiveAttr = new FiveAttr("水");
+            }
+            else if (LocIndex == 2 || LocIndex == 3)
+            {
+                this.FiveAttr = new FiveAttr("木");
+            }
+            else if (LocIndex == 5 || LocIndex == 6)
+            {
+                this.FiveAttr = new FiveAttr("火");
+            }
+            else if (LocIndex == 8 || LocIndex == 9)
+            {
+                this.FiveAttr = new FiveAttr("金");
+            }
+            else
+            {
+                this.FiveAttr = new FiveAttr("土");
+            }
+            this.LocTimeValue = LocTimeValues[LocIndex];
+            this.Index = LocIndex;
+            this.LocName = LocNames[LocIndex];
+        }
 
         /// <summary>
         /// 返回时间是否在这个地支上
@@ -96,27 +165,8 @@ namespace CompassEx.Comm
            */
         public static LocClass GetLocClass(int iLocIndex)
         {
-            LocClass lc = new LocClass();
-            if (iLocIndex == 0 || iLocIndex == 11)
-            {//子，亥
-                lc.FiveAttrName = "水";
-            }
-            else if (iLocIndex == 2 || iLocIndex == 3)
-            {//寅卯
-                lc.FiveAttrName = "木";
-            }
-            else if (iLocIndex == 5 || iLocIndex == 6)
-            {//巳午
-                lc.FiveAttrName = "火";
-            }
-            else if (iLocIndex == 8 || iLocIndex == 9)
-            {//申酉
-                lc.FiveAttrName = "金";
-            }
-            else
-            {//丑辰未戌
-                lc.FiveAttrName = "土";
-            }
+            LocClass lc = new LocClass(iLocIndex);
+
             lc.LocTimeValue = LocTimeValues[iLocIndex];
             lc.Index = iLocIndex;
             lc.LocName = LocNames[iLocIndex];

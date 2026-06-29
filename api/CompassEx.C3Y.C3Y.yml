@@ -4,7 +4,9 @@ items:
   commentId: T:CompassEx.C3Y.C3Y
   id: C3Y
   parent: CompassEx.C3Y
-  children: []
+  children:
+  - CompassEx.C3Y.C3Y.GetAllBeforGuos
+  - CompassEx.C3Y.C3Y.GetAllCAfterGuos
   langs:
   - csharp
   - vb
@@ -19,10 +21,12 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: C3Y
     path: CompassEx/C3Y/C3Y.cs
-    startLine: 15
+    startLine: 21
   assemblies:
   - CompassEx
   namespace: CompassEx.C3Y
+  summary: 三元罗盘类
+  example: []
   syntax:
     content: public class C3Y
     content.vb: Public Class C3Y
@@ -38,6 +42,68 @@ items:
   - System.Object.ToString
   extensionMethods:
   - CompassEx.C3Y.C3Y.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CompassEx.C3Y.C3Y.GetAllCAfterGuos
+  commentId: M:CompassEx.C3Y.C3Y.GetAllCAfterGuos
+  id: GetAllCAfterGuos
+  parent: CompassEx.C3Y.C3Y
+  langs:
+  - csharp
+  - vb
+  name: GetAllCAfterGuos()
+  nameWithType: C3Y.GetAllCAfterGuos()
+  fullName: CompassEx.C3Y.C3Y.GetAllCAfterGuos()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/C3Y/C3Y.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetAllCAfterGuos
+    path: CompassEx/C3Y/C3Y.cs
+    startLine: 31
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.C3Y
+  summary: 加载并初始化罗盘上的所有后天64卦（地盘）对象，按照顺时针方向排列，从坤卦开始，每5.625度一个卦逆时针，共64个卦
+  example: []
+  syntax:
+    content: public static Dictionary<CompassRangEX, GuoClass> GetAllCAfterGuos()
+    return:
+      type: System.Collections.Generic.Dictionary{CompassEx.Comm.CompassRangEX,CompassEx.Guo.GuoClass}
+      description: ''
+    content.vb: Public Shared Function GetAllCAfterGuos() As Dictionary(Of CompassRangEX, GuoClass)
+  overload: CompassEx.C3Y.C3Y.GetAllCAfterGuos*
+- uid: CompassEx.C3Y.C3Y.GetAllBeforGuos
+  commentId: M:CompassEx.C3Y.C3Y.GetAllBeforGuos
+  id: GetAllBeforGuos
+  parent: CompassEx.C3Y.C3Y
+  langs:
+  - csharp
+  - vb
+  name: GetAllBeforGuos()
+  nameWithType: C3Y.GetAllBeforGuos()
+  fullName: CompassEx.C3Y.C3Y.GetAllBeforGuos()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/C3Y/C3Y.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetAllBeforGuos
+    path: CompassEx/C3Y/C3Y.cs
+    startLine: 96
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.C3Y
+  summary: 加载罗盘上的所有先天64卦（天盘）对象，按照顺时针方向排列，从坤卦开始，每5.625度一个卦逆时针，共64个卦
+  example: []
+  syntax:
+    content: public static Dictionary<CompassRangEX, GuoClass> GetAllBeforGuos()
+    return:
+      type: System.Collections.Generic.Dictionary{CompassEx.Comm.CompassRangEX,CompassEx.Guo.GuoClass}
+      description: ''
+    content.vb: Public Shared Function GetAllBeforGuos() As Dictionary(Of CompassRangEX, GuoClass)
+  overload: CompassEx.C3Y.C3Y.GetAllBeforGuos*
 references:
 - uid: CompassEx.C3Y
   commentId: N:CompassEx.C3Y
@@ -423,3 +489,129 @@ references:
   - uid: CompassEx.Comm
     name: Comm
     href: CompassEx.Comm.html
+- uid: CompassEx.C3Y.C3Y.GetAllCAfterGuos*
+  commentId: Overload:CompassEx.C3Y.C3Y.GetAllCAfterGuos
+  href: CompassEx.C3Y.C3Y.html#CompassEx_C3Y_C3Y_GetAllCAfterGuos
+  name: GetAllCAfterGuos
+  nameWithType: C3Y.GetAllCAfterGuos
+  fullName: CompassEx.C3Y.C3Y.GetAllCAfterGuos
+- uid: System.Collections.Generic.Dictionary{CompassEx.Comm.CompassRangEX,CompassEx.Guo.GuoClass}
+  commentId: T:System.Collections.Generic.Dictionary{CompassEx.Comm.CompassRangEX,CompassEx.Guo.GuoClass}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<CompassRangEX, GuoClass>
+  nameWithType: Dictionary<CompassRangEX, GuoClass>
+  fullName: System.Collections.Generic.Dictionary<CompassEx.Comm.CompassRangEX, CompassEx.Guo.GuoClass>
+  nameWithType.vb: Dictionary(Of CompassRangEX, GuoClass)
+  fullName.vb: System.Collections.Generic.Dictionary(Of CompassEx.Comm.CompassRangEX, CompassEx.Guo.GuoClass)
+  name.vb: Dictionary(Of CompassRangEX, GuoClass)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: CompassEx.Comm.CompassRangEX
+    name: CompassRangEX
+    href: CompassEx.Comm.CompassRangEX.html
+  - name: ','
+  - name: " "
+  - uid: CompassEx.Guo.GuoClass
+    name: GuoClass
+    href: CompassEx.Guo.GuoClass.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Comm.CompassRangEX
+    name: CompassRangEX
+    href: CompassEx.Comm.CompassRangEX.html
+  - name: ','
+  - name: " "
+  - uid: CompassEx.Guo.GuoClass
+    name: GuoClass
+    href: CompassEx.Guo.GuoClass.html
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: CompassEx.C3Y.C3Y.GetAllBeforGuos*
+  commentId: Overload:CompassEx.C3Y.C3Y.GetAllBeforGuos
+  href: CompassEx.C3Y.C3Y.html#CompassEx_C3Y_C3Y_GetAllBeforGuos
+  name: GetAllBeforGuos
+  nameWithType: C3Y.GetAllBeforGuos
+  fullName: CompassEx.C3Y.C3Y.GetAllBeforGuos

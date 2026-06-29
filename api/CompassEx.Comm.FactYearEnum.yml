@@ -1,0 +1,223 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Comm.FactYearEnum
+  commentId: T:CompassEx.Comm.FactYearEnum
+  id: FactYearEnum
+  parent: CompassEx.Comm
+  children:
+  - CompassEx.Comm.FactYearEnum.SpringAfter
+  - CompassEx.Comm.FactYearEnum.SpringBefore
+  langs:
+  - csharp
+  - vb
+  name: FactYearEnum
+  nameWithType: FactYearEnum
+  fullName: CompassEx.Comm.FactYearEnum
+  type: Enum
+  source:
+    remote:
+      path: CompassEx/Comm/Defined.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FactYearEnum
+    path: CompassEx/Comm/Defined.cs
+    startLine: 18
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 是否为真实年(龄),0为立春后，1立春前
+  example: []
+  syntax:
+    content: 'public enum FactYearEnum : uint'
+    content.vb: Public Enum FactYearEnum As UInteger
+  extensionMethods:
+  - CompassEx.Comm.FactYearEnum.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CompassEx.Comm.FactYearEnum.SpringAfter
+  commentId: F:CompassEx.Comm.FactYearEnum.SpringAfter
+  id: SpringAfter
+  parent: CompassEx.Comm.FactYearEnum
+  langs:
+  - csharp
+  - vb
+  name: SpringAfter
+  nameWithType: FactYearEnum.SpringAfter
+  fullName: CompassEx.Comm.FactYearEnum.SpringAfter
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Comm/Defined.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SpringAfter
+    path: CompassEx/Comm/Defined.cs
+    startLine: 24
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 立春后
+  example: []
+  syntax:
+    content: SpringAfter = 0
+    return:
+      type: CompassEx.Comm.FactYearEnum
+- uid: CompassEx.Comm.FactYearEnum.SpringBefore
+  commentId: F:CompassEx.Comm.FactYearEnum.SpringBefore
+  id: SpringBefore
+  parent: CompassEx.Comm.FactYearEnum
+  langs:
+  - csharp
+  - vb
+  name: SpringBefore
+  nameWithType: FactYearEnum.SpringBefore
+  fullName: CompassEx.Comm.FactYearEnum.SpringBefore
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Comm/Defined.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SpringBefore
+    path: CompassEx/Comm/Defined.cs
+    startLine: 28
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 立春前
+  example: []
+  syntax:
+    content: SpringBefore = 1
+    return:
+      type: CompassEx.Comm.FactYearEnum
+references:
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: CompassEx.Comm.FactYearEnum.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<FactYearEnum, TBase>(FactYearEnum, TBase)
+  nameWithType: Comm.ApplyBaseProperties<FactYearEnum, TBase>(FactYearEnum, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.Comm.FactYearEnum, TBase>(CompassEx.Comm.FactYearEnum, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of FactYearEnum, TBase)(FactYearEnum, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.Comm.FactYearEnum, TBase)(CompassEx.Comm.FactYearEnum, TBase)
+  name.vb: ApplyBaseProperties(Of FactYearEnum, TBase)(FactYearEnum, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Comm.FactYearEnum,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.Comm.FactYearEnum
+    name: FactYearEnum
+    href: CompassEx.Comm.FactYearEnum.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.Comm.FactYearEnum
+    name: FactYearEnum
+    href: CompassEx.Comm.FactYearEnum.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Comm.FactYearEnum,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Comm.FactYearEnum
+    name: FactYearEnum
+    href: CompassEx.Comm.FactYearEnum.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.Comm.FactYearEnum
+    name: FactYearEnum
+    href: CompassEx.Comm.FactYearEnum.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm.FactYearEnum
+  commentId: T:CompassEx.Comm.FactYearEnum
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.FactYearEnum.html
+  name: FactYearEnum
+  nameWithType: FactYearEnum
+  fullName: CompassEx.Comm.FactYearEnum

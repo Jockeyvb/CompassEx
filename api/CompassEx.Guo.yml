@@ -5,12 +5,15 @@ items:
   id: CompassEx.Guo
   children:
   - CompassEx.Guo.FateGuo
-  - CompassEx.Guo.FiveAttr
-  - CompassEx.Guo.FiveAttr.FiveAttrRule
   - CompassEx.Guo.GuoClass
+  - CompassEx.Guo.GuoQi
   - CompassEx.Guo.GuoSubClass
+  - CompassEx.Guo.NaJia
+  - CompassEx.Guo.NaJia.NaJiaType
+  - CompassEx.Guo.NineStar
   - CompassEx.Guo.SixGodClass
   - CompassEx.Guo.SixRelativeClass
+  - CompassEx.Guo.TianJiOutGuo
   langs:
   - csharp
   - vb
@@ -27,35 +30,6 @@ references:
   name: FateGuo
   nameWithType: FateGuo
   fullName: CompassEx.Guo.FateGuo
-- uid: CompassEx.Guo.FiveAttr
-  commentId: T:CompassEx.Guo.FiveAttr
-  href: CompassEx.Guo.FiveAttr.html
-  name: FiveAttr
-  nameWithType: FiveAttr
-  fullName: CompassEx.Guo.FiveAttr
-- uid: CompassEx.Guo.FiveAttr.FiveAttrRule
-  commentId: T:CompassEx.Guo.FiveAttr.FiveAttrRule
-  parent: CompassEx.Guo
-  href: CompassEx.Guo.FiveAttr.html
-  name: FiveAttr.FiveAttrRule
-  nameWithType: FiveAttr.FiveAttrRule
-  fullName: CompassEx.Guo.FiveAttr.FiveAttrRule
-  spec.csharp:
-  - uid: CompassEx.Guo.FiveAttr
-    name: FiveAttr
-    href: CompassEx.Guo.FiveAttr.html
-  - name: .
-  - uid: CompassEx.Guo.FiveAttr.FiveAttrRule
-    name: FiveAttrRule
-    href: CompassEx.Guo.FiveAttr.FiveAttrRule.html
-  spec.vb:
-  - uid: CompassEx.Guo.FiveAttr
-    name: FiveAttr
-    href: CompassEx.Guo.FiveAttr.html
-  - name: .
-  - uid: CompassEx.Guo.FiveAttr.FiveAttrRule
-    name: FiveAttrRule
-    href: CompassEx.Guo.FiveAttr.FiveAttrRule.html
 - uid: CompassEx.Guo.GuoClass
   commentId: T:CompassEx.Guo.GuoClass
   parent: CompassEx.Guo
@@ -63,6 +37,13 @@ references:
   name: GuoClass
   nameWithType: GuoClass
   fullName: CompassEx.Guo.GuoClass
+- uid: CompassEx.Guo.GuoQi
+  commentId: T:CompassEx.Guo.GuoQi
+  parent: CompassEx.Guo
+  href: CompassEx.Guo.GuoQi.html
+  name: GuoQi
+  nameWithType: GuoQi
+  fullName: CompassEx.Guo.GuoQi
 - uid: CompassEx.Guo.GuoSubClass
   commentId: T:CompassEx.Guo.GuoSubClass
   parent: CompassEx.Guo
@@ -70,6 +51,42 @@ references:
   name: GuoSubClass
   nameWithType: GuoSubClass
   fullName: CompassEx.Guo.GuoSubClass
+- uid: CompassEx.Guo.NaJia
+  commentId: T:CompassEx.Guo.NaJia
+  parent: CompassEx.Guo
+  href: CompassEx.Guo.NaJia.html
+  name: NaJia
+  nameWithType: NaJia
+  fullName: CompassEx.Guo.NaJia
+- uid: CompassEx.Guo.NaJia.NaJiaType
+  commentId: T:CompassEx.Guo.NaJia.NaJiaType
+  parent: CompassEx.Guo
+  href: CompassEx.Guo.NaJia.html
+  name: NaJia.NaJiaType
+  nameWithType: NaJia.NaJiaType
+  fullName: CompassEx.Guo.NaJia.NaJiaType
+  spec.csharp:
+  - uid: CompassEx.Guo.NaJia
+    name: NaJia
+    href: CompassEx.Guo.NaJia.html
+  - name: .
+  - uid: CompassEx.Guo.NaJia.NaJiaType
+    name: NaJiaType
+    href: CompassEx.Guo.NaJia.NaJiaType.html
+  spec.vb:
+  - uid: CompassEx.Guo.NaJia
+    name: NaJia
+    href: CompassEx.Guo.NaJia.html
+  - name: .
+  - uid: CompassEx.Guo.NaJia.NaJiaType
+    name: NaJiaType
+    href: CompassEx.Guo.NaJia.NaJiaType.html
+- uid: CompassEx.Guo.NineStar
+  commentId: T:CompassEx.Guo.NineStar
+  href: CompassEx.Guo.NineStar.html
+  name: NineStar
+  nameWithType: NineStar
+  fullName: CompassEx.Guo.NineStar
 - uid: CompassEx.Guo.SixGodClass
   commentId: T:CompassEx.Guo.SixGodClass
   href: CompassEx.Guo.SixGodClass.html
@@ -83,6 +100,12 @@ references:
   name: SixRelativeClass
   nameWithType: SixRelativeClass
   fullName: CompassEx.Guo.SixRelativeClass
+- uid: CompassEx.Guo.TianJiOutGuo
+  commentId: T:CompassEx.Guo.TianJiOutGuo
+  href: CompassEx.Guo.TianJiOutGuo.html
+  name: TianJiOutGuo
+  nameWithType: TianJiOutGuo
+  fullName: CompassEx.Guo.TianJiOutGuo
 - uid: CompassEx.Guo
   commentId: N:CompassEx.Guo
   href: CompassEx.html

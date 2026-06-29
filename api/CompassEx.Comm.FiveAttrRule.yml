@@ -1,0 +1,310 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Comm.FiveAttrRule
+  commentId: T:CompassEx.Comm.FiveAttrRule
+  id: FiveAttrRule
+  parent: CompassEx.Comm
+  children:
+  - CompassEx.Comm.FiveAttrRule.BirthMe
+  - CompassEx.Comm.FiveAttrRule.CanMe
+  - CompassEx.Comm.FiveAttrRule.MeBirth
+  - CompassEx.Comm.FiveAttrRule.MeCan
+  - CompassEx.Comm.FiveAttrRule.SameMe
+  langs:
+  - csharp
+  - vb
+  name: FiveAttrRule
+  nameWithType: FiveAttrRule
+  fullName: CompassEx.Comm.FiveAttrRule
+  type: Enum
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FiveAttrRule
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 20
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 五行生克关系规则
+  example: []
+  syntax:
+    content: 'public enum FiveAttrRule : uint'
+    content.vb: Public Enum FiveAttrRule As UInteger
+  extensionMethods:
+  - CompassEx.Comm.FiveAttrRule.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CompassEx.Comm.FiveAttrRule.MeCan
+  commentId: F:CompassEx.Comm.FiveAttrRule.MeCan
+  id: MeCan
+  parent: CompassEx.Comm.FiveAttrRule
+  langs:
+  - csharp
+  - vb
+  name: MeCan
+  nameWithType: FiveAttrRule.MeCan
+  fullName: CompassEx.Comm.FiveAttrRule.MeCan
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: MeCan
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 25
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 我克为妻财
+  example: []
+  syntax:
+    content: MeCan = 0
+    return:
+      type: CompassEx.Comm.FiveAttrRule
+- uid: CompassEx.Comm.FiveAttrRule.MeBirth
+  commentId: F:CompassEx.Comm.FiveAttrRule.MeBirth
+  id: MeBirth
+  parent: CompassEx.Comm.FiveAttrRule
+  langs:
+  - csharp
+  - vb
+  name: MeBirth
+  nameWithType: FiveAttrRule.MeBirth
+  fullName: CompassEx.Comm.FiveAttrRule.MeBirth
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: MeBirth
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 30
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 我生为子孙
+  example: []
+  syntax:
+    content: MeBirth = 1
+    return:
+      type: CompassEx.Comm.FiveAttrRule
+- uid: CompassEx.Comm.FiveAttrRule.SameMe
+  commentId: F:CompassEx.Comm.FiveAttrRule.SameMe
+  id: SameMe
+  parent: CompassEx.Comm.FiveAttrRule
+  langs:
+  - csharp
+  - vb
+  name: SameMe
+  nameWithType: FiveAttrRule.SameMe
+  fullName: CompassEx.Comm.FiveAttrRule.SameMe
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SameMe
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 35
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 同我为兄弟
+  example: []
+  syntax:
+    content: SameMe = 2
+    return:
+      type: CompassEx.Comm.FiveAttrRule
+- uid: CompassEx.Comm.FiveAttrRule.CanMe
+  commentId: F:CompassEx.Comm.FiveAttrRule.CanMe
+  id: CanMe
+  parent: CompassEx.Comm.FiveAttrRule
+  langs:
+  - csharp
+  - vb
+  name: CanMe
+  nameWithType: FiveAttrRule.CanMe
+  fullName: CompassEx.Comm.FiveAttrRule.CanMe
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: CanMe
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 39
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 克我为官鬼
+  example: []
+  syntax:
+    content: CanMe = 3
+    return:
+      type: CompassEx.Comm.FiveAttrRule
+- uid: CompassEx.Comm.FiveAttrRule.BirthMe
+  commentId: F:CompassEx.Comm.FiveAttrRule.BirthMe
+  id: BirthMe
+  parent: CompassEx.Comm.FiveAttrRule
+  langs:
+  - csharp
+  - vb
+  name: BirthMe
+  nameWithType: FiveAttrRule.BirthMe
+  fullName: CompassEx.Comm.FiveAttrRule.BirthMe
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: BirthMe
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 43
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 生我为父母
+  example: []
+  syntax:
+    content: BirthMe = 4
+    return:
+      type: CompassEx.Comm.FiveAttrRule
+references:
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: CompassEx.Comm.FiveAttrRule.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<FiveAttrRule, TBase>(FiveAttrRule, TBase)
+  nameWithType: Comm.ApplyBaseProperties<FiveAttrRule, TBase>(FiveAttrRule, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.Comm.FiveAttrRule, TBase>(CompassEx.Comm.FiveAttrRule, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of FiveAttrRule, TBase)(FiveAttrRule, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.Comm.FiveAttrRule, TBase)(CompassEx.Comm.FiveAttrRule, TBase)
+  name.vb: ApplyBaseProperties(Of FiveAttrRule, TBase)(FiveAttrRule, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Comm.FiveAttrRule,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.Comm.FiveAttrRule
+    name: FiveAttrRule
+    href: CompassEx.Comm.FiveAttrRule.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.Comm.FiveAttrRule
+    name: FiveAttrRule
+    href: CompassEx.Comm.FiveAttrRule.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Comm.FiveAttrRule,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Comm.FiveAttrRule
+    name: FiveAttrRule
+    href: CompassEx.Comm.FiveAttrRule.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.Comm.FiveAttrRule
+    name: FiveAttrRule
+    href: CompassEx.Comm.FiveAttrRule.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm.FiveAttrRule
+  commentId: T:CompassEx.Comm.FiveAttrRule
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.FiveAttrRule.html
+  name: FiveAttrRule
+  nameWithType: FiveAttrRule
+  fullName: CompassEx.Comm.FiveAttrRule

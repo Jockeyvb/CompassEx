@@ -5,7 +5,7 @@ items:
   id: SixRelativeClass
   parent: CompassEx.Guo
   children:
-  - CompassEx.Guo.SixRelativeClass.GetSixRelative(CompassEx.Guo.FiveAttr.FiveAttrRule)
+  - CompassEx.Guo.SixRelativeClass.GetSixRelative(CompassEx.Comm.FiveAttrRule)
   - CompassEx.Guo.SixRelativeClass.GetSixRelative(System.String)
   - CompassEx.Guo.SixRelativeClass.RelativeIndex
   - CompassEx.Guo.SixRelativeClass.RelativeName
@@ -24,7 +24,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SixRelativeClass
     path: CompassEx/Guo/SixRelativeClass.cs
-    startLine: 19
+    startLine: 20
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -63,7 +63,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SixRelatives
     path: CompassEx/Guo/SixRelativeClass.cs
-    startLine: 21
+    startLine: 22
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -90,7 +90,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: RelativeName
     path: CompassEx/Guo/SixRelativeClass.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -119,7 +119,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: RelativeIndex
     path: CompassEx/Guo/SixRelativeClass.cs
-    startLine: 29
+    startLine: 30
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -148,7 +148,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSixRelative
     path: CompassEx/Guo/SixRelativeClass.cs
-    startLine: 40
+    startLine: 41
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -168,16 +168,16 @@ items:
   nameWithType.vb: SixRelativeClass.GetSixRelative(String)
   fullName.vb: CompassEx.Guo.SixRelativeClass.GetSixRelative(String)
   name.vb: GetSixRelative(String)
-- uid: CompassEx.Guo.SixRelativeClass.GetSixRelative(CompassEx.Guo.FiveAttr.FiveAttrRule)
-  commentId: M:CompassEx.Guo.SixRelativeClass.GetSixRelative(CompassEx.Guo.FiveAttr.FiveAttrRule)
-  id: GetSixRelative(CompassEx.Guo.FiveAttr.FiveAttrRule)
+- uid: CompassEx.Guo.SixRelativeClass.GetSixRelative(CompassEx.Comm.FiveAttrRule)
+  commentId: M:CompassEx.Guo.SixRelativeClass.GetSixRelative(CompassEx.Comm.FiveAttrRule)
+  id: GetSixRelative(CompassEx.Comm.FiveAttrRule)
   parent: CompassEx.Guo.SixRelativeClass
   langs:
   - csharp
   - vb
   name: GetSixRelative(FiveAttrRule)
-  nameWithType: SixRelativeClass.GetSixRelative(FiveAttr.FiveAttrRule)
-  fullName: CompassEx.Guo.SixRelativeClass.GetSixRelative(CompassEx.Guo.FiveAttr.FiveAttrRule)
+  nameWithType: SixRelativeClass.GetSixRelative(FiveAttrRule)
+  fullName: CompassEx.Guo.SixRelativeClass.GetSixRelative(CompassEx.Comm.FiveAttrRule)
   type: Method
   source:
     remote:
@@ -186,19 +186,19 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSixRelative
     path: CompassEx/Guo/SixRelativeClass.cs
-    startLine: 53
+    startLine: 54
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
   example: []
   syntax:
-    content: public static SixRelativeClass GetSixRelative(FiveAttr.FiveAttrRule far)
+    content: public static SixRelativeClass GetSixRelative(FiveAttrRule far)
     parameters:
     - id: far
-      type: CompassEx.Guo.FiveAttr.FiveAttrRule
+      type: CompassEx.Comm.FiveAttrRule
     return:
       type: CompassEx.Guo.SixRelativeClass
-    content.vb: Public Shared Function GetSixRelative(far As FiveAttr.FiveAttrRule) As SixRelativeClass
+    content.vb: Public Shared Function GetSixRelative(far As FiveAttrRule) As SixRelativeClass
   overload: CompassEx.Guo.SixRelativeClass.GetSixRelative*
 references:
 - uid: CompassEx.Guo
@@ -643,26 +643,10 @@ references:
   name: SixRelativeClass
   nameWithType: SixRelativeClass
   fullName: CompassEx.Guo.SixRelativeClass
-- uid: CompassEx.Guo.FiveAttr.FiveAttrRule
-  commentId: T:CompassEx.Guo.FiveAttr.FiveAttrRule
-  parent: CompassEx.Guo
-  href: CompassEx.Guo.FiveAttr.html
-  name: FiveAttr.FiveAttrRule
-  nameWithType: FiveAttr.FiveAttrRule
-  fullName: CompassEx.Guo.FiveAttr.FiveAttrRule
-  spec.csharp:
-  - uid: CompassEx.Guo.FiveAttr
-    name: FiveAttr
-    href: CompassEx.Guo.FiveAttr.html
-  - name: .
-  - uid: CompassEx.Guo.FiveAttr.FiveAttrRule
-    name: FiveAttrRule
-    href: CompassEx.Guo.FiveAttr.FiveAttrRule.html
-  spec.vb:
-  - uid: CompassEx.Guo.FiveAttr
-    name: FiveAttr
-    href: CompassEx.Guo.FiveAttr.html
-  - name: .
-  - uid: CompassEx.Guo.FiveAttr.FiveAttrRule
-    name: FiveAttrRule
-    href: CompassEx.Guo.FiveAttr.FiveAttrRule.html
+- uid: CompassEx.Comm.FiveAttrRule
+  commentId: T:CompassEx.Comm.FiveAttrRule
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.FiveAttrRule.html
+  name: FiveAttrRule
+  nameWithType: FiveAttrRule
+  fullName: CompassEx.Comm.FiveAttrRule

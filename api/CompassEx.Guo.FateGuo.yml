@@ -5,7 +5,7 @@ items:
   id: FateGuo
   parent: CompassEx.Guo
   children:
-  - CompassEx.Guo.FateGuo.#ctor(System.DateTime,System.String,CompassEx.Guo.GuoSubClass)
+  - CompassEx.Guo.FateGuo.#ctor(System.DateTime,System.String,CompassEx.Guo.GuoClass)
   - CompassEx.Guo.FateGuo.GetFateGuo(System.DateTime,System.String)
   - CompassEx.Guo.FateGuo.GuoList
   - CompassEx.Guo.FateGuo.GuoSub
@@ -27,11 +27,22 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FateGuo
     path: CompassEx/Guo/FateGuo.cs
-    startLine: 25
+    startLine: 30
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 是命卦的结构类型，包含了命卦的六爻纯卦和一些相关属性，例如：命卦的五行属性，命卦的运等
+  summary: >-
+    是命卦的结构类型，包含了命卦的六爻纯卦和一些相关属性，例如：命卦的五行属性，命卦的运等<br />
+
+    1、涉及余胜的命卦计算方法，命卦的入卦和出卦的计算方法，命卦的七爻飞爻卦的计算方法，以及命卦与罗盘24山（向）的关系等内容。
+
+    余胜唐所著的《玄空大卦些子法真诀》与《三元直指》中的天机出卦法：余胜唐在《三元直指》书中177页中，明确指出天机出卦法是纳甲用法（三元命卦无关）且并没涉及玄空大卦中的五行之论（虽然书中不全论大卦，亦应注或提示），如不查他其他著作完全不知道要如何使用且《玄空大卦些子法真诀》中的天机出卦法只说【命卦】又不指出命卦具体是三元命卦还是纳甲之卦，使用方法是以向卦为论，那么玄空大卦中是以所向的成卦之卦宫为论？还是以后天八卦为论？还是纳甲卦为论？真让人摸不着头脑。著书者应当严明解说；学习风水者应细仔研究考究为用，不可单论。<br />
+
+    2、在刘贲所作《玄空大卦透析》书中456页第十九章中提到相似，甚至比余写的更为清晰指出以三元64卦以卦气为论，命卦则是纳甲（包括京房与杨公之纳甲法）用户可以参考其计算方法与判断方法。<br />
+
+    关于京房纳甲与杨公纳甲资料，请自行查阅区别与使用<br />
+
+    <b><font color="red">仅参供参考，请谨慎看待使用</font></b>
   example: []
   syntax:
     content: public class FateGuo
@@ -66,14 +77,14 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoSub
     path: CompassEx/Guo/FateGuo.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
   summary: 所属命卦
   example: []
   syntax:
-    content: public GuoSubClass GuoSub { get; set; }
+    content: public GuoSubClass GuoSub { get; }
     parameters: []
     return:
       type: CompassEx.Guo.GuoSubClass
@@ -97,18 +108,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: InGuoSubs
     path: CompassEx/Guo/FateGuo.cs
-    startLine: 42
+    startLine: 43
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
   summary: 入卦（三爻卦）后天，入卦数为5个
   example: []
   syntax:
-    content: public List<GuoSubClass> InGuoSubs { get; set; }
+    content: public Dictionary<string, GuoSubClass> InGuoSubs { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.List{CompassEx.Guo.GuoSubClass}
-    content.vb: Public Property InGuoSubs As List(Of GuoSubClass)
+      type: System.Collections.Generic.Dictionary{System.String,CompassEx.Guo.GuoSubClass}
+    content.vb: Public Property InGuoSubs As Dictionary(Of String, GuoSubClass)
   overload: CompassEx.Guo.FateGuo.InGuoSubs*
 - uid: CompassEx.Guo.FateGuo.OutGuoSubs
   commentId: P:CompassEx.Guo.FateGuo.OutGuoSubs
@@ -128,18 +139,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: OutGuoSubs
     path: CompassEx/Guo/FateGuo.cs
-    startLine: 46
+    startLine: 47
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
   summary: 出卦（三爻卦）后天，出卦数为3个
   example: []
   syntax:
-    content: public List<GuoSubClass> OutGuoSubs { get; set; }
+    content: public Dictionary<string, GuoSubClass> OutGuoSubs { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.List{CompassEx.Guo.GuoSubClass}
-    content.vb: Public Property OutGuoSubs As List(Of GuoSubClass)
+      type: System.Collections.Generic.Dictionary{System.String,CompassEx.Guo.GuoSubClass}
+    content.vb: Public Property OutGuoSubs As Dictionary(Of String, GuoSubClass)
   overload: CompassEx.Guo.FateGuo.OutGuoSubs*
 - uid: CompassEx.Guo.FateGuo.GuoList
   commentId: P:CompassEx.Guo.FateGuo.GuoList
@@ -159,14 +170,14 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoList
     path: CompassEx/Guo/FateGuo.cs
-    startLine: 51
+    startLine: 52
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
   summary: 7世飞爻卦(京房易卦法)（由初爻开始往上变，以后最卦接着变出共变7次，共8个卦）
   example: []
   syntax:
-    content: public List<GuoClass> GuoList { get; set; }
+    content: public List<GuoClass> GuoList { get; }
     parameters: []
     return:
       type: System.Collections.Generic.List{CompassEx.Guo.GuoClass}
@@ -190,14 +201,14 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IsOutGuo
     path: CompassEx/Guo/FateGuo.cs
-    startLine: 56
+    startLine: 57
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
   summary: 是否出卦
   example: []
   syntax:
-    content: public bool IsOutGuo { get; set; }
+    content: public bool IsOutGuo { get; }
     parameters: []
     return:
       type: System.Boolean
@@ -221,29 +232,29 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Message
     path: CompassEx/Guo/FateGuo.cs
-    startLine: 60
+    startLine: 61
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
   summary: 相关信息，例如：如果无法计算命卦，则会在这里记录错误信息
   example: []
   syntax:
-    content: public string Message { get; set; }
+    content: public string Message { get; }
     parameters: []
     return:
       type: System.String
     content.vb: Public Property Message As String
   overload: CompassEx.Guo.FateGuo.Message*
-- uid: CompassEx.Guo.FateGuo.#ctor(System.DateTime,System.String,CompassEx.Guo.GuoSubClass)
-  commentId: M:CompassEx.Guo.FateGuo.#ctor(System.DateTime,System.String,CompassEx.Guo.GuoSubClass)
-  id: '#ctor(System.DateTime,System.String,CompassEx.Guo.GuoSubClass)'
+- uid: CompassEx.Guo.FateGuo.#ctor(System.DateTime,System.String,CompassEx.Guo.GuoClass)
+  commentId: M:CompassEx.Guo.FateGuo.#ctor(System.DateTime,System.String,CompassEx.Guo.GuoClass)
+  id: '#ctor(System.DateTime,System.String,CompassEx.Guo.GuoClass)'
   parent: CompassEx.Guo.FateGuo
   langs:
   - csharp
   - vb
-  name: FateGuo(DateTime, string, GuoSubClass)
-  nameWithType: FateGuo.FateGuo(DateTime, string, GuoSubClass)
-  fullName: CompassEx.Guo.FateGuo.FateGuo(System.DateTime, string, CompassEx.Guo.GuoSubClass)
+  name: FateGuo(DateTime, string, GuoClass)
+  nameWithType: FateGuo.FateGuo(DateTime, string, GuoClass)
+  fullName: CompassEx.Guo.FateGuo.FateGuo(System.DateTime, string, CompassEx.Guo.GuoClass)
   type: Constructor
   source:
     remote:
@@ -252,14 +263,14 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Guo/FateGuo.cs
-    startLine: 69
+    startLine: 75
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
   summary: 构造函数，输入出生日期和性别，计算命卦，并获得相关的入卦和出卦等信息（包括计算立春岁数）
   example: []
   syntax:
-    content: public FateGuo(DateTime d, string Sex, GuoSubClass ToGuo8)
+    content: public FateGuo(DateTime d, string Sex, GuoClass ToGuo8)
     parameters:
     - id: d
       type: System.DateTime
@@ -268,13 +279,13 @@ items:
       type: System.String
       description: 性别
     - id: ToGuo8
-      type: CompassEx.Guo.GuoSubClass
+      type: CompassEx.Guo.GuoClass
       description: 罗盘中的24山（向）所属的卦宫位置（后天）
-    content.vb: Public Sub New(d As Date, Sex As String, ToGuo8 As GuoSubClass)
+    content.vb: Public Sub New(d As Date, Sex As String, ToGuo8 As GuoClass)
   overload: CompassEx.Guo.FateGuo.#ctor*
-  nameWithType.vb: FateGuo.New(Date, String, GuoSubClass)
-  fullName.vb: CompassEx.Guo.FateGuo.New(Date, String, CompassEx.Guo.GuoSubClass)
-  name.vb: New(Date, String, GuoSubClass)
+  nameWithType.vb: FateGuo.New(Date, String, GuoClass)
+  fullName.vb: CompassEx.Guo.FateGuo.New(Date, String, CompassEx.Guo.GuoClass)
+  name.vb: New(Date, String, GuoClass)
 - uid: CompassEx.Guo.FateGuo.GetFateGuo(System.DateTime,System.String)
   commentId: M:CompassEx.Guo.FateGuo.GetFateGuo(System.DateTime,System.String)
   id: GetFateGuo(System.DateTime,System.String)
@@ -293,7 +304,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetFateGuo
     path: CompassEx/Guo/FateGuo.cs
-    startLine: 146
+    startLine: 129
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -304,7 +315,7 @@ items:
     parameters:
     - id: d
       type: System.DateTime
-      description: 出生日期（公历）
+      description: 出生日期（公历），将自动计算立春前后的真实年份
     - id: Sex
       type: System.String
       description: 性别
@@ -720,66 +731,84 @@ references:
   name: InGuoSubs
   nameWithType: FateGuo.InGuoSubs
   fullName: CompassEx.Guo.FateGuo.InGuoSubs
-- uid: System.Collections.Generic.List{CompassEx.Guo.GuoSubClass}
-  commentId: T:System.Collections.Generic.List{CompassEx.Guo.GuoSubClass}
+- uid: System.Collections.Generic.Dictionary{System.String,CompassEx.Guo.GuoSubClass}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,CompassEx.Guo.GuoSubClass}
   parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<GuoSubClass>
-  nameWithType: List<GuoSubClass>
-  fullName: System.Collections.Generic.List<CompassEx.Guo.GuoSubClass>
-  nameWithType.vb: List(Of GuoSubClass)
-  fullName.vb: System.Collections.Generic.List(Of CompassEx.Guo.GuoSubClass)
-  name.vb: List(Of GuoSubClass)
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, GuoSubClass>
+  nameWithType: Dictionary<string, GuoSubClass>
+  fullName: System.Collections.Generic.Dictionary<string, CompassEx.Guo.GuoSubClass>
+  nameWithType.vb: Dictionary(Of String, GuoSubClass)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, CompassEx.Guo.GuoSubClass)
+  name.vb: Dictionary(Of String, GuoSubClass)
   spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
   - uid: CompassEx.Guo.GuoSubClass
     name: GuoSubClass
     href: CompassEx.Guo.GuoSubClass.html
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: (
   - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
   - name: " "
   - uid: CompassEx.Guo.GuoSubClass
     name: GuoSubClass
     href: CompassEx.Guo.GuoSubClass.html
   - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
   spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: <
-  - name: T
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: (
   - name: Of
   - name: " "
-  - name: T
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
   - name: )
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
@@ -863,6 +892,34 @@ references:
     name: GuoClass
     href: CompassEx.Guo.GuoClass.html
   - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: CompassEx.Guo.FateGuo.IsOutGuo*
   commentId: Overload:CompassEx.Guo.FateGuo.IsOutGuo
   href: CompassEx.Guo.FateGuo.html#CompassEx_Guo_FateGuo_IsOutGuo
@@ -899,7 +956,7 @@ references:
   name.vb: String
 - uid: CompassEx.Guo.FateGuo.#ctor*
   commentId: Overload:CompassEx.Guo.FateGuo.#ctor
-  href: CompassEx.Guo.FateGuo.html#CompassEx_Guo_FateGuo__ctor_System_DateTime_System_String_CompassEx_Guo_GuoSubClass_
+  href: CompassEx.Guo.FateGuo.html#CompassEx_Guo_FateGuo__ctor_System_DateTime_System_String_CompassEx_Guo_GuoClass_
   name: FateGuo
   nameWithType: FateGuo.FateGuo
   fullName: CompassEx.Guo.FateGuo.FateGuo
@@ -917,6 +974,13 @@ references:
   nameWithType.vb: Date
   fullName.vb: Date
   name.vb: Date
+- uid: CompassEx.Guo.GuoClass
+  commentId: T:CompassEx.Guo.GuoClass
+  parent: CompassEx.Guo
+  href: CompassEx.Guo.GuoClass.html
+  name: GuoClass
+  nameWithType: GuoClass
+  fullName: CompassEx.Guo.GuoClass
 - uid: CompassEx.Guo.FateGuo.GetFateGuo*
   commentId: Overload:CompassEx.Guo.FateGuo.GetFateGuo
   href: CompassEx.Guo.FateGuo.html#CompassEx_Guo_FateGuo_GetFateGuo_System_DateTime_System_String_

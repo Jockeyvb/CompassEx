@@ -5,7 +5,9 @@ items:
   id: LocClass
   parent: CompassEx.Comm
   children:
-  - CompassEx.Comm.LocClass.FiveAttrName
+  - CompassEx.Comm.LocClass.#ctor(System.Int32)
+  - CompassEx.Comm.LocClass.#ctor(System.String)
+  - CompassEx.Comm.LocClass.FiveAttr
   - CompassEx.Comm.LocClass.GetAllLocClass
   - CompassEx.Comm.LocClass.GetLocClass(System.Int32)
   - CompassEx.Comm.LocClass.GetLocClass(System.String)
@@ -69,15 +71,17 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LocNames
     path: CompassEx/Comm/LocClass.cs
-    startLine: 22
+    startLine: 25
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
+  summary: 地支名称数组
+  example: []
   syntax:
-    content: public static string[] LocNames
+    content: public static readonly string[] LocNames
     return:
       type: System.String[]
-    content.vb: Public Shared LocNames As String()
+    content.vb: Public Shared ReadOnly LocNames As String()
 - uid: CompassEx.Comm.LocClass.LocTimeValues
   commentId: F:CompassEx.Comm.LocClass.LocTimeValues
   id: LocTimeValues
@@ -96,17 +100,19 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LocTimeValues
     path: CompassEx/Comm/LocClass.cs
-    startLine: 23
+    startLine: 29
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
+  summary: 地支对应的时间值
+  example: []
   syntax:
-    content: public static string[] LocTimeValues
+    content: public static readonly string[] LocTimeValues
     return:
       type: System.String[]
-    content.vb: Public Shared LocTimeValues As String()
+    content.vb: Public Shared ReadOnly LocTimeValues As String()
 - uid: CompassEx.Comm.LocClass.LocName
-  commentId: F:CompassEx.Comm.LocClass.LocName
+  commentId: P:CompassEx.Comm.LocClass.LocName
   id: LocName
   parent: CompassEx.Comm.LocClass
   langs:
@@ -115,7 +121,7 @@ items:
   name: LocName
   nameWithType: LocClass.LocName
   fullName: CompassEx.Comm.LocClass.LocName
-  type: Field
+  type: Property
   source:
     remote:
       path: CompassEx/Comm/LocClass.cs
@@ -123,17 +129,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LocName
     path: CompassEx/Comm/LocClass.cs
-    startLine: 24
+    startLine: 34
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
+  summary: 地支名称
+  example: []
   syntax:
-    content: public string LocName
+    content: public string LocName { get; }
+    parameters: []
     return:
       type: System.String
-    content.vb: Public LocName As String
+    content.vb: Public Property LocName As String
+  overload: CompassEx.Comm.LocClass.LocName*
 - uid: CompassEx.Comm.LocClass.Index
-  commentId: F:CompassEx.Comm.LocClass.Index
+  commentId: P:CompassEx.Comm.LocClass.Index
   id: Index
   parent: CompassEx.Comm.LocClass
   langs:
@@ -142,7 +152,7 @@ items:
   name: Index
   nameWithType: LocClass.Index
   fullName: CompassEx.Comm.LocClass.Index
-  type: Field
+  type: Property
   source:
     remote:
       path: CompassEx/Comm/LocClass.cs
@@ -150,44 +160,52 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Index
     path: CompassEx/Comm/LocClass.cs
-    startLine: 25
+    startLine: 38
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
+  summary: 地支索引
+  example: []
   syntax:
-    content: public int Index
+    content: public int Index { get; }
+    parameters: []
     return:
       type: System.Int32
-    content.vb: Public Index As Integer
-- uid: CompassEx.Comm.LocClass.FiveAttrName
-  commentId: F:CompassEx.Comm.LocClass.FiveAttrName
-  id: FiveAttrName
+    content.vb: Public Property Index As Integer
+  overload: CompassEx.Comm.LocClass.Index*
+- uid: CompassEx.Comm.LocClass.FiveAttr
+  commentId: P:CompassEx.Comm.LocClass.FiveAttr
+  id: FiveAttr
   parent: CompassEx.Comm.LocClass
   langs:
   - csharp
   - vb
-  name: FiveAttrName
-  nameWithType: LocClass.FiveAttrName
-  fullName: CompassEx.Comm.LocClass.FiveAttrName
-  type: Field
+  name: FiveAttr
+  nameWithType: LocClass.FiveAttr
+  fullName: CompassEx.Comm.LocClass.FiveAttr
+  type: Property
   source:
     remote:
       path: CompassEx/Comm/LocClass.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: FiveAttrName
+    id: FiveAttr
     path: CompassEx/Comm/LocClass.cs
-    startLine: 26
+    startLine: 43
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
+  summary: 五行属
+  example: []
   syntax:
-    content: public string FiveAttrName
+    content: public FiveAttr FiveAttr { get; }
+    parameters: []
     return:
-      type: System.String
-    content.vb: Public FiveAttrName As String
+      type: CompassEx.Comm.FiveAttr
+    content.vb: Public Property FiveAttr As FiveAttr
+  overload: CompassEx.Comm.LocClass.FiveAttr*
 - uid: CompassEx.Comm.LocClass.LocTimeValue
-  commentId: F:CompassEx.Comm.LocClass.LocTimeValue
+  commentId: P:CompassEx.Comm.LocClass.LocTimeValue
   id: LocTimeValue
   parent: CompassEx.Comm.LocClass
   langs:
@@ -196,7 +214,7 @@ items:
   name: LocTimeValue
   nameWithType: LocClass.LocTimeValue
   fullName: CompassEx.Comm.LocClass.LocTimeValue
-  type: Field
+  type: Property
   source:
     remote:
       path: CompassEx/Comm/LocClass.cs
@@ -204,15 +222,97 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LocTimeValue
     path: CompassEx/Comm/LocClass.cs
-    startLine: 27
+    startLine: 48
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
+  summary: 地支的时间值
+  example: []
   syntax:
-    content: public string LocTimeValue
+    content: public string LocTimeValue { get; }
+    parameters: []
     return:
       type: System.String
-    content.vb: Public LocTimeValue As String
+    content.vb: Public Property LocTimeValue As String
+  overload: CompassEx.Comm.LocClass.LocTimeValue*
+- uid: CompassEx.Comm.LocClass.#ctor(System.String)
+  commentId: M:CompassEx.Comm.LocClass.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: CompassEx.Comm.LocClass
+  langs:
+  - csharp
+  - vb
+  name: LocClass(string)
+  nameWithType: LocClass.LocClass(string)
+  fullName: CompassEx.Comm.LocClass.LocClass(string)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Comm/LocClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Comm/LocClass.cs
+    startLine: 60
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 地支构造函数
+  example: []
+  syntax:
+    content: public LocClass(string LocName)
+    parameters:
+    - id: LocName
+      type: System.String
+      description: 地支名称
+    content.vb: Public Sub New(LocName As String)
+  overload: CompassEx.Comm.LocClass.#ctor*
+  exceptions:
+  - type: System.IndexOutOfRangeException
+    commentId: T:System.IndexOutOfRangeException
+    description: ''
+  nameWithType.vb: LocClass.New(String)
+  fullName.vb: CompassEx.Comm.LocClass.New(String)
+  name.vb: New(String)
+- uid: CompassEx.Comm.LocClass.#ctor(System.Int32)
+  commentId: M:CompassEx.Comm.LocClass.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: CompassEx.Comm.LocClass
+  langs:
+  - csharp
+  - vb
+  name: LocClass(int)
+  nameWithType: LocClass.LocClass(int)
+  fullName: CompassEx.Comm.LocClass.LocClass(int)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Comm/LocClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Comm/LocClass.cs
+    startLine: 70
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 地支构造函数
+  example: []
+  syntax:
+    content: public LocClass(int LocIndex)
+    parameters:
+    - id: LocIndex
+      type: System.Int32
+      description: 地支所在的索引，参考：【<xref href="CompassEx.Comm.LocClass.LocNames" data-throw-if-not-resolved="false"></xref>】
+    content.vb: Public Sub New(LocIndex As Integer)
+  overload: CompassEx.Comm.LocClass.#ctor*
+  exceptions:
+  - type: System.IndexOutOfRangeException
+    commentId: T:System.IndexOutOfRangeException
+    description: ''
+  nameWithType.vb: LocClass.New(Integer)
+  fullName.vb: CompassEx.Comm.LocClass.New(Integer)
+  name.vb: New(Integer)
 - uid: CompassEx.Comm.LocClass.TimeValueInRangIndex(System.DateTime)
   commentId: M:CompassEx.Comm.LocClass.TimeValueInRangIndex(System.DateTime)
   id: TimeValueInRangIndex(System.DateTime)
@@ -231,7 +331,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TimeValueInRangIndex
     path: CompassEx/Comm/LocClass.cs
-    startLine: 34
+    startLine: 103
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -269,7 +369,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TimeValueInRangIndex
     path: CompassEx/Comm/LocClass.cs
-    startLine: 44
+    startLine: 113
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -307,7 +407,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAllLocClass
     path: CompassEx/Comm/LocClass.cs
-    startLine: 67
+    startLine: 136
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -338,7 +438,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetLocClass
     path: CompassEx/Comm/LocClass.cs
-    startLine: 82
+    startLine: 151
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -373,7 +473,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetLocClass
     path: CompassEx/Comm/LocClass.cs
-    startLine: 96
+    startLine: 165
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -776,6 +876,12 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: (
   - name: )
+- uid: CompassEx.Comm.LocClass.LocName*
+  commentId: Overload:CompassEx.Comm.LocClass.LocName
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_LocName
+  name: LocName
+  nameWithType: LocClass.LocName
+  fullName: CompassEx.Comm.LocClass.LocName
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -787,6 +893,12 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: CompassEx.Comm.LocClass.Index*
+  commentId: Overload:CompassEx.Comm.LocClass.Index
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_Index
+  name: Index
+  nameWithType: LocClass.Index
+  fullName: CompassEx.Comm.LocClass.Index
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -798,6 +910,47 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: CompassEx.Comm.LocClass.FiveAttr*
+  commentId: Overload:CompassEx.Comm.LocClass.FiveAttr
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_FiveAttr
+  name: FiveAttr
+  nameWithType: LocClass.FiveAttr
+  fullName: CompassEx.Comm.LocClass.FiveAttr
+- uid: CompassEx.Comm.FiveAttr
+  commentId: T:CompassEx.Comm.FiveAttr
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.FiveAttr.html
+  name: FiveAttr
+  nameWithType: FiveAttr
+  fullName: CompassEx.Comm.FiveAttr
+- uid: CompassEx.Comm.LocClass.LocTimeValue*
+  commentId: Overload:CompassEx.Comm.LocClass.LocTimeValue
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_LocTimeValue
+  name: LocTimeValue
+  nameWithType: LocClass.LocTimeValue
+  fullName: CompassEx.Comm.LocClass.LocTimeValue
+- uid: System.IndexOutOfRangeException
+  commentId: T:System.IndexOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception
+  name: IndexOutOfRangeException
+  nameWithType: IndexOutOfRangeException
+  fullName: System.IndexOutOfRangeException
+- uid: CompassEx.Comm.LocClass.#ctor*
+  commentId: Overload:CompassEx.Comm.LocClass.#ctor
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass__ctor_System_String_
+  name: LocClass
+  nameWithType: LocClass.LocClass
+  fullName: CompassEx.Comm.LocClass.LocClass
+  nameWithType.vb: LocClass.New
+  fullName.vb: CompassEx.Comm.LocClass.New
+  name.vb: New
+- uid: CompassEx.Comm.LocClass.LocNames
+  commentId: F:CompassEx.Comm.LocClass.LocNames
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_LocNames
+  name: LocNames
+  nameWithType: LocClass.LocNames
+  fullName: CompassEx.Comm.LocClass.LocNames
 - uid: CompassEx.Comm.LocClass.TimeValueInRangIndex*
   commentId: Overload:CompassEx.Comm.LocClass.TimeValueInRangIndex
   href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_TimeValueInRangIndex_System_DateTime_

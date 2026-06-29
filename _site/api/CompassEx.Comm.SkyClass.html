@@ -13,7 +13,7 @@
       <meta name="docfx:navrel" content="../toc.html">
       <meta name="docfx:tocrel" content="toc.html">
       
-      <meta name="docfx:rel" content="../">
+      
       
       
       <meta name="docfx:docurl" content="https://github.com/Jockeyvb/CompassEx/new/master/apiSpec/new?filename=CompassEx_Comm_SkyClass.md&amp;value=---%0Auid%3A%20CompassEx.Comm.SkyClass%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
@@ -52,10 +52,6 @@
           </button>
           <div class="collapse navbar-collapse" id="navpanel">
             <div id="navbar">
-              <form class="search" role="search" id="search">
-                <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
-              </form>
             </div>
           </div>
         </div>
@@ -156,107 +152,98 @@ Class SkyClass  <a class="header-action link-secondary" title="View source" href
 
 
 
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="CompassEx_Comm_SkyClass__ctor_" data-uid="CompassEx.Comm.SkyClass.#ctor*"></a>
+
+  <h3 id="CompassEx_Comm_SkyClass__ctor_System_Int32_" data-uid="CompassEx.Comm.SkyClass.#ctor(System.Int32)">
+  SkyClass(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>天干构造函数</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SkyClass(int iSkyIndex)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>iSkyIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>天干所在的索引，参考：【<a class="xref" href="CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_SkyNames">SkyNames</a>】</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception">IndexOutOfRangeException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <a id="CompassEx_Comm_SkyClass__ctor_" data-uid="CompassEx.Comm.SkyClass.#ctor*"></a>
+
+  <h3 id="CompassEx_Comm_SkyClass__ctor_System_String_" data-uid="CompassEx.Comm.SkyClass.#ctor(System.String)">
+  SkyClass(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>天干构造函数</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SkyClass(string sSkyName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sSkyName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>天干名称</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception">IndexOutOfRangeException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <h2 class="section" id="fields">Fields
 </h2>
 
 
 
-  <h3 id="CompassEx_Comm_SkyClass_FiveAttrName" data-uid="CompassEx.Comm.SkyClass.FiveAttrName">
-  FiveAttrName
+  <h3 id="CompassEx_Comm_SkyClass_SkyNames" data-uid="CompassEx.Comm.SkyClass.SkyNames">
+  SkyNames
   <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string FiveAttrName</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="CompassEx_Comm_SkyClass_Index" data-uid="CompassEx.Comm.SkyClass.Index">
-  Index
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L24"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Index</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="CompassEx_Comm_SkyClass_SkyName" data-uid="CompassEx.Comm.SkyClass.SkyName">
-  SkyName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L23"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SkyName</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="CompassEx_Comm_SkyClass_SkyNames" data-uid="CompassEx.Comm.SkyClass.SkyNames">
-  SkyNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L22"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>天干名称列表</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -280,6 +267,106 @@ Class SkyClass  <a class="header-action link-secondary" title="View source" href
 
 
 
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="CompassEx_Comm_SkyClass_FiveAttr_" data-uid="CompassEx.Comm.SkyClass.FiveAttr*"></a>
+
+  <h3 id="CompassEx_Comm_SkyClass_FiveAttr" data-uid="CompassEx.Comm.SkyClass.FiveAttr">
+  FiveAttr
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>五行属性名</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FiveAttr FiveAttr { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Comm.FiveAttr.html">FiveAttr</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_SkyClass_Index_" data-uid="CompassEx.Comm.SkyClass.Index*"></a>
+
+  <h3 id="CompassEx_Comm_SkyClass_Index" data-uid="CompassEx.Comm.SkyClass.Index">
+  Index
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>天干索引</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Index { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_SkyClass_SkyName_" data-uid="CompassEx.Comm.SkyClass.SkyName*"></a>
+
+  <h3 id="CompassEx_Comm_SkyClass_SkyName" data-uid="CompassEx.Comm.SkyClass.SkyName">
+  SkyName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>地支名称</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SkyName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -288,7 +375,7 @@ Class SkyClass  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="CompassEx_Comm_SkyClass_GetSkyClass_System_Int32_" data-uid="CompassEx.Comm.SkyClass.GetSkyClass(System.Int32)">
   GetSkyClass(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L101"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据天干的索引返回天干类</p>
@@ -325,7 +412,7 @@ Class SkyClass  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="CompassEx_Comm_SkyClass_GetSkyClass_System_String_" data-uid="CompassEx.Comm.SkyClass.GetSkyClass(System.String)">
   GetSkyClass(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据天干的索引返回天干类</p>
@@ -373,7 +460,6 @@ Class SkyClass  <a class="header-action link-secondary" title="View source" href
       </div>
     </main>
 
-    <div class="container-xxl search-results" id="search-results"></div>
 
     <footer class="border-top text-secondary">
       <div class="container-xxl">

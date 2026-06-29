@@ -40,17 +40,23 @@ items:
   - uid: CompassEx.Comm.Defined
     name: Defined
     type: Class
-  - uid: CompassEx.Comm.Defined.FactYearEnum
-    name: Defined.FactYearEnum
+  - uid: CompassEx.Comm.FactYearEnum
+    name: FactYearEnum
     type: Enum
-  - uid: CompassEx.Comm.Defined.SkyLoc
-    name: Defined.SkyLoc
-    type: Struct
+  - uid: CompassEx.Comm.FiveAttr
+    name: FiveAttr
+    type: Class
+  - uid: CompassEx.Comm.FiveAttrRule
+    name: FiveAttrRule
+    type: Enum
   - uid: CompassEx.Comm.LocClass
     name: LocClass
     type: Class
   - uid: CompassEx.Comm.SkyClass
     name: SkyClass
+    type: Class
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
     type: Class
   - uid: CompassEx.Comm.TymeTimeExtensions
     name: TymeTimeExtensions
@@ -62,22 +68,31 @@ items:
   - uid: CompassEx.Guo.FateGuo
     name: FateGuo
     type: Class
-  - uid: CompassEx.Guo.FiveAttr
-    name: FiveAttr
-    type: Class
-  - uid: CompassEx.Guo.FiveAttr.FiveAttrRule
-    name: FiveAttr.FiveAttrRule
-    type: Enum
   - uid: CompassEx.Guo.GuoClass
     name: GuoClass
     type: Class
+  - uid: CompassEx.Guo.GuoQi
+    name: GuoQi
+    type: Class
   - uid: CompassEx.Guo.GuoSubClass
     name: GuoSubClass
+    type: Class
+  - uid: CompassEx.Guo.NaJia
+    name: NaJia
+    type: Class
+  - uid: CompassEx.Guo.NaJia.NaJiaType
+    name: NaJia.NaJiaType
+    type: Enum
+  - uid: CompassEx.Guo.NineStar
+    name: NineStar
     type: Class
   - uid: CompassEx.Guo.SixGodClass
     name: SixGodClass
     type: Class
   - uid: CompassEx.Guo.SixRelativeClass
     name: SixRelativeClass
+    type: Class
+  - uid: CompassEx.Guo.TianJiOutGuo
+    name: TianJiOutGuo
     type: Class
 memberLayout: SamePage

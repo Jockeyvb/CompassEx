@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net9.0-android</TargetFrameworks>
@@ -13,7 +13,12 @@
 		The Mac App Store will NOT accept apps with ONLY maccatalyst-arm64 indicated;
 		either BOTH runtimes must be indicated or ONLY macatalyst-x64. -->
 		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
-
+<DebugSymbols>true</DebugSymbols>
+  <DebugType>full</DebugType>
+  <Nullable>enable</Nullable>
+  <!-- MAUI�����������Ż� -->
+  <HotReloadEnable>true</HotReloadEnable>
+  <UseFastUpToDateCheck>true</UseFastUpToDateCheck>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>CompassExTest</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -48,12 +53,23 @@
   <RuntimeIdentifier>win-x64</RuntimeIdentifier>
   <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
   <UseMonoRuntime>false</UseMonoRuntime>
+
 </PropertyGroup>
 <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android|AnyCPU'">
   <Optimize>True</Optimize>
+  <RunAOTCompilation>False</RunAOTCompilation>
+  <DebugType>portable</DebugType>
 </PropertyGroup>
 <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-windows10.0.19041.0|AnyCPU'">
-  <Optimize>True</Optimize>
+  <DebugSymbols>true</DebugSymbols>
+  <DebugType>portable</DebugType>
+  <Optimize>false</Optimize>
+</PropertyGroup>
+<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android|AnyCPU'">
+  <DebugType>portable</DebugType>
+</PropertyGroup>
+<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-windows10.0.19041.0|AnyCPU'">
+  <DebugType>portable</DebugType>
 </PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
@@ -105,5 +121,7 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
+
+	
 	
 </Project>

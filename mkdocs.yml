@@ -1,0 +1,25 @@
+site_name: CompassEx 罗盘算法类库
+site_url: http://localhost:8000/
+theme:
+  name: material
+  language: zh
+  features:
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: 深色模式
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: 浅色模式
+
+plugins:
+  - search
+
+nav:
+  - 首页: index.md
+  - API 参考: api/index.html     # 指向 DocFX 生成的页面
