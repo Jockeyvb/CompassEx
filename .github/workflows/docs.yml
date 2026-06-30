@@ -29,7 +29,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '9.0.0' # 根据你的项目需要选择 .NET 版本
+          dotnet-version: '8.0.x' # 根据你的项目需要选择 .NET 版本
 
       - name: Install Tool & Build Docs
         run: |
