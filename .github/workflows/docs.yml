@@ -31,16 +31,16 @@ jobs:
         with:
           dotnet-version: '8.0.x' # 根据你的项目需要选择 .NET 版本
 
-      - name: Install Tool & Build Docs
+       - name: Install Tool & Build Docs
         run: |
           # 1. 更新并安装 docfx 工具
           dotnet tool update -g docfx
           
-          # 2. 精准锁定核心项目，忽略错乱的绝对路径，改用 NuGet 官方标准源下载包
-          dotnet restore CompassEx/CompassEx.csproj --ignore-failed-sources --source "https://nuget.org"
+          # 2. 强力清除缓存，并【完全禁用】项目内的旧配置文件，强制仅使用官方 V3 API 源
+          dotnet restore CompassEx/CompassEx.csproj --force --no-cache --source "https://nuget.org"
           
-          # 3. 仅编译你的 .NET Standard 核心项目，直接绕过 MAUI 测试项目的组件缺失问题
-          dotnet build CompassEx/CompassEx.csproj -c Release
+          # 3. 仅编译主项目，同样强制指定官方源以防万一
+          dotnet build CompassEx/CompassEx.csproj -c Release --no-restore
           
           # 4. 运行 docfx 生成文档网页
           docfx docfx.json
