@@ -13,6 +13,7 @@
   ],
   "build": {
     "dest":"_site",
+     "warningsAsErrors": false,
     "content": [
       {
         "files": [
