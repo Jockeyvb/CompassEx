@@ -37,7 +37,7 @@
     ],
     "output": "_site",
     "template": [
-      "default", "modern",
+      "default", "default(zh-cn)", "modern",
       "templates"
     ],
     "globalMetadata": {
