@@ -317,13 +317,13 @@ namespace CompassEx.Guo
         /// <summary>
         /// 依据简名初始化复卦（六爻卦）对象实例。
         /// </summary>
-        /// <param name="GuoName">输入的先天 64 卦简名（例如：“乾”、“坤”、“屯”、“蒙”）。</param>
+        /// <param name="GuoNameOrAttrName">输入的先天 64 卦简名（例如：“乾”、“坤”、“屯”、“蒙”）。</param>
         /// <exception cref="IndexOutOfRangeException">当输入的卦名在内置的 <see cref="GuoNames"/> 列表中不存在时抛出该异常。</exception>
         /// <remarks>
         /// 该构造函数是一个便捷入口。它会通过内部查找，将传入的中文卦名自动转换为与之对应的数组索引，
         /// 随后通过 <c>: this(int)</c> 链式调用核心构造函数完成内存装配。
         /// </remarks>
-        public GuoClass(string GuoNameOrAttr) : this(GetGuoIndexByName(GetFullGuoName(GuoNameOrAttr)))
+        public GuoClass(string GuoNameOrAttrName) : this(GetGuoIndexByName(GetFullGuoName(GuoNameOrAttrName)))
         {
 
         }
