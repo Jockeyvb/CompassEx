@@ -31,7 +31,7 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      # 💡 新增：安装 Node.js 环境，这是运行 npx pagefind 的基础
+      # 安装 Node.js 环境，这是运行 npx pagefind 的基础
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -54,7 +54,7 @@ jobs:
           # 5. 执行 docfx build (编译静态网页到 _site)
           docfx build docfx.json
           
-          # 6. 使用指定版本的 Pagefind 为 _site 文件夹生成搜索索引
+          # 6. 为 pagefind 指定生成静态文件的相对空间
           npx pagefind@1.2.0 --site _site
 
       - name: Upload Pages Artifact
