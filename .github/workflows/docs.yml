@@ -33,8 +33,17 @@ jobs:
 
       - name: Install Tool & Build Docs
         run: |
+          # 1. 更新并安装 docfx 工具
           dotnet tool update -g docfx
-          docfx docfx.json # 如果 docfx.json 在 docs 文件夹，请写为 docfx docs/docfx.json
+          
+          # 2. 强制忽略本地错乱的绝对路径，改用官方标准源下载包
+          dotnet restore --ignore-failed-sources --source "https://nuget.org"
+          
+          # 3. 优先完整编译项目，让项目里的 Source Generator 成功运行并缓存
+          dotnet build -c Release
+          
+          # 4. 运行 docfx 生成文档网页
+          docfx docfx.json
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
