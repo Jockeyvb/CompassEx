@@ -2,7 +2,6 @@ using CompassEx.Guo;
 using SkiaSharp;
 using SkiaSharp.Views.Maui;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
 namespace CompassExTest.Pages;
 
@@ -44,12 +43,12 @@ public partial class TestPage : ContentPage, INotifyPropertyChanged
         Entry_TextChanged(null, null);
 
 
-        foreach (string sn in GuoSubClass.BeforeGuoSubNames)
-        {
-            var sg = GuoSubClass.GetGuoSub(sn);
-            Debug.WriteLine(sg.GuoSubName + "，先天：" + sg.CBeforRangeDegree.Start.ToString() + "-" + sg.CBeforRangeDegree.End.ToString() + "，后天：" + sg.CAfterRangeDegree.Start.ToString() + "-" + sg.CAfterRangeDegree.End.ToString());
-        }
-        //foreach (string sn in GuoClass.Symbols)
+        //foreach (string sn in GuoSubClass.BeforeGuoSubNames)
+        //{
+        //    var sg = GuoSubClass.GetGuoSub(sn);
+        //    Debug.WriteLine(sg.GuoSubName + "，先天：" + sg.CBeforRangeDegree.Start.ToString() + "-" + sg.CBeforRangeDegree.End.ToString() + "，后天：" + sg.CAfterRangeDegree.Start.ToString() + "-" + sg.CAfterRangeDegree.End.ToString());
+        //}
+        //foreach (string sn in GuoClass.GuoFullNames)
         //{
         //    Debug.WriteLine(sn);
         //}

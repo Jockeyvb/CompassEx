@@ -102,16 +102,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuoSubAttrNames
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 26
+    startLine: 35
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 先天八卦的属性
+  summary: 获取伏羲先天八卦在自然界中所对应构成的八种核心物象/属性名称列表。
+  remarks: 严格遵循先天卦序的自然模拟：“乾为天，兑为泽，离为火，震为雷，巽为风，坎为水，艮为山，坤为地”。
   example: []
   syntax:
     content: public static readonly string[] BeforeGuoSubAttrNames
     return:
       type: System.String[]
+      description: >-
+        <pre><code class="lang-csharp">数组索引 0-7 顺次对应：
+
+        [ "天", "泽", "火", "雷", "风", "水", "山", "地" ]</code></pre>
     content.vb: Public Shared ReadOnly BeforeGuoSubAttrNames As String()
 - uid: CompassEx.Guo.GuoSubClass.BeforeGuoSubReluNames
   commentId: F:CompassEx.Guo.GuoSubClass.BeforeGuoSubReluNames
@@ -131,16 +136,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuoSubReluNames
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 30
+    startLine: 49
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 先天八卦的伦理关系
+  summary: 获取伏羲先天八卦在家族代际中所对应的传统易学伦理与家庭六亲关系名称列表。
+  remarks: 描述易经阴阳消长对家庭成员的隐喻：乾坤为父母，其余六卦依阴阳爻生发顺序各分长、中、少男女。
   example: []
   syntax:
     content: public static readonly string[] BeforeGuoSubReluNames
     return:
       type: System.String[]
+      description: >-
+        <pre><code class="lang-csharp">数组索引 0-7 顺次对应：
+
+        [ "父", "少女", "中女", "长男", "长女", "中男", "少男", "母" ]</code></pre>
     content.vb: Public Shared ReadOnly BeforeGuoSubReluNames As String()
 - uid: CompassEx.Guo.GuoSubClass.BeforeGuoSubNames
   commentId: F:CompassEx.Guo.GuoSubClass.BeforeGuoSubNames
@@ -160,16 +170,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuoSubNames
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 34
+    startLine: 63
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 先天八卦的卦名
+  summary: 获取伏羲先天经八卦（三爻单卦）的标准单字卦名列表。
+  remarks: 该数组是类库处理所有单卦（三爻）和复卦（六爻）切割还原时的基础卦名比对底座。
   example: []
   syntax:
     content: public static readonly string[] BeforeGuoSubNames
     return:
       type: System.String[]
+      description: >-
+        <pre><code class="lang-csharp">数组索引 0-7 顺次对应：
+
+        [ "乾", "兑", "离", "震", "巽", "坎", "艮", "坤" ]</code></pre>
     content.vb: Public Shared ReadOnly BeforeGuoSubNames As String()
 - uid: CompassEx.Guo.GuoSubClass.BeforeGuoSubNumerics
   commentId: F:CompassEx.Guo.GuoSubClass.BeforeGuoSubNumerics
@@ -189,16 +204,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuoSubNumerics
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 38
+    startLine: 77
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 先天八卦的卦数
+  summary: 获取伏羲先天八卦的标准先天卦数（即“乾一”至“坤八”的数理数组）。
+  remarks: 对应梅花易数数理起卦的核心计算基础，即“乾一、兑二、离三、震四、巽五、坎六、艮七、坤八”。
   example: []
   syntax:
     content: public static readonly string[] BeforeGuoSubNumerics
     return:
       type: System.String[]
+      description: >-
+        <pre><code class="lang-csharp">数组索引 0-7 顺次对应：
+
+        [ "一", "二", "三", "四", "五", "六", "七", "八" ]</code></pre>
     content.vb: Public Shared ReadOnly BeforeGuoSubNumerics As String()
 - uid: CompassEx.Guo.GuoSubClass.AfterGuoSubAttrNames
   commentId: F:CompassEx.Guo.GuoSubClass.AfterGuoSubAttrNames
@@ -218,16 +238,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuoSubAttrNames
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 42
+    startLine: 91
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 后天八卦的属性
+  summary: 获取文王后天八卦在洛书九宫中所对应的五行属性及中央土分布名称列表。
+  remarks: 严格绑定后天八卦方位五行（如坎水、震木、离火），其中索引 4 处的“黄”代表中央五黄廉贞土。
   example: []
   syntax:
     content: public static readonly string[] AfterGuoSubAttrNames
     return:
       type: System.String[]
+      description: >-
+        <pre><code class="lang-csharp">数组索引 0-8 顺次对应九宫方位五行：
+
+        [ "水", "土", "木", "木", "中央土", "金", "金", "土", "火" ]</code></pre>
     content.vb: Public Shared ReadOnly AfterGuoSubAttrNames As String()
 - uid: CompassEx.Guo.GuoSubClass.AfterGuoSubNames
   commentId: F:CompassEx.Guo.GuoSubClass.AfterGuoSubNames
@@ -247,16 +272,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuoSubNames
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 46
+    startLine: 105
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 后天八卦的卦名
+  summary: 获取文王后天八卦依据洛书九宫次序（坎一宫至离九宫）排列的标准单字卦名列表。
+  remarks: 主要用于风水理气（如玄空飞星、大管局九宫飞布）中进行方位与单卦对象的动态重组映射。
   example: []
   syntax:
     content: public static readonly string[] AfterGuoSubNames
     return:
       type: System.String[]
+      description: >-
+        <pre><code class="lang-csharp">数组索引 0-8 严格对应洛书九宫卦位：
+
+        1宫:坎, 2宫:坤, 3宫:震, 4宫:巽, 5宫:黄(中宫), 6宫:乾, 7宫:兑, 8宫:艮, 9宫:离</code></pre>
     content.vb: Public Shared ReadOnly AfterGuoSubNames As String()
 - uid: CompassEx.Guo.GuoSubClass.TiJiSymbol
   commentId: F:CompassEx.Guo.GuoSubClass.TiJiSymbol
@@ -276,10 +306,12 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TiJiSymbol
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 51
+    startLine: 110
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
+  summary: 全局通用太极阴阳双鱼图符号常数。
+  example: []
   syntax:
     content: public static readonly string TiJiSymbol
     return:
@@ -303,17 +335,163 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Symbols
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 55
+    startLine: 124
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 按先天卦序的卦象符号
+  summary: 获取按先天卦序（乾一至坤八）排列的标准 Unicode 三爻经卦（单卦）图形符号列表。
+  remarks: 该数组存储的标准三爻 Unicode 编码范围在 \u2630 至 \u2637 之间，用于直接在终端或网页排盘结果中渲染单卦的基本卦象。
   example: []
   syntax:
     content: public static readonly string[] Symbols
     return:
       type: System.String[]
+      description: >-
+        <pre><code class="lang-csharp">Index 0-3: ☰(乾/天), ☱(兑/泽), ☲(离/火), ☳(震/雷)
+
+        Index 4-7: ☴(巽/风), ☵(坎/水), ☶(艮/山), ☷(坤/地)</code></pre>
     content.vb: Public Shared ReadOnly Symbols As String()
+- uid: CompassEx.Guo.GuoSubClass.AfterGuoSubNumerics
+  commentId: F:CompassEx.Guo.GuoSubClass.AfterGuoSubNumerics
+  id: AfterGuoSubNumerics
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: AfterGuoSubNumerics
+  nameWithType: GuoSubClass.AfterGuoSubNumerics
+  fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubNumerics
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: AfterGuoSubNumerics
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 148
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获取文王后天八卦在洛书九宫中的标准配数列表（即洛书九宫运数：一至九数）。
+  remarks: 严格遵循后天洛书轨迹：“坎一、坤二、震三、巽四、中五、乾六、兑七、艮八、离九”，是玄空风水飞星盘运算的核心数学骨架。
+  example: []
+  syntax:
+    content: public static readonly string[] AfterGuoSubNumerics
+    return:
+      type: System.String[]
+      description: >-
+        <pre><code class="lang-csharp">数组索引 0-8 严格对应洛书宫数：
+
+        [ "一", "二", "三", "四", "五", "六", "七", "八", "九" ]</code></pre>
+    content.vb: Public Shared ReadOnly AfterGuoSubNumerics As String()
+- uid: CompassEx.Guo.GuoSubClass.AfterGuoSubReluNames
+  commentId: F:CompassEx.Guo.GuoSubClass.AfterGuoSubReluNames
+  id: AfterGuoSubReluNames
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: AfterGuoSubReluNames
+  nameWithType: GuoSubClass.AfterGuoSubReluNames
+  fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubReluNames
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: AfterGuoSubReluNames
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 162
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获取文王后天八卦依洛书九宫顺次排列所对应的家族代际与传统易学伦理家庭成员名称列表。
+  remarks: 展现文王后天八卦方位所映射的家庭人伦体系。其中索引 4 处的“黄中”代表中五宫无固定卦位，处于天心正运的太极中央状态。
+  example: []
+  syntax:
+    content: public static readonly string[] AfterGuoSubReluNames
+    return:
+      type: System.String[]
+      description: >-
+        <pre><code class="lang-csharp">数组索引 0-8 顺次对应九宫伦理：
+
+        1宫:中男, 2宫:母, 3宫:长男, 4宫:长女, 5宫:黄中(中宫), 6宫:父, 7宫:少女, 8宫:少男, 9宫:中女</code></pre>
+    content.vb: Public Shared ReadOnly AfterGuoSubReluNames As String()
+- uid: CompassEx.Guo.GuoSubClass.AfterGuoSubColors
+  commentId: F:CompassEx.Guo.GuoSubClass.AfterGuoSubColors
+  id: AfterGuoSubColors
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: AfterGuoSubColors
+  nameWithType: GuoSubClass.AfterGuoSubColors
+  fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubColors
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: AfterGuoSubColors
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 176
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获取文王后天八卦所派生出的堪舆学“三元紫白九星”的标准汉字颜色文字名称列表。
+  remarks: 完美收录大成风水玄空紫白九星理气体系，包含了堪舆学极其重视的“九星三白（一白、六白、八白）”核心断卦参数。
+  example: []
+  syntax:
+    content: public static readonly string[] AfterGuoSubColors
+    return:
+      type: System.String[]
+      description: >-
+        <pre><code class="lang-csharp">数组索引 0-8 严格对应九星色彩名：
+
+        一白, 二黑, 三碧, 四绿, 五黄, 六白, 七赤, 八白, 九紫</code></pre>
+    content.vb: Public Shared ReadOnly AfterGuoSubColors As String()
+- uid: CompassEx.Guo.GuoSubClass.AfterGuoSubColorClasses
+  commentId: F:CompassEx.Guo.GuoSubClass.AfterGuoSubColorClasses
+  id: AfterGuoSubColorClasses
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: AfterGuoSubColorClasses
+  nameWithType: GuoSubClass.AfterGuoSubColorClasses
+  fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubColorClasses
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: AfterGuoSubColorClasses
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 192
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获取三元紫白九星颜色对应映射的 C# 原生高级色彩实例（<xref href="System.Drawing.Color" data-throw-if-not-resolved="false"></xref>）数组列表。
+  remarks: >-
+    该数组旨在跨平台、跨桌面的 UI 渲染与排盘界面（如 WPF、WinForms 或是带有自定义画板的图形输出）中，
+
+    能够全自动、将抽象的术数九星颜色直接翻译反灌为系统底层的标准色彩，避免在前端进行大块的硬编码或繁琐的 Switch 转换。
+  example: []
+  syntax:
+    content: public static readonly Color[] AfterGuoSubColorClasses
+    return:
+      type: System.Drawing.Color[]
+      description: >-
+        <pre><code class="lang-csharp">数组索引 0-8 映射的 System.Drawing.Color 成员：
+
+        1宫(白)-&gt;White, 2宫(黑)-&gt;Black, 3宫(碧)-&gt;DarkGreen, 4宫(绿)-&gt;Green, 
+
+        5宫(黄)-&gt;BurlyWood, 6宫(白)-&gt;White, 7宫(赤)-&gt;Red, 8宫(白)-&gt;White, 9宫(紫)-&gt;Purple</code></pre>
+    content.vb: Public Shared ReadOnly AfterGuoSubColorClasses As Color()
 - uid: CompassEx.Guo.GuoSubClass.IsSun
   commentId: P:CompassEx.Guo.GuoSubClass.IsSun
   id: IsSun
@@ -332,17 +510,24 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IsSun
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 73
+    startLine: 210
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 是否为阳卦（后天卦前4位为阳)
+  summary: 获取一个布尔值，指示当前三爻经卦在后天八卦体系中是否属于“阳卦”。
+  remarks: >-
+    <b>四阳卦判定法则：</b><br />
+
+    根据后天八卦阴阳划分规范，属于“乾（父）、坎（中男）、艮（少男）、震（长男）”四纯单卦之一的判定为阳卦。<br />
+
+    该属性通过在字符串 <code>"乾坎艮震"</code> 中高速检索当前卦名（<xref href="CompassEx.Guo.GuoSubClass.GuoSubName" data-throw-if-not-resolved="false"></xref>）的索引来完成原子级断立。
   example: []
   syntax:
     content: public bool IsSun { get; }
     parameters: []
     return:
       type: System.Boolean
+      description: <code>true</code> 代表当前单卦属于阳卦；<code>false</code> 则属于阴卦。
     content.vb: Public ReadOnly Property IsSun As Boolean
   overload: CompassEx.Guo.GuoSubClass.IsSun*
 - uid: CompassEx.Guo.GuoSubClass.IsDownGuo
@@ -363,17 +548,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IsDownGuo
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 78
+    startLine: 216
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 是否为下卦
+  summary: 获取或设置一个布尔值，指示当前三爻单卦在组合为六爻复卦时，是否担当“下卦”（即内卦、贞卦）。
   example: []
   syntax:
     content: public bool IsDownGuo { get; }
     parameters: []
     return:
       type: System.Boolean
+      description: 预设值为 <code>false</code>。若在初始化时被标记为复卦的下半部分，则为 <code>true</code>。
     content.vb: Public Property IsDownGuo As Boolean
   overload: CompassEx.Guo.GuoSubClass.IsDownGuo*
 - uid: CompassEx.Guo.GuoSubClass.GuoQi
@@ -394,135 +580,634 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoQi
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 82
+    startLine: 226
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 卦气（洛数）先天五行数
+  summary: 获取当前三爻单卦所蕴含的卦气（即洛书九宫数及与其绑定的先天五行参数）。
+  remarks: >-
+    在玄空大卦及罗盘理气算法中，本单卦会作为参数被直接传入 <code>new GuoQi(this)</code> 构造函数中，
+
+    动态反哺出当前位置最精准的洛书数理指标，常用于后续六爻大卦的宏观卦气判定。
   example: []
   syntax:
     content: public GuoQi GuoQi { get; }
     parameters: []
     return:
       type: CompassEx.Guo.GuoQi
+      description: 返回一个全新初始化的卦气实体对象 <xref href="CompassEx.Guo.GuoSubClass.GuoQi" data-throw-if-not-resolved="false"></xref>。
     content.vb: Public ReadOnly Property GuoQi As GuoQi
   overload: CompassEx.Guo.GuoSubClass.GuoQi*
-- uid: CompassEx.Guo.GuoSubClass.AfterGuoSubNumerics
-  commentId: F:CompassEx.Guo.GuoSubClass.AfterGuoSubNumerics
-  id: AfterGuoSubNumerics
+- uid: CompassEx.Guo.GuoSubClass.Yaos
+  commentId: P:CompassEx.Guo.GuoSubClass.Yaos
+  id: Yaos
   parent: CompassEx.Guo.GuoSubClass
   langs:
   - csharp
   - vb
-  name: AfterGuoSubNumerics
-  nameWithType: GuoSubClass.AfterGuoSubNumerics
-  fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubNumerics
-  type: Field
+  name: Yaos
+  nameWithType: GuoSubClass.Yaos
+  fullName: CompassEx.Guo.GuoSubClass.Yaos
+  type: Property
   source:
     remote:
       path: CompassEx/Guo/GuoSubClass.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: AfterGuoSubNumerics
+    id: Yaos
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 96
+    startLine: 239
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 后天八卦的卦数
+  summary: 获取或设置当前三爻经卦的爻象阴阳状态码数组（由下而上）。
   example: []
   syntax:
-    content: public static readonly string[] AfterGuoSubNumerics
+    content: public int[] Yaos { get; set; }
+    parameters: []
     return:
-      type: System.String[]
-    content.vb: Public Shared ReadOnly AfterGuoSubNumerics As String()
-- uid: CompassEx.Guo.GuoSubClass.AfterGuoSubReluNames
-  commentId: F:CompassEx.Guo.GuoSubClass.AfterGuoSubReluNames
-  id: AfterGuoSubReluNames
+      type: System.Int32[]
+      description: 整型数组，默认长度为 3，初值设为 <code>{ 0, 0, 0 }</code>（代表坤卦全阴）。取值规范中：0代表阴爻，1代表阳爻。
+    content.vb: Public Property Yaos As Integer()
+  overload: CompassEx.Guo.GuoSubClass.Yaos*
+- uid: CompassEx.Guo.GuoSubClass.SkyName
+  commentId: P:CompassEx.Guo.GuoSubClass.SkyName
+  id: SkyName
   parent: CompassEx.Guo.GuoSubClass
   langs:
   - csharp
   - vb
-  name: AfterGuoSubReluNames
-  nameWithType: GuoSubClass.AfterGuoSubReluNames
-  fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubReluNames
-  type: Field
+  name: SkyName
+  nameWithType: GuoSubClass.SkyName
+  fullName: CompassEx.Guo.GuoSubClass.SkyName
+  type: Property
   source:
     remote:
       path: CompassEx/Guo/GuoSubClass.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: AfterGuoSubReluNames
+    id: SkyName
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 100
+    startLine: 245
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 后天八卦的伦理关系
+  summary: 获取当前经卦依京房易纳甲体例所配出的纳甲天干字符名称（如：“甲”、“乙”、“壬”）。
   example: []
   syntax:
-    content: public static readonly string[] AfterGuoSubReluNames
+    content: public string SkyName { get; }
+    parameters: []
     return:
-      type: System.String[]
-    content.vb: Public Shared ReadOnly AfterGuoSubReluNames As String()
-- uid: CompassEx.Guo.GuoSubClass.AfterGuoSubColors
-  commentId: F:CompassEx.Guo.GuoSubClass.AfterGuoSubColors
-  id: AfterGuoSubColors
+      type: System.String
+      description: 天干单字名称。常用于配合地支纳音执行宏观的干支推演。
+    content.vb: Public Property SkyName As String
+  overload: CompassEx.Guo.GuoSubClass.SkyName*
+- uid: CompassEx.Guo.GuoSubClass.Sky
+  commentId: P:CompassEx.Guo.GuoSubClass.Sky
+  id: Sky
   parent: CompassEx.Guo.GuoSubClass
   langs:
   - csharp
   - vb
-  name: AfterGuoSubColors
-  nameWithType: GuoSubClass.AfterGuoSubColors
-  fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubColors
-  type: Field
+  name: Sky
+  nameWithType: GuoSubClass.Sky
+  fullName: CompassEx.Guo.GuoSubClass.Sky
+  type: Property
   source:
     remote:
       path: CompassEx/Guo/GuoSubClass.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: AfterGuoSubColors
+    id: Sky
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 104
+    startLine: 254
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 后天八卦的颜色
+  summary: 获取当当前经卦地支起始位置所关联的天干类实体对象。
+  remarks: 内部通过当前单卦纳支开始的索引位置（<xref href="CompassEx.Guo.GuoSubClass.LocIndex" data-throw-if-not-resolved="false"></xref>）作为参数，动态反哺出契合数理的纳甲天干。
   example: []
   syntax:
-    content: public static readonly string[] AfterGuoSubColors
+    content: public SkyClass Sky { get; }
+    parameters: []
     return:
-      type: System.String[]
-    content.vb: Public Shared ReadOnly AfterGuoSubColors As String()
-- uid: CompassEx.Guo.GuoSubClass.AfterGuoSubColorClasses
-  commentId: F:CompassEx.Guo.GuoSubClass.AfterGuoSubColorClasses
-  id: AfterGuoSubColorClasses
+      type: CompassEx.Comm.SkyClass
+      description: 一个封装好的 <xref href="CompassEx.Comm.SkyClass" data-throw-if-not-resolved="false"></xref> 天干对象实例。
+    content.vb: Public ReadOnly Property Sky As SkyClass
+  overload: CompassEx.Guo.GuoSubClass.Sky*
+- uid: CompassEx.Guo.GuoSubClass.Locs
+  commentId: P:CompassEx.Guo.GuoSubClass.Locs
+  id: Locs
   parent: CompassEx.Guo.GuoSubClass
   langs:
   - csharp
   - vb
-  name: AfterGuoSubColorClasses
-  nameWithType: GuoSubClass.AfterGuoSubColorClasses
-  fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubColorClasses
-  type: Field
+  name: Locs
+  nameWithType: GuoSubClass.Locs
+  fullName: CompassEx.Guo.GuoSubClass.Locs
+  type: Property
   source:
     remote:
       path: CompassEx/Guo/GuoSubClass.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: AfterGuoSubColorClasses
+    id: Locs
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 108
+    startLine: 260
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 后天八卦的颜色类(Color)
+  summary: 获取当前经卦从初爻、二爻至上爻顺次装配出的地支爻位实体对象列表。
   example: []
   syntax:
-    content: public static readonly Color[] AfterGuoSubColorClasses
+    content: public List<LocClass> Locs { get; }
+    parameters: []
     return:
-      type: System.Drawing.Color[]
-    content.vb: Public Shared ReadOnly AfterGuoSubColorClasses As Color()
+      type: System.Collections.Generic.List{CompassEx.Comm.LocClass}
+      description: 包含 3 个爻位对应纳支的 <xref href="CompassEx.Comm.LocClass" data-throw-if-not-resolved="false"></xref> 集合（循环排盘方向严格遵循由下而上）。
+    content.vb: Public Property Locs As List(Of LocClass)
+  overload: CompassEx.Guo.GuoSubClass.Locs*
+- uid: CompassEx.Guo.GuoSubClass.LocIndex
+  commentId: P:CompassEx.Guo.GuoSubClass.LocIndex
+  id: LocIndex
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: LocIndex
+  nameWithType: GuoSubClass.LocIndex
+  fullName: CompassEx.Guo.GuoSubClass.LocIndex
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: LocIndex
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 266
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获取当前单卦地支在十二地支清册中开始的原始数组索引位置（即纳支起算点）。
+  example: []
+  syntax:
+    content: public int LocIndex { get; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: 整型数值。例如乾卦内卦起于子（索引 0）、坎卦起于寅（索引 2）等。
+    content.vb: Public Property LocIndex As Integer
+  overload: CompassEx.Guo.GuoSubClass.LocIndex*
+- uid: CompassEx.Guo.GuoSubClass.GuoSubReluName
+  commentId: P:CompassEx.Guo.GuoSubClass.GuoSubReluName
+  id: GuoSubReluName
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: GuoSubReluName
+  nameWithType: GuoSubClass.GuoSubReluName
+  fullName: CompassEx.Guo.GuoSubClass.GuoSubReluName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoSubReluName
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 272
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获取当前经卦在家族代际中所对应的传统易学伦理名称（如：“父”、“母”、“长男”、“少女”）。
+  example: []
+  syntax:
+    content: public string GuoSubReluName { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: 符合《说卦传》经典人伦隐喻的中文分类字符串。
+    content.vb: Public Property GuoSubReluName As String
+  overload: CompassEx.Guo.GuoSubClass.GuoSubReluName*
+- uid: CompassEx.Guo.GuoSubClass.AfterGuoSubColor
+  commentId: P:CompassEx.Guo.GuoSubClass.AfterGuoSubColor
+  id: AfterGuoSubColor
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: AfterGuoSubColor
+  nameWithType: GuoSubClass.AfterGuoSubColor
+  fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubColor
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: AfterGuoSubColor
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 278
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获取当前经卦在文王后天八卦及洛书紫白九星体例中所映射的标准颜色文字属性（如：“白”、“黑”、“紫”）。
+  example: []
+  syntax:
+    content: public string AfterGuoSubColor { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: 代表九星色彩名录的单字名称。
+    content.vb: Public Property AfterGuoSubColor As String
+  overload: CompassEx.Guo.GuoSubClass.AfterGuoSubColor*
+- uid: CompassEx.Guo.GuoSubClass.AfterQuantity
+  commentId: P:CompassEx.Guo.GuoSubClass.AfterQuantity
+  id: AfterQuantity
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: AfterQuantity
+  nameWithType: GuoSubClass.AfterQuantity
+  fullName: CompassEx.Guo.GuoSubClass.AfterQuantity
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: AfterQuantity
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 284
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 计算并获取当前单卦对应的文王后天八卦洛书九宫绝对数（整型：1 至 9）。
+  example: []
+  syntax:
+    content: public int AfterQuantity { get; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: 整型数值。通过在 <xref href="CompassEx.Guo.GuoSubClass.AfterGuoSubNumerics" data-throw-if-not-resolved="false"></xref> 中反查中文数（如“八”）的索引，动态加 1 转换得出其九宫绝对物理运数。
+    content.vb: Public ReadOnly Property AfterQuantity As Integer
+  overload: CompassEx.Guo.GuoSubClass.AfterQuantity*
+- uid: CompassEx.Guo.GuoSubClass.BeforeQuanity
+  commentId: P:CompassEx.Guo.GuoSubClass.BeforeQuanity
+  id: BeforeQuanity
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: BeforeQuanity
+  nameWithType: GuoSubClass.BeforeQuanity
+  fullName: CompassEx.Guo.GuoSubClass.BeforeQuanity
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: BeforeQuanity
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 290
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 计算并获取当前单卦对应的伏羲先天八卦绝对数（整型：1 至 8）。
+  example: []
+  syntax:
+    content: public int BeforeQuanity { get; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: 整型数值。通过在 <xref href="CompassEx.Guo.GuoSubClass.BeforeGuoSubNumerics" data-throw-if-not-resolved="false"></xref> 中反查中文数（如“一”）的索引，动态加 1 转换得出其先天绝对数（乾一至坤八）。
+    content.vb: Public ReadOnly Property BeforeQuanity As Integer
+  overload: CompassEx.Guo.GuoSubClass.BeforeQuanity*
+- uid: CompassEx.Guo.GuoSubClass.GuoSubName
+  commentId: P:CompassEx.Guo.GuoSubClass.GuoSubName
+  id: GuoSubName
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: GuoSubName
+  nameWithType: GuoSubClass.GuoSubName
+  fullName: CompassEx.Guo.GuoSubClass.GuoSubName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoSubName
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 296
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获取当前经卦的标准单字名称（如：“乾”、“坤”、“震”、“巽”）。
+  example: []
+  syntax:
+    content: public string GuoSubName { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: 代表三爻单卦的核心基础单字卦名。
+    content.vb: Public Property GuoSubName As String
+  overload: CompassEx.Guo.GuoSubClass.GuoSubName*
+- uid: CompassEx.Guo.GuoSubClass.GuoSubAttrName
+  commentId: P:CompassEx.Guo.GuoSubClass.GuoSubAttrName
+  id: GuoSubAttrName
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: GuoSubAttrName
+  nameWithType: GuoSubClass.GuoSubAttrName
+  fullName: CompassEx.Guo.GuoSubClass.GuoSubAttrName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoSubAttrName
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 302
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获取当前经卦在自然界中模拟构成的核心物象/属性名称（如：“天”、“地”、“雷”、“风”）。
+  example: []
+  syntax:
+    content: public string GuoSubAttrName { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: 代表经八卦自然物象的单字名称。
+    content.vb: Public Property GuoSubAttrName As String
+  overload: CompassEx.Guo.GuoSubClass.GuoSubAttrName*
+- uid: CompassEx.Guo.GuoSubClass.FiveAttr
+  commentId: P:CompassEx.Guo.GuoSubClass.FiveAttr
+  id: FiveAttr
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: FiveAttr
+  nameWithType: GuoSubClass.FiveAttr
+  fullName: CompassEx.Guo.GuoSubClass.FiveAttr
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FiveAttr
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 308
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获取当前单卦所属的易学核心五行实体对象。
+  example: []
+  syntax:
+    content: public FiveAttr FiveAttr { get; }
+    parameters: []
+    return:
+      type: CompassEx.Comm.FiveAttr
+      description: 包含生克属性的 <xref href="CompassEx.Guo.GuoSubClass.FiveAttr" data-throw-if-not-resolved="false"></xref> 五行实体对象。
+    content.vb: Public Property FiveAttr As FiveAttr
+  overload: CompassEx.Guo.GuoSubClass.FiveAttr*
+- uid: CompassEx.Guo.GuoSubClass.BeforeGuoSubCNQuantity
+  commentId: P:CompassEx.Guo.GuoSubClass.BeforeGuoSubCNQuantity
+  id: BeforeGuoSubCNQuantity
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: BeforeGuoSubCNQuantity
+  nameWithType: GuoSubClass.BeforeGuoSubCNQuantity
+  fullName: CompassEx.Guo.GuoSubClass.BeforeGuoSubCNQuantity
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: BeforeGuoSubCNQuantity
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 314
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获取当前单卦在先天卦序中对应的中文数字卦数名称（如：“一”、“二”、“三”）。
+  example: []
+  syntax:
+    content: public string BeforeGuoSubCNQuantity { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: 返回源自静态清册 <xref href="CompassEx.Guo.GuoSubClass.BeforeGuoSubNumerics" data-throw-if-not-resolved="false"></xref> 的一字中文数字。
+    content.vb: Public ReadOnly Property BeforeGuoSubCNQuantity As String
+  overload: CompassEx.Guo.GuoSubClass.BeforeGuoSubCNQuantity*
+- uid: CompassEx.Guo.GuoSubClass.AfterGuoSubCNQuantity
+  commentId: P:CompassEx.Guo.GuoSubClass.AfterGuoSubCNQuantity
+  id: AfterGuoSubCNQuantity
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: AfterGuoSubCNQuantity
+  nameWithType: GuoSubClass.AfterGuoSubCNQuantity
+  fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubCNQuantity
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: AfterGuoSubCNQuantity
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 320
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获取当前单卦在后天洛书九宫中对应的中文数字运数名称（如：“一”、“二”、“九”）。
+  example: []
+  syntax:
+    content: public string AfterGuoSubCNQuantity { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: 返回源自静态清册 <xref href="CompassEx.Guo.GuoSubClass.AfterGuoSubNumerics" data-throw-if-not-resolved="false"></xref> 的一字中文数字。
+    content.vb: Public ReadOnly Property AfterGuoSubCNQuantity As String
+  overload: CompassEx.Guo.GuoSubClass.AfterGuoSubCNQuantity*
+- uid: CompassEx.Guo.GuoSubClass.BeforeGuoSubIndex
+  commentId: P:CompassEx.Guo.GuoSubClass.BeforeGuoSubIndex
+  id: BeforeGuoSubIndex
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: BeforeGuoSubIndex
+  nameWithType: GuoSubClass.BeforeGuoSubIndex
+  fullName: CompassEx.Guo.GuoSubClass.BeforeGuoSubIndex
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: BeforeGuoSubIndex
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 326
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 计算当前单卦名在先天八卦清册（<xref href="CompassEx.Guo.GuoSubClass.BeforeGuoSubNames" data-throw-if-not-resolved="false"></xref>）中的原始数组零基索引。
+  example: []
+  syntax:
+    content: public int BeforeGuoSubIndex { get; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: 整型位置索引，范围在 0（乾）至 7（坤）之间。
+    content.vb: Public ReadOnly Property BeforeGuoSubIndex As Integer
+  overload: CompassEx.Guo.GuoSubClass.BeforeGuoSubIndex*
+- uid: CompassEx.Guo.GuoSubClass.AfterGuoSubIndex
+  commentId: P:CompassEx.Guo.GuoSubClass.AfterGuoSubIndex
+  id: AfterGuoSubIndex
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: AfterGuoSubIndex
+  nameWithType: GuoSubClass.AfterGuoSubIndex
+  fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubIndex
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: AfterGuoSubIndex
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 332
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 计算当前单卦名在后天八卦洛书清册（<xref href="CompassEx.Guo.GuoSubClass.AfterGuoSubNames" data-throw-if-not-resolved="false"></xref>）中的原始数组零基索引。
+  example: []
+  syntax:
+    content: public int AfterGuoSubIndex { get; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: 整型位置索引，范围在 0（坎一宫）至 8（离九宫）之间。
+    content.vb: Public ReadOnly Property AfterGuoSubIndex As Integer
+  overload: CompassEx.Guo.GuoSubClass.AfterGuoSubIndex*
+- uid: CompassEx.Guo.GuoSubClass.Symbol
+  commentId: P:CompassEx.Guo.GuoSubClass.Symbol
+  id: Symbol
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: Symbol
+  nameWithType: GuoSubClass.Symbol
+  fullName: CompassEx.Guo.GuoSubClass.Symbol
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Symbol
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 341
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获取当前三爻单卦所对应的 Unicode 三爻经卦图形符号。
+  remarks: 内部通过 <xref href="CompassEx.Guo.GuoSubClass.BeforeGuoSubIndex" data-throw-if-not-resolved="false"></xref> 先天索引，动态前往静态图形库 <xref href="CompassEx.Guo.GuoSubClass.Symbols" data-throw-if-not-resolved="false"></xref> 中进行高精度内容提取。
+  example: []
+  syntax:
+    content: public string Symbol { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: 返回单个标准的 Unicode 经卦字符（如：☰、☱、☲ 等）。
+    content.vb: Public ReadOnly Property Symbol As String
+  overload: CompassEx.Guo.GuoSubClass.Symbol*
+- uid: CompassEx.Guo.GuoSubClass.CAfterRangeDegree
+  commentId: P:CompassEx.Guo.GuoSubClass.CAfterRangeDegree
+  id: CAfterRangeDegree
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: CAfterRangeDegree
+  nameWithType: GuoSubClass.CAfterRangeDegree
+  fullName: CompassEx.Guo.GuoSubClass.CAfterRangeDegree
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: CAfterRangeDegree
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 347
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 依据当前单卦名称，在三元地理后天罗盘圈层中动态匹配并返回其所管辖的周天度数范围对象。
+  example: []
+  syntax:
+    content: public CompassRangEX CAfterRangeDegree { get; }
+    parameters: []
+    return:
+      type: CompassEx.Comm.CompassRangEX
+      description: 动态调用 <xref href="CompassEx.CompassEx.GetAfterGuoSubDegree(CompassEx.Guo.GuoSubClass)" data-throw-if-not-resolved="false"></xref>，返回其专属的 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref> 后天周天空间物理边界。
+    content.vb: Public ReadOnly Property CAfterRangeDegree As CompassRangEX
+  overload: CompassEx.Guo.GuoSubClass.CAfterRangeDegree*
+- uid: CompassEx.Guo.GuoSubClass.CBeforRangeDegree
+  commentId: P:CompassEx.Guo.GuoSubClass.CBeforRangeDegree
+  id: CBeforRangeDegree
+  parent: CompassEx.Guo.GuoSubClass
+  langs:
+  - csharp
+  - vb
+  name: CBeforRangeDegree
+  nameWithType: GuoSubClass.CBeforRangeDegree
+  fullName: CompassEx.Guo.GuoSubClass.CBeforRangeDegree
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: CBeforRangeDegree
+    path: CompassEx/Guo/GuoSubClass.cs
+    startLine: 353
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 依据当前单卦名称，在三元地理伏羲先天罗盘方圆图圈层中动态匹配并返回其所管辖的周天度数范围对象。
+  example: []
+  syntax:
+    content: public CompassRangEX CBeforRangeDegree { get; }
+    parameters: []
+    return:
+      type: CompassEx.Comm.CompassRangEX
+      description: 动态调用 <xref href="CompassEx.CompassEx.GetBeforGuoSubDegree(CompassEx.Guo.GuoSubClass)" data-throw-if-not-resolved="false"></xref>，返回其专属的 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref> 先天周天空间物理边界。
+    content.vb: Public ReadOnly Property CBeforRangeDegree As CompassRangEX
+  overload: CompassEx.Guo.GuoSubClass.CBeforRangeDegree*
 - uid: CompassEx.Guo.GuoSubClass.#ctor(System.String)
   commentId: M:CompassEx.Guo.GuoSubClass.#ctor(System.String)
   id: '#ctor(System.String)'
@@ -541,27 +1226,30 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 118
+    startLine: 369
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: >-
-    三爻卦构造函数<br />
+  summary: 依据单字简名初始化三爻经卦（单卦）对象实例。
+  remarks: >-
+    <b>⚠️ 警告与调用规范：</b><br />
 
-    使用此方法创建的类默认为下卦或结构复卦（六爻卦）时请使用<xref href="CompassEx.Guo.GuoSubClass.GetGuoSub(System.String%2cSystem.Boolean)" data-throw-if-not-resolved="false"></xref>方法,明确指定属于上卦还是下卦
+    使用此构造函数创建的经卦实例，其位置属性（<xref href="CompassEx.Guo.GuoSubClass.IsDownGuo" data-throw-if-not-resolved="false"></xref>）默认会被赋予 <code>false</code>（即默认作为下卦）。<br />
+
+    如果您是在组合组装完整的六爻复卦，请强烈改用工厂方法 <xref href="CompassEx.Guo.GuoSubClass.GetGuoSub(System.String%2cSystem.Boolean)" data-throw-if-not-resolved="false"></xref>，以便明确指定该单卦是担当“上卦（外卦）”还是“下卦（内卦）”。
   example: []
   syntax:
     content: public GuoSubClass(string GuoName)
     parameters:
     - id: GuoName
       type: System.String
-      description: 卦名
+      description: 输入的单字经卦名（例如：“乾”、“坤”、“坎”、“离”）。
     content.vb: Public Sub New(GuoName As String)
   overload: CompassEx.Guo.GuoSubClass.#ctor*
   exceptions:
   - type: System.IndexOutOfRangeException
     commentId: T:System.IndexOutOfRangeException
-    description: ''
+    description: 当输入的卦名在内置的先天经卦清册中不存在时抛出该异常。
   nameWithType.vb: GuoSubClass.New(String)
   fullName.vb: CompassEx.Guo.GuoSubClass.New(String)
   name.vb: New(String)
@@ -583,621 +1271,35 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 131
+    startLine: 390
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: >-
-    三爻卦构造函数<br />
+  summary: 依据先天经卦序列索引初始化三爻经卦对象实例（核心构造函数）。
+  remarks: >-
+    <b>⚠️ 调用规范：</b><br />
 
-    使用此方法创建的类默认为下卦
+    使用此构造函数创建的单卦类默认为下卦。在进行宏观六爻复卦装配时，建议使用具备显式方位标识的工厂方法 <xref href="CompassEx.Guo.GuoSubClass.GetGuoSub(System.Int32%2cSystem.Int32%2cSystem.Int32%2cSystem.Boolean)" data-throw-if-not-resolved="false"></xref>。<br /><br />
 
-    创建复卦（六爻卦）时请使用<xref href="CompassEx.Guo.GuoSubClass.GetGuoSub(System.String%2cSystem.Boolean)" data-throw-if-not-resolved="false"></xref>方法,明确指定属于上卦还是下卦 
+    <b>经卦底层数理装配流程：</b>
 
-    <xref href="CompassEx.Guo.GuoSubClass.GetGuoSub(System.String%2cSystem.Boolean)" data-throw-if-not-resolved="false"></xref>
+    <ol><li><b>安全边界校验</b>：校验输入索引。若执行不合法则瞬间熔断并抛出越界异常。</li><li><b>爻象阴阳重组（Switch 分布）</b>：依据先天八卦符号编码（0代表阴爻，1代表阳爻），由下而上对长为 3 的 <xref href="CompassEx.Guo.GuoSubClass.Yaos" data-throw-if-not-resolved="false"></xref> 数组进行赋值（如 case 1 兑卦：初爻为阳(1)、二爻为阳(1)、三爻为阴(0)）。</li><li><b>基础术数属性反哺</b>：通过索引同步锁定并充填物象（<xref href="CompassEx.Guo.GuoSubClass.GuoSubAttrName" data-throw-if-not-resolved="false"></xref>）、六亲伦理（<xref href="CompassEx.Guo.GuoSubClass.GuoSubReluName" data-throw-if-not-resolved="false"></xref>）和基本单字卦名。</li><li><b>跨体系方位映射</b>：通过后天八卦清册反查其在文王后天九宫中的绝对物理位置（<code>iPos</code>），进而将对应方位的紫白九星颜色（<xref href="CompassEx.Guo.GuoSubClass.AfterGuoSubColor" data-throw-if-not-resolved="false"></xref>）以及最终的生克五行属性（<xref href="CompassEx.Guo.GuoSubClass.FiveAttr" data-throw-if-not-resolved="false"></xref>）彻底装载完毕。</li></ol>
   example: []
   syntax:
     content: public GuoSubClass(int iBeforGuoIndex)
     parameters:
     - id: iBeforGuoIndex
       type: System.Int32
-      description: 先天卦索引
+      description: 先天单卦的原始数组位置索引（取值范围：<code>0</code> 至 <code>7</code>，对应乾一至坤八）。
     content.vb: Public Sub New(iBeforGuoIndex As Integer)
   overload: CompassEx.Guo.GuoSubClass.#ctor*
   exceptions:
   - type: System.IndexOutOfRangeException
     commentId: T:System.IndexOutOfRangeException
-    description: ''
+    description: 当传入的索引超出合法安全边界（小于 0 或大于等于数组总长度）时抛出。
   nameWithType.vb: GuoSubClass.New(Integer)
   fullName.vb: CompassEx.Guo.GuoSubClass.New(Integer)
   name.vb: New(Integer)
-- uid: CompassEx.Guo.GuoSubClass.Yaos
-  commentId: P:CompassEx.Guo.GuoSubClass.Yaos
-  id: Yaos
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: Yaos
-  nameWithType: GuoSubClass.Yaos
-  fullName: CompassEx.Guo.GuoSubClass.Yaos
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: Yaos
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 207
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 爻数组
-  example: []
-  syntax:
-    content: public int[] Yaos { get; set; }
-    parameters: []
-    return:
-      type: System.Int32[]
-    content.vb: Public Property Yaos As Integer()
-  overload: CompassEx.Guo.GuoSubClass.Yaos*
-- uid: CompassEx.Guo.GuoSubClass.SkyName
-  commentId: P:CompassEx.Guo.GuoSubClass.SkyName
-  id: SkyName
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: SkyName
-  nameWithType: GuoSubClass.SkyName
-  fullName: CompassEx.Guo.GuoSubClass.SkyName
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: SkyName
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 211
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 爻的纳甲天干
-  example: []
-  syntax:
-    content: public string SkyName { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property SkyName As String
-  overload: CompassEx.Guo.GuoSubClass.SkyName*
-- uid: CompassEx.Guo.GuoSubClass.Sky
-  commentId: P:CompassEx.Guo.GuoSubClass.Sky
-  id: Sky
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: Sky
-  nameWithType: GuoSubClass.Sky
-  fullName: CompassEx.Guo.GuoSubClass.Sky
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: Sky
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 213
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  syntax:
-    content: public SkyClass Sky { get; }
-    parameters: []
-    return:
-      type: CompassEx.Comm.SkyClass
-    content.vb: Public ReadOnly Property Sky As SkyClass
-  overload: CompassEx.Guo.GuoSubClass.Sky*
-- uid: CompassEx.Guo.GuoSubClass.Locs
-  commentId: P:CompassEx.Guo.GuoSubClass.Locs
-  id: Locs
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: Locs
-  nameWithType: GuoSubClass.Locs
-  fullName: CompassEx.Guo.GuoSubClass.Locs
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: Locs
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 221
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 地支地爻位列表，同下而上
-  example: []
-  syntax:
-    content: public List<LocClass> Locs { get; }
-    parameters: []
-    return:
-      type: System.Collections.Generic.List{CompassEx.Comm.LocClass}
-    content.vb: Public Property Locs As List(Of LocClass)
-  overload: CompassEx.Guo.GuoSubClass.Locs*
-- uid: CompassEx.Guo.GuoSubClass.LocIndex
-  commentId: P:CompassEx.Guo.GuoSubClass.LocIndex
-  id: LocIndex
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: LocIndex
-  nameWithType: GuoSubClass.LocIndex
-  fullName: CompassEx.Guo.GuoSubClass.LocIndex
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: LocIndex
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 226
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 地支开始的位置
-  example: []
-  syntax:
-    content: public int LocIndex { get; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public Property LocIndex As Integer
-  overload: CompassEx.Guo.GuoSubClass.LocIndex*
-- uid: CompassEx.Guo.GuoSubClass.GuoSubReluName
-  commentId: P:CompassEx.Guo.GuoSubClass.GuoSubReluName
-  id: GuoSubReluName
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: GuoSubReluName
-  nameWithType: GuoSubClass.GuoSubReluName
-  fullName: CompassEx.Guo.GuoSubClass.GuoSubReluName
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: GuoSubReluName
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 230
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 卦的伦理关系
-  example: []
-  syntax:
-    content: public string GuoSubReluName { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property GuoSubReluName As String
-  overload: CompassEx.Guo.GuoSubClass.GuoSubReluName*
-- uid: CompassEx.Guo.GuoSubClass.AfterGuoSubColor
-  commentId: P:CompassEx.Guo.GuoSubClass.AfterGuoSubColor
-  id: AfterGuoSubColor
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: AfterGuoSubColor
-  nameWithType: GuoSubClass.AfterGuoSubColor
-  fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubColor
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: AfterGuoSubColor
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 234
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 后天八卦的颜色属性
-  example: []
-  syntax:
-    content: public string AfterGuoSubColor { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property AfterGuoSubColor As String
-  overload: CompassEx.Guo.GuoSubClass.AfterGuoSubColor*
-- uid: CompassEx.Guo.GuoSubClass.AfterQuantity
-  commentId: P:CompassEx.Guo.GuoSubClass.AfterQuantity
-  id: AfterQuantity
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: AfterQuantity
-  nameWithType: GuoSubClass.AfterQuantity
-  fullName: CompassEx.Guo.GuoSubClass.AfterQuantity
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: AfterQuantity
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 241
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 后天八卦数
-  example: []
-  syntax:
-    content: public int AfterQuantity { get; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public ReadOnly Property AfterQuantity As Integer
-  overload: CompassEx.Guo.GuoSubClass.AfterQuantity*
-- uid: CompassEx.Guo.GuoSubClass.BeforeQuanity
-  commentId: P:CompassEx.Guo.GuoSubClass.BeforeQuanity
-  id: BeforeQuanity
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: BeforeQuanity
-  nameWithType: GuoSubClass.BeforeQuanity
-  fullName: CompassEx.Guo.GuoSubClass.BeforeQuanity
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: BeforeQuanity
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 246
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 先天八卦数
-  example: []
-  syntax:
-    content: public int BeforeQuanity { get; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public ReadOnly Property BeforeQuanity As Integer
-  overload: CompassEx.Guo.GuoSubClass.BeforeQuanity*
-- uid: CompassEx.Guo.GuoSubClass.GuoSubName
-  commentId: P:CompassEx.Guo.GuoSubClass.GuoSubName
-  id: GuoSubName
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: GuoSubName
-  nameWithType: GuoSubClass.GuoSubName
-  fullName: CompassEx.Guo.GuoSubClass.GuoSubName
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: GuoSubName
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 250
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 卦名，例如：乾
-  example: []
-  syntax:
-    content: public string GuoSubName { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property GuoSubName As String
-  overload: CompassEx.Guo.GuoSubClass.GuoSubName*
-- uid: CompassEx.Guo.GuoSubClass.GuoSubAttrName
-  commentId: P:CompassEx.Guo.GuoSubClass.GuoSubAttrName
-  id: GuoSubAttrName
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: GuoSubAttrName
-  nameWithType: GuoSubClass.GuoSubAttrName
-  fullName: CompassEx.Guo.GuoSubClass.GuoSubAttrName
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: GuoSubAttrName
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 254
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 卦的属性名,例如：天
-  example: []
-  syntax:
-    content: public string GuoSubAttrName { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property GuoSubAttrName As String
-  overload: CompassEx.Guo.GuoSubClass.GuoSubAttrName*
-- uid: CompassEx.Guo.GuoSubClass.FiveAttr
-  commentId: P:CompassEx.Guo.GuoSubClass.FiveAttr
-  id: FiveAttr
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: FiveAttr
-  nameWithType: GuoSubClass.FiveAttr
-  fullName: CompassEx.Guo.GuoSubClass.FiveAttr
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: FiveAttr
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 258
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 卦的五行属性
-  example: []
-  syntax:
-    content: public FiveAttr FiveAttr { get; }
-    parameters: []
-    return:
-      type: CompassEx.Comm.FiveAttr
-    content.vb: Public Property FiveAttr As FiveAttr
-  overload: CompassEx.Guo.GuoSubClass.FiveAttr*
-- uid: CompassEx.Guo.GuoSubClass.BeforeGuoSubCNQuantity
-  commentId: P:CompassEx.Guo.GuoSubClass.BeforeGuoSubCNQuantity
-  id: BeforeGuoSubCNQuantity
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: BeforeGuoSubCNQuantity
-  nameWithType: GuoSubClass.BeforeGuoSubCNQuantity
-  fullName: CompassEx.Guo.GuoSubClass.BeforeGuoSubCNQuantity
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: BeforeGuoSubCNQuantity
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 267
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 先天八卦数中文
-  example: []
-  syntax:
-    content: public string BeforeGuoSubCNQuantity { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public ReadOnly Property BeforeGuoSubCNQuantity As String
-  overload: CompassEx.Guo.GuoSubClass.BeforeGuoSubCNQuantity*
-- uid: CompassEx.Guo.GuoSubClass.AfterGuoSubCNQuantity
-  commentId: P:CompassEx.Guo.GuoSubClass.AfterGuoSubCNQuantity
-  id: AfterGuoSubCNQuantity
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: AfterGuoSubCNQuantity
-  nameWithType: GuoSubClass.AfterGuoSubCNQuantity
-  fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubCNQuantity
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: AfterGuoSubCNQuantity
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 272
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 后天八卦数中文
-  example: []
-  syntax:
-    content: public string AfterGuoSubCNQuantity { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public ReadOnly Property AfterGuoSubCNQuantity As String
-  overload: CompassEx.Guo.GuoSubClass.AfterGuoSubCNQuantity*
-- uid: CompassEx.Guo.GuoSubClass.BeforeGuoSubIndex
-  commentId: P:CompassEx.Guo.GuoSubClass.BeforeGuoSubIndex
-  id: BeforeGuoSubIndex
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: BeforeGuoSubIndex
-  nameWithType: GuoSubClass.BeforeGuoSubIndex
-  fullName: CompassEx.Guo.GuoSubClass.BeforeGuoSubIndex
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: BeforeGuoSubIndex
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 277
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 先天八卦索引位置
-  example: []
-  syntax:
-    content: public int BeforeGuoSubIndex { get; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public ReadOnly Property BeforeGuoSubIndex As Integer
-  overload: CompassEx.Guo.GuoSubClass.BeforeGuoSubIndex*
-- uid: CompassEx.Guo.GuoSubClass.AfterGuoSubIndex
-  commentId: P:CompassEx.Guo.GuoSubClass.AfterGuoSubIndex
-  id: AfterGuoSubIndex
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: AfterGuoSubIndex
-  nameWithType: GuoSubClass.AfterGuoSubIndex
-  fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubIndex
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: AfterGuoSubIndex
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 282
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 后天八卦索引位置
-  example: []
-  syntax:
-    content: public int AfterGuoSubIndex { get; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public ReadOnly Property AfterGuoSubIndex As Integer
-  overload: CompassEx.Guo.GuoSubClass.AfterGuoSubIndex*
-- uid: CompassEx.Guo.GuoSubClass.Symbol
-  commentId: P:CompassEx.Guo.GuoSubClass.Symbol
-  id: Symbol
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: Symbol
-  nameWithType: GuoSubClass.Symbol
-  fullName: CompassEx.Guo.GuoSubClass.Symbol
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: Symbol
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 286
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 卦象符号
-  example: []
-  syntax:
-    content: public string Symbol { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public ReadOnly Property Symbol As String
-  overload: CompassEx.Guo.GuoSubClass.Symbol*
-- uid: CompassEx.Guo.GuoSubClass.CAfterRangeDegree
-  commentId: P:CompassEx.Guo.GuoSubClass.CAfterRangeDegree
-  id: CAfterRangeDegree
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: CAfterRangeDegree
-  nameWithType: GuoSubClass.CAfterRangeDegree
-  fullName: CompassEx.Guo.GuoSubClass.CAfterRangeDegree
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: CAfterRangeDegree
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 291
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 根据本卦从罗盘获得后天八卦中的度数范围对象
-  example: []
-  syntax:
-    content: public CompassRangEX CAfterRangeDegree { get; }
-    parameters: []
-    return:
-      type: CompassEx.Comm.CompassRangEX
-    content.vb: Public ReadOnly Property CAfterRangeDegree As CompassRangEX
-  overload: CompassEx.Guo.GuoSubClass.CAfterRangeDegree*
-- uid: CompassEx.Guo.GuoSubClass.CBeforRangeDegree
-  commentId: P:CompassEx.Guo.GuoSubClass.CBeforRangeDegree
-  id: CBeforRangeDegree
-  parent: CompassEx.Guo.GuoSubClass
-  langs:
-  - csharp
-  - vb
-  name: CBeforRangeDegree
-  nameWithType: GuoSubClass.CBeforRangeDegree
-  fullName: CompassEx.Guo.GuoSubClass.CBeforRangeDegree
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Guo/GuoSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: CBeforRangeDegree
-    path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 296
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 根据本卦从罗盘获得先天天八卦中的度数范围对象
-  example: []
-  syntax:
-    content: public CompassRangEX CBeforRangeDegree { get; }
-    parameters: []
-    return:
-      type: CompassEx.Comm.CompassRangEX
-    content.vb: Public ReadOnly Property CBeforRangeDegree As CompassRangEX
-  overload: CompassEx.Guo.GuoSubClass.CBeforRangeDegree*
 - uid: CompassEx.Guo.GuoSubClass.GetC24Hills
   commentId: M:CompassEx.Guo.GuoSubClass.GetC24Hills
   id: GetC24Hills
@@ -1216,7 +1318,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetC24Hills
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 302
+    startLine: 457
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1247,7 +1349,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetCBeforGuos
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 327
+    startLine: 482
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1278,7 +1380,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetXorGuo
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 345
+    startLine: 500
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1309,7 +1411,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadLocs
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 360
+    startLine: 515
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1337,7 +1439,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoSub
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 386
+    startLine: 541
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1384,7 +1486,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAfterGuoSub
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 411
+    startLine: 566
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1425,7 +1527,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBeforGuoSub
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 424
+    startLine: 579
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1466,7 +1568,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoSub
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 436
+    startLine: 591
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1507,7 +1609,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoSub
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 456
+    startLine: 611
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1548,7 +1650,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetFiveAttrName
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 524
+    startLine: 679
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1987,42 +2089,13 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: CompassEx.Guo.GuoSubClass.IsSun*
-  commentId: Overload:CompassEx.Guo.GuoSubClass.IsSun
-  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_IsSun
-  name: IsSun
-  nameWithType: GuoSubClass.IsSun
-  fullName: CompassEx.Guo.GuoSubClass.IsSun
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
+- uid: System.Drawing.Color
+  commentId: T:System.Drawing.Color
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
-- uid: CompassEx.Guo.GuoSubClass.IsDownGuo*
-  commentId: Overload:CompassEx.Guo.GuoSubClass.IsDownGuo
-  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_IsDownGuo
-  name: IsDownGuo
-  nameWithType: GuoSubClass.IsDownGuo
-  fullName: CompassEx.Guo.GuoSubClass.IsDownGuo
-- uid: CompassEx.Guo.GuoSubClass.GuoQi*
-  commentId: Overload:CompassEx.Guo.GuoSubClass.GuoQi
-  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GuoQi
-  name: GuoQi
-  nameWithType: GuoSubClass.GuoQi
-  fullName: CompassEx.Guo.GuoSubClass.GuoQi
-- uid: CompassEx.Guo.GuoQi
-  commentId: T:CompassEx.Guo.GuoQi
-  parent: CompassEx.Guo
-  href: CompassEx.Guo.GuoQi.html
-  name: GuoQi
-  nameWithType: GuoQi
-  fullName: CompassEx.Guo.GuoQi
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  name: Color
+  nameWithType: Color
+  fullName: System.Drawing.Color
 - uid: System.Drawing.Color[]
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.drawing.color
@@ -2046,75 +2119,54 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.drawing.color
   - name: (
   - name: )
-- uid: CompassEx.Guo.GuoSubClass.GetGuoSub(System.String,System.Boolean)
-  commentId: M:CompassEx.Guo.GuoSubClass.GetGuoSub(System.String,System.Boolean)
-  isExternal: true
-  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_String_System_Boolean_
-  name: GetGuoSub(string, bool)
-  nameWithType: GuoSubClass.GetGuoSub(string, bool)
-  fullName: CompassEx.Guo.GuoSubClass.GetGuoSub(string, bool)
-  nameWithType.vb: GuoSubClass.GetGuoSub(String, Boolean)
-  fullName.vb: CompassEx.Guo.GuoSubClass.GetGuoSub(String, Boolean)
-  name.vb: GetGuoSub(String, Boolean)
-  spec.csharp:
-  - uid: CompassEx.Guo.GuoSubClass.GetGuoSub(System.String,System.Boolean)
-    name: GetGuoSub
-    href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_String_System_Boolean_
-  - name: (
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
-  spec.vb:
-  - uid: CompassEx.Guo.GuoSubClass.GetGuoSub(System.String,System.Boolean)
-    name: GetGuoSub
-    href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_String_System_Boolean_
-  - name: (
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
-- uid: System.IndexOutOfRangeException
-  commentId: T:System.IndexOutOfRangeException
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception
-  name: IndexOutOfRangeException
-  nameWithType: IndexOutOfRangeException
-  fullName: System.IndexOutOfRangeException
-- uid: CompassEx.Guo.GuoSubClass.#ctor*
-  commentId: Overload:CompassEx.Guo.GuoSubClass.#ctor
-  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass__ctor_System_String_
-  name: GuoSubClass
-  nameWithType: GuoSubClass.GuoSubClass
-  fullName: CompassEx.Guo.GuoSubClass.GuoSubClass
-  nameWithType.vb: GuoSubClass.New
-  fullName.vb: CompassEx.Guo.GuoSubClass.New
-  name.vb: New
-- uid: System.Int32
-  commentId: T:System.Int32
+- uid: CompassEx.Guo.GuoSubClass.GuoSubName
+  commentId: P:CompassEx.Guo.GuoSubClass.GuoSubName
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GuoSubName
+  name: GuoSubName
+  nameWithType: GuoSubClass.GuoSubName
+  fullName: CompassEx.Guo.GuoSubClass.GuoSubName
+- uid: CompassEx.Guo.GuoSubClass.IsSun*
+  commentId: Overload:CompassEx.Guo.GuoSubClass.IsSun
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_IsSun
+  name: IsSun
+  nameWithType: GuoSubClass.IsSun
+  fullName: CompassEx.Guo.GuoSubClass.IsSun
+- uid: System.Boolean
+  commentId: T:System.Boolean
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: CompassEx.Guo.GuoSubClass.IsDownGuo*
+  commentId: Overload:CompassEx.Guo.GuoSubClass.IsDownGuo
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_IsDownGuo
+  name: IsDownGuo
+  nameWithType: GuoSubClass.IsDownGuo
+  fullName: CompassEx.Guo.GuoSubClass.IsDownGuo
+- uid: CompassEx.Guo.GuoSubClass.GuoQi
+  commentId: P:CompassEx.Guo.GuoSubClass.GuoQi
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GuoQi
+  name: GuoQi
+  nameWithType: GuoSubClass.GuoQi
+  fullName: CompassEx.Guo.GuoSubClass.GuoQi
+- uid: CompassEx.Guo.GuoSubClass.GuoQi*
+  commentId: Overload:CompassEx.Guo.GuoSubClass.GuoQi
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GuoQi
+  name: GuoQi
+  nameWithType: GuoSubClass.GuoQi
+  fullName: CompassEx.Guo.GuoSubClass.GuoQi
+- uid: CompassEx.Guo.GuoQi
+  commentId: T:CompassEx.Guo.GuoQi
+  parent: CompassEx.Guo
+  href: CompassEx.Guo.GuoQi.html
+  name: GuoQi
+  nameWithType: GuoQi
+  fullName: CompassEx.Guo.GuoQi
 - uid: CompassEx.Guo.GuoSubClass.Yaos*
   commentId: Overload:CompassEx.Guo.GuoSubClass.Yaos
   href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_Yaos
@@ -2150,12 +2202,6 @@ references:
   name: SkyName
   nameWithType: GuoSubClass.SkyName
   fullName: CompassEx.Guo.GuoSubClass.SkyName
-- uid: CompassEx.Guo.GuoSubClass.Sky*
-  commentId: Overload:CompassEx.Guo.GuoSubClass.Sky
-  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_Sky
-  name: Sky
-  nameWithType: GuoSubClass.Sky
-  fullName: CompassEx.Guo.GuoSubClass.Sky
 - uid: CompassEx.Comm.SkyClass
   commentId: T:CompassEx.Comm.SkyClass
   parent: CompassEx.Comm
@@ -2163,6 +2209,25 @@ references:
   name: SkyClass
   nameWithType: SkyClass
   fullName: CompassEx.Comm.SkyClass
+- uid: CompassEx.Guo.GuoSubClass.LocIndex
+  commentId: P:CompassEx.Guo.GuoSubClass.LocIndex
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_LocIndex
+  name: LocIndex
+  nameWithType: GuoSubClass.LocIndex
+  fullName: CompassEx.Guo.GuoSubClass.LocIndex
+- uid: CompassEx.Guo.GuoSubClass.Sky*
+  commentId: Overload:CompassEx.Guo.GuoSubClass.Sky
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_Sky
+  name: Sky
+  nameWithType: GuoSubClass.Sky
+  fullName: CompassEx.Guo.GuoSubClass.Sky
+- uid: CompassEx.Comm.LocClass
+  commentId: T:CompassEx.Comm.LocClass
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.LocClass.html
+  name: LocClass
+  nameWithType: LocClass
+  fullName: CompassEx.Comm.LocClass
 - uid: CompassEx.Guo.GuoSubClass.Locs*
   commentId: Overload:CompassEx.Guo.GuoSubClass.Locs
   href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_Locs
@@ -2273,6 +2338,17 @@ references:
   name: LocIndex
   nameWithType: GuoSubClass.LocIndex
   fullName: CompassEx.Guo.GuoSubClass.LocIndex
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: CompassEx.Guo.GuoSubClass.GuoSubReluName*
   commentId: Overload:CompassEx.Guo.GuoSubClass.GuoSubReluName
   href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GuoSubReluName
@@ -2285,12 +2361,24 @@ references:
   name: AfterGuoSubColor
   nameWithType: GuoSubClass.AfterGuoSubColor
   fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubColor
+- uid: CompassEx.Guo.GuoSubClass.AfterGuoSubNumerics
+  commentId: F:CompassEx.Guo.GuoSubClass.AfterGuoSubNumerics
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_AfterGuoSubNumerics
+  name: AfterGuoSubNumerics
+  nameWithType: GuoSubClass.AfterGuoSubNumerics
+  fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubNumerics
 - uid: CompassEx.Guo.GuoSubClass.AfterQuantity*
   commentId: Overload:CompassEx.Guo.GuoSubClass.AfterQuantity
   href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_AfterQuantity
   name: AfterQuantity
   nameWithType: GuoSubClass.AfterQuantity
   fullName: CompassEx.Guo.GuoSubClass.AfterQuantity
+- uid: CompassEx.Guo.GuoSubClass.BeforeGuoSubNumerics
+  commentId: F:CompassEx.Guo.GuoSubClass.BeforeGuoSubNumerics
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_BeforeGuoSubNumerics
+  name: BeforeGuoSubNumerics
+  nameWithType: GuoSubClass.BeforeGuoSubNumerics
+  fullName: CompassEx.Guo.GuoSubClass.BeforeGuoSubNumerics
 - uid: CompassEx.Guo.GuoSubClass.BeforeQuanity*
   commentId: Overload:CompassEx.Guo.GuoSubClass.BeforeQuanity
   href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_BeforeQuanity
@@ -2309,6 +2397,12 @@ references:
   name: GuoSubAttrName
   nameWithType: GuoSubClass.GuoSubAttrName
   fullName: CompassEx.Guo.GuoSubClass.GuoSubAttrName
+- uid: CompassEx.Guo.GuoSubClass.FiveAttr
+  commentId: P:CompassEx.Guo.GuoSubClass.FiveAttr
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_FiveAttr
+  name: FiveAttr
+  nameWithType: GuoSubClass.FiveAttr
+  fullName: CompassEx.Guo.GuoSubClass.FiveAttr
 - uid: CompassEx.Guo.GuoSubClass.FiveAttr*
   commentId: Overload:CompassEx.Guo.GuoSubClass.FiveAttr
   href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_FiveAttr
@@ -2334,30 +2428,72 @@ references:
   name: AfterGuoSubCNQuantity
   nameWithType: GuoSubClass.AfterGuoSubCNQuantity
   fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubCNQuantity
+- uid: CompassEx.Guo.GuoSubClass.BeforeGuoSubNames
+  commentId: F:CompassEx.Guo.GuoSubClass.BeforeGuoSubNames
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_BeforeGuoSubNames
+  name: BeforeGuoSubNames
+  nameWithType: GuoSubClass.BeforeGuoSubNames
+  fullName: CompassEx.Guo.GuoSubClass.BeforeGuoSubNames
 - uid: CompassEx.Guo.GuoSubClass.BeforeGuoSubIndex*
   commentId: Overload:CompassEx.Guo.GuoSubClass.BeforeGuoSubIndex
   href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_BeforeGuoSubIndex
   name: BeforeGuoSubIndex
   nameWithType: GuoSubClass.BeforeGuoSubIndex
   fullName: CompassEx.Guo.GuoSubClass.BeforeGuoSubIndex
+- uid: CompassEx.Guo.GuoSubClass.AfterGuoSubNames
+  commentId: F:CompassEx.Guo.GuoSubClass.AfterGuoSubNames
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_AfterGuoSubNames
+  name: AfterGuoSubNames
+  nameWithType: GuoSubClass.AfterGuoSubNames
+  fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubNames
 - uid: CompassEx.Guo.GuoSubClass.AfterGuoSubIndex*
   commentId: Overload:CompassEx.Guo.GuoSubClass.AfterGuoSubIndex
   href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_AfterGuoSubIndex
   name: AfterGuoSubIndex
   nameWithType: GuoSubClass.AfterGuoSubIndex
   fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubIndex
+- uid: CompassEx.Guo.GuoSubClass.BeforeGuoSubIndex
+  commentId: P:CompassEx.Guo.GuoSubClass.BeforeGuoSubIndex
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_BeforeGuoSubIndex
+  name: BeforeGuoSubIndex
+  nameWithType: GuoSubClass.BeforeGuoSubIndex
+  fullName: CompassEx.Guo.GuoSubClass.BeforeGuoSubIndex
+- uid: CompassEx.Guo.GuoSubClass.Symbols
+  commentId: F:CompassEx.Guo.GuoSubClass.Symbols
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_Symbols
+  name: Symbols
+  nameWithType: GuoSubClass.Symbols
+  fullName: CompassEx.Guo.GuoSubClass.Symbols
 - uid: CompassEx.Guo.GuoSubClass.Symbol*
   commentId: Overload:CompassEx.Guo.GuoSubClass.Symbol
   href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_Symbol
   name: Symbol
   nameWithType: GuoSubClass.Symbol
   fullName: CompassEx.Guo.GuoSubClass.Symbol
-- uid: CompassEx.Guo.GuoSubClass.CAfterRangeDegree*
-  commentId: Overload:CompassEx.Guo.GuoSubClass.CAfterRangeDegree
-  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_CAfterRangeDegree
-  name: CAfterRangeDegree
-  nameWithType: GuoSubClass.CAfterRangeDegree
-  fullName: CompassEx.Guo.GuoSubClass.CAfterRangeDegree
+- uid: CompassEx.CompassEx.GetAfterGuoSubDegree(CompassEx.Guo.GuoSubClass)
+  commentId: M:CompassEx.CompassEx.GetAfterGuoSubDegree(CompassEx.Guo.GuoSubClass)
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetAfterGuoSubDegree_CompassEx_Guo_GuoSubClass_
+  name: GetAfterGuoSubDegree(GuoSubClass)
+  nameWithType: CompassEx.GetAfterGuoSubDegree(GuoSubClass)
+  fullName: CompassEx.CompassEx.GetAfterGuoSubDegree(CompassEx.Guo.GuoSubClass)
+  spec.csharp:
+  - uid: CompassEx.CompassEx.GetAfterGuoSubDegree(CompassEx.Guo.GuoSubClass)
+    name: GetAfterGuoSubDegree
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetAfterGuoSubDegree_CompassEx_Guo_GuoSubClass_
+  - name: (
+  - uid: CompassEx.Guo.GuoSubClass
+    name: GuoSubClass
+    href: CompassEx.Guo.GuoSubClass.html
+  - name: )
+  spec.vb:
+  - uid: CompassEx.CompassEx.GetAfterGuoSubDegree(CompassEx.Guo.GuoSubClass)
+    name: GetAfterGuoSubDegree
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetAfterGuoSubDegree_CompassEx_Guo_GuoSubClass_
+  - name: (
+  - uid: CompassEx.Guo.GuoSubClass
+    name: GuoSubClass
+    href: CompassEx.Guo.GuoSubClass.html
+  - name: )
 - uid: CompassEx.Comm.CompassRangEX
   commentId: T:CompassEx.Comm.CompassRangEX
   parent: CompassEx.Comm
@@ -2365,12 +2501,196 @@ references:
   name: CompassRangEX
   nameWithType: CompassRangEX
   fullName: CompassEx.Comm.CompassRangEX
+- uid: CompassEx.Guo.GuoSubClass.CAfterRangeDegree*
+  commentId: Overload:CompassEx.Guo.GuoSubClass.CAfterRangeDegree
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_CAfterRangeDegree
+  name: CAfterRangeDegree
+  nameWithType: GuoSubClass.CAfterRangeDegree
+  fullName: CompassEx.Guo.GuoSubClass.CAfterRangeDegree
+- uid: CompassEx.CompassEx.GetBeforGuoSubDegree(CompassEx.Guo.GuoSubClass)
+  commentId: M:CompassEx.CompassEx.GetBeforGuoSubDegree(CompassEx.Guo.GuoSubClass)
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforGuoSubDegree_CompassEx_Guo_GuoSubClass_
+  name: GetBeforGuoSubDegree(GuoSubClass)
+  nameWithType: CompassEx.GetBeforGuoSubDegree(GuoSubClass)
+  fullName: CompassEx.CompassEx.GetBeforGuoSubDegree(CompassEx.Guo.GuoSubClass)
+  spec.csharp:
+  - uid: CompassEx.CompassEx.GetBeforGuoSubDegree(CompassEx.Guo.GuoSubClass)
+    name: GetBeforGuoSubDegree
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforGuoSubDegree_CompassEx_Guo_GuoSubClass_
+  - name: (
+  - uid: CompassEx.Guo.GuoSubClass
+    name: GuoSubClass
+    href: CompassEx.Guo.GuoSubClass.html
+  - name: )
+  spec.vb:
+  - uid: CompassEx.CompassEx.GetBeforGuoSubDegree(CompassEx.Guo.GuoSubClass)
+    name: GetBeforGuoSubDegree
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforGuoSubDegree_CompassEx_Guo_GuoSubClass_
+  - name: (
+  - uid: CompassEx.Guo.GuoSubClass
+    name: GuoSubClass
+    href: CompassEx.Guo.GuoSubClass.html
+  - name: )
 - uid: CompassEx.Guo.GuoSubClass.CBeforRangeDegree*
   commentId: Overload:CompassEx.Guo.GuoSubClass.CBeforRangeDegree
   href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_CBeforRangeDegree
   name: CBeforRangeDegree
   nameWithType: GuoSubClass.CBeforRangeDegree
   fullName: CompassEx.Guo.GuoSubClass.CBeforRangeDegree
+- uid: CompassEx.Guo.GuoSubClass.IsDownGuo
+  commentId: P:CompassEx.Guo.GuoSubClass.IsDownGuo
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_IsDownGuo
+  name: IsDownGuo
+  nameWithType: GuoSubClass.IsDownGuo
+  fullName: CompassEx.Guo.GuoSubClass.IsDownGuo
+- uid: CompassEx.Guo.GuoSubClass.GetGuoSub(System.String,System.Boolean)
+  commentId: M:CompassEx.Guo.GuoSubClass.GetGuoSub(System.String,System.Boolean)
+  isExternal: true
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_String_System_Boolean_
+  name: GetGuoSub(string, bool)
+  nameWithType: GuoSubClass.GetGuoSub(string, bool)
+  fullName: CompassEx.Guo.GuoSubClass.GetGuoSub(string, bool)
+  nameWithType.vb: GuoSubClass.GetGuoSub(String, Boolean)
+  fullName.vb: CompassEx.Guo.GuoSubClass.GetGuoSub(String, Boolean)
+  name.vb: GetGuoSub(String, Boolean)
+  spec.csharp:
+  - uid: CompassEx.Guo.GuoSubClass.GetGuoSub(System.String,System.Boolean)
+    name: GetGuoSub
+    href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_String_System_Boolean_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Guo.GuoSubClass.GetGuoSub(System.String,System.Boolean)
+    name: GetGuoSub
+    href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_String_System_Boolean_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.IndexOutOfRangeException
+  commentId: T:System.IndexOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception
+  name: IndexOutOfRangeException
+  nameWithType: IndexOutOfRangeException
+  fullName: System.IndexOutOfRangeException
+- uid: CompassEx.Guo.GuoSubClass.#ctor*
+  commentId: Overload:CompassEx.Guo.GuoSubClass.#ctor
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass__ctor_System_String_
+  name: GuoSubClass
+  nameWithType: GuoSubClass.GuoSubClass
+  fullName: CompassEx.Guo.GuoSubClass.GuoSubClass
+  nameWithType.vb: GuoSubClass.New
+  fullName.vb: CompassEx.Guo.GuoSubClass.New
+  name.vb: New
+- uid: CompassEx.Guo.GuoSubClass.GetGuoSub(System.Int32,System.Int32,System.Int32,System.Boolean)
+  commentId: M:CompassEx.Guo.GuoSubClass.GetGuoSub(System.Int32,System.Int32,System.Int32,System.Boolean)
+  isExternal: true
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_Int32_System_Int32_System_Int32_System_Boolean_
+  name: GetGuoSub(int, int, int, bool)
+  nameWithType: GuoSubClass.GetGuoSub(int, int, int, bool)
+  fullName: CompassEx.Guo.GuoSubClass.GetGuoSub(int, int, int, bool)
+  nameWithType.vb: GuoSubClass.GetGuoSub(Integer, Integer, Integer, Boolean)
+  fullName.vb: CompassEx.Guo.GuoSubClass.GetGuoSub(Integer, Integer, Integer, Boolean)
+  name.vb: GetGuoSub(Integer, Integer, Integer, Boolean)
+  spec.csharp:
+  - uid: CompassEx.Guo.GuoSubClass.GetGuoSub(System.Int32,System.Int32,System.Int32,System.Boolean)
+    name: GetGuoSub
+    href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_Int32_System_Int32_System_Int32_System_Boolean_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Guo.GuoSubClass.GetGuoSub(System.Int32,System.Int32,System.Int32,System.Boolean)
+    name: GetGuoSub
+    href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_Int32_System_Int32_System_Int32_System_Boolean_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: CompassEx.Guo.GuoSubClass.Yaos
+  commentId: P:CompassEx.Guo.GuoSubClass.Yaos
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_Yaos
+  name: Yaos
+  nameWithType: GuoSubClass.Yaos
+  fullName: CompassEx.Guo.GuoSubClass.Yaos
+- uid: CompassEx.Guo.GuoSubClass.GuoSubAttrName
+  commentId: P:CompassEx.Guo.GuoSubClass.GuoSubAttrName
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GuoSubAttrName
+  name: GuoSubAttrName
+  nameWithType: GuoSubClass.GuoSubAttrName
+  fullName: CompassEx.Guo.GuoSubClass.GuoSubAttrName
+- uid: CompassEx.Guo.GuoSubClass.GuoSubReluName
+  commentId: P:CompassEx.Guo.GuoSubClass.GuoSubReluName
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GuoSubReluName
+  name: GuoSubReluName
+  nameWithType: GuoSubClass.GuoSubReluName
+  fullName: CompassEx.Guo.GuoSubClass.GuoSubReluName
+- uid: CompassEx.Guo.GuoSubClass.AfterGuoSubColor
+  commentId: P:CompassEx.Guo.GuoSubClass.AfterGuoSubColor
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_AfterGuoSubColor
+  name: AfterGuoSubColor
+  nameWithType: GuoSubClass.AfterGuoSubColor
+  fullName: CompassEx.Guo.GuoSubClass.AfterGuoSubColor
 - uid: CompassEx.Guo.GuoSubClass.GetC24Hills*
   commentId: Overload:CompassEx.Guo.GuoSubClass.GetC24Hills
   href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetC24Hills

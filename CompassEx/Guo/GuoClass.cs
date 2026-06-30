@@ -14,6 +14,7 @@ using CompassEx.Comm;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
 
@@ -322,7 +323,7 @@ namespace CompassEx.Guo
         /// 该构造函数是一个便捷入口。它会通过内部查找，将传入的中文卦名自动转换为与之对应的数组索引，
         /// 随后通过 <c>: this(int)</c> 链式调用核心构造函数完成内存装配。
         /// </remarks>
-        public GuoClass(string GuoName) : this(GetGuoIndexByName(GuoName))
+        public GuoClass(string GuoNameOrAttr) : this(GetGuoIndexByName(GetFullGuoName(GuoNameOrAttr)))
         {
 
         }
@@ -380,6 +381,14 @@ namespace CompassEx.Guo
                 {
                     var a = GuoFullNames.Where((s) => s.IndexOf(name) > -1);
                     if (a.Count() > 0) index = GuoFullNames.IndexOf(a.FirstOrDefault().ToString());
+                    if (a.Count() > 1)
+                    {
+                        a.ToList().ForEach(s => Debug.WriteLine(s));
+
+
+                    }
+
+
                 }
             }
 
@@ -1271,7 +1280,7 @@ namespace CompassEx.Guo
         /// <summary>
         /// 内部核心方法（带有递归设计）：根据传入的一字简名或属性模糊名，反向模糊检索并返回 64 卦的四字标准全名。
         /// </summary>
-        /// <param name="sName">输入的任意易学名称标识（如单字简名 “乾”、或者属性名 “天” ）。</param>
+        /// <param name="GuoNameOrAttrName">输入的任意易学名称标识（如单字简名 “乾”、或者属性名 “天” ）。</param>
         /// <returns>返回匹配成功的 64 卦通行本四字全称字符串（如“乾为天”）；若不匹配则返回 <c>null</c>。</returns>
         /// <remarks>
         /// <b>递归终止与检索门道：</b><br/>
@@ -1281,8 +1290,9 @@ namespace CompassEx.Guo
         /// <item><description>若输入为长多字（包含无效占位符 ? ），会自动剥离噪音，遍历 <see cref="GuoFullNames"/> 进行包含式模糊匹配。</description></item>
         /// </list>
         /// </remarks>
-        private static String GetFullGuoName(String sName)
+        private static String GetFullGuoName(String GuoNameOrAttrName)
         {
+            string sName = GuoNameOrAttrName;
             String sFullName = null, s = null;
             if (sName == null) return null;
             if (sName.Length == 0) return null;
@@ -1379,11 +1389,11 @@ namespace CompassEx.Guo
         /// <summary>
         /// 静态工厂方法：依据两字简名创建复卦（六爻卦）对象实例。
         /// </summary>
-        /// <param name="sGuoName">输入的先天 64 卦简名（如：“乾”、“坤”、“屯”）。</param>
+        /// <param name="sGuoNameOrAttr">输入的先天 64 卦简名（如：“乾”、“坤”、“屯”）。</param>
         /// <returns>返回装配好的 <see cref="GuoClass"/> 对象实例。</returns>
-        public static GuoClass GetGuoClass(String sGuoName)
+        public static GuoClass GetGuoClass(String sGuoNameOrAttr)
         {
-            return new GuoClass(sGuoName);
+            return new GuoClass(sGuoNameOrAttr);
         }
 
         /// <summary>
@@ -1429,7 +1439,7 @@ namespace CompassEx.Guo
             if (gsc == null) return null;
             String sAttrName1 = gsc.GuoSubAttrName;
             String sAttrName = "";
-            if (sAttrName1.Equals(sAttrName2)) sAttrName = sAttrName1; else sAttrName = sAttrName1 + sAttrName2;
+            if (sAttrName1.Equals(sAttrName2)) sAttrName = sAttrName1; else sAttrName = sAttrName1 + sAttrName2 + "?";
             GuoClass gc = GetGuoClass(sAttrName);
             if (gc.YaoDoing == null) gc.YaoDoing = new List<int>();
             for (int i = 0; i < 6; i++)

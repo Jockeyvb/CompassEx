@@ -162,13 +162,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass__ctor_System_Int32_" data-uid="CompassEx.Guo.GuoSubClass.#ctor(System.Int32)">
   GuoSubClass(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L391"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>三爻卦构造函数<br>
-使用此方法创建的类默认为下卦
-创建复卦（六爻卦）时请使用<a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_String_System_Boolean_">GetGuoSub(string, bool)</a>方法,明确指定属于上卦还是下卦
-<a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_String_System_Boolean_">GetGuoSub(string, bool)</a></p>
+  <div class="markdown level1 summary"><p>依据先天经卦序列索引初始化三爻经卦对象实例（核心构造函数）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -179,7 +176,7 @@ GuoSubClass 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>iBeforGuoIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>先天卦索引</p>
+    <dd><p>先天单卦的原始数组位置索引（取值范围：<code>0</code> 至 <code>7</code>，对应乾一至坤八）。</p>
 </dd>
   </dl>
 
@@ -190,11 +187,18 @@ GuoSubClass 类
 
 
 
+  <h4 class="section" id="CompassEx_Guo_GuoSubClass__ctor_System_Int32__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p><b>⚠️ 调用规范：</b><br>
+使用此构造函数创建的单卦类默认为下卦。在进行宏观六爻复卦装配时，建议使用具备显式方位标识的工厂方法 <a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_Int32_System_Int32_System_Int32_System_Boolean_">GetGuoSub(int, int, int, bool)</a>。<br><br>
+<b>经卦底层数理装配流程：</b></p>
+<ol><li><b>安全边界校验</b>：校验输入索引。若执行不合法则瞬间熔断并抛出越界异常。</li><li><b>爻象阴阳重组（Switch 分布）</b>：依据先天八卦符号编码（0代表阴爻，1代表阳爻），由下而上对长为 3 的 <a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_Yaos">Yaos</a> 数组进行赋值（如 case 1 兑卦：初爻为阳(1)、二爻为阳(1)、三爻为阴(0)）。</li><li><b>基础术数属性反哺</b>：通过索引同步锁定并充填物象（<a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GuoSubAttrName">GuoSubAttrName</a>）、六亲伦理（<a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GuoSubReluName">GuoSubReluName</a>）和基本单字卦名。</li><li><b>跨体系方位映射</b>：通过后天八卦清册反查其在文王后天九宫中的绝对物理位置（<code>iPos</code>），进而将对应方位的紫白九星颜色（<a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_AfterGuoSubColor">AfterGuoSubColor</a>）以及最终的生克五行属性（<a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_FiveAttr">FiveAttr</a>）彻底装载完毕。</li></ol>
+</div>
 
   <h4 class="section">异常</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception">IndexOutOfRangeException</a></dt>
-    <dd></dd>
+    <dd><p>当传入的索引超出合法安全边界（小于 0 或大于等于数组总长度）时抛出。</p>
+</dd>
   </dl>
 
 
@@ -203,11 +207,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass__ctor_System_String_" data-uid="CompassEx.Guo.GuoSubClass.#ctor(System.String)">
   GuoSubClass(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L370"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>三爻卦构造函数<br>
-使用此方法创建的类默认为下卦或结构复卦（六爻卦）时请使用<a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_String_System_Boolean_">GetGuoSub(string, bool)</a>方法,明确指定属于上卦还是下卦</p>
+  <div class="markdown level1 summary"><p>依据单字简名初始化三爻经卦（单卦）对象实例。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -218,7 +221,7 @@ GuoSubClass 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>GuoName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>卦名</p>
+    <dd><p>输入的单字经卦名（例如：“乾”、“坤”、“坎”、“离”）。</p>
 </dd>
   </dl>
 
@@ -229,11 +232,17 @@ GuoSubClass 类
 
 
 
+  <h4 class="section" id="CompassEx_Guo_GuoSubClass__ctor_System_String__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p><b>⚠️ 警告与调用规范：</b><br>
+使用此构造函数创建的经卦实例，其位置属性（<a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_IsDownGuo">IsDownGuo</a>）默认会被赋予 <code>false</code>（即默认作为下卦）。<br>
+如果您是在组合组装完整的六爻复卦，请强烈改用工厂方法 <a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_String_System_Boolean_">GetGuoSub(string, bool)</a>，以便明确指定该单卦是担当“上卦（外卦）”还是“下卦（内卦）”。</p>
+</div>
 
   <h4 class="section">异常</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception">IndexOutOfRangeException</a></dt>
-    <dd></dd>
+    <dd><p>当输入的卦名在内置的先天经卦清册中不存在时抛出该异常。</p>
+</dd>
   </dl>
 
 
@@ -245,10 +254,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_AfterGuoSubAttrNames" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubAttrNames">
   AfterGuoSubAttrNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L92"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>后天八卦的属性</p>
+  <div class="markdown level1 summary"><p>获取文王后天八卦在洛书九宫中所对应的五行属性及中央土分布名称列表。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -262,13 +271,18 @@ GuoSubClass 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd></dd>
+    <dd><pre><code class="lang-csharp">数组索引 0-8 顺次对应九宫方位五行：
+[ "水", "土", "木", "木", "中央土", "金", "金", "土", "火" ]</code></pre>
+</dd>
   </dl>
 
 
 
 
 
+  <h4 class="section" id="CompassEx_Guo_GuoSubClass_AfterGuoSubAttrNames_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>严格绑定后天八卦方位五行（如坎水、震木、离火），其中索引 4 处的“黄”代表中央五黄廉贞土。</p>
+</div>
 
 
 
@@ -276,10 +290,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_AfterGuoSubColorClasses" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubColorClasses">
   AfterGuoSubColorClasses
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L193"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>后天八卦的颜色类(Color)</p>
+  <div class="markdown level1 summary"><p>获取三元紫白九星颜色对应映射的 C# 原生高级色彩实例（<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a>）数组列表。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -293,13 +307,20 @@ GuoSubClass 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a>[]</dt>
-    <dd></dd>
+    <dd><pre><code class="lang-csharp">数组索引 0-8 映射的 System.Drawing.Color 成员：
+1宫(白)-&gt;White, 2宫(黑)-&gt;Black, 3宫(碧)-&gt;DarkGreen, 4宫(绿)-&gt;Green, 
+5宫(黄)-&gt;BurlyWood, 6宫(白)-&gt;White, 7宫(赤)-&gt;Red, 8宫(白)-&gt;White, 9宫(紫)-&gt;Purple</code></pre>
+</dd>
   </dl>
 
 
 
 
 
+  <h4 class="section" id="CompassEx_Guo_GuoSubClass_AfterGuoSubColorClasses_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>该数组旨在跨平台、跨桌面的 UI 渲染与排盘界面（如 WPF、WinForms 或是带有自定义画板的图形输出）中，
+能够全自动、将抽象的术数九星颜色直接翻译反灌为系统底层的标准色彩，避免在前端进行大块的硬编码或繁琐的 Switch 转换。</p>
+</div>
 
 
 
@@ -307,10 +328,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_AfterGuoSubColors" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubColors">
   AfterGuoSubColors
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L177"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>后天八卦的颜色</p>
+  <div class="markdown level1 summary"><p>获取文王后天八卦所派生出的堪舆学“三元紫白九星”的标准汉字颜色文字名称列表。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -324,13 +345,18 @@ GuoSubClass 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd></dd>
+    <dd><pre><code class="lang-csharp">数组索引 0-8 严格对应九星色彩名：
+一白, 二黑, 三碧, 四绿, 五黄, 六白, 七赤, 八白, 九紫</code></pre>
+</dd>
   </dl>
 
 
 
 
 
+  <h4 class="section" id="CompassEx_Guo_GuoSubClass_AfterGuoSubColors_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>完美收录大成风水玄空紫白九星理气体系，包含了堪舆学极其重视的“九星三白（一白、六白、八白）”核心断卦参数。</p>
+</div>
 
 
 
@@ -338,10 +364,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_AfterGuoSubNames" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubNames">
   AfterGuoSubNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L106"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>后天八卦的卦名</p>
+  <div class="markdown level1 summary"><p>获取文王后天八卦依据洛书九宫次序（坎一宫至离九宫）排列的标准单字卦名列表。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -355,13 +381,18 @@ GuoSubClass 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd></dd>
+    <dd><pre><code class="lang-csharp">数组索引 0-8 严格对应洛书九宫卦位：
+1宫:坎, 2宫:坤, 3宫:震, 4宫:巽, 5宫:黄(中宫), 6宫:乾, 7宫:兑, 8宫:艮, 9宫:离</code></pre>
+</dd>
   </dl>
 
 
 
 
 
+  <h4 class="section" id="CompassEx_Guo_GuoSubClass_AfterGuoSubNames_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>主要用于风水理气（如玄空飞星、大管局九宫飞布）中进行方位与单卦对象的动态重组映射。</p>
+</div>
 
 
 
@@ -369,10 +400,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_AfterGuoSubNumerics" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubNumerics">
   AfterGuoSubNumerics
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L149"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>后天八卦的卦数</p>
+  <div class="markdown level1 summary"><p>获取文王后天八卦在洛书九宫中的标准配数列表（即洛书九宫运数：一至九数）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -386,13 +417,18 @@ GuoSubClass 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd></dd>
+    <dd><pre><code class="lang-csharp">数组索引 0-8 严格对应洛书宫数：
+[ "一", "二", "三", "四", "五", "六", "七", "八", "九" ]</code></pre>
+</dd>
   </dl>
 
 
 
 
 
+  <h4 class="section" id="CompassEx_Guo_GuoSubClass_AfterGuoSubNumerics_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>严格遵循后天洛书轨迹：“坎一、坤二、震三、巽四、中五、乾六、兑七、艮八、离九”，是玄空风水飞星盘运算的核心数学骨架。</p>
+</div>
 
 
 
@@ -400,10 +436,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_AfterGuoSubReluNames" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubReluNames">
   AfterGuoSubReluNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L163"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>后天八卦的伦理关系</p>
+  <div class="markdown level1 summary"><p>获取文王后天八卦依洛书九宫顺次排列所对应的家族代际与传统易学伦理家庭成员名称列表。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -417,13 +453,18 @@ GuoSubClass 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd></dd>
+    <dd><pre><code class="lang-csharp">数组索引 0-8 顺次对应九宫伦理：
+1宫:中男, 2宫:母, 3宫:长男, 4宫:长女, 5宫:黄中(中宫), 6宫:父, 7宫:少女, 8宫:少男, 9宫:中女</code></pre>
+</dd>
   </dl>
 
 
 
 
 
+  <h4 class="section" id="CompassEx_Guo_GuoSubClass_AfterGuoSubReluNames_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>展现文王后天八卦方位所映射的家庭人伦体系。其中索引 4 处的“黄中”代表中五宫无固定卦位，处于天心正运的太极中央状态。</p>
+</div>
 
 
 
@@ -431,10 +472,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_BeforeGuoSubAttrNames" data-uid="CompassEx.Guo.GuoSubClass.BeforeGuoSubAttrNames">
   BeforeGuoSubAttrNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>先天八卦的属性</p>
+  <div class="markdown level1 summary"><p>获取伏羲先天八卦在自然界中所对应构成的八种核心物象/属性名称列表。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -448,13 +489,18 @@ GuoSubClass 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd></dd>
+    <dd><pre><code class="lang-csharp">数组索引 0-7 顺次对应：
+[ "天", "泽", "火", "雷", "风", "水", "山", "地" ]</code></pre>
+</dd>
   </dl>
 
 
 
 
 
+  <h4 class="section" id="CompassEx_Guo_GuoSubClass_BeforeGuoSubAttrNames_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>严格遵循先天卦序的自然模拟：“乾为天，兑为泽，离为火，震为雷，巽为风，坎为水，艮为山，坤为地”。</p>
+</div>
 
 
 
@@ -462,10 +508,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_BeforeGuoSubNames" data-uid="CompassEx.Guo.GuoSubClass.BeforeGuoSubNames">
   BeforeGuoSubNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L64"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>先天八卦的卦名</p>
+  <div class="markdown level1 summary"><p>获取伏羲先天经八卦（三爻单卦）的标准单字卦名列表。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -479,13 +525,18 @@ GuoSubClass 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd></dd>
+    <dd><pre><code class="lang-csharp">数组索引 0-7 顺次对应：
+[ "乾", "兑", "离", "震", "巽", "坎", "艮", "坤" ]</code></pre>
+</dd>
   </dl>
 
 
 
 
 
+  <h4 class="section" id="CompassEx_Guo_GuoSubClass_BeforeGuoSubNames_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>该数组是类库处理所有单卦（三爻）和复卦（六爻）切割还原时的基础卦名比对底座。</p>
+</div>
 
 
 
@@ -493,10 +544,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_BeforeGuoSubNumerics" data-uid="CompassEx.Guo.GuoSubClass.BeforeGuoSubNumerics">
   BeforeGuoSubNumerics
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>先天八卦的卦数</p>
+  <div class="markdown level1 summary"><p>获取伏羲先天八卦的标准先天卦数（即“乾一”至“坤八”的数理数组）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -510,13 +561,18 @@ GuoSubClass 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd></dd>
+    <dd><pre><code class="lang-csharp">数组索引 0-7 顺次对应：
+[ "一", "二", "三", "四", "五", "六", "七", "八" ]</code></pre>
+</dd>
   </dl>
 
 
 
 
 
+  <h4 class="section" id="CompassEx_Guo_GuoSubClass_BeforeGuoSubNumerics_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>对应梅花易数数理起卦的核心计算基础，即“乾一、兑二、离三、震四、巽五、坎六、艮七、坤八”。</p>
+</div>
 
 
 
@@ -524,10 +580,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_BeforeGuoSubReluNames" data-uid="CompassEx.Guo.GuoSubClass.BeforeGuoSubReluNames">
   BeforeGuoSubReluNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>先天八卦的伦理关系</p>
+  <div class="markdown level1 summary"><p>获取伏羲先天八卦在家族代际中所对应的传统易学伦理与家庭六亲关系名称列表。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -541,13 +597,18 @@ GuoSubClass 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd></dd>
+    <dd><pre><code class="lang-csharp">数组索引 0-7 顺次对应：
+[ "父", "少女", "中女", "长男", "长女", "中男", "少男", "母" ]</code></pre>
+</dd>
   </dl>
 
 
 
 
 
+  <h4 class="section" id="CompassEx_Guo_GuoSubClass_BeforeGuoSubReluNames_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>描述易经阴阳消长对家庭成员的隐喻：乾坤为父母，其余六卦依阴阳爻生发顺序各分长、中、少男女。</p>
+</div>
 
 
 
@@ -555,10 +616,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_Symbols" data-uid="CompassEx.Guo.GuoSubClass.Symbols">
   Symbols
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L125"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>按先天卦序的卦象符号</p>
+  <div class="markdown level1 summary"><p>获取按先天卦序（乾一至坤八）排列的标准 Unicode 三爻经卦（单卦）图形符号列表。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -572,13 +633,18 @@ GuoSubClass 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd></dd>
+    <dd><pre><code class="lang-csharp">Index 0-3: ☰(乾/天), ☱(兑/泽), ☲(离/火), ☳(震/雷)
+Index 4-7: ☴(巽/风), ☵(坎/水), ☶(艮/山), ☷(坤/地)</code></pre>
+</dd>
   </dl>
 
 
 
 
 
+  <h4 class="section" id="CompassEx_Guo_GuoSubClass_Symbols_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>该数组存储的标准三爻 Unicode 编码范围在 \u2630 至 \u2637 之间，用于直接在终端或网页排盘结果中渲染单卦的基本卦象。</p>
+</div>
 
 
 
@@ -586,10 +652,11 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_TiJiSymbol" data-uid="CompassEx.Guo.GuoSubClass.TiJiSymbol">
   TiJiSymbol
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L111"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>全局通用太极阴阳双鱼图符号常数。</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -621,10 +688,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_AfterGuoSubCNQuantity" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubCNQuantity">
   AfterGuoSubCNQuantity
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L273"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L321"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>后天八卦数中文</p>
+  <div class="markdown level1 summary"><p>获取当前单卦在后天洛书九宫中对应的中文数字运数名称（如：“一”、“二”、“九”）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -639,7 +706,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>返回源自静态清册 <a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_AfterGuoSubNumerics">AfterGuoSubNumerics</a> 的一字中文数字。</p>
+</dd>
   </dl>
 
 
@@ -653,10 +721,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_AfterGuoSubColor" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubColor">
   AfterGuoSubColor
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L235"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L279"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>后天八卦的颜色属性</p>
+  <div class="markdown level1 summary"><p>获取当前经卦在文王后天八卦及洛书紫白九星体例中所映射的标准颜色文字属性（如：“白”、“黑”、“紫”）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -671,7 +739,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>代表九星色彩名录的单字名称。</p>
+</dd>
   </dl>
 
 
@@ -685,10 +754,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_AfterGuoSubIndex" data-uid="CompassEx.Guo.GuoSubClass.AfterGuoSubIndex">
   AfterGuoSubIndex
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L283"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L333"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>后天八卦索引位置</p>
+  <div class="markdown level1 summary"><p>计算当前单卦名在后天八卦洛书清册（<a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_AfterGuoSubNames">AfterGuoSubNames</a>）中的原始数组零基索引。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -703,7 +772,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>整型位置索引，范围在 0（坎一宫）至 8（离九宫）之间。</p>
+</dd>
   </dl>
 
 
@@ -717,10 +787,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_AfterQuantity" data-uid="CompassEx.Guo.GuoSubClass.AfterQuantity">
   AfterQuantity
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L242"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L285"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>后天八卦数</p>
+  <div class="markdown level1 summary"><p>计算并获取当前单卦对应的文王后天八卦洛书九宫绝对数（整型：1 至 9）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -735,7 +805,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>整型数值。通过在 <a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_AfterGuoSubNumerics">AfterGuoSubNumerics</a> 中反查中文数（如“八”）的索引，动态加 1 转换得出其九宫绝对物理运数。</p>
+</dd>
   </dl>
 
 
@@ -749,10 +820,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_BeforeGuoSubCNQuantity" data-uid="CompassEx.Guo.GuoSubClass.BeforeGuoSubCNQuantity">
   BeforeGuoSubCNQuantity
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L268"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L315"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>先天八卦数中文</p>
+  <div class="markdown level1 summary"><p>获取当前单卦在先天卦序中对应的中文数字卦数名称（如：“一”、“二”、“三”）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -767,7 +838,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>返回源自静态清册 <a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_BeforeGuoSubNumerics">BeforeGuoSubNumerics</a> 的一字中文数字。</p>
+</dd>
   </dl>
 
 
@@ -781,10 +853,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_BeforeGuoSubIndex" data-uid="CompassEx.Guo.GuoSubClass.BeforeGuoSubIndex">
   BeforeGuoSubIndex
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L278"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L327"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>先天八卦索引位置</p>
+  <div class="markdown level1 summary"><p>计算当前单卦名在先天八卦清册（<a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_BeforeGuoSubNames">BeforeGuoSubNames</a>）中的原始数组零基索引。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -799,7 +871,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>整型位置索引，范围在 0（乾）至 7（坤）之间。</p>
+</dd>
   </dl>
 
 
@@ -813,10 +886,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_BeforeQuanity" data-uid="CompassEx.Guo.GuoSubClass.BeforeQuanity">
   BeforeQuanity
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L247"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L291"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>先天八卦数</p>
+  <div class="markdown level1 summary"><p>计算并获取当前单卦对应的伏羲先天八卦绝对数（整型：1 至 8）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -831,7 +904,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>整型数值。通过在 <a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_BeforeGuoSubNumerics">BeforeGuoSubNumerics</a> 中反查中文数（如“一”）的索引，动态加 1 转换得出其先天绝对数（乾一至坤八）。</p>
+</dd>
   </dl>
 
 
@@ -845,10 +919,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_CAfterRangeDegree" data-uid="CompassEx.Guo.GuoSubClass.CAfterRangeDegree">
   CAfterRangeDegree
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L292"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L348"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>根据本卦从罗盘获得后天八卦中的度数范围对象</p>
+  <div class="markdown level1 summary"><p>依据当前单卦名称，在三元地理后天罗盘圈层中动态匹配并返回其所管辖的周天度数范围对象。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -863,7 +937,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a></dt>
-    <dd></dd>
+    <dd><p>动态调用 <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_GetAfterGuoSubDegree_CompassEx_Guo_GuoSubClass_">GetAfterGuoSubDegree(GuoSubClass)</a>，返回其专属的 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 后天周天空间物理边界。</p>
+</dd>
   </dl>
 
 
@@ -877,10 +952,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_CBeforRangeDegree" data-uid="CompassEx.Guo.GuoSubClass.CBeforRangeDegree">
   CBeforRangeDegree
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L297"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L354"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>根据本卦从罗盘获得先天天八卦中的度数范围对象</p>
+  <div class="markdown level1 summary"><p>依据当前单卦名称，在三元地理伏羲先天罗盘方圆图圈层中动态匹配并返回其所管辖的周天度数范围对象。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -895,7 +970,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a></dt>
-    <dd></dd>
+    <dd><p>动态调用 <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforGuoSubDegree_CompassEx_Guo_GuoSubClass_">GetBeforGuoSubDegree(GuoSubClass)</a>，返回其专属的 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 先天周天空间物理边界。</p>
+</dd>
   </dl>
 
 
@@ -909,10 +985,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_FiveAttr" data-uid="CompassEx.Guo.GuoSubClass.FiveAttr">
   FiveAttr
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L259"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L309"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>卦的五行属性</p>
+  <div class="markdown level1 summary"><p>获取当前单卦所属的易学核心五行实体对象。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -927,7 +1003,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Comm.FiveAttr.html">FiveAttr</a></dt>
-    <dd></dd>
+    <dd><p>包含生克属性的 <a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_FiveAttr">FiveAttr</a> 五行实体对象。</p>
+</dd>
   </dl>
 
 
@@ -941,10 +1018,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_GuoQi" data-uid="CompassEx.Guo.GuoSubClass.GuoQi">
   GuoQi
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L227"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>卦气（洛数）先天五行数</p>
+  <div class="markdown level1 summary"><p>获取当前三爻单卦所蕴含的卦气（即洛书九宫数及与其绑定的先天五行参数）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -959,12 +1036,17 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Guo.GuoQi.html">GuoQi</a></dt>
-    <dd></dd>
+    <dd><p>返回一个全新初始化的卦气实体对象 <a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GuoQi">GuoQi</a>。</p>
+</dd>
   </dl>
 
 
 
 
+  <h4 class="section" id="CompassEx_Guo_GuoSubClass_GuoQi_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>在玄空大卦及罗盘理气算法中，本单卦会作为参数被直接传入 <code>new GuoQi(this)</code> 构造函数中，
+动态反哺出当前位置最精准的洛书数理指标，常用于后续六爻大卦的宏观卦气判定。</p>
+</div>
 
 
 
@@ -973,10 +1055,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_GuoSubAttrName" data-uid="CompassEx.Guo.GuoSubClass.GuoSubAttrName">
   GuoSubAttrName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L255"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L303"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>卦的属性名,例如：天</p>
+  <div class="markdown level1 summary"><p>获取当前经卦在自然界中模拟构成的核心物象/属性名称（如：“天”、“地”、“雷”、“风”）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -991,7 +1073,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>代表经八卦自然物象的单字名称。</p>
+</dd>
   </dl>
 
 
@@ -1005,10 +1088,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_GuoSubName" data-uid="CompassEx.Guo.GuoSubClass.GuoSubName">
   GuoSubName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L251"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L297"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>卦名，例如：乾</p>
+  <div class="markdown level1 summary"><p>获取当前经卦的标准单字名称（如：“乾”、“坤”、“震”、“巽”）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1023,7 +1106,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>代表三爻单卦的核心基础单字卦名。</p>
+</dd>
   </dl>
 
 
@@ -1037,10 +1121,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_GuoSubReluName" data-uid="CompassEx.Guo.GuoSubClass.GuoSubReluName">
   GuoSubReluName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L231"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L273"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>卦的伦理关系</p>
+  <div class="markdown level1 summary"><p>获取当前经卦在家族代际中所对应的传统易学伦理名称（如：“父”、“母”、“长男”、“少女”）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1055,7 +1139,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>符合《说卦传》经典人伦隐喻的中文分类字符串。</p>
+</dd>
   </dl>
 
 
@@ -1069,10 +1154,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_IsDownGuo" data-uid="CompassEx.Guo.GuoSubClass.IsDownGuo">
   IsDownGuo
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L217"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>是否为下卦</p>
+  <div class="markdown level1 summary"><p>获取或设置一个布尔值，指示当前三爻单卦在组合为六爻复卦时，是否担当“下卦”（即内卦、贞卦）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1087,7 +1172,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>预设值为 <code>false</code>。若在初始化时被标记为复卦的下半部分，则为 <code>true</code>。</p>
+</dd>
   </dl>
 
 
@@ -1101,10 +1187,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_IsSun" data-uid="CompassEx.Guo.GuoSubClass.IsSun">
   IsSun
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L211"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>是否为阳卦（后天卦前4位为阳)</p>
+  <div class="markdown level1 summary"><p>获取一个布尔值，指示当前三爻经卦在后天八卦体系中是否属于“阳卦”。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1119,12 +1205,18 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p><code>true</code> 代表当前单卦属于阳卦；<code>false</code> 则属于阴卦。</p>
+</dd>
   </dl>
 
 
 
 
+  <h4 class="section" id="CompassEx_Guo_GuoSubClass_IsSun_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p><b>四阳卦判定法则：</b><br>
+根据后天八卦阴阳划分规范，属于“乾（父）、坎（中男）、艮（少男）、震（长男）”四纯单卦之一的判定为阳卦。<br>
+该属性通过在字符串 <code>&quot;乾坎艮震&quot;</code> 中高速检索当前卦名（<a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GuoSubName">GuoSubName</a>）的索引来完成原子级断立。</p>
+</div>
 
 
 
@@ -1133,10 +1225,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_LocIndex" data-uid="CompassEx.Guo.GuoSubClass.LocIndex">
   LocIndex
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L227"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L267"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>地支开始的位置</p>
+  <div class="markdown level1 summary"><p>获取当前单卦地支在十二地支清册中开始的原始数组索引位置（即纳支起算点）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1151,7 +1243,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>整型数值。例如乾卦内卦起于子（索引 0）、坎卦起于寅（索引 2）等。</p>
+</dd>
   </dl>
 
 
@@ -1165,10 +1258,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_Locs" data-uid="CompassEx.Guo.GuoSubClass.Locs">
   Locs
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L222"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L261"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>地支地爻位列表，同下而上</p>
+  <div class="markdown level1 summary"><p>获取当前经卦从初爻、二爻至上爻顺次装配出的地支爻位实体对象列表。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1183,7 +1276,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>包含 3 个爻位对应纳支的 <a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a> 集合（循环排盘方向严格遵循由下而上）。</p>
+</dd>
   </dl>
 
 
@@ -1197,10 +1291,11 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_Sky" data-uid="CompassEx.Guo.GuoSubClass.Sky">
   Sky
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L214"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L255"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>获取当当前经卦地支起始位置所关联的天干类实体对象。</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1214,12 +1309,16 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Comm.SkyClass.html">SkyClass</a></dt>
-    <dd></dd>
+    <dd><p>一个封装好的 <a class="xref" href="CompassEx.Comm.SkyClass.html">SkyClass</a> 天干对象实例。</p>
+</dd>
   </dl>
 
 
 
 
+  <h4 class="section" id="CompassEx_Guo_GuoSubClass_Sky_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>内部通过当前单卦纳支开始的索引位置（<a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_LocIndex">LocIndex</a>）作为参数，动态反哺出契合数理的纳甲天干。</p>
+</div>
 
 
 
@@ -1228,10 +1327,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_SkyName" data-uid="CompassEx.Guo.GuoSubClass.SkyName">
   SkyName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L212"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L246"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>爻的纳甲天干</p>
+  <div class="markdown level1 summary"><p>获取当前经卦依京房易纳甲体例所配出的纳甲天干字符名称（如：“甲”、“乙”、“壬”）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1246,7 +1345,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>天干单字名称。常用于配合地支纳音执行宏观的干支推演。</p>
+</dd>
   </dl>
 
 
@@ -1260,10 +1360,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_Symbol" data-uid="CompassEx.Guo.GuoSubClass.Symbol">
   Symbol
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L287"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L342"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>卦象符号</p>
+  <div class="markdown level1 summary"><p>获取当前三爻单卦所对应的 Unicode 三爻经卦图形符号。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1278,12 +1378,16 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>返回单个标准的 Unicode 经卦字符（如：☰、☱、☲ 等）。</p>
+</dd>
   </dl>
 
 
 
 
+  <h4 class="section" id="CompassEx_Guo_GuoSubClass_Symbol_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>内部通过 <a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_BeforeGuoSubIndex">BeforeGuoSubIndex</a> 先天索引，动态前往静态图形库 <a class="xref" href="CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_Symbols">Symbols</a> 中进行高精度内容提取。</p>
+</div>
 
 
 
@@ -1292,10 +1396,10 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_Yaos" data-uid="CompassEx.Guo.GuoSubClass.Yaos">
   Yaos
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L208"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L240"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>爻数组</p>
+  <div class="markdown level1 summary"><p>获取或设置当前三爻经卦的爻象阴阳状态码数组（由下而上）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1310,7 +1414,8 @@ GuoSubClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</dt>
-    <dd></dd>
+    <dd><p>整型数组，默认长度为 3，初值设为 <code>{ 0, 0, 0 }</code>（代表坤卦全阴）。取值规范中：0代表阴爻，1代表阳爻。</p>
+</dd>
   </dl>
 
 
@@ -1328,7 +1433,7 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetAfterGuoSub_System_Int32_System_Boolean_" data-uid="CompassEx.Guo.GuoSubClass.GetAfterGuoSub(System.Int32,System.Boolean)">
   GetAfterGuoSub(int, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L412"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L567"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据后天八卦索引获得三爻卦类</p>
@@ -1368,7 +1473,7 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetBeforGuoSub_System_Int32_System_Boolean_" data-uid="CompassEx.Guo.GuoSubClass.GetBeforGuoSub(System.Int32,System.Boolean)">
   GetBeforGuoSub(int, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L425"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L580"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据先天八卦索引获得三爻卦类</p>
@@ -1409,7 +1514,7 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetC24Hills" data-uid="CompassEx.Guo.GuoSubClass.GetC24Hills">
   GetC24Hills()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L303"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L458"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获得后天八卦的中包含所有的正针24山</p>
@@ -1441,7 +1546,7 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetCBeforGuos" data-uid="CompassEx.Guo.GuoSubClass.GetCBeforGuos">
   GetCBeforGuos()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L328"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L483"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获得后天八卦的中包含所有的先天64卦</p>
@@ -1473,7 +1578,7 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetFiveAttrName_System_String_" data-uid="CompassEx.Guo.GuoSubClass.GetFiveAttrName(System.String)">
   GetFiveAttrName(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L525"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L680"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获得卦的五行属性</p>
@@ -1510,7 +1615,7 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetGuoSub_System_Int32_System_Boolean_" data-uid="CompassEx.Guo.GuoSubClass.GetGuoSub(System.Int32,System.Boolean)">
   GetGuoSub(int, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L457"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L612"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据卦的属性索引,获得三爻卦类(先天)</p>
@@ -1551,7 +1656,7 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetGuoSub_System_Int32_System_Int32_System_Int32_System_Boolean_" data-uid="CompassEx.Guo.GuoSubClass.GetGuoSub(System.Int32,System.Int32,System.Int32,System.Boolean)">
   GetGuoSub(int, int, int, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L387"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L542"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据卦的前三爻(由下而上）,获得三爻卦类（先天)</p>
@@ -1595,7 +1700,7 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetGuoSub_System_String_System_Boolean_" data-uid="CompassEx.Guo.GuoSubClass.GetGuoSub(System.String,System.Boolean)">
   GetGuoSub(string, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L437"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L592"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据卦的属性或名称,获得三爻卦类</p>
@@ -1636,7 +1741,7 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_GetXorGuo" data-uid="CompassEx.Guo.GuoSubClass.GetXorGuo">
   GetXorGuo()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L346"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L501"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>取反卦</p>
@@ -1668,7 +1773,7 @@ GuoSubClass 类
 
   <h3 id="CompassEx_Guo_GuoSubClass_LoadLocs" data-uid="CompassEx.Guo.GuoSubClass.LoadLocs">
   LoadLocs()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L361"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Guo/GuoSubClass.cs/#L516"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>加载地支列表，由下而上</p>
