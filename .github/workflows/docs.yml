@@ -1,0 +1,46 @@
+name: Deploy DocFX Docs
+
+on:
+  push:
+    branches:
+      - main # 触发构建的分支，根据你的主分支名（如 master）修改
+
+# 授予发布 GitHub Pages 所需的权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 确保同时只有一个发布任务在运行
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.0' # 根据你的项目需要选择 .NET 版本
+
+      - name: Install Tool & Build Docs
+        run: |
+          dotnet tool update -g docfx
+          docfx docfx.json # 如果 docfx.json 在 docs 文件夹，请写为 docfx docs/docfx.json
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site' # 对应 docfx.json 中的输出目录
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
