@@ -54,8 +54,18 @@ public class CompassSkiaRenderer
 
     public CompassSkiaRenderer()
     {
-        string fontPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "NotoSansSymbols-Regular.ttf");
-        TFSymbol = SKTypeface.FromFile(fontPath);
+        // 💡 因为复制过去后它会保持原有的文件夹层级，所以需要加上文件夹路径
+        // 🚀 核心门道：利用 MAUI 的跨平台统一文件系统
+        // 注意：这里只需传入纯文件名，不需要带上 "Resources/Fonts/" 路径前缀
+        using Stream fontStream = FileSystem.OpenAppPackageFileAsync("NotoSansSymbols-Regular.ttf").GetAwaiter().GetResult();
+
+        if (fontStream != null)
+        {
+            // 🎨 SkiaSharp 直接从内存流中安全反灌并装配字体
+            TFSymbol = SKTypeface.FromStream(fontStream);
+        }
+
+
 
     }
 
