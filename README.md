@@ -27,7 +27,7 @@
 ```
 
 # 算法说明
-[算法说明文档](./_site/index.html)
+[点击查看在线 API 文档](https://jockeyvb.github.io/CompassEx/)
 
 # 示例
 <div align="center">
