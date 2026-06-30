@@ -1,11 +1,8 @@
 ﻿export default {
   start: () => {
-    // 💡 自动动态获取项目的根路径前缀（本地是 ""，GitHub 上是 "/CompassEx"）
-    const basePath = globalThis.DOCFX?.baseUrl?.replace(/\/$/, "") || "";
-
     // 1. 引入 Pagefind 样式
     const link = document.createElement('link');
-    link.href = `${basePath}/pagefind/pagefind-ui.css`; // 👈 动态拼接前缀
+    link.href = '/pagefind/pagefind-ui.css';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
 
@@ -53,7 +50,7 @@
 
     // 3. 异步加载 Pagefind 脚本并挂载
     const script = document.createElement('script');
-    script.src = `${basePath}/pagefind/pagefind-ui.js`; // 👈 动态拼接前缀
+    script.src = '/pagefind/pagefind-ui.js';
     script.onload = () => {
       const navContainer = document.querySelector('.navbar-nav') || document.querySelector('nav');
       
@@ -71,7 +68,6 @@
         // 初始化 Pagefind
         new PagefindUI({ 
           element: "#pagefind-search-box", 
-          bundlePath: `${basePath}/pagefind/`, // 👈 核心：强制指定 Pagefind 去哪里加载搜索数据包
           showSubResults: true,
           resetStyles: false 
         });
