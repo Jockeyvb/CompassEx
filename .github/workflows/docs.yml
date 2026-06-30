@@ -36,10 +36,10 @@ jobs:
           # 1. 更新并安装 docfx 工具
           dotnet tool update -g docfx
           
-          # 2. 强力清除缓存，并【完全禁用】项目内的旧配置文件，强制仅使用官方 V3 API 源
-          dotnet restore CompassEx/CompassEx.csproj --force --no-cache --source "https://nuget.org"
+          # 2. 干净还原主项目包（此时云端已无 nuget.config 干扰，将直接走官方源）
+          dotnet restore CompassEx/CompassEx.csproj
           
-          # 3. 仅编译主项目，同样强制指定官方源以防万一
+          # 3. 仅编译主项目，直接绕过 MAUI 测试项目
           dotnet build CompassEx/CompassEx.csproj -c Release --no-restore
           
           # 4. 运行 docfx 生成文档网页
