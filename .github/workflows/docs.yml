@@ -36,11 +36,11 @@ jobs:
           # 1. 更新并安装 docfx 工具
           dotnet tool update -g docfx
           
-          # 2. 强制忽略本地错乱的绝对路径，改用官方标准源下载包
-          dotnet restore --ignore-failed-sources --source "https://nuget.org"
+          # 2. 精准锁定核心项目，忽略错乱的绝对路径，改用 NuGet 官方标准源下载包
+          dotnet restore CompassEx/CompassEx.csproj --ignore-failed-sources --source "https://nuget.org"
           
-          # 3. 优先完整编译项目，让项目里的 Source Generator 成功运行并缓存
-          dotnet build -c Release
+          # 3. 仅编译你的 .NET Standard 核心项目，直接绕过 MAUI 测试项目的组件缺失问题
+          dotnet build CompassEx/CompassEx.csproj -c Release
           
           # 4. 运行 docfx 生成文档网页
           docfx docfx.json
