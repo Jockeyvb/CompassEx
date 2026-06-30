@@ -8,7 +8,7 @@
       <meta name="title" content="Comm 类
  | CompassEx API文档 ">
       
-      
+      <meta name="description" content="类库核心公共辅助工具类，提供全局初始化入口及基于反射的对象属性浅拷贝扩展。">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,7 +88,7 @@
 
   <h1 id="CompassEx_Comm_Comm" data-uid="CompassEx.Comm.Comm" class="text-break">
 Comm 类
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Comm.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Comm.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -96,7 +96,8 @@ Comm 类
   <dl><dt>程序集</dt><dd>CompassEx.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>类库核心公共辅助工具类，提供全局初始化入口及基于反射的对象属性浅拷贝扩展。</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -155,10 +156,10 @@ Comm 类
 
   <h3 id="CompassEx_Comm_Comm_AllInit" data-uid="CompassEx.Comm.Comm.AllInit">
   AllInit()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Comm.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Comm.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>初始化罗盘中的基本数据</p>
+  <div class="markdown level1 summary"><p>全自动初始化罗盘引擎中赖以运行的所有底层基本数据。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -174,6 +175,11 @@ Comm 类
 
 
 
+  <h4 class="section" id="CompassEx_Comm_Comm_AllInit_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p><b>初始化加载名堂：</b><br>
+该方法在系统启动或反序列化时应被优先调用。它会通过内部流水线依次唤醒并充填两套最核心的周天度数数据：</p>
+<ul><li>调用 <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCAfterGuos">LoadAllCAfterGuos()</a>：全量装载后天六十四卦罗盘圈层分度范围数据。</li><li>调用 <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllBeforGuos">LoadAllBeforGuos()</a>：全量装载伏羲先天六十四卦方圆图周天物理刻度数据。</li></ul>
+</div>
 
 
 
@@ -182,10 +188,10 @@ Comm 类
 
   <h3 id="CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_" data-uid="CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)">
   ApplyBaseProperties&lt;TChild, TBase&gt;(TChild, TBase)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Comm.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Comm.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>从基类为继承类重设相关属性</p>
+  <div class="markdown level1 summary"><p>扩展方法：利用运行时反射（Reflection）机制，强行从父级基类模板中将所有属性与字段的值“浅拷贝”反灌给当前继承类实例。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -196,18 +202,22 @@ Comm 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>child</code> <span class="xref">TChild</span></dt>
-    <dd></dd>
+    <dd><p>正在接受赋值的当前继承类（子类）目标对象实例。</p>
+</dd>
     <dt><code>baseTemplate</code> <span class="xref">TBase</span></dt>
-    <dd></dd>
+    <dd><p>作为数据源的基类（父类）实体模板对象。</p>
+</dd>
   </dl>
 
 
   <h4 class="section">类型参数</h4>
   <dl class="parameters">
     <dt><code>TChild</code></dt>
-    <dd></dd>
+    <dd><p>继承类（派生类）的具体类型，必须隐式继承自 <code class="typeparamref">TBase</code>。</p>
+</dd>
     <dt><code>TBase</code></dt>
-    <dd></dd>
+    <dd><p>基类（模板类）的具体类型。</p>
+</dd>
   </dl>
 
 
@@ -215,6 +225,11 @@ Comm 类
 
 
 
+  <h4 class="section" id="CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p><b>🛠️ 内部反射拷贝门道与避坑提示：</b></p>
+<ol><li><b>属性遍历</b>：方法首先通过 <code>typeof(TBase).GetProperties()</code> 捕获父类公开属性，并通过 <code>prop.CanWrite</code> 安全拦截，防止对只读属性或受保护的 Get 块执行非法注入。</li><li><b>字段反灌</b>：随后通过 <code>typeof(TBase).GetFields()</code> 递归提取底层物理字段并完成原子值覆写。</li><li><b>⚠️ 性能与安全警告</b>：由于使用了运行时动态反射，该操作会带来较大的 CPU 耗能，<b>在高频循环或深层装卦排盘时应克制使用</b>。另外，它仅支持第一层浅拷贝，若字段中含有 <code>List&lt;T&gt;</code> 等引用类型，两端实例会共享同一份内存地址，修改时存在联动篡改的隐患，在跨变卦深度计算时需高度注意。</li></ol>
+<p>该方法常用于在 JSON 反序列化后期生命周期中，快速将多字段的静态基类参数直接克隆给派生实体类。</p>
+</div>
 
 
 
@@ -223,7 +238,7 @@ Comm 类
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Comm.cs/#L25" class="edit-link">编辑本文</a>
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Comm.cs/#L19" class="edit-link">编辑本文</a>
         </div>
 
 

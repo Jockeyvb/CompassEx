@@ -1507,12 +1507,6 @@ references:
   fullName.vb: CompassEx.Guo.GuoClass.New
   nameWithType: GuoClass.GuoClass
   nameWithType.vb: GuoClass.New
-- uid: CompassEx.Guo.GuoClass.BeforGuoICONs
-  name: BeforGuoICONs
-  href: api/CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_BeforGuoICONs
-  commentId: F:CompassEx.Guo.GuoClass.BeforGuoICONs
-  fullName: CompassEx.Guo.GuoClass.BeforGuoICONs
-  nameWithType: GuoClass.BeforGuoICONs
 - uid: CompassEx.Guo.GuoClass.CBeforRangeDegree
   name: CBeforRangeDegree
   href: api/CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_CBeforRangeDegree
@@ -1987,6 +1981,19 @@ references:
   commentId: F:CompassEx.Guo.GuoClass.GuoSkyLocs
   fullName: CompassEx.Guo.GuoClass.GuoSkyLocs
   nameWithType: GuoClass.GuoSkyLocs
+- uid: CompassEx.Guo.GuoClass.GuoSymbol
+  name: GuoSymbol
+  href: api/CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GuoSymbol
+  commentId: P:CompassEx.Guo.GuoClass.GuoSymbol
+  fullName: CompassEx.Guo.GuoClass.GuoSymbol
+  nameWithType: GuoClass.GuoSymbol
+- uid: CompassEx.Guo.GuoClass.GuoSymbol*
+  name: GuoSymbol
+  href: api/CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GuoSymbol_
+  commentId: Overload:CompassEx.Guo.GuoClass.GuoSymbol
+  isSpec: "True"
+  fullName: CompassEx.Guo.GuoClass.GuoSymbol
+  nameWithType: GuoClass.GuoSymbol
 - uid: CompassEx.Guo.GuoClass.HereYao
   name: HereYao
   href: api/CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_HereYao

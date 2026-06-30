@@ -20,10 +20,12 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ArrayExtensions
     path: CompassEx/Comm/Comm.cs
-    startLine: 66
+    startLine: 75
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
+  summary: 针对一维数组的高性能公共流式扩展方法封装类。
+  example: []
   syntax:
     content: public static class ArrayExtensions
     content.vb: Public Module ArrayExtensions
@@ -56,21 +58,28 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IndexOf
     path: CompassEx/Comm/Comm.cs
-    startLine: 68
+    startLine: 87
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
+  summary: 扩展方法：在给定的强类型一维数组中，高效正向检索特定元素并返回其首次出现的零基（Zero-based）索引。
+  remarks: 该方法是对原生静态函数 <xref href="System.Array.IndexOf%60%601(%60%600%5b%5d%2c%60%600)" data-throw-if-not-resolved="false"></xref> 的流式桥接封装，允许类库在内部对静态数组数据（如干支集、卦序表）直接像调用 List 一样使用流畅的 <code>array.IndexOf(value)</code> 语法，从而大幅减少语法噪音。
+  example: []
   syntax:
     content: public static int IndexOf<T>(this T[] array, T value)
     parameters:
     - id: array
       type: '{T}[]'
+      description: 当前正在执行检索的目标一维数组实体。
     - id: value
       type: '{T}'
+      description: 期望在数组中匹配定位的目标对象或数值。
     typeParameters:
     - id: T
+      description: 数组内部元素的泛型类型。
     return:
       type: System.Int32
+      description: 返回匹配项在数组中的绝对索引位置（范围在 <code>0</code> 到 <code>Length - 1</code> 之间）；若全盘未匹配成功，则返回标准未找到标识 <code>-1</code>。
     content.vb: Public Shared Function IndexOf(Of T)(array As T(), value As T) As Integer
   overload: CompassEx.Comm.ArrayExtensions.IndexOf*
   nameWithType.vb: ArrayExtensions.IndexOf(Of T)(T(), T)
@@ -336,6 +345,50 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.Array.IndexOf``1(``0[],``0)
+  commentId: M:System.Array.IndexOf``1(``0[],``0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.array.indexof#system-array-indexof-1(-0()-0)
+  name: IndexOf<T>(T[], T)
+  nameWithType: Array.IndexOf<T>(T[], T)
+  fullName: System.Array.IndexOf<T>(T[], T)
+  nameWithType.vb: Array.IndexOf(Of T)(T(), T)
+  fullName.vb: System.Array.IndexOf(Of T)(T(), T)
+  name.vb: IndexOf(Of T)(T(), T)
+  spec.csharp:
+  - uid: System.Array.IndexOf``1(``0[],``0)
+    name: IndexOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.array.indexof#system-array-indexof-1(-0()-0)
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.Array.IndexOf``1(``0[],``0)
+    name: IndexOf
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.array.indexof#system-array-indexof-1(-0()-0)
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
 - uid: CompassEx.Comm.ArrayExtensions.IndexOf*
   commentId: Overload:CompassEx.Comm.ArrayExtensions.IndexOf
   href: CompassEx.Comm.ArrayExtensions.html#CompassEx_Comm_ArrayExtensions_IndexOf__1___0_____0_

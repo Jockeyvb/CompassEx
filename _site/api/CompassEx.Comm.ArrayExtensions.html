@@ -8,7 +8,7 @@
       <meta name="title" content="ArrayExtensions 类
  | CompassEx API文档 ">
       
-      
+      <meta name="description" content="针对一维数组的高性能公共流式扩展方法封装类。">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,7 +88,7 @@
 
   <h1 id="CompassEx_Comm_ArrayExtensions" data-uid="CompassEx.Comm.ArrayExtensions" class="text-break">
 ArrayExtensions 类
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Comm.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Comm.cs/#L76"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -96,7 +96,8 @@ ArrayExtensions 类
   <dl><dt>程序集</dt><dd>CompassEx.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>针对一维数组的高性能公共流式扩展方法封装类。</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -155,10 +156,11 @@ ArrayExtensions 类
 
   <h3 id="CompassEx_Comm_ArrayExtensions_IndexOf__1___0_____0_" data-uid="CompassEx.Comm.ArrayExtensions.IndexOf``1(``0[],``0)">
   IndexOf&lt;T&gt;(T[], T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Comm.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Comm.cs/#L88"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>扩展方法：在给定的强类型一维数组中，高效正向检索特定元素并返回其首次出现的零基（Zero-based）索引。</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -168,21 +170,25 @@ ArrayExtensions 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>array</code> T[]</dt>
-    <dd></dd>
+    <dd><p>当前正在执行检索的目标一维数组实体。</p>
+</dd>
     <dt><code>value</code> <span class="xref">T</span></dt>
-    <dd></dd>
+    <dd><p>期望在数组中匹配定位的目标对象或数值。</p>
+</dd>
   </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>返回匹配项在数组中的绝对索引位置（范围在 <code>0</code> 到 <code>Length - 1</code> 之间）；若全盘未匹配成功，则返回标准未找到标识 <code>-1</code>。</p>
+</dd>
   </dl>
 
   <h4 class="section">类型参数</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>数组内部元素的泛型类型。</p>
+</dd>
   </dl>
 
 
@@ -190,6 +196,9 @@ ArrayExtensions 类
 
 
 
+  <h4 class="section" id="CompassEx_Comm_ArrayExtensions_IndexOf__1___0_____0__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>该方法是对原生静态函数 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array.indexof#system-array-indexof-1(-0()-0)">IndexOf&lt;T&gt;(T[], T)</a> 的流式桥接封装，允许类库在内部对静态数组数据（如干支集、卦序表）直接像调用 List 一样使用流畅的 <code>array.IndexOf(value)</code> 语法，从而大幅减少语法噪音。</p>
+</div>
 
 
 
@@ -198,7 +207,7 @@ ArrayExtensions 类
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Comm.cs/#L67" class="edit-link">编辑本文</a>
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Comm.cs/#L76" class="edit-link">编辑本文</a>
         </div>
 
 

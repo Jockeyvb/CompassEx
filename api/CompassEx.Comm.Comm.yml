@@ -21,10 +21,12 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Comm
     path: CompassEx/Comm/Comm.cs
-    startLine: 24
+    startLine: 18
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
+  summary: 类库核心公共辅助工具类，提供全局初始化入口及基于反射的对象属性浅拷贝扩展。
+  example: []
   syntax:
     content: public static class Comm
     content.vb: Public Module Comm
@@ -56,11 +58,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AllInit
     path: CompassEx/Comm/Comm.cs
-    startLine: 30
+    startLine: 31
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 初始化罗盘中的基本数据
+  summary: 全自动初始化罗盘引擎中赖以运行的所有底层基本数据。
+  remarks: >-
+    <b>初始化加载名堂：</b><br />
+
+    该方法在系统启动或反序列化时应被优先调用。它会通过内部流水线依次唤醒并充填两套最核心的周天度数数据：
+
+
+    <ul><li>调用 <xref href="CompassEx.CompassEx.LoadAllCAfterGuos" data-throw-if-not-resolved="false"></xref>：全量装载后天六十四卦罗盘圈层分度范围数据。</li><li>调用 <xref href="CompassEx.CompassEx.LoadAllBeforGuos" data-throw-if-not-resolved="false"></xref>：全量装载伏羲先天六十四卦方圆图周天物理刻度数据。</li></ul>
   example: []
   syntax:
     content: public static void AllInit()
@@ -85,26 +94,33 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ApplyBaseProperties
     path: CompassEx/Comm/Comm.cs
-    startLine: 43
+    startLine: 53
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 从基类为继承类重设相关属性
+  summary: 扩展方法：利用运行时反射（Reflection）机制，强行从父级基类模板中将所有属性与字段的值“浅拷贝”反灌给当前继承类实例。
+  remarks: >-
+    <b>🛠️ 内部反射拷贝门道与避坑提示：</b>
+
+    <ol><li><b>属性遍历</b>：方法首先通过 <code>typeof(TBase).GetProperties()</code> 捕获父类公开属性，并通过 <code>prop.CanWrite</code> 安全拦截，防止对只读属性或受保护的 Get 块执行非法注入。</li><li><b>字段反灌</b>：随后通过 <code>typeof(TBase).GetFields()</code> 递归提取底层物理字段并完成原子值覆写。</li><li><b>⚠️ 性能与安全警告</b>：由于使用了运行时动态反射，该操作会带来较大的 CPU 耗能，<b>在高频循环或深层装卦排盘时应克制使用</b>。另外，它仅支持第一层浅拷贝，若字段中含有 <code>List&lt;T&gt;</code> 等引用类型，两端实例会共享同一份内存地址，修改时存在联动篡改的隐患，在跨变卦深度计算时需高度注意。</li></ol>
+
+
+    该方法常用于在 JSON 反序列化后期生命周期中，快速将多字段的静态基类参数直接克隆给派生实体类。
   example: []
   syntax:
     content: 'public static void ApplyBaseProperties<TChild, TBase>(this TChild child, TBase baseTemplate) where TChild : TBase'
     parameters:
     - id: child
       type: '{TChild}'
-      description: ''
+      description: 正在接受赋值的当前继承类（子类）目标对象实例。
     - id: baseTemplate
       type: '{TBase}'
-      description: ''
+      description: 作为数据源的基类（父类）实体模板对象。
     typeParameters:
     - id: TChild
-      description: ''
+      description: 继承类（派生类）的具体类型，必须隐式继承自 <code class="typeparamref">TBase</code>。
     - id: TBase
-      description: ''
+      description: 基类（模板类）的具体类型。
     content.vb: Public Shared Sub ApplyBaseProperties(Of TChild As TBase, TBase)(child As TChild, baseTemplate As TBase)
   overload: CompassEx.Comm.Comm.ApplyBaseProperties*
   nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
@@ -370,6 +386,42 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: CompassEx.CompassEx.LoadAllCAfterGuos
+  commentId: M:CompassEx.CompassEx.LoadAllCAfterGuos
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCAfterGuos
+  name: LoadAllCAfterGuos()
+  nameWithType: CompassEx.LoadAllCAfterGuos()
+  fullName: CompassEx.CompassEx.LoadAllCAfterGuos()
+  spec.csharp:
+  - uid: CompassEx.CompassEx.LoadAllCAfterGuos
+    name: LoadAllCAfterGuos
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCAfterGuos
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: CompassEx.CompassEx.LoadAllCAfterGuos
+    name: LoadAllCAfterGuos
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCAfterGuos
+  - name: (
+  - name: )
+- uid: CompassEx.CompassEx.LoadAllBeforGuos
+  commentId: M:CompassEx.CompassEx.LoadAllBeforGuos
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllBeforGuos
+  name: LoadAllBeforGuos()
+  nameWithType: CompassEx.LoadAllBeforGuos()
+  fullName: CompassEx.CompassEx.LoadAllBeforGuos()
+  spec.csharp:
+  - uid: CompassEx.CompassEx.LoadAllBeforGuos
+    name: LoadAllBeforGuos
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllBeforGuos
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: CompassEx.CompassEx.LoadAllBeforGuos
+    name: LoadAllBeforGuos
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllBeforGuos
+  - name: (
+  - name: )
 - uid: CompassEx.Comm.Comm.AllInit*
   commentId: Overload:CompassEx.Comm.Comm.AllInit
   href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_AllInit

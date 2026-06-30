@@ -201,7 +201,7 @@ namespace CompassEx
         ///加载罗盘上的所有先天64卦（天盘）对象，按照顺时针方向排列，从坤卦开始，每5.625度一个卦逆时针，共64个卦
         /// </summary>
         /// <returns></returns>
-        public static void LoadAllBeforGuos()
+        public static void LoadAllCBeforGuos()
         {
             CBeforGuos = C3Y.C3Y.GetAllBeforGuos();
 

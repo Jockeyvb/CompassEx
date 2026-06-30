@@ -7,7 +7,6 @@ items:
   children:
   - CompassEx.Guo.GuoClass.#ctor(System.Int32)
   - CompassEx.Guo.GuoClass.#ctor(System.String)
-  - CompassEx.Guo.GuoClass.BeforGuoICONs
   - CompassEx.Guo.GuoClass.CBeforRangeDegree
   - CompassEx.Guo.GuoClass.ChangedYao
   - CompassEx.Guo.GuoClass.DownGuo
@@ -47,6 +46,7 @@ items:
   - CompassEx.Guo.GuoClass.GuoSelf
   - CompassEx.Guo.GuoClass.GuoSkyLoc
   - CompassEx.Guo.GuoClass.GuoSkyLocs
+  - CompassEx.Guo.GuoClass.GuoSymbol
   - CompassEx.Guo.GuoClass.HereYao
   - CompassEx.Guo.GuoClass.HideRelative
   - CompassEx.Guo.GuoClass.HideRelativeYaos
@@ -113,11 +113,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoNames
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 32
+    startLine: 40
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 64卦全卦简名
+  summary: 获取周易 64 卦的顺序简名列表（通行本卦序）。
   example: []
   syntax:
     content: >-
@@ -126,6 +126,7 @@ items:
       public static readonly string[] GuoNames
     return:
       type: System.String[]
+      description: <pre><code class="lang-csharp">[ "乾", "坤", "屯", "蒙", "需", "讼", "师", "比", "小畜", "履", "泰", "否", "同人", "大有", "谦", "豫", "随", "蛊", "临", "观", "噬嗑", "贲", "剥", "复", "无妄", "大畜", "颐", "大过", "坎", "离", "咸", "恒", "遁", "大壮", "晋", "明夷", "家人", "睽", "蹇", "解", "损", "益", "夬", "姤", "萃", "升", "困", "井", "革", "鼎", "震", "艮", "渐", "归妹", "丰", "旅", "巽", "兑", "涣", "节", "中孚", "小过", "既济", "未济" ]</code></pre>
     content.vb: >-
       <JsonIgnore>
 
@@ -152,11 +153,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoFullNames
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 38
+    startLine: 51
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 64卦全卦名字
+  summary: 获取周易 64 卦的完整名字（包含上下卦象组合，如“乾为天”）。
   example: []
   syntax:
     content: >-
@@ -165,6 +166,7 @@ items:
       public static readonly string[] GuoFullNames
     return:
       type: System.String[]
+      description: <pre><code class="lang-csharp">[ "乾为天", "坤为地", "水雷屯", "山水蒙", "水天需", "天水讼", "地水师", "水地比", "风天小畜", "天泽履", "地天泰", "天地否", "天火同人", "火天大有", "地山谦", "雷地豫", "泽雷随", "山风蛊", "地泽临", "风地观", "火雷噬嗑", "山火贲", "山火剥", "地雷复", "天雷无妄", "山天大畜", "山雷颐", "泽风大过", "坎为水", "离为火", "泽山咸", "雷风恒", "天山遁", "雷天大壮", "火地晋", "地火明夷", "风火家人", "火泽睽", "水山蹇", "雷水解", "山泽损", "风雷益", "泽天夬", "天风姤", "泽地萃", "地风升", "泽水困", "水风井", "泽火革", "火风鼎", "震为雷", "艮为山", "风山渐", "雷泽归妹", "雷火丰", "火山旅", "巽为风", "兑为泽", "风水涣", "水泽节", "风泽中孚", "雷山小过", "水火既济", "火水未济" ]</code></pre>
     content.vb: >-
       <JsonIgnore>
 
@@ -191,11 +193,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoSkyLocs
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 44
+    startLine: 62
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 64卦对应60甲子
+  summary: 获取 64 卦依特定术数（如大成卦分度、值旬等）所对应的 60 甲子分布表。
   example: []
   syntax:
     content: >-
@@ -204,6 +206,7 @@ items:
       public static readonly string[] GuoSkyLocs
     return:
       type: System.String[]
+      description: <pre><code class="lang-csharp">[ "甲午", "甲子", "戊子", "庚申", "乙巳", "辛未", "壬申", "辛亥", "丁巳", "戊辰", "庚辰", "庚戌", "壬寅", "辛巳", "戊戌", "丁亥", "丁丑", "丁未", "乙卯", "己亥", "乙丑", "癸丑", "癸亥", "甲子", "己丑", "壬辰", "丙子", "丙午", "庚申", "庚寅", "丁酉", "庚午", "乙酉", "己巳", "乙亥", "辛丑", "丙寅", "甲辰", "甲戌", "丙申", "丁卯", "庚子", "癸巳", "甲午", "壬戌", "己未", "癸未", "乙未", "庚寅", "戊午", "壬子", "丙戌", "癸酉", "癸卯", "戊寅", "己酉", "壬午", "丙辰", "戊申", "己卯", "辛卯", "辛酉", "甲寅", "甲申" ]</code></pre>
     content.vb: >-
       <JsonIgnore>
 
@@ -230,17 +233,98 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Symbols
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 49
+    startLine: 77
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 64卦符号
+  summary: 获取 64 卦对应的 Unicode 易经六爻符号（从 \u4DC0 至 \u4DFF）。
   example: []
   syntax:
     content: public static readonly string[] Symbols
     return:
       type: System.String[]
+      description: >-
+        <pre><code class="lang-csharp">Index 01-10: ䷀(乾), ䷁(坤), ䷂(屯), ䷃(蒙), ䷄(需), ䷅(讼), ䷆(师), ䷇(比), ䷈(小畜), ䷉(履)
+
+        Index 11-20: ䷊(泰), ䷋(否), ䷌(同人), ䷍(大有), ䷎(谦), ䷏(豫), ䷐(随), ䷑(蛊), ䷒(临), ䷓(观)
+
+        Index 21-30: ䷔(噬嗑), ䷕(贲), ䷖(剥), ䷗(复), ䷘(无妄), ䷙(大畜), ䷚(颐), ䷛(大过), ䷜(坎), ䷝(离)
+
+        Index 31-40: ䷞(咸), ䷟(恒), ䷠(遁), ䷡(大壮), ䷢(晋), ䷣(明夷), ䷤(家人), ䷥(睽), ䷦(蹇), ䷧(解)
+
+        Index 41-50: ䷨(损), ䷩(益), ䷪(夬), ䷫(姤), ䷬(萃), ䷭(升), ䷮(困), ䷯(井), ䷰(革), ䷱(鼎)
+
+        Index 51-64: ䷲(震), ䷳(艮), ䷴(渐), ䷵(归妹), ䷶(丰), ䷷(旅), ䷸(巽), ䷹(兑), ䷺(涣), ䷻(节), ䷼(中孚), ䷽(小过), ䷾(既济), ䷿(未济)</code></pre>
     content.vb: Public Shared ReadOnly Symbols As String()
+- uid: CompassEx.Guo.GuoClass.GuoFateNames
+  commentId: F:CompassEx.Guo.GuoClass.GuoFateNames
+  id: GuoFateNames
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GuoFateNames
+  nameWithType: GuoClass.GuoFateNames
+  fullName: CompassEx.Guo.GuoClass.GuoFateNames
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoFateNames
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 155
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 獲取玄空大卦算法中對應的「卦運」（江東卦、江西卦、南北八大純卦等一至九運）名稱列表。
+  example: []
+  syntax:
+    content: public static readonly string[] GuoFateNames
+    return:
+      type: System.String[]
+      description: >-
+        <pre><code class="lang-csharp">索引 0-8 分別對應：
+
+        [ "一", "二", "三", "四", "(五運空缺)", "六", "七", "八", "九" ]</code></pre>
+    content.vb: Public Shared ReadOnly GuoFateNames As String()
+- uid: CompassEx.Guo.GuoClass.GuoSymbol
+  commentId: P:CompassEx.Guo.GuoClass.GuoSymbol
+  id: GuoSymbol
+  parent: CompassEx.Guo.GuoClass
+  langs:
+  - csharp
+  - vb
+  name: GuoSymbol
+  nameWithType: GuoClass.GuoSymbol
+  fullName: CompassEx.Guo.GuoClass.GuoSymbol
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Guo/GuoClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuoSymbol
+    path: CompassEx/Guo/GuoClass.cs
+    startLine: 169
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Guo
+  summary: 获取当前六爻卦所对应的标准 Unicode 易经六爻图形符号。
+  remarks: >-
+    该属性通过当前实例的 <xref href="CompassEx.Guo.GuoClass.GuoIndex" data-throw-if-not-resolved="false"></xref> 属性作为索引，
+
+    动态前往静态字符集清册 <xref href="CompassEx.Guo.GuoClass.Symbols" data-throw-if-not-resolved="false"></xref> 中提取对应的 Unicode 易经六爻符号（范围从 \u4DC0 至 \u4DFF）。
+  example: []
+  syntax:
+    content: public string GuoSymbol { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: 返回单个 Unicode 易经卦象字符（例如：䷀、䷁、䷂等）。
+    content.vb: Public ReadOnly Property GuoSymbol As String
+  overload: CompassEx.Guo.GuoClass.GuoSymbol*
 - uid: CompassEx.Guo.GuoClass.GuoQi
   commentId: P:CompassEx.Guo.GuoClass.GuoQi
   id: GuoQi
@@ -259,17 +343,22 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoQi
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 125
+    startLine: 181
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 64卦气（洛数）先天五行数
+  summary: 获取当前六爻卦对应的 64 卦卦气（即洛书数，用作先天五行数计算）。
+  remarks: >-
+    在玄空大卦数理中，采取“上卦洛数为卦气，下卦洛数为卦运”的原则。
+
+    此属性通过动态访问 <code>this.UpGuo.GuoQi</code> 来直接提取外卦的洛书数值。
   example: []
   syntax:
     content: public GuoQi GuoQi { get; }
     parameters: []
     return:
       type: CompassEx.Guo.GuoQi
+      description: 返回一个 <xref href="CompassEx.Guo.GuoClass.GuoQi" data-throw-if-not-resolved="false"></xref> 对象，包含当前大卦的洛书数及先天五行属性。
     content.vb: Public ReadOnly Property GuoQi As GuoQi
   overload: CompassEx.Guo.GuoClass.GuoQi*
 - uid: CompassEx.Guo.GuoClass.DownGuo
@@ -290,11 +379,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: DownGuo
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 139
+    startLine: 193
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 下卦（内卦），三爻卦
+  summary: 获取当前六爻卦的下卦（又称内卦、贞卦），为三爻卦结构。
   example: []
   syntax:
     content: >-
@@ -304,6 +393,7 @@ items:
     parameters: []
     return:
       type: CompassEx.Guo.GuoSubClass
+      description: 下卦的三爻封装对象 <xref href="CompassEx.Guo.GuoSubClass" data-throw-if-not-resolved="false"></xref>。
     content.vb: >-
       <JsonIgnore>
 
@@ -331,11 +421,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: UpGuo
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 144
+    startLine: 200
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 上卦（外卦），三爻卦
+  summary: 获取当前六爻卦的上卦（又称外卦、悔卦），为三爻卦结构。
   example: []
   syntax:
     content: >-
@@ -345,6 +435,7 @@ items:
     parameters: []
     return:
       type: CompassEx.Guo.GuoSubClass
+      description: 上卦的三爻封装对象 <xref href="CompassEx.Guo.GuoSubClass" data-throw-if-not-resolved="false"></xref>。
     content.vb: >-
       <JsonIgnore>
 
@@ -372,17 +463,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoName
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 149
+    startLine: 207
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 六爻卦，卦名(简)
+  summary: 获取或设置当前六爻卦的两字简化卦名（如“乾”、“坤”、“屯”、“蒙”）。
   example: []
   syntax:
     content: public string GuoName { get; }
     parameters: []
     return:
       type: System.String
+      description: 代表 64 卦通行本顺序的两字简名缩写。
     content.vb: Public Property GuoName As String
   overload: CompassEx.Guo.GuoClass.GuoName*
 - uid: CompassEx.Guo.GuoClass.GuoFullName
@@ -403,17 +495,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoFullName
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 153
+    startLine: 213
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 六爻卦的全名
+  summary: 获取或设置当前六爻卦的四字全名（包含上下卦象组合，如“乾为天”、“地水师”）。
   example: []
   syntax:
     content: public string GuoFullName { get; }
     parameters: []
     return:
       type: System.String
+      description: 代表包含上下经八卦对应结构的四字或三字全称。
     content.vb: Public Property GuoFullName As String
   overload: CompassEx.Guo.GuoClass.GuoFullName*
 - uid: CompassEx.Guo.GuoClass.GuoIndex
@@ -434,17 +527,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoIndex
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 157
+    startLine: 219
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 卦的所在索引
+  summary: 获取或设置当前卦在 64 卦数据库或特定排列模型中的原始数组索引。
   example: []
   syntax:
     content: public int GuoIndex { get; }
     parameters: []
     return:
       type: System.Int32
+      description: 预设值为 <code>-1</code>，表示尚未初始化；初始化后范围通常在 <code>0</code> 到 <code>63</code> 之间。
     content.vb: Public Property GuoIndex As Integer
   overload: CompassEx.Guo.GuoClass.GuoIndex*
 - uid: CompassEx.Guo.GuoClass.SixGods
@@ -465,11 +559,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SixGods
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 161
+    startLine: 225
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 六神
+  summary: 获取当前六爻卦依据日干推导出的六神（又称六兽：青龙、朱雀、勾陈、螣蛇、白虎、玄武）分布列表。
   example: []
   syntax:
     content: >-
@@ -479,6 +573,7 @@ items:
     parameters: []
     return:
       type: System.Collections.Generic.List{CompassEx.Guo.SixGodClass}
+      description: 包含从初爻到上爻按顺序排列的 <xref href="CompassEx.Guo.SixGodClass" data-throw-if-not-resolved="false"></xref> 六神对象集合。
     content.vb: >-
       <JsonIgnore>
 
@@ -506,11 +601,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SixRelative
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 166
+    startLine: 232
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 六亲
+  summary: 获取当前六爻卦依据本宫五行与纳支推导出的本卦“六亲”（父母、兄弟、子孙、妻财、官鬼）属性列表。
   example: []
   syntax:
     content: >-
@@ -520,6 +615,7 @@ items:
     parameters: []
     return:
       type: System.Collections.Generic.List{CompassEx.Guo.SixRelativeClass}
+      description: 包含初爻至上爻共六个装卦爻位对应的 <xref href="CompassEx.Guo.SixRelativeClass" data-throw-if-not-resolved="false"></xref> 集合。
     content.vb: >-
       <JsonIgnore>
 
@@ -547,11 +643,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LostLocs
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 171
+    startLine: 239
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 空亡的两个地支
+  summary: 获取当前六爻卦依据预设旬空规则推导出的两个处于“空亡”状态的地支对象。
   example: []
   syntax:
     content: >-
@@ -561,6 +657,7 @@ items:
     parameters: []
     return:
       type: System.Collections.Generic.List{CompassEx.Comm.LocClass}
+      description: 一个长度通常为 2 的地支集合 <xref href="CompassEx.Comm.LocClass" data-throw-if-not-resolved="false"></xref>（如包含“子”、“丑”等）。
     content.vb: >-
       <JsonIgnore>
 
@@ -588,17 +685,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: HereYao
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 176
+    startLine: 246
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 世爻
+  summary: 获取或设置当前卦的“世爻”所在位置（即六爻预设的世位）。
   example: []
   syntax:
     content: public int HereYao { get; }
     parameters: []
     return:
       type: System.Int32
+      description: 整型数值，取值范围通常在 <code>0</code>（初爻）到 <code>5</code>（上爻）之间。
     content.vb: Public Property HereYao As Integer
   overload: CompassEx.Guo.GuoClass.HereYao*
 - uid: CompassEx.Guo.GuoClass.ThereYao
@@ -619,17 +717,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ThereYao
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 180
+    startLine: 252
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 应爻
+  summary: 获取或设置当前卦的“应爻”所在位置（即六爻预设的应位）。
   example: []
   syntax:
     content: public int ThereYao { get; }
     parameters: []
     return:
       type: System.Int32
+      description: 整型数值，基于世爻推导得出，与世爻相隔两个爻位（范围在 <code>0</code> 至 <code>5</code> 之间）。
     content.vb: Public Property ThereYao As Integer
   overload: CompassEx.Guo.GuoClass.ThereYao*
 - uid: CompassEx.Guo.GuoClass.ChangedYao
@@ -650,11 +749,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ChangedYao
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 185
+    startLine: 258
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 已变化后的爻
+  summary: 获取当前卦在发动变卦后，各个爻位发生阴阳变换（少阳变老阴、少阴变老阳）后的动变地支或结果列表。
   example: []
   syntax:
     content: >-
@@ -664,6 +763,7 @@ items:
     parameters: []
     return:
       type: System.Collections.Generic.List{System.Int32}
+      description: 包含已发生动变的爻位编号或变爻数据列表。
     content.vb: >-
       <JsonIgnore>
 
@@ -691,17 +791,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoAliasName
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 191
+    startLine: 265
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 卦的所属别名，例如：归魂卦，游魂卦，纯卦等
+  summary: 获取或设置当前六爻卦的八宫所属别名分类（如：“归魂卦”、“游魂卦”、“纯卦/八纯”或常规的几世卦）。
   example: []
   syntax:
     content: public string GuoAliasName { get; }
     parameters: []
     return:
       type: System.String
+      description: 描述当前卦在京房易八宫变易体系中所处位置的分类字符串。
     content.vb: Public Property GuoAliasName As String
   overload: CompassEx.Guo.GuoClass.GuoAliasName*
 - uid: CompassEx.Guo.GuoClass.GuoSelf
@@ -722,11 +823,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoSelf
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 195
+    startLine: 271
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 卦宫(三爻卦),名称
+  summary: 获取当前六爻卦所归属的“卦宫”（本宫三爻纯卦，如乾宫、坤宫、震宫等）。
   example: []
   syntax:
     content: >-
@@ -736,6 +837,7 @@ items:
     parameters: []
     return:
       type: CompassEx.Guo.GuoSubClass
+      description: 代表该六爻卦所属母宫的三爻卦封装对象 <xref href="CompassEx.Guo.GuoSubClass" data-throw-if-not-resolved="false"></xref>。
     content.vb: >-
       <JsonIgnore>
 
@@ -763,11 +865,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: HideRelative
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 200
+    startLine: 278
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 伏神
+  summary: 获取当前六爻卦中，因本卦地支缺项而隐藏在各爻位之下的“伏神”六亲列表。
   example: []
   syntax:
     content: >-
@@ -777,6 +879,7 @@ items:
     parameters: []
     return:
       type: System.Collections.Generic.List{CompassEx.Guo.SixRelativeClass}
+      description: 当本卦六亲不全时，借用本宫纯卦推导出的隐藏六亲对象 <xref href="CompassEx.Guo.SixRelativeClass" data-throw-if-not-resolved="false"></xref> 集合。
     content.vb: >-
       <JsonIgnore>
 
@@ -804,11 +907,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: HideRelativeYaos
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 205
+    startLine: 285
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 伏神位置
+  summary: 获取当前卦中各个伏神具体依附并“隐藏”在主卦中的爻位索引列表。
   example: []
   syntax:
     content: >-
@@ -818,6 +921,7 @@ items:
     parameters: []
     return:
       type: System.Collections.Generic.List{System.Int32}
+      description: 整型爻位列表，数值对应伏神所放出的初爻至上爻位置。
     content.vb: >-
       <JsonIgnore>
 
@@ -845,11 +949,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: YaoDoing
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 210
+    startLine: 296
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 爻动 [0,1]表示动初、二爻
+  summary: 获取或设置当前卦的“爻动”状态，标记哪些爻位发生了发动（老阴 ○ 或老阳 ❌ ）。
   example: []
   syntax:
     content: >-
@@ -859,6 +963,7 @@ items:
     parameters: []
     return:
       type: System.Collections.Generic.List{System.Int32}
+      description: <pre><code class="lang-csharp">例如：[0, 1] 分别代表初爻、二爻同时发生动变。</code></pre>
     content.vb: >-
       <JsonIgnore>
 
@@ -886,11 +991,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CBeforRangeDegree
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 216
+    startLine: 303
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 罗盘中的度数范围对象，表示这个卦在罗盘中的位置范围
+  summary: 获取该卦在三元地理罗盘中对应的先天方圆图度数范围对象，用于判定当前卦在罗盘圆周上的物理空间边界。
   example: []
   syntax:
     content: >-
@@ -900,6 +1005,7 @@ items:
     parameters: []
     return:
       type: CompassEx.Comm.CompassRangEX
+      description: 动态调用 <xref href="CompassEx.CompassEx.GetCBeforGuoDegree(System.String)" data-throw-if-not-resolved="false"></xref> 方法，返回其专属的 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref> 周天度数范围。
     content.vb: >-
       <JsonIgnore>
 
@@ -909,35 +1015,6 @@ items:
   - type: Newtonsoft.Json.JsonIgnoreAttribute
     ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
     arguments: []
-- uid: CompassEx.Guo.GuoClass.BeforGuoICONs
-  commentId: F:CompassEx.Guo.GuoClass.BeforGuoICONs
-  id: BeforGuoICONs
-  parent: CompassEx.Guo.GuoClass
-  langs:
-  - csharp
-  - vb
-  name: BeforGuoICONs
-  nameWithType: GuoClass.BeforGuoICONs
-  fullName: CompassEx.Guo.GuoClass.BeforGuoICONs
-  type: Field
-  source:
-    remote:
-      path: CompassEx/Guo/GuoClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: BeforGuoICONs
-    path: CompassEx/Guo/GuoClass.cs
-    startLine: 223
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 先天64卦名与符号
-  example: []
-  syntax:
-    content: public static readonly Dictionary<string, string> BeforGuoICONs
-    return:
-      type: System.Collections.Generic.Dictionary{System.String,System.String}
-    content.vb: Public Shared ReadOnly BeforGuoICONs As Dictionary(Of String, String)
 - uid: CompassEx.Guo.GuoClass.#ctor(System.String)
   commentId: M:CompassEx.Guo.GuoClass.#ctor(System.String)
   id: '#ctor(System.String)'
@@ -956,24 +1033,28 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 232
+    startLine: 320
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 复卦（六爻卦）结构函数
+  summary: 依据简名初始化复卦（六爻卦）对象实例。
+  remarks: >-
+    该构造函数是一个便捷入口。它会通过内部查找，将传入的中文卦名自动转换为与之对应的数组索引，
+
+    随后通过 <code>: this(int)</code> 链式调用核心构造函数完成内存装配。
   example: []
   syntax:
     content: public GuoClass(string GuoName)
     parameters:
     - id: GuoName
       type: System.String
-      description: 先天64卦名
+      description: 输入的先天 64 卦简名（例如：“乾”、“坤”、“屯”、“蒙”）。
     content.vb: Public Sub New(GuoName As String)
   overload: CompassEx.Guo.GuoClass.#ctor*
   exceptions:
   - type: System.IndexOutOfRangeException
     commentId: T:System.IndexOutOfRangeException
-    description: ''
+    description: 当输入的卦名在内置的 <xref href="CompassEx.Guo.GuoClass.GuoNames" data-throw-if-not-resolved="false"></xref> 列表中不存在时抛出该异常。
   nameWithType.vb: GuoClass.New(String)
   fullName.vb: CompassEx.Guo.GuoClass.New(String)
   name.vb: New(String)
@@ -995,24 +1076,29 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 243
+    startLine: 339
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 复卦（六爻卦）结构函数
+  summary: 依据卦序索引初始化复卦（六爻卦）对象实例（核心构造函数）。
+  remarks: >-
+    该构造函数内部执行了一套完整的易学数理装配流程：
+
+
+    <ol><li><b>边界校验</b>：验证索引安全性，不合法则抛出异常。</li><li><b>卦名检索</b>：根据索引获取四字全名（如“水雷屯”），并通过 <xref href="CompassEx.Guo.GuoClass.GetFullGuoName(System.String)" data-throw-if-not-resolved="false"></xref> 规范化。</li><li><b>经卦拆解</b>：调用 <xref href="CompassEx.Guo.GuoClass.GetGuoSubName(System.String%2cSystem.Boolean)" data-throw-if-not-resolved="false"></xref> 将六爻卦物理切割为上卦（外卦）和下卦（内卦）两个三爻卦字符串。</li><li><b>对象装配</b>：通过 <xref href="CompassEx.Guo.GuoSubClass.GetGuoSub(System.Int32%2cSystem.Int32%2cSystem.Int32%2cSystem.Boolean)" data-throw-if-not-resolved="false"></xref> 实例化上下卦对象，并锁定该卦在系统中的最终简名与全名属性。</li></ol>
   example: []
   syntax:
     content: public GuoClass(int BeforGuoIndex)
     parameters:
     - id: BeforGuoIndex
       type: System.Int32
-      description: 先天64卦的索引
+      description: 64 卦的原始数组索引（取值范围：<code>0</code> 至 <code>63</code>）。
     content.vb: Public Sub New(BeforGuoIndex As Integer)
   overload: CompassEx.Guo.GuoClass.#ctor*
   exceptions:
   - type: System.IndexOutOfRangeException
     commentId: T:System.IndexOutOfRangeException
-    description: ''
+    description: 当传入的索引值超出正常边界（小于 0 或大于等于数组总长度）时抛出。
   nameWithType.vb: GuoClass.New(Integer)
   fullName.vb: CompassEx.Guo.GuoClass.New(Integer)
   name.vb: New(Integer)
@@ -1034,17 +1120,25 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ExchangeGuo
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 264
+    startLine: 370
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 本卦中的通卦
+  summary: 推演当前本卦所对应的“通卦”（又称互通卦）。
+  remarks: >-
+    <b>通卦数理法则：</b><br />
+
+    在特定大卦法门中，规定一三、二四、六八、七九运数彼此相通。<br />
+
+    该方法在内部动态克隆一个相同的复卦，并强制将<b>第 3 爻（索引 2）与第 4 爻（索引 3）</b>设定为动爻（<code>YaoDoing</code>），
+
+    随后通过调用 <xref href="CompassEx.Guo.GuoClass.GetChangeGuo" data-throw-if-not-resolved="false"></xref> 产生错卦变动，从而精准荡出互通的通卦。
   example: []
   syntax:
     content: public GuoClass ExchangeGuo()
     return:
       type: CompassEx.Guo.GuoClass
-      description: ''
+      description: 返回一个全新装配的通卦对象实例 <xref href="CompassEx.Guo.GuoClass" data-throw-if-not-resolved="false"></xref>。
     content.vb: Public Function ExchangeGuo() As GuoClass
   overload: CompassEx.Guo.GuoClass.ExchangeGuo*
 - uid: CompassEx.Guo.GuoClass.Get7HereYaoGuo
@@ -1065,19 +1159,30 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Get7HereYaoGuo
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 283
+    startLine: 392
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 获得当前卦的7世飞爻卦,京房易卦变(7世飞爻荡出，用于计算命命的入卦,此是64卦变卦规则)，一般采用六爻卦之卦宫（纯）卦推演
+  summary: 计算并演录当前纯卦的“京房易八宫卦变规律”，生成完整的七世飞爻卦链表（含主卦共 8 个卦）。
+  remarks: >-
+    <b>京房易 64 卦变卦核心算法步骤：</b>
+
+    <ol><li><b>本宫主卦</b>：第 1 卦为纯卦自身（如乾为天）。</li><li><b>一世至五世卦</b>：从初爻（索引 0）开始逐爻向上发动变易（少阳变老阴或少阴变老阳），直至第五爻变出五世卦，连续记录 5 次。</li><li><b>游魂卦（第 7 卦）</b>：在五世卦的基础上，不再往上变上爻，而是<b>退回第四爻（索引 3）</b>发生动变。</li><li><b>归魂卦（第 8 卦）</b>：在游魂卦的基础上，将<b>内卦（下卦，索引 0, 1, 2）的三枚爻象全变</b>，使其重归本宫五行属性。</li></ol>
+
+
+    该方法常用于计算推演命主八字入卦、星盘飞爻立极等高级术数逻辑。
   example: []
   syntax:
     content: public List<GuoClass> Get7HereYaoGuo()
     return:
       type: System.Collections.Generic.List{CompassEx.Guo.GuoClass}
-      description: ''
+      description: 返回一个按演变顺序排列的复卦集合 <code>List&lt;GuoClass&gt;</code>，依次为主卦、一世、二世、三世、四世、五世、游魂卦、归魂卦。
     content.vb: Public Function Get7HereYaoGuo() As List(Of GuoClass)
   overload: CompassEx.Guo.GuoClass.Get7HereYaoGuo*
+  exceptions:
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: 当当前卦不是“八纯卦”（即上卦外卦与下卦内卦不相同时）抛出该异常，因为非纯卦无法作为八宫立极之主。
 - uid: CompassEx.Guo.GuoClass.GuoSkyLoc
   commentId: P:CompassEx.Guo.GuoClass.GuoSkyLoc
   id: GuoSkyLoc
@@ -1096,11 +1201,12 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoSkyLoc
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 345
+    startLine: 457
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: （64卦对应60甲子）返回卦对应原天干地支结构类型
+  summary: 获取当前复卦依易经传统卦序所映射的 60 甲子原天干地支结构对象。
+  remarks: 术数中大成卦纳甲与大管局算法中，64 卦与 60 甲子的映射链条完全采用经典的周易本经卦序（从乾坤至既济未济）进行顺次对齐和绑定。
   example: []
   syntax:
     content: >-
@@ -1110,6 +1216,7 @@ items:
     parameters: []
     return:
       type: CompassEx.Comm.SkyLoc
+      description: 一个封装好的 <xref href="CompassEx.Comm.SkyLoc" data-throw-if-not-resolved="false"></xref> 对象（例如对应返回包含“甲午”、“甲子”等干支的实体）。
     content.vb: >-
       <JsonIgnore>
 
@@ -1137,11 +1244,17 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoAttr
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 363
+    startLine: 478
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 返回复卦的五行(上卦所在位置的后天数)
+  summary: 计算并返回当前复卦的后天五行九宫数。
+  remarks: >-
+    <b>运算核心门道：</b><br />
+
+    该算法遵循三元地理/玄空大卦之准则，<b>纯粹依据“上卦（外卦）”所在物理方位的后天八卦卦数</b>来裁定整枚复卦的五行总属性。
+
+    属于大卦风水理气（如翻卦水法、龙门八局）判别旺衰的骨干底座。
   example: []
   syntax:
     content: >-
@@ -1151,6 +1264,7 @@ items:
     parameters: []
     return:
       type: System.Int32
+      description: 整型数值。对应洛书九宫数：1(坤), 2(巽), 3(离), 4(兑), 6(艮), 7(坎), 8(震), 9(乾)。
     content.vb: >-
       <JsonIgnore>
 
@@ -1160,35 +1274,6 @@ items:
   - type: Newtonsoft.Json.JsonIgnoreAttribute
     ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
     arguments: []
-- uid: CompassEx.Guo.GuoClass.GuoFateNames
-  commentId: F:CompassEx.Guo.GuoClass.GuoFateNames
-  id: GuoFateNames
-  parent: CompassEx.Guo.GuoClass
-  langs:
-  - csharp
-  - vb
-  name: GuoFateNames
-  nameWithType: GuoClass.GuoFateNames
-  fullName: CompassEx.Guo.GuoClass.GuoFateNames
-  type: Field
-  source:
-    remote:
-      path: CompassEx/Guo/GuoClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: GuoFateNames
-    path: CompassEx/Guo/GuoClass.cs
-    startLine: 406
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Guo
-  summary: 卦运名称
-  example: []
-  syntax:
-    content: public static readonly string[] GuoFateNames
-    return:
-      type: System.String[]
-    content.vb: Public Shared ReadOnly GuoFateNames As String()
 - uid: CompassEx.Guo.GuoClass.GuoFate
   commentId: P:CompassEx.Guo.GuoClass.GuoFate
   id: GuoFate
@@ -1207,11 +1292,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoFate
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 410
+    startLine: 531
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 返回复卦运
+  summary: 计算并返回当前复卦对应的三元玄空“大卦运”名称（一运至九运）。
+  remarks: >-
+    <b>卦运阴阳对比推导核心算法：</b><br />
+
+    卦象爻是由下而上生发的。算法会将上卦（外卦）的三枚爻与下卦（内卦）对应的三枚爻进行从下往上的两两阴阳符号判等（取模模 2 校验法）：
+
+
+    <ul><li><b>一运卦</b>：上卦下卦三爻的阴阳结构<b>完全相同</b>。</li><li><b>九运卦</b>：上卦下卦三爻的阴阳结构<b>完全相反（全错卦）</b>。</li><li><b>其它运卦</b>：根据初爻、中爻、上爻各自发生变换的错位组合，分别归入二、三、四、六、七、八运（注：五运归中，无独立五运大卦）。</li></ul>
   example: []
   syntax:
     content: >-
@@ -1221,6 +1313,7 @@ items:
     parameters: []
     return:
       type: System.String
+      description: 返回代表大卦运的一字中文数字字符串（如：“一”、“二”、“三”、“四”、“六”、“七”、“八”、“九”）。
     content.vb: >-
       <JsonIgnore>
 
@@ -1248,17 +1341,17 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetStringYaos
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 464
+    startLine: 581
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 获得爻的字符排列
+  summary: 将本卦的六个爻的阴阳状态输出为用逗号隔开的扁平化中继字符串。
   example: []
   syntax:
     content: public string GetStringYaos()
     return:
       type: System.String
-      description: ''
+      description: 返回类似 <code>"1,1,1,2,1,2"</code> 的字符串表示，其中 1 通常代表阳爻，2 代表阴爻。
     content.vb: Public Function GetStringYaos() As String
   overload: CompassEx.Guo.GuoClass.GetStringYaos*
 - uid: CompassEx.Guo.GuoClass.GetYaos
@@ -1279,17 +1372,25 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetYaos
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 479
+    startLine: 603
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 返回本卦(复卦)的六爻数组
+  summary: 正向还原并拼接该复卦（六爻卦）从初爻至上爻共 6 个基本爻位组成的整型状态数组。
+  remarks: >-
+    <b>爻位空间编排：</b><br />
+
+    数组索引从低到高：<br />
+
+    <code>y[0]</code> 至 <code>y[2]</code> 完全继承自内卦（下卦 <xref href="CompassEx.Guo.GuoClass.DownGuo" data-throw-if-not-resolved="false"></xref>）的初、二、三爻；<br />
+
+    <code>y[3]</code> 至 <code>y[5]</code> 完全继承自外卦（上卦 <xref href="CompassEx.Guo.GuoClass.UpGuo" data-throw-if-not-resolved="false"></xref>）的四、五、上爻。
   example: []
   syntax:
     content: public int[] GetYaos()
     return:
       type: System.Int32[]
-      description: ''
+      description: 返回包含 6 个整型元素的 C# 数组 <code>int[]</code>。如果上下卦尚未装配成功则返回 <code>null</code>。
     content.vb: Public Function GetYaos() As Integer()
   overload: CompassEx.Guo.GuoClass.GetYaos*
 - uid: CompassEx.Guo.GuoClass.GetChangeGuo
@@ -1310,17 +1411,23 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetChangeGuo
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 501
+    startLine: 629
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 根据本卦的动爻取得变卦
+  summary: 根据当前本卦设定的动爻状态（<xref href="CompassEx.Guo.GuoClass.YaoDoing" data-throw-if-not-resolved="false"></xref>）推演并取得变卦。
+  remarks: >-
+    <b>动爻变卦数理逻辑：</b><br />
+
+    算法通过遍历六个爻位，识别匹配的动爻。动爻位进行“阴阳互变”（即利用 <code>Math.Abs(iv - 1)</code> 实施 0 变 1、1 变 0 翻转），
+
+    静爻位则保持原卦纳支阴阳。最终通过变动后的爻象序列重组新卦，并将动爻位记录至变卦的 <xref href="CompassEx.Guo.GuoClass.ChangedYao" data-throw-if-not-resolved="false"></xref> 属性中。
   example: []
   syntax:
     content: public GuoClass GetChangeGuo()
     return:
       type: CompassEx.Guo.GuoClass
-      description: ''
+      description: 返回一个全新的变卦对象实例 <xref href="CompassEx.Guo.GuoClass" data-throw-if-not-resolved="false"></xref>；若当前无动爻则返回 <code>null</code>。
     content.vb: Public Function GetChangeGuo() As GuoClass
   overload: CompassEx.Guo.GuoClass.GetChangeGuo*
 - uid: CompassEx.Guo.GuoClass.GetSykStr
@@ -1341,17 +1448,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSykStr
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 541
+    startLine: 671
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: （京房卦象纳甲，非杨公纳甲）获得天干的字符形式
+  summary: 获取当前复卦上下两卦的纳甲天干字符形式（京房卦象纳甲体例）。
+  remarks: <b>注意：</b>此方法遵循京房易纳甲体系（如乾内纳甲、外纳壬），非三元地理杨公风水纳甲。
   example: []
   syntax:
     content: public string GetSykStr()
     return:
       type: System.String
-      description: ''
+      description: 返回包含上下卦纳干的换行格式化字符串（例如："\n\n壬\n\n\n乾"）。
     content.vb: Public Function GetSykStr() As String
   overload: CompassEx.Guo.GuoClass.GetSykStr*
 - uid: CompassEx.Guo.GuoClass.GetHereThereStr
@@ -1372,17 +1480,23 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetHereThereStr
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 552
+    startLine: 687
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 获得世应的字符形式
+  summary: 获得当前卦中“世爻”与“应爻”位置的文本可视化排盘字符形式。
+  remarks: >-
+    <b>排盘打印规范：</b><br />
+
+    文本生成采用传统六爻由上而下的打印习惯（即循环从第 6 爻/上爻（索引 5）向下退至初爻（索引 0））。<br />
+
+    如果检测到世应数据尚未装配，会自动优先触发 <xref href="CompassEx.Guo.GuoClass.LoadGuoSelfandHereThere" data-throw-if-not-resolved="false"></xref> 实施底层加载。
   example: []
   syntax:
     content: public string GetHereThereStr()
     return:
       type: System.String
-      description: ''
+      description: 返回长为 6 行的竖排文本。对应爻位若有世应则标注“世”或“应”，其余航空白。
     content.vb: Public Function GetHereThereStr() As String
   overload: CompassEx.Guo.GuoClass.GetHereThereStr*
 - uid: CompassEx.Guo.GuoClass.GetHideRelativeStr
@@ -1403,17 +1517,23 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetHideRelativeStr
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 570
+    startLine: 710
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 获得伏神的字符形式
+  summary: 获取当前本卦中所有隐藏“伏神”的文本排盘可视化字符形式。
+  remarks: >-
+    <b>伏神装卦逻辑：</b><br />
+
+    方法会逆向提取本宫纯卦（<xref href="CompassEx.Guo.GuoClass.GuoSelf" data-throw-if-not-resolved="false"></xref>）的完整六亲数据，自上而下匹配 <xref href="CompassEx.Guo.GuoClass.HideRelativeYaos" data-throw-if-not-resolved="false"></xref> 标记的伏藏爻位，
+
+    自动拼出地支、五行及六亲全称并追加 "(伏)" 字样（例如："子水子孙(伏)"）。非伏神爻位则以换行符占位。
   example: []
   syntax:
     content: public string GetHideRelativeStr()
     return:
       type: System.String
-      description: ''
+      description: 返回由上而下（六爻至初爻）排列的伏神说明字符串；若没有伏神数据则返回 <code>null</code>。
     content.vb: Public Function GetHideRelativeStr() As String
   overload: CompassEx.Guo.GuoClass.GetHideRelativeStr*
 - uid: CompassEx.Guo.GuoClass.GetYaosSkyLocStrShort
@@ -1434,17 +1554,17 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetYaosSkyLocStrShort
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 600
+    startLine: 740
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 获得六爻的天干地支字符形式(不加入五行)
+  summary: 获得本卦六爻地支名称的简化文本排盘字符（不夹带五行属性）。
   example: []
   syntax:
     content: public string GetYaosSkyLocStrShort()
     return:
       type: System.String
-      description: ''
+      description: 返回由上而下排列的纯地支名换行字符串（如：“戌\n申\n午...”）。
     content.vb: Public Function GetYaosSkyLocStrShort() As String
   overload: CompassEx.Guo.GuoClass.GetYaosSkyLocStrShort*
 - uid: CompassEx.Guo.GuoClass.GetYaosSkyLocStr
@@ -1465,17 +1585,17 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetYaosSkyLocStr
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 622
+    startLine: 762
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 获得六爻的天干地支字符形式
+  summary: 获得本卦六爻地支连同其所属五行属性的完整文本排盘字符形式。
   example: []
   syntax:
     content: public string GetYaosSkyLocStr()
     return:
       type: System.String
-      description: ''
+      description: 返回由上而下排列的“地支+五行”换行字符串（如：“戌土\n申金\n午火...”）。
     content.vb: Public Function GetYaosSkyLocStr() As String
   overload: CompassEx.Guo.GuoClass.GetYaosSkyLocStr*
 - uid: CompassEx.Guo.GuoClass.GetSixGodStr
@@ -1496,17 +1616,17 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSixGodStr
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 644
+    startLine: 784
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 获得六神的字符形式
+  summary: 获得本卦六爻排盘配出的“六神”（六兽）文本排盘字符形式。
   example: []
   syntax:
     content: public string GetSixGodStr()
     return:
       type: System.String
-      description: ''
+      description: 返回由上而下（六爻至初爻）排列的六神名称换行文本；若六神数据未加载则返回 <code>null</code>。
     content.vb: Public Function GetSixGodStr() As String
   overload: CompassEx.Guo.GuoClass.GetSixGodStr*
 - uid: CompassEx.Guo.GuoClass.GetSixRelativeStr(System.String,System.Boolean)
@@ -1527,24 +1647,25 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSixRelativeStr
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 662
+    startLine: 805
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 获得六亲的字符形式
+  summary: 基于手动传入的本宫五行属性，动态推导并生成本卦六爻的“六亲”文本排盘字符形式。
+  remarks: 该重载方法不读取类库中默认配好的本宫属性，而是完全依据 <code class="paramref">GuoSelfAttr</code> 进行实时交叉比对（通过生克规则 <xref href="CompassEx.Comm.FiveAttr.GetBothAttrRule(System.String%2cSystem.String)" data-throw-if-not-resolved="false"></xref> 变换得出）。
   example: []
   syntax:
     content: public string GetSixRelativeStr(string GuoSelfAttr, bool IsHadFateAttr = false)
     parameters:
     - id: GuoSelfAttr
       type: System.String
-      description: ''
+      description: 自定义的本宫五行属性名称（如：“金”、“木”、“水”、“火”、“土”）。
     - id: IsHadFateAttr
       type: System.Boolean
-      description: ''
+      description: 是否在输出结果的头部和尾部追加特定的排盘空格/格式化占位符。
     return:
       type: System.String
-      description: ''
+      description: 返回由上而下排列的六亲换行字符串。
     content.vb: Public Function GetSixRelativeStr(GuoSelfAttr As String, IsHadFateAttr As Boolean = False) As String
   overload: CompassEx.Guo.GuoClass.GetSixRelativeStr*
   nameWithType.vb: GuoClass.GetSixRelativeStr(String, Boolean)
@@ -1568,21 +1689,22 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSixRelativeStr
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 691
+    startLine: 836
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 获得六亲的字符形式
+  summary: 获取当前本卦内置已加载的“六千”（六亲）文本排盘字符形式。
+  remarks: 如果检测到当前实例的 <xref href="CompassEx.Guo.GuoClass.SixRelative" data-throw-if-not-resolved="false"></xref> 集合尚未加载，会自动调用 <xref href="CompassEx.Guo.GuoClass.LoadSixRelative" data-throw-if-not-resolved="false"></xref> 完成初始化装配。
   example: []
   syntax:
     content: public string GetSixRelativeStr(bool IsHadFateAttr = false)
     parameters:
     - id: IsHadFateAttr
       type: System.Boolean
-      description: ''
+      description: 是否在输出结果的头部和尾部追加特定的排盘空格/格式化占位符。
     return:
       type: System.String
-      description: ''
+      description: 返回由上而下（六爻至初爻）排列的本卦六亲换行字符串。
     content.vb: Public Function GetSixRelativeStr(IsHadFateAttr As Boolean = False) As String
   overload: CompassEx.Guo.GuoClass.GetSixRelativeStr*
   nameWithType.vb: GuoClass.GetSixRelativeStr(Boolean)
@@ -1606,21 +1728,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadAll
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 714
+    startLine: 859
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 加载所有参数
+  summary: 显式调用：一键完整加载当前复卦的所有断卦外围相关参数（含世应别名、空亡、六神、伏神等）。
   example: []
   syntax:
     content: public void LoadAll(string sSkyName, string sLocName)
     parameters:
     - id: sSkyName
       type: System.String
-      description: ''
+      description: 用于计算旬空与六神的当前预测日“天干”（如：“甲”、“乙”）。
     - id: sLocName
       type: System.String
-      description: ''
+      description: 用于计算旬空的当前预测日“地支”（如：“子”、“丑”）。
     content.vb: Public Sub LoadAll(sSkyName As String, sLocName As String)
   overload: CompassEx.Guo.GuoClass.LoadAll*
   nameWithType.vb: GuoClass.LoadAll(String, String)
@@ -1644,11 +1766,12 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadNoAvg
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 723
+    startLine: 872
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 无参数加载：世应、别名、六亲、伏神
+  summary: 无参数依赖初始化：全自动加载复卦基础的世应爻位、京房别名、六亲分配及伏神结构。
+  remarks: 该方法不依赖外部给定的日柱干支，仅根据卦象自身的数理逻辑完成内部基本排盘属性的反哺与填充。
   example: []
   syntax:
     content: public void LoadNoAvg()
@@ -1672,21 +1795,28 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoFace
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 738
+    startLine: 894
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 把爻转成卦的图形形式
+  summary: 静态公共方法：将扁平化的爻象阴阳状态码序列，逆向渲染为标准易学卦象图形。
+  remarks: >-
+    <b>爻象数字代码与图形对照表：</b>
+
+    <ul><li><code>0</code>：代表常规阴爻（两段少阴）-&gt; <code>"─　─　\n"</code></li><li><code>4</code>：代表发动阴爻（交爻老阴，带有变爻标记 x）-&gt; <code>"─　─x \n"</code></li><li><code>1</code>：代表常规阳爻（单段少阳）-&gt; <code>"───　\n"</code></li><li><code>3</code>：代表发动阳爻（重爻老阳，带有动爻标记 o）-&gt; <code>"───o \n"</code></li></ul>
+
+
+    渲染循环严格遵循传统画卦由上而下的习惯，从 <code>Count - 1</code> 开始递减打印至 0。
   example: []
   syntax:
     content: public static string GetGuoFace(List<int> al)
     parameters:
     - id: al
       type: System.Collections.Generic.List{System.Int32}
-      description: ''
+      description: 包含六个爻状态的整型列表（索引自低到高对应初爻至上爻）。
     return:
       type: System.String
-      description: ''
+      description: 返回自上而下（上爻至初爻）排列、带有换行符的图形化字符卦象。
     content.vb: Public Shared Function GetGuoFace(al As List(Of Integer)) As String
   overload: CompassEx.Guo.GuoClass.GetGuoFace*
   nameWithType.vb: GuoClass.GetGuoFace(List(Of Integer))
@@ -1710,17 +1840,23 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoFace
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 756
+    startLine: 917
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 把卦转成图形形式
+  summary: 将当前复卦实例（结合动爻状态）转化为直观的排盘图形字符串。
+  remarks: >-
+    <b>状态动态转化逻辑：</b><br />
+
+    方法会首先审查 <xref href="CompassEx.Guo.GuoClass.YaoDoing" data-throw-if-not-resolved="false"></xref> 动爻清册。若存在动爻，会动态将对应的内卦（<xref href="CompassEx.Guo.GuoClass.DownGuo" data-throw-if-not-resolved="false"></xref>）或外卦（<xref href="CompassEx.Guo.GuoClass.UpGuo" data-throw-if-not-resolved="false"></xref>）的原始阴阳代码（0或1）重设为 3（老阳动变）或 4（老阴动变）。<br />
+
+    随后按初爻至上爻的顺序组装整型序列，递交给静态方法 <xref href="CompassEx.Guo.GuoClass.GetGuoFace(System.Collections.Generic.List%7bSystem.Int32%7d)" data-throw-if-not-resolved="false"></xref> 实施终极画面输出。
   example: []
   syntax:
     content: public string GetGuoFace()
     return:
       type: System.String
-      description: ''
+      description: 返回带有动静老少阴阳状态的完整六爻字符卦象（如乾卦动初爻显示为带有 o 的图形）。
     content.vb: Public Function GetGuoFace() As String
   overload: CompassEx.Guo.GuoClass.GetGuoFace*
 - uid: CompassEx.Guo.GuoClass.GetChangeGuoFace
@@ -1741,17 +1877,23 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetChangeGuoFace
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 800
+    startLine: 964
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 把卦转成图形形式
+  summary: 获得发生动变后的变卦对照排盘图形（在发生变动的爻位前追加指向性箭头标记）。
+  remarks: >-
+    <b>字符串切割与位置换算明堂：</b><br />
+
+    算法先获取标准的本卦图形，利用换行符拆分为 6 行行数组。由于图形数组由上而下排布（索引 0 是上爻，索引 5 是初爻），
+
+    算法执行了经典的 <code>5 - ChangedYao[i]</code> 空间位置逆向映射，确保箭头能够精准定位到对应的物理爻位前。
   example: []
   syntax:
     content: public string GetChangeGuoFace()
     return:
       type: System.String
-      description: ''
+      description: 返回格式化后的长条字符串，发生变动的爻位左侧会有明细的 <code>"-&gt;"</code> 变爻箭头指示。
     content.vb: Public Function GetChangeGuoFace() As String
   overload: CompassEx.Guo.GuoClass.GetChangeGuoFace*
 - uid: CompassEx.Guo.GuoClass.LoadHideRelative
@@ -1772,11 +1914,15 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadHideRelative
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 828
+    startLine: 998
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 加载伏神
+  summary: 逆向检索并自动装载主卦所缺失的隐藏“伏神”六亲数据及其所潜伏的爻位。
+  remarks: >-
+    <b>伏神查解核心算法步骤：</b>
+
+    <ol><li><b>完整性审查</b>：检查主卦现有的六亲（<xref href="CompassEx.Guo.GuoClass.SixRelative" data-throw-if-not-resolved="false"></xref>）是否涵盖了全部五大关系。若缺项则代表有伏神。</li><li><b>母宫映射</b>：提取当前复卦所隶属的本宫八纯大卦（<xref href="CompassEx.Guo.GuoClass.GuoSelf" data-throw-if-not-resolved="false"></xref>），并将其完全具象化加载出六亲配置。</li><li><b>差集过滤</b>：比对主卦与本宫纯卦，找出主卦中缺失的那个六亲名称（如妻财、官鬼），计算其在母宫中的原始爻位，将其封存至 <xref href="CompassEx.Guo.GuoClass.HideRelative" data-throw-if-not-resolved="false"></xref> 及其爻位坐标轴中。</li></ol>
   example: []
   syntax:
     content: public void LoadHideRelative()
@@ -1800,11 +1946,17 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadSixRelative
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 871
+    startLine: 1045
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 加载卦六亲
+  summary: 核心方法：根据本宫纯卦五行与地支纳音生克关系，全自动装配主卦初爻至上爻的“六亲”属性。
+  remarks: >-
+    <b>装卦生克数理逻辑：</b><br />
+
+    方法会依次轮询下卦（贞卦）和上卦（悔卦）共六个爻位的纳支（<xref href="CompassEx.Comm.LocClass" data-throw-if-not-resolved="false"></xref>）。<br />
+
+    调用核心交叉规则 <xref href="CompassEx.Comm.FiveAttr.GetBothAttrRule(System.String%2cSystem.String)" data-throw-if-not-resolved="false"></xref>，以母本卦宫的五行属性（我）为基准点，与各爻位纳支五行（他）进行“生我者父母、我生者子孙、克我者官鬼、我克者妻财、比和者兄弟”的五行断立，最终写入 <xref href="CompassEx.Guo.GuoClass.SixRelative" data-throw-if-not-resolved="false"></xref> 列表。
   example: []
   syntax:
     content: public void LoadSixRelative()
@@ -1828,11 +1980,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadGuoAliasName
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 896
+    startLine: 1079
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 加载卦的别名
+  summary: 扫描当前复卦内卦与外卦相互对应的爻位地支，自动运算并加载“六合卦”与“六冲卦”的特定吉凶别名。
+  remarks: >-
+    <b>断线别名判定算法：</b><br />
+
+    算法对初爻与四爻、二爻与五爻、三爻与上爻三对地支实施空间垂直透视：
+
+
+    <ul><li><b>六合判定</b>：交由 <xref href="CompassEx.Comm.FiveAttr.LocCombine(System.String%2cSystem.String)" data-throw-if-not-resolved="false"></xref> 运算，若三对地支两两皆符合地支六合（如子丑、寅亥）规则，自动在别名中追加 <code>"(六合卦)"</code>。</li><li><b>六冲判定</b>：交由 <xref href="CompassEx.Comm.FiveAttr.BothConflict(System.String%2cSystem.String)" data-throw-if-not-resolved="false"></xref> 运算，若三对对应轴均属于地支六冲（如子午、卯酉），则自动在别名中强力追加 <code>"(六冲卦)"</code>。</li></ul>
   example: []
   syntax:
     content: public void LoadGuoAliasName()
@@ -1856,24 +2015,32 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetLostLocs
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 998
+    startLine: 1197
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 获得空亡的两个地支
+  summary: 静态公共方法：依据输入的日柱天干与地支，动态推导并获取该旬中处于“空亡”状态的两个地支对象。
+  remarks: >-
+    <b>旬空运算法则：</b><br />
+
+    六十甲子以十天为一旬。算法首先锁定天干与地支在标准排布中的索引位置，
+
+    计算出该旬距离终点（第十个天干“癸”）的地支富余偏移量 <code>iPos = 9 - iSPos</code>，
+
+    顺推求得紧随其后的两个孤虚地支索引，若超出 11（亥位）则执行天干地支五行圆周取模（<code>-12</code>）完成闭环定位。
   example: []
   syntax:
     content: public static List<LocClass> GetLostLocs(string sSkyName, string sLocName)
     parameters:
     - id: sSkyName
       type: System.String
-      description: ''
+      description: 预测当日的日干名称（如：“甲”、“乙”、“丙”等）。
     - id: sLocName
       type: System.String
-      description: ''
+      description: 预测当日的日支名称（如：“子”、“丑”、“寅”等）。
     return:
       type: System.Collections.Generic.List{CompassEx.Comm.LocClass}
-      description: ''
+      description: 返回包含两个截路空亡地支实体对象的集合 <code>List&lt;LocClass&gt;</code>。
     content.vb: Public Shared Function GetLostLocs(sSkyName As String, sLocName As String) As List(Of LocClass)
   overload: CompassEx.Guo.GuoClass.GetLostLocs*
   nameWithType.vb: GuoClass.GetLostLocs(String, String)
@@ -1897,21 +2064,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoClassBySkyLoc
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 1120
+    startLine: 1332
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 根据天干地支创建卦象类
+  summary: 静态工厂方法：依据 64 卦对应的 60 甲子干支名称反向检索并创建对应的复卦对象实例。
   example: []
   syntax:
     content: public static GuoClass GetGuoClassBySkyLoc(string sSkyLocName)
     parameters:
     - id: sSkyLocName
       type: System.String
-      description: ''
+      description: 输入的干支组合名称（如：“甲午”、“甲子”、“戊子”）。
     return:
       type: CompassEx.Guo.GuoClass
-      description: ''
+      description: 返回匹配成功的 <xref href="CompassEx.Guo.GuoClass" data-throw-if-not-resolved="false"></xref> 实例；若该干支在内置清册中未绑定大卦则返回 <code>null</code>。
     content.vb: Public Shared Function GetGuoClassBySkyLoc(sSkyLocName As String) As GuoClass
   overload: CompassEx.Guo.GuoClass.GetGuoClassBySkyLoc*
   nameWithType.vb: GuoClass.GetGuoClassBySkyLoc(String)
@@ -1935,21 +2102,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoClass
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 1135
+    startLine: 1347
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 根据卦名来创建卦类(六爻卦)
+  summary: 静态工厂方法：依据两字简名创建复卦（六爻卦）对象实例。
   example: []
   syntax:
     content: public static GuoClass GetGuoClass(string sGuoName)
     parameters:
     - id: sGuoName
       type: System.String
-      description: ''
+      description: 输入的先天 64 卦简名（如：“乾”、“坤”、“屯”）。
     return:
       type: CompassEx.Guo.GuoClass
-      description: ''
+      description: 返回装配好的 <xref href="CompassEx.Guo.GuoClass" data-throw-if-not-resolved="false"></xref> 对象实例。
     content.vb: Public Shared Function GetGuoClass(sGuoName As String) As GuoClass
   overload: CompassEx.Guo.GuoClass.GetGuoClass*
   nameWithType.vb: GuoClass.GetGuoClass(String)
@@ -1973,21 +2140,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoClass
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 1146
+    startLine: 1357
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 根据卦的索引来创建卦类(六爻卦)
+  summary: 静态工厂方法：依据先天卦序索引创建复卦（六爻卦）对象实例。
   example: []
   syntax:
     content: public static GuoClass GetGuoClass(int iGuoIndex)
     parameters:
     - id: iGuoIndex
       type: System.Int32
-      description: ''
+      description: 先天 64 卦的原始数组索引（取值范围：0 至 63）。
     return:
       type: CompassEx.Guo.GuoClass
-      description: ''
+      description: 返回装配好的 <xref href="CompassEx.Guo.GuoClass" data-throw-if-not-resolved="false"></xref> 对象实例。
     content.vb: Public Shared Function GetGuoClass(iGuoIndex As Integer) As GuoClass
   overload: CompassEx.Guo.GuoClass.GetGuoClass*
   nameWithType.vb: GuoClass.GetGuoClass(Integer)
@@ -2011,21 +2178,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoClass
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 1160
+    startLine: 1367
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 根据爻的数据，只能是6个爻来创建卦类(六爻卦)
+  summary: 静态工厂方法：接收一个包含 6 个爻状态码的整型数组，重组并反灌创建带有变爻动静的复卦对象实例。
   example: []
   syntax:
     content: public static GuoClass GetGuoClass(int[] iYaos)
     parameters:
     - id: iYaos
       type: System.Int32[]
-      description: ''
+      description: 长为 6 的基本整型数组（索引 0 至 5 严格对应初爻至上爻）。
     return:
       type: CompassEx.Guo.GuoClass
-      description: ''
+      description: 返回装配好的 <xref href="CompassEx.Guo.GuoClass" data-throw-if-not-resolved="false"></xref> 对象实例。
     content.vb: Public Shared Function GetGuoClass(iYaos As Integer()) As GuoClass
   overload: CompassEx.Guo.GuoClass.GetGuoClass*
   nameWithType.vb: GuoClass.GetGuoClass(Integer())
@@ -2049,21 +2216,25 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoClass
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 1171
+    startLine: 1384
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 根据爻的数据，只能是6个爻来创建卦类(六爻卦)
+  summary: 静态工厂方法：接收一个包含 6 个爻状态码的整型列表，重组并反灌创建带有变爻动静的复卦对象实例。
+  remarks: >-
+    <b>状态码重组与动爻捕获数理逻辑：</b><br />
+
+    <ul><li><b>经卦解耦</b>：取列表前 3 爻模 2 运算生成下卦（内卦），取后 3 爻模 2 运算生成上卦（外卦）。</li><li><b>动爻拦截（老阴老阳判定）</b>：算法循环遍历 6 个爻。若状态码为 <code>3</code>（老阳，阳动变阴）或 <code>4</code>（老阴，阴动变阳），则会被视为动爻，自动抽离并装入本卦的 <xref href="CompassEx.Guo.GuoClass.YaoDoing" data-throw-if-not-resolved="false"></xref> 动爻跟踪清册中，并同步重设对应经卦的运行时爻位状态。</li></ul>
   example: []
   syntax:
     content: public static GuoClass GetGuoClass(List<int> iYaos)
     parameters:
     - id: iYaos
       type: System.Collections.Generic.List{System.Int32}
-      description: ''
+      description: 包含 6 个爻状态的整型列表（索引自低到高严格对应初爻至上爻）。
     return:
       type: CompassEx.Guo.GuoClass
-      description: ''
+      description: 返回装配好的复卦实例；如果传入的列表长度不等于 6 则返回 <code>null</code>。
     content.vb: Public Shared Function GetGuoClass(iYaos As List(Of Integer)) As GuoClass
   overload: CompassEx.Guo.GuoClass.GetGuoClass*
   nameWithType.vb: GuoClass.GetGuoClass(List(Of Integer))
@@ -2087,24 +2258,33 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FlowerGuoClass
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 1204
+    startLine: 1426
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
-  summary: 梅花占卦（先天），返回这个卦(注意，返回的卦，六亲，六神等没有加载)
+  summary: 静态工厂方法（术数算法）：执行经典的先天梅花易数数字起卦逻辑，推演并返回对应带有动爻的复卦。
+  remarks: >-
+    <b>⚠️ 警告：</b>此方法生成的复卦仅供梅花易数体用断卦，其外围的“六亲”、“六神”等断语属性<b>默认未加载</b>。<br /><br />
+
+    <b>梅花数理起卦公式明堂：</b>
+
+    <ol><li><b>上卦公式</b>：<code>(iv1 % 8) - 1</code>。若余数为 0（取模归零），则强行重设为 7（对应乾一、兑二...坤八的数组边界）。</li><li><b>下卦公式</b>：<code>(iv2 % 8) - 1</code>。同样执行归零校验，并通过排除重复字提取出下卦物象，拼接成模糊模糊字以便反查。</li><li><b>动爻公式（取变爻）</b>：<code>((iv1 + iv2) % 6) - 1</code>。相加余数除 6 的余数锁定动爻。若余数为 0 则重设为 5（代表上爻/第六爻发动）。</li></ol>
+
+
+    算法最后会自动识别动爻爻位所处的空间（内卦或外卦），将少阴/少阳直接转化为对应的老阴（4）或老阳（3），完成起卦闭环。
   example: []
   syntax:
     content: public static GuoClass FlowerGuoClass(int iv1, int iv2)
     parameters:
     - id: iv1
       type: System.Int32
-      description: 为上卦
+      description: 上卦计算基数（如：年支数+月数+日数之和，或上两字笔画数）。
     - id: iv2
       type: System.Int32
-      description: 为下卦
+      description: 下卦计算基数（如：年支数+月数+日数+时支数之和，或下两字笔画数）。
     return:
       type: CompassEx.Guo.GuoClass
-      description: ''
+      description: 返回依照先天梅花数理生成的 <xref href="CompassEx.Guo.GuoClass" data-throw-if-not-resolved="false"></xref> 复卦实例。
     content.vb: Public Shared Function FlowerGuoClass(iv1 As Integer, iv2 As Integer) As GuoClass
   overload: CompassEx.Guo.GuoClass.FlowerGuoClass*
   nameWithType.vb: GuoClass.FlowerGuoClass(Integer, Integer)
@@ -2518,6 +2698,41 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: (
   - name: )
+- uid: CompassEx.Guo.GuoClass.GuoIndex
+  commentId: P:CompassEx.Guo.GuoClass.GuoIndex
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GuoIndex
+  name: GuoIndex
+  nameWithType: GuoClass.GuoIndex
+  fullName: CompassEx.Guo.GuoClass.GuoIndex
+- uid: CompassEx.Guo.GuoClass.Symbols
+  commentId: F:CompassEx.Guo.GuoClass.Symbols
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_Symbols
+  name: Symbols
+  nameWithType: GuoClass.Symbols
+  fullName: CompassEx.Guo.GuoClass.Symbols
+- uid: CompassEx.Guo.GuoClass.GuoSymbol*
+  commentId: Overload:CompassEx.Guo.GuoClass.GuoSymbol
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GuoSymbol
+  name: GuoSymbol
+  nameWithType: GuoClass.GuoSymbol
+  fullName: CompassEx.Guo.GuoClass.GuoSymbol
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CompassEx.Guo.GuoClass.GuoQi
+  commentId: P:CompassEx.Guo.GuoClass.GuoQi
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GuoQi
+  name: GuoQi
+  nameWithType: GuoClass.GuoQi
+  fullName: CompassEx.Guo.GuoClass.GuoQi
 - uid: CompassEx.Guo.GuoClass.GuoQi*
   commentId: Overload:CompassEx.Guo.GuoClass.GuoQi
   href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GuoQi
@@ -2531,12 +2746,6 @@ references:
   name: GuoQi
   nameWithType: GuoQi
   fullName: CompassEx.Guo.GuoQi
-- uid: CompassEx.Guo.GuoClass.DownGuo*
-  commentId: Overload:CompassEx.Guo.GuoClass.DownGuo
-  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_DownGuo
-  name: DownGuo
-  nameWithType: GuoClass.DownGuo
-  fullName: CompassEx.Guo.GuoClass.DownGuo
 - uid: CompassEx.Guo.GuoSubClass
   commentId: T:CompassEx.Guo.GuoSubClass
   parent: CompassEx.Guo
@@ -2544,6 +2753,12 @@ references:
   name: GuoSubClass
   nameWithType: GuoSubClass
   fullName: CompassEx.Guo.GuoSubClass
+- uid: CompassEx.Guo.GuoClass.DownGuo*
+  commentId: Overload:CompassEx.Guo.GuoClass.DownGuo
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_DownGuo
+  name: DownGuo
+  nameWithType: GuoClass.DownGuo
+  fullName: CompassEx.Guo.GuoClass.DownGuo
 - uid: CompassEx.Guo.GuoClass.UpGuo*
   commentId: Overload:CompassEx.Guo.GuoClass.UpGuo
   href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_UpGuo
@@ -2556,17 +2771,6 @@ references:
   name: GuoName
   nameWithType: GuoClass.GuoName
   fullName: CompassEx.Guo.GuoClass.GuoName
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
 - uid: CompassEx.Guo.GuoClass.GuoFullName*
   commentId: Overload:CompassEx.Guo.GuoClass.GuoFullName
   href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GuoFullName
@@ -2590,6 +2794,12 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: CompassEx.Guo.SixGodClass
+  commentId: T:CompassEx.Guo.SixGodClass
+  href: CompassEx.Guo.SixGodClass.html
+  name: SixGodClass
+  nameWithType: SixGodClass
+  fullName: CompassEx.Guo.SixGodClass
 - uid: CompassEx.Guo.GuoClass.SixGods*
   commentId: Overload:CompassEx.Guo.GuoClass.SixGods
   href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_SixGods
@@ -2694,6 +2904,13 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: CompassEx.Guo.SixRelativeClass
+  commentId: T:CompassEx.Guo.SixRelativeClass
+  parent: CompassEx.Guo
+  href: CompassEx.Guo.SixRelativeClass.html
+  name: SixRelativeClass
+  nameWithType: SixRelativeClass
+  fullName: CompassEx.Guo.SixRelativeClass
 - uid: CompassEx.Guo.GuoClass.SixRelative*
   commentId: Overload:CompassEx.Guo.GuoClass.SixRelative
   href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_SixRelative
@@ -2733,6 +2950,13 @@ references:
     name: SixRelativeClass
     href: CompassEx.Guo.SixRelativeClass.html
   - name: )
+- uid: CompassEx.Comm.LocClass
+  commentId: T:CompassEx.Comm.LocClass
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.LocClass.html
+  name: LocClass
+  nameWithType: LocClass
+  fullName: CompassEx.Comm.LocClass
 - uid: CompassEx.Guo.GuoClass.LostLocs*
   commentId: Overload:CompassEx.Guo.GuoClass.LostLocs
   href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_LostLocs
@@ -2855,12 +3079,36 @@ references:
   name: YaoDoing
   nameWithType: GuoClass.YaoDoing
   fullName: CompassEx.Guo.GuoClass.YaoDoing
-- uid: CompassEx.Guo.GuoClass.CBeforRangeDegree*
-  commentId: Overload:CompassEx.Guo.GuoClass.CBeforRangeDegree
-  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_CBeforRangeDegree
-  name: CBeforRangeDegree
-  nameWithType: GuoClass.CBeforRangeDegree
-  fullName: CompassEx.Guo.GuoClass.CBeforRangeDegree
+- uid: CompassEx.CompassEx.GetCBeforGuoDegree(System.String)
+  commentId: M:CompassEx.CompassEx.GetCBeforGuoDegree(System.String)
+  isExternal: true
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforGuoDegree_System_String_
+  name: GetCBeforGuoDegree(string)
+  nameWithType: CompassEx.GetCBeforGuoDegree(string)
+  fullName: CompassEx.CompassEx.GetCBeforGuoDegree(string)
+  nameWithType.vb: CompassEx.GetCBeforGuoDegree(String)
+  fullName.vb: CompassEx.CompassEx.GetCBeforGuoDegree(String)
+  name.vb: GetCBeforGuoDegree(String)
+  spec.csharp:
+  - uid: CompassEx.CompassEx.GetCBeforGuoDegree(System.String)
+    name: GetCBeforGuoDegree
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforGuoDegree_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CompassEx.CompassEx.GetCBeforGuoDegree(System.String)
+    name: GetCBeforGuoDegree
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforGuoDegree_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
 - uid: CompassEx.Comm.CompassRangEX
   commentId: T:CompassEx.Comm.CompassRangEX
   parent: CompassEx.Comm
@@ -2868,87 +3116,18 @@ references:
   name: CompassRangEX
   nameWithType: CompassRangEX
   fullName: CompassEx.Comm.CompassRangEX
-- uid: System.Collections.Generic.Dictionary{System.String,System.String}
-  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.Dictionary`2
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  name: Dictionary<string, string>
-  nameWithType: Dictionary<string, string>
-  fullName: System.Collections.Generic.Dictionary<string, string>
-  nameWithType.vb: Dictionary(Of String, String)
-  fullName.vb: System.Collections.Generic.Dictionary(Of String, String)
-  name.vb: Dictionary(Of String, String)
-  spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: <
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-- uid: System.Collections.Generic.Dictionary`2
-  commentId: T:System.Collections.Generic.Dictionary`2
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  name: Dictionary<TKey, TValue>
-  nameWithType: Dictionary<TKey, TValue>
-  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
-  nameWithType.vb: Dictionary(Of TKey, TValue)
-  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
-  name.vb: Dictionary(Of TKey, TValue)
-  spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: <
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: )
+- uid: CompassEx.Guo.GuoClass.CBeforRangeDegree*
+  commentId: Overload:CompassEx.Guo.GuoClass.CBeforRangeDegree
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_CBeforRangeDegree
+  name: CBeforRangeDegree
+  nameWithType: GuoClass.CBeforRangeDegree
+  fullName: CompassEx.Guo.GuoClass.CBeforRangeDegree
+- uid: CompassEx.Guo.GuoClass.GuoNames
+  commentId: F:CompassEx.Guo.GuoClass.GuoNames
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GuoNames
+  name: GuoNames
+  nameWithType: GuoClass.GuoNames
+  fullName: CompassEx.Guo.GuoClass.GuoNames
 - uid: System.IndexOutOfRangeException
   commentId: T:System.IndexOutOfRangeException
   isExternal: true
@@ -2965,12 +3144,140 @@ references:
   nameWithType.vb: GuoClass.New
   fullName.vb: CompassEx.Guo.GuoClass.New
   name.vb: New
-- uid: CompassEx.Guo.GuoClass.ExchangeGuo*
-  commentId: Overload:CompassEx.Guo.GuoClass.ExchangeGuo
-  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_ExchangeGuo
-  name: ExchangeGuo
-  nameWithType: GuoClass.ExchangeGuo
-  fullName: CompassEx.Guo.GuoClass.ExchangeGuo
+- uid: CompassEx.Guo.GuoClass.GetFullGuoName(System.String)
+  commentId: M:CompassEx.Guo.GuoClass.GetFullGuoName(System.String)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: GetFullGuoName(string)
+  nameWithType: GuoClass.GetFullGuoName(string)
+  fullName: CompassEx.Guo.GuoClass.GetFullGuoName(string)
+  nameWithType.vb: GuoClass.GetFullGuoName(String)
+  fullName.vb: CompassEx.Guo.GuoClass.GetFullGuoName(String)
+  name.vb: GetFullGuoName(String)
+  spec.csharp:
+  - uid: CompassEx.Guo.GuoClass.GetFullGuoName(System.String)
+    name: GetFullGuoName
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Guo.GuoClass.GetFullGuoName(System.String)
+    name: GetFullGuoName
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CompassEx.Guo.GuoClass.GetGuoSubName(System.String,System.Boolean)
+  commentId: M:CompassEx.Guo.GuoClass.GetGuoSubName(System.String,System.Boolean)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: GetGuoSubName(string, bool)
+  nameWithType: GuoClass.GetGuoSubName(string, bool)
+  fullName: CompassEx.Guo.GuoClass.GetGuoSubName(string, bool)
+  nameWithType.vb: GuoClass.GetGuoSubName(String, Boolean)
+  fullName.vb: CompassEx.Guo.GuoClass.GetGuoSubName(String, Boolean)
+  name.vb: GetGuoSubName(String, Boolean)
+  spec.csharp:
+  - uid: CompassEx.Guo.GuoClass.GetGuoSubName(System.String,System.Boolean)
+    name: GetGuoSubName
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Guo.GuoClass.GetGuoSubName(System.String,System.Boolean)
+    name: GetGuoSubName
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: CompassEx.Guo.GuoSubClass.GetGuoSub(System.Int32,System.Int32,System.Int32,System.Boolean)
+  commentId: M:CompassEx.Guo.GuoSubClass.GetGuoSub(System.Int32,System.Int32,System.Int32,System.Boolean)
+  isExternal: true
+  href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_Int32_System_Int32_System_Int32_System_Boolean_
+  name: GetGuoSub(int, int, int, bool)
+  nameWithType: GuoSubClass.GetGuoSub(int, int, int, bool)
+  fullName: CompassEx.Guo.GuoSubClass.GetGuoSub(int, int, int, bool)
+  nameWithType.vb: GuoSubClass.GetGuoSub(Integer, Integer, Integer, Boolean)
+  fullName.vb: CompassEx.Guo.GuoSubClass.GetGuoSub(Integer, Integer, Integer, Boolean)
+  name.vb: GetGuoSub(Integer, Integer, Integer, Boolean)
+  spec.csharp:
+  - uid: CompassEx.Guo.GuoSubClass.GetGuoSub(System.Int32,System.Int32,System.Int32,System.Boolean)
+    name: GetGuoSub
+    href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_Int32_System_Int32_System_Int32_System_Boolean_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Guo.GuoSubClass.GetGuoSub(System.Int32,System.Int32,System.Int32,System.Boolean)
+    name: GetGuoSub
+    href: CompassEx.Guo.GuoSubClass.html#CompassEx_Guo_GuoSubClass_GetGuoSub_System_Int32_System_Int32_System_Int32_System_Boolean_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
 - uid: CompassEx.Guo.GuoClass
   commentId: T:CompassEx.Guo.GuoClass
   parent: CompassEx.Guo
@@ -2978,6 +3285,37 @@ references:
   name: GuoClass
   nameWithType: GuoClass
   fullName: CompassEx.Guo.GuoClass
+- uid: CompassEx.Guo.GuoClass.GetChangeGuo
+  commentId: M:CompassEx.Guo.GuoClass.GetChangeGuo
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetChangeGuo
+  name: GetChangeGuo()
+  nameWithType: GuoClass.GetChangeGuo()
+  fullName: CompassEx.Guo.GuoClass.GetChangeGuo()
+  spec.csharp:
+  - uid: CompassEx.Guo.GuoClass.GetChangeGuo
+    name: GetChangeGuo
+    href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetChangeGuo
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Guo.GuoClass.GetChangeGuo
+    name: GetChangeGuo
+    href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetChangeGuo
+  - name: (
+  - name: )
+- uid: CompassEx.Guo.GuoClass.ExchangeGuo*
+  commentId: Overload:CompassEx.Guo.GuoClass.ExchangeGuo
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_ExchangeGuo
+  name: ExchangeGuo
+  nameWithType: GuoClass.ExchangeGuo
+  fullName: CompassEx.Guo.GuoClass.ExchangeGuo
+- uid: System.Exception
+  commentId: T:System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
 - uid: CompassEx.Guo.GuoClass.Get7HereYaoGuo*
   commentId: Overload:CompassEx.Guo.GuoClass.Get7HereYaoGuo
   href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_Get7HereYaoGuo
@@ -3017,12 +3355,6 @@ references:
     name: GuoClass
     href: CompassEx.Guo.GuoClass.html
   - name: )
-- uid: CompassEx.Guo.GuoClass.GuoSkyLoc*
-  commentId: Overload:CompassEx.Guo.GuoClass.GuoSkyLoc
-  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GuoSkyLoc
-  name: GuoSkyLoc
-  nameWithType: GuoClass.GuoSkyLoc
-  fullName: CompassEx.Guo.GuoClass.GuoSkyLoc
 - uid: CompassEx.Comm.SkyLoc
   commentId: T:CompassEx.Comm.SkyLoc
   parent: CompassEx.Comm
@@ -3030,6 +3362,12 @@ references:
   name: SkyLoc
   nameWithType: SkyLoc
   fullName: CompassEx.Comm.SkyLoc
+- uid: CompassEx.Guo.GuoClass.GuoSkyLoc*
+  commentId: Overload:CompassEx.Guo.GuoClass.GuoSkyLoc
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GuoSkyLoc
+  name: GuoSkyLoc
+  nameWithType: GuoClass.GuoSkyLoc
+  fullName: CompassEx.Guo.GuoClass.GuoSkyLoc
 - uid: CompassEx.Guo.GuoClass.GuoAttr*
   commentId: Overload:CompassEx.Guo.GuoClass.GuoAttr
   href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GuoAttr
@@ -3048,6 +3386,18 @@ references:
   name: GetStringYaos
   nameWithType: GuoClass.GetStringYaos
   fullName: CompassEx.Guo.GuoClass.GetStringYaos
+- uid: CompassEx.Guo.GuoClass.DownGuo
+  commentId: P:CompassEx.Guo.GuoClass.DownGuo
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_DownGuo
+  name: DownGuo
+  nameWithType: GuoClass.DownGuo
+  fullName: CompassEx.Guo.GuoClass.DownGuo
+- uid: CompassEx.Guo.GuoClass.UpGuo
+  commentId: P:CompassEx.Guo.GuoClass.UpGuo
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_UpGuo
+  name: UpGuo
+  nameWithType: GuoClass.UpGuo
+  fullName: CompassEx.Guo.GuoClass.UpGuo
 - uid: CompassEx.Guo.GuoClass.GetYaos*
   commentId: Overload:CompassEx.Guo.GuoClass.GetYaos
   href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetYaos
@@ -3077,6 +3427,18 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: (
   - name: )
+- uid: CompassEx.Guo.GuoClass.YaoDoing
+  commentId: P:CompassEx.Guo.GuoClass.YaoDoing
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_YaoDoing
+  name: YaoDoing
+  nameWithType: GuoClass.YaoDoing
+  fullName: CompassEx.Guo.GuoClass.YaoDoing
+- uid: CompassEx.Guo.GuoClass.ChangedYao
+  commentId: P:CompassEx.Guo.GuoClass.ChangedYao
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_ChangedYao
+  name: ChangedYao
+  nameWithType: GuoClass.ChangedYao
+  fullName: CompassEx.Guo.GuoClass.ChangedYao
 - uid: CompassEx.Guo.GuoClass.GetChangeGuo*
   commentId: Overload:CompassEx.Guo.GuoClass.GetChangeGuo
   href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetChangeGuo
@@ -3089,12 +3451,39 @@ references:
   name: GetSykStr
   nameWithType: GuoClass.GetSykStr
   fullName: CompassEx.Guo.GuoClass.GetSykStr
+- uid: CompassEx.Guo.GuoClass.LoadGuoSelfandHereThere
+  commentId: M:CompassEx.Guo.GuoClass.LoadGuoSelfandHereThere
+  name: LoadGuoSelfandHereThere()
+  nameWithType: GuoClass.LoadGuoSelfandHereThere()
+  fullName: CompassEx.Guo.GuoClass.LoadGuoSelfandHereThere()
+  spec.csharp:
+  - uid: CompassEx.Guo.GuoClass.LoadGuoSelfandHereThere
+    name: LoadGuoSelfandHereThere
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Guo.GuoClass.LoadGuoSelfandHereThere
+    name: LoadGuoSelfandHereThere
+  - name: (
+  - name: )
 - uid: CompassEx.Guo.GuoClass.GetHereThereStr*
   commentId: Overload:CompassEx.Guo.GuoClass.GetHereThereStr
   href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetHereThereStr
   name: GetHereThereStr
   nameWithType: GuoClass.GetHereThereStr
   fullName: CompassEx.Guo.GuoClass.GetHereThereStr
+- uid: CompassEx.Guo.GuoClass.GuoSelf
+  commentId: P:CompassEx.Guo.GuoClass.GuoSelf
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GuoSelf
+  name: GuoSelf
+  nameWithType: GuoClass.GuoSelf
+  fullName: CompassEx.Guo.GuoClass.GuoSelf
+- uid: CompassEx.Guo.GuoClass.HideRelativeYaos
+  commentId: P:CompassEx.Guo.GuoClass.HideRelativeYaos
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_HideRelativeYaos
+  name: HideRelativeYaos
+  nameWithType: GuoClass.HideRelativeYaos
+  fullName: CompassEx.Guo.GuoClass.HideRelativeYaos
 - uid: CompassEx.Guo.GuoClass.GetHideRelativeStr*
   commentId: Overload:CompassEx.Guo.GuoClass.GetHideRelativeStr
   href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetHideRelativeStr
@@ -3119,6 +3508,48 @@ references:
   name: GetSixGodStr
   nameWithType: GuoClass.GetSixGodStr
   fullName: CompassEx.Guo.GuoClass.GetSixGodStr
+- uid: CompassEx.Comm.FiveAttr.GetBothAttrRule(System.String,System.String)
+  commentId: M:CompassEx.Comm.FiveAttr.GetBothAttrRule(System.String,System.String)
+  isExternal: true
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_GetBothAttrRule_System_String_System_String_
+  name: GetBothAttrRule(string, string)
+  nameWithType: FiveAttr.GetBothAttrRule(string, string)
+  fullName: CompassEx.Comm.FiveAttr.GetBothAttrRule(string, string)
+  nameWithType.vb: FiveAttr.GetBothAttrRule(String, String)
+  fullName.vb: CompassEx.Comm.FiveAttr.GetBothAttrRule(String, String)
+  name.vb: GetBothAttrRule(String, String)
+  spec.csharp:
+  - uid: CompassEx.Comm.FiveAttr.GetBothAttrRule(System.String,System.String)
+    name: GetBothAttrRule
+    href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_GetBothAttrRule_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.FiveAttr.GetBothAttrRule(System.String,System.String)
+    name: GetBothAttrRule
+    href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_GetBothAttrRule_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
 - uid: CompassEx.Guo.GuoClass.GetSixRelativeStr*
   commentId: Overload:CompassEx.Guo.GuoClass.GetSixRelativeStr
   href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetSixRelativeStr_System_String_System_Boolean_
@@ -3136,6 +3567,30 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: CompassEx.Guo.GuoClass.SixRelative
+  commentId: P:CompassEx.Guo.GuoClass.SixRelative
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_SixRelative
+  name: SixRelative
+  nameWithType: GuoClass.SixRelative
+  fullName: CompassEx.Guo.GuoClass.SixRelative
+- uid: CompassEx.Guo.GuoClass.LoadSixRelative
+  commentId: M:CompassEx.Guo.GuoClass.LoadSixRelative
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_LoadSixRelative
+  name: LoadSixRelative()
+  nameWithType: GuoClass.LoadSixRelative()
+  fullName: CompassEx.Guo.GuoClass.LoadSixRelative()
+  spec.csharp:
+  - uid: CompassEx.Guo.GuoClass.LoadSixRelative
+    name: LoadSixRelative
+    href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_LoadSixRelative
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Guo.GuoClass.LoadSixRelative
+    name: LoadSixRelative
+    href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_LoadSixRelative
+  - name: (
+  - name: )
 - uid: CompassEx.Guo.GuoClass.LoadAll*
   commentId: Overload:CompassEx.Guo.GuoClass.LoadAll
   href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_LoadAll_System_String_System_String_
@@ -3154,12 +3609,62 @@ references:
   name: GetGuoFace
   nameWithType: GuoClass.GetGuoFace
   fullName: CompassEx.Guo.GuoClass.GetGuoFace
+- uid: CompassEx.Guo.GuoClass.GetGuoFace(System.Collections.Generic.List{System.Int32})
+  commentId: M:CompassEx.Guo.GuoClass.GetGuoFace(System.Collections.Generic.List{System.Int32})
+  isExternal: true
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetGuoFace_System_Collections_Generic_List_System_Int32__
+  name: GetGuoFace(List<int>)
+  nameWithType: GuoClass.GetGuoFace(List<int>)
+  fullName: CompassEx.Guo.GuoClass.GetGuoFace(System.Collections.Generic.List<int>)
+  nameWithType.vb: GuoClass.GetGuoFace(List(Of Integer))
+  fullName.vb: CompassEx.Guo.GuoClass.GetGuoFace(System.Collections.Generic.List(Of Integer))
+  name.vb: GetGuoFace(List(Of Integer))
+  spec.csharp:
+  - uid: CompassEx.Guo.GuoClass.GetGuoFace(System.Collections.Generic.List{System.Int32})
+    name: GetGuoFace
+    href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetGuoFace_System_Collections_Generic_List_System_Int32__
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Guo.GuoClass.GetGuoFace(System.Collections.Generic.List{System.Int32})
+    name: GetGuoFace
+    href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetGuoFace_System_Collections_Generic_List_System_Int32__
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  - name: )
 - uid: CompassEx.Guo.GuoClass.GetChangeGuoFace*
   commentId: Overload:CompassEx.Guo.GuoClass.GetChangeGuoFace
   href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_GetChangeGuoFace
   name: GetChangeGuoFace
   nameWithType: GuoClass.GetChangeGuoFace
   fullName: CompassEx.Guo.GuoClass.GetChangeGuoFace
+- uid: CompassEx.Guo.GuoClass.HideRelative
+  commentId: P:CompassEx.Guo.GuoClass.HideRelative
+  href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_HideRelative
+  name: HideRelative
+  nameWithType: GuoClass.HideRelative
+  fullName: CompassEx.Guo.GuoClass.HideRelative
 - uid: CompassEx.Guo.GuoClass.LoadHideRelative*
   commentId: Overload:CompassEx.Guo.GuoClass.LoadHideRelative
   href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_LoadHideRelative
@@ -3172,6 +3677,90 @@ references:
   name: LoadSixRelative
   nameWithType: GuoClass.LoadSixRelative
   fullName: CompassEx.Guo.GuoClass.LoadSixRelative
+- uid: CompassEx.Comm.FiveAttr.LocCombine(System.String,System.String)
+  commentId: M:CompassEx.Comm.FiveAttr.LocCombine(System.String,System.String)
+  isExternal: true
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_LocCombine_System_String_System_String_
+  name: LocCombine(string, string)
+  nameWithType: FiveAttr.LocCombine(string, string)
+  fullName: CompassEx.Comm.FiveAttr.LocCombine(string, string)
+  nameWithType.vb: FiveAttr.LocCombine(String, String)
+  fullName.vb: CompassEx.Comm.FiveAttr.LocCombine(String, String)
+  name.vb: LocCombine(String, String)
+  spec.csharp:
+  - uid: CompassEx.Comm.FiveAttr.LocCombine(System.String,System.String)
+    name: LocCombine
+    href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_LocCombine_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.FiveAttr.LocCombine(System.String,System.String)
+    name: LocCombine
+    href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_LocCombine_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CompassEx.Comm.FiveAttr.BothConflict(System.String,System.String)
+  commentId: M:CompassEx.Comm.FiveAttr.BothConflict(System.String,System.String)
+  isExternal: true
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_BothConflict_System_String_System_String_
+  name: BothConflict(string, string)
+  nameWithType: FiveAttr.BothConflict(string, string)
+  fullName: CompassEx.Comm.FiveAttr.BothConflict(string, string)
+  nameWithType.vb: FiveAttr.BothConflict(String, String)
+  fullName.vb: CompassEx.Comm.FiveAttr.BothConflict(String, String)
+  name.vb: BothConflict(String, String)
+  spec.csharp:
+  - uid: CompassEx.Comm.FiveAttr.BothConflict(System.String,System.String)
+    name: BothConflict
+    href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_BothConflict_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.FiveAttr.BothConflict(System.String,System.String)
+    name: BothConflict
+    href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_BothConflict_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
 - uid: CompassEx.Guo.GuoClass.LoadGuoAliasName*
   commentId: Overload:CompassEx.Guo.GuoClass.LoadGuoAliasName
   href: CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_LoadGuoAliasName
