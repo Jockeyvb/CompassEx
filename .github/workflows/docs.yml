@@ -31,7 +31,7 @@ jobs:
         with:
           dotnet-version: '8.0.x' # 根据你的项目需要选择 .NET 版本
 
-       - name: Install Tool & Build Docs
+      - name: Install Tool & Build Docs
         run: |
           # 1. 更新并安装 docfx 工具
           dotnet tool update -g docfx
