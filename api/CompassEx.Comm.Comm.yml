@@ -69,7 +69,7 @@ items:
     该方法在系统启动或反序列化时应被优先调用。它会通过内部流水线依次唤醒并充填两套最核心的周天度数数据：
 
 
-    <ul><li>调用 <xref href="CompassEx.CompassEx.LoadAllCAfterGuos" data-throw-if-not-resolved="false"></xref>：全量装载后天六十四卦罗盘圈层分度范围数据。</li><li>调用 <xref href="CompassEx.CompassEx.LoadAllBeforGuos" data-throw-if-not-resolved="false"></xref>：全量装载伏羲先天六十四卦方圆图周天物理刻度数据。</li></ul>
+    <ul><li>调用 <xref href="CompassEx.CompassEx.LoadAllCAfterGuos" data-throw-if-not-resolved="false"></xref>：全量装载后天六十四卦罗盘圈层分度范围数据。</li><li>调用 <xref href="CompassEx.CompassEx.LoadAllCBeforGuos" data-throw-if-not-resolved="false"></xref>：全量装载伏羲先天六十四卦方圆图周天物理刻度数据。</li></ul>
   example: []
   syntax:
     content: public static void AllInit()
@@ -404,22 +404,22 @@ references:
     href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCAfterGuos
   - name: (
   - name: )
-- uid: CompassEx.CompassEx.LoadAllBeforGuos
-  commentId: M:CompassEx.CompassEx.LoadAllBeforGuos
-  href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllBeforGuos
-  name: LoadAllBeforGuos()
-  nameWithType: CompassEx.LoadAllBeforGuos()
-  fullName: CompassEx.CompassEx.LoadAllBeforGuos()
+- uid: CompassEx.CompassEx.LoadAllCBeforGuos
+  commentId: M:CompassEx.CompassEx.LoadAllCBeforGuos
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforGuos
+  name: LoadAllCBeforGuos()
+  nameWithType: CompassEx.LoadAllCBeforGuos()
+  fullName: CompassEx.CompassEx.LoadAllCBeforGuos()
   spec.csharp:
-  - uid: CompassEx.CompassEx.LoadAllBeforGuos
-    name: LoadAllBeforGuos
-    href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllBeforGuos
+  - uid: CompassEx.CompassEx.LoadAllCBeforGuos
+    name: LoadAllCBeforGuos
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforGuos
   - name: (
   - name: )
   spec.vb:
-  - uid: CompassEx.CompassEx.LoadAllBeforGuos
-    name: LoadAllBeforGuos
-    href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllBeforGuos
+  - uid: CompassEx.CompassEx.LoadAllCBeforGuos
+    name: LoadAllCBeforGuos
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforGuos
   - name: (
   - name: )
 - uid: CompassEx.Comm.Comm.AllInit*

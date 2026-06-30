@@ -1033,7 +1033,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 320
+    startLine: 324
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1076,7 +1076,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 339
+    startLine: 343
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1120,7 +1120,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ExchangeGuo
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 370
+    startLine: 406
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1159,7 +1159,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Get7HereYaoGuo
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 392
+    startLine: 428
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1201,7 +1201,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoSkyLoc
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 457
+    startLine: 493
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1244,7 +1244,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoAttr
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 478
+    startLine: 514
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1292,7 +1292,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoFate
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 531
+    startLine: 567
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1341,7 +1341,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetStringYaos
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 581
+    startLine: 617
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1372,7 +1372,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetYaos
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 603
+    startLine: 639
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1411,7 +1411,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetChangeGuo
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 629
+    startLine: 665
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1448,7 +1448,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSykStr
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 671
+    startLine: 707
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1480,7 +1480,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetHereThereStr
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 687
+    startLine: 723
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1517,7 +1517,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetHideRelativeStr
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 710
+    startLine: 746
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1554,7 +1554,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetYaosSkyLocStrShort
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 740
+    startLine: 776
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1585,7 +1585,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetYaosSkyLocStr
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 762
+    startLine: 798
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1616,7 +1616,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSixGodStr
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 784
+    startLine: 820
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1647,7 +1647,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSixRelativeStr
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 805
+    startLine: 841
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1689,7 +1689,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSixRelativeStr
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 836
+    startLine: 872
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1728,7 +1728,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadAll
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 859
+    startLine: 895
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1766,7 +1766,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadNoAvg
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 872
+    startLine: 908
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1795,7 +1795,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoFace
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 894
+    startLine: 930
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1840,7 +1840,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoFace
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 917
+    startLine: 953
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1877,7 +1877,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetChangeGuoFace
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 964
+    startLine: 1000
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1914,7 +1914,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadHideRelative
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 998
+    startLine: 1034
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1946,7 +1946,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadSixRelative
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 1045
+    startLine: 1081
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1980,7 +1980,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadGuoAliasName
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 1079
+    startLine: 1115
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -2015,7 +2015,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetLostLocs
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 1197
+    startLine: 1233
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -2064,7 +2064,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoClassBySkyLoc
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 1332
+    startLine: 1368
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -2102,7 +2102,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoClass
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 1347
+    startLine: 1383
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -2140,7 +2140,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoClass
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 1357
+    startLine: 1393
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -2178,7 +2178,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoClass
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 1367
+    startLine: 1403
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -2216,7 +2216,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoClass
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 1384
+    startLine: 1420
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -2258,7 +2258,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FlowerGuoClass
     path: CompassEx/Guo/GuoClass.cs
-    startLine: 1426
+    startLine: 1462
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo

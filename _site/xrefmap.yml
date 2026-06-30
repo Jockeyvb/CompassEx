@@ -1322,19 +1322,6 @@ references:
   commentId: F:CompassEx.CompassEx.GuoSubDegree
   fullName: CompassEx.CompassEx.GuoSubDegree
   nameWithType: CompassEx.GuoSubDegree
-- uid: CompassEx.CompassEx.LoadAllBeforGuos
-  name: LoadAllBeforGuos()
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllBeforGuos
-  commentId: M:CompassEx.CompassEx.LoadAllBeforGuos
-  fullName: CompassEx.CompassEx.LoadAllBeforGuos()
-  nameWithType: CompassEx.LoadAllBeforGuos()
-- uid: CompassEx.CompassEx.LoadAllBeforGuos*
-  name: LoadAllBeforGuos
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllBeforGuos_
-  commentId: Overload:CompassEx.CompassEx.LoadAllBeforGuos
-  isSpec: "True"
-  fullName: CompassEx.CompassEx.LoadAllBeforGuos
-  nameWithType: CompassEx.LoadAllBeforGuos
 - uid: CompassEx.CompassEx.LoadAllCAfterGuos
   name: LoadAllCAfterGuos()
   href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCAfterGuos
@@ -1348,6 +1335,19 @@ references:
   isSpec: "True"
   fullName: CompassEx.CompassEx.LoadAllCAfterGuos
   nameWithType: CompassEx.LoadAllCAfterGuos
+- uid: CompassEx.CompassEx.LoadAllCBeforGuos
+  name: LoadAllCBeforGuos()
+  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforGuos
+  commentId: M:CompassEx.CompassEx.LoadAllCBeforGuos
+  fullName: CompassEx.CompassEx.LoadAllCBeforGuos()
+  nameWithType: CompassEx.LoadAllCBeforGuos()
+- uid: CompassEx.CompassEx.LoadAllCBeforGuos*
+  name: LoadAllCBeforGuos
+  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforGuos_
+  commentId: Overload:CompassEx.CompassEx.LoadAllCBeforGuos
+  isSpec: "True"
+  fullName: CompassEx.CompassEx.LoadAllCBeforGuos
+  nameWithType: CompassEx.LoadAllCBeforGuos
 - uid: CompassEx.Guo
   name: CompassEx.Guo
   href: api/CompassEx.Guo.html

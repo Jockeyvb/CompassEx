@@ -27,8 +27,8 @@ items:
   - CompassEx.CompassEx.GetCBeforGuo
   - CompassEx.CompassEx.GetCBeforGuoDegree(System.String)
   - CompassEx.CompassEx.GuoSubDegree
-  - CompassEx.CompassEx.LoadAllBeforGuos
   - CompassEx.CompassEx.LoadAllCAfterGuos
+  - CompassEx.CompassEx.LoadAllCBeforGuos
   langs:
   - csharp
   - vb
@@ -552,23 +552,23 @@ items:
     content: public static void LoadAllCAfterGuos()
     content.vb: Public Shared Sub LoadAllCAfterGuos()
   overload: CompassEx.CompassEx.LoadAllCAfterGuos*
-- uid: CompassEx.CompassEx.LoadAllBeforGuos
-  commentId: M:CompassEx.CompassEx.LoadAllBeforGuos
-  id: LoadAllBeforGuos
+- uid: CompassEx.CompassEx.LoadAllCBeforGuos
+  commentId: M:CompassEx.CompassEx.LoadAllCBeforGuos
+  id: LoadAllCBeforGuos
   parent: CompassEx.CompassEx
   langs:
   - csharp
   - vb
-  name: LoadAllBeforGuos()
-  nameWithType: CompassEx.LoadAllBeforGuos()
-  fullName: CompassEx.CompassEx.LoadAllBeforGuos()
+  name: LoadAllCBeforGuos()
+  nameWithType: CompassEx.LoadAllCBeforGuos()
+  fullName: CompassEx.CompassEx.LoadAllCBeforGuos()
   type: Method
   source:
     remote:
       path: CompassEx/CompassEx.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: LoadAllBeforGuos
+    id: LoadAllCBeforGuos
     path: CompassEx/CompassEx.cs
     startLine: 203
   assemblies:
@@ -577,9 +577,9 @@ items:
   summary: 加载罗盘上的所有先天64卦（天盘）对象，按照顺时针方向排列，从坤卦开始，每5.625度一个卦逆时针，共64个卦
   example: []
   syntax:
-    content: public static void LoadAllBeforGuos()
-    content.vb: Public Shared Sub LoadAllBeforGuos()
-  overload: CompassEx.CompassEx.LoadAllBeforGuos*
+    content: public static void LoadAllCBeforGuos()
+    content.vb: Public Shared Sub LoadAllCBeforGuos()
+  overload: CompassEx.CompassEx.LoadAllCBeforGuos*
 - uid: CompassEx.CompassEx.Get24Hill
   commentId: M:CompassEx.CompassEx.Get24Hill
   id: Get24Hill
@@ -1483,12 +1483,12 @@ references:
   name: LoadAllCAfterGuos
   nameWithType: CompassEx.LoadAllCAfterGuos
   fullName: CompassEx.CompassEx.LoadAllCAfterGuos
-- uid: CompassEx.CompassEx.LoadAllBeforGuos*
-  commentId: Overload:CompassEx.CompassEx.LoadAllBeforGuos
-  href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllBeforGuos
-  name: LoadAllBeforGuos
-  nameWithType: CompassEx.LoadAllBeforGuos
-  fullName: CompassEx.CompassEx.LoadAllBeforGuos
+- uid: CompassEx.CompassEx.LoadAllCBeforGuos*
+  commentId: Overload:CompassEx.CompassEx.LoadAllCBeforGuos
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforGuos
+  name: LoadAllCBeforGuos
+  nameWithType: CompassEx.LoadAllCBeforGuos
+  fullName: CompassEx.CompassEx.LoadAllCBeforGuos
 - uid: CompassEx.CompassEx.Get24Hill*
   commentId: Overload:CompassEx.CompassEx.Get24Hill
   href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24Hill
