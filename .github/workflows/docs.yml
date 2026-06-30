@@ -3,7 +3,7 @@
 on:
   push:
     branches:
-      - master # 触发构建的分支，根据你的主分支名（如 master）修改
+      - master # 触发构建的分支
 
 # 授予发布 GitHub Pages 所需的权限
 permissions:
@@ -29,26 +29,38 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x' # 根据你的项目需要选择 .NET 版本
+          dotnet-version: '8.0.x'
+
+      # 💡 新增：安装 Node.js 环境，这是运行 npx pagefind 的基础
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
       - name: Install Tool & Build Docs
         run: |
           # 1. 更新并安装 docfx 工具
           dotnet tool update -g docfx
           
-          # 2. 干净还原主项目包（此时云端已无 nuget.config 干扰，将直接走官方源）
+          # 2. 干净还原主项目包
           dotnet restore CompassEx/CompassEx.csproj
           
-          # 3. 仅编译主项目，直接绕过 MAUI 测试项目
+          # 3. 仅编译主项目，彻底绕过 MAUI 测试项目
           dotnet build CompassEx/CompassEx.csproj -c Release --no-restore
           
-          # 4. 运行 docfx 生成文档网页
-          docfx docfx.json
+          # 4. 执行 docfx metadata (生成元数据)
+          docfx metadata docfx.json
+          
+          # 5. 执行 docfx build (编译静态网页到 _site)
+          docfx build docfx.json
+          
+          # 6. 使用指定版本的 Pagefind 为 _site 文件夹生成搜索索引
+          npx pagefind@1.2.0 --site _site
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '_site' # 对应 docfx.json 中的输出目录
+          path: '_site' # 对应 docfx 生成并被 pagefind 注入过的输出目录
 
       - name: Deploy to GitHub Pages
         id: deployment
