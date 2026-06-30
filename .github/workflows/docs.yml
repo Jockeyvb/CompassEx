@@ -3,7 +3,7 @@ name: Deploy DocFX Docs
 on:
   push:
     branches:
-      - main # 触发构建的分支，根据你的主分支名（如 master）修改
+      - master # 触发构建的分支，根据你的主分支名（如 master）修改
 
 # 授予发布 GitHub Pages 所需的权限
 permissions:
