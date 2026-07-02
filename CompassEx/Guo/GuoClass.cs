@@ -299,11 +299,20 @@ namespace CompassEx.Guo
         public List<int> YaoDoing { get; set; } //爻动
 
         /// <summary>
-        /// 获取该卦在三元地理罗盘中对应的先天方圆图度数范围对象，用于判定当前卦在罗盘圆周上的物理空间边界。
+        /// 获取该卦在三元地理罗盘中对应的先天（天盘）度数范围对象，用于判定当前卦在罗盘圆周上的物理空间边界。
         /// </summary>
-        /// <value>动态调用 <see cref="CompassEx.GetCBeforGuoDegree(string)"/> 方法，返回其专属的 <see cref="CompassRangEX"/> 周天度数范围。</value>
+        /// <value>动态调用 <see cref="CompassEx.GetCBeforeGuoDegree(string)"/> 方法，返回其专属的 <see cref="CompassRangEX"/> 周天度数范围。</value>
         [JsonIgnore]
-        public CompassRangEX CBeforRangeDegree { get { return CompassEx.GetCBeforGuoDegree(this.GuoName); } }
+        public CompassRangEX CBeforeRangeDegree { get { return CompassEx.GetCBeforeGuoDegree(this.GuoName); } }
+
+
+
+        /// <summary>
+        /// 获取该卦在三元地理罗盘中对应的后天（地盘）图度数范围对象，用于判定当前卦在罗盘圆周上的物理空间边界。
+        /// </summary>
+        /// <value>动态调用 <see cref="CompassEx.GetCAfterGuoDegree(string)"/> 方法，返回其专属的 <see cref="CompassRangEX"/> 周天度数范围。</value>
+        [JsonIgnore]
+        public CompassRangEX CAfterRangeDegree { get { return CompassEx.GetCAfterGuoDegree(this.GuoName); } }
 
 
         #endregion
@@ -1294,9 +1303,10 @@ namespace CompassEx.Guo
         {
             string sName = GuoNameOrAttrName;
             String sFullName = null, s = null;
-            if (sName == null) return null;
-            if (sName.Length == 0) return null;
-            int iPos;
+            if (string.IsNullOrWhiteSpace(sName)) return null;
+
+            int iPos = GuoNames.IndexOf(GuoNameOrAttrName);//判断是否是卦名
+            if (iPos > -1) return GuoFullNames[iPos]; //直接返回全名
             if (sName.Length == 1)
             {//一字卦，全部转成三字卦
                 iPos = Array.IndexOf(GuoNames, sName);

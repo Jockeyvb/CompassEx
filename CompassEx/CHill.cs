@@ -67,7 +67,7 @@ namespace CompassEx
         {
             Dictionary<CompassRangEX, GuoClass> dc = new Dictionary<CompassRangEX, GuoClass>();
             CompassRangEX CRE = this.CRangeDegree;
-            foreach (var kv in CompassEx.CBeforGuos)
+            foreach (var kv in CompassEx.CBeforeGuos)
             {
                 if (CRE.IsInRange(kv.Key.Start) || CRE.IsInRange(kv.Key.End - 0.01)) //因为1山对应的64卦不整齐，所以要在结束度数上-0.01度来获得精确64卦对象
                 {

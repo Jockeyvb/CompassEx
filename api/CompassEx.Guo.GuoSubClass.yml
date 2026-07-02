@@ -510,7 +510,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IsSun
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 210
+    startLine: 212
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -548,7 +548,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IsDownGuo
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 216
+    startLine: 218
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -580,7 +580,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoQi
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 226
+    startLine: 228
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -616,7 +616,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Yaos
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 239
+    startLine: 241
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -648,7 +648,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SkyName
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 245
+    startLine: 247
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -680,7 +680,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Sky
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 254
+    startLine: 256
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -713,7 +713,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Locs
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 260
+    startLine: 262
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -745,7 +745,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LocIndex
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 266
+    startLine: 268
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -777,7 +777,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoSubReluName
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 272
+    startLine: 274
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -809,7 +809,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuoSubColor
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 278
+    startLine: 280
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -841,7 +841,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterQuantity
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 284
+    startLine: 286
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -873,7 +873,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeQuanity
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 290
+    startLine: 292
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -905,7 +905,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoSubName
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 296
+    startLine: 298
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -937,7 +937,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuoSubAttrName
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 302
+    startLine: 304
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -969,7 +969,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FiveAttr
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 308
+    startLine: 310
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1001,7 +1001,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuoSubCNQuantity
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 314
+    startLine: 316
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1033,7 +1033,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuoSubCNQuantity
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 320
+    startLine: 322
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1065,7 +1065,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuoSubIndex
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 326
+    startLine: 328
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1097,7 +1097,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuoSubIndex
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 332
+    startLine: 334
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1129,7 +1129,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Symbol
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 341
+    startLine: 343
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1162,7 +1162,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CAfterRangeDegree
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 347
+    startLine: 349
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1194,7 +1194,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CBeforRangeDegree
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 353
+    startLine: 355
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1226,7 +1226,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 369
+    startLine: 371
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1271,7 +1271,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 390
+    startLine: 392
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1318,7 +1318,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetC24Hills
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 457
+    startLine: 459
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1349,7 +1349,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetCBeforGuos
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 482
+    startLine: 484
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1380,7 +1380,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetXorGuo
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 500
+    startLine: 502
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1411,7 +1411,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadLocs
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 515
+    startLine: 517
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1439,7 +1439,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoSub
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 541
+    startLine: 543
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1486,7 +1486,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAfterGuoSub
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 566
+    startLine: 568
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1527,7 +1527,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBeforGuoSub
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 579
+    startLine: 581
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1568,7 +1568,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoSub
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 591
+    startLine: 593
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1609,7 +1609,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuoSub
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 611
+    startLine: 613
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo
@@ -1650,7 +1650,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetFiveAttrName
     path: CompassEx/Guo/GuoSubClass.cs
-    startLine: 679
+    startLine: 681
   assemblies:
   - CompassEx
   namespace: CompassEx.Guo

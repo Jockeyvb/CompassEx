@@ -6,6 +6,7 @@ items:
   children:
   - CompassEx.Comm.ArrayExtensions
   - CompassEx.Comm.Comm
+  - CompassEx.Comm.CompassObjType
   - CompassEx.Comm.CompassRangEX
   - CompassEx.Comm.Defined
   - CompassEx.Comm.FactYearEnum
@@ -45,6 +46,12 @@ references:
   name: CompassRangEX
   nameWithType: CompassRangEX
   fullName: CompassEx.Comm.CompassRangEX
+- uid: CompassEx.Comm.CompassObjType
+  commentId: T:CompassEx.Comm.CompassObjType
+  href: CompassEx.Comm.CompassObjType.html
+  name: CompassObjType
+  nameWithType: CompassObjType
+  fullName: CompassEx.Comm.CompassObjType
 - uid: CompassEx.Comm.FactYearEnum
   commentId: T:CompassEx.Comm.FactYearEnum
   parent: CompassEx.Comm

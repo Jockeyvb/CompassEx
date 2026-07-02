@@ -26,13 +26,14 @@ namespace CompassEx.Comm
         /// 该方法在系统启动或反序列化时应被优先调用。它会通过内部流水线依次唤醒并充填两套最核心的周天度数数据：
         /// <list type="bullet">
         /// <item><description>调用 <see cref="CompassEx.LoadAllCAfterGuos"/>：全量装载后天六十四卦罗盘圈层分度范围数据。</description></item>
-        /// <item><description>调用 <see cref="CompassEx.LoadAllCBeforGuos"/>：全量装载伏羲先天六十四卦方圆图周天物理刻度数据。</description></item>
+        /// <item><description>调用 <see cref="CompassEx.LoadAllCBeforeGuos"/>：全量装载伏羲先天六十四卦方圆图周天物理刻度数据。</description></item>
         /// </list>
         /// </remarks>
         public static void AllInit()
         {
             CompassEx.LoadAllCAfterGuos();
-            CompassEx.LoadAllCBeforGuos();
+            CompassEx.LoadAllCBeforeGuos();
+
         }
 
         /// <summary>

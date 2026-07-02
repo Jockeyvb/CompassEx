@@ -199,6 +199,8 @@ namespace CompassEx.Guo
 
         #region 属性
 
+
+
         /// <summary>
         /// 获取一个布尔值，指示当前三爻经卦在后天八卦体系中是否属于“阳卦”。
         /// </summary>
@@ -484,7 +486,7 @@ namespace CompassEx.Guo
         {
             Dictionary<CompassRangEX, GuoClass> dc = new Dictionary<CompassRangEX, GuoClass>();
             CompassRangEX CRE = this.CAfterRangeDegree;
-            foreach (var kv in CompassEx.CBeforGuos)
+            foreach (var kv in CompassEx.CBeforeGuos)
             {
                 if (CRE.IsInRange(kv.Key.Start))
                 {

@@ -14,6 +14,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Images/android1.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "Images/android1.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Images/image1.png",
       "output": {
         "resource": {
@@ -132,6 +142,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Comm.CompassObjType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Comm.CompassObjType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Comm.CompassObjType",
+      "Summary": "<p sourcefile=\"api/CompassEx.Comm.CompassObjType.yml\" sourcestartlinenumber=\"1\">用于封装和标识罗盘对象的元数据及其实例的结构体。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/CompassEx.Comm.CompassRangEX.yml",
       "output": {
         ".html": {
@@ -142,7 +166,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "CompassEx.Comm.CompassRangEX",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/CompassEx.Comm.CompassRangEX.yml\" sourcestartlinenumber=\"1\">表示一个罗盘度数的角度范围。</p>\n"
     },
     {
       "type": "ManagedReference",

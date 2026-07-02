@@ -13,9 +13,105 @@
 using System;
 
 namespace CompassEx.Comm
-{  /// <summary>
-   /// 是否为真实年(龄),0为立春后，1立春前
-   /// </summary>
+
+{
+
+    /// <summary>
+    /// 用于封装和标识罗盘对象的元数据及其实例的结构体。
+    /// </summary>
+    /// <remarks>
+    /// 该结构体主要用于多类型罗盘数据块的统一存储（例如存入 <see cref="System.Collections.Generic.List{T}"/>），
+    /// 它将罗盘对象的中文名称、运行时类型、实例引用以及所对应的角度范围（<see cref="CompassRangEX"/>）打包在一起，
+    /// 并提供安全的类型分发与转换机制。
+    /// </remarks>
+    public struct CompassObjType
+    {
+        /// <summary>
+        /// 罗盘对象的类型中文名称。
+        /// </summary>
+        /// <value>
+        /// 例如：“先天八卦”、“后天八卦”、“天盘64卦、地盘64卦”等描述性文本。
+        /// </value>
+        public string ObjTypeCNName;
+
+        /// <summary>
+        /// 对应罗盘对象名称
+        /// </summary>
+        /// <value>
+        /// 例如：“乾”、“姤”、“子”等描述性文本。
+        /// </value>
+        public string Name;
+        /// <summary>
+        /// 罗盘对象的运行时类型。
+        /// </summary>
+        /// <value>
+        /// 存储该对象实例对应的真实 <see cref="Type"/> 信息。
+        /// </value>
+        public Type ObjType;
+
+        /// <summary>
+        /// 罗盘对象的底层实例引用。
+        /// </summary>
+        /// <value>
+        /// 实际的业务对象（已被装箱为 <see cref="object"/>），使用时建议通过 <see cref="ToObjet{T}(out T)"/> 安全转型。
+        /// </value>
+        public object Obj;
+
+        /// <summary>
+        /// 罗盘对象所涵盖的角度范围。
+        /// </summary>
+        /// <value>
+        /// 一个 <see cref="CompassRangEX"/> 实例，用于判定特定度数是否属于当前罗盘节点。
+        /// </value>
+        public CompassRangEX CRDegree;
+
+        /// <summary>
+        /// 将内部的 <see cref="Obj"/> 安全转换为指定的泛型类型，支持类型自动推导。
+        /// </summary>
+        /// <typeparam name="T">期望转换的目标输出类型。</typeparam>
+        /// <param name="result">输出参数。如果转换成功，则返回转型后的 <typeparamref name="T"/> 类型实例；如果转换失败，则返回该类型的默认值（<see langword="default"/>）。</param>
+        /// <returns>
+        /// 如果 <see cref="Obj"/> 不为 <see langword="null"/> 且其类型兼容于 <typeparamref name="T"/>，则返回 <see langword="true"/>；否则返回 <see langword="false"/>。
+        /// </returns>
+        /// <remarks>
+        /// 此方法内部使用 <see cref="Type.IsAssignableFrom(Type)"/> 进行安全的类型继承链检查。
+        /// 采用 <see langword="out"/> 关键字设计，使得外部调用时可以通过 <c>out var</c> 语法省略泛型参数的具体书写，提高代码可读性。
+        /// </remarks>
+        /// <example>
+        /// <code>
+        /// CompassObjType item = GetCompassData();
+        /// 
+        /// // 利用 out var 特性，外部无需显式书写 &lt;GuoSubClass&gt;
+        /// if (item.ToObjet(out GuoSubClass guoObj))
+        /// {
+        ///     // 转换成功，直接使用强类型变量 guoObj
+        ///     Console.WriteLine($"成功获取到郭氏对象，名称为: {guoObj.Name}");
+        /// }
+        /// else
+        /// {
+        ///     Console.WriteLine("类型不匹配或对象为空。");
+        /// }
+        /// </code>
+        /// </example>
+        public bool ToObjet<T>(out T result)
+        {
+            // 检查实例是否不为空，且外部的目标类型 T 是否可以由当前的 ObjType 赋值（支持父类/接口兼容）
+            if (this.Obj != null && typeof(T).IsAssignableFrom(this.ObjType))
+            {
+                result = (T)this.Obj;
+                return true;
+            }
+
+            // 类型不匹配或对象为空时，清空返回参数并返回失败标记
+            result = default;
+            return false;
+        }
+    }
+
+
+    /// <summary>
+    /// 是否为真实年(龄),0为立春后，1立春前
+    /// </summary>
     public enum FactYearEnum : uint
     {
 

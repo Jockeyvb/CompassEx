@@ -21,7 +21,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FactYearEnum
     path: CompassEx/Comm/Defined.cs
-    startLine: 18
+    startLine: 114
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -50,7 +50,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SpringAfter
     path: CompassEx/Comm/Defined.cs
-    startLine: 24
+    startLine: 120
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -78,7 +78,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SpringBefore
     path: CompassEx/Comm/Defined.cs
-    startLine: 28
+    startLine: 124
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm

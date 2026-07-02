@@ -56,9 +56,13 @@
 
 </PropertyGroup>
 <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android|AnyCPU'">
-  <Optimize>True</Optimize>
-  <RunAOTCompilation>False</RunAOTCompilation>
+  <!-- 1. 关闭代码优化，保留最原始的代码结构用于挂载断点 -->
+  <Optimize>False</Optimize>
+  <!-- 2. 强行注入 Android 专属的调试符号标记 -->
+  <DebugSymbols>True</DebugSymbols>
+  <AndroidIncludeDebugSymbols>True</AndroidIncludeDebugSymbols>
   <DebugType>portable</DebugType>
+  <RunAOTCompilation>False</RunAOTCompilation>
 </PropertyGroup>
 <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-windows10.0.19041.0|AnyCPU'">
   <DebugSymbols>true</DebugSymbols>
@@ -92,6 +96,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiFont Remove="Resources\Fonts\SIMKAI.TTF" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Fonts\NotoSansSymbols-Regular.ttf" />
 	</ItemGroup>
 
@@ -108,6 +116,7 @@
 		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="4.148.0" />
 		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.10" />
 		<PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.0.6" />
+		<PackageReference Include="System.Reflection" Version="4.3.0" />
 	</ItemGroup>
 
 	<ItemGroup>

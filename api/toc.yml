@@ -34,6 +34,9 @@ items:
   - uid: CompassEx.Comm.Comm
     name: Comm
     type: Class
+  - uid: CompassEx.Comm.CompassObjType
+    name: CompassObjType
+    type: Struct
   - uid: CompassEx.Comm.CompassRangEX
     name: CompassRangEX
     type: Class

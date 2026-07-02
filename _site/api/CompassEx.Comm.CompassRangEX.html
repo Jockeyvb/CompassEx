@@ -8,7 +8,7 @@
       <meta name="title" content="CompassRangEX 类
  | CompassEx API文档 ">
       
-      
+      <meta name="description" content="表示一个罗盘度数的角度范围。">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,7 +88,7 @@
 
   <h1 id="CompassEx_Comm_CompassRangEX" data-uid="CompassEx.Comm.CompassRangEX" class="text-break">
 CompassRangEX 类
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -96,7 +96,8 @@ CompassRangEX 类
   <dl><dt>程序集</dt><dd>CompassEx.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>表示一个罗盘度数的角度范围。</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -152,6 +153,11 @@ CompassRangEX 类
 
 
 
+  <h2 id="CompassEx_Comm_CompassRangEX_remarks">备注</h2>
+  <div class="markdown level0 remarks"><p>该类用于处理 <span class="math">\(0^\circ\)</span> 到 <span class="math">\(360^\circ\)</span> 之间的角度区间判定。
+它支持正常的递增区间（例如 <span class="math">\(10^\circ \sim 50^\circ\)</span>），
+同时也原生支持跨越 <span class="math">\(360^\circ\)</span> 边界的循环区间（例如 <span class="math">\(350^\circ \sim 20^\circ\)</span>）。</p>
+</div>
 
 
   <h2 class="section" id="constructors">构造函数
@@ -162,10 +168,10 @@ CompassRangEX 类
 
   <h3 id="CompassEx_Comm_CompassRangEX__ctor_System_Double_System_Double_" data-uid="CompassEx.Comm.CompassRangEX.#ctor(System.Double,System.Double)">
   CompassRangEX(double, double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>初始化 CompassRangEX 类的新实例，指定起始和结束角度。</p>
+  <div class="markdown level1 summary"><p>初始化 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 类的新实例。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -176,10 +182,10 @@ CompassRangEX 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
-    <dd><p>范围的起始角度。</p>
+    <dd><p>区间的起始角度（度）。</p>
 </dd>
     <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
-    <dd><p>范围的结束角度。</p>
+    <dd><p>区间的结束角度（度）。</p>
 </dd>
   </dl>
 
@@ -188,6 +194,13 @@ CompassRangEX 类
 
 
 
+
+  <h4 class="section" id="CompassEx_Comm_CompassRangEX__ctor_System_Double_System_Double__examples">示例</h4>
+  <pre><code class="lang-csharp">// 创建一个普通的角度范围 (10度 到 50度)
+var normalRange = new CompassRangEX(10, 50);
+
+// 创建一个跨越360度的角度范围 (350度 到 20度)
+var crossRange = new CompassRangEX(350, 20);</code></pre>
 
 
 
@@ -202,10 +215,10 @@ CompassRangEX 类
 
   <h3 id="CompassEx_Comm_CompassRangEX_End" data-uid="CompassEx.Comm.CompassRangEX.End">
   End
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>范围的结束值</p>
+  <div class="markdown level1 summary"><p>获取或设置范围的结束角度（度）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -220,7 +233,8 @@ CompassRangEX 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
-    <dd></dd>
+    <dd><p>区间的结束边界值，通常在 <span class="math">\([0, 360)\)</span> 范围内。</p>
+</dd>
   </dl>
 
 
@@ -234,10 +248,10 @@ CompassRangEX 类
 
   <h3 id="CompassEx_Comm_CompassRangEX_Start" data-uid="CompassEx.Comm.CompassRangEX.Start">
   Start
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>范围的开始值</p>
+  <div class="markdown level1 summary"><p>获取或设置范围的起始角度（度）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -252,7 +266,8 @@ CompassRangEX 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
-    <dd></dd>
+    <dd><p>区间的起始边界值，通常在 <span class="math">\([0, 360)\)</span> 范围内。</p>
+</dd>
   </dl>
 
 
@@ -270,10 +285,10 @@ CompassRangEX 类
 
   <h3 id="CompassEx_Comm_CompassRangEX_AngleRangeValue" data-uid="CompassEx.Comm.CompassRangEX.AngleRangeValue">
   AngleRangeValue()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L123"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>在圆中取得距离值</p>
+  <div class="markdown level1 summary"><p>计算当前实例中 <a class="xref" href="CompassEx.Comm.CompassRangEX.html#CompassEx_Comm_CompassRangEX_Start">Start</a> 与 <a class="xref" href="CompassEx.Comm.CompassRangEX.html#CompassEx_Comm_CompassRangEX_End">End</a> 之间的最短弧度差值（夹角）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -285,7 +300,8 @@ CompassRangEX 类
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
-    <dd></dd>
+    <dd><p>当前实例范围的绝对最短夹角大小，其值永远在 <span class="math">\([0, 180]\)</span> 之间。</p>
+</dd>
   </dl>
 
 
@@ -296,16 +312,22 @@ CompassRangEX 类
 
 
 
+  <dl class="typelist seealso">
+    <dt>请参阅</dt>
+    <dd>
+    <div><a class="xref" href="CompassEx.Comm.CompassRangEX.html#CompassEx_Comm_CompassRangEX_AngleRangeValue_System_Double_System_Double_">AngleRangeValue(double, double)</a></div>
+    </dd>
+  </dl>
 
 
   <a id="CompassEx_Comm_CompassRangEX_AngleRangeValue_" data-uid="CompassEx.Comm.CompassRangEX.AngleRangeValue*"></a>
 
   <h3 id="CompassEx_Comm_CompassRangEX_AngleRangeValue_System_Double_System_Double_" data-uid="CompassEx.Comm.CompassRangEX.AngleRangeValue(System.Double,System.Double)">
   AngleRangeValue(double, double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L106"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>在圆中取得距离值</p>
+  <div class="markdown level1 summary"><p>计算圆周上两个角度之间的最短弧度差值（夹角）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -316,14 +338,53 @@ CompassRangEX 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>start</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
-    <dd></dd>
+    <dd><p>起始角度（度）。</p>
+</dd>
     <dt><code>end</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
-    <dd></dd>
+    <dd><p>结束角度（度）。</p>
+</dd>
   </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>两个角度之间的最短距离，其值永远在 <span class="math">\([0, 180]\)</span> 之间。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="CompassEx_Comm_CompassRangEX_AngleRangeValue_System_Double_System_Double__examples">示例</h4>
+  <pre><code class="lang-csharp">// 计算 10 度到 350 度的最短距离，结果为 20
+double distance = CompassRangEX.AngleRangeValue(10, 350);</code></pre>
+
+
+
+
+
+
+  <a id="CompassEx_Comm_CompassRangEX_GetCompassObjByDegree_" data-uid="CompassEx.Comm.CompassRangEX.GetCompassObjByDegree*"></a>
+
+  <h3 id="CompassEx_Comm_CompassRangEX_GetCompassObjByDegree" data-uid="CompassEx.Comm.CompassRangEX.GetCompassObjByDegree">
+  GetCompassObjByDegree()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L134"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>要卖当前的罗盘范围内，获取所有相关的罗盘对象类型（如八卦、24山、64卦等）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;CompassObjType&gt; GetCompassObjByDegree()</code></pre>
+  </div>
+
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="CompassEx.Comm.CompassObjType.html">CompassObjType</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -341,10 +402,10 @@ CompassRangEX 类
 
   <h3 id="CompassEx_Comm_CompassRangEX_IsInRange_System_Double_" data-uid="CompassEx.Comm.CompassRangEX.IsInRange(System.Double)">
   IsInRange(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L77"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>是否在范围内，已考虑了跨越界限的情况（例如360度）</p>
+  <div class="markdown level1 summary"><p>确定指定的角度是否包含在当前的罗盘范围内。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -355,13 +416,15 @@ CompassRangEX 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>dValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
-    <dd></dd>
+    <dd><p>需要判定的目标角度（度）。支持负数或大于360度的值，内部会自动执行标准化。</p>
+</dd>
   </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>如果 <code class="paramref">dValue</code> 在当前范围内，则返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>。</p>
+</dd>
   </dl>
 
 
@@ -370,6 +433,11 @@ CompassRangEX 类
 
 
 
+  <h4 class="section" id="CompassEx_Comm_CompassRangEX_IsInRange_System_Double__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>判定规则采用前闭后开区间 <span class="math">\([Start, End)\)</span>。</p>
+<p>如果 <a class="xref" href="CompassEx.Comm.CompassRangEX.html#CompassEx_Comm_CompassRangEX_End">End</a> &gt; <a class="xref" href="CompassEx.Comm.CompassRangEX.html#CompassEx_Comm_CompassRangEX_Start">Start</a>：正常范围判定，需同时满足大于等于 Start 且小于 End。</p>
+<p>如果 <a class="xref" href="CompassEx.Comm.CompassRangEX.html#CompassEx_Comm_CompassRangEX_End">End</a> &lt;= <a class="xref" href="CompassEx.Comm.CompassRangEX.html#CompassEx_Comm_CompassRangEX_Start">Start</a>：说明范围跨越了 $360^\circ$ 界限，满足大于等于 Start 或小于 End 即可。</p>
+</div>
 
 
 
@@ -378,7 +446,7 @@ CompassRangEX 类
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L15" class="edit-link">编辑本文</a>
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L27" class="edit-link">编辑本文</a>
         </div>
 
 

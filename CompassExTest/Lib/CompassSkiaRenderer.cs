@@ -3,7 +3,6 @@ using CompassEx.Comm;
 using CompassEx.Guo;
 using SkiaSharp;
 using System.Diagnostics;
-
 namespace CompassExTest.Pages;
 
 /// <summary>
@@ -19,12 +18,14 @@ public class CompassSkiaRenderer
     private float BaseRadius = 0;
     private const float BaseBorderWidth = 2;
 
-    private readonly SKTypeface TF = SKTypeface.FromFamilyName(
-        "Microsoft YaHei",
-        SKFontStyleWeight.Normal,
-        SKFontStyleWidth.Normal,
-        SKFontStyleSlant.Upright);
+    //private readonly SKTypeface TF = SKTypeface.FromFamilyName(
+    //    "Microsoft YaHei",
+    //    SKFontStyleWeight.Normal,
+    //    SKFontStyleWidth.Normal,
+    //    SKFontStyleSlant.Upright);
 
+
+    private static SKTypeface TF;
 
     private SKTypeface TFSymbol;
 
@@ -52,6 +53,8 @@ public class CompassSkiaRenderer
     public List<(string Name, SKPath Sector, CompassRangEX Range)> GuaSectorCache { get; private set; } = new();
 
 
+    private SKTypeface _chineseTypeface;
+
     public CompassSkiaRenderer()
     {
         // 💡 因为复制过去后它会保持原有的文件夹层级，所以需要加上文件夹路径
@@ -64,6 +67,17 @@ public class CompassSkiaRenderer
             // 🎨 SkiaSharp 直接从内存流中安全反灌并装配字体
             TFSymbol = SKTypeface.FromStream(fontStream);
         }
+
+
+        using Stream fs = FileSystem.OpenAppPackageFileAsync("SIMHEI.TTF").GetAwaiter().GetResult();
+
+        if (fs != null)
+        {
+            // 🎨 SkiaSharp 直接从内存流中安全反灌并装配字体
+            TF = SKTypeface.FromStream(fs);
+        }
+
+
 
 
 
@@ -165,7 +179,7 @@ public class CompassSkiaRenderer
             using var blob = SKTextBlob.Create(txt, font);
             SKRect bounds = blob.Bounds;
             float tx = cx - bounds.Left - bounds.Width / 2 + 2.5f;
-            float ty = cy - r - (bounds.Top - bounds.Height);
+            float ty = cy - r - (bounds.Top - bounds.Height) + 5f;
 
             canvas.DrawText(blob, tx, ty, txtPaint);
 
@@ -183,8 +197,10 @@ public class CompassSkiaRenderer
             IsAntialias = true
         };
         using var dirFont = new SKFont(TF, 18f) { Embolden = true };
+        float minSize = Math.Min(CanvasSize.Width, CanvasSize.Height);
 
-        float textOffset = 18 * 2.5f;
+        float RoundH = minSize / 15f;
+        float textOffset = RoundH * 1.2f;
         float dirR = r - textOffset;
 
         DrawSingleDirText(canvas, cx, cy, dirR, 0, "北", dirTextPaint, dirFont);
@@ -224,8 +240,12 @@ public class CompassSkiaRenderer
             IsStroke = true,
             IsAntialias = true
         };
-        float LastR = 40;//最后半径
-        float ysplace = 50;//外圈相距
+        float minSize = Math.Min(CanvasSize.Width, CanvasSize.Height);
+
+        float RoundH = minSize / 15f;
+
+        float LastR = RoundH;//最后半径
+        float ysplace = RoundH;//外圈相距
 
         using var PathPaint = new SKPaint
         {
@@ -420,7 +440,7 @@ public class CompassSkiaRenderer
         LastR = LastR + ysplace;
 
         //===============================画天盘六十四卦(先天)===========================
-        foreach (var dc in CompassEx.CompassEx.CBeforGuos)
+        foreach (var dc in CompassEx.CompassEx.CBeforeGuos)
         {
             var CR = dc.Key;
             var G = dc.Value;
@@ -473,9 +493,9 @@ public class CompassSkiaRenderer
 
         LastR = LastR + ysplace;
 
-        ysplace = 20;
+        ysplace = RoundH / 2f;
         //===============================画卦气===========================
-        foreach (var dc in CompassEx.CompassEx.CBeforGuos)
+        foreach (var dc in CompassEx.CompassEx.CBeforeGuos)
         {
             var CR = dc.Key;
             var G = dc.Value;

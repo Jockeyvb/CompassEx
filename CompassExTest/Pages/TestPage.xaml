@@ -1,45 +1,66 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CompassExTest.Pages"
-           xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
              x:Class="CompassExTest.Pages.TestPage"
              Title="原生代码绘制罗盘">
 
-    <VerticalStackLayout Spacing="30" HorizontalOptions="Center" VerticalOptions="Center">
+    <!-- 全屏三行布局，强制中间区域吃满除输入框、提示语之外的所有剩余空间 -->
+    <ScrollView VerticalOptions="Fill" HorizontalOptions="Fill" x:Name="SV">
+    <Grid RowDefinitions="Auto, *, Auto" Padding="20" HorizontalOptions="Fill" VerticalOptions="Fill">
 
-        <Label Text="{Binding HeadingText}" 
-               FontSize="26" 
-               FontAttributes="Bold"
-               TextColor="DarkSlateGray"
-               HorizontalOptions="Center"/>
+        <!-- 1. 顶部区域：输入框等 -->
+        <VerticalStackLayout Grid.Row="0" Spacing="10" Margin="0,0,0,15">
+            <Label Text="{Binding HeadingText}" 
+                   FontSize="26" 
+                   FontAttributes="Bold"
+                   TextColor="DarkSlateGray"
+                   HorizontalOptions="Center"/>
+            <Label Text="" x:Name="lblGetCompassObjByDegree" HorizontalOptions="Center"/>
+            <Entry Placeholder="输入度数" Text="180" TextChanged="Entry_TextChanged" x:Name="tDegree" HorizontalOptions="Center" WidthRequest="300" />
+        </VerticalStackLayout>
 
-        <Entry Placeholder="输入度数" Text="180" TextChanged="Entry_TextChanged" x:Name="tDegree" />
-      
-        <Border StrokeShape="RoundRectangle 20" 
+        <!-- 2. 中间核心：全自动最大化罗盘区域 -->
+        <!-- 给 Border 起个名字叫做 ContainerBorder，让里面的 Grid 有参照物 -->
+        <Border Grid.Row="1"
+                x:Name="ContainerBorder"
+                StrokeShape="RoundRectangle 20" 
                 Stroke="LightGray" 
                 StrokeThickness="1"
                 Padding="10"
                 BackgroundColor="White"
-                HorizontalOptions="Center">
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill">
 
+            <!-- 
+                核心修改：
+                将 Width 和 Height 同时绑定外层 ContainerBorder 的“实际宽度（Width）”。
+                1. 这样打破了自我绑定的死循环，MAUI 布局引擎能明确计算出尺寸。
+                2. 无论是在手机还是电脑上，宽度有多宽，这个 Grid 就会变成多大的正方形，完美显形！
+            -->
+            <Grid WidthRequest="{Binding Source={x:Reference ContainerBorder}, Path=Width}"
+                  HeightRequest="{Binding Source={x:Reference ContainerBorder}, Path=Width}"
+                  HorizontalOptions="Center" 
+                  VerticalOptions="Center">
 
-            <skia:SKCanvasView x:Name="SkiaCompassView" PaintSurface="OnPaintSurface" EnableTouchEvents="True" Background="Transparent"  Touch="OnCanvasTouch"  WidthRequest="800" HeightRequest="800"   />
-
-            <!--<GraphicsView x:Name="CompassCanvas"
-                          Drawable="{Binding CompassPainter}"
-                          WidthRequest="900" 
-                          HeightRequest="640">
-                <GraphicsView.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnCompassTapped" />
-                </GraphicsView.GestureRecognizers>
-            </GraphicsView>-->
-
+                <skia:SKCanvasView x:Name="SkiaCompassView" 
+                                   PaintSurface="OnPaintSurface" 
+                                   EnableTouchEvents="True" 
+                                   Background="Transparent"  
+                                   Touch="OnCanvasTouch" 
+                                   HorizontalOptions="Fill"    
+                                   VerticalOptions="Fill" />
+            </Grid>
         </Border>
 
-        <Label Text="💡 提示：用鼠标在圆圈内任意位置点击，盘面会自动旋转对齐" 
+        <!-- 3. 底部区域 -->
+        <Label Grid.Row="2" 
+               Text="💡 提示：用鼠标在圆圈内任意位置点击，盘面会自动旋转对齐" 
                FontSize="12" 
                TextColor="Gray" 
+               Margin="0,15,0,0"
                HorizontalOptions="Center"/>
 
-    </VerticalStackLayout>
+    </Grid>
+    </ScrollView>
 </ContentPage>

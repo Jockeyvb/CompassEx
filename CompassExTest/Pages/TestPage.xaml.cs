@@ -1,3 +1,4 @@
+using CompassEx.Comm;
 using CompassEx.Guo;
 using SkiaSharp;
 using SkiaSharp.Views.Maui;
@@ -61,6 +62,9 @@ public partial class TestPage : ContentPage, INotifyPropertyChanged
         SKCanvas canvas = e.Surface.Canvas;
         SKSize size = e.Info.Size;
 
+
+
+
         _renderer.Render(canvas, size);
     }
 
@@ -97,6 +101,18 @@ public partial class TestPage : ContentPage, INotifyPropertyChanged
                     info += $" 选中:{hitGua}";
                 }
                 HeadingText = info;
+
+                CompassRangEX cr = new CompassRangEX(panelDegree, panelDegree);
+                List<CompassObjType> ls = cr.GetCompassObjByDegree();
+                string st = "";
+                ls.ForEach(co =>
+                {
+                    st += co.ObjTypeCNName + ",名称：" + co.Name + "，角度范围：" + co.CRDegree.Start.ToString("F1") + "-" + co.CRDegree.End.ToString("F1") + "°\n";
+                });
+                lblGetCompassObjByDegree.Text = st;
+
+
+
             });
         }
         catch (Exception ex)
@@ -147,7 +163,10 @@ public partial class TestPage : ContentPage, INotifyPropertyChanged
     {
         var mauiWindow = this.Window ?? Application.Current?.MainPage?.Window;
         if (mauiWindow == null) return;
+
 #if WINDOWS
+     SV.WidthRequest = 1000;
+  
     // 1. 获取 MAUI 的原生 Windows 窗口
     var handler = mauiWindow.Handler as Microsoft.Maui.Handlers.WindowHandler;
     if (handler?.PlatformView is Microsoft.UI.Xaml.Window nativeWindow)

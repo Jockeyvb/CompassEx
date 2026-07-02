@@ -28,6 +28,7 @@
   </PropertyGroup>
 <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
   <DebugSymbols>true</DebugSymbols>
+  <AndroidIncludeDebugSymbols>true</AndroidIncludeDebugSymbols>
   <DebugType>full</DebugType>
   <Nullable>enable</Nullable>
 </PropertyGroup>

@@ -222,6 +222,58 @@ references:
   fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
   nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
   nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+- uid: CompassEx.Comm.CompassObjType
+  name: CompassObjType
+  href: api/CompassEx.Comm.CompassObjType.html
+  commentId: T:CompassEx.Comm.CompassObjType
+  fullName: CompassEx.Comm.CompassObjType
+  nameWithType: CompassObjType
+- uid: CompassEx.Comm.CompassObjType.CRDegree
+  name: CRDegree
+  href: api/CompassEx.Comm.CompassObjType.html#CompassEx_Comm_CompassObjType_CRDegree
+  commentId: F:CompassEx.Comm.CompassObjType.CRDegree
+  fullName: CompassEx.Comm.CompassObjType.CRDegree
+  nameWithType: CompassObjType.CRDegree
+- uid: CompassEx.Comm.CompassObjType.Name
+  name: Name
+  href: api/CompassEx.Comm.CompassObjType.html#CompassEx_Comm_CompassObjType_Name
+  commentId: F:CompassEx.Comm.CompassObjType.Name
+  fullName: CompassEx.Comm.CompassObjType.Name
+  nameWithType: CompassObjType.Name
+- uid: CompassEx.Comm.CompassObjType.Obj
+  name: Obj
+  href: api/CompassEx.Comm.CompassObjType.html#CompassEx_Comm_CompassObjType_Obj
+  commentId: F:CompassEx.Comm.CompassObjType.Obj
+  fullName: CompassEx.Comm.CompassObjType.Obj
+  nameWithType: CompassObjType.Obj
+- uid: CompassEx.Comm.CompassObjType.ObjType
+  name: ObjType
+  href: api/CompassEx.Comm.CompassObjType.html#CompassEx_Comm_CompassObjType_ObjType
+  commentId: F:CompassEx.Comm.CompassObjType.ObjType
+  fullName: CompassEx.Comm.CompassObjType.ObjType
+  nameWithType: CompassObjType.ObjType
+- uid: CompassEx.Comm.CompassObjType.ObjTypeCNName
+  name: ObjTypeCNName
+  href: api/CompassEx.Comm.CompassObjType.html#CompassEx_Comm_CompassObjType_ObjTypeCNName
+  commentId: F:CompassEx.Comm.CompassObjType.ObjTypeCNName
+  fullName: CompassEx.Comm.CompassObjType.ObjTypeCNName
+  nameWithType: CompassObjType.ObjTypeCNName
+- uid: CompassEx.Comm.CompassObjType.ToObjet*
+  name: ToObjet
+  href: api/CompassEx.Comm.CompassObjType.html#CompassEx_Comm_CompassObjType_ToObjet_
+  commentId: Overload:CompassEx.Comm.CompassObjType.ToObjet
+  isSpec: "True"
+  fullName: CompassEx.Comm.CompassObjType.ToObjet
+  nameWithType: CompassObjType.ToObjet
+- uid: CompassEx.Comm.CompassObjType.ToObjet``1(``0@)
+  name: ToObjet<T>(out T)
+  href: api/CompassEx.Comm.CompassObjType.html#CompassEx_Comm_CompassObjType_ToObjet__1___0__
+  commentId: M:CompassEx.Comm.CompassObjType.ToObjet``1(``0@)
+  name.vb: ToObjet(Of T)(T)
+  fullName: CompassEx.Comm.CompassObjType.ToObjet<T>(out T)
+  fullName.vb: CompassEx.Comm.CompassObjType.ToObjet(Of T)(T)
+  nameWithType: CompassObjType.ToObjet<T>(out T)
+  nameWithType.vb: CompassObjType.ToObjet(Of T)(T)
 - uid: CompassEx.Comm.CompassRangEX
   name: CompassRangEX
   href: api/CompassEx.Comm.CompassRangEX.html
@@ -282,6 +334,19 @@ references:
   isSpec: "True"
   fullName: CompassEx.Comm.CompassRangEX.End
   nameWithType: CompassRangEX.End
+- uid: CompassEx.Comm.CompassRangEX.GetCompassObjByDegree
+  name: GetCompassObjByDegree()
+  href: api/CompassEx.Comm.CompassRangEX.html#CompassEx_Comm_CompassRangEX_GetCompassObjByDegree
+  commentId: M:CompassEx.Comm.CompassRangEX.GetCompassObjByDegree
+  fullName: CompassEx.Comm.CompassRangEX.GetCompassObjByDegree()
+  nameWithType: CompassRangEX.GetCompassObjByDegree()
+- uid: CompassEx.Comm.CompassRangEX.GetCompassObjByDegree*
+  name: GetCompassObjByDegree
+  href: api/CompassEx.Comm.CompassRangEX.html#CompassEx_Comm_CompassRangEX_GetCompassObjByDegree_
+  commentId: Overload:CompassEx.Comm.CompassRangEX.GetCompassObjByDegree
+  isSpec: "True"
+  fullName: CompassEx.Comm.CompassRangEX.GetCompassObjByDegree
+  nameWithType: CompassRangEX.GetCompassObjByDegree
 - uid: CompassEx.Comm.CompassRangEX.IsInRange(System.Double)
   name: IsInRange(double)
   href: api/CompassEx.Comm.CompassRangEX.html#CompassEx_Comm_CompassRangEX_IsInRange_System_Double_
@@ -1145,12 +1210,12 @@ references:
   commentId: F:CompassEx.CompassEx.CAfterGuos
   fullName: CompassEx.CompassEx.CAfterGuos
   nameWithType: CompassEx.CAfterGuos
-- uid: CompassEx.CompassEx.CBeforGuos
-  name: CBeforGuos
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_CBeforGuos
-  commentId: F:CompassEx.CompassEx.CBeforGuos
-  fullName: CompassEx.CompassEx.CBeforGuos
-  nameWithType: CompassEx.CBeforGuos
+- uid: CompassEx.CompassEx.CBeforeGuos
+  name: CBeforeGuos
+  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_CBeforeGuos
+  commentId: F:CompassEx.CompassEx.CBeforeGuos
+  fullName: CompassEx.CompassEx.CBeforeGuos
+  nameWithType: CompassEx.CBeforeGuos
 - uid: CompassEx.CompassEx.CHillDegree
   name: CHillDegree
   href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_CHillDegree
@@ -1287,35 +1352,51 @@ references:
   isSpec: "True"
   fullName: CompassEx.CompassEx.GetBeforGuoSubDegree
   nameWithType: CompassEx.GetBeforGuoSubDegree
-- uid: CompassEx.CompassEx.GetCBeforGuo
-  name: GetCBeforGuo()
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforGuo
-  commentId: M:CompassEx.CompassEx.GetCBeforGuo
-  fullName: CompassEx.CompassEx.GetCBeforGuo()
-  nameWithType: CompassEx.GetCBeforGuo()
-- uid: CompassEx.CompassEx.GetCBeforGuo*
-  name: GetCBeforGuo
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforGuo_
-  commentId: Overload:CompassEx.CompassEx.GetCBeforGuo
+- uid: CompassEx.CompassEx.GetCAfterGuoDegree(System.String)
+  name: GetCAfterGuoDegree(string)
+  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GetCAfterGuoDegree_System_String_
+  commentId: M:CompassEx.CompassEx.GetCAfterGuoDegree(System.String)
+  name.vb: GetCAfterGuoDegree(String)
+  fullName: CompassEx.CompassEx.GetCAfterGuoDegree(string)
+  fullName.vb: CompassEx.CompassEx.GetCAfterGuoDegree(String)
+  nameWithType: CompassEx.GetCAfterGuoDegree(string)
+  nameWithType.vb: CompassEx.GetCAfterGuoDegree(String)
+- uid: CompassEx.CompassEx.GetCAfterGuoDegree*
+  name: GetCAfterGuoDegree
+  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GetCAfterGuoDegree_
+  commentId: Overload:CompassEx.CompassEx.GetCAfterGuoDegree
   isSpec: "True"
-  fullName: CompassEx.CompassEx.GetCBeforGuo
-  nameWithType: CompassEx.GetCBeforGuo
-- uid: CompassEx.CompassEx.GetCBeforGuoDegree(System.String)
-  name: GetCBeforGuoDegree(string)
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforGuoDegree_System_String_
-  commentId: M:CompassEx.CompassEx.GetCBeforGuoDegree(System.String)
-  name.vb: GetCBeforGuoDegree(String)
-  fullName: CompassEx.CompassEx.GetCBeforGuoDegree(string)
-  fullName.vb: CompassEx.CompassEx.GetCBeforGuoDegree(String)
-  nameWithType: CompassEx.GetCBeforGuoDegree(string)
-  nameWithType.vb: CompassEx.GetCBeforGuoDegree(String)
-- uid: CompassEx.CompassEx.GetCBeforGuoDegree*
-  name: GetCBeforGuoDegree
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforGuoDegree_
-  commentId: Overload:CompassEx.CompassEx.GetCBeforGuoDegree
+  fullName: CompassEx.CompassEx.GetCAfterGuoDegree
+  nameWithType: CompassEx.GetCAfterGuoDegree
+- uid: CompassEx.CompassEx.GetCBeforeGuo
+  name: GetCBeforeGuo()
+  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforeGuo
+  commentId: M:CompassEx.CompassEx.GetCBeforeGuo
+  fullName: CompassEx.CompassEx.GetCBeforeGuo()
+  nameWithType: CompassEx.GetCBeforeGuo()
+- uid: CompassEx.CompassEx.GetCBeforeGuo*
+  name: GetCBeforeGuo
+  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforeGuo_
+  commentId: Overload:CompassEx.CompassEx.GetCBeforeGuo
   isSpec: "True"
-  fullName: CompassEx.CompassEx.GetCBeforGuoDegree
-  nameWithType: CompassEx.GetCBeforGuoDegree
+  fullName: CompassEx.CompassEx.GetCBeforeGuo
+  nameWithType: CompassEx.GetCBeforeGuo
+- uid: CompassEx.CompassEx.GetCBeforeGuoDegree(System.String)
+  name: GetCBeforeGuoDegree(string)
+  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforeGuoDegree_System_String_
+  commentId: M:CompassEx.CompassEx.GetCBeforeGuoDegree(System.String)
+  name.vb: GetCBeforeGuoDegree(String)
+  fullName: CompassEx.CompassEx.GetCBeforeGuoDegree(string)
+  fullName.vb: CompassEx.CompassEx.GetCBeforeGuoDegree(String)
+  nameWithType: CompassEx.GetCBeforeGuoDegree(string)
+  nameWithType.vb: CompassEx.GetCBeforeGuoDegree(String)
+- uid: CompassEx.CompassEx.GetCBeforeGuoDegree*
+  name: GetCBeforeGuoDegree
+  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforeGuoDegree_
+  commentId: Overload:CompassEx.CompassEx.GetCBeforeGuoDegree
+  isSpec: "True"
+  fullName: CompassEx.CompassEx.GetCBeforeGuoDegree
+  nameWithType: CompassEx.GetCBeforeGuoDegree
 - uid: CompassEx.CompassEx.GuoSubDegree
   name: GuoSubDegree
   href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GuoSubDegree
@@ -1335,19 +1416,19 @@ references:
   isSpec: "True"
   fullName: CompassEx.CompassEx.LoadAllCAfterGuos
   nameWithType: CompassEx.LoadAllCAfterGuos
-- uid: CompassEx.CompassEx.LoadAllCBeforGuos
-  name: LoadAllCBeforGuos()
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforGuos
-  commentId: M:CompassEx.CompassEx.LoadAllCBeforGuos
-  fullName: CompassEx.CompassEx.LoadAllCBeforGuos()
-  nameWithType: CompassEx.LoadAllCBeforGuos()
-- uid: CompassEx.CompassEx.LoadAllCBeforGuos*
-  name: LoadAllCBeforGuos
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforGuos_
-  commentId: Overload:CompassEx.CompassEx.LoadAllCBeforGuos
+- uid: CompassEx.CompassEx.LoadAllCBeforeGuos
+  name: LoadAllCBeforeGuos()
+  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforeGuos
+  commentId: M:CompassEx.CompassEx.LoadAllCBeforeGuos
+  fullName: CompassEx.CompassEx.LoadAllCBeforeGuos()
+  nameWithType: CompassEx.LoadAllCBeforeGuos()
+- uid: CompassEx.CompassEx.LoadAllCBeforeGuos*
+  name: LoadAllCBeforeGuos
+  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforeGuos_
+  commentId: Overload:CompassEx.CompassEx.LoadAllCBeforeGuos
   isSpec: "True"
-  fullName: CompassEx.CompassEx.LoadAllCBeforGuos
-  nameWithType: CompassEx.LoadAllCBeforGuos
+  fullName: CompassEx.CompassEx.LoadAllCBeforeGuos
+  nameWithType: CompassEx.LoadAllCBeforeGuos
 - uid: CompassEx.Guo
   name: CompassEx.Guo
   href: api/CompassEx.Guo.html
@@ -1507,19 +1588,32 @@ references:
   fullName.vb: CompassEx.Guo.GuoClass.New
   nameWithType: GuoClass.GuoClass
   nameWithType.vb: GuoClass.New
-- uid: CompassEx.Guo.GuoClass.CBeforRangeDegree
-  name: CBeforRangeDegree
-  href: api/CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_CBeforRangeDegree
-  commentId: P:CompassEx.Guo.GuoClass.CBeforRangeDegree
-  fullName: CompassEx.Guo.GuoClass.CBeforRangeDegree
-  nameWithType: GuoClass.CBeforRangeDegree
-- uid: CompassEx.Guo.GuoClass.CBeforRangeDegree*
-  name: CBeforRangeDegree
-  href: api/CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_CBeforRangeDegree_
-  commentId: Overload:CompassEx.Guo.GuoClass.CBeforRangeDegree
+- uid: CompassEx.Guo.GuoClass.CAfterRangeDegree
+  name: CAfterRangeDegree
+  href: api/CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_CAfterRangeDegree
+  commentId: P:CompassEx.Guo.GuoClass.CAfterRangeDegree
+  fullName: CompassEx.Guo.GuoClass.CAfterRangeDegree
+  nameWithType: GuoClass.CAfterRangeDegree
+- uid: CompassEx.Guo.GuoClass.CAfterRangeDegree*
+  name: CAfterRangeDegree
+  href: api/CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_CAfterRangeDegree_
+  commentId: Overload:CompassEx.Guo.GuoClass.CAfterRangeDegree
   isSpec: "True"
-  fullName: CompassEx.Guo.GuoClass.CBeforRangeDegree
-  nameWithType: GuoClass.CBeforRangeDegree
+  fullName: CompassEx.Guo.GuoClass.CAfterRangeDegree
+  nameWithType: GuoClass.CAfterRangeDegree
+- uid: CompassEx.Guo.GuoClass.CBeforeRangeDegree
+  name: CBeforeRangeDegree
+  href: api/CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_CBeforeRangeDegree
+  commentId: P:CompassEx.Guo.GuoClass.CBeforeRangeDegree
+  fullName: CompassEx.Guo.GuoClass.CBeforeRangeDegree
+  nameWithType: GuoClass.CBeforeRangeDegree
+- uid: CompassEx.Guo.GuoClass.CBeforeRangeDegree*
+  name: CBeforeRangeDegree
+  href: api/CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_CBeforeRangeDegree_
+  commentId: Overload:CompassEx.Guo.GuoClass.CBeforeRangeDegree
+  isSpec: "True"
+  fullName: CompassEx.Guo.GuoClass.CBeforeRangeDegree
+  nameWithType: GuoClass.CBeforeRangeDegree
 - uid: CompassEx.Guo.GuoClass.ChangedYao
   name: ChangedYao
   href: api/CompassEx.Guo.GuoClass.html#CompassEx_Guo_GuoClass_ChangedYao

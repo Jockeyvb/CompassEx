@@ -113,7 +113,7 @@ namespace CompassEx
         ///罗盘上子坤（360度）至午乾（180度）从坤0度至天风姤180度，乾左为顺180度至地雷复360，内卦为卦宫外卦相荡而成
         /// </summary>
         [JsonIgnore]
-        public static Dictionary<CompassRangEX, GuoClass> CBeforGuos;
+        public static Dictionary<CompassRangEX, GuoClass> CBeforeGuos;
 
 
         /// <summary>
@@ -135,19 +135,36 @@ namespace CompassEx
         {
             this.AfterGuoSub_ = GetAfterGuoSub();//获得当前度数的罗盘的后天八卦对象
             this.c24Hill = Get24Hill();//获得当前度数的罗盘的后天八卦对象
-            this.beforGuo = GetCBeforGuo();//获得当前度数的罗盘的先天64卦对象
+            this.beforGuo = GetCBeforeGuo();//获得当前度数的罗盘的先天64卦对象
         }
 
 
 
         /// <summary>
-        /// 获得罗盘先天64卦的度数对象
+        /// 获得罗盘先天(天盘）64卦的度数对象
         /// </summary>
         /// <param name="Name">卦名</param>
         /// <returns></returns>
-        public static CompassRangEX GetCBeforGuoDegree(string GuoName)
+        public static CompassRangEX GetCBeforeGuoDegree(string GuoName)
         {
-            foreach (var kv in CBeforGuos)
+            foreach (var kv in CBeforeGuos)
+            {
+                if (kv.Value.GuoName == GuoName)
+                {
+                    return kv.Key;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// 获得罗盘后天（地盘）64卦的度数对象
+        /// </summary>
+        /// <param name="GuoName"></param>
+        /// <returns></returns>
+        public static CompassRangEX GetCAfterGuoDegree(string GuoName)
+        {
+            foreach (var kv in CAfterGuos)
             {
                 if (kv.Value.GuoName == GuoName)
                 {
@@ -164,9 +181,9 @@ namespace CompassEx
         /// </summary>
         /// <param name="Name"></param>
         /// <returns></returns>
-        public GuoClass GetCBeforGuo()
+        public GuoClass GetCBeforeGuo()
         {
-            foreach (var kv in CBeforGuos)
+            foreach (var kv in CBeforeGuos)
             {
                 if (kv.Key.IsInRange(this.degree))
                 {
@@ -201,9 +218,9 @@ namespace CompassEx
         ///加载罗盘上的所有先天64卦（天盘）对象，按照顺时针方向排列，从坤卦开始，每5.625度一个卦逆时针，共64个卦
         /// </summary>
         /// <returns></returns>
-        public static void LoadAllCBeforGuos()
+        public static void LoadAllCBeforeGuos()
         {
-            CBeforGuos = C3Y.C3Y.GetAllBeforGuos();
+            CBeforeGuos = C3Y.C3Y.GetAllBeforGuos();
 
 
 

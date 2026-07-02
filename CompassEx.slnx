@@ -5,8 +5,7 @@
     <File Path="README.md" />
   </Folder>
   <Project Path="CompassEx/CompassEx.csproj">
-    <BuildType Solution="Debug|*" Project="Release" />
-    <BuildType Solution="Release|*" Project="Debug" />
+    <BuildType Project="Debug" />
   </Project>
   <Project Path="CompassExTest/CompassExTest.csproj">
     <BuildType Project="Debug" />
