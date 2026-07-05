@@ -11,175 +11,275 @@
 //
 
 using CompassEx.Comm;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CompassEx.Gua
 {
-
     /// <summary>
-    /// 纳甲类型
+    /// 易学理气核心：纳甲推演体系分类枚举。
     /// </summary>
+    /// <remarks>
+    /// 本枚举定义了系统支持的两大传统纳甲数理体系，分别服务于六爻预测学与风水勘测学。
+    /// </remarks>
     public enum NaJiaType
     {
         /// <summary>
-        /// 京房纳甲(64卦、天机出卦法使用)
+        /// 京房纳甲体系。
         /// </summary>
+        /// <remarks>
+        /// 主要用于 64 卦别卦（六爻复卦）的装卦、配干支、安世应，常服务于六爻预测学及天机出卦法。
+        /// </remarks>
         JF = 0,
+
         /// <summary>
-        /// 杨公纳甲(九星山法、辅星水法使用）
+        /// 杨公纳甲体系。
         /// </summary>
-        YG = 1,
+        /// <remarks>
+        /// 主要用于后天八卦单卦（三爻卦）的干支归化，常服务于九星山法（来龙/坐山）与辅星水法（向上消砂纳水）。
+        /// </remarks>
+        YG = 1
     }
 
     /// <summary>
-    /// 京房纳甲结果类,包括：64卦，天干类，地支类
-    /// 64卦类用于六爻预测学的纳甲推演（预测），天干类，地支类用于64卦装卦、排盘、起卦，天机出卦法也使用
+    /// 统一的纳甲推演结果行为契约接口（用于泛型架构的强类型约束）。
     /// </summary>
-    // 定义一个统一的纳甲结果接口（可选，用于类型约束）
-    public interface INaJiaResult { NaJiaType Type { get; } }
+    public interface INaJiaResult
+    {
+        /// <summary>
+        /// 获取当前纳甲结果所属的推演体系类型。
+        /// </summary>
+        /// <value>
+        /// 一个 <see cref="NaJiaType"/> 枚举值，表示所属的纳甲数理体系。
+        /// </value>
+        NaJiaType Type { get; }
+    }
 
+    /// <summary>
+    /// 京房纳甲推演结果结构体。包含完整的六爻复卦、六亲及干支序列。
+    /// </summary>
+    /// <remarks>
+    /// 本结构体数据常用于六爻预测学的装卦排盘。在天机出卦法中，亦可用于判定人命庚之干支是否得福神、官贵或犯出卦、入卦。
+    /// </remarks>
     public struct NaJiaJFResult : INaJiaResult
     {
         /// <summary>
-        /// 复卦（六爻卦）
-        /// 可用于天机出卦法的纳甲判断人命庚之干支是否得福、官或出卦、入卦等。
+        /// 当前推演所依附的六爻复卦（64卦别卦）实例。
         /// </summary>
+        [JsonIgnore]
         public GuaClass Gua;
+
         /// <summary>
-        /// 京房纳甲类型
+        /// 获取京房纳甲体系标记。
         /// </summary>
+        /// <value>
+        /// 始终返回 <see cref="NaJiaType.JF"/>。
+        /// </value>
         public NaJiaType Type => NaJiaType.JF;
+
         /// <summary>
-        /// 六爻对应的干支
+        /// 自下而上（初爻至上爻），六爻逐爻严格对应的干支（山字/干支时空坐标）集合。
         /// </summary>
         public List<SkyLoc> SkyLocs;
     }
 
+
+
+    /// <summary>
+    /// 杨公纳甲推演结果结构体。包含单卦、归化天干及对应的地支宫位序列。
+    /// </summary>
+    /// <remarks>
+    /// 本结构体数据为风水勘测的底层核心：九星山法依此读取来龙或坐山卦的归化干支；辅星水法依此读取向卦的纳甲水流水口。
+    /// </remarks>
     public struct NaJiaYGResult : INaJiaResult
     {
         /// <summary>
-        /// 八卦（后天）
-        /// 九星山法应该使用来龙卦，或坐卦卦
-        /// 辅星水法应该使用向卦
+        /// 当前推演所依附的后天八卦单卦（三爻卦）实例。
         /// </summary>
+        [JsonIgnore]
         public GuaSubClass Gua;
 
         /// <summary>
-        /// 杨公纳甲类型
+        /// 获取杨公纳甲体系标记。
         /// </summary>
+        /// <value>
+        /// 始终返回 <see cref="NaJiaType.YG"/>。
+        /// </value>
         public NaJiaType Type => NaJiaType.YG;
-        /// <summary>
-        /// 所包含的
-        /// </summary>
-        public SkyLoc Sky;
-        public List<LocClass> Locs;
 
+        /// <summary>
+        /// 当前单卦所纳的专属天干实例。
+        /// </summary>
+        /// <remarks>
+        /// 易学数理对应：乾纳甲、坤纳乙、艮纳丙、巽纳辛、震纳庚、兑纳丁、离纳壬、坎纳癸。
+        /// </remarks>
+        public SkyClass Sky;
+
+        /// <summary>
+        /// 当前单卦纳甲数理所包含归化的地支（方位/时辰刻度）实例集合。
+        /// </summary>
+        /// <remarks>
+        /// 四正卦依三合局归化地支：震纳亥卯未、兑纳巳酉丑、离纳寅午戌、坎纳申子辰。四维卦在风水高级理气中通常包含自身方位的延伸。
+        /// </remarks>
+        public List<LocClass> Locs;
     }
 
-    // 将 NaJia 改为泛型类
+    /// <summary>
+    /// 泛型纳甲推演核心发动机（处理类）。
+    /// </summary>
+    /// <typeparam name="TResult">必须是实现了 <see cref="INaJiaResult"/> 接口的结构体类型。</typeparam>
+    /// <remarks>
+    /// 本类采用控制反转与静态工厂设计模式，将繁复的京房、杨公装卦推演逻辑封装于内部。
+    /// 对外提供高内聚的统一出口方法 <see cref="Execute"/>，完美支持动态扩充与高效计算。
+    /// </remarks>
     public class NaJia<TResult> where TResult : struct, INaJiaResult
     {
         /// <summary>
-        /// 杨公纳甲翻卦序列
+        /// 内部私有类：用于静态配置杨公纳甲天干地支原始映射项的轻量级实体。
         /// </summary>
-        private string[] NaJiaYGGuas = { "离", "巽", "坤", "兑",
-                                         "乾", "艮", "坎", "震" };
+        private class NaJiaYGItem
+        {
+            /// <summary>
+            /// 获取或设置归化的天干名称（如 "甲"、"乙"）。
+            /// </summary>
+            public string? SkyName { get; set; }
+
+            /// <summary>
+            /// 获取或设置归化的地支名称集合（如 ["亥", "卯", "未"]）。
+            /// </summary>
+            public string[]? LocNames { get; set; }
+        }
 
         /// <summary>
-        /// 杨公纳甲翻卦决字典
+        /// 静态只读的杨公纳甲数理映射字典。
         /// </summary>
+        /// <remarks>
+        /// 严格遵循地理风水“净阴净阳”及“二十四山纳甲”数理基础规则：
+        /// <list type="bullet">
+        ///   <item><description><b>乾坤艮巽（四维卦）：</b> 纳纯干，地支序列初始为空（高级理气应用中可根据需要扩充其同名方位山字）。</description></item>
+        ///   <item><description><b>震兑离坎（四正卦）：</b> 依纳干所属五行的三合局归化地支（木局、金局、火局、水局）。</description></item>
+        /// </list>
+        /// </remarks>
+        private readonly Dictionary<string, NaJiaYGItem> YGNaJiaDC = new Dictionary<string, NaJiaYGItem>
+    {
+        { "乾", new NaJiaYGItem { SkyName = "甲", LocNames = new string[] { } } },
+        { "坤", new NaJiaYGItem { SkyName = "乙", LocNames = new string[] { } } },
+        { "震", new NaJiaYGItem { SkyName = "庚", LocNames = new string[] { "亥", "卯", "未" } } },
+        { "巽", new NaJiaYGItem { SkyName = "辛", LocNames = new string[] { } } },
+        { "艮", new NaJiaYGItem { SkyName = "丙", LocNames = new string[] { } } },
+        { "兑", new NaJiaYGItem { SkyName = "丁", LocNames = new string[] { "巳", "酉", "丑" } } },
+        { "离", new NaJiaYGItem { SkyName = "壬", LocNames = new string[] { "寅", "午", "戌" } } },
+        { "坎", new NaJiaYGItem { SkyName = "癸", LocNames = new string[] { "申", "子", "辰" } } }
+    };
 
-        private readonly Dictionary<string, int[]> NaJiaYGGuaDC = new Dictionary<string, int[]> {
-            { "离", [0,7,3,6,2,5,1,4] } ,{"兑",[3,4,0,5,1,6,2,7] },{"乾",[4,3,7,2,6,1,5,0]},{"震",[7,0,4,1,5,2,6,3]}//边上边落双双起
-            ,{"巽",[1,6,2,7,3,4,0,5] },{"坤",[2,5,1,4,0,7,3,6]},{"艮",[5,2,6,3,7,0,4,1] },{"坎",[6,1,5,0,4,3,7,2] } //中上中落双双起
-        
-        };
+        /// <summary>
+        /// 获取或设置当前实例的纳甲计算体系类型。
+        /// </summary>
+        private NaJiaType CalculationType { get; set; }
 
-
-
-
-        public NaJiaType Type { get; private set; }
-
-        // 内部存储计算所需的数据
+        /// <summary>
+        /// 内部存储计算所需的周易原始卦象数据（支持复卦 <see cref="GuaClass"/> 或单卦 <see cref="GuaSubClass"/>）。
+        /// </summary>
         private object _GuaData;
 
         /// <summary>
-        /// 京房纳甲
+        /// 初始化 <see cref="NaJia{TResult}"/> 类的新实例（供京房纳甲静态工厂调用）。
         /// </summary>
-        /// <param name="g">复卦（六爻卦)</param>
-        /// <exception cref="ArgumentNullException"></exception>
-        private NaJia(GuaClass g)
+        /// <param name="g">传入的六爻复卦别卦实例（<see cref="GuaClass"/>）。</param>
+        /// <exception cref="ArgumentNullException">当传入的复卦数据为 <see langword="null"/> 时抛出。</exception>
+        public NaJia(GuaClass g)
         {
-            if (g == null) throw new ArgumentNullException(nameof(g), "Gua data cannot be null.");
-
-
-            Type = NaJiaType.JF;
-            _GuaData = g;
-
+            _GuaData = g ?? throw new ArgumentNullException(nameof(g), "[数理错误] 京房纳甲输入的复卦数据不能为 null。");
+            CalculationType = NaJiaType.JF;
         }
 
         /// <summary>
-        /// 杨公纳甲构造函数，输入后天八卦的单卦对象，计算对应的纳甲结果。
+        /// 初始化 <see cref="NaJia{TResult}"/> 类的新实例（供杨公纳甲静态工厂调用）。
         /// </summary>
-        /// <param name="gs">后天八卦（三爻卦）</param>
-        /// <exception cref="ArgumentNullException"></exception>
-        private NaJia(GuaSubClass gs)
+        /// <param name="gs">传入的后天八卦单卦实例（<see cref="GuaSubClass"/>）。</param>
+        /// <exception cref="ArgumentNullException">当传入的单卦数据为 <see langword="null"/> 时抛出。</exception>
+        public NaJia(GuaSubClass gs)
         {
-            if (gs == null) throw new ArgumentNullException(nameof(gs), "Gua data cannot be null.");
-
-
-            Type = NaJiaType.JF;
-            _GuaData = gs;
-
+            _GuaData = gs ?? throw new ArgumentNullException(nameof(gs), "[数理错误] 杨公纳甲输入的单卦数据不能为 null。");
+            CalculationType = NaJiaType.YG;
         }
 
-
-
-        // 统一的推演/计算方法，直接返回确定的泛型结果(总出口方法）
+        /// <summary>
+        /// 执行全盘纳甲核心数理逻辑推演（统一的总出口计算方法）。
+        /// </summary>
+        /// <returns>
+        /// 返回计算完成后对应的泛型纳甲结果结构体；若体系类型未知则返回 <see langword="null"/>。
+        /// </returns>
+        /// <remarks>
+        /// 本方法内部通过类型强转解包原始数据。对于杨公纳甲，通过提取单卦名称（<see cref="GuaSubClass.Name"/>）检索静态数理字典，动态解包、转换并装配完整的干支模型实体。
+        /// </remarks>
         public TResult? Execute()
         {
-            if (Type == NaJiaType.JF)//京房纳甲
+            // 1. 京房纳甲数理分支
+            if (CalculationType == NaJiaType.JF)
             {
-                var R = new NaJiaJFResult();
+                var result = new NaJiaJFResult();
                 GuaClass g = (GuaClass)_GuaData;
-                R.Gua = g;
-                R.SkyLocs = g.SkyLocs; //使用原来复卦的干枝集合
 
+                result.Gua = g;
+                result.SkyLocs = g.SkyLocs; // 完美对接复卦原本自带的干支集合
 
-                // 核心计算逻辑...
-                return (TResult)(object)R;
+                // TODO: 编写具体的京房 64 卦纳甲配世应、纳干支核心算法逻辑...
+
+                return (TResult)(object)result;
             }
-            if (Type == NaJiaType.YG) //杨公
+
+            // 2. 杨公纳甲数理分支
+            if (CalculationType == NaJiaType.YG)
             {
-                var R = new NaJiaYGResult();
+                var result = new NaJiaYGResult();
+                GuaSubClass gs = (GuaSubClass)_GuaData;
 
+                // 基于当前单卦名称（如"震"、"坎"）获取数理映射配置项
+                var v = YGNaJiaDC[gs.Name];
 
+                result.Gua = gs;
 
-                // 核心计算逻辑...
-                return (TResult)(object)R;
+                // 将字符串名称转换为强类型的实体实例（解包 object 限制，恢复强类型提示）
+                result.Sky = new SkyClass(v.SkyName);
+
+                // 使用 LINQ 投影将字符串地支序列批量实例化为 LocClass 集合
+                result.Locs = v.LocNames != null
+                    ? v.LocNames.Select(sn => new LocClass(sn)).ToList()
+                    : new List<LocClass>();
+
+                return (TResult)(object)result;
             }
+
             return null;
         }
 
         /// <summary>
-        /// 京房纳甲的静态工厂方法，输入复卦对象，返回纳甲结果。
+        /// 京房纳甲的静态工厂创建方法。输入六爻复卦，直接推导并返回完整的京房纳甲结果。
         /// </summary>
-        /// <param name="g"></param>
-        /// <returns></returns>
+        /// <param name="g">需要计算的六爻复卦别卦实例（<see cref="GuaClass"/>）。</param>
+        /// <returns>
+        /// 返回包含复卦与六爻干支集合的 <see cref="NaJiaJFResult"/> 结构体数据。
+        /// </returns>
         public static NaJiaJFResult? CreateJF(GuaClass g)
         {
             return (new NaJia<NaJiaJFResult>(g)).Execute();
         }
+
         /// <summary>
-        /// 杨公纳甲的静态工厂方法，输入后天八卦的单卦对象，返回纳甲结果。
+        /// 杨公纳甲的静态工厂创建方法。输入后天单卦，直接推导并返回完整的杨公纳甲结果。
         /// </summary>
-        /// <param name="gs"></param>
-        /// <returns></returns>
+        /// <param name="gs">需要计算的后天八卦单卦实例（<see cref="GuaSubClass"/>）。</param>
+        /// <returns>
+        /// 返回包含单卦、天干及地支宫位的 <see cref="NaJiaYGResult"/> 结构体数据。
+        /// </returns>
         public static NaJiaYGResult? CreateYG(GuaSubClass gs)
         {
             return (new NaJia<NaJiaYGResult>(gs)).Execute();
-
         }
     }
+
 }
+

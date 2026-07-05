@@ -78,7 +78,7 @@ namespace CompassEx.Gua
             if (ToGua == null)
                 throw new ArgumentNullException(nameof(ToGua), "入参向卦不能为null");
 
-            GuaClass GuaSelf = GuaClass.GetGuaClass(ToGua.GuaSelf.GuaSubName); // 取卦宫
+            GuaClass GuaSelf = GuaClass.GetGuaClass(ToGua.GuaSelf.Name); // 取卦宫
 
             GuaList = GuaSelf.Get7HereYaoGua(); // 以卦宫来列出飞爻卦
             Dictionary<string, GuaSubClass> gscIns = new Dictionary<string, GuaSubClass>();
@@ -86,13 +86,13 @@ namespace CompassEx.Gua
             // =========================== 获得入卦（三爻卦）后天 ===========================
             foreach (GuaClass gc in GuaList)
             {
-                if (gscIns.ContainsKey(gc.DownGua.GuaSubName) == false)
+                if (gscIns.ContainsKey(gc.DownGua.Name) == false)
                 {
-                    gscIns.Add(gc.DownGua.GuaSubName, gc.DownGua);
+                    gscIns.Add(gc.DownGua.Name, gc.DownGua);
                 }
-                if (gscIns.ContainsKey(gc.UpGua.GuaSubName) == false)
+                if (gscIns.ContainsKey(gc.UpGua.Name) == false)
                 {
-                    gscIns.Add(gc.UpGua.GuaSubName, gc.UpGua);
+                    gscIns.Add(gc.UpGua.Name, gc.UpGua);
                 }
             }
             this.InGuaSubs = gscIns; // 命卦的入卦（三爻卦）后天
@@ -125,7 +125,7 @@ namespace CompassEx.Gua
         /// </remarks>
         public bool IsOutGua(GuaSubClass CompareGua)
         {
-            return OutGuaSubs.ContainsKey(CompareGua.GuaSubName);
+            return OutGuaSubs.ContainsKey(CompareGua.Name);
         }
 
         #endregion

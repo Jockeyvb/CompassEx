@@ -25,6 +25,25 @@ namespace CompassEx.Comm
     /// </remarks>
     public static class TymeTimeExtensions
     {
+
+        /// <summary>
+        /// 【扩展方法】将 .NET 原生的 <see cref="DateTime"/> 快速转化为 Tyme 历法库专用的 <see cref="SolarTime"/> 高精度阳历时间对象。
+        /// </summary>
+        /// <param name="d">需要进行类型转换的 .NET 标准系统日期时间实例（通常为北京时间或现场真太阳时）。</param>
+        /// <returns>
+        /// 返回一个高精度的 <see cref="SolarTime"/> 实体，内部完美继承传入时间的年、月、日、时、分、秒等时空刻度数值。
+        /// </returns>
+        /// <remarks>
+        /// 本方法作为系统高频使用的核心桥接管道，常用于将电脑当前系统时间（如 <see cref="DateTime.Now"/>）或从数据库读取的勘测时间，
+        /// 无缝转换为历法库模型，以便后续进行高精度的立春换年柱、节气换月柱等核心易学理气数理推演。
+        /// </remarks>
+        public static SolarTime ToSolarTime(this DateTime d)
+        {
+            // 降维拆解 .NET 原生时间组件，通过构造函数直接实例化 Tyme 阳历时间对象
+            return new SolarTime(d.Year, d.Month, d.Day, d.Hour, d.Minute, d.Second);
+        }
+
+
         /// <summary>
         /// 将 Tyme 历法库的公历时间对象转换为 .NET 标准的 <see cref="DateTime"/> 实例。
         /// </summary>

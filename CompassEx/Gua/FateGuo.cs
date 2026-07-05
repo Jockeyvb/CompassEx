@@ -60,11 +60,15 @@ namespace CompassEx.Gua
         /// </summary>
         public string Message { get; private set; } = "";
 
+        /// <summary>
+        /// 命庚干支
+        /// </summary>
+        public SkyLoc FateYearSkyLoc { get; private set; }
 
-
-
-
-
+        /// <summary>
+        /// 出生时间(公历）
+        /// </summary>
+        public DateTime BirthTime { get; private set; }
 
         /// <summary>
         /// 构造函数，输入出生日期和性别，计算命卦，并获得相关的入卦和出卦等信息（包括计算立春岁数）
@@ -72,7 +76,8 @@ namespace CompassEx.Gua
         /// <param name="d">命卦日期</param>
         /// <param name="Sex">性别</param>
         /// <param name="ToGua8">罗盘中的24山（向）所属的卦宫位置（后天）</param>
-        public FateGua(DateTime d, string Sex, GuaClass ToGua8)
+        /// <param name="iYaoPos">临爻（可选最多2爻，因罗盘上抽爻最多能抽2爻），如：[4,5]，则临是5爻和上爻</param>
+        public FateGua(DateTime d, string Sex, GuaClass ToGua8, params int[] iYaoPos)
         {
             try
             {
@@ -84,16 +89,31 @@ namespace CompassEx.Gua
                 this.GuaSub = GetFateGua(d, Sex);
                 if (this.GuaSub == null) throw new Exception("无法正确计算命卦。");
 
+                TianJiGua tjg = new TianJiGua(GuaClass.GetGuaClass(this.GuaSub.Name));//获得天机出卦法信息
 
-                TianJiGua tjg = new TianJiGua(GuaClass.GetGuaClass(this.GuaSub.GuaSubName));
-
-                this.IsOutGua = tjg.IsOutGua(ToGua8.UpGua); //是否出卦
+                this.IsOutGua = tjg.IsOutGua(ToGua8.UpGua); //天机出卦法中是否出卦
                 this.InGuaSubs = tjg.InGuaSubs;
                 this.OutGuaSubs = tjg.OutGuaSubs;
-                //  this.GuaList = GuaClass.GetGuaClass(this.GuaSub.GuaSubName).Get7HereYaoGua();//获得命卦的7世飞爻卦
+                if (this.IsOutGua == false) //如果已经出卦出无须再计算
+                {
+
+                    SolarTime st = d.ToSolarTime();
 
 
-                //this.IsOutGua = gscOuts.ContainsKey(ToGua8.GuaSubName); //如果向在出卦中，则说明属于出卦
+                    string FateYearSLName = st.SolarDay.GetLunarDay().GetSixtyCycleDay().Year.GetName();//命庚干支
+                    this.FateYearSkyLoc = new SkyLoc(FateYearSLName);
+                    NaJiaJFResult? JFR = NaJia<NaJiaJFResult>.CreateJF(ToGua8);//向卦做京房纳甲
+
+
+
+                }
+
+
+
+                //  this.GuaList = GuaClass.GetGuaClass(this.GuaSub.Name).Get7HereYaoGua();//获得命卦的7世飞爻卦
+
+
+                //this.IsOutGua = gscOuts.ContainsKey(ToGua8.Name); //如果向在出卦中，则说明属于出卦
 
                 //if (this.IsOutGua)
                 //{

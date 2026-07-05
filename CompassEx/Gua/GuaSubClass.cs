@@ -11,6 +11,7 @@
 //
 
 using CompassEx.Comm;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -93,7 +94,7 @@ namespace CompassEx.Gua
         /// <remarks>
         /// 严格绑定后天八卦方位五行（如坎水、震木、离火），其中索引 4 处的“黄”代表中央五黄廉贞土。
         /// </remarks>
-        public readonly static String[] AfterGuaSubAttrNames = { "水", "地", "雷", "风", "黄", "天", "泽", "山", "火" };//后天八卦的属性
+        public readonly static string[] AfterGuaSubAttrNames = { "水", "地", "雷", "风", "黄", "天", "泽", "山", "火" };//后天八卦的属性
 
         /// <summary>
         /// 获取文王后天八卦依据洛书九宫次序（坎一宫至离九宫）排列的标准单字卦名列表。
@@ -107,7 +108,7 @@ namespace CompassEx.Gua
         /// <remarks>
         /// 主要用于风水理气（如玄空飞星、大管局九宫飞布）中进行方位与单卦对象的动态重组映射。
         /// </remarks>
-        public readonly static String[] AfterGuaSubNames = { "坎", "坤", "震", "巽", "黄", "乾", "兑", "艮", "离" };//后天八卦的卦名
+        public readonly static string[] AfterGuaSubNames = { "坎", "坤", "震", "巽", "黄", "乾", "兑", "艮", "离" };//后天八卦的卦名
 
         /// <summary>
         /// 全局通用太极阴阳双鱼图符号常数。
@@ -213,9 +214,9 @@ namespace CompassEx.Gua
         /// <remarks>
         /// <b>四阳卦判定法则：</b><br/>
         /// 根据后天八卦阴阳划分规范，属于“乾（父）、坎（中男）、艮（少男）、震（长男）”四纯单卦之一的判定为阳卦。<br/>
-        /// 该属性通过在字符串 <c>"乾坎艮震"</c> 中高速检索当前卦名（<see cref="GuaSubName"/>）的索引来完成原子级断立。
+        /// 该属性通过在字符串 <c>"乾坎艮震"</c> 中高速检索当前卦名（<see cref="Name"/>）的索引来完成原子级断立。
         /// </remarks>
-        public bool IsSun { get { return "乾坎艮震".IndexOf(this.GuaSubName) > -1; } }
+        public bool IsSun { get { return "乾坎艮震".IndexOf(this.Name) > -1; } }
 
         /// <summary>
         /// 获取或设置一个布尔值，指示当前三爻单卦在组合为六爻复卦时，是否担当“下卦”（即内卦、贞卦）。
@@ -231,6 +232,7 @@ namespace CompassEx.Gua
         /// 在玄空大卦及罗盘理气算法中，本单卦会作为参数被直接传入 <c>new GuaQi(this)</c> 构造函数中，
         /// 动态反哺出当前位置最精准的洛书数理指标，常用于后续六爻大卦的宏观卦气判定。
         /// </remarks>
+        [JsonIgnore]
         public GuaQi GuaQi
         {
             get
@@ -301,13 +303,13 @@ namespace CompassEx.Gua
         /// 获取当前经卦的标准单字名称（如：“乾”、“坤”、“震”、“巽”）。
         /// </summary>
         /// <value>代表三爻单卦的核心基础单字卦名。</value>
-        public String GuaSubName { get; private set; } //卦名，例如：乾
+        public String Name { get; private set; } //卦名，例如：乾
 
         /// <summary>
         /// 获取当前经卦在自然界中模拟构成的核心物象/属性名称（如：“天”、“地”、“雷”、“风”）。
         /// </summary>
         /// <value>代表经八卦自然物象的单字名称。</value>
-        public String GuaSubAttrName { get; private set; } //卦的属性名,例如：天
+        public String AttrName { get; private set; } //卦的属性名,例如：天
 
         /// <summary>
         /// 获取当前单卦所属的易学核心五行实体对象。
@@ -331,13 +333,13 @@ namespace CompassEx.Gua
         /// 计算当前单卦名在先天八卦清册（<see cref="BeforeGuaSubNames"/>）中的原始数组零基索引。
         /// </summary>
         /// <value>整型位置索引，范围在 0（乾）至 7（坤）之间。</value>
-        public int BeforeGuaSubIndex { get { return BeforeGuaSubNames.IndexOf(this.GuaSubName); } }
+        public int BeforeGuaSubIndex { get { return BeforeGuaSubNames.IndexOf(this.Name); } }
 
         /// <summary>
         /// 计算当前单卦名在后天八卦洛书清册（<see cref="AfterGuaSubNames"/>）中的原始数组零基索引。
         /// </summary>
         /// <value>整型位置索引，范围在 0（坎一宫）至 8（离九宫）之间。</value>
-        public int AfterGuaSubIndex { get { return AfterGuaSubNames.IndexOf(this.GuaSubName); } }
+        public int AfterGuaSubIndex { get { return AfterGuaSubNames.IndexOf(this.Name); } }
 
         /// <summary>
         /// 获取当前三爻单卦所对应的 Unicode 三爻经卦图形符号。
@@ -352,13 +354,13 @@ namespace CompassEx.Gua
         /// 依据当前单卦名称，在三元地理后天罗盘圈层中动态匹配并返回其所管辖的周天度数范围对象。
         /// </summary>
         /// <value>动态调用 <see cref="CompassEx.GetAfterGuaSubDegree(GuaSubClass )"/>，返回其专属的 <see cref="CompassRangEX"/> 后天周天空间物理边界。</value>
-        public CompassRangEX CAfterRangeDegree { get { return CompassEx.GetAfterGuaSubDegree(this.GuaSubName); } }
+        public CompassRangEX CAfterRangeDegree { get { return CompassEx.GetAfterGuaSubDegree(this.Name); } }
 
         /// <summary>
         /// 依据当前单卦名称，在三元地理伏羲先天罗盘方圆图圈层中动态匹配并返回其所管辖的周天度数范围对象。
         /// </summary>
         /// <value>动态调用 <see cref="CompassEx.GetBeforGuaSubDegree(GuaSubClass)"/>，返回其专属的 <see cref="CompassRangEX"/> 先天周天空间物理边界。</value>
-        public CompassRangEX CBeforRangeDegree { get { return CompassEx.GetBeforGuaSubDegree(this.GuaSubName); } }
+        public CompassRangEX CBeforRangeDegree { get { return CompassEx.GetBeforGuaSubDegree(this.Name); } }
 
         #endregion
 
@@ -391,7 +393,7 @@ namespace CompassEx.Gua
         /// <list type="number">
         /// <item><description><b>安全边界校验</b>：校验输入索引。若执行不合法则瞬间熔断并抛出越界异常。</description></item>
         /// <item><description><b>爻象阴阳重组（Switch 分布）</b>：依据先天八卦符号编码（0代表阴爻，1代表阳爻），由下而上对长为 3 的 <see cref="Yaos"/> 数组进行赋值（如 case 1 兑卦：初爻为阳(1)、二爻为阳(1)、三爻为阴(0)）。</description></item>
-        /// <item><description><b>基础术数属性反哺</b>：通过索引同步锁定并充填物象（<see cref="GuaSubAttrName"/>）、六亲伦理（<see cref="GuaSubReluName"/>）和基本单字卦名。</description></item>
+        /// <item><description><b>基础术数属性反哺</b>：通过索引同步锁定并充填物象（<see cref="AttrName"/>）、六亲伦理（<see cref="GuaSubReluName"/>）和基本单字卦名。</description></item>
         /// <item><description><b>跨体系方位映射</b>：通过后天八卦清册反查其在文王后天九宫中的绝对物理位置（<c>iPos</c>），进而将对应方位的紫白九星颜色（<see cref="AfterGuaSubColor"/>）以及最终的生克五行属性（<see cref="FiveAttr"/>）彻底装载完毕。</description></item>
         /// </list>
         /// </remarks>
@@ -442,14 +444,14 @@ namespace CompassEx.Gua
                     this.Yaos[2] = 0;
                     break;
             }
-            this.GuaSubAttrName = BeforeGuaSubAttrNames[iBeforGuaIndex];//卦的属性名称
+            this.AttrName = BeforeGuaSubAttrNames[iBeforGuaIndex];//卦的属性名称
             this.GuaSubReluName = BeforeGuaSubReluNames[iBeforGuaIndex];//伦理关系
-            this.GuaSubName = BeforeGuaSubNames[iBeforGuaIndex];//卦名
+            this.Name = BeforeGuaSubNames[iBeforGuaIndex];//卦名
 
-            int iPos = Array.IndexOf(AfterGuaSubNames, this.GuaSubName);//找到后天位置
+            int iPos = Array.IndexOf(AfterGuaSubNames, this.Name);//找到后天位置
             this.AfterGuaSubColor = AfterGuaSubColors[iPos];//获得后天颜色
 
-            this.FiveAttr = GetFiveAttrName(this.GuaSubName);
+            this.FiveAttr = GetFiveAttrName(this.Name);
             //this.LoadLocs();
             //this.SkyName = SkyClass.SkyNames[iSkyIndex];
         }
@@ -664,14 +666,14 @@ namespace CompassEx.Gua
                     break;
 
             }
-            gsc.GuaSubAttrName = BeforeGuaSubAttrNames[iAttrIndex];//卦的属性名称
+            gsc.AttrName = BeforeGuaSubAttrNames[iAttrIndex];//卦的属性名称
             gsc.GuaSubReluName = BeforeGuaSubReluNames[iAttrIndex];//伦理关系
-            gsc.GuaSubName = BeforeGuaSubNames[iAttrIndex];//卦名
+            gsc.Name = BeforeGuaSubNames[iAttrIndex];//卦名
 
-            int iPos = Array.IndexOf(AfterGuaSubNames, gsc.GuaSubName);//找到后天位置
+            int iPos = Array.IndexOf(AfterGuaSubNames, gsc.Name);//找到后天位置
             gsc.AfterGuaSubColor = AfterGuaSubColors[iPos];//获得后天颜色
 
-            gsc.FiveAttr = GetFiveAttrName(gsc.GuaSubName);
+            gsc.FiveAttr = GetFiveAttrName(gsc.Name);
             gsc.LoadLocs();
             gsc.SkyName = SkyClass.SkyNames[iSkyIndex];
             gsc.IsDownGua = IsDownGua;

@@ -1,8 +1,10 @@
 using CompassEx.Comm;
 using CompassEx.Gua;
+using Newtonsoft.Json;
 using SkiaSharp;
 using SkiaSharp.Views.Maui;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 namespace CompassExTest.Pages;
 
@@ -54,6 +56,26 @@ public partial class TestPage : ContentPage, INotifyPropertyChanged
         //    Debug.WriteLine(sn);
         //}
 
+
+        foreach (string sn in GuaSubClass.AfterGuaSubNames)
+        {
+            if (sn != "黄")
+            {
+                var sg = GuaSubClass.GetGuaSub(sn);
+                var fn = GuaFlip.GetGuaFlipNineStarDC(sg, GuaFlipMethod.Dragon);
+                Dictionary<string, NineStar> dc = new Dictionary<string, NineStar>();
+                var nj = NaJia<NaJiaYGResult>.CreateYG(sg);
+                foreach (var kv in fn)
+                {
+                    dc.Add(kv.Key.Name, kv.Value);
+                }
+
+                Debug.WriteLine("\n主卦" + GuaFlipMethod.Dragon.ToString() + "：" + sn + "\n" + JsonConvert.SerializeObject(dc) + "\n，主卦纳甲：" + JsonConvert.SerializeObject(nj));
+
+
+            }
+
+        }
 
     }
 

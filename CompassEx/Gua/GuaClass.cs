@@ -247,31 +247,31 @@ namespace CompassEx.Gua
         {
             get
             {
-                if (this.UpGua.GuaSubName == "坤")
+                if (this.UpGua.Name == "坤")
                 {
                     return 1;
                 }
-                else if (this.UpGua.GuaSubName == "巽")
+                else if (this.UpGua.Name == "巽")
                 {
                     return 2;
                 }
-                else if (this.UpGua.GuaSubName == "离")
+                else if (this.UpGua.Name == "离")
                 {
                     return 3;
                 }
-                else if (this.UpGua.GuaSubName == "兑")
+                else if (this.UpGua.Name == "兑")
                 {
                     return 4;
                 }
-                else if (this.UpGua.GuaSubName == "艮")
+                else if (this.UpGua.Name == "艮")
                 {
                     return 6;
                 }
-                else if (this.UpGua.GuaSubName == "坎")
+                else if (this.UpGua.Name == "坎")
                 {
                     return 7;
                 }
-                else if (this.UpGua.GuaSubName == "震")
+                else if (this.UpGua.Name == "震")
                 {
                     return 8;
                 }
@@ -361,7 +361,7 @@ namespace CompassEx.Gua
         /// 获取或设置当前六爻卦的两字简化卦名（如“乾”、“坤”、“屯”、“蒙”）。
         /// </summary>
         /// <value>代表 64 卦通行本顺序的两字简名缩写。</value>
-        public String GuaName { get; private set; } //六爻卦，卦名
+        public String Name { get; private set; } //六爻卦，卦名
 
         /// <summary>
         /// 获取或设置当前六爻卦的四字全名（包含上下卦象组合，如“乾为天”、“地水师”）。
@@ -458,7 +458,7 @@ namespace CompassEx.Gua
         /// </summary>
         /// <value>动态调用 <see cref="CompassEx.GetCBeforeGuaDegree(string)"/> 方法，返回其专属的 <see cref="CompassRangEX"/> 周天度数范围。</value>
         [JsonIgnore]
-        public CompassRangEX CBeforeRangeDegree { get { return CompassEx.GetCBeforeGuaDegree(this.GuaName); } }
+        public CompassRangEX CBeforeRangeDegree { get { return CompassEx.GetCBeforeGuaDegree(this.Name); } }
 
 
 
@@ -467,7 +467,7 @@ namespace CompassEx.Gua
         /// </summary>
         /// <value>动态调用 <see cref="CompassEx.GetCAfterGuaDegree(string)"/> 方法，返回其专属的 <see cref="CompassRangEX"/> 周天度数范围。</value>
         [JsonIgnore]
-        public CompassRangEX CAfterRangeDegree { get { return CompassEx.GetCAfterGuaDegree(this.GuaName); } }
+        public CompassRangEX CAfterRangeDegree { get { return CompassEx.GetCAfterGuaDegree(this.Name); } }
 
 
         #endregion
@@ -518,7 +518,7 @@ namespace CompassEx.Gua
             this.UpGua = GuaSubClass.GetGuaSub(sUpGuaName, false);
             this.DownGua = GuaSubClass.GetGuaSub(sDownGuaName, true);
             this.GuaIndex = Array.IndexOf(GuaClass.GuaFullNames, this.GuaFullName);
-            this.GuaName = GuaClass.GuaNames[this.GuaIndex];
+            this.Name = GuaClass.GuaNames[this.GuaIndex];
         }
 
 
@@ -609,12 +609,12 @@ namespace CompassEx.Gua
 
             List<GuaClass> GuaIns = new List<GuaClass>();
             GuaIns.Add(this);
-            GuaClass g = new GuaClass(this.GuaName);
+            GuaClass g = new GuaClass(this.Name);
 
             GuaClass ng;
             for (int i = 0; i < 5; i++)
             {
-                ng = new GuaClass(g.GuaName);
+                ng = new GuaClass(g.Name);
 
                 ng.YaoDoing = new List<int>() { i }; //变爻
                 g = ng.GetChangeGua(); //变卦
@@ -622,13 +622,13 @@ namespace CompassEx.Gua
             }
 
             //第7个卦为游魂卦(再返回第5爻变 ）
-            ng = new GuaClass(g.GuaName);
+            ng = new GuaClass(g.Name);
             ng.YaoDoing = new List<int>() { 3 }; //变4爻
             g = ng.GetChangeGua();//变卦
             GuaIns.Add(g);//加入变出的卦
 
             //第8个卦为归魂卦(再把下卦三爻全变 ）
-            ng = new GuaClass(g.GuaName);
+            ng = new GuaClass(g.Name);
             ng.YaoDoing = new List<int>() { 0, 1, 2 }; //变123爻
             g = ng.GetChangeGua();//变卦
             GuaIns.Add(g);//加入变出的卦
@@ -799,7 +799,7 @@ namespace CompassEx.Gua
         {
             String s = ""; bool TorF;
             if (this.HideRelative == null) return null;
-            GuaClass gc = GetGuaClass(this.GuaSelf.GuaSubName);//转成六爻卦　
+            GuaClass gc = GetGuaClass(this.GuaSelf.Name);//转成六爻卦　
             gc.LoadSixRelative();//加载六亲
             GuaSubClass gsc;//定义一个三爻卦
             for (int i = gc.SixRelative.Count - 1; i >= 0; i--)
@@ -1101,7 +1101,7 @@ namespace CompassEx.Gua
             }
             if (TorF == true) return;//表示没有伏神，退出
             this.HideRelative = new List<SixRelativeClass>();//实例化
-            GuaClass gc = GetGuaClass(this.GuaSelf.GuaSubName);//把卦宫转成六爻卦
+            GuaClass gc = GetGuaClass(this.GuaSelf.Name);//把卦宫转成六爻卦
             gc.LoadSixRelative();//加载六亲
             List<int> hsrys = new List<int>();//六亲爻位
             String sHad = "";
@@ -1217,51 +1217,51 @@ namespace CompassEx.Gua
                 if (Yaos[i] > 1) Yaos[i] = 0;
             }
             GuaSubClass gsc = GuaSubClass.GetGuaSub(Yaos[0], Yaos[1], Yaos[2], false);//结合后，看是什么卦
-            if (gsc.GuaSubName.Equals("乾"))
+            if (gsc.Name.Equals("乾"))
             {//乾卦，世在3，卦宫是外卦
                 this.HereYao = 2;
                 this.ThereYao = 5;
                 this.GuaSelf = this.UpGua;
             }
-            else if (gsc.GuaSubName.Equals("兑"))
+            else if (gsc.Name.Equals("兑"))
             {//兑卦，世在2，卦宫是外卦
                 this.HereYao = 1;
                 this.ThereYao = 4;
                 this.GuaSelf = this.UpGua;
             }
-            else if (gsc.GuaSubName.Equals("震"))
+            else if (gsc.Name.Equals("震"))
             {//震卦，世在初，卦宫是外卦
                 this.HereYao = 0;
                 this.ThereYao = 3;
                 this.GuaSelf = this.UpGua;
             }
-            else if (gsc.GuaSubName.Equals("巽"))
+            else if (gsc.Name.Equals("巽"))
             {//巽卦，世在4，卦宫是内卦全反
                 this.HereYao = 3;
                 this.ThereYao = 0;
                 this.GuaSelf = this.DownGua.GetXorGua();//取反卦
             }
-            else if (gsc.GuaSubName.Equals("艮"))
+            else if (gsc.Name.Equals("艮"))
             {//艮卦，世在5，卦宫是内卦全反
                 this.HereYao = 4;
                 this.ThereYao = 1;
                 this.GuaSelf = this.DownGua.GetXorGua();//取反卦
             }
-            else if (gsc.GuaSubName.Equals("坤"))
+            else if (gsc.Name.Equals("坤"))
             {//坤卦，世在6，卦宫是本身（纯卦)
                 this.HereYao = 5;
                 this.ThereYao = 2;
                 this.GuaSelf = this.DownGua;
                 this.GuaAliasName = "纯卦";
             }
-            else if (gsc.GuaSubName.Equals("离"))
+            else if (gsc.Name.Equals("离"))
             {//离卦(游魂卦)，世在4，卦宫是内卦全反
                 this.HereYao = 3;
                 this.ThereYao = 0;
                 this.GuaSelf = this.DownGua.GetXorGua();//取反卦
                 this.GuaAliasName = "游魂卦";
             }
-            else if (gsc.GuaSubName.Equals("坎"))
+            else if (gsc.Name.Equals("坎"))
             {//离卦(归魂卦)，世在3，卦宫是内卦
                 this.HereYao = 2;
                 this.ThereYao = 5;
@@ -1477,10 +1477,10 @@ namespace CompassEx.Gua
 
             GuaSubClass gsc = GuaSubClass.GetGuaSub(iYaos[0] % 2, iYaos[1] % 2, iYaos[2] % 2, true); //下卦
             if (gsc == null) return null;
-            String sAttrName2 = gsc.GuaSubAttrName;
+            String sAttrName2 = gsc.AttrName;
             gsc = GuaSubClass.GetGuaSub(iYaos[3] % 2, iYaos[4] % 2, iYaos[5] % 2, false); //上卦
             if (gsc == null) return null;
-            String sAttrName1 = gsc.GuaSubAttrName;
+            String sAttrName1 = gsc.AttrName;
             String sAttrName = "";
             if (sAttrName1.Equals(sAttrName2)) sAttrName = sAttrName1; else sAttrName = sAttrName1 + sAttrName2 + "?";
             GuaClass gc = GetGuaClass(sAttrName);

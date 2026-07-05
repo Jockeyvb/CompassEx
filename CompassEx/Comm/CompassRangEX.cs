@@ -32,7 +32,7 @@ namespace CompassEx.Comm
         /// <value>
         /// 区间的起始边界值，通常在 $[0, 360)$ 范围内。
         /// </value>
-        public double Start { get; set; }
+        public double Start { get; private set; }
 
         /// <summary>
         /// 获取或设置范围的结束角度（度）。
@@ -40,7 +40,7 @@ namespace CompassEx.Comm
         /// <value>
         /// 区间的结束边界值，通常在 $[0, 360)$ 范围内。
         /// </value>
-        public double End { get; set; }
+        public double End { get; private set; }
 
         /// <summary>
         /// 初始化 <see cref="CompassRangEX"/> 类的新实例。
@@ -152,12 +152,12 @@ namespace CompassEx.Comm
                     // 判定并提取先天八卦
                     if (gs.CBeforRangeDegree.IsInRange(this.Start) && gs.CBeforRangeDegree.IsInRange(this.End - 0.1))
                     {
-                        ls.Add(new CompassObjType { ObjTypeCNName = "先天八卦", CRDegree = gs.CBeforRangeDegree, ObjType = gs.GetType(), Obj = gs, Name = gs.GuaSubName });
+                        ls.Add(new CompassObjType { ObjTypeCNName = "先天八卦", CRDegree = gs.CBeforRangeDegree, ObjType = gs.GetType(), Obj = gs, Name = gs.Name });
                     }
                     // 判定并提取后天八卦
                     if (gs.CAfterRangeDegree.IsInRange(this.Start) && gs.CAfterRangeDegree.IsInRange(this.End - 0.1))
                     {
-                        ls.Add(new CompassObjType { ObjTypeCNName = "后天八卦", CRDegree = gs.CAfterRangeDegree, ObjType = gs.GetType(), Obj = gs, Name = gs.GuaSubName });
+                        ls.Add(new CompassObjType { ObjTypeCNName = "后天八卦", CRDegree = gs.CAfterRangeDegree, ObjType = gs.GetType(), Obj = gs, Name = gs.Name });
                     }
                 }
             }
@@ -181,12 +181,12 @@ namespace CompassEx.Comm
                     // 判定并提取天盘先天 64 卦
                     if (g.CBeforeRangeDegree.IsInRange(this.Start) && g.CBeforeRangeDegree.IsInRange(this.End - 0.1))
                     {
-                        ls.Add(new CompassObjType { ObjTypeCNName = "先天64卦", CRDegree = g.CBeforeRangeDegree, ObjType = g.GetType(), Obj = g, Name = g.GuaName });
+                        ls.Add(new CompassObjType { ObjTypeCNName = "先天64卦", CRDegree = g.CBeforeRangeDegree, ObjType = g.GetType(), Obj = g, Name = g.Name });
                     }
                     // 判定并提取地盘后天 64 卦
                     if (g.CAfterRangeDegree.IsInRange(this.Start) && g.CAfterRangeDegree.IsInRange(this.End - 0.1))
                     {
-                        ls.Add(new CompassObjType { ObjTypeCNName = "后天64卦", CRDegree = g.CAfterRangeDegree, ObjType = g.GetType(), Obj = g, Name = g.GuaName });
+                        ls.Add(new CompassObjType { ObjTypeCNName = "后天64卦", CRDegree = g.CAfterRangeDegree, ObjType = g.GetType(), Obj = g, Name = g.Name });
                     }
                 }
             }
@@ -194,6 +194,23 @@ namespace CompassEx.Comm
             return ls;
         }
 
+        public override bool Equals(object obj)
+        {
+            // 一行代码搞定：类型相同且 Name 相同
+            return obj is CompassRangEX other && this.Start == other.Start && this.End == other.End;
+        }
 
+        public override int GetHashCode()
+        {
+            // 2. 经典且高效的哈希组合算法（基于质数 17 和 23）
+            // 完美解决不支持 HashCode.Combine 的问题，确保 Start 和 End 共同决定唯一性
+            unchecked // 即使数值溢出也安全运行
+            {
+                int hash = 17;
+                hash = hash * 23 + this.Start.GetHashCode();
+                hash = hash * 23 + this.End.GetHashCode();
+                return hash;
+            }
+        }
     }
 }

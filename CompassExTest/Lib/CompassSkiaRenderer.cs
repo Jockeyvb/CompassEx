@@ -291,7 +291,7 @@ public class CompassSkiaRenderer
             // 生成路径（核心修复）
             SKPath sectorPath = CreateRingSectorPath(cx, cy, dcs.InnerRadius, dcs.OuterRadius, start, end);
             dcs.Path = sectorPath;
-            GuaSectorCache.Add((cbGua.GuaSubName, sectorPath, cbGua.CBeforRangeDegree));
+            GuaSectorCache.Add((cbGua.Name, sectorPath, cbGua.CBeforRangeDegree));
 
             Debug.WriteLine(cbGua.Symbol);
 
@@ -331,7 +331,7 @@ public class CompassSkiaRenderer
             // 生成路径（核心修复）
             SKPath sectorPath = CreateRingSectorPath(cx, cy, dcs.InnerRadius, dcs.OuterRadius, start, end);
             dcs.Path = sectorPath;
-            GuaSectorCache.Add((cbGua.GuaSubName, sectorPath, cbGua.CAfterRangeDegree));
+            GuaSectorCache.Add((cbGua.Name, sectorPath, cbGua.CAfterRangeDegree));
 
 
             canvas.DrawPath(sectorPath, PathPaint);//画边
@@ -342,7 +342,7 @@ public class CompassSkiaRenderer
                 canvas.DrawPath(sectorPath, PathFillP);//填充
             }
             // 文字
-            DrawLabel(canvas, dcs, cbGua.GuaSubName + "　" + cbGua.AfterGuaSubCNQuantity, false);
+            DrawLabel(canvas, dcs, cbGua.Name + "　" + cbGua.AfterGuaSubCNQuantity, false);
 
 
         }
@@ -406,7 +406,7 @@ public class CompassSkiaRenderer
             {
                 CR = CR,
                 InnerRadius = LastR,
-                AddTextSize = G.GuaName.Length > 1 ? -10 : -20,
+                AddTextSize = G.Name.Length > 1 ? -10 : -20,
 
             };
             dcs.OuterRadius = dcs.InnerRadius + ysplace;
@@ -426,7 +426,7 @@ public class CompassSkiaRenderer
             // 生成路径（核心修复）
             SKPath sectorPath = CreateRingSectorPath(cx, cy, dcs.InnerRadius, dcs.OuterRadius, start, end);
             dcs.Path = sectorPath;
-            GuaSectorCache.Add((G.GuaName, sectorPath, CR));
+            GuaSectorCache.Add((G.Name, sectorPath, CR));
 
 
             canvas.DrawPath(sectorPath, PathPaint);//画边
@@ -435,7 +435,7 @@ public class CompassSkiaRenderer
             //canvas.DrawPath(sectorPath, PathFillP);//填充
 
             // 文字
-            DrawLabel(canvas, dcs, G.GuaName, false);
+            DrawLabel(canvas, dcs, G.Name, false);
 
 
         }
@@ -463,7 +463,7 @@ public class CompassSkiaRenderer
             {
                 CR = CR,
                 InnerRadius = LastR,
-                AddTextSize = G.GuaName.Length > 1 ? -10 : -20,
+                AddTextSize = G.Name.Length > 1 ? -10 : -20,
 
             };
             if (G.GuaFate == "一")
@@ -481,7 +481,7 @@ public class CompassSkiaRenderer
             // 生成路径（核心修复）
             SKPath sectorPath = CreateRingSectorPath(cx, cy, dcs.InnerRadius, dcs.OuterRadius, start, end);
             dcs.Path = sectorPath;
-            GuaSectorCache.Add((G.GuaName, sectorPath, CR));
+            GuaSectorCache.Add((G.Name, sectorPath, CR));
 
 
             canvas.DrawPath(sectorPath, PathPaint);//画边
@@ -490,7 +490,7 @@ public class CompassSkiaRenderer
             //canvas.DrawPath(sectorPath, PathFillP);//填充
 
             // 文字
-            DrawLabel(canvas, dcs, G.GuaName, false);
+            DrawLabel(canvas, dcs, G.Name, false);
 
 
         }

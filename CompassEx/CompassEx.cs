@@ -27,7 +27,7 @@ namespace CompassEx
         #region 字段
 
         /// <summary>
-        /// 后天八卦的单卦度数。
+        /// 先后天八卦的单卦度数。
         /// </summary>
         /// <value>默认值为 45 度（360度 / 8卦）。</value>
         public const double GuaSubDegree = 45;
@@ -189,13 +189,13 @@ namespace CompassEx
         /// <summary>
         /// 获取指定先天（天盘）64 卦卦名在罗盘上对应的度数范围对象。
         /// </summary>
-        /// <param name="GuaName">要查询的先天 64 卦的完整卦名。</param>
+        /// <param name="Name">要查询的先天 64 卦的完整卦名。</param>
         /// <returns>返回对应的 <see cref="CompassRangEX"/> 度数范围对象；若在缓存中未匹配到该卦名，则返回 <c>null</c>。</returns>
-        public static CompassRangEX GetCBeforeGuaDegree(string GuaName)
+        public static CompassRangEX GetCBeforeGuaDegree(string Name)
         {
             foreach (var kv in CBeforeGuas)
             {
-                if (kv.Value.GuaName == GuaName)
+                if (kv.Value.Name == Name)
                 {
                     return kv.Key;
                 }
@@ -206,13 +206,13 @@ namespace CompassEx
         /// <summary>
         /// 获取指定后天（地盘）64 卦卦名在罗盘上对应的度数范围对象。
         /// </summary>
-        /// <param name="GuaName">要查询的后天 64 卦的完整卦名。</param>
+        /// <param name="Name">要查询的后天 64 卦的完整卦名。</param>
         /// <returns>返回对应的 <see cref="CompassRangEX"/> 度数范围对象；若在缓存中未匹配到该卦名，则返回 <c>null</c>。</returns>
-        public static CompassRangEX GetCAfterGuaDegree(string GuaName)
+        public static CompassRangEX GetCAfterGuaDegree(string Name)
         {
             foreach (var kv in CAfterGuas)
             {
-                if (kv.Value.GuaName == GuaName)
+                if (kv.Value.Name == Name)
                 {
                     return kv.Key;
                 }
@@ -331,13 +331,13 @@ namespace CompassEx
         /// <returns>返回对应的 <see cref="CompassRangEX"/> 度数范围对象。</returns>
         public static CompassRangEX GetBeforGuaSubDegree(GuaSubClass g)
         {
-            return GetBeforGuaSubDegree(g.GuaSubName);
+            return GetBeforGuaSubDegree(g.Name);
         }
 
         /// <summary>
         /// 根据指定的先天八卦卦名，计算并获取其在罗盘上所占据的绝对度数范围。
         /// </summary>
-        /// <param name="GuaSubName">先天八卦的卦名（如“乾”、“坤”等）。</param>
+        /// <param name="Name">先天八卦的卦名（如“乾”、“坤”等）。</param>
         /// <returns>返回表示该卦起始与结束角度的 <see cref="CompassRangEX"/> 范围对象。</returns>
         /// <remarks>
         /// <para><b>推演原理：</b></para>
@@ -347,11 +347,11 @@ namespace CompassEx
         /// <item><description>计算结果若超过 <c>360</c> 度，系统会自动执行闭环修正以保持在 <c>0 ~ 360</c> 度范围内。</description></item>
         /// </list>
         /// </remarks>
-        public static CompassRangEX GetBeforGuaSubDegree(string GuaSubName)
+        public static CompassRangEX GetBeforGuaSubDegree(string Name)
         {
             double baseDegree = 337.5;
 
-            int GIndex = CompassBeforGuaSubNames.IndexOf(GuaSubName);
+            int GIndex = CompassBeforGuaSubNames.IndexOf(Name);
             double degree = baseDegree + GIndex * GuaSubDegree;
             double fStart = degree;
             if (fStart > 360) fStart -= 360;
@@ -387,13 +387,13 @@ namespace CompassEx
         /// <returns>返回对应的 <see cref="CompassRangEX"/> 度数范围对象。</returns>
         public static CompassRangEX GetAfterGuaSubDegree(GuaSubClass g)
         {
-            return GetAfterGuaSubDegree(g.GuaSubName);
+            return GetAfterGuaSubDegree(g.Name);
         }
 
         /// <summary>
         /// 根据指定的后天八卦卦名，计算并获取其在罗盘上所占据的绝对度数范围。
         /// </summary>
-        /// <param name="GuaSubName">后天八卦的卦名（如“坎”、“坤”等）。</param>
+        /// <param name="Name">后天八卦的卦名（如“坎”、“坤”等）。</param>
         /// <returns>返回表示该卦起始与结束角度的 <see cref="CompassRangEX"/> 范围对象。</returns>
         /// <remarks>
         /// <para><b>推演原理：</b></para>
@@ -403,11 +403,11 @@ namespace CompassEx
         /// <item><description>计算结果若超过 <c>360</c> 度，系统会自动执行闭环修正以保持在 <c>0 ~ 360</c> 度范围内。</description></item>
         /// </list>
         /// </remarks>
-        public static CompassRangEX GetAfterGuaSubDegree(string GuaSubName)
+        public static CompassRangEX GetAfterGuaSubDegree(string Name)
         {
             double baseDegree = 337.5;
 
-            int GIndex = CompassAfterGuaSubNames.IndexOf(GuaSubName);
+            int GIndex = CompassAfterGuaSubNames.IndexOf(Name);
             double degree = baseDegree + GIndex * GuaSubDegree;
             double fStart = degree;
             if (fStart > 360) fStart -= 360;
