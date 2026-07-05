@@ -8,7 +8,7 @@
       <meta name="title" content="TymeTimeExtensions 类
  | CompassEx API文档 ">
       
-      
+      <meta name="description" content="针对元贞历法核心库（Tyme）时间与日期对象的 C# 官方标准  转换扩展工具类。">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,7 +88,7 @@
 
   <h1 id="CompassEx_Comm_TymeTimeExtensions" data-uid="CompassEx.Comm.TymeTimeExtensions" class="text-break">
 TymeTimeExtensions 类
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -96,7 +96,8 @@ TymeTimeExtensions 类
   <dl><dt>程序集</dt><dd>CompassEx.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>针对元贞历法核心库（Tyme）时间与日期对象的 C# 官方标准 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a> 转换扩展工具类。</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -145,6 +146,9 @@ TymeTimeExtensions 类
 
 
 
+  <h2 id="CompassEx_Comm_TymeTimeExtensions_remarks">备注</h2>
+  <div class="markdown level0 remarks"><p>本静态类通过提供高效的链式扩展方法（Extension Methods），实现了将三方历法库中的公历时间（<span class="xref">tyme.solar.SolarTime</span>）与公历日期（<span class="xref">tyme.solar.SolarDay</span>）快速转换为 .NET 原生的时间结构体，常用于前后端排盘结果的数据对接与串联。</p>
+</div>
 
 
   <h2 class="section" id="methods">方法
@@ -155,10 +159,10 @@ TymeTimeExtensions 类
 
   <h3 id="CompassEx_Comm_TymeTimeExtensions_ToDateTime_tyme_solar_SolarDay_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToDateTime(tyme.solar.SolarDay)">
   ToDateTime(SolarDay)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>SolarDay 转 UTC DateTime</p>
+  <div class="markdown level1 summary"><p>将 Tyme 历法库的公历日期对象转换为 .NET 标准的 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a> 实例（零点时刻）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -169,13 +173,15 @@ TymeTimeExtensions 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>sd</code> <span class="xref">SolarDay</span></dt>
-    <dd></dd>
+    <dd><p>被扩展的当前 <span class="xref">tyme.solar.SolarDay</span> 公历日期对象实例。</p>
+</dd>
   </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
-    <dd></dd>
+    <dd><p>返回一个代表该日期当天凌晨零点整（<code>00:00:00</code>）的 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a> 结构体对象。</p>
+</dd>
   </dl>
 
 
@@ -192,10 +198,10 @@ TymeTimeExtensions 类
 
   <h3 id="CompassEx_Comm_TymeTimeExtensions_ToDateTime_tyme_solar_SolarTime_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToDateTime(tyme.solar.SolarTime)">
   ToDateTime(SolarTime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>SolarTime 转  DateTime</p>
+  <div class="markdown level1 summary"><p>将 Tyme 历法库的公历时间对象转换为 .NET 标准的 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a> 实例。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -206,13 +212,15 @@ TymeTimeExtensions 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>st</code> <span class="xref">SolarTime</span></dt>
-    <dd></dd>
+    <dd><p>被扩展的当前 <span class="xref">tyme.solar.SolarTime</span> 公历时间对象实例。</p>
+</dd>
   </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
-    <dd></dd>
+    <dd><p>返回一个包含完整年、月、日、时、分、秒信息的 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a> 结构体对象。</p>
+</dd>
   </dl>
 
 
@@ -221,6 +229,9 @@ TymeTimeExtensions 类
 
 
 
+  <h4 class="section" id="CompassEx_Comm_TymeTimeExtensions_ToDateTime_tyme_solar_SolarTime__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p><b>转换细节：</b>该方法通过显式提取输入对象的具体时分秒数值进行直接映射，生成的 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a> 实例默认其 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime.kind">Kind</a> 属性为 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimekind#system-datetimekind-unspecified">Unspecified</a>。</p>
+</div>
 
 
 
@@ -229,7 +240,7 @@ TymeTimeExtensions 类
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L20" class="edit-link">编辑本文</a>
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L26" class="edit-link">编辑本文</a>
         </div>
 
 

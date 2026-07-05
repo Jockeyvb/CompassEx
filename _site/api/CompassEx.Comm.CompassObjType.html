@@ -361,11 +361,11 @@ CompassObjType 结构
   <h4 class="section" id="CompassEx_Comm_CompassObjType_ToObjet__1___0___examples">示例</h4>
   <pre><code class="lang-csharp">CompassObjType item = GetCompassData();
 
-// 利用 out var 特性，外部无需显式书写 &lt;GuoSubClass&gt;
-if (item.ToObjet(out GuoSubClass guoObj))
+// 利用 out var 特性，外部无需显式书写 &lt;GuaSubClass&gt;
+if (item.ToObjet(out GuaSubClass GuaObj))
 {
-    // 转换成功，直接使用强类型变量 guoObj
-    Console.WriteLine($"成功获取到郭氏对象，名称为: {guoObj.Name}");
+    // 转换成功，直接使用强类型变量 GuaObj
+    Console.WriteLine($"成功获取到郭氏对象，名称为: {GuaObj.Name}");
 }
 else
 {

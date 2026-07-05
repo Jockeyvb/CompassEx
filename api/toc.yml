@@ -10,6 +10,9 @@ items:
   - uid: CompassEx.CompassEx
     name: CompassEx
     type: Class
+  - uid: CompassEx.LicenseWatermark
+    name: LicenseWatermark
+    type: Class
 - uid: CompassEx.C3H
   name: CompassEx.C3H
   type: Namespace
@@ -64,38 +67,50 @@ items:
   - uid: CompassEx.Comm.TymeTimeExtensions
     name: TymeTimeExtensions
     type: Class
-- uid: CompassEx.Guo
-  name: CompassEx.Guo
+- uid: CompassEx.Gua
+  name: CompassEx.Gua
   type: Namespace
   items:
-  - uid: CompassEx.Guo.FateGuo
-    name: FateGuo
+  - uid: CompassEx.Gua.FateGua
+    name: FateGua
     type: Class
-  - uid: CompassEx.Guo.GuoClass
-    name: GuoClass
+  - uid: CompassEx.Gua.GuaClass
+    name: GuaClass
     type: Class
-  - uid: CompassEx.Guo.GuoQi
-    name: GuoQi
+  - uid: CompassEx.Gua.GuaQi
+    name: GuaQi
     type: Class
-  - uid: CompassEx.Guo.GuoSubClass
-    name: GuoSubClass
+  - uid: CompassEx.Gua.GuaSubClass
+    name: GuaSubClass
     type: Class
-  - uid: CompassEx.Guo.NaJia
-    name: NaJia
-    type: Class
-  - uid: CompassEx.Guo.NaJia.NaJiaType
-    name: NaJia.NaJiaType
+  - uid: CompassEx.Gua.INaJiaResult
+    name: INaJiaResult
+    type: Interface
+  - uid: CompassEx.Gua.NaJiaJFResult
+    name: NaJiaJFResult
+    type: Struct
+  - uid: CompassEx.Gua.NaJiaType
+    name: NaJiaType
     type: Enum
-  - uid: CompassEx.Guo.NineStar
+  - uid: CompassEx.Gua.NaJiaYGResult
+    name: NaJiaYGResult
+    type: Struct
+  - uid: CompassEx.Gua.NaJia`1
+    name: NaJia<TResult>
+    type: Class
+  - uid: CompassEx.Gua.NineStar
     name: NineStar
     type: Class
-  - uid: CompassEx.Guo.SixGodClass
+  - uid: CompassEx.Gua.NineStarType
+    name: NineStarType
+    type: Enum
+  - uid: CompassEx.Gua.SixGodClass
     name: SixGodClass
     type: Class
-  - uid: CompassEx.Guo.SixRelativeClass
+  - uid: CompassEx.Gua.SixRelativeClass
     name: SixRelativeClass
     type: Class
-  - uid: CompassEx.Guo.TianJiOutGuo
-    name: TianJiOutGuo
+  - uid: CompassEx.Gua.TianJiGua
+    name: TianJiGua
     type: Class
 memberLayout: SamePage

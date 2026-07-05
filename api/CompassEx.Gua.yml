@@ -1,0 +1,162 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Gua
+  commentId: N:CompassEx.Gua
+  id: CompassEx.Gua
+  children:
+  - CompassEx.Gua.FateGua
+  - CompassEx.Gua.GuaClass
+  - CompassEx.Gua.GuaQi
+  - CompassEx.Gua.GuaSubClass
+  - CompassEx.Gua.INaJiaResult
+  - CompassEx.Gua.NaJiaJFResult
+  - CompassEx.Gua.NaJiaType
+  - CompassEx.Gua.NaJiaYGResult
+  - CompassEx.Gua.NaJia`1
+  - CompassEx.Gua.NineStar
+  - CompassEx.Gua.NineStarType
+  - CompassEx.Gua.SixGodClass
+  - CompassEx.Gua.SixRelativeClass
+  - CompassEx.Gua.TianJiGua
+  langs:
+  - csharp
+  - vb
+  name: CompassEx.Gua
+  nameWithType: CompassEx.Gua
+  fullName: CompassEx.Gua
+  type: Namespace
+  assemblies:
+  - CompassEx
+references:
+- uid: CompassEx.Gua.FateGua
+  commentId: T:CompassEx.Gua.FateGua
+  href: CompassEx.Gua.FateGua.html
+  name: FateGua
+  nameWithType: FateGua
+  fullName: CompassEx.Gua.FateGua
+- uid: CompassEx.Gua.GuaClass
+  commentId: T:CompassEx.Gua.GuaClass
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.GuaClass.html
+  name: GuaClass
+  nameWithType: GuaClass
+  fullName: CompassEx.Gua.GuaClass
+- uid: CompassEx.Gua.GuaQi
+  commentId: T:CompassEx.Gua.GuaQi
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.GuaQi.html
+  name: GuaQi
+  nameWithType: GuaQi
+  fullName: CompassEx.Gua.GuaQi
+- uid: CompassEx.Gua.GuaSubClass
+  commentId: T:CompassEx.Gua.GuaSubClass
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.GuaSubClass.html
+  name: GuaSubClass
+  nameWithType: GuaSubClass
+  fullName: CompassEx.Gua.GuaSubClass
+- uid: CompassEx.Gua.NaJiaType
+  commentId: T:CompassEx.Gua.NaJiaType
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.NaJiaType.html
+  name: NaJiaType
+  nameWithType: NaJiaType
+  fullName: CompassEx.Gua.NaJiaType
+- uid: CompassEx.Gua.INaJiaResult
+  commentId: T:CompassEx.Gua.INaJiaResult
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.INaJiaResult.html
+  name: INaJiaResult
+  nameWithType: INaJiaResult
+  fullName: CompassEx.Gua.INaJiaResult
+- uid: CompassEx.Gua.NaJiaJFResult
+  commentId: T:CompassEx.Gua.NaJiaJFResult
+  href: CompassEx.Gua.NaJiaJFResult.html
+  name: NaJiaJFResult
+  nameWithType: NaJiaJFResult
+  fullName: CompassEx.Gua.NaJiaJFResult
+- uid: CompassEx.Gua.NaJiaYGResult
+  commentId: T:CompassEx.Gua.NaJiaYGResult
+  href: CompassEx.Gua.NaJiaYGResult.html
+  name: NaJiaYGResult
+  nameWithType: NaJiaYGResult
+  fullName: CompassEx.Gua.NaJiaYGResult
+- uid: CompassEx.Gua.NaJia`1
+  commentId: T:CompassEx.Gua.NaJia`1
+  href: CompassEx.Gua.NaJia-1.html
+  name: NaJia<TResult>
+  nameWithType: NaJia<TResult>
+  fullName: CompassEx.Gua.NaJia<TResult>
+  nameWithType.vb: NaJia(Of TResult)
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult)
+  name.vb: NaJia(Of TResult)
+  spec.csharp:
+  - uid: CompassEx.Gua.NaJia`1
+    name: NaJia
+    href: CompassEx.Gua.NaJia-1.html
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: CompassEx.Gua.NaJia`1
+    name: NaJia
+    href: CompassEx.Gua.NaJia-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: CompassEx.Gua.NineStarType
+  commentId: T:CompassEx.Gua.NineStarType
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.NineStarType.html
+  name: NineStarType
+  nameWithType: NineStarType
+  fullName: CompassEx.Gua.NineStarType
+- uid: CompassEx.Gua.NineStar
+  commentId: T:CompassEx.Gua.NineStar
+  href: CompassEx.Gua.NineStar.html
+  name: NineStar
+  nameWithType: NineStar
+  fullName: CompassEx.Gua.NineStar
+- uid: CompassEx.Gua.SixGodClass
+  commentId: T:CompassEx.Gua.SixGodClass
+  href: CompassEx.Gua.SixGodClass.html
+  name: SixGodClass
+  nameWithType: SixGodClass
+  fullName: CompassEx.Gua.SixGodClass
+- uid: CompassEx.Gua.SixRelativeClass
+  commentId: T:CompassEx.Gua.SixRelativeClass
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.SixRelativeClass.html
+  name: SixRelativeClass
+  nameWithType: SixRelativeClass
+  fullName: CompassEx.Gua.SixRelativeClass
+- uid: CompassEx.Gua.TianJiGua
+  commentId: T:CompassEx.Gua.TianJiGua
+  href: CompassEx.Gua.TianJiGua.html
+  name: TianJiGua
+  nameWithType: TianJiGua
+  fullName: CompassEx.Gua.TianJiGua
+- uid: CompassEx.Gua
+  commentId: N:CompassEx.Gua
+  href: CompassEx.html
+  name: CompassEx.Gua
+  nameWithType: CompassEx.Gua
+  fullName: CompassEx.Gua
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html

@@ -12,10 +12,10 @@ items:
   - CompassEx.Comm.LocClass.GetLocClass(System.Int32)
   - CompassEx.Comm.LocClass.GetLocClass(System.String)
   - CompassEx.Comm.LocClass.Index
-  - CompassEx.Comm.LocClass.LocName
   - CompassEx.Comm.LocClass.LocNames
   - CompassEx.Comm.LocClass.LocTimeValue
   - CompassEx.Comm.LocClass.LocTimeValues
+  - CompassEx.Comm.LocClass.Name
   - CompassEx.Comm.LocClass.TimeValueInRangIndex(System.DateTime)
   - CompassEx.Comm.LocClass.TimeValueInRangIndex(System.String)
   langs:
@@ -71,16 +71,17 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LocNames
     path: CompassEx/Comm/LocClass.cs
-    startLine: 25
+    startLine: 31
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 地支名称数组
+  summary: 十二地支的经典字面名称全局静态只读序列。
   example: []
   syntax:
     content: public static readonly string[] LocNames
     return:
       type: System.String[]
+      description: 包含 12 个地支：从“子”开始至“亥”结束，索引对应 <code>0 ~ 11</code>。
     content.vb: Public Shared ReadOnly LocNames As String()
 - uid: CompassEx.Comm.LocClass.LocTimeValues
   commentId: F:CompassEx.Comm.LocClass.LocTimeValues
@@ -100,48 +101,51 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LocTimeValues
     path: CompassEx/Comm/LocClass.cs
-    startLine: 29
+    startLine: 59
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 地支对应的时间值
+  summary: 十二地支在传统时辰中所对应的二十四小时制绝对时间段范围序列。
+  remarks: <table><thead><tr><th class="term">地支索引</th><th class="description">傳統時辰 (Chinese Hour)</th><th class="description">24小時制範圍 (24h Range)</th></tr></thead><tbody><tr><td class="term">0</td><td class="description">子時 (Zi)</td><td class="description">23:00 - 00:59</td></tr><tr><td class="term">1</td><td class="description">丑時 (Chou)</td><td class="description">01:00 - 02:59</td></tr><tr><td class="term">2</td><td class="description">寅時 (Yin)</td><td class="description">03:00 - 04:59</td></tr><tr><td class="term">3</td><td class="description">卯時 (Mao)</td><td class="description">05:00 - 06:59</td></tr><tr><td class="term">4</td><td class="description">辰時 (Chen)</td><td class="description">07:00 - 08:59</td></tr><tr><td class="term">5</td><td class="description">巳時 (Si)</td><td class="description">09:00 - 10:59</td></tr><tr><td class="term">6</td><td class="description">午時 (Wu)</td><td class="description">11:00 - 12:59</td></tr><tr><td class="term">7</td><td class="description">未時 (Wei)</td><td class="description">13:00 - 14:59</td></tr><tr><td class="term">8</td><td class="description">申時 (Shen)</td><td class="description">15:00 - 16:59</td></tr><tr><td class="term">9</td><td class="description">酉時 (You)</td><td class="description">17:00 - 18:59</td></tr><tr><td class="term">10</td><td class="description">戌時 (Xu)</td><td class="description">19:00 - 20:59</td></tr><tr><td class="term">11</td><td class="description">亥時 (Hai)</td><td class="description">21:00 - 22:59</td></tr></tbody></table>
   example: []
   syntax:
     content: public static readonly string[] LocTimeValues
     return:
       type: System.String[]
+      description: 包含 12 个时辰的时间区间字符串。順序嚴格對應：子、丑、寅、卯、辰、巳、午、未、申、酉、戌、亥。
     content.vb: Public Shared ReadOnly LocTimeValues As String()
-- uid: CompassEx.Comm.LocClass.LocName
-  commentId: P:CompassEx.Comm.LocClass.LocName
-  id: LocName
+- uid: CompassEx.Comm.LocClass.Name
+  commentId: P:CompassEx.Comm.LocClass.Name
+  id: Name
   parent: CompassEx.Comm.LocClass
   langs:
   - csharp
   - vb
-  name: LocName
-  nameWithType: LocClass.LocName
-  fullName: CompassEx.Comm.LocClass.LocName
+  name: Name
+  nameWithType: LocClass.Name
+  fullName: CompassEx.Comm.LocClass.Name
   type: Property
   source:
     remote:
       path: CompassEx/Comm/LocClass.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: LocName
+    id: Name
     path: CompassEx/Comm/LocClass.cs
-    startLine: 34
+    startLine: 72
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 地支名称
+  summary: 获取当前地支实例的字面名称（如“子”、“丑”等）。
   example: []
   syntax:
-    content: public string LocName { get; }
+    content: public string Name { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property LocName As String
-  overload: CompassEx.Comm.LocClass.LocName*
+      description: 一个 <xref href="System.String" data-throw-if-not-resolved="false"></xref> 字符串，表示当前地支的单字名称。
+    content.vb: Public Property Name As String
+  overload: CompassEx.Comm.LocClass.Name*
 - uid: CompassEx.Comm.LocClass.Index
   commentId: P:CompassEx.Comm.LocClass.Index
   id: Index
@@ -160,17 +164,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Index
     path: CompassEx/Comm/LocClass.cs
-    startLine: 38
+    startLine: 80
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 地支索引
+  summary: 获取当前地支在十二地支顺位序列中的绝对索引位置。
   example: []
   syntax:
     content: public int Index { get; }
     parameters: []
     return:
       type: System.Int32
+      description: 一个 <xref href="System.Int32" data-throw-if-not-resolved="false"></xref> 整数，有效取值范围为 <code>0 ~ 11</code>，对应 <xref href="CompassEx.Comm.LocClass.LocNames" data-throw-if-not-resolved="false"></xref> 中的位置。
     content.vb: Public Property Index As Integer
   overload: CompassEx.Comm.LocClass.Index*
 - uid: CompassEx.Comm.LocClass.FiveAttr
@@ -191,17 +196,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FiveAttr
     path: CompassEx/Comm/LocClass.cs
-    startLine: 43
+    startLine: 88
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 五行属
+  summary: 获取当前地支所归属的五行属性。
   example: []
   syntax:
     content: public FiveAttr FiveAttr { get; }
     parameters: []
     return:
       type: CompassEx.Comm.FiveAttr
+      description: 返回一个 <xref href="CompassEx.Comm.LocClass.FiveAttr" data-throw-if-not-resolved="false"></xref> 对象（或枚举），代表该地支的五行特征（如寅卯属木、巳午属火等）。
     content.vb: Public Property FiveAttr As FiveAttr
   overload: CompassEx.Comm.LocClass.FiveAttr*
 - uid: CompassEx.Comm.LocClass.LocTimeValue
@@ -222,17 +228,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LocTimeValue
     path: CompassEx/Comm/LocClass.cs
-    startLine: 48
+    startLine: 96
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 地支的时间值
+  summary: 获取当前地支作为时辰时，对应的二十四小时制具体时间段字符串。
   example: []
   syntax:
     content: public string LocTimeValue { get; }
     parameters: []
     return:
       type: System.String
+      description: 一个形如 <code>"HH:mm-HH:mm"</code> 的时间区间字符串，动态映射自 <xref href="CompassEx.Comm.LocClass.LocTimeValues" data-throw-if-not-resolved="false"></xref> 数组。
     content.vb: Public Property LocTimeValue As String
   overload: CompassEx.Comm.LocClass.LocTimeValue*
 - uid: CompassEx.Comm.LocClass.#ctor(System.String)
@@ -253,7 +260,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Comm/LocClass.cs
-    startLine: 60
+    startLine: 108
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -292,7 +299,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Comm/LocClass.cs
-    startLine: 70
+    startLine: 118
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -331,21 +338,22 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TimeValueInRangIndex
     path: CompassEx/Comm/LocClass.cs
-    startLine: 103
+    startLine: 158
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 返回时间是否在这个地支上
+  summary: 判定指定的日期时间对象是否落入当前地支所代表的时辰范围内（仅提取小时进行比对）。
+  remarks: 本方法是一个重载快捷方式，内部会将传入时间的 24 小时制小时部分格式化为字符串后，转发并链式调用给核心比对方法 <xref href="CompassEx.Comm.LocClass.TimeValueInRangIndex(System.String)" data-throw-if-not-resolved="false"></xref>。
   example: []
   syntax:
     content: public bool TimeValueInRangIndex(DateTime d)
     parameters:
     - id: d
       type: System.DateTime
-      description: 日期对象，只取小时
+      description: 需要判定的完整 <xref href="System.DateTime" data-throw-if-not-resolved="false"></xref> 日期时间对象。
     return:
       type: System.Boolean
-      description: ''
+      description: 若该时间属于当前地支的时辰区间则返回 <code>true</code>；否则返回 <code>false</code>。
     content.vb: Public Function TimeValueInRangIndex(d As Date) As Boolean
   overload: CompassEx.Comm.LocClass.TimeValueInRangIndex*
   nameWithType.vb: LocClass.TimeValueInRangIndex(Date)
@@ -369,21 +377,27 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TimeValueInRangIndex
     path: CompassEx/Comm/LocClass.cs
-    startLine: 113
+    startLine: 173
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 返回时间是否在这个地支上
+  summary: 判定指定的小时数（24小时制字符串）是否落入当前地支所代表的时辰范围内。
+  remarks: >-
+    <p><b>时辰边界算法解析：</b></p>
+
+    <p>由于<b>子时（Index = 0）</b>具有跨天交界的特殊性（即深夜 23:00 至次日凌晨 01:00），无法通过简单的单一区间闭合匹配。因此，当当前地支为子时时，系统会优先触发特殊防御逻辑：只要小时数大于等于 <code>23</code> 或等于 <code>0</code>，即直接判定命中并返回 <code>true</code>。</p>
+
+    <p>对于其它普通时辰，方法会动态解构 <xref href="CompassEx.Comm.LocClass.LocTimeValue" data-throw-if-not-resolved="false"></xref> 的起止字符串，并将其转化为整型进行绝对闭区间匹配。</p>
   example: []
   syntax:
     content: public bool TimeValueInRangIndex(string HH)
     parameters:
     - id: HH
       type: System.String
-      description: 小时
+      description: 24 小时制的小时字符串（如 "08"、"23" 等）。
     return:
       type: System.Boolean
-      description: ''
+      description: 若该小时数属于当前地支的时辰区间则返回 <code>true</code>；否则返回 <code>false</code>。
     content.vb: Public Function TimeValueInRangIndex(HH As String) As Boolean
   overload: CompassEx.Comm.LocClass.TimeValueInRangIndex*
   nameWithType.vb: LocClass.TimeValueInRangIndex(String)
@@ -407,17 +421,17 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAllLocClass
     path: CompassEx/Comm/LocClass.cs
-    startLine: 136
+    startLine: 196
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 获得所有地支类集合
+  summary: 批量获取系统中完整配置的十二地支类实体集合。
   example: []
   syntax:
     content: public static List<LocClass> GetAllLocClass()
     return:
       type: System.Collections.Generic.List{CompassEx.Comm.LocClass}
-      description: ''
+      description: 返回一个包含 12 个 <xref href="CompassEx.Comm.LocClass" data-throw-if-not-resolved="false"></xref> 地支对象的 <xref href="System.Collections.Generic.List%601" data-throw-if-not-resolved="false"></xref> 列表，顺序完全对应二十四山及传统地支流转顺位。
     content.vb: Public Shared Function GetAllLocClass() As List(Of LocClass)
   overload: CompassEx.Comm.LocClass.GetAllLocClass*
 - uid: CompassEx.Comm.LocClass.GetLocClass(System.String)
@@ -438,18 +452,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetLocClass
     path: CompassEx/Comm/LocClass.cs
-    startLine: 151
+    startLine: 211
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
+  summary: 根据指定的地支单字字面名称，动态检索并实例化对应的地支类实体。
   example: []
   syntax:
     content: public static LocClass GetLocClass(string LocName)
     parameters:
     - id: LocName
       type: System.String
+      description: 要查询的地支名称（如“子”、“丑”等）。
     return:
       type: CompassEx.Comm.LocClass
+      description: 若在全局元数据中成功匹配到该地支名，则返回填充好业务属性的 <xref href="CompassEx.Comm.LocClass" data-throw-if-not-resolved="false"></xref> 实例；若输入的字符非法或不存在，则返回 <code>null</code>。
     content.vb: Public Shared Function GetLocClass(LocName As String) As LocClass
   overload: CompassEx.Comm.LocClass.GetLocClass*
   nameWithType.vb: LocClass.GetLocClass(String)
@@ -473,18 +490,22 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetLocClass
     path: CompassEx/Comm/LocClass.cs
-    startLine: 165
+    startLine: 228
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
+  summary: 根据指定的全局静态顺位索引，动态检索并实例化对应的地支类实体。
+  remarks: <b>内部对象装配：</b>该静态工厂方法在构造新实例的同时，会自动映射并填充对应的静态元数据缓存，包括 <xref href="CompassEx.Comm.LocClass.LocTimeValue" data-throw-if-not-resolved="false"></xref>、<xref href="CompassEx.Comm.LocClass.%23ctor(System.Int32)" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: public static LocClass GetLocClass(int iLocIndex)
     parameters:
     - id: iLocIndex
       type: System.Int32
+      description: 地支在序列中的绝对索引位置，有效取值范围为 <code>0 ~ 11</code>。
     return:
       type: CompassEx.Comm.LocClass
+      description: 返回带有完整时辰时间段、位置序列等属性绑定的 <xref href="CompassEx.Comm.LocClass" data-throw-if-not-resolved="false"></xref> 地支类实体对象。
     content.vb: Public Shared Function GetLocClass(iLocIndex As Integer) As LocClass
   overload: CompassEx.Comm.LocClass.GetLocClass*
   nameWithType.vb: LocClass.GetLocClass(Integer)
@@ -876,12 +897,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: (
   - name: )
-- uid: CompassEx.Comm.LocClass.LocName*
-  commentId: Overload:CompassEx.Comm.LocClass.LocName
-  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_LocName
-  name: LocName
-  nameWithType: LocClass.LocName
-  fullName: CompassEx.Comm.LocClass.LocName
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -893,12 +908,12 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: CompassEx.Comm.LocClass.Index*
-  commentId: Overload:CompassEx.Comm.LocClass.Index
-  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_Index
-  name: Index
-  nameWithType: LocClass.Index
-  fullName: CompassEx.Comm.LocClass.Index
+- uid: CompassEx.Comm.LocClass.Name*
+  commentId: Overload:CompassEx.Comm.LocClass.Name
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_Name
+  name: Name
+  nameWithType: LocClass.Name
+  fullName: CompassEx.Comm.LocClass.Name
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -910,6 +925,24 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: CompassEx.Comm.LocClass.LocNames
+  commentId: F:CompassEx.Comm.LocClass.LocNames
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_LocNames
+  name: LocNames
+  nameWithType: LocClass.LocNames
+  fullName: CompassEx.Comm.LocClass.LocNames
+- uid: CompassEx.Comm.LocClass.Index*
+  commentId: Overload:CompassEx.Comm.LocClass.Index
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_Index
+  name: Index
+  nameWithType: LocClass.Index
+  fullName: CompassEx.Comm.LocClass.Index
+- uid: CompassEx.Comm.LocClass.FiveAttr
+  commentId: P:CompassEx.Comm.LocClass.FiveAttr
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_FiveAttr
+  name: FiveAttr
+  nameWithType: LocClass.FiveAttr
+  fullName: CompassEx.Comm.LocClass.FiveAttr
 - uid: CompassEx.Comm.LocClass.FiveAttr*
   commentId: Overload:CompassEx.Comm.LocClass.FiveAttr
   href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_FiveAttr
@@ -923,6 +956,12 @@ references:
   name: FiveAttr
   nameWithType: FiveAttr
   fullName: CompassEx.Comm.FiveAttr
+- uid: CompassEx.Comm.LocClass.LocTimeValues
+  commentId: F:CompassEx.Comm.LocClass.LocTimeValues
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_LocTimeValues
+  name: LocTimeValues
+  nameWithType: LocClass.LocTimeValues
+  fullName: CompassEx.Comm.LocClass.LocTimeValues
 - uid: CompassEx.Comm.LocClass.LocTimeValue*
   commentId: Overload:CompassEx.Comm.LocClass.LocTimeValue
   href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_LocTimeValue
@@ -945,18 +984,6 @@ references:
   nameWithType.vb: LocClass.New
   fullName.vb: CompassEx.Comm.LocClass.New
   name.vb: New
-- uid: CompassEx.Comm.LocClass.LocNames
-  commentId: F:CompassEx.Comm.LocClass.LocNames
-  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_LocNames
-  name: LocNames
-  nameWithType: LocClass.LocNames
-  fullName: CompassEx.Comm.LocClass.LocNames
-- uid: CompassEx.Comm.LocClass.TimeValueInRangIndex*
-  commentId: Overload:CompassEx.Comm.LocClass.TimeValueInRangIndex
-  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_TimeValueInRangIndex_System_DateTime_
-  name: TimeValueInRangIndex
-  nameWithType: LocClass.TimeValueInRangIndex
-  fullName: CompassEx.Comm.LocClass.TimeValueInRangIndex
 - uid: System.DateTime
   commentId: T:System.DateTime
   parent: System
@@ -968,6 +995,42 @@ references:
   nameWithType.vb: Date
   fullName.vb: Date
   name.vb: Date
+- uid: CompassEx.Comm.LocClass.TimeValueInRangIndex(System.String)
+  commentId: M:CompassEx.Comm.LocClass.TimeValueInRangIndex(System.String)
+  isExternal: true
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_TimeValueInRangIndex_System_String_
+  name: TimeValueInRangIndex(string)
+  nameWithType: LocClass.TimeValueInRangIndex(string)
+  fullName: CompassEx.Comm.LocClass.TimeValueInRangIndex(string)
+  nameWithType.vb: LocClass.TimeValueInRangIndex(String)
+  fullName.vb: CompassEx.Comm.LocClass.TimeValueInRangIndex(String)
+  name.vb: TimeValueInRangIndex(String)
+  spec.csharp:
+  - uid: CompassEx.Comm.LocClass.TimeValueInRangIndex(System.String)
+    name: TimeValueInRangIndex
+    href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_TimeValueInRangIndex_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.LocClass.TimeValueInRangIndex(System.String)
+    name: TimeValueInRangIndex
+    href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_TimeValueInRangIndex_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CompassEx.Comm.LocClass.TimeValueInRangIndex*
+  commentId: Overload:CompassEx.Comm.LocClass.TimeValueInRangIndex
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_TimeValueInRangIndex_System_DateTime_
+  name: TimeValueInRangIndex
+  nameWithType: LocClass.TimeValueInRangIndex
+  fullName: CompassEx.Comm.LocClass.TimeValueInRangIndex
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -979,6 +1042,47 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: CompassEx.Comm.LocClass.LocTimeValue
+  commentId: P:CompassEx.Comm.LocClass.LocTimeValue
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_LocTimeValue
+  name: LocTimeValue
+  nameWithType: LocClass.LocTimeValue
+  fullName: CompassEx.Comm.LocClass.LocTimeValue
+- uid: CompassEx.Comm.LocClass
+  commentId: T:CompassEx.Comm.LocClass
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.LocClass.html
+  name: LocClass
+  nameWithType: LocClass
+  fullName: CompassEx.Comm.LocClass
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: CompassEx.Comm.LocClass.GetAllLocClass*
   commentId: Overload:CompassEx.Comm.LocClass.GetAllLocClass
   href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_GetAllLocClass
@@ -1017,34 +1121,6 @@ references:
   - uid: CompassEx.Comm.LocClass
     name: LocClass
     href: CompassEx.Comm.LocClass.html
-  - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
   - name: )
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
@@ -1089,10 +1165,31 @@ references:
   name: GetLocClass
   nameWithType: LocClass.GetLocClass
   fullName: CompassEx.Comm.LocClass.GetLocClass
-- uid: CompassEx.Comm.LocClass
-  commentId: T:CompassEx.Comm.LocClass
-  parent: CompassEx.Comm
-  href: CompassEx.Comm.LocClass.html
-  name: LocClass
-  nameWithType: LocClass
-  fullName: CompassEx.Comm.LocClass
+- uid: CompassEx.Comm.LocClass.#ctor(System.Int32)
+  commentId: M:CompassEx.Comm.LocClass.#ctor(System.Int32)
+  isExternal: true
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass__ctor_System_Int32_
+  name: LocClass(int)
+  nameWithType: LocClass.LocClass(int)
+  fullName: CompassEx.Comm.LocClass.LocClass(int)
+  nameWithType.vb: LocClass.New(Integer)
+  fullName.vb: CompassEx.Comm.LocClass.New(Integer)
+  name.vb: New(Integer)
+  spec.csharp:
+  - uid: CompassEx.Comm.LocClass.#ctor(System.Int32)
+    name: LocClass
+    href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass__ctor_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - name: New
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )

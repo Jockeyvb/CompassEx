@@ -30,15 +30,35 @@ namespace CompassEx.Comm
         /// 包含 12 个地支：从“子”开始至“亥”结束，索引对应 <c>0 ~ 11</c>。
         /// </value>
         public readonly static string[] LocNames = { "子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥" };
-
         /// <summary>
         /// 十二地支在传统时辰中所对应的二十四小时制绝对时间段范围序列。
         /// </summary>
         /// <value>
-        /// 包含 12 个时辰的时间区间字符串。
+        /// 包含 12 个时辰的时间区间字符串。順序嚴格對應：子、丑、寅、卯、辰、巳、午、未、申、酉、戌、亥。
         /// </value>
-        /// <remarks>                 
+        /// <remarks>
+        /// <list type="table">
+        ///   <listheader>
+        ///     <term>地支索引</term>
+        ///     <description>傳統時辰 (Chinese Hour)</description>
+        ///     <description>24小時制範圍 (24h Range)</description>
+        ///   </listheader>
+        ///   <item><term>0</term><description>子時 (Zi)</description><description>23:00 - 00:59</description></item>
+        ///   <item><term>1</term><description>丑時 (Chou)</description><description>01:00 - 02:59</description></item>
+        ///   <item><term>2</term><description>寅時 (Yin)</description><description>03:00 - 04:59</description></item>
+        ///   <item><term>3</term><description>卯時 (Mao)</description><description>05:00 - 06:59</description></item>
+        ///   <item><term>4</term><description>辰時 (Chen)</description><description>07:00 - 08:59</description></item>
+        ///   <item><term>5</term><description>巳時 (Si)</description><description>09:00 - 10:59</description></item>
+        ///   <item><term>6</term><description>午時 (Wu)</description><description>11:00 - 12:59</description></item>
+        ///   <item><term>7</term><description>未時 (Wei)</description><description>13:00 - 14:59</description></item>
+        ///   <item><term>8</term><description>申時 (Shen)</description><description>15:00 - 16:59</description></item>
+        ///   <item><term>9</term><description>酉時 (You)</description><description>17:00 - 18:59</description></item>
+        ///   <item><term>10</term><description>戌時 (Xu)</description><description>19:00 - 20:59</description></item>
+        ///   <item><term>11</term><description>亥時 (Hai)</description><description>21:00 - 22:59</description></item>
+        /// </list>
+        /// </remarks>
         public readonly static string[] LocTimeValues = { "23:00-00:59", "01:00-02:59", "03:00-04:59", "05:00-06:59", "07:00-08:59", "09:00-10:59", "11:00-12:59", "13:00-14:59", "15:00-16:59", "17:00-18:59", "19:00-20:59", "21:00-22:59" };
+
 
         #endregion
 
@@ -204,7 +224,7 @@ namespace CompassEx.Comm
         /// <param name="iLocIndex">地支在序列中的绝对索引位置，有效取值范围为 <c>0 ~ 11</c>。</param>
         /// <returns>返回带有完整时辰时间段、位置序列等属性绑定的 <see cref="LocClass"/> 地支类实体对象。</returns>
         /// <remarks>
-        /// <b>内部对象装配：</b>该静态工厂方法在构造新实例的同时，会自动映射并填充对应的静态元数据缓存，包括 <see cref="LocTimeValue"/>、<see cref="Index"/> 以及 <see cref="LocName"/>。
+        /// <b>内部对象装配：</b>该静态工厂方法在构造新实例的同时，会自动映射并填充对应的静态元数据缓存，包括 <see cref="LocTimeValue"/>、<see cref="LocClass( int )"/>  
         /// </remarks>
         public static LocClass GetLocClass(int iLocIndex)
         {

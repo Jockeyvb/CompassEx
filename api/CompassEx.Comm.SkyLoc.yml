@@ -7,6 +7,8 @@ items:
   children:
   - CompassEx.Comm.SkyLoc.#ctor(System.Int32,System.Int32)
   - CompassEx.Comm.SkyLoc.#ctor(System.String)
+  - CompassEx.Comm.SkyLoc.Get60SkyLoc
+  - CompassEx.Comm.SkyLoc.Get60SkyLocNames
   - CompassEx.Comm.SkyLoc.Loc
   - CompassEx.Comm.SkyLoc.Sky
   - CompassEx.Comm.SkyLoc.SkyLocName
@@ -24,11 +26,12 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SkyLoc
     path: CompassEx/Comm/SkyLoc.cs
-    startLine: 23
+    startLine: 26
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 天干地支类
+  summary: 表示天干地支组合（如“甲子”、“乙丑”等六十甲子单元）的实体类。
+  remarks: 本类作为干支历法推排的核心单元，通过将一个独立的天干实例（<xref href="CompassEx.Comm.SkyClass" data-throw-if-not-resolved="false"></xref>）与一个独立的地支实例（<xref href="CompassEx.Comm.LocClass" data-throw-if-not-resolved="false"></xref>）进行复合封装，提供了干支合称输出、跨类索引校验以及干支对象的动态初始化功能。
   example: []
   syntax:
     content: public class SkyLoc
@@ -63,17 +66,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SkyLocName
     path: CompassEx/Comm/SkyLoc.cs
-    startLine: 29
+    startLine: 36
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 天干地支名称
+  summary: 获取当前天干地支组合的完整字面名称（如“甲子”、“丙寅”等）。
   example: []
   syntax:
     content: public string SkyLocName { get; }
     parameters: []
     return:
       type: System.String
+      description: 一个由两个汉字组成的 <xref href="System.String" data-throw-if-not-resolved="false"></xref> 字符串，动态拼接自 <xref href="CompassEx.Comm.SkyClass.Name" data-throw-if-not-resolved="false"></xref> 与 <xref href="CompassEx.Comm.LocClass.Name" data-throw-if-not-resolved="false"></xref>。
     content.vb: Public ReadOnly Property SkyLocName As String
   overload: CompassEx.Comm.SkyLoc.SkyLocName*
 - uid: CompassEx.Comm.SkyLoc.Sky
@@ -94,17 +98,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Sky
     path: CompassEx/Comm/SkyLoc.cs
-    startLine: 34
+    startLine: 44
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 天干
+  summary: 获取当前干支组合中的天干实例对象。
   example: []
   syntax:
     content: public SkyClass Sky { get; }
     parameters: []
     return:
       type: CompassEx.Comm.SkyClass
+      description: 包含完整阴阳、五行及索引元数据的 <xref href="CompassEx.Comm.SkyClass" data-throw-if-not-resolved="false"></xref> 实例。
     content.vb: Public Property Sky As SkyClass
   overload: CompassEx.Comm.SkyLoc.Sky*
 - uid: CompassEx.Comm.SkyLoc.Loc
@@ -125,17 +130,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Loc
     path: CompassEx/Comm/SkyLoc.cs
-    startLine: 39
+    startLine: 52
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 地支
+  summary: 获取当前干支组合中的地支实例对象。
   example: []
   syntax:
     content: public LocClass Loc { get; }
     parameters: []
     return:
       type: CompassEx.Comm.LocClass
+      description: 包含完整时辰、阴阳、五行及索引元数据的 <xref href="CompassEx.Comm.LocClass" data-throw-if-not-resolved="false"></xref> 实例。
     content.vb: Public Property Loc As LocClass
   overload: CompassEx.Comm.SkyLoc.Loc*
 - uid: CompassEx.Comm.SkyLoc.#ctor(System.String)
@@ -156,24 +162,30 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Comm/SkyLoc.cs
-    startLine: 46
+    startLine: 69
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 天干地支构造函数
+  summary: 基于指定的双字干支组合名称（如“甲子”）初始化 <xref href="CompassEx.Comm.SkyLoc" data-throw-if-not-resolved="false"></xref> 类的新实例。
+  remarks: >-
+    <p><b>解构原理：</b></p>
+
+    <p>方法内部会自动提取 <code class="paramref">SkyLocName</code> 的第 1 个字符（索引 0）作为天干字面量，提取第 2 个字符（索引 1）作为地支字面量。</p>
+
+    <p>随后，通过分别检索它们在 <xref href="CompassEx.Comm.SkyClass.SkyNames" data-throw-if-not-resolved="false"></xref> 和 <xref href="CompassEx.Comm.LocClass.LocNames" data-throw-if-not-resolved="false"></xref> 中的位置，隐式链式传递给核心的双索引构造函数完成装配。</p>
   example: []
   syntax:
     content: public SkyLoc(string SkyLocName)
     parameters:
     - id: SkyLocName
       type: System.String
-      description: 天干地支组合<xref href="CompassEx.Comm.SkyClass.SkyNames" data-throw-if-not-resolved="false"></xref><xref href="CompassEx.Comm.LocClass.LocNames" data-throw-if-not-resolved="false"></xref>
+      description: 由天干和地支按顺序组成的双字字符串（例如：“甲子”）。
     content.vb: Public Sub New(SkyLocName As String)
   overload: CompassEx.Comm.SkyLoc.#ctor*
   exceptions:
   - type: System.IndexOutOfRangeException
     commentId: T:System.IndexOutOfRangeException
-    description: ''
+    description: 当输入的字符串长度不足、或拆分出的单字无法在全局干支元数据中找到对应索引时抛出此异常。
   nameWithType.vb: SkyLoc.New(String)
   fullName.vb: CompassEx.Comm.SkyLoc.New(String)
   name.vb: New(String)
@@ -195,31 +207,118 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Comm/SkyLoc.cs
-    startLine: 58
+    startLine: 83
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 天干地支构造函数
+  summary: 基于指定的天干序列索引与地支序列索引初始化 <xref href="CompassEx.Comm.SkyLoc" data-throw-if-not-resolved="false"></xref> 类的新实例。
+  remarks: >-
+    <b>★ 边界安全重构说明：</b>
+
+    已修正历史版本中对边界检查使用大于号（<code>&gt;</code>）导致的拦截穿透漏洞（例如：当 <code class="paramref">SkyIndex</code> 传入 <code>10</code> 时原逻辑无法拦截，会在下一步初始化时引发系统崩溃）。现已全面收紧为严谨的元素范围闭区间防御。
   example: []
   syntax:
     content: public SkyLoc(int SkyIndex, int LocIndex)
     parameters:
     - id: SkyIndex
       type: System.Int32
-      description: 天干索引 <xref href="CompassEx.Comm.SkyClass.SkyNames" data-throw-if-not-resolved="false"></xref>
+      description: 天干在十天干序列中的绝对索引位置，有效取值范围为 <code>0 ~ 9</code>。可参考：<xref href="CompassEx.Comm.SkyClass.SkyNames" data-throw-if-not-resolved="false"></xref>。
     - id: LocIndex
       type: System.Int32
-      description: 地支索引<xref href="CompassEx.Comm.LocClass.LocNames" data-throw-if-not-resolved="false"></xref>
+      description: 地支在十二地支序列中的绝对索引位置，有效取值范围为 <code>0 ~ 11</code>。可参考：<xref href="CompassEx.Comm.LocClass.LocNames" data-throw-if-not-resolved="false"></xref>。
     content.vb: Public Sub New(SkyIndex As Integer, LocIndex As Integer)
   overload: CompassEx.Comm.SkyLoc.#ctor*
   exceptions:
   - type: System.IndexOutOfRangeException
     commentId: T:System.IndexOutOfRangeException
-    description: ''
+    description: 当传入的天干索引或地支索引超出其各自对应的合法物理数组边界时抛出此异常。
   nameWithType.vb: SkyLoc.New(Integer, Integer)
   fullName.vb: CompassEx.Comm.SkyLoc.New(Integer, Integer)
   name.vb: New(Integer, Integer)
+- uid: CompassEx.Comm.SkyLoc.Get60SkyLocNames
+  commentId: M:CompassEx.Comm.SkyLoc.Get60SkyLocNames
+  id: Get60SkyLocNames
+  parent: CompassEx.Comm.SkyLoc
+  langs:
+  - csharp
+  - vb
+  name: Get60SkyLocNames()
+  nameWithType: SkyLoc.Get60SkyLocNames()
+  fullName: CompassEx.Comm.SkyLoc.Get60SkyLocNames()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/SkyLoc.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Get60SkyLocNames
+    path: CompassEx/Comm/SkyLoc.cs
+    startLine: 109
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取经典正统六十甲子干支组合的字符串序列（只读原生数组）。
+  remarks: >-
+    <p><b>历法推演原理与算法重构：</b></p>
+
+    <p>本方法已重构为现代高精度的<b>单层模运算算法</b>。消除了历史版本中双重嵌套循环（<code>int j = i</code>）导致的干支横向错配与漏项缺陷。</p>
+
+    <p>由于十天干与十二地支的最小公倍数为 60，本算法通过单层 <code>0 ~ 59</code> 闭环流转，对天干基数 10 和地支基数 12 进行动态取模（<code>%</code>），确保干支双轨道同步顺时针推进，完美符合《黄帝内经》及传统干支历法规范。</p>
+  example: []
+  syntax:
+    content: public static string[] Get60SkyLocNames()
+    return:
+      type: System.String[]
+      description: 返回一个长度为 60 的 <xref href="System.String" data-throw-if-not-resolved="false"></xref> 原生数组，按历法流转顺序包含“甲子”到“癸亥”。
+    content.vb: Public Shared Function Get60SkyLocNames() As String()
+  overload: CompassEx.Comm.SkyLoc.Get60SkyLocNames*
+- uid: CompassEx.Comm.SkyLoc.Get60SkyLoc
+  commentId: M:CompassEx.Comm.SkyLoc.Get60SkyLoc
+  id: Get60SkyLoc
+  parent: CompassEx.Comm.SkyLoc
+  langs:
+  - csharp
+  - vb
+  name: Get60SkyLoc()
+  nameWithType: SkyLoc.Get60SkyLoc()
+  fullName: CompassEx.Comm.SkyLoc.Get60SkyLoc()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/SkyLoc.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Get60SkyLoc
+    path: CompassEx/Comm/SkyLoc.cs
+    startLine: 131
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取包含完整天干地支对象绑定的六十甲子实体单元序列（只读原生数组）。
+  remarks: <b>性能优化说明：</b>本方法通过单层取模算法动态实例化 60 个干支单元。由于六十甲子属于体系内的核心只读静态元数据，重构后直接返回原生数组，避免了动态列表（<code>List</code>）扩容带来的二次内存拷贝与垃圾回收（GC）开销。
+  example: []
+  syntax:
+    content: public static SkyLoc[] Get60SkyLoc()
+    return:
+      type: CompassEx.Comm.SkyLoc[]
+      description: 返回一个包含 60 个 <xref href="CompassEx.Comm.SkyLoc" data-throw-if-not-resolved="false"></xref> 复合实体的原生数组，按历法顺序排列。
+    content.vb: Public Shared Function Get60SkyLoc() As SkyLoc()
+  overload: CompassEx.Comm.SkyLoc.Get60SkyLoc*
 references:
+- uid: CompassEx.Comm.SkyClass
+  commentId: T:CompassEx.Comm.SkyClass
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.SkyClass.html
+  name: SkyClass
+  nameWithType: SkyClass
+  fullName: CompassEx.Comm.SkyClass
+- uid: CompassEx.Comm.LocClass
+  commentId: T:CompassEx.Comm.LocClass
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.LocClass.html
+  name: LocClass
+  nameWithType: LocClass
+  fullName: CompassEx.Comm.LocClass
 - uid: CompassEx.Comm
   commentId: N:CompassEx.Comm
   href: CompassEx.html
@@ -582,12 +681,6 @@ references:
   name: Comm
   nameWithType: Comm
   fullName: CompassEx.Comm.Comm
-- uid: CompassEx.Comm.SkyLoc.SkyLocName*
-  commentId: Overload:CompassEx.Comm.SkyLoc.SkyLocName
-  href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_SkyLocName
-  name: SkyLocName
-  nameWithType: SkyLoc.SkyLocName
-  fullName: CompassEx.Comm.SkyLoc.SkyLocName
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -599,32 +692,43 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: CompassEx.Comm.SkyClass.Name
+  commentId: P:CompassEx.Comm.SkyClass.Name
+  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_Name
+  name: Name
+  nameWithType: SkyClass.Name
+  fullName: CompassEx.Comm.SkyClass.Name
+- uid: CompassEx.Comm.LocClass.Name
+  commentId: P:CompassEx.Comm.LocClass.Name
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_Name
+  name: Name
+  nameWithType: LocClass.Name
+  fullName: CompassEx.Comm.LocClass.Name
+- uid: CompassEx.Comm.SkyLoc.SkyLocName*
+  commentId: Overload:CompassEx.Comm.SkyLoc.SkyLocName
+  href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_SkyLocName
+  name: SkyLocName
+  nameWithType: SkyLoc.SkyLocName
+  fullName: CompassEx.Comm.SkyLoc.SkyLocName
 - uid: CompassEx.Comm.SkyLoc.Sky*
   commentId: Overload:CompassEx.Comm.SkyLoc.Sky
   href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_Sky
   name: Sky
   nameWithType: SkyLoc.Sky
   fullName: CompassEx.Comm.SkyLoc.Sky
-- uid: CompassEx.Comm.SkyClass
-  commentId: T:CompassEx.Comm.SkyClass
-  parent: CompassEx.Comm
-  href: CompassEx.Comm.SkyClass.html
-  name: SkyClass
-  nameWithType: SkyClass
-  fullName: CompassEx.Comm.SkyClass
 - uid: CompassEx.Comm.SkyLoc.Loc*
   commentId: Overload:CompassEx.Comm.SkyLoc.Loc
   href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_Loc
   name: Loc
   nameWithType: SkyLoc.Loc
   fullName: CompassEx.Comm.SkyLoc.Loc
-- uid: CompassEx.Comm.LocClass
-  commentId: T:CompassEx.Comm.LocClass
+- uid: CompassEx.Comm.SkyLoc
+  commentId: T:CompassEx.Comm.SkyLoc
   parent: CompassEx.Comm
-  href: CompassEx.Comm.LocClass.html
-  name: LocClass
-  nameWithType: LocClass
-  fullName: CompassEx.Comm.LocClass
+  href: CompassEx.Comm.SkyLoc.html
+  name: SkyLoc
+  nameWithType: SkyLoc
+  fullName: CompassEx.Comm.SkyLoc
 - uid: CompassEx.Comm.SkyClass.SkyNames
   commentId: F:CompassEx.Comm.SkyClass.SkyNames
   href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_SkyNames
@@ -664,3 +768,59 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: CompassEx.Comm.SkyLoc.Get60SkyLocNames*
+  commentId: Overload:CompassEx.Comm.SkyLoc.Get60SkyLocNames
+  href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_Get60SkyLocNames
+  name: Get60SkyLocNames
+  nameWithType: SkyLoc.Get60SkyLocNames
+  fullName: CompassEx.Comm.SkyLoc.Get60SkyLocNames
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: CompassEx.Comm.SkyLoc.Get60SkyLoc*
+  commentId: Overload:CompassEx.Comm.SkyLoc.Get60SkyLoc
+  href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_Get60SkyLoc
+  name: Get60SkyLoc
+  nameWithType: SkyLoc.Get60SkyLoc
+  fullName: CompassEx.Comm.SkyLoc.Get60SkyLoc
+- uid: CompassEx.Comm.SkyLoc[]
+  isExternal: true
+  href: CompassEx.Comm.SkyLoc.html
+  name: SkyLoc[]
+  nameWithType: SkyLoc[]
+  fullName: CompassEx.Comm.SkyLoc[]
+  nameWithType.vb: SkyLoc()
+  fullName.vb: CompassEx.Comm.SkyLoc()
+  name.vb: SkyLoc()
+  spec.csharp:
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
+  - name: (
+  - name: )

@@ -110,7 +110,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "CompassEx.CHill",
-      "Summary": "<p sourcefile=\"api/CompassEx.CHill.yml\" sourcestartlinenumber=\"1\">表示罗盘的24山及其相关属性和方法。</p>\n"
+      "Summary": "<p sourcefile=\"api/CompassEx.CHill.yml\" sourcestartlinenumber=\"1\">表示罗盘的二十四山及其相关属性与推演方法的实体类。</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -170,20 +170,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CompassEx.Comm.Defined.FactYearEnum.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CompassEx.Comm.Defined.FactYearEnum.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "CompassEx.Comm.Defined.FactYearEnum",
-      "Summary": "<p sourcefile=\"api/CompassEx.Comm.Defined.FactYearEnum.yml\" sourcestartlinenumber=\"1\">是否为真实年(龄),0为立春后，1立春前</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/CompassEx.Comm.Defined.yml",
       "output": {
         ".html": {
@@ -212,20 +198,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CompassEx.Comm.FiveAttr.FiveAttrRule.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CompassEx.Comm.FiveAttr.FiveAttrRule.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "CompassEx.Comm.FiveAttr.FiveAttrRule",
-      "Summary": "<p sourcefile=\"api/CompassEx.Comm.FiveAttr.FiveAttrRule.yml\" sourcestartlinenumber=\"1\">五行生克关系规则</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/CompassEx.Comm.FiveAttr.yml",
       "output": {
         ".html": {
@@ -236,7 +208,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "CompassEx.Comm.FiveAttr",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/CompassEx.Comm.FiveAttr.yml\" sourcestartlinenumber=\"1\">五行类</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -292,7 +264,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "CompassEx.Comm.SkyLoc",
-      "Summary": "<p sourcefile=\"api/CompassEx.Comm.SkyLoc.yml\" sourcestartlinenumber=\"1\">天干地支类</p>\n"
+      "Summary": "<p sourcefile=\"api/CompassEx.Comm.SkyLoc.yml\" sourcestartlinenumber=\"1\">表示天干地支组合（如“甲子”、“乙丑”等六十甲子单元）的实体类。</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -306,7 +278,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "CompassEx.Comm.TymeTimeExtensions",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/CompassEx.Comm.TymeTimeExtensions.yml\" sourcestartlinenumber=\"1\">针对元贞历法核心库（Tyme）时间与日期对象的 C# 官方标准 <xref href=\"System.DateTime\" data-throw-if-not-resolved=\"false\"></xref> 转换扩展工具类。</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -338,156 +310,226 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CompassEx.Guo.FateGuo.yml",
+      "source_relative_path": "api/CompassEx.Gua.FateGua.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CompassEx.Guo.FateGuo.html"
+          "relative_path": "api/CompassEx.Gua.FateGua.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "CompassEx.Guo.FateGuo",
-      "Summary": "<p sourcefile=\"api/CompassEx.Guo.FateGuo.yml\" sourcestartlinenumber=\"1\">是命卦的结构类型，包含了命卦的六爻纯卦和一些相关属性，例如：命卦的五行属性，命卦的运等<br>\n1、涉及余胜的命卦计算方法，命卦的入卦和出卦的计算方法，命卦的七爻飞爻卦的计算方法，以及命卦与罗盘24山（向）的关系等内容。\n余胜唐所著的《玄空大卦些子法真诀》与《三元直指》中的天机出卦法：余胜唐在《三元直指》书中177页中，明确指出天机出卦法是纳甲用法（三元命卦无关）且并没涉及玄空大卦中的五行之论（虽然书中不全论大卦，亦应注或提示），如不查他其他著作完全不知道要如何使用且《玄空大卦些子法真诀》中的天机出卦法只说【命卦】又不指出命卦具体是三元命卦还是纳甲之卦，使用方法是以向卦为论，那么玄空大卦中是以所向的成卦之卦宫为论？还是以后天八卦为论？还是纳甲卦为论？真让人摸不着头脑。著书者应当严明解说；学习风水者应细仔研究考究为用，不可单论。<br>\n2、在刘贲所作《玄空大卦透析》书中456页第十九章中提到相似，甚至比余写的更为清晰指出以三元64卦以卦气为论，命卦则是纳甲（包括京房与杨公之纳甲法）用户可以参考其计算方法与判断方法。<br>\n关于京房纳甲与杨公纳甲资料，请自行查阅区别与使用<br>\n<b><font color=\"red\">仅参供参考，请谨慎看待使用</font></b></p>\n"
+      "Title": "CompassEx.Gua.FateGua",
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.FateGua.yml\" sourcestartlinenumber=\"1\">是命卦的结构类型，包含了命卦的六爻纯卦和一些相关属性，例如：命卦的五行属性，命卦的运等<br>\n1、涉及余胜的命卦计算方法，命卦的入卦和出卦的计算方法，命卦的七爻飞爻卦的计算方法，以及命卦与罗盘24山（向）的关系等内容。\n余胜唐所著的《玄空大卦些子法真诀》与《三元直指》中的天机出卦法：余胜唐在《三元直指》书中177页中，明确指出天机出卦法是纳甲用法（三元命卦无关）且并没涉及玄空大卦中的五行之论（虽然书中不全论大卦，亦应注或提示），如不查他其他著作完全不知道要如何使用且《玄空大卦些子法真诀》中的天机出卦法只说【命卦】又不指出命卦具体是三元命卦还是纳甲之卦，使用方法是以向卦为论，那么玄空大卦中是以所向的成卦之卦宫为论？还是以后天八卦为论？还是纳甲卦为论？真让人摸不着头脑。著书者应当严明解说；学习风水者应细仔研究考究为用，不可单论。<br>\n2、在刘贲所作《玄空大卦透析》书中456页第十九章中提到相似，甚至比余写的更为清晰指出以三元64卦以卦气为论，命卦则是纳甲（包括京房与杨公之纳甲法）用户可以参考其计算方法与判断方法。<br>\n关于京房纳甲与杨公纳甲资料，请自行查阅区别与使用<br>\n<b><font color=\"red\">仅参供参考，请谨慎看待使用</font></b></p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CompassEx.Guo.GuoClass.yml",
+      "source_relative_path": "api/CompassEx.Gua.GuaClass.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CompassEx.Guo.GuoClass.html"
+          "relative_path": "api/CompassEx.Gua.GuaClass.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "CompassEx.Guo.GuoClass",
+      "Title": "CompassEx.Gua.GuaClass",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CompassEx.Guo.GuoQi.yml",
+      "source_relative_path": "api/CompassEx.Gua.GuaQi.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CompassEx.Guo.GuoQi.html"
+          "relative_path": "api/CompassEx.Gua.GuaQi.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "CompassEx.Guo.GuoQi",
-      "Summary": "<p sourcefile=\"api/CompassEx.Guo.GuoQi.yml\" sourcestartlinenumber=\"1\">64卦（洛数）、先天五行数</p>\n"
+      "Title": "CompassEx.Gua.GuaQi",
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.GuaQi.yml\" sourcestartlinenumber=\"1\">表示玄空大卦体系中“卦气”（洛书数及先天五行生成数）的推演与判别实体类。</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CompassEx.Guo.GuoSubClass.yml",
+      "source_relative_path": "api/CompassEx.Gua.GuaSubClass.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CompassEx.Guo.GuoSubClass.html"
+          "relative_path": "api/CompassEx.Gua.GuaSubClass.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "CompassEx.Guo.GuoSubClass",
+      "Title": "CompassEx.Gua.GuaSubClass",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CompassEx.Guo.NaJia.NaJiaType.yml",
+      "source_relative_path": "api/CompassEx.Gua.INaJiaResult.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CompassEx.Guo.NaJia.NaJiaType.html"
+          "relative_path": "api/CompassEx.Gua.INaJiaResult.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "CompassEx.Guo.NaJia.NaJiaType",
-      "Summary": "<p sourcefile=\"api/CompassEx.Guo.NaJia.NaJiaType.yml\" sourcestartlinenumber=\"1\">纳甲类型</p>\n"
+      "Title": "CompassEx.Gua.INaJiaResult",
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.INaJiaResult.yml\" sourcestartlinenumber=\"1\">京房纳甲结果类,包括：64卦，天干类，地支类\n64卦类用于六爻预测学的纳甲推演（预测），天干类，地支类用于64卦装卦、排盘、起卦，天机出卦法也使用</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CompassEx.Guo.NaJia.yml",
+      "source_relative_path": "api/CompassEx.Gua.NaJia-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CompassEx.Guo.NaJia.html"
+          "relative_path": "api/CompassEx.Gua.NaJia-1.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "CompassEx.Guo.NaJia",
-      "Summary": "<p sourcefile=\"api/CompassEx.Guo.NaJia.yml\" sourcestartlinenumber=\"1\">纳甲类,包括：京房纳甲，杨公纳甲</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CompassEx.Guo.NineStar.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CompassEx.Guo.NineStar.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "CompassEx.Guo.NineStar",
+      "Title": "CompassEx.Gua.NaJia<TResult>",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CompassEx.Guo.SixGodClass.yml",
+      "source_relative_path": "api/CompassEx.Gua.NaJiaJFResult.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CompassEx.Guo.SixGodClass.html"
+          "relative_path": "api/CompassEx.Gua.NaJiaJFResult.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "CompassEx.Guo.SixGodClass",
-      "Summary": "<p sourcefile=\"api/CompassEx.Guo.SixGodClass.yml\" sourcestartlinenumber=\"1\">六神类</p>\n"
+      "Title": "CompassEx.Gua.NaJiaJFResult",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CompassEx.Guo.SixRelativeClass.yml",
+      "source_relative_path": "api/CompassEx.Gua.NaJiaType.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CompassEx.Guo.SixRelativeClass.html"
+          "relative_path": "api/CompassEx.Gua.NaJiaType.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "CompassEx.Guo.SixRelativeClass",
-      "Summary": "<p sourcefile=\"api/CompassEx.Guo.SixRelativeClass.yml\" sourcestartlinenumber=\"1\">六亲类</p>\n"
+      "Title": "CompassEx.Gua.NaJiaType",
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.NaJiaType.yml\" sourcestartlinenumber=\"1\">纳甲类型</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CompassEx.Guo.TianJiOutGuo.yml",
+      "source_relative_path": "api/CompassEx.Gua.NaJiaYGResult.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CompassEx.Guo.TianJiOutGuo.html"
+          "relative_path": "api/CompassEx.Gua.NaJiaYGResult.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "CompassEx.Guo.TianJiOutGuo",
-      "Summary": "<p sourcefile=\"api/CompassEx.Guo.TianJiOutGuo.yml\" sourcestartlinenumber=\"1\">天机出卦法（余胜唐、刘贲）有记载，一般用于收山出煞、命卦判断 等</p>\n"
+      "Title": "CompassEx.Gua.NaJiaYGResult",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CompassEx.Guo.yml",
+      "source_relative_path": "api/CompassEx.Gua.NineStar.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CompassEx.Guo.html"
+          "relative_path": "api/CompassEx.Gua.NineStar.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "CompassEx.Guo",
+      "Title": "CompassEx.Gua.NineStar",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Gua.NineStarType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Gua.NineStarType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Gua.NineStarType",
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.NineStarType.yml\" sourcestartlinenumber=\"1\">九星类型</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Gua.SixGodClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Gua.SixGodClass.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Gua.SixGodClass",
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.SixGodClass.yml\" sourcestartlinenumber=\"1\">表示六爻预测学中“六神”（六兽）的动态装配与排盘实体类。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Gua.SixRelativeClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Gua.SixRelativeClass.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Gua.SixRelativeClass",
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.SixRelativeClass.yml\" sourcestartlinenumber=\"1\">表示六爻或八字预测学中“六亲”（父母、子孙、官鬼、妻财、兄弟）的装配与推演实体类。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Gua.TianJiGua.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Gua.TianJiGua.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Gua.TianJiGua",
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.TianJiGua.yml\" sourcestartlinenumber=\"1\">表示天机出卦法的推演与判定实体类。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Gua.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Gua.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Gua",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.LicenseWatermark.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.LicenseWatermark.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.LicenseWatermark",
       "Summary": null
     },
     {

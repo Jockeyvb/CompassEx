@@ -1,0 +1,229 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Gua.INaJiaResult
+  commentId: T:CompassEx.Gua.INaJiaResult
+  id: INaJiaResult
+  parent: CompassEx.Gua
+  children:
+  - CompassEx.Gua.INaJiaResult.Type
+  langs:
+  - csharp
+  - vb
+  name: INaJiaResult
+  nameWithType: INaJiaResult
+  fullName: CompassEx.Gua.INaJiaResult
+  type: Interface
+  source:
+    remote:
+      path: CompassEx/Gua/NaJia.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: INaJiaResult
+    path: CompassEx/Gua/NaJia.cs
+    startLine: 39
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: >-
+    京房纳甲结果类,包括：64卦，天干类，地支类
+
+    64卦类用于六爻预测学的纳甲推演（预测），天干类，地支类用于64卦装卦、排盘、起卦，天机出卦法也使用
+  example: []
+  syntax:
+    content: public interface INaJiaResult
+    content.vb: Public Interface INaJiaResult
+  derivedClasses:
+  - CompassEx.Gua.NaJiaJFResult
+  - CompassEx.Gua.NaJiaYGResult
+  extensionMethods:
+  - CompassEx.Gua.INaJiaResult.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CompassEx.Gua.INaJiaResult.Type
+  commentId: P:CompassEx.Gua.INaJiaResult.Type
+  id: Type
+  parent: CompassEx.Gua.INaJiaResult
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: INaJiaResult.Type
+  fullName: CompassEx.Gua.INaJiaResult.Type
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/NaJia.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Type
+    path: CompassEx/Gua/NaJia.cs
+    startLine: 39
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  syntax:
+    content: NaJiaType Type { get; }
+    parameters: []
+    return:
+      type: CompassEx.Gua.NaJiaType
+    content.vb: ReadOnly Property Type As NaJiaType
+  overload: CompassEx.Gua.INaJiaResult.Type*
+references:
+- uid: CompassEx.Gua
+  commentId: N:CompassEx.Gua
+  href: CompassEx.html
+  name: CompassEx.Gua
+  nameWithType: CompassEx.Gua
+  fullName: CompassEx.Gua
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+- uid: CompassEx.Gua.INaJiaResult.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<INaJiaResult, TBase>(INaJiaResult, TBase)
+  nameWithType: Comm.ApplyBaseProperties<INaJiaResult, TBase>(INaJiaResult, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.Gua.INaJiaResult, TBase>(CompassEx.Gua.INaJiaResult, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of INaJiaResult, TBase)(INaJiaResult, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.Gua.INaJiaResult, TBase)(CompassEx.Gua.INaJiaResult, TBase)
+  name.vb: ApplyBaseProperties(Of INaJiaResult, TBase)(INaJiaResult, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Gua.INaJiaResult,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.Gua.INaJiaResult
+    name: INaJiaResult
+    href: CompassEx.Gua.INaJiaResult.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.Gua.INaJiaResult
+    name: INaJiaResult
+    href: CompassEx.Gua.INaJiaResult.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Gua.INaJiaResult,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Gua.INaJiaResult
+    name: INaJiaResult
+    href: CompassEx.Gua.INaJiaResult.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.Gua.INaJiaResult
+    name: INaJiaResult
+    href: CompassEx.Gua.INaJiaResult.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: CompassEx.Gua.INaJiaResult.Type*
+  commentId: Overload:CompassEx.Gua.INaJiaResult.Type
+  href: CompassEx.Gua.INaJiaResult.html#CompassEx_Gua_INaJiaResult_Type
+  name: Type
+  nameWithType: INaJiaResult.Type
+  fullName: CompassEx.Gua.INaJiaResult.Type
+- uid: CompassEx.Gua.NaJiaType
+  commentId: T:CompassEx.Gua.NaJiaType
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.NaJiaType.html
+  name: NaJiaType
+  nameWithType: NaJiaType
+  fullName: CompassEx.Gua.NaJiaType

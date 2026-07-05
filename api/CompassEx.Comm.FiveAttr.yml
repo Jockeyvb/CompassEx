@@ -10,12 +10,12 @@ items:
   - CompassEx.Comm.FiveAttr.BothConflict(System.String,System.String)
   - CompassEx.Comm.FiveAttr.BothHarm(System.String,System.String)
   - CompassEx.Comm.FiveAttr.BothTorture(System.String,System.String)
-  - CompassEx.Comm.FiveAttr.FiveAttrBothbirth
   - CompassEx.Comm.FiveAttr.FiveAttrNames
   - CompassEx.Comm.FiveAttr.GetBothAttrRule(System.Int32,System.Int32)
   - CompassEx.Comm.FiveAttr.GetBothAttrRule(System.String,System.String)
   - CompassEx.Comm.FiveAttr.GetBothLocRule(System.Int32,System.Int32)
   - CompassEx.Comm.FiveAttr.GetBothLocRule(System.String,System.String)
+  - CompassEx.Comm.FiveAttr.Index
   - CompassEx.Comm.FiveAttr.LocCombine(System.String,System.String)
   - CompassEx.Comm.FiveAttr.Name
   - CompassEx.Comm.FiveAttr.SkyCombine(System.String,System.String)
@@ -34,10 +34,12 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FiveAttr
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 47
+    startLine: 51
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
+  summary: 五行类
+  example: []
   syntax:
     content: public class FiveAttr
     content.vb: Public Class FiveAttr
@@ -52,69 +54,6 @@ items:
   - System.Object.ReferenceEquals(System.Object,System.Object)
   extensionMethods:
   - CompassEx.Comm.FiveAttr.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
-- uid: CompassEx.Comm.FiveAttr.ToString
-  commentId: M:CompassEx.Comm.FiveAttr.ToString
-  id: ToString
-  parent: CompassEx.Comm.FiveAttr
-  langs:
-  - csharp
-  - vb
-  name: ToString()
-  nameWithType: FiveAttr.ToString()
-  fullName: CompassEx.Comm.FiveAttr.ToString()
-  type: Method
-  source:
-    remote:
-      path: CompassEx/Comm/FiveAttr.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: ToString
-    path: CompassEx/Comm/FiveAttr.cs
-    startLine: 53
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Comm
-  summary: 返回五行名称
-  example: []
-  syntax:
-    content: public override string ToString()
-    return:
-      type: System.String
-      description: ''
-    content.vb: Public Overrides Function ToString() As String
-  overridden: System.Object.ToString
-  overload: CompassEx.Comm.FiveAttr.ToString*
-- uid: CompassEx.Comm.FiveAttr.Name
-  commentId: P:CompassEx.Comm.FiveAttr.Name
-  id: Name
-  parent: CompassEx.Comm.FiveAttr
-  langs:
-  - csharp
-  - vb
-  name: Name
-  nameWithType: FiveAttr.Name
-  fullName: CompassEx.Comm.FiveAttr.Name
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Comm/FiveAttr.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: Name
-    path: CompassEx/Comm/FiveAttr.cs
-    startLine: 62
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Comm
-  summary: 五行名称
-  example: []
-  syntax:
-    content: public string Name { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property Name As String
-  overload: CompassEx.Comm.FiveAttr.Name*
 - uid: CompassEx.Comm.FiveAttr.FiveAttrNames
   commentId: F:CompassEx.Comm.FiveAttr.FiveAttrNames
   id: FiveAttrNames
@@ -133,7 +72,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FiveAttrNames
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 67
+    startLine: 59
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -144,6 +83,68 @@ items:
     return:
       type: System.String[]
     content.vb: Public Shared ReadOnly FiveAttrNames As String()
+- uid: CompassEx.Comm.FiveAttr.Name
+  commentId: P:CompassEx.Comm.FiveAttr.Name
+  id: Name
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: FiveAttr.Name
+  fullName: CompassEx.Comm.FiveAttr.Name
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Name
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 64
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 五行名称
+  example: []
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: CompassEx.Comm.FiveAttr.Name*
+- uid: CompassEx.Comm.FiveAttr.Index
+  commentId: P:CompassEx.Comm.FiveAttr.Index
+  id: Index
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: Index
+  nameWithType: FiveAttr.Index
+  fullName: CompassEx.Comm.FiveAttr.Index
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Index
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 69
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 五行类所在索引
+  example: []
+  syntax:
+    content: public int Index { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Index As Integer
+  overload: CompassEx.Comm.FiveAttr.Index*
 - uid: CompassEx.Comm.FiveAttr.#ctor(System.String)
   commentId: M:CompassEx.Comm.FiveAttr.#ctor(System.String)
   id: '#ctor(System.String)'
@@ -162,7 +163,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 77
+    startLine: 76
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -201,7 +202,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 88
+    startLine: 87
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -240,7 +241,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBothLocRule
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 101
+    startLine: 100
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -263,6 +264,38 @@ items:
   nameWithType.vb: FiveAttr.GetBothLocRule(String, String)
   fullName.vb: CompassEx.Comm.FiveAttr.GetBothLocRule(String, String)
   name.vb: GetBothLocRule(String, String)
+- uid: CompassEx.Comm.FiveAttr.ToString
+  commentId: M:CompassEx.Comm.FiveAttr.ToString
+  id: ToString
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: FiveAttr.ToString()
+  fullName: CompassEx.Comm.FiveAttr.ToString()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToString
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 116
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 返回五行名称
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: CompassEx.Comm.FiveAttr.ToString*
 - uid: CompassEx.Comm.FiveAttr.GetBothLocRule(System.Int32,System.Int32)
   commentId: M:CompassEx.Comm.FiveAttr.GetBothLocRule(System.Int32,System.Int32)
   id: GetBothLocRule(System.Int32,System.Int32)
@@ -281,7 +314,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBothLocRule
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 125
+    startLine: 132
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -322,7 +355,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBothAttrRule
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 195
+    startLine: 202
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -366,7 +399,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBothAttrRule
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 211
+    startLine: 218
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -392,37 +425,6 @@ items:
   nameWithType.vb: FiveAttr.GetBothAttrRule(Integer, Integer)
   fullName.vb: CompassEx.Comm.FiveAttr.GetBothAttrRule(Integer, Integer)
   name.vb: GetBothAttrRule(Integer, Integer)
-- uid: CompassEx.Comm.FiveAttr.FiveAttrBothbirth
-  commentId: M:CompassEx.Comm.FiveAttr.FiveAttrBothbirth
-  id: FiveAttrBothbirth
-  parent: CompassEx.Comm.FiveAttr
-  langs:
-  - csharp
-  - vb
-  name: FiveAttrBothbirth()
-  nameWithType: FiveAttr.FiveAttrBothbirth()
-  fullName: CompassEx.Comm.FiveAttr.FiveAttrBothbirth()
-  type: Method
-  source:
-    remote:
-      path: CompassEx/Comm/FiveAttr.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: FiveAttrBothbirth
-    path: CompassEx/Comm/FiveAttr.cs
-    startLine: 286
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Comm
-  summary: 五行相生的顺序，可以一个字符取出后转为int后，FiveAttrNames[i],这样读出
-  example: []
-  syntax:
-    content: public static string FiveAttrBothbirth()
-    return:
-      type: System.String
-      description: ''
-    content.vb: Public Shared Function FiveAttrBothbirth() As String
-  overload: CompassEx.Comm.FiveAttr.FiveAttrBothbirth*
 - uid: CompassEx.Comm.FiveAttr.BothHarm(System.String,System.String)
   commentId: M:CompassEx.Comm.FiveAttr.BothHarm(System.String,System.String)
   id: BothHarm(System.String,System.String)
@@ -441,24 +443,30 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BothHarm
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 300
+    startLine: 311
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 地支相害
+  summary: 判定并获取两个指定地支之间的“地支相害”关系描述（支持无序入参）。
+  remarks: >-
+    <p><b>算法推演原理与重构说明：</b></p>
+
+    <p>本方法已重构为<b>无序判定算法</b>。地支相害（又称六害）是由六合受冲推演而来。</p>
+
+    <p>系统在获取到两地支在 <code>LocClass.LocNames</code> 中的索引后会执行升序排序。由此消除了参数传入先后顺序的严格限制，无论调用者传入 <code>("子", "未")</code> 还是 <code>("未", "子")</code> 均能精准识别，大幅提升了接口的健壮性。</p>
   example: []
   syntax:
     content: public static string BothHarm(string sLoc1, string sLoc2)
     parameters:
     - id: sLoc1
       type: System.String
-      description: 地支1
+      description: 参与比对的第一项地支名称（如“子”、“丑”等）。
     - id: sLoc2
       type: System.String
-      description: 地支2
+      description: 参与比对的第二项地支名称（如“未”、“午”等）。
     return:
       type: System.String
-      description: ''
+      description: 若两地支构成相害，则返回对应的关系字符串（如“子与未害”）；若不构成相害或入参无效，则返回空字符串（<code>""</code>）。
     content.vb: Public Shared Function BothHarm(sLoc1 As String, sLoc2 As String) As String
   overload: CompassEx.Comm.FiveAttr.BothHarm*
   nameWithType.vb: FiveAttr.BothHarm(String, String)
@@ -482,24 +490,30 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BothTorture
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 353
+    startLine: 370
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 地支相刑
+  summary: 判定并获取两个指定地支之间的“地支相刑”关系描述（支持无序入参）。
+  remarks: >-
+    <p><b>算法推演原理与重构说明：</b></p>
+
+    <p>本方法已重构为<b>无序判定算法</b>。包含三刑（寅巳申、丑戌未）、两刑（子卯）以及特殊地支（辰、午、酉、亥）的同支“自刑”判定。</p>
+
+    <p>系统在获取到两地支在 <code>LocClass.LocNames</code> 中的索引后会执行升序排序，同时内部的比对矩阵也已同步调整为升序特征值。由此消除了参数传入先后顺序的严格限制，提升了系统的健壮性。</p>
   example: []
   syntax:
     content: public static string BothTorture(string sLoc1, string sLoc2)
     parameters:
     - id: sLoc1
       type: System.String
-      description: 地支1
+      description: 参与比对的第一项地支名称（如“子”、“卯”、“寅”等）。
     - id: sLoc2
       type: System.String
-      description: 地支2
+      description: 参与比对的第二项地支名称（如“卯”、“子”、“巳”等）。
     return:
       type: System.String
-      description: ''
+      description: 若两地支构成相刑，则返回对应的刑伤类别（如“恃势之刑”、“无恩之刑”、“无礼之刑”或“自刑”）；若不构成则返回空字符串（<code>""</code>）。
     content.vb: Public Shared Function BothTorture(sLoc1 As String, sLoc2 As String) As String
   overload: CompassEx.Comm.FiveAttr.BothTorture*
   nameWithType.vb: FiveAttr.BothTorture(String, String)
@@ -523,24 +537,24 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BothConflict
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 413
+    startLine: 435
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 地支相冲
+  summary: 判定并获取两个指定地支之间的“地支相冲”关系。
   example: []
   syntax:
     content: public static string BothConflict(string sLoc1, string sLoc2)
     parameters:
     - id: sLoc1
       type: System.String
-      description: 地支1
+      description: 参与比对的第一项地支名称。
     - id: sLoc2
       type: System.String
-      description: 地支2
+      description: 参与比对的第二项地支名称。
     return:
       type: System.String
-      description: ''
+      description: 若两地支在十二地支顺位中绝对间隔为 6（即对冲），则返回字符串 <code>"相冲"</code>；否则返回空字符串（<code>""</code>）。
     content.vb: Public Shared Function BothConflict(sLoc1 As String, sLoc2 As String) As String
   overload: CompassEx.Comm.FiveAttr.BothConflict*
   nameWithType.vb: FiveAttr.BothConflict(String, String)
@@ -564,24 +578,30 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LocCombine
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 435
+    startLine: 456
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 地支六合
+  summary: 判定并获取两个指定地支之间的“地支六合”及合化后的五行或能量属性（支持无序入参）。
+  remarks: >-
+    <p><b>算法推演原理与重构说明：</b></p>
+
+    <p>本方法已重构为<b>无序判定算法</b>。系统在获取到两个地支在 <code>LocClass.LocNames</code> 中的整型索引后，会自动对其进行从小到大的升序排列。</p>
+
+    <p>通过该机制，消除了历史版本中对地支先后传入顺序的严格依赖，无论传入 <code>("子", "丑")</code> 还是 <code>("丑", "子")</code> 均能精准识别，大幅提升了接口的健壮性。</p>
   example: []
   syntax:
     content: public static string LocCombine(string sLoc1, string sLoc2)
     parameters:
     - id: sLoc1
       type: System.String
-      description: 地支1
+      description: 参与比对的第一项地支名称（如“子”、“丑”等）。
     - id: sLoc2
       type: System.String
-      description: 地支1
+      description: 参与比对的第二项地支名称（如“未”、“午”等）。
     return:
       type: System.String
-      description: ''
+      description: 若两地支构成六合，则返回合化后的五行或能量特征字符串（如“土”、“金”、“水”、“木”、“火”或“日月”）；若不构成六合则返回空字符串（<code>""</code>）。
     content.vb: Public Shared Function LocCombine(sLoc1 As String, sLoc2 As String) As String
   overload: CompassEx.Comm.FiveAttr.LocCombine*
   nameWithType.vb: FiveAttr.LocCombine(String, String)
@@ -605,24 +625,30 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SkyCombine
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 484
+    startLine: 513
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 天干五合
+  summary: 判定并获取两个指定天干之间的“天干五合”及合化后的五行属性（支持无序入参）。
+  remarks: >-
+    <p><b>算法推演原理与重构说明：</b></p>
+
+    <p>本方法已重构为<b>无序判定算法</b>。系统在获取到两个天干在 <code>LocClass.LocNames</code> 中的整型索引后，会自动对其进行从小到大的升序排列。</p>
+
+    <p>通过该机制，消除了历史版本中对天干先后传入顺序的严格依赖，大幅提升了外部接口调用的安全性和健壮性。</p>
   example: []
   syntax:
     content: public static string SkyCombine(string sSky1, string sSky2)
     parameters:
     - id: sSky1
       type: System.String
-      description: 天干1
+      description: 参与比对的第一项天干名称（如“甲”、“乙”等）。
     - id: sSky2
       type: System.String
-      description: 天干2
+      description: 参与比对的第二项天干名称（如“己”、“庚”等）。
     return:
       type: System.String
-      description: ''
+      description: 若两入参构成天干五合，则返回对应的合化五行字符串（如“土”、“金”、“水”、“木”、“火”）；若不构成五合或输入无效则返回空字符串（<code>""</code>）。
     content.vb: Public Shared Function SkyCombine(sSky1 As String, sSky2 As String) As String
   overload: CompassEx.Comm.FiveAttr.SkyCombine*
   nameWithType.vb: FiveAttr.SkyCombine(String, String)
@@ -967,6 +993,98 @@ references:
   name: Comm
   nameWithType: Comm
   fullName: CompassEx.Comm.Comm
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: CompassEx.Comm.FiveAttr.Name*
+  commentId: Overload:CompassEx.Comm.FiveAttr.Name
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_Name
+  name: Name
+  nameWithType: FiveAttr.Name
+  fullName: CompassEx.Comm.FiveAttr.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CompassEx.Comm.FiveAttr.Index*
+  commentId: Overload:CompassEx.Comm.FiveAttr.Index
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_Index
+  name: Index
+  nameWithType: FiveAttr.Index
+  fullName: CompassEx.Comm.FiveAttr.Index
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: CompassEx.Comm.FiveAttr.FiveAttrNames
+  commentId: F:CompassEx.Comm.FiveAttr.FiveAttrNames
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_FiveAttrNames
+  name: FiveAttrNames
+  nameWithType: FiveAttr.FiveAttrNames
+  fullName: CompassEx.Comm.FiveAttr.FiveAttrNames
+- uid: System.IndexOutOfRangeException
+  commentId: T:System.IndexOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception
+  name: IndexOutOfRangeException
+  nameWithType: IndexOutOfRangeException
+  fullName: System.IndexOutOfRangeException
+- uid: CompassEx.Comm.FiveAttr.#ctor*
+  commentId: Overload:CompassEx.Comm.FiveAttr.#ctor
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr__ctor_System_String_
+  name: FiveAttr
+  nameWithType: FiveAttr.FiveAttr
+  fullName: CompassEx.Comm.FiveAttr.FiveAttr
+  nameWithType.vb: FiveAttr.New
+  fullName.vb: CompassEx.Comm.FiveAttr.New
+  name.vb: New
+- uid: CompassEx.Comm.FiveAttr.GetBothLocRule*
+  commentId: Overload:CompassEx.Comm.FiveAttr.GetBothLocRule
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_GetBothLocRule_System_String_System_String_
+  name: GetBothLocRule
+  nameWithType: FiveAttr.GetBothLocRule
+  fullName: CompassEx.Comm.FiveAttr.GetBothLocRule
+- uid: CompassEx.Comm.FiveAttrRule
+  commentId: T:CompassEx.Comm.FiveAttrRule
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.FiveAttrRule.html
+  name: FiveAttrRule
+  nameWithType: FiveAttrRule
+  fullName: CompassEx.Comm.FiveAttrRule
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object
@@ -997,104 +1115,12 @@ references:
   name: ToString
   nameWithType: FiveAttr.ToString
   fullName: CompassEx.Comm.FiveAttr.ToString
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
-- uid: CompassEx.Comm.FiveAttr.Name*
-  commentId: Overload:CompassEx.Comm.FiveAttr.Name
-  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_Name
-  name: Name
-  nameWithType: FiveAttr.Name
-  fullName: CompassEx.Comm.FiveAttr.Name
-- uid: System.String[]
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string[]
-  nameWithType: string[]
-  fullName: string[]
-  nameWithType.vb: String()
-  fullName.vb: String()
-  name.vb: String()
-  spec.csharp:
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: '['
-  - name: ']'
-  spec.vb:
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: (
-  - name: )
-- uid: CompassEx.Comm.FiveAttr.FiveAttrNames
-  commentId: F:CompassEx.Comm.FiveAttr.FiveAttrNames
-  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_FiveAttrNames
-  name: FiveAttrNames
-  nameWithType: FiveAttr.FiveAttrNames
-  fullName: CompassEx.Comm.FiveAttr.FiveAttrNames
-- uid: System.IndexOutOfRangeException
-  commentId: T:System.IndexOutOfRangeException
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception
-  name: IndexOutOfRangeException
-  nameWithType: IndexOutOfRangeException
-  fullName: System.IndexOutOfRangeException
-- uid: CompassEx.Comm.FiveAttr.#ctor*
-  commentId: Overload:CompassEx.Comm.FiveAttr.#ctor
-  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr__ctor_System_String_
-  name: FiveAttr
-  nameWithType: FiveAttr.FiveAttr
-  fullName: CompassEx.Comm.FiveAttr.FiveAttr
-  nameWithType.vb: FiveAttr.New
-  fullName.vb: CompassEx.Comm.FiveAttr.New
-  name.vb: New
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
-- uid: CompassEx.Comm.FiveAttr.GetBothLocRule*
-  commentId: Overload:CompassEx.Comm.FiveAttr.GetBothLocRule
-  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_GetBothLocRule_System_String_System_String_
-  name: GetBothLocRule
-  nameWithType: FiveAttr.GetBothLocRule
-  fullName: CompassEx.Comm.FiveAttr.GetBothLocRule
-- uid: CompassEx.Comm.FiveAttrRule
-  commentId: T:CompassEx.Comm.FiveAttrRule
-  parent: CompassEx.Comm
-  href: CompassEx.Comm.FiveAttrRule.html
-  name: FiveAttrRule
-  nameWithType: FiveAttrRule
-  fullName: CompassEx.Comm.FiveAttrRule
 - uid: CompassEx.Comm.FiveAttr.GetBothAttrRule*
   commentId: Overload:CompassEx.Comm.FiveAttr.GetBothAttrRule
   href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_GetBothAttrRule_System_String_System_String_
   name: GetBothAttrRule
   nameWithType: FiveAttr.GetBothAttrRule
   fullName: CompassEx.Comm.FiveAttr.GetBothAttrRule
-- uid: CompassEx.Comm.FiveAttr.FiveAttrBothbirth*
-  commentId: Overload:CompassEx.Comm.FiveAttr.FiveAttrBothbirth
-  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_FiveAttrBothbirth
-  name: FiveAttrBothbirth
-  nameWithType: FiveAttr.FiveAttrBothbirth
-  fullName: CompassEx.Comm.FiveAttr.FiveAttrBothbirth
 - uid: CompassEx.Comm.FiveAttr.BothHarm*
   commentId: Overload:CompassEx.Comm.FiveAttr.BothHarm
   href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_BothHarm_System_String_System_String_

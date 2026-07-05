@@ -231,13 +231,13 @@ items:
     <pre><code class="lang-csharp">CompassObjType item = GetCompassData();
 
 
-    // 利用 out var 特性，外部无需显式书写 &lt;GuoSubClass&gt;
+    // 利用 out var 特性，外部无需显式书写 &lt;GuaSubClass&gt;
 
-    if (item.ToObjet(out GuoSubClass guoObj))
+    if (item.ToObjet(out GuaSubClass GuaObj))
 
     {
-        // 转换成功，直接使用强类型变量 guoObj
-        Console.WriteLine($"成功获取到郭氏对象，名称为: {guoObj.Name}");
+        // 转换成功，直接使用强类型变量 GuaObj
+        Console.WriteLine($"成功获取到郭氏对象，名称为: {GuaObj.Name}");
     }
 
     else

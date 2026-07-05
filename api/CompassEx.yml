@@ -6,6 +6,7 @@ items:
   children:
   - CompassEx.CHill
   - CompassEx.CompassEx
+  - CompassEx.LicenseWatermark
   langs:
   - csharp
   - vb
@@ -29,6 +30,12 @@ references:
   name: CompassEx
   nameWithType: CompassEx
   fullName: CompassEx.CompassEx
+- uid: CompassEx.LicenseWatermark
+  commentId: T:CompassEx.LicenseWatermark
+  href: CompassEx.LicenseWatermark.html
+  name: LicenseWatermark
+  nameWithType: LicenseWatermark
+  fullName: CompassEx.LicenseWatermark
 - uid: CompassEx
   commentId: N:CompassEx
   href: CompassEx.html

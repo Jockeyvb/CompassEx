@@ -55,7 +55,11 @@ namespace CompassEx
         /// 若属于净阳则返回 <c>true</c>；若属于净阴则返回 <c>false</c>。
         /// </value>
         /// <remarks>        
+        /// 这里的阴阳判定基于二十四山净阴净阳理论。
+        /// </remarks>
         public bool IsSun { get { return C24HillSunNames.IndexOf(this.Name) > -1; } }
+
+
 
         /// <summary>
         /// 获取或设置当前二十四山对象的具体名称（如“壬”、“子”等）。

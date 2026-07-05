@@ -32,7 +32,7 @@ namespace CompassEx.Comm
         /// 获取当前天干地支组合的完整字面名称（如“甲子”、“丙寅”等）。
         /// </summary>
         /// <value>
-        /// 一个由两个汉字组成的 <see cref="string"/> 字符串，动态拼接自 <see cref="SkyClass.SkyName"/> 与 <see cref="LocClass.LocName"/>。
+        /// 一个由两个汉字组成的 <see cref="string"/> 字符串，动态拼接自 <see cref="SkyClass.Name"/> 与 <see cref="LocClass.Name"/>。
         /// </value>
         public string SkyLocName { get { return Sky.Name + Loc.Name; } }
 

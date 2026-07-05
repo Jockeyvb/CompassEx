@@ -1,0 +1,769 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Gua.SixGodClass
+  commentId: T:CompassEx.Gua.SixGodClass
+  id: SixGodClass
+  parent: CompassEx.Gua
+  children:
+  - CompassEx.Gua.SixGodClass.GetSixGod(CompassEx.Comm.SkyClass)
+  - CompassEx.Gua.SixGodClass.GetSixGod(System.Int32)
+  - CompassEx.Gua.SixGodClass.GetSixGod(System.String)
+  - CompassEx.Gua.SixGodClass.Name
+  - CompassEx.Gua.SixGodClass.SixGods
+  - CompassEx.Gua.SixGodClass.StartIndex
+  langs:
+  - csharp
+  - vb
+  name: SixGodClass
+  nameWithType: SixGodClass
+  fullName: CompassEx.Gua.SixGodClass
+  type: Class
+  source:
+    remote:
+      path: CompassEx/Gua/SixGodClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SixGodClass
+    path: CompassEx/Gua/SixGodClass.cs
+    startLine: 24
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 表示六爻预测学中“六神”（六兽）的动态装配与排盘实体类。
+  remarks: >-
+    本类完整实现了传统六爻预测中由日天干发动起六神的排盘法则。
+
+    通过将十天干映射到对应的六神初始起点，自下而上（初爻至上爻）依次排布青龙、朱雀、勾陈、腾蛇、白虎、玄武，常用于六爻装骨髓及神煞吉凶推演。
+  example: []
+  syntax:
+    content: public class SixGodClass
+    content.vb: Public Class SixGodClass
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - CompassEx.Gua.SixGodClass.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CompassEx.Gua.SixGodClass.SixGods
+  commentId: F:CompassEx.Gua.SixGodClass.SixGods
+  id: SixGods
+  parent: CompassEx.Gua.SixGodClass
+  langs:
+  - csharp
+  - vb
+  name: SixGods
+  nameWithType: SixGodClass.SixGods
+  fullName: CompassEx.Gua.SixGodClass.SixGods
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Gua/SixGodClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SixGods
+    path: CompassEx/Gua/SixGodClass.cs
+    startLine: 32
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 六神（六兽）经典字面名称的全局静态只读序列。
+  example: []
+  syntax:
+    content: public static readonly string[] SixGods
+    return:
+      type: System.String[]
+      description: 包含 6 个标准六神名，严格按照顺时针五行流转顺序排列：青龙(0)、朱雀(1)、勾陈(2)、腾蛇(3)、白虎(4)、玄武(5)。
+    content.vb: Public Shared ReadOnly SixGods As String()
+- uid: CompassEx.Gua.SixGodClass.Name
+  commentId: P:CompassEx.Gua.SixGodClass.Name
+  id: Name
+  parent: CompassEx.Gua.SixGodClass
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: SixGodClass.Name
+  fullName: CompassEx.Gua.SixGodClass.Name
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/SixGodClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Name
+    path: CompassEx/Gua/SixGodClass.cs
+    startLine: 44
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 获取当前爻位所配六神的字面名称（如“青龙”、“玄武”）。
+  example: []
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: 一个 <xref href="System.String" data-throw-if-not-resolved="false"></xref> 字符串，代表当前爻的神煞名称。
+    content.vb: Public Property Name As String
+  overload: CompassEx.Gua.SixGodClass.Name*
+- uid: CompassEx.Gua.SixGodClass.StartIndex
+  commentId: P:CompassEx.Gua.SixGodClass.StartIndex
+  id: StartIndex
+  parent: CompassEx.Gua.SixGodClass
+  langs:
+  - csharp
+  - vb
+  name: StartIndex
+  nameWithType: SixGodClass.StartIndex
+  fullName: CompassEx.Gua.SixGodClass.StartIndex
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/SixGodClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: StartIndex
+    path: CompassEx/Gua/SixGodClass.cs
+    startLine: 53
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 获取当前卦局中，六神发动的源头起首索引。
+  remarks: <b>数理规范：</b>同一卦局中排出的 6 个六神对象，其 <xref href="CompassEx.Gua.SixGodClass.StartIndex" data-throw-if-not-resolved="false"></xref> 应当完全一致，用来标记本局的起神基准点。
+  example: []
+  syntax:
+    content: public int StartIndex { get; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: 一个 <xref href="System.Int32" data-throw-if-not-resolved="false"></xref> 整数，有效范围为 <code>0 ~ 5</code>，代表日干在初爻发动的原始六神位置。
+    content.vb: Public Property StartIndex As Integer
+  overload: CompassEx.Gua.SixGodClass.StartIndex*
+- uid: CompassEx.Gua.SixGodClass.GetSixGod(CompassEx.Comm.SkyClass)
+  commentId: M:CompassEx.Gua.SixGodClass.GetSixGod(CompassEx.Comm.SkyClass)
+  id: GetSixGod(CompassEx.Comm.SkyClass)
+  parent: CompassEx.Gua.SixGodClass
+  langs:
+  - csharp
+  - vb
+  name: GetSixGod(SkyClass)
+  nameWithType: SixGodClass.GetSixGod(SkyClass)
+  fullName: CompassEx.Gua.SixGodClass.GetSixGod(CompassEx.Comm.SkyClass)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/SixGodClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetSixGod
+    path: CompassEx/Gua/SixGodClass.cs
+    startLine: 65
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 根据传入的日天干对象，动态推算并装配当前六爻卦局的六神只读序列。
+  example: []
+  syntax:
+    content: public static SixGodClass[] GetSixGod(SkyClass DaySky)
+    parameters:
+    - id: DaySky
+      type: CompassEx.Comm.SkyClass
+      description: 输入的当前排盘日天干 <xref href="CompassEx.Comm.SkyClass" data-throw-if-not-resolved="false"></xref> 实体实例。
+    return:
+      type: CompassEx.Gua.SixGodClass[]
+      description: 返回包含 6 个爻位六神实体的原生数组。
+    content.vb: Public Shared Function GetSixGod(DaySky As SkyClass) As SixGodClass()
+  overload: CompassEx.Gua.SixGodClass.GetSixGod*
+- uid: CompassEx.Gua.SixGodClass.GetSixGod(System.String)
+  commentId: M:CompassEx.Gua.SixGodClass.GetSixGod(System.String)
+  id: GetSixGod(System.String)
+  parent: CompassEx.Gua.SixGodClass
+  langs:
+  - csharp
+  - vb
+  name: GetSixGod(string)
+  nameWithType: SixGodClass.GetSixGod(string)
+  fullName: CompassEx.Gua.SixGodClass.GetSixGod(string)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/SixGodClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetSixGod
+    path: CompassEx/Gua/SixGodClass.cs
+    startLine: 75
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 根据传入的日天干字面名称，动态推算并装配当前六爻卦局的六神只读序列。
+  example: []
+  syntax:
+    content: public static SixGodClass[] GetSixGod(string DaySkyName)
+    parameters:
+    - id: DaySkyName
+      type: System.String
+      description: 输入的日天干单字名称（如“甲”、“戊”等）。
+    return:
+      type: CompassEx.Gua.SixGodClass[]
+      description: 若成功匹配到合法的十天干，则返回包含 6 个爻位六神实体的原生数组；若名称非法则返回 <code>null</code>。
+    content.vb: Public Shared Function GetSixGod(DaySkyName As String) As SixGodClass()
+  overload: CompassEx.Gua.SixGodClass.GetSixGod*
+  nameWithType.vb: SixGodClass.GetSixGod(String)
+  fullName.vb: CompassEx.Gua.SixGodClass.GetSixGod(String)
+  name.vb: GetSixGod(String)
+- uid: CompassEx.Gua.SixGodClass.GetSixGod(System.Int32)
+  commentId: M:CompassEx.Gua.SixGodClass.GetSixGod(System.Int32)
+  id: GetSixGod(System.Int32)
+  parent: CompassEx.Gua.SixGodClass
+  langs:
+  - csharp
+  - vb
+  name: GetSixGod(int)
+  nameWithType: SixGodClass.GetSixGod(int)
+  fullName: CompassEx.Gua.SixGodClass.GetSixGod(int)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/SixGodClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetSixGod
+    path: CompassEx/Gua/SixGodClass.cs
+    startLine: 93
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 基于日天干的绝对顺位索引，通过极致性能的静态数组查找算法，排布自初爻至上爻的六神完备序列。
+  remarks: >-
+    <p><b>★ 算法升级与架构重构解析：</b></p>
+
+    <p>1. <b>消灭数学分支：</b>废弃了历史版本中依靠整数除法（<code>iDaySkyIndex / 2</code>）与条件修正（<code>iPos++</code>）的模糊推导，改用确定性的静态预存查找数组 <code>_skyToSixGodStartLookup</code>，在 <code>O(1)</code> 复杂度内瞬间锁定本局六神起首位置。</p>
+
+    <p>2. <b>修复数据血缘：</b>修正了原本在循环装配时错误将每个爻位独立递增值赋予 <xref href="CompassEx.Gua.SixGodClass.StartIndex" data-throw-if-not-resolved="false"></xref> 的逻辑偏误。当前版本中，全数组 6 个爻位对象的 <xref href="CompassEx.Gua.SixGodClass.StartIndex" data-throw-if-not-resolved="false"></xref> 均死死锚定在原始起首点上，而各爻位的实际六神名称（<xref href="CompassEx.Gua.SixGodClass.Name" data-throw-if-not-resolved="false"></xref>）则自下而上进行完备的环形顺流步进（若超过索引 5 则自动闭环归零）。</p>
+  example: []
+  syntax:
+    content: public static SixGodClass[] GetSixGod(int iDaySkyIndex)
+    parameters:
+    - id: iDaySkyIndex
+      type: System.Int32
+      description: 日天干在十天干序列中的绝对索引位置，有效取值范围为 <code>0 ~ 9</code>。
+    return:
+      type: CompassEx.Gua.SixGodClass[]
+      description: 返回一个长度严格为 6 的 <xref href="CompassEx.Gua.SixGodClass" data-throw-if-not-resolved="false"></xref> 原生数组，按初爻到上爻的顺序排列。
+    content.vb: Public Shared Function GetSixGod(iDaySkyIndex As Integer) As SixGodClass()
+  overload: CompassEx.Gua.SixGodClass.GetSixGod*
+  exceptions:
+  - type: System.IndexOutOfRangeException
+    commentId: T:System.IndexOutOfRangeException
+    description: 当传入的日天干索引超出 <code>0 ~ 9</code> 的合法天干边界时，内部查找矩阵会抛出越界异常。
+  nameWithType.vb: SixGodClass.GetSixGod(Integer)
+  fullName.vb: CompassEx.Gua.SixGodClass.GetSixGod(Integer)
+  name.vb: GetSixGod(Integer)
+references:
+- uid: CompassEx.Gua
+  commentId: N:CompassEx.Gua
+  href: CompassEx.html
+  name: CompassEx.Gua
+  nameWithType: CompassEx.Gua
+  fullName: CompassEx.Gua
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CompassEx.Gua.SixGodClass.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<SixGodClass, TBase>(SixGodClass, TBase)
+  nameWithType: Comm.ApplyBaseProperties<SixGodClass, TBase>(SixGodClass, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.Gua.SixGodClass, TBase>(CompassEx.Gua.SixGodClass, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of SixGodClass, TBase)(SixGodClass, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.Gua.SixGodClass, TBase)(CompassEx.Gua.SixGodClass, TBase)
+  name.vb: ApplyBaseProperties(Of SixGodClass, TBase)(SixGodClass, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Gua.SixGodClass,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.Gua.SixGodClass
+    name: SixGodClass
+    href: CompassEx.Gua.SixGodClass.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.Gua.SixGodClass
+    name: SixGodClass
+    href: CompassEx.Gua.SixGodClass.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Gua.SixGodClass,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Gua.SixGodClass
+    name: SixGodClass
+    href: CompassEx.Gua.SixGodClass.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.Gua.SixGodClass
+    name: SixGodClass
+    href: CompassEx.Gua.SixGodClass.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CompassEx.Gua.SixGodClass.Name*
+  commentId: Overload:CompassEx.Gua.SixGodClass.Name
+  href: CompassEx.Gua.SixGodClass.html#CompassEx_Gua_SixGodClass_Name
+  name: Name
+  nameWithType: SixGodClass.Name
+  fullName: CompassEx.Gua.SixGodClass.Name
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: CompassEx.Gua.SixGodClass.StartIndex
+  commentId: P:CompassEx.Gua.SixGodClass.StartIndex
+  href: CompassEx.Gua.SixGodClass.html#CompassEx_Gua_SixGodClass_StartIndex
+  name: StartIndex
+  nameWithType: SixGodClass.StartIndex
+  fullName: CompassEx.Gua.SixGodClass.StartIndex
+- uid: CompassEx.Gua.SixGodClass.StartIndex*
+  commentId: Overload:CompassEx.Gua.SixGodClass.StartIndex
+  href: CompassEx.Gua.SixGodClass.html#CompassEx_Gua_SixGodClass_StartIndex
+  name: StartIndex
+  nameWithType: SixGodClass.StartIndex
+  fullName: CompassEx.Gua.SixGodClass.StartIndex
+- uid: CompassEx.Comm.SkyClass
+  commentId: T:CompassEx.Comm.SkyClass
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.SkyClass.html
+  name: SkyClass
+  nameWithType: SkyClass
+  fullName: CompassEx.Comm.SkyClass
+- uid: CompassEx.Gua.SixGodClass.GetSixGod*
+  commentId: Overload:CompassEx.Gua.SixGodClass.GetSixGod
+  href: CompassEx.Gua.SixGodClass.html#CompassEx_Gua_SixGodClass_GetSixGod_CompassEx_Comm_SkyClass_
+  name: GetSixGod
+  nameWithType: SixGodClass.GetSixGod
+  fullName: CompassEx.Gua.SixGodClass.GetSixGod
+- uid: CompassEx.Gua.SixGodClass[]
+  isExternal: true
+  href: CompassEx.Gua.SixGodClass.html
+  name: SixGodClass[]
+  nameWithType: SixGodClass[]
+  fullName: CompassEx.Gua.SixGodClass[]
+  nameWithType.vb: SixGodClass()
+  fullName.vb: CompassEx.Gua.SixGodClass()
+  name.vb: SixGodClass()
+  spec.csharp:
+  - uid: CompassEx.Gua.SixGodClass
+    name: SixGodClass
+    href: CompassEx.Gua.SixGodClass.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: CompassEx.Gua.SixGodClass
+    name: SixGodClass
+    href: CompassEx.Gua.SixGodClass.html
+  - name: (
+  - name: )
+- uid: CompassEx.Gua.SixGodClass
+  commentId: T:CompassEx.Gua.SixGodClass
+  href: CompassEx.Gua.SixGodClass.html
+  name: SixGodClass
+  nameWithType: SixGodClass
+  fullName: CompassEx.Gua.SixGodClass
+- uid: CompassEx.Gua.SixGodClass.Name
+  commentId: P:CompassEx.Gua.SixGodClass.Name
+  href: CompassEx.Gua.SixGodClass.html#CompassEx_Gua_SixGodClass_Name
+  name: Name
+  nameWithType: SixGodClass.Name
+  fullName: CompassEx.Gua.SixGodClass.Name
+- uid: System.IndexOutOfRangeException
+  commentId: T:System.IndexOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception
+  name: IndexOutOfRangeException
+  nameWithType: IndexOutOfRangeException
+  fullName: System.IndexOutOfRangeException

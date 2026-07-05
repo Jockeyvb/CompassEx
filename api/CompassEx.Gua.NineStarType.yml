@@ -1,0 +1,216 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Gua.NineStarType
+  commentId: T:CompassEx.Gua.NineStarType
+  id: NineStarType
+  parent: CompassEx.Gua
+  children:
+  - CompassEx.Gua.NineStarType.AfterGuaNineStar
+  langs:
+  - csharp
+  - vb
+  name: NineStarType
+  nameWithType: NineStarType
+  fullName: CompassEx.Gua.NineStarType
+  type: Enum
+  source:
+    remote:
+      path: CompassEx/Gua/NineStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: NineStarType
+    path: CompassEx/Gua/NineStar.cs
+    startLine: 19
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 九星类型
+  example: []
+  syntax:
+    content: public enum NineStarType
+    content.vb: Public Enum NineStarType
+  extensionMethods:
+  - CompassEx.Gua.NineStarType.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CompassEx.Gua.NineStarType.AfterGuaNineStar
+  commentId: F:CompassEx.Gua.NineStarType.AfterGuaNineStar
+  id: AfterGuaNineStar
+  parent: CompassEx.Gua.NineStarType
+  langs:
+  - csharp
+  - vb
+  name: AfterGuaNineStar
+  nameWithType: NineStarType.AfterGuaNineStar
+  fullName: CompassEx.Gua.NineStarType.AfterGuaNineStar
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Gua/NineStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: AfterGuaNineStar
+    path: CompassEx/Gua/NineStar.cs
+    startLine: 24
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: ''
+  example: []
+  syntax:
+    content: AfterGuaNineStar = 0
+    return:
+      type: CompassEx.Gua.NineStarType
+references:
+- uid: CompassEx.Gua
+  commentId: N:CompassEx.Gua
+  href: CompassEx.html
+  name: CompassEx.Gua
+  nameWithType: CompassEx.Gua
+  fullName: CompassEx.Gua
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+- uid: CompassEx.Gua.NineStarType.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<NineStarType, TBase>(NineStarType, TBase)
+  nameWithType: Comm.ApplyBaseProperties<NineStarType, TBase>(NineStarType, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.Gua.NineStarType, TBase>(CompassEx.Gua.NineStarType, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of NineStarType, TBase)(NineStarType, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.Gua.NineStarType, TBase)(CompassEx.Gua.NineStarType, TBase)
+  name.vb: ApplyBaseProperties(Of NineStarType, TBase)(NineStarType, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Gua.NineStarType,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.Gua.NineStarType
+    name: NineStarType
+    href: CompassEx.Gua.NineStarType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.Gua.NineStarType
+    name: NineStarType
+    href: CompassEx.Gua.NineStarType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Gua.NineStarType,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Gua.NineStarType
+    name: NineStarType
+    href: CompassEx.Gua.NineStarType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.Gua.NineStarType
+    name: NineStarType
+    href: CompassEx.Gua.NineStarType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: CompassEx.Gua.NineStarType
+  commentId: T:CompassEx.Gua.NineStarType
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.NineStarType.html
+  name: NineStarType
+  nameWithType: NineStarType
+  fullName: CompassEx.Gua.NineStarType

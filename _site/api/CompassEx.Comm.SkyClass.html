@@ -163,10 +163,10 @@ SkyClass 类
 
   <h3 id="CompassEx_Comm_SkyClass__ctor_System_Int32_" data-uid="CompassEx.Comm.SkyClass.#ctor(System.Int32)">
   SkyClass(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L105"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>天干构造函数</p>
+  <div class="markdown level1 summary"><p>基于十天干序列中的整型索引初始化 <a class="xref" href="CompassEx.Comm.SkyClass.html">SkyClass</a> 类的新实例，并自动动态装配其五行属性。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -177,7 +177,7 @@ SkyClass 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>iSkyIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>天干所在的索引，参考：【<a class="xref" href="CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_SkyNames">SkyNames</a>】</p>
+    <dd><p>天干在序列中的绝对索引位置，有效取值范围为 <code>0 ~ 9</code>。可参考全局静态字段：<a class="xref" href="CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_SkyNames">SkyNames</a>。</p>
 </dd>
   </dl>
 
@@ -188,11 +188,17 @@ SkyClass 类
 
 
 
+  <h4 class="section" id="CompassEx_Comm_SkyClass__ctor_System_Int32__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p><b>五行流转分配矩阵：</b></p>
+<p>本构造函数内部实现了经典正统的天干五行映射机制：</p>
+<ul><li>索引 <code>0, 1</code>（甲、乙） <code> ==&gt; </code> 自动实例化为 <b>木</b> 属性</li><li>索引 <code>2, 3</code>（丙、丁） <code> ==&gt; </code> 自动实例化为 <b>火</b> 属性</li><li>索引 <code>4, 5</code>（戊、己） <code> ==&gt; </code> 自动实例化为 <b>土</b> 属性</li><li>索引 <code>6, 7</code>（庚、辛） <code> ==&gt; </code> 自动实例化为 <b>金</b> 属性</li><li>索引 <code>8, 9</code>（壬、癸） <code> ==&gt; </code> 自动实例化为 <b>水</b> 属性（★已修复历史版本误指为土的隐患）</li></ul>
+</div>
 
   <h4 class="section">异常</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception">IndexOutOfRangeException</a></dt>
-    <dd></dd>
+    <dd><p>当传入的索引小于 0 或大于等于 10 时抛出此异常。</p>
+</dd>
   </dl>
 
 
@@ -201,10 +207,10 @@ SkyClass 类
 
   <h3 id="CompassEx_Comm_SkyClass__ctor_System_String_" data-uid="CompassEx.Comm.SkyClass.#ctor(System.String)">
   SkyClass(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>天干构造函数</p>
+  <div class="markdown level1 summary"><p>基于指定的天干单字字面名称初始化 <a class="xref" href="CompassEx.Comm.SkyClass.html">SkyClass</a> 类的新实例。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -215,7 +221,7 @@ SkyClass 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>sSkyName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>天干名称</p>
+    <dd><p>要创建的天干名称（如“甲”、“乙”等）。</p>
 </dd>
   </dl>
 
@@ -226,11 +232,15 @@ SkyClass 类
 
 
 
+  <h4 class="section" id="CompassEx_Comm_SkyClass__ctor_System_String__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>内部机制会先通过名称检索其对应的整型索引，随后将其隐式链式传递给带索引参数的构造函数。</p>
+</div>
 
   <h4 class="section">异常</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception">IndexOutOfRangeException</a></dt>
-    <dd></dd>
+    <dd><p>当传入的名称不在全局静态元数据 <a class="xref" href="CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_SkyNames">SkyNames</a> 中时抛出此异常。</p>
+</dd>
   </dl>
 
 
@@ -242,10 +252,10 @@ SkyClass 类
 
   <h3 id="CompassEx_Comm_SkyClass_SkyNames" data-uid="CompassEx.Comm.SkyClass.SkyNames">
   SkyNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>天干名称列表</p>
+  <div class="markdown level1 summary"><p>十天干的经典字面名称全局静态只读序列。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -259,7 +269,8 @@ SkyClass 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd></dd>
+    <dd><p>包含 10 个天干：从“甲”开始至“癸”结束，索引对应 <code>0 ~ 9</code>。</p>
+</dd>
   </dl>
 
 
@@ -278,10 +289,10 @@ SkyClass 类
 
   <h3 id="CompassEx_Comm_SkyClass_FiveAttr" data-uid="CompassEx.Comm.SkyClass.FiveAttr">
   FiveAttr
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L70"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>五行属性名</p>
+  <div class="markdown level1 summary"><p>获取当前天干所归属的五行属性。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -296,7 +307,8 @@ SkyClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Comm.FiveAttr.html">FiveAttr</a></dt>
-    <dd></dd>
+    <dd><p>返回一个 <a class="xref" href="CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_FiveAttr">FiveAttr</a> 对象（或枚举），代表该天干的五行特征（如甲乙属木、丙丁属火等）。</p>
+</dd>
   </dl>
 
 
@@ -310,10 +322,10 @@ SkyClass 类
 
   <h3 id="CompassEx_Comm_SkyClass_Index" data-uid="CompassEx.Comm.SkyClass.Index">
   Index
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L62"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>天干索引</p>
+  <div class="markdown level1 summary"><p>获取当前天干在十天干顺位序列中的绝对索引位置。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -328,7 +340,8 @@ SkyClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>一个 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> 整数，有效取值范围为 <code>0 ~ 9</code>，对应 <a class="xref" href="CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_SkyNames">SkyNames</a> 中的位置。</p>
+</dd>
   </dl>
 
 
@@ -338,19 +351,55 @@ SkyClass 类
 
 
 
-  <a id="CompassEx_Comm_SkyClass_SkyName_" data-uid="CompassEx.Comm.SkyClass.SkyName*"></a>
+  <a id="CompassEx_Comm_SkyClass_IsSun_" data-uid="CompassEx.Comm.SkyClass.IsSun*"></a>
 
-  <h3 id="CompassEx_Comm_SkyClass_SkyName" data-uid="CompassEx.Comm.SkyClass.SkyName">
-  SkyName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <h3 id="CompassEx_Comm_SkyClass_IsSun" data-uid="CompassEx.Comm.SkyClass.IsSun">
+  IsSun
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>地支名称</p>
+  <div class="markdown level1 summary"><p>获取当前天干实例在阴阳判定中是否属于“阳干”。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SkyName { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool IsSun { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>若属于阳干（如甲、丙、戊、庚、壬）则返回 <code>true</code>；若属于阴干（如乙、丁、己..）则返回 <code>false</code>。</p>
+</dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="CompassEx_Comm_SkyClass_IsSun_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>判定原理：依据天干在序列中的绝对索引位置进行取模运算（<code>Index % 2 == 0</code>），偶数索引为阳，奇数索引为阴。</p>
+</div>
+
+
+
+
+  <a id="CompassEx_Comm_SkyClass_Name_" data-uid="CompassEx.Comm.SkyClass.Name*"></a>
+
+  <h3 id="CompassEx_Comm_SkyClass_Name" data-uid="CompassEx.Comm.SkyClass.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获取当前天干实例的字面名称（如“甲”、“乙”等）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
   </div>
 
 
@@ -360,7 +409,8 @@ SkyClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>一个 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> 字符串，表示当前天干的单字名称。</p>
+</dd>
   </dl>
 
 
@@ -378,10 +428,10 @@ SkyClass 类
 
   <h3 id="CompassEx_Comm_SkyClass_GetSkyClass_System_Int32_" data-uid="CompassEx.Comm.SkyClass.GetSkyClass(System.Int32)">
   GetSkyClass(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L158"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>根据天干的索引返回天干类</p>
+  <div class="markdown level1 summary"><p>根据指定的全局静态顺位索引，动态实例化对应的天干类实体。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -392,13 +442,15 @@ SkyClass 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>iSkyIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>天干在序列中的绝对索引位置，有效取值范围为 <code>0 ~ 9</code>。</p>
+</dd>
   </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Comm.SkyClass.html">SkyClass</a></dt>
-    <dd></dd>
+    <dd><p>返回带有完整五行属性绑定、索引以及名称的 <a class="xref" href="CompassEx.Comm.SkyClass.html">SkyClass</a> 天干类实体对象。</p>
+</dd>
   </dl>
 
 
@@ -407,7 +459,16 @@ SkyClass 类
 
 
 
+  <h4 class="section" id="CompassEx_Comm_SkyClass_GetSkyClass_System_Int32__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p><b>内部对象装配：</b>该静态工厂方法通过链式调用带参构造函数 <a class="xref" href="CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass__ctor_System_Int32_">SkyClass(int)</a> 来实现实体的动态创建，新对象会自动将对应的天干名称与正统五行矩阵进行映射挂载。</p>
+</div>
 
+  <h4 class="section">异常</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception">IndexOutOfRangeException</a></dt>
+    <dd><p>当传入的 <code class="paramref">iSkyIndex</code> 小于 0 或大于等于 10 时，内部构造函数会抛出此异常。</p>
+</dd>
+  </dl>
 
 
 
@@ -415,10 +476,10 @@ SkyClass 类
 
   <h3 id="CompassEx_Comm_SkyClass_GetSkyClass_System_String_" data-uid="CompassEx.Comm.SkyClass.GetSkyClass(System.String)">
   GetSkyClass(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L143"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>根据天干的索引返回天干类</p>
+  <div class="markdown level1 summary"><p>根据指定的天干单字字面名称，利用 LINQ 动态检索并实例化对应的天干类实体。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -429,13 +490,15 @@ SkyClass 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>sSkyName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>要查询的天干字面名称（如“甲”、“乙”等）。</p>
+</dd>
   </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Comm.SkyClass.html">SkyClass</a></dt>
-    <dd></dd>
+    <dd><p>若在全局元数据中成功匹配到该天干名，则返回对应填充好五行及索引属性的 <a class="xref" href="CompassEx.Comm.SkyClass.html">SkyClass</a> 实例；若输入的字符非法或不存在，则返回 <code>null</code>。</p>
+</dd>
   </dl>
 
 

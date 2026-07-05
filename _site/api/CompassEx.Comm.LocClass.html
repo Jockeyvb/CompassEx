@@ -163,7 +163,7 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass__ctor_System_Int32_" data-uid="CompassEx.Comm.LocClass.#ctor(System.Int32)">
   LocClass(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L119"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>地支构造函数</p>
@@ -201,7 +201,7 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass__ctor_System_String_" data-uid="CompassEx.Comm.LocClass.#ctor(System.String)">
   LocClass(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L109"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>地支构造函数</p>
@@ -242,10 +242,10 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass_LocNames" data-uid="CompassEx.Comm.LocClass.LocNames">
   LocNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>地支名称数组</p>
+  <div class="markdown level1 summary"><p>十二地支的经典字面名称全局静态只读序列。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -259,7 +259,8 @@ LocClass 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd></dd>
+    <dd><p>包含 12 个地支：从“子”开始至“亥”结束，索引对应 <code>0 ~ 11</code>。</p>
+</dd>
   </dl>
 
 
@@ -273,10 +274,10 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass_LocTimeValues" data-uid="CompassEx.Comm.LocClass.LocTimeValues">
   LocTimeValues
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>地支对应的时间值</p>
+  <div class="markdown level1 summary"><p>十二地支在传统时辰中所对应的二十四小时制绝对时间段范围序列。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -290,13 +291,17 @@ LocClass 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd></dd>
+    <dd><p>包含 12 个时辰的时间区间字符串。順序嚴格對應：子、丑、寅、卯、辰、巳、午、未、申、酉、戌、亥。</p>
+</dd>
   </dl>
 
 
 
 
 
+  <h4 class="section" id="CompassEx_Comm_LocClass_LocTimeValues_remarks">备注</h4>
+  <div class="markdown level1 remarks"><table><thead><tr><th class="term">地支索引</th><th class="description">傳統時辰 (Chinese Hour)</th><th class="description">24小時制範圍 (24h Range)</th></tr></thead><tbody><tr><td class="term">0</td><td class="description">子時 (Zi)</td><td class="description">23:00 - 00:59</td></tr><tr><td class="term">1</td><td class="description">丑時 (Chou)</td><td class="description">01:00 - 02:59</td></tr><tr><td class="term">2</td><td class="description">寅時 (Yin)</td><td class="description">03:00 - 04:59</td></tr><tr><td class="term">3</td><td class="description">卯時 (Mao)</td><td class="description">05:00 - 06:59</td></tr><tr><td class="term">4</td><td class="description">辰時 (Chen)</td><td class="description">07:00 - 08:59</td></tr><tr><td class="term">5</td><td class="description">巳時 (Si)</td><td class="description">09:00 - 10:59</td></tr><tr><td class="term">6</td><td class="description">午時 (Wu)</td><td class="description">11:00 - 12:59</td></tr><tr><td class="term">7</td><td class="description">未時 (Wei)</td><td class="description">13:00 - 14:59</td></tr><tr><td class="term">8</td><td class="description">申時 (Shen)</td><td class="description">15:00 - 16:59</td></tr><tr><td class="term">9</td><td class="description">酉時 (You)</td><td class="description">17:00 - 18:59</td></tr><tr><td class="term">10</td><td class="description">戌時 (Xu)</td><td class="description">19:00 - 20:59</td></tr><tr><td class="term">11</td><td class="description">亥時 (Hai)</td><td class="description">21:00 - 22:59</td></tr></tbody></table>
+</div>
 
 
 
@@ -309,10 +314,10 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass_FiveAttr" data-uid="CompassEx.Comm.LocClass.FiveAttr">
   FiveAttr
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L89"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>五行属</p>
+  <div class="markdown level1 summary"><p>获取当前地支所归属的五行属性。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -327,7 +332,8 @@ LocClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Comm.FiveAttr.html">FiveAttr</a></dt>
-    <dd></dd>
+    <dd><p>返回一个 <a class="xref" href="CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_FiveAttr">FiveAttr</a> 对象（或枚举），代表该地支的五行特征（如寅卯属木、巳午属火等）。</p>
+</dd>
   </dl>
 
 
@@ -341,10 +347,10 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass_Index" data-uid="CompassEx.Comm.LocClass.Index">
   Index
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L81"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>地支索引</p>
+  <div class="markdown level1 summary"><p>获取当前地支在十二地支顺位序列中的绝对索引位置。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -359,39 +365,8 @@ LocClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="CompassEx_Comm_LocClass_LocName_" data-uid="CompassEx.Comm.LocClass.LocName*"></a>
-
-  <h3 id="CompassEx_Comm_LocClass_LocName" data-uid="CompassEx.Comm.LocClass.LocName">
-  LocName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L35"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>地支名称</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string LocName { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">属性值</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>一个 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> 整数，有效取值范围为 <code>0 ~ 11</code>，对应 <a class="xref" href="CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_LocNames">LocNames</a> 中的位置。</p>
+</dd>
   </dl>
 
 
@@ -405,10 +380,10 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass_LocTimeValue" data-uid="CompassEx.Comm.LocClass.LocTimeValue">
   LocTimeValue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L97"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>地支的时间值</p>
+  <div class="markdown level1 summary"><p>获取当前地支作为时辰时，对应的二十四小时制具体时间段字符串。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -423,7 +398,41 @@ LocClass 类
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>一个形如 <code>&quot;HH:mm-HH:mm&quot;</code> 的时间区间字符串，动态映射自 <a class="xref" href="CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_LocTimeValues">LocTimeValues</a> 数组。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_LocClass_Name_" data-uid="CompassEx.Comm.LocClass.Name*"></a>
+
+  <h3 id="CompassEx_Comm_LocClass_Name" data-uid="CompassEx.Comm.LocClass.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获取当前地支实例的字面名称（如“子”、“丑”等）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>一个 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> 字符串，表示当前地支的单字名称。</p>
+</dd>
   </dl>
 
 
@@ -441,10 +450,10 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass_GetAllLocClass" data-uid="CompassEx.Comm.LocClass.GetAllLocClass">
   GetAllLocClass()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L197"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>获得所有地支类集合</p>
+  <div class="markdown level1 summary"><p>批量获取系统中完整配置的十二地支类实体集合。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -456,7 +465,8 @@ LocClass 类
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>返回一个包含 12 个 <a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a> 地支对象的 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List&lt;T&gt;</a> 列表，顺序完全对应二十四山及传统地支流转顺位。</p>
+</dd>
   </dl>
 
 
@@ -473,10 +483,11 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass_GetLocClass_System_Int32_" data-uid="CompassEx.Comm.LocClass.GetLocClass(System.Int32)">
   GetLocClass(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L229"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>根据指定的全局静态顺位索引，动态检索并实例化对应的地支类实体。</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -486,13 +497,15 @@ LocClass 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>iLocIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>地支在序列中的绝对索引位置，有效取值范围为 <code>0 ~ 11</code>。</p>
+</dd>
   </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a></dt>
-    <dd></dd>
+    <dd><p>返回带有完整时辰时间段、位置序列等属性绑定的 <a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a> 地支类实体对象。</p>
+</dd>
   </dl>
 
 
@@ -501,6 +514,9 @@ LocClass 类
 
 
 
+  <h4 class="section" id="CompassEx_Comm_LocClass_GetLocClass_System_Int32__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p><b>内部对象装配：</b>该静态工厂方法在构造新实例的同时，会自动映射并填充对应的静态元数据缓存，包括 <a class="xref" href="CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_LocTimeValue">LocTimeValue</a>、<a class="xref" href="CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass__ctor_System_Int32_">LocClass(int)</a></p>
+</div>
 
 
 
@@ -509,10 +525,11 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass_GetLocClass_System_String_" data-uid="CompassEx.Comm.LocClass.GetLocClass(System.String)">
   GetLocClass(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L152"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L212"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>根据指定的地支单字字面名称，动态检索并实例化对应的地支类实体。</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -522,13 +539,15 @@ LocClass 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>LocName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>要查询的地支名称（如“子”、“丑”等）。</p>
+</dd>
   </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a></dt>
-    <dd></dd>
+    <dd><p>若在全局元数据中成功匹配到该地支名，则返回填充好业务属性的 <a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a> 实例；若输入的字符非法或不存在，则返回 <code>null</code>。</p>
+</dd>
   </dl>
 
 
@@ -545,10 +564,10 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass_TimeValueInRangIndex_System_DateTime_" data-uid="CompassEx.Comm.LocClass.TimeValueInRangIndex(System.DateTime)">
   TimeValueInRangIndex(DateTime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L159"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>返回时间是否在这个地支上</p>
+  <div class="markdown level1 summary"><p>判定指定的日期时间对象是否落入当前地支所代表的时辰范围内（仅提取小时进行比对）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -559,14 +578,15 @@ LocClass 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>d</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
-    <dd><p>日期对象，只取小时</p>
+    <dd><p>需要判定的完整 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a> 日期时间对象。</p>
 </dd>
   </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>若该时间属于当前地支的时辰区间则返回 <code>true</code>；否则返回 <code>false</code>。</p>
+</dd>
   </dl>
 
 
@@ -575,6 +595,9 @@ LocClass 类
 
 
 
+  <h4 class="section" id="CompassEx_Comm_LocClass_TimeValueInRangIndex_System_DateTime__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>本方法是一个重载快捷方式，内部会将传入时间的 24 小时制小时部分格式化为字符串后，转发并链式调用给核心比对方法 <a class="xref" href="CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_TimeValueInRangIndex_System_String_">TimeValueInRangIndex(string)</a>。</p>
+</div>
 
 
 
@@ -583,10 +606,10 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass_TimeValueInRangIndex_System_String_" data-uid="CompassEx.Comm.LocClass.TimeValueInRangIndex(System.String)">
   TimeValueInRangIndex(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L114"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L174"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>返回时间是否在这个地支上</p>
+  <div class="markdown level1 summary"><p>判定指定的小时数（24小时制字符串）是否落入当前地支所代表的时辰范围内。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -597,14 +620,15 @@ LocClass 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>HH</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>小时</p>
+    <dd><p>24 小时制的小时字符串（如 &quot;08&quot;、&quot;23&quot; 等）。</p>
 </dd>
   </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>若该小时数属于当前地支的时辰区间则返回 <code>true</code>；否则返回 <code>false</code>。</p>
+</dd>
   </dl>
 
 
@@ -613,6 +637,11 @@ LocClass 类
 
 
 
+  <h4 class="section" id="CompassEx_Comm_LocClass_TimeValueInRangIndex_System_String__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p><b>时辰边界算法解析：</b></p>
+<p>由于<b>子时（Index = 0）</b>具有跨天交界的特殊性（即深夜 23:00 至次日凌晨 01:00），无法通过简单的单一区间闭合匹配。因此，当当前地支为子时时，系统会优先触发特殊防御逻辑：只要小时数大于等于 <code>23</code> 或等于 <code>0</code>，即直接判定命中并返回 <code>true</code>。</p>
+<p>对于其它普通时辰，方法会动态解构 <a class="xref" href="CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_LocTimeValue">LocTimeValue</a> 的起止字符串，并将其转化为整型进行绝对闭区间匹配。</p>
+</div>
 
 
 

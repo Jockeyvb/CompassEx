@@ -370,10 +370,10 @@ double distance = CompassRangEX.AngleRangeValue(10, 350);</code></pre>
 
   <h3 id="CompassEx_Comm_CompassRangEX_GetCompassObjByDegree" data-uid="CompassEx.Comm.CompassRangEX.GetCompassObjByDegree">
   GetCompassObjByDegree()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L134"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L142"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>要卖当前的罗盘范围内，获取所有相关的罗盘对象类型（如八卦、24山、64卦等）。</p>
+  <div class="markdown level1 summary"><p>获取完全落入并覆盖当前度数区间内的所有罗盘关联对象集合（包含先天八卦、后天八卦、正针二十四山、天盘先天 64 卦以及地盘后天 64 卦）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -385,7 +385,9 @@ double distance = CompassRangEX.AngleRangeValue(10, 350);</code></pre>
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="CompassEx.Comm.CompassObjType.html">CompassObjType</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>返回一个包含 <a class="xref" href="CompassEx.Comm.CompassObjType.html">CompassObjType</a> 封装对象的 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List&lt;T&gt;</a> 列表。
+每个元素代表一个成功匹配的罗盘层级方位实体。</p>
+</dd>
   </dl>
 
 
@@ -394,6 +396,12 @@ double distance = CompassRangEX.AngleRangeValue(10, 350);</code></pre>
 
 
 
+  <h4 class="section" id="CompassEx_Comm_CompassRangEX_GetCompassObjByDegree_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p><b>算法原理：</b></p>
+<p>该方法通过遍历基础元数据，检查各方位的几何度数区间是否将当前度数范围（从 <code>Start</code> 到 <code>End</code>）完全包含在内。</p>
+<p><b>⚠️ 浮点数边界容差设计：</b></p>
+<p>由于计算机浮点数运算存在微小误差，且相邻山、卦之间的交界处度数完全重合。为了确保范围判定的精准性，方法在校验结束边界时，对结束度数执行了减去 <code>0.1</code> 度的容差修正（即 <code>this.End - 0.1</code>）。这样可以有效防止因临界值粘连导致误判或多抓取相邻方位对象的问题。</p>
+</div>
 
 
 

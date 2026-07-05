@@ -140,7 +140,6 @@ namespace CompassEx.Comm
         /// </summary>
         /// <param name="sSkyName">要查询的天干字面名称（如“甲”、“乙”等）。</param>
         /// <returns>若在全局元数据中成功匹配到该天干名，则返回对应填充好五行及索引属性的 <see cref="SkyClass"/> 实例；若输入的字符非法或不存在，则返回 <c>null</c>。</returns>
-        /// <remarks>      
         public static SkyClass GetSkyClass(string sSkyName)
         {
             int iPos = SkyNames.IndexOf(sSkyName);

@@ -32,7 +32,7 @@ namespace CompassEx.Comm
         /// <returns>返回一个包含完整年、月、日、时、分、秒信息的 <see cref="DateTime"/> 结构体对象。</returns>
         /// <remarks>
         /// <b>转换细节：</b>该方法通过显式提取输入对象的具体时分秒数值进行直接映射，生成的 <see cref="DateTime"/> 实例默认其 <see cref="DateTime.Kind"/> 属性为 <see cref="DateTimeKind.Unspecified"/>。
-        /// </remarks>
+        /// </remarks> // 👈 這裡之前漏掉了閉合標籤，現已補上
         public static DateTime ToDateTime(this SolarTime st)
         {
             return new DateTime(st.Year, st.Month, st.Day, st.Hour, st.Minute, st.Second);
@@ -43,12 +43,11 @@ namespace CompassEx.Comm
         /// </summary>
         /// <param name="sd">被扩展的当前 <see cref="SolarDay"/> 公历日期对象实例。</param>
         /// <returns>返回一个代表该日期当天凌晨零点整（<c>00:00:00</c>）的 <see cref="DateTime"/> 结构体对象。</returns>
-        /// <remarks>
-
         public static DateTime ToDateTime(this SolarDay sd)
         {
             return new DateTime(sd.Year, sd.Month, sd.Day);
         }
     }
+
 
 }

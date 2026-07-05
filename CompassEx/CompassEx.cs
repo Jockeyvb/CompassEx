@@ -310,7 +310,7 @@ namespace CompassEx
         /// 根据当前罗盘指向的度数，计算并获取对应的先天八卦单卦对象。
         /// </summary>
         /// <returns>返回对应的 <see cref="GuaSubClass"/> 先天八卦对象；若没有落在有效范围内则返回 <c>null</c>。</returns>
-        public GuaSubClass GetBeforGuaSub()
+        public GuaSubClass GetBeforeGuaSub()
         {
             foreach (string sN in CompassAfterGuaSubNames)
             {

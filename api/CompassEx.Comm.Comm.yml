@@ -69,7 +69,7 @@ items:
     该方法在系统启动或反序列化时应被优先调用。它会通过内部流水线依次唤醒并充填两套最核心的周天度数数据：
 
 
-    <ul><li>调用 <xref href="CompassEx.CompassEx.LoadAllCAfterGuos" data-throw-if-not-resolved="false"></xref>：全量装载后天六十四卦罗盘圈层分度范围数据。</li><li>调用 <xref href="CompassEx.CompassEx.LoadAllCBeforeGuos" data-throw-if-not-resolved="false"></xref>：全量装载伏羲先天六十四卦方圆图周天物理刻度数据。</li></ul>
+    <ul><li>调用 <xref href="CompassEx.CompassEx.LoadAllCAfterGuas" data-throw-if-not-resolved="false"></xref>：全量装载后天六十四卦罗盘圈层分度范围数据。</li><li>调用 <xref href="CompassEx.CompassEx.LoadAllCBeforeGuas" data-throw-if-not-resolved="false"></xref>：全量装载伏羲先天六十四卦方圆图周天物理刻度数据。</li></ul>
   example: []
   syntax:
     content: public static void AllInit()
@@ -386,40 +386,40 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: CompassEx.CompassEx.LoadAllCAfterGuos
-  commentId: M:CompassEx.CompassEx.LoadAllCAfterGuos
-  href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCAfterGuos
-  name: LoadAllCAfterGuos()
-  nameWithType: CompassEx.LoadAllCAfterGuos()
-  fullName: CompassEx.CompassEx.LoadAllCAfterGuos()
+- uid: CompassEx.CompassEx.LoadAllCAfterGuas
+  commentId: M:CompassEx.CompassEx.LoadAllCAfterGuas
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCAfterGuas
+  name: LoadAllCAfterGuas()
+  nameWithType: CompassEx.LoadAllCAfterGuas()
+  fullName: CompassEx.CompassEx.LoadAllCAfterGuas()
   spec.csharp:
-  - uid: CompassEx.CompassEx.LoadAllCAfterGuos
-    name: LoadAllCAfterGuos
-    href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCAfterGuos
+  - uid: CompassEx.CompassEx.LoadAllCAfterGuas
+    name: LoadAllCAfterGuas
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCAfterGuas
   - name: (
   - name: )
   spec.vb:
-  - uid: CompassEx.CompassEx.LoadAllCAfterGuos
-    name: LoadAllCAfterGuos
-    href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCAfterGuos
+  - uid: CompassEx.CompassEx.LoadAllCAfterGuas
+    name: LoadAllCAfterGuas
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCAfterGuas
   - name: (
   - name: )
-- uid: CompassEx.CompassEx.LoadAllCBeforeGuos
-  commentId: M:CompassEx.CompassEx.LoadAllCBeforeGuos
-  href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforeGuos
-  name: LoadAllCBeforeGuos()
-  nameWithType: CompassEx.LoadAllCBeforeGuos()
-  fullName: CompassEx.CompassEx.LoadAllCBeforeGuos()
+- uid: CompassEx.CompassEx.LoadAllCBeforeGuas
+  commentId: M:CompassEx.CompassEx.LoadAllCBeforeGuas
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforeGuas
+  name: LoadAllCBeforeGuas()
+  nameWithType: CompassEx.LoadAllCBeforeGuas()
+  fullName: CompassEx.CompassEx.LoadAllCBeforeGuas()
   spec.csharp:
-  - uid: CompassEx.CompassEx.LoadAllCBeforeGuos
-    name: LoadAllCBeforeGuos
-    href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforeGuos
+  - uid: CompassEx.CompassEx.LoadAllCBeforeGuas
+    name: LoadAllCBeforeGuas
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforeGuas
   - name: (
   - name: )
   spec.vb:
-  - uid: CompassEx.CompassEx.LoadAllCBeforeGuos
-    name: LoadAllCBeforeGuos
-    href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforeGuos
+  - uid: CompassEx.CompassEx.LoadAllCBeforeGuas
+    name: LoadAllCBeforeGuas
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforeGuas
   - name: (
   - name: )
 - uid: CompassEx.Comm.Comm.AllInit*

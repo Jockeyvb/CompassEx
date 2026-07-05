@@ -21,10 +21,13 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TymeTimeExtensions
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 19
+    startLine: 25
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
+  summary: 针对元贞历法核心库（Tyme）时间与日期对象的 C# 官方标准 <xref href="System.DateTime" data-throw-if-not-resolved="false"></xref> 转换扩展工具类。
+  remarks: 本静态类通过提供高效的链式扩展方法（Extension Methods），实现了将三方历法库中的公历时间（<xref href="tyme.solar.SolarTime" data-throw-if-not-resolved="false"></xref>）与公历日期（<xref href="tyme.solar.SolarDay" data-throw-if-not-resolved="false"></xref>）快速转换为 .NET 原生的时间结构体，常用于前后端排盘结果的数据对接与串联。
+  example: []
   syntax:
     content: public static class TymeTimeExtensions
     content.vb: Public Module TymeTimeExtensions
@@ -57,19 +60,22 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToDateTime
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 25
+    startLine: 35
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: SolarTime 转  DateTime
+  summary: 将 Tyme 历法库的公历时间对象转换为 .NET 标准的 <xref href="System.DateTime" data-throw-if-not-resolved="false"></xref> 实例。
+  remarks: <b>转换细节：</b>该方法通过显式提取输入对象的具体时分秒数值进行直接映射，生成的 <xref href="System.DateTime" data-throw-if-not-resolved="false"></xref> 实例默认其 <xref href="System.DateTime.Kind" data-throw-if-not-resolved="false"></xref> 属性为 <xref href="System.DateTimeKind.Unspecified" data-throw-if-not-resolved="false"></xref>。
   example: []
   syntax:
     content: public static DateTime ToDateTime(this SolarTime st)
     parameters:
     - id: st
       type: tyme.solar.SolarTime
+      description: 被扩展的当前 <xref href="tyme.solar.SolarTime" data-throw-if-not-resolved="false"></xref> 公历时间对象实例。
     return:
       type: System.DateTime
+      description: 返回一个包含完整年、月、日、时、分、秒信息的 <xref href="System.DateTime" data-throw-if-not-resolved="false"></xref> 结构体对象。
     content.vb: Public Shared Function ToDateTime(st As SolarTime) As Date
   overload: CompassEx.Comm.TymeTimeExtensions.ToDateTime*
 - uid: CompassEx.Comm.TymeTimeExtensions.ToDateTime(tyme.solar.SolarDay)
@@ -91,22 +97,49 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToDateTime
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 32
+    startLine: 45
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: SolarDay 转 UTC DateTime
+  summary: 将 Tyme 历法库的公历日期对象转换为 .NET 标准的 <xref href="System.DateTime" data-throw-if-not-resolved="false"></xref> 实例（零点时刻）。
   example: []
   syntax:
     content: public static DateTime ToDateTime(this SolarDay sd)
     parameters:
     - id: sd
       type: tyme.solar.SolarDay
+      description: 被扩展的当前 <xref href="tyme.solar.SolarDay" data-throw-if-not-resolved="false"></xref> 公历日期对象实例。
     return:
       type: System.DateTime
+      description: 返回一个代表该日期当天凌晨零点整（<code>00:00:00</code>）的 <xref href="System.DateTime" data-throw-if-not-resolved="false"></xref> 结构体对象。
     content.vb: Public Shared Function ToDateTime(sd As SolarDay) As Date
   overload: CompassEx.Comm.TymeTimeExtensions.ToDateTime*
 references:
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: tyme.solar.SolarTime
+  commentId: T:tyme.solar.SolarTime
+  parent: tyme.solar
+  isExternal: true
+  name: SolarTime
+  nameWithType: SolarTime
+  fullName: tyme.solar.SolarTime
+- uid: tyme.solar.SolarDay
+  commentId: T:tyme.solar.SolarDay
+  parent: tyme.solar
+  isExternal: true
+  name: SolarDay
+  nameWithType: SolarDay
+  fullName: tyme.solar.SolarDay
 - uid: CompassEx.Comm
   commentId: N:CompassEx.Comm
   href: CompassEx.html
@@ -366,30 +399,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: CompassEx.Comm.TymeTimeExtensions.ToDateTime*
-  commentId: Overload:CompassEx.Comm.TymeTimeExtensions.ToDateTime
-  href: CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToDateTime_tyme_solar_SolarTime_
-  name: ToDateTime
-  nameWithType: TymeTimeExtensions.ToDateTime
-  fullName: CompassEx.Comm.TymeTimeExtensions.ToDateTime
-- uid: tyme.solar.SolarTime
-  commentId: T:tyme.solar.SolarTime
-  parent: tyme.solar
-  isExternal: true
-  name: SolarTime
-  nameWithType: SolarTime
-  fullName: tyme.solar.SolarTime
-- uid: System.DateTime
-  commentId: T:System.DateTime
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.datetime
-  name: DateTime
-  nameWithType: DateTime
-  fullName: System.DateTime
-  nameWithType.vb: Date
-  fullName.vb: Date
-  name.vb: Date
 - uid: tyme.solar
   commentId: N:tyme.solar
   isExternal: true
@@ -412,10 +421,25 @@ references:
   - uid: tyme.solar
     name: solar
     isExternal: true
-- uid: tyme.solar.SolarDay
-  commentId: T:tyme.solar.SolarDay
-  parent: tyme.solar
+- uid: System.DateTime.Kind
+  commentId: P:System.DateTime.Kind
   isExternal: true
-  name: SolarDay
-  nameWithType: SolarDay
-  fullName: tyme.solar.SolarDay
+  href: https://learn.microsoft.com/dotnet/api/system.datetime.kind
+  name: Kind
+  nameWithType: DateTime.Kind
+  fullName: System.DateTime.Kind
+  nameWithType.vb: Date.Kind
+  fullName.vb: Date.Kind
+- uid: System.DateTimeKind.Unspecified
+  commentId: F:System.DateTimeKind.Unspecified
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetimekind#system-datetimekind-unspecified
+  name: Unspecified
+  nameWithType: DateTimeKind.Unspecified
+  fullName: System.DateTimeKind.Unspecified
+- uid: CompassEx.Comm.TymeTimeExtensions.ToDateTime*
+  commentId: Overload:CompassEx.Comm.TymeTimeExtensions.ToDateTime
+  href: CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToDateTime_tyme_solar_SolarTime_
+  name: ToDateTime
+  nameWithType: TymeTimeExtensions.ToDateTime
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToDateTime

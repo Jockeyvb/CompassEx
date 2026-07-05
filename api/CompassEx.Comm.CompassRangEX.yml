@@ -306,17 +306,28 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetCompassObjByDegree
     path: CompassEx/Comm/CompassRangEX.cs
-    startLine: 133
+    startLine: 141
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 要卖当前的罗盘范围内，获取所有相关的罗盘对象类型（如八卦、24山、64卦等）。
+  summary: 获取完全落入并覆盖当前度数区间内的所有罗盘关联对象集合（包含先天八卦、后天八卦、正针二十四山、天盘先天 64 卦以及地盘后天 64 卦）。
+  remarks: >-
+    <p><b>算法原理：</b></p>
+
+    <p>该方法通过遍历基础元数据，检查各方位的几何度数区间是否将当前度数范围（从 <code>Start</code> 到 <code>End</code>）完全包含在内。</p>
+
+    <p><b>⚠️ 浮点数边界容差设计：</b></p>
+
+    <p>由于计算机浮点数运算存在微小误差，且相邻山、卦之间的交界处度数完全重合。为了确保范围判定的精准性，方法在校验结束边界时，对结束度数执行了减去 <code>0.1</code> 度的容差修正（即 <code>this.End - 0.1</code>）。这样可以有效防止因临界值粘连导致误判或多抓取相邻方位对象的问题。</p>
   example: []
   syntax:
     content: public List<CompassObjType> GetCompassObjByDegree()
     return:
       type: System.Collections.Generic.List{CompassEx.Comm.CompassObjType}
-      description: ''
+      description: >-
+        返回一个包含 <xref href="CompassEx.Comm.CompassObjType" data-throw-if-not-resolved="false"></xref> 封装对象的 <xref href="System.Collections.Generic.List%601" data-throw-if-not-resolved="false"></xref> 列表。
+
+        每个元素代表一个成功匹配的罗盘层级方位实体。
     content.vb: Public Function GetCompassObjByDegree() As List(Of CompassObjType)
   overload: CompassEx.Comm.CompassRangEX.GetCompassObjByDegree*
 references:
@@ -798,6 +809,40 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.double
   - name: )
+- uid: CompassEx.Comm.CompassObjType
+  commentId: T:CompassEx.Comm.CompassObjType
+  href: CompassEx.Comm.CompassObjType.html
+  name: CompassObjType
+  nameWithType: CompassObjType
+  fullName: CompassEx.Comm.CompassObjType
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: CompassEx.Comm.CompassRangEX.GetCompassObjByDegree*
   commentId: Overload:CompassEx.Comm.CompassRangEX.GetCompassObjByDegree
   href: CompassEx.Comm.CompassRangEX.html#CompassEx_Comm_CompassRangEX_GetCompassObjByDegree
@@ -836,34 +881,6 @@ references:
   - uid: CompassEx.Comm.CompassObjType
     name: CompassObjType
     href: CompassEx.Comm.CompassObjType.html
-  - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
   - name: )
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic

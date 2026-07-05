@@ -11,7 +11,8 @@ items:
   - CompassEx.Comm.SkyClass.GetSkyClass(System.Int32)
   - CompassEx.Comm.SkyClass.GetSkyClass(System.String)
   - CompassEx.Comm.SkyClass.Index
-  - CompassEx.Comm.SkyClass.SkyName
+  - CompassEx.Comm.SkyClass.IsSun
+  - CompassEx.Comm.SkyClass.Name
   - CompassEx.Comm.SkyClass.SkyNames
   langs:
   - csharp
@@ -66,48 +67,83 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SkyNames
     path: CompassEx/Comm/SkyClass.cs
-    startLine: 24
+    startLine: 29
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 天干名称列表
+  summary: 十天干的经典字面名称全局静态只读序列。
   example: []
   syntax:
     content: public static string[] SkyNames
     return:
       type: System.String[]
+      description: 包含 10 个天干：从“甲”开始至“癸”结束，索引对应 <code>0 ~ 9</code>。
     content.vb: Public Shared SkyNames As String()
-- uid: CompassEx.Comm.SkyClass.SkyName
-  commentId: P:CompassEx.Comm.SkyClass.SkyName
-  id: SkyName
+- uid: CompassEx.Comm.SkyClass.IsSun
+  commentId: P:CompassEx.Comm.SkyClass.IsSun
+  id: IsSun
   parent: CompassEx.Comm.SkyClass
   langs:
   - csharp
   - vb
-  name: SkyName
-  nameWithType: SkyClass.SkyName
-  fullName: CompassEx.Comm.SkyClass.SkyName
+  name: IsSun
+  nameWithType: SkyClass.IsSun
+  fullName: CompassEx.Comm.SkyClass.IsSun
   type: Property
   source:
     remote:
       path: CompassEx/Comm/SkyClass.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: SkyName
+    id: IsSun
     path: CompassEx/Comm/SkyClass.cs
-    startLine: 29
+    startLine: 45
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 地支名称
+  summary: 获取当前天干实例在阴阳判定中是否属于“阳干”。
+  remarks: 判定原理：依据天干在序列中的绝对索引位置进行取模运算（<code>Index % 2 == 0</code>），偶数索引为阳，奇数索引为阴。
   example: []
   syntax:
-    content: public string SkyName { get; }
+    content: public bool IsSun { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: 若属于阳干（如甲、丙、戊、庚、壬）则返回 <code>true</code>；若属于阴干（如乙、丁、己..）则返回 <code>false</code>。
+    content.vb: Public ReadOnly Property IsSun As Boolean
+  overload: CompassEx.Comm.SkyClass.IsSun*
+- uid: CompassEx.Comm.SkyClass.Name
+  commentId: P:CompassEx.Comm.SkyClass.Name
+  id: Name
+  parent: CompassEx.Comm.SkyClass
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: SkyClass.Name
+  fullName: CompassEx.Comm.SkyClass.Name
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/SkyClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Name
+    path: CompassEx/Comm/SkyClass.cs
+    startLine: 53
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取当前天干实例的字面名称（如“甲”、“乙”等）。
+  example: []
+  syntax:
+    content: public string Name { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property SkyName As String
-  overload: CompassEx.Comm.SkyClass.SkyName*
+      description: 一个 <xref href="System.String" data-throw-if-not-resolved="false"></xref> 字符串，表示当前天干的单字名称。
+    content.vb: Public Property Name As String
+  overload: CompassEx.Comm.SkyClass.Name*
 - uid: CompassEx.Comm.SkyClass.Index
   commentId: P:CompassEx.Comm.SkyClass.Index
   id: Index
@@ -126,17 +162,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Index
     path: CompassEx/Comm/SkyClass.cs
-    startLine: 34
+    startLine: 61
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 天干索引
+  summary: 获取当前天干在十天干顺位序列中的绝对索引位置。
   example: []
   syntax:
     content: public int Index { get; }
     parameters: []
     return:
       type: System.Int32
+      description: 一个 <xref href="System.Int32" data-throw-if-not-resolved="false"></xref> 整数，有效取值范围为 <code>0 ~ 9</code>，对应 <xref href="CompassEx.Comm.SkyClass.SkyNames" data-throw-if-not-resolved="false"></xref> 中的位置。
     content.vb: Public Property Index As Integer
   overload: CompassEx.Comm.SkyClass.Index*
 - uid: CompassEx.Comm.SkyClass.FiveAttr
@@ -157,17 +194,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FiveAttr
     path: CompassEx/Comm/SkyClass.cs
-    startLine: 39
+    startLine: 69
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 五行属性名
+  summary: 获取当前天干所归属的五行属性。
   example: []
   syntax:
     content: public FiveAttr FiveAttr { get; }
     parameters: []
     return:
       type: CompassEx.Comm.FiveAttr
+      description: 返回一个 <xref href="CompassEx.Comm.SkyClass.FiveAttr" data-throw-if-not-resolved="false"></xref> 对象（或枚举），代表该天干的五行特征（如甲乙属木、丙丁属火等）。
     content.vb: Public Property FiveAttr As FiveAttr
   overload: CompassEx.Comm.SkyClass.FiveAttr*
 - uid: CompassEx.Comm.SkyClass.#ctor(System.String)
@@ -188,24 +226,25 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Comm/SkyClass.cs
-    startLine: 46
+    startLine: 84
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 天干构造函数
+  summary: 基于指定的天干单字字面名称初始化 <xref href="CompassEx.Comm.SkyClass" data-throw-if-not-resolved="false"></xref> 类的新实例。
+  remarks: 内部机制会先通过名称检索其对应的整型索引，随后将其隐式链式传递给带索引参数的构造函数。
   example: []
   syntax:
     content: public SkyClass(string sSkyName)
     parameters:
     - id: sSkyName
       type: System.String
-      description: 天干名称
+      description: 要创建的天干名称（如“甲”、“乙”等）。
     content.vb: Public Sub New(sSkyName As String)
   overload: CompassEx.Comm.SkyClass.#ctor*
   exceptions:
   - type: System.IndexOutOfRangeException
     commentId: T:System.IndexOutOfRangeException
-    description: ''
+    description: 当传入的名称不在全局静态元数据 <xref href="CompassEx.Comm.SkyClass.SkyNames" data-throw-if-not-resolved="false"></xref> 中时抛出此异常。
   nameWithType.vb: SkyClass.New(String)
   fullName.vb: CompassEx.Comm.SkyClass.New(String)
   name.vb: New(String)
@@ -227,24 +266,30 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Comm/SkyClass.cs
-    startLine: 56
+    startLine: 104
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 天干构造函数
+  summary: 基于十天干序列中的整型索引初始化 <xref href="CompassEx.Comm.SkyClass" data-throw-if-not-resolved="false"></xref> 类的新实例，并自动动态装配其五行属性。
+  remarks: >-
+    <p><b>五行流转分配矩阵：</b></p>
+
+    <p>本构造函数内部实现了经典正统的天干五行映射机制：</p>
+
+    <ul><li>索引 <code>0, 1</code>（甲、乙） <code> ==&gt; </code> 自动实例化为 <b>木</b> 属性</li><li>索引 <code>2, 3</code>（丙、丁） <code> ==&gt; </code> 自动实例化为 <b>火</b> 属性</li><li>索引 <code>4, 5</code>（戊、己） <code> ==&gt; </code> 自动实例化为 <b>土</b> 属性</li><li>索引 <code>6, 7</code>（庚、辛） <code> ==&gt; </code> 自动实例化为 <b>金</b> 属性</li><li>索引 <code>8, 9</code>（壬、癸） <code> ==&gt; </code> 自动实例化为 <b>水</b> 属性（★已修复历史版本误指为土的隐患）</li></ul>
   example: []
   syntax:
     content: public SkyClass(int iSkyIndex)
     parameters:
     - id: iSkyIndex
       type: System.Int32
-      description: 天干所在的索引，参考：【<xref href="CompassEx.Comm.SkyClass.SkyNames" data-throw-if-not-resolved="false"></xref>】
+      description: 天干在序列中的绝对索引位置，有效取值范围为 <code>0 ~ 9</code>。可参考全局静态字段：<xref href="CompassEx.Comm.SkyClass.SkyNames" data-throw-if-not-resolved="false"></xref>。
     content.vb: Public Sub New(iSkyIndex As Integer)
   overload: CompassEx.Comm.SkyClass.#ctor*
   exceptions:
   - type: System.IndexOutOfRangeException
     commentId: T:System.IndexOutOfRangeException
-    description: ''
+    description: 当传入的索引小于 0 或大于等于 10 时抛出此异常。
   nameWithType.vb: SkyClass.New(Integer)
   fullName.vb: CompassEx.Comm.SkyClass.New(Integer)
   name.vb: New(Integer)
@@ -266,21 +311,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSkyClass
     path: CompassEx/Comm/SkyClass.cs
-    startLine: 89
+    startLine: 142
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 根据天干的索引返回天干类
+  summary: 根据指定的天干单字字面名称，利用 LINQ 动态检索并实例化对应的天干类实体。
   example: []
   syntax:
     content: public static SkyClass GetSkyClass(string sSkyName)
     parameters:
     - id: sSkyName
       type: System.String
-      description: ''
+      description: 要查询的天干字面名称（如“甲”、“乙”等）。
     return:
       type: CompassEx.Comm.SkyClass
-      description: ''
+      description: 若在全局元数据中成功匹配到该天干名，则返回对应填充好五行及索引属性的 <xref href="CompassEx.Comm.SkyClass" data-throw-if-not-resolved="false"></xref> 实例；若输入的字符非法或不存在，则返回 <code>null</code>。
     content.vb: Public Shared Function GetSkyClass(sSkyName As String) As SkyClass
   overload: CompassEx.Comm.SkyClass.GetSkyClass*
   nameWithType.vb: SkyClass.GetSkyClass(String)
@@ -304,23 +349,28 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSkyClass
     path: CompassEx/Comm/SkyClass.cs
-    startLine: 100
+    startLine: 157
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 根据天干的索引返回天干类
+  summary: 根据指定的全局静态顺位索引，动态实例化对应的天干类实体。
+  remarks: <b>内部对象装配：</b>该静态工厂方法通过链式调用带参构造函数 <xref href="CompassEx.Comm.SkyClass.%23ctor(System.Int32)" data-throw-if-not-resolved="false"></xref> 来实现实体的动态创建，新对象会自动将对应的天干名称与正统五行矩阵进行映射挂载。
   example: []
   syntax:
     content: public static SkyClass GetSkyClass(int iSkyIndex)
     parameters:
     - id: iSkyIndex
       type: System.Int32
-      description: ''
+      description: 天干在序列中的绝对索引位置，有效取值范围为 <code>0 ~ 9</code>。
     return:
       type: CompassEx.Comm.SkyClass
-      description: ''
+      description: 返回带有完整五行属性绑定、索引以及名称的 <xref href="CompassEx.Comm.SkyClass" data-throw-if-not-resolved="false"></xref> 天干类实体对象。
     content.vb: Public Shared Function GetSkyClass(iSkyIndex As Integer) As SkyClass
   overload: CompassEx.Comm.SkyClass.GetSkyClass*
+  exceptions:
+  - type: System.IndexOutOfRangeException
+    commentId: T:System.IndexOutOfRangeException
+    description: 当传入的 <code class="paramref">iSkyIndex</code> 小于 0 或大于等于 10 时，内部构造函数会抛出此异常。
   nameWithType.vb: SkyClass.GetSkyClass(Integer)
   fullName.vb: CompassEx.Comm.SkyClass.GetSkyClass(Integer)
   name.vb: GetSkyClass(Integer)
@@ -710,12 +760,23 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: (
   - name: )
-- uid: CompassEx.Comm.SkyClass.SkyName*
-  commentId: Overload:CompassEx.Comm.SkyClass.SkyName
-  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_SkyName
-  name: SkyName
-  nameWithType: SkyClass.SkyName
-  fullName: CompassEx.Comm.SkyClass.SkyName
+- uid: CompassEx.Comm.SkyClass.IsSun*
+  commentId: Overload:CompassEx.Comm.SkyClass.IsSun
+  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_IsSun
+  name: IsSun
+  nameWithType: SkyClass.IsSun
+  fullName: CompassEx.Comm.SkyClass.IsSun
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -727,12 +788,12 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: CompassEx.Comm.SkyClass.Index*
-  commentId: Overload:CompassEx.Comm.SkyClass.Index
-  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_Index
-  name: Index
-  nameWithType: SkyClass.Index
-  fullName: CompassEx.Comm.SkyClass.Index
+- uid: CompassEx.Comm.SkyClass.Name*
+  commentId: Overload:CompassEx.Comm.SkyClass.Name
+  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_Name
+  name: Name
+  nameWithType: SkyClass.Name
+  fullName: CompassEx.Comm.SkyClass.Name
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -744,6 +805,24 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: CompassEx.Comm.SkyClass.SkyNames
+  commentId: F:CompassEx.Comm.SkyClass.SkyNames
+  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_SkyNames
+  name: SkyNames
+  nameWithType: SkyClass.SkyNames
+  fullName: CompassEx.Comm.SkyClass.SkyNames
+- uid: CompassEx.Comm.SkyClass.Index*
+  commentId: Overload:CompassEx.Comm.SkyClass.Index
+  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_Index
+  name: Index
+  nameWithType: SkyClass.Index
+  fullName: CompassEx.Comm.SkyClass.Index
+- uid: CompassEx.Comm.SkyClass.FiveAttr
+  commentId: P:CompassEx.Comm.SkyClass.FiveAttr
+  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_FiveAttr
+  name: FiveAttr
+  nameWithType: SkyClass.FiveAttr
+  fullName: CompassEx.Comm.SkyClass.FiveAttr
 - uid: CompassEx.Comm.SkyClass.FiveAttr*
   commentId: Overload:CompassEx.Comm.SkyClass.FiveAttr
   href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_FiveAttr
@@ -757,6 +836,13 @@ references:
   name: FiveAttr
   nameWithType: FiveAttr
   fullName: CompassEx.Comm.FiveAttr
+- uid: CompassEx.Comm.SkyClass
+  commentId: T:CompassEx.Comm.SkyClass
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.SkyClass.html
+  name: SkyClass
+  nameWithType: SkyClass
+  fullName: CompassEx.Comm.SkyClass
 - uid: System.IndexOutOfRangeException
   commentId: T:System.IndexOutOfRangeException
   isExternal: true
@@ -773,22 +859,37 @@ references:
   nameWithType.vb: SkyClass.New
   fullName.vb: CompassEx.Comm.SkyClass.New
   name.vb: New
-- uid: CompassEx.Comm.SkyClass.SkyNames
-  commentId: F:CompassEx.Comm.SkyClass.SkyNames
-  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_SkyNames
-  name: SkyNames
-  nameWithType: SkyClass.SkyNames
-  fullName: CompassEx.Comm.SkyClass.SkyNames
 - uid: CompassEx.Comm.SkyClass.GetSkyClass*
   commentId: Overload:CompassEx.Comm.SkyClass.GetSkyClass
   href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_GetSkyClass_System_String_
   name: GetSkyClass
   nameWithType: SkyClass.GetSkyClass
   fullName: CompassEx.Comm.SkyClass.GetSkyClass
-- uid: CompassEx.Comm.SkyClass
-  commentId: T:CompassEx.Comm.SkyClass
-  parent: CompassEx.Comm
-  href: CompassEx.Comm.SkyClass.html
-  name: SkyClass
-  nameWithType: SkyClass
-  fullName: CompassEx.Comm.SkyClass
+- uid: CompassEx.Comm.SkyClass.#ctor(System.Int32)
+  commentId: M:CompassEx.Comm.SkyClass.#ctor(System.Int32)
+  isExternal: true
+  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass__ctor_System_Int32_
+  name: SkyClass(int)
+  nameWithType: SkyClass.SkyClass(int)
+  fullName: CompassEx.Comm.SkyClass.SkyClass(int)
+  nameWithType.vb: SkyClass.New(Integer)
+  fullName.vb: CompassEx.Comm.SkyClass.New(Integer)
+  name.vb: New(Integer)
+  spec.csharp:
+  - uid: CompassEx.Comm.SkyClass.#ctor(System.Int32)
+    name: SkyClass
+    href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass__ctor_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - name: New
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )

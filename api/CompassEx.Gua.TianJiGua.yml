@@ -1,0 +1,875 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Gua.TianJiGua
+  commentId: T:CompassEx.Gua.TianJiGua
+  id: TianJiGua
+  parent: CompassEx.Gua
+  children:
+  - CompassEx.Gua.TianJiGua.#ctor(CompassEx.Gua.GuaClass)
+  - CompassEx.Gua.TianJiGua.GuaList
+  - CompassEx.Gua.TianJiGua.InGuaSubs
+  - CompassEx.Gua.TianJiGua.IsOutGua(CompassEx.Gua.GuaSubClass)
+  - CompassEx.Gua.TianJiGua.OutGuaSubs
+  langs:
+  - csharp
+  - vb
+  name: TianJiGua
+  nameWithType: TianJiGua
+  fullName: CompassEx.Gua.TianJiGua
+  type: Class
+  source:
+    remote:
+      path: CompassEx/Gua/TianJiGuo.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: TianJiGua
+    path: CompassEx/Gua/TianJiGuo.cs
+    startLine: 26
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 表示天机出卦法的推演与判定实体类。
+  remarks: >-
+    <p><b>文献记载：</b>本算法依据余胜唐、刘贲等老师的著作记载进行工程化实现，一般用于风水学中的“收山出煞”以及“三元命卦判断”等业务场景。</p>
+
+    <p><b>算法原理：</b>根据六爻卦之卦宫（六纯卦）进行八卦爻变，通过京房易卦法的七世飞爻得出五卦（六爻卦），其上下拆分出的三爻卦集合（共 5 个）定义为“入卦”；其余未出现的 3 个三爻卦则定义为“出煞（出卦）”。</p>
+  example: []
+  syntax:
+    content: public class TianJiGua
+    content.vb: Public Class TianJiGua
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - CompassEx.Gua.TianJiGua.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CompassEx.Gua.TianJiGua.GuaList
+  commentId: P:CompassEx.Gua.TianJiGua.GuaList
+  id: GuaList
+  parent: CompassEx.Gua.TianJiGua
+  langs:
+  - csharp
+  - vb
+  name: GuaList
+  nameWithType: TianJiGua.GuaList
+  fullName: CompassEx.Gua.TianJiGua.GuaList
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/TianJiGuo.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuaList
+    path: CompassEx/Gua/TianJiGuo.cs
+    startLine: 39
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 获取由当前卦宫推演出的七世飞爻卦（京房易卦序列）集合。
+  remarks: 演变机制：由初爻开始往上变，以后一个最卦接着变出，共演变 7 次，包含本宫卦在内共计 8 个卦象。
+  example: []
+  syntax:
+    content: public List<GuaClass> GuaList { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{CompassEx.Gua.GuaClass}
+      description: 包含 8 个 <xref href="CompassEx.Gua.GuaClass" data-throw-if-not-resolved="false"></xref> 六爻卦对象的列表。
+    content.vb: Public Property GuaList As List(Of GuaClass)
+  overload: CompassEx.Gua.TianJiGua.GuaList*
+- uid: CompassEx.Gua.TianJiGua.InGuaSubs
+  commentId: P:CompassEx.Gua.TianJiGua.InGuaSubs
+  id: InGuaSubs
+  parent: CompassEx.Gua.TianJiGua
+  langs:
+  - csharp
+  - vb
+  name: InGuaSubs
+  nameWithType: TianJiGua.InGuaSubs
+  fullName: CompassEx.Gua.TianJiGua.InGuaSubs
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/TianJiGuo.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: InGuaSubs
+    path: CompassEx/Gua/TianJiGuo.cs
+    startLine: 47
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 获取当前天机卦局所对应的“入卦”后天八卦集合。
+  example: []
+  syntax:
+    content: public Dictionary<string, GuaSubClass> InGuaSubs { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,CompassEx.Gua.GuaSubClass}
+      description: 键为后天八卦卦名，值为对应的 <xref href="CompassEx.Gua.GuaSubClass" data-throw-if-not-resolved="false"></xref> 单卦对象字典。
+    content.vb: Public Property InGuaSubs As Dictionary(Of String, GuaSubClass)
+  overload: CompassEx.Gua.TianJiGua.InGuaSubs*
+- uid: CompassEx.Gua.TianJiGua.OutGuaSubs
+  commentId: P:CompassEx.Gua.TianJiGua.OutGuaSubs
+  id: OutGuaSubs
+  parent: CompassEx.Gua.TianJiGua
+  langs:
+  - csharp
+  - vb
+  name: OutGuaSubs
+  nameWithType: TianJiGua.OutGuaSubs
+  fullName: CompassEx.Gua.TianJiGua.OutGuaSubs
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/TianJiGuo.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: OutGuaSubs
+    path: CompassEx/Gua/TianJiGuo.cs
+    startLine: 55
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 获取当前天机卦局所对应的“出卦”（出煞）后天八卦集合。
+  example: []
+  syntax:
+    content: public Dictionary<string, GuaSubClass> OutGuaSubs { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,CompassEx.Gua.GuaSubClass}
+      description: 键为后天八卦卦名，值为对应的 <xref href="CompassEx.Gua.GuaSubClass" data-throw-if-not-resolved="false"></xref> 单卦对象字典。
+    content.vb: Public Property OutGuaSubs As Dictionary(Of String, GuaSubClass)
+  overload: CompassEx.Gua.TianJiGua.OutGuaSubs*
+- uid: CompassEx.Gua.TianJiGua.#ctor(CompassEx.Gua.GuaClass)
+  commentId: M:CompassEx.Gua.TianJiGua.#ctor(CompassEx.Gua.GuaClass)
+  id: '#ctor(CompassEx.Gua.GuaClass)'
+  parent: CompassEx.Gua.TianJiGua
+  langs:
+  - csharp
+  - vb
+  name: TianJiGua(GuaClass)
+  nameWithType: TianJiGua.TianJiGua(GuaClass)
+  fullName: CompassEx.Gua.TianJiGua.TianJiGua(CompassEx.Gua.GuaClass)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Gua/TianJiGuo.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Gua/TianJiGuo.cs
+    startLine: 75
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 初始化 <xref href="CompassEx.Gua.TianJiGua" data-throw-if-not-resolved="false"></xref> 类的新实例，自动根据传入的向卦计算出对应的天机入卦与出卦集合。
+  remarks: >-
+    <p><b>初始化逻辑：</b></p>
+
+    <ol><li>通过向卦（<code class="paramref">ToGua</code>）自动寻找其所属的六纯卦卦宫（<code>GuaSelf</code>）。</li><li>基于卦宫展开京房易卦飞爻算法，提取上下卦（三爻卦）去重后填充至 <xref href="CompassEx.Gua.TianJiGua.InGuaSubs" data-throw-if-not-resolved="false"></xref> 入卦集合。</li><li>将未在入卦集合中出现的其余后天单卦提取出来，填充至 <xref href="CompassEx.Gua.TianJiGua.OutGuaSubs" data-throw-if-not-resolved="false"></xref> 出卦集合，用以进行出煞判定。</li></ol>
+  example: []
+  syntax:
+    content: public TianJiGua(GuaClass ToGua)
+    parameters:
+    - id: ToGua
+      type: CompassEx.Gua.GuaClass
+      description: 输入的罗盘向卦对象（六爻卦结构）。
+    content.vb: Public Sub New(ToGua As GuaClass)
+  overload: CompassEx.Gua.TianJiGua.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: 当传入的 <code class="paramref">ToGua</code> 对象为 <code>null</code> 时抛出此异常。
+  nameWithType.vb: TianJiGua.New(GuaClass)
+  fullName.vb: CompassEx.Gua.TianJiGua.New(CompassEx.Gua.GuaClass)
+  name.vb: New(GuaClass)
+- uid: CompassEx.Gua.TianJiGua.IsOutGua(CompassEx.Gua.GuaSubClass)
+  commentId: M:CompassEx.Gua.TianJiGua.IsOutGua(CompassEx.Gua.GuaSubClass)
+  id: IsOutGua(CompassEx.Gua.GuaSubClass)
+  parent: CompassEx.Gua.TianJiGua
+  langs:
+  - csharp
+  - vb
+  name: IsOutGua(GuaSubClass)
+  nameWithType: TianJiGua.IsOutGua(GuaSubClass)
+  fullName: CompassEx.Gua.TianJiGua.IsOutGua(CompassEx.Gua.GuaSubClass)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/TianJiGuo.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: IsOutGua
+    path: CompassEx/Gua/TianJiGuo.cs
+    startLine: 125
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 判定指定的后天八卦单卦在当前天机卦局中是否属于“出卦”。
+  remarks: >-
+    <p>在玄空大卦风水体系中，主要通过此处的出卦逻辑进行<b>收山出煞</b>的度数判别（通常作用于罗盘 64 卦的分野上）。</p>
+
+    <p><b>⚠️ 业务边界提示：</b>若您当前是要进行“三元命卦”的出卦判定，则需要严格按照纳甲法规则来进行推演。请不要使用本方法，改为调用 <code>FateGua.IsOutGua()</code> 方法。</p>
+  example: []
+  syntax:
+    content: public bool IsOutGua(GuaSubClass CompareGua)
+    parameters:
+    - id: CompareGua
+      type: CompassEx.Gua.GuaSubClass
+      description: 需要比对、判定的后天八卦单卦对象。
+    return:
+      type: System.Boolean
+      description: 若该单卦存在于出卦集合（<xref href="CompassEx.Gua.TianJiGua.OutGuaSubs" data-throw-if-not-resolved="false"></xref>）中，则返回 <code>true</code>（代表已出卦）；否则返回 <code>false</code>。
+    content.vb: Public Function IsOutGua(CompareGua As GuaSubClass) As Boolean
+  overload: CompassEx.Gua.TianJiGua.IsOutGua*
+references:
+- uid: CompassEx.Gua
+  commentId: N:CompassEx.Gua
+  href: CompassEx.html
+  name: CompassEx.Gua
+  nameWithType: CompassEx.Gua
+  fullName: CompassEx.Gua
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CompassEx.Gua.TianJiGua.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TianJiGua, TBase>(TianJiGua, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TianJiGua, TBase>(TianJiGua, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.Gua.TianJiGua, TBase>(CompassEx.Gua.TianJiGua, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TianJiGua, TBase)(TianJiGua, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.Gua.TianJiGua, TBase)(CompassEx.Gua.TianJiGua, TBase)
+  name.vb: ApplyBaseProperties(Of TianJiGua, TBase)(TianJiGua, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Gua.TianJiGua,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.Gua.TianJiGua
+    name: TianJiGua
+    href: CompassEx.Gua.TianJiGua.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.Gua.TianJiGua
+    name: TianJiGua
+    href: CompassEx.Gua.TianJiGua.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Gua.TianJiGua,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Gua.TianJiGua
+    name: TianJiGua
+    href: CompassEx.Gua.TianJiGua.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.Gua.TianJiGua
+    name: TianJiGua
+    href: CompassEx.Gua.TianJiGua.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: CompassEx.Gua.GuaClass
+  commentId: T:CompassEx.Gua.GuaClass
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.GuaClass.html
+  name: GuaClass
+  nameWithType: GuaClass
+  fullName: CompassEx.Gua.GuaClass
+- uid: CompassEx.Gua.TianJiGua.GuaList*
+  commentId: Overload:CompassEx.Gua.TianJiGua.GuaList
+  href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_GuaList
+  name: GuaList
+  nameWithType: TianJiGua.GuaList
+  fullName: CompassEx.Gua.TianJiGua.GuaList
+- uid: System.Collections.Generic.List{CompassEx.Gua.GuaClass}
+  commentId: T:System.Collections.Generic.List{CompassEx.Gua.GuaClass}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<GuaClass>
+  nameWithType: List<GuaClass>
+  fullName: System.Collections.Generic.List<CompassEx.Gua.GuaClass>
+  nameWithType.vb: List(Of GuaClass)
+  fullName.vb: System.Collections.Generic.List(Of CompassEx.Gua.GuaClass)
+  name.vb: List(Of GuaClass)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: CompassEx.Gua.GuaClass
+    name: GuaClass
+    href: CompassEx.Gua.GuaClass.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Gua.GuaClass
+    name: GuaClass
+    href: CompassEx.Gua.GuaClass.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: CompassEx.Gua.GuaSubClass
+  commentId: T:CompassEx.Gua.GuaSubClass
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.GuaSubClass.html
+  name: GuaSubClass
+  nameWithType: GuaSubClass
+  fullName: CompassEx.Gua.GuaSubClass
+- uid: CompassEx.Gua.TianJiGua.InGuaSubs*
+  commentId: Overload:CompassEx.Gua.TianJiGua.InGuaSubs
+  href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_InGuaSubs
+  name: InGuaSubs
+  nameWithType: TianJiGua.InGuaSubs
+  fullName: CompassEx.Gua.TianJiGua.InGuaSubs
+- uid: System.Collections.Generic.Dictionary{System.String,CompassEx.Gua.GuaSubClass}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,CompassEx.Gua.GuaSubClass}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, GuaSubClass>
+  nameWithType: Dictionary<string, GuaSubClass>
+  fullName: System.Collections.Generic.Dictionary<string, CompassEx.Gua.GuaSubClass>
+  nameWithType.vb: Dictionary(Of String, GuaSubClass)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, CompassEx.Gua.GuaSubClass)
+  name.vb: Dictionary(Of String, GuaSubClass)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: CompassEx.Gua.GuaSubClass
+    name: GuaSubClass
+    href: CompassEx.Gua.GuaSubClass.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: CompassEx.Gua.GuaSubClass
+    name: GuaSubClass
+    href: CompassEx.Gua.GuaSubClass.html
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: CompassEx.Gua.TianJiGua.OutGuaSubs*
+  commentId: Overload:CompassEx.Gua.TianJiGua.OutGuaSubs
+  href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_OutGuaSubs
+  name: OutGuaSubs
+  nameWithType: TianJiGua.OutGuaSubs
+  fullName: CompassEx.Gua.TianJiGua.OutGuaSubs
+- uid: CompassEx.Gua.TianJiGua
+  commentId: T:CompassEx.Gua.TianJiGua
+  href: CompassEx.Gua.TianJiGua.html
+  name: TianJiGua
+  nameWithType: TianJiGua
+  fullName: CompassEx.Gua.TianJiGua
+- uid: CompassEx.Gua.TianJiGua.InGuaSubs
+  commentId: P:CompassEx.Gua.TianJiGua.InGuaSubs
+  href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_InGuaSubs
+  name: InGuaSubs
+  nameWithType: TianJiGua.InGuaSubs
+  fullName: CompassEx.Gua.TianJiGua.InGuaSubs
+- uid: CompassEx.Gua.TianJiGua.OutGuaSubs
+  commentId: P:CompassEx.Gua.TianJiGua.OutGuaSubs
+  href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_OutGuaSubs
+  name: OutGuaSubs
+  nameWithType: TianJiGua.OutGuaSubs
+  fullName: CompassEx.Gua.TianJiGua.OutGuaSubs
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: CompassEx.Gua.TianJiGua.#ctor*
+  commentId: Overload:CompassEx.Gua.TianJiGua.#ctor
+  href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua__ctor_CompassEx_Gua_GuaClass_
+  name: TianJiGua
+  nameWithType: TianJiGua.TianJiGua
+  fullName: CompassEx.Gua.TianJiGua.TianJiGua
+  nameWithType.vb: TianJiGua.New
+  fullName.vb: CompassEx.Gua.TianJiGua.New
+  name.vb: New
+- uid: CompassEx.Gua.TianJiGua.IsOutGua*
+  commentId: Overload:CompassEx.Gua.TianJiGua.IsOutGua
+  href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_IsOutGua_CompassEx_Gua_GuaSubClass_
+  name: IsOutGua
+  nameWithType: TianJiGua.IsOutGua
+  fullName: CompassEx.Gua.TianJiGua.IsOutGua
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
