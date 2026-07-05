@@ -1,6 +1,6 @@
 ﻿using CompassEx;
 using CompassEx.Comm;
-using CompassEx.Guo;
+using CompassEx.Gua;
 using SkiaSharp;
 using System.Diagnostics;
 namespace CompassExTest.Pages;
@@ -156,8 +156,13 @@ public class CompassSkiaRenderer
         using var textNormalPaint = new SKPaint { Color = SKColors.DimGray, IsAntialias = true };
         using var textBoldPaint = new SKPaint { Color = SKColors.Red, IsAntialias = true };
 
-        using var fontNormal = new SKFont(TF, 10f);
-        using var fontBold = new SKFont(TF, 12f) { Embolden = true };
+        float minSize = Math.Min(CanvasSize.Width, CanvasSize.Height);
+
+        float RoundH = minSize / 15f;
+
+
+        using var fontNormal = new SKFont(TF, RoundH * .2f);
+        using var fontBold = new SKFont(TF, RoundH * 0.2f) { Embolden = true };
 
         for (int angle = 0; angle < 360; angle += 5)
         {
@@ -196,13 +201,16 @@ public class CompassSkiaRenderer
             Color = SKColors.Crimson,
             IsAntialias = true
         };
-        using var dirFont = new SKFont(TF, 18f) { Embolden = true };
+
+
+
+
         float minSize = Math.Min(CanvasSize.Width, CanvasSize.Height);
 
         float RoundH = minSize / 15f;
-        float textOffset = RoundH * 1.2f;
-        float dirR = r - textOffset;
-
+        float textOffset = RoundH / 2;
+        float dirR = r + textOffset;
+        using var dirFont = new SKFont(TF, RoundH * 0.5f) { Embolden = true };
         DrawSingleDirText(canvas, cx, cy, dirR, 0, "北", dirTextPaint, dirFont);
         DrawSingleDirText(canvas, cx, cy, dirR, 90, "东", dirTextPaint, dirFont);
         DrawSingleDirText(canvas, cx, cy, dirR, 180, "南", dirTextPaint, dirFont);
@@ -262,19 +270,19 @@ public class CompassSkiaRenderer
         PathFillP.Style = SKPaintStyle.Fill;
 
         //===============================画先天八卦===========================
-        foreach (string sn in GuoSubClass.BeforeGuoSubNames)
+        foreach (string sn in GuaSubClass.BeforeGuaSubNames)
         {
 
 
-            var cbGuo = GuoSubClass.GetGuoSub(sn, false);
-            if (cbGuo?.CBeforRangeDegree == null) continue;
+            var cbGua = GuaSubClass.GetGuaSub(sn, false);
+            if (cbGua?.CBeforRangeDegree == null) continue;
 
-            float start = (float)cbGuo.CBeforRangeDegree.Start;
-            float end = (float)cbGuo.CBeforRangeDegree.End;
+            float start = (float)cbGua.CBeforRangeDegree.Start;
+            float end = (float)cbGua.CBeforRangeDegree.End;
 
             var dcs = new DrawContextStru
             {
-                CR = cbGuo.CBeforRangeDegree,
+                CR = cbGua.CBeforRangeDegree,
                 InnerRadius = LastR,
 
             };
@@ -283,15 +291,15 @@ public class CompassSkiaRenderer
             // 生成路径（核心修复）
             SKPath sectorPath = CreateRingSectorPath(cx, cy, dcs.InnerRadius, dcs.OuterRadius, start, end);
             dcs.Path = sectorPath;
-            GuaSectorCache.Add((cbGuo.GuoSubName, sectorPath, cbGuo.CBeforRangeDegree));
+            GuaSectorCache.Add((cbGua.GuaSubName, sectorPath, cbGua.CBeforRangeDegree));
 
-            Debug.WriteLine(cbGuo.Symbol);
+            Debug.WriteLine(cbGua.Symbol);
 
 
             canvas.DrawPath(sectorPath, PathPaint);
 
             // 文字
-            DrawLabel(canvas, dcs, cbGuo.Symbol, true);
+            DrawLabel(canvas, dcs, cbGua.Symbol, true);
 
 
         }
@@ -300,19 +308,19 @@ public class CompassSkiaRenderer
         LastR = LastR + ysplace;
 
         //===============================画后天八卦===========================
-        foreach (string sn in GuoSubClass.BeforeGuoSubNames)
+        foreach (string sn in GuaSubClass.BeforeGuaSubNames)
         {
 
 
-            var cbGuo = GuoSubClass.GetGuoSub(sn, false);
-            if (cbGuo?.CAfterRangeDegree == null) continue;
+            var cbGua = GuaSubClass.GetGuaSub(sn, false);
+            if (cbGua?.CAfterRangeDegree == null) continue;
 
-            float start = (float)cbGuo.CAfterRangeDegree.Start;
-            float end = (float)cbGuo.CAfterRangeDegree.End;
+            float start = (float)cbGua.CAfterRangeDegree.Start;
+            float end = (float)cbGua.CAfterRangeDegree.End;
 
             var dcs = new DrawContextStru
             {
-                CR = cbGuo.CAfterRangeDegree,
+                CR = cbGua.CAfterRangeDegree,
                 InnerRadius = LastR,
                 AddTextSize = 10,
                 BGColor = SKColors.Red.WithAlpha(10)
@@ -323,7 +331,7 @@ public class CompassSkiaRenderer
             // 生成路径（核心修复）
             SKPath sectorPath = CreateRingSectorPath(cx, cy, dcs.InnerRadius, dcs.OuterRadius, start, end);
             dcs.Path = sectorPath;
-            GuaSectorCache.Add((cbGuo.GuoSubName, sectorPath, cbGuo.CAfterRangeDegree));
+            GuaSectorCache.Add((cbGua.GuaSubName, sectorPath, cbGua.CAfterRangeDegree));
 
 
             canvas.DrawPath(sectorPath, PathPaint);//画边
@@ -334,7 +342,7 @@ public class CompassSkiaRenderer
                 canvas.DrawPath(sectorPath, PathFillP);//填充
             }
             // 文字
-            DrawLabel(canvas, dcs, cbGuo.GuoSubName + "　" + cbGuo.AfterGuoSubCNQuantity, false);
+            DrawLabel(canvas, dcs, cbGua.GuaSubName + "　" + cbGua.AfterGuaSubCNQuantity, false);
 
 
         }
@@ -344,7 +352,7 @@ public class CompassSkiaRenderer
         LastR = LastR + ysplace;
 
         //===============================画正针二十四山===========================
-        foreach (string sn in CHill.C24Hills)
+        foreach (string sn in CHill.C24HillNames)
         {
             var CH = new CHill(sn);
 
@@ -383,7 +391,7 @@ public class CompassSkiaRenderer
 
         LastR = LastR + ysplace;
         //===============================画地盘六十四卦(后天)===========================
-        foreach (var dc in CompassEx.CompassEx.CAfterGuos)
+        foreach (var dc in CompassEx.CompassEx.CAfterGuas)
         {
             var CR = dc.Key;
             var G = dc.Value;
@@ -398,18 +406,18 @@ public class CompassSkiaRenderer
             {
                 CR = CR,
                 InnerRadius = LastR,
-                AddTextSize = G.GuoName.Length > 1 ? -10 : -20,
+                AddTextSize = G.GuaName.Length > 1 ? -10 : -20,
 
             };
             dcs.OuterRadius = dcs.InnerRadius + ysplace;
 
 
-            if (G.GuoFate == "一")
+            if (G.GuaFate == "一")
             {
                 dcs.ForceColor = SKColors.Red;
 
             }
-            else if (G.GuoFate == "九")
+            else if (G.GuaFate == "九")
             {
                 dcs.ForceColor = SKColors.Blue;
             }
@@ -418,7 +426,7 @@ public class CompassSkiaRenderer
             // 生成路径（核心修复）
             SKPath sectorPath = CreateRingSectorPath(cx, cy, dcs.InnerRadius, dcs.OuterRadius, start, end);
             dcs.Path = sectorPath;
-            GuaSectorCache.Add((G.GuoName, sectorPath, CR));
+            GuaSectorCache.Add((G.GuaName, sectorPath, CR));
 
 
             canvas.DrawPath(sectorPath, PathPaint);//画边
@@ -427,7 +435,7 @@ public class CompassSkiaRenderer
             //canvas.DrawPath(sectorPath, PathFillP);//填充
 
             // 文字
-            DrawLabel(canvas, dcs, G.GuoName, false);
+            DrawLabel(canvas, dcs, G.GuaName, false);
 
 
         }
@@ -440,7 +448,7 @@ public class CompassSkiaRenderer
         LastR = LastR + ysplace;
 
         //===============================画天盘六十四卦(先天)===========================
-        foreach (var dc in CompassEx.CompassEx.CBeforeGuos)
+        foreach (var dc in CompassEx.CompassEx.CBeforeGuas)
         {
             var CR = dc.Key;
             var G = dc.Value;
@@ -455,15 +463,15 @@ public class CompassSkiaRenderer
             {
                 CR = CR,
                 InnerRadius = LastR,
-                AddTextSize = G.GuoName.Length > 1 ? -10 : -20,
+                AddTextSize = G.GuaName.Length > 1 ? -10 : -20,
 
             };
-            if (G.GuoFate == "一")
+            if (G.GuaFate == "一")
             {
                 dcs.ForceColor = SKColors.Red;
 
             }
-            else if (G.GuoFate == "九")
+            else if (G.GuaFate == "九")
             {
                 dcs.ForceColor = SKColors.Blue;
             }
@@ -473,7 +481,7 @@ public class CompassSkiaRenderer
             // 生成路径（核心修复）
             SKPath sectorPath = CreateRingSectorPath(cx, cy, dcs.InnerRadius, dcs.OuterRadius, start, end);
             dcs.Path = sectorPath;
-            GuaSectorCache.Add((G.GuoName, sectorPath, CR));
+            GuaSectorCache.Add((G.GuaName, sectorPath, CR));
 
 
             canvas.DrawPath(sectorPath, PathPaint);//画边
@@ -482,7 +490,7 @@ public class CompassSkiaRenderer
             //canvas.DrawPath(sectorPath, PathFillP);//填充
 
             // 文字
-            DrawLabel(canvas, dcs, G.GuoName, false);
+            DrawLabel(canvas, dcs, G.GuaName, false);
 
 
         }
@@ -495,7 +503,7 @@ public class CompassSkiaRenderer
 
         ysplace = RoundH / 2f;
         //===============================画卦气===========================
-        foreach (var dc in CompassEx.CompassEx.CBeforeGuos)
+        foreach (var dc in CompassEx.CompassEx.CBeforeGuas)
         {
             var CR = dc.Key;
             var G = dc.Value;
@@ -505,7 +513,7 @@ public class CompassSkiaRenderer
 
             float start = (float)CR.Start;
             float end = (float)CR.End;
-            GuoQi gq = G.GuoQi;
+            GuaQi gq = G.GuaQi;
             var dcs = new DrawContextStru
             {
                 CR = CR,
@@ -547,7 +555,7 @@ public class CompassSkiaRenderer
 
             // 文字
 
-            string st = gq.GuoQiNumber.ToString() + gq.FiveAttr.ToString();
+            string st = gq.GuaQiNumber.ToString() + gq.FiveAttr.ToString();
             DrawLabel(canvas, dcs, st, false);
 
 
@@ -571,7 +579,7 @@ public class CompassSkiaRenderer
         float midAngle = startDeg + ((float)dcs.CR.AngleRangeValue() / 2f);
         float midR = rIn + totalH * 0.5f;
 
-        float fontSize = (float)(totalH * 0.8f / Math.Max(1, text.Length));
+        float fontSize = (float)(totalH * 0.7f / Math.Max(1, text.Length));
         SKTypeface tmpTF = TF;
 
         if (IsSymbol)
@@ -590,7 +598,7 @@ public class CompassSkiaRenderer
         canvas.RotateDegrees(rotate, wordPt.X, wordPt.Y);
 
         string showTxt = text;
-        var tmpP = guaTextPaint.Clone();
+        using var tmpP = guaTextPaint.Clone();
         tmpP.Color = dcs.ForceColor;
         // ==========================================
         // 💡 核心改动：如果是符号，且现在还是方块，先用兼容写法
@@ -684,7 +692,7 @@ public class CompassSkiaRenderer
     #endregion
 
     #region 点击检测
-    public string? HitTestGua(SKPoint touchPt, float canvasCenterX, float canvasCenterY)
+    public string? HitTestGua(SKPoint touchPt, float canvasCenterX, float canvasCenterY, float Sacle = 1f)
     {
         // 1. 依然计算当前旋转的弧度
         float rad = (float)DegToRad(Rotation);
@@ -704,8 +712,20 @@ public class CompassSkiaRenderer
         // 4. 此时的 rawTouch 坐标系已完美对齐你的静态 Sector 缓存
         foreach (var item in GuaSectorCache)
         {
-            if (item.Sector.Contains(rawTouch.X, rawTouch.Y))
+
+            // 2. 創建 1.5 倍的二維等比例縮放矩陣
+            SKMatrix scaleMatrix = SKMatrix.CreateScale(Sacle, Sacle);
+
+            SKPath transformedPath = new SKPath();
+            // 3. ★ 核心步驟：將 sourcePath 經過矩陣運算後，將結果寫入 destinationPath
+            // 這樣做可以確保 sourcePath 完好无损，完全不需要手動遍歷點
+            item.Sector.Transform(scaleMatrix, transformedPath);
+
+            if (transformedPath.Contains(rawTouch.X, rawTouch.Y))
                 return item.Name;
+
+            //if (item.Sector.Contains(rawTouch.X, rawTouch.Y))
+            //    return item.Name;
         }
         return null;
     }

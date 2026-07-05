@@ -10,7 +10,7 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
-using CompassEx.Guo;
+using CompassEx.Gua;
 using System.Collections.Generic;
 
 namespace CompassEx.Comm
@@ -126,78 +126,74 @@ namespace CompassEx.Comm
         }
 
 
-
         /// <summary>
-        /// 要卖当前的罗盘范围内，获取所有相关的罗盘对象类型（如八卦、24山、64卦等）。
+        /// 获取完全落入并覆盖当前度数区间内的所有罗盘关联对象集合（包含先天八卦、后天八卦、正针二十四山、天盘先天 64 卦以及地盘后天 64 卦）。
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// 返回一个包含 <see cref="CompassObjType"/> 封装对象的 <see cref="List{T}"/> 列表。
+        /// 每个元素代表一个成功匹配的罗盘层级方位实体。
+        /// </returns>
+        /// <remarks>
+        /// <para><b>算法原理：</b></para>
+        /// <para>该方法通过遍历基础元数据，检查各方位的几何度数区间是否将当前度数范围（从 <c>Start</c> 到 <c>End</c>）完全包含在内。</para>
+        /// <para><b>⚠️ 浮点数边界容差设计：</b></para>
+        /// <para>由于计算机浮点数运算存在微小误差，且相邻山、卦之间的交界处度数完全重合。为了确保范围判定的精准性，方法在校验结束边界时，对结束度数执行了减去 <c>0.1</c> 度的容差修正（即 <c>this.End - 0.1</c>）。这样可以有效防止因临界值粘连导致误判或多抓取相邻方位对象的问题。</para>
+        /// </remarks>
         public List<CompassObjType> GetCompassObjByDegree()
         {
             List<CompassObjType> ls = new List<CompassObjType>();
 
-            //===========================八卦===========================
-            foreach (string sN in GuoSubClass.BeforeGuoSubNames)
+            // 1. 推演八卦层级（先天八卦 / 后天八卦）
+            foreach (string sN in GuaSubClass.BeforeGuaSubNames)
             {
-                GuoSubClass gs = new GuoSubClass(sN);
-                //===========================先天八卦===========================
-                if (gs != null && gs.CBeforRangeDegree.IsInRange(this.Start) && gs.CBeforRangeDegree.IsInRange(this.End - 0.1))
+                GuaSubClass gs = new GuaSubClass(sN);
+                if (gs != null)
                 {
-                    ls.Add(new CompassObjType { ObjTypeCNName = "先天八卦", CRDegree = gs.CBeforRangeDegree, ObjType = gs.GetType(), Obj = gs, Name = gs.GuoSubName });
+                    // 判定并提取先天八卦
+                    if (gs.CBeforRangeDegree.IsInRange(this.Start) && gs.CBeforRangeDegree.IsInRange(this.End - 0.1))
+                    {
+                        ls.Add(new CompassObjType { ObjTypeCNName = "先天八卦", CRDegree = gs.CBeforRangeDegree, ObjType = gs.GetType(), Obj = gs, Name = gs.GuaSubName });
+                    }
+                    // 判定并提取后天八卦
+                    if (gs.CAfterRangeDegree.IsInRange(this.Start) && gs.CAfterRangeDegree.IsInRange(this.End - 0.1))
+                    {
+                        ls.Add(new CompassObjType { ObjTypeCNName = "后天八卦", CRDegree = gs.CAfterRangeDegree, ObjType = gs.GetType(), Obj = gs, Name = gs.GuaSubName });
+                    }
                 }
-                //===========================先天八卦===========================
-                //===========================后天八卦===========================
-                if (gs != null && gs.CAfterRangeDegree.IsInRange(this.Start) && gs.CAfterRangeDegree.IsInRange(this.End - 0.1))
-                {
-                    ls.Add(new CompassObjType { ObjTypeCNName = "后天八卦", CRDegree = gs.CAfterRangeDegree, ObjType = gs.GetType(), Obj = gs, Name = gs.GuoSubName });
-                }
-                //===========================后天八卦===========================
-
             }
-            //===========================八卦===========================
 
-
-            //===========================24山===========================
-
-            foreach (string sN in CHill.C24Hills)
+            // 2. 推演正针二十四山层级
+            foreach (string sN in CHill.C24HillNames)
             {
                 CHill c = new CHill(sN);
-                //===========================正针24山===========================
                 if (c != null && c.CRangeDegree.IsInRange(this.Start) && c.CRangeDegree.IsInRange(this.End - 0.1))
                 {
                     ls.Add(new CompassObjType { ObjTypeCNName = "正针24山", CRDegree = c.CRangeDegree, ObjType = c.GetType(), Obj = c, Name = c.Name });
                 }
-                //===========================正针24山===========================
-
             }
-            //===========================24山===========================
 
-
-
-            //===========================64卦===========================
-            foreach (string sN in GuoClass.GuoNames)
+            // 3. 推演六十四卦层级（天盘先天 64 卦 / 地盘后天 64 卦）
+            foreach (string sN in GuaClass.GuaNames)
             {
-                GuoClass g = new GuoClass(sN);
-                //===========================先天(天盘）64卦===========================
-                if (g != null && g.CBeforeRangeDegree.IsInRange(this.Start) && g.CBeforeRangeDegree.IsInRange(this.End - 0.1))
+                GuaClass g = new GuaClass(sN);
+                if (g != null)
                 {
-                    ls.Add(new CompassObjType { ObjTypeCNName = "先天64卦", CRDegree = g.CBeforeRangeDegree, ObjType = g.GetType(), Obj = g, Name = g.GuoName });
+                    // 判定并提取天盘先天 64 卦
+                    if (g.CBeforeRangeDegree.IsInRange(this.Start) && g.CBeforeRangeDegree.IsInRange(this.End - 0.1))
+                    {
+                        ls.Add(new CompassObjType { ObjTypeCNName = "先天64卦", CRDegree = g.CBeforeRangeDegree, ObjType = g.GetType(), Obj = g, Name = g.GuaName });
+                    }
+                    // 判定并提取地盘后天 64 卦
+                    if (g.CAfterRangeDegree.IsInRange(this.Start) && g.CAfterRangeDegree.IsInRange(this.End - 0.1))
+                    {
+                        ls.Add(new CompassObjType { ObjTypeCNName = "后天64卦", CRDegree = g.CAfterRangeDegree, ObjType = g.GetType(), Obj = g, Name = g.GuaName });
+                    }
                 }
-                //===========================先天(天盘）64卦===========================
-                //===========================后天（地盘）64卦===========================
-                if (g != null && g.CAfterRangeDegree.IsInRange(this.Start) && g.CAfterRangeDegree.IsInRange(this.End - 0.1))
-                {
-                    ls.Add(new CompassObjType { ObjTypeCNName = "后天64卦", CRDegree = g.CAfterRangeDegree, ObjType = g.GetType(), Obj = g, Name = g.GuoName });
-                }
-                //===========================后天（地盘）64卦===========================
-
             }
-            //===========================64卦===========================
-
-
-
 
             return ls;
         }
+
 
     }
 }

@@ -20,38 +20,66 @@ namespace CompassEx.Comm
     /// </summary>
     public class LocClass
     {
-        /// <summary>
-        /// 地支名称数组
-        /// </summary>
-        public readonly static string[] LocNames = { "子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥" };//地支
-        /// <summary>
-        /// 地支对应的时间值
-        /// </summary>
-        public readonly static string[] LocTimeValues = { "23:00-00:59", "01:00-02:59", "03:00-04:59", "05:00-06:59", "07:00-08:59", "09:00-10:49", "11:00-12:59", "13:00-14:59", "15:00-16:59", "17:00-18:59", "19:00-20:59", "21:00-22:59" };
+
+        #region 字段 
 
         /// <summary>
-        /// 地支名称
+        /// 十二地支的经典字面名称全局静态只读序列。
         /// </summary>
-        public string LocName { get; private set; }//地支名称
-        /// <summary>
-        /// 地支索引
-        /// </summary>
-        public int Index { get; private set; }//地支位置
-
-        /// <summary>
-        /// 五行属
-        /// </summary>
-        public FiveAttr FiveAttr { get; private set; }//五行属性名 
+        /// <value>
+        /// 包含 12 个地支：从“子”开始至“亥”结束，索引对应 <c>0 ~ 11</c>。
+        /// </value>
+        public readonly static string[] LocNames = { "子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥" };
 
         /// <summary>
-        /// 地支的时间值
+        /// 十二地支在传统时辰中所对应的二十四小时制绝对时间段范围序列。
         /// </summary>
-        public string LocTimeValue { get; private set; }//时间值
+        /// <value>
+        /// 包含 12 个时辰的时间区间字符串。
+        /// </value>
+        /// <remarks>                 
+        public readonly static string[] LocTimeValues = { "23:00-00:59", "01:00-02:59", "03:00-04:59", "05:00-06:59", "07:00-08:59", "09:00-10:59", "11:00-12:59", "13:00-14:59", "15:00-16:59", "17:00-18:59", "19:00-20:59", "21:00-22:59" };
+
+        #endregion
+
+        #region 属性
+
+        /// <summary>
+        /// 获取当前地支实例的字面名称（如“子”、“丑”等）。
+        /// </summary>
+        /// <value>
+        /// 一个 <see cref="string"/> 字符串，表示当前地支的单字名称。
+        /// </value>
+        public string Name { get; private set; }
+
+        /// <summary>
+        /// 获取当前地支在十二地支顺位序列中的绝对索引位置。
+        /// </summary>
+        /// <value>
+        /// 一个 <see cref="int"/> 整数，有效取值范围为 <c>0 ~ 11</c>，对应 <see cref="LocNames"/> 中的位置。
+        /// </value>
+        public int Index { get; private set; }
+
+        /// <summary>
+        /// 获取当前地支所归属的五行属性。
+        /// </summary>
+        /// <value>
+        /// 返回一个 <see cref="FiveAttr"/> 对象（或枚举），代表该地支的五行特征（如寅卯属木、巳午属火等）。
+        /// </value>
+        public FiveAttr FiveAttr { get; private set; }
+
+        /// <summary>
+        /// 获取当前地支作为时辰时，对应的二十四小时制具体时间段字符串。
+        /// </summary>
+        /// <value>
+        /// 一个形如 <c>"HH:mm-HH:mm"</c> 的时间区间字符串，动态映射自 <see cref="LocTimeValues"/> 数组。
+        /// </value>
+        public string LocTimeValue { get; private set; }
+
+        #endregion
 
 
-
-
-
+        #region 构造函数
 
         /// <summary>
         /// 地支构造函数
@@ -70,7 +98,7 @@ namespace CompassEx.Comm
         /// <exception cref="IndexOutOfRangeException"></exception>
         public LocClass(int LocIndex)
         {
-            if (LocIndex < 0 || LocIndex > LocNames.Length) throw new IndexOutOfRangeException();
+            if (LocIndex < 0 || LocIndex > LocNames.Length - 1) throw new IndexOutOfRangeException();
             if (LocIndex == 0 || LocIndex == 11)//子亥
             {
                 this.FiveAttr = new FiveAttr("水");
@@ -93,47 +121,59 @@ namespace CompassEx.Comm
             }
             this.LocTimeValue = LocTimeValues[LocIndex];
             this.Index = LocIndex;
-            this.LocName = LocNames[LocIndex];
+            this.Name = LocNames[LocIndex];
         }
 
+        #endregion
+
+        #region 方法
+
         /// <summary>
-        /// 返回时间是否在这个地支上
+        /// 判定指定的日期时间对象是否落入当前地支所代表的时辰范围内（仅提取小时进行比对）。
         /// </summary>
-        /// <param name="d">日期对象，只取小时</param>
-        /// <returns></returns>
+        /// <param name="d">需要判定的完整 <see cref="DateTime"/> 日期时间对象。</param>
+        /// <returns>若该时间属于当前地支的时辰区间则返回 <c>true</c>；否则返回 <c>false</c>。</returns>
+        /// <remarks>
+        /// 本方法是一个重载快捷方式，内部会将传入时间的 24 小时制小时部分格式化为字符串后，转发并链式调用给核心比对方法 <see cref="TimeValueInRangIndex(string)"/>。
+        /// </remarks>
         public bool TimeValueInRangIndex(DateTime d)
         {
             return TimeValueInRangIndex(d.ToString("HH"));
         }
 
         /// <summary>
-        /// 返回时间是否在这个地支上
+        /// 判定指定的小时数（24小时制字符串）是否落入当前地支所代表的时辰范围内。
         /// </summary>
-        /// <param name="HH">小时</param>
-        /// <returns></returns>
+        /// <param name="HH">24 小时制的小时字符串（如 "08"、"23" 等）。</param>
+        /// <returns>若该小时数属于当前地支的时辰区间则返回 <c>true</c>；否则返回 <c>false</c>。</returns>
+        /// <remarks>
+        /// <para><b>时辰边界算法解析：</b></para>
+        /// <para>由于<b>子时（Index = 0）</b>具有跨天交界的特殊性（即深夜 23:00 至次日凌晨 01:00），无法通过简单的单一区间闭合匹配。因此，当当前地支为子时时，系统会优先触发特殊防御逻辑：只要小时数大于等于 <c>23</c> 或等于 <c>0</c>，即直接判定命中并返回 <c>true</c>。</para>
+        /// <para>对于其它普通时辰，方法会动态解构 <see cref="LocTimeValue"/> 的起止字符串，并将其转化为整型进行绝对闭区间匹配。</para>
+        /// </remarks>
         public bool TimeValueInRangIndex(string HH)
         {
-
             string[] ssd = LocTimeValue.Split('-');
             int hh = int.Parse(HH);
+
+            // ★ 特殊处理：子时跨天判定
             if (Index == 0)
             {
-                if (hh >= 23 || hh == 0) return true;//子时
+                if (hh >= 23 || hh == 0) return true; // 子时
             }
+
             string[] sd1 = ssd[0].Split(':');
             string[] sd2 = ssd[1].Split(':');
 
             if (hh >= int.Parse(sd1[0]) && hh <= int.Parse(sd2[0])) return true;
 
             return false;
-
-
         }
 
         /// <summary>
-        /// 获得所有地支类集合
+        /// 批量获取系统中完整配置的十二地支类实体集合。
         /// </summary>
-        /// <returns></returns>
+        /// <returns>返回一个包含 12 个 <see cref="LocClass"/> 地支对象的 <see cref="List{T}"/> 列表，顺序完全对应二十四山及传统地支流转顺位。</returns>
         public static List<LocClass> GetAllLocClass()
         {
             List<LocClass> al = new List<LocClass>();
@@ -144,11 +184,11 @@ namespace CompassEx.Comm
             return al;
         }
 
-
-        /**
-           *  根据地支名称返回地支类
-           *  String LocName　地支名称
-           */
+        /// <summary>
+        /// 根据指定的地支单字字面名称，动态检索并实例化对应的地支类实体。
+        /// </summary>
+        /// <param name="LocName">要查询的地支名称（如“子”、“丑”等）。</param>
+        /// <returns>若在全局元数据中成功匹配到该地支名，则返回填充好业务属性的 <see cref="LocClass"/> 实例；若输入的字符非法或不存在，则返回 <c>null</c>。</returns>
         public static LocClass GetLocClass(string LocName)
         {
             int iPos = Array.IndexOf(LocNames, LocName);
@@ -158,20 +198,26 @@ namespace CompassEx.Comm
             return lc;
         }
 
-
-        /**
-           *  根据地支的索引返回地支类
-           *  @Int iLocIndex //地支索引
-           */
+        /// <summary>
+        /// 根据指定的全局静态顺位索引，动态检索并实例化对应的地支类实体。
+        /// </summary>
+        /// <param name="iLocIndex">地支在序列中的绝对索引位置，有效取值范围为 <c>0 ~ 11</c>。</param>
+        /// <returns>返回带有完整时辰时间段、位置序列等属性绑定的 <see cref="LocClass"/> 地支类实体对象。</returns>
+        /// <remarks>
+        /// <b>内部对象装配：</b>该静态工厂方法在构造新实例的同时，会自动映射并填充对应的静态元数据缓存，包括 <see cref="LocTimeValue"/>、<see cref="Index"/> 以及 <see cref="LocName"/>。
+        /// </remarks>
         public static LocClass GetLocClass(int iLocIndex)
         {
             LocClass lc = new LocClass(iLocIndex);
 
             lc.LocTimeValue = LocTimeValues[iLocIndex];
             lc.Index = iLocIndex;
-            lc.LocName = LocNames[iLocIndex];
+            lc.Name = LocNames[iLocIndex];
             return lc;
         }
+
+        #endregion
+
     }
 
 }

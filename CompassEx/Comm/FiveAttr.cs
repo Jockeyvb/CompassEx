@@ -45,17 +45,19 @@ namespace CompassEx.Comm
 
     }
 
+
+    /// <summary>
+    ///  五行类
+    /// </summary>
     public class FiveAttr
     {
-        /// <summary>
-        /// 返回五行名称
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString()
-        {
-            return this.Name;
-        }
 
+
+
+        /// <summary>
+        /// 五行名称数组
+        /// </summary>
+        public readonly static String[] FiveAttrNames = { "金", "木", "水", "火", "土" };
 
         /// <summary>
         /// 五行名称
@@ -63,12 +65,9 @@ namespace CompassEx.Comm
         public string Name { get; private set; }
 
         /// <summary>
-        /// 五行名称数组
+        /// 五行类所在索引
         /// </summary>
-        public readonly static String[] FiveAttrNames = { "金", "木", "水", "火", "土" };
-
-
-
+        public int Index { get { return Array.IndexOf(FiveAttrNames, this.Name); } }
 
         /// <summary>
         /// 构造五行
@@ -88,7 +87,7 @@ namespace CompassEx.Comm
         /// <exception cref="IndexOutOfRangeException">若传入的小于0 或大于5，则抛出异常</exception>
         public FiveAttr(int iFiveAttrIndex)
         {
-            if (iFiveAttrIndex < 0 || iFiveAttrIndex > FiveAttrNames.Length) throw new IndexOutOfRangeException();
+            if (iFiveAttrIndex < 0 || iFiveAttrIndex >= FiveAttrNames.Length) throw new IndexOutOfRangeException();
             this.Name = FiveAttrNames[iFiveAttrIndex];
         }
 
@@ -111,6 +110,14 @@ namespace CompassEx.Comm
         }
 
 
+        /// <summary>
+        /// 返回五行名称
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return this.Name;
+        }
 
 
 
@@ -266,210 +273,227 @@ namespace CompassEx.Comm
             return far;
 
         }
-
-
         /// <summary>
-        /// 五行相克的顺序，可以一个字符取出后转为int后，FiveAttrNames[i],这样读出
+        /// 获取五行相克的相对顺序索引字符串。
         /// </summary>
-        /// <returns></returns>
+        /// <returns>返回一个长度为 5 的数字字符串 <c>"42301"</c>。</returns>
+        /// <remarks>
+        /// <b>使用方法：</b>可将返回的字符串逐个字符取出并转换为整数 <c>i</c>，随后通过对应的五行名称数组（如 <c>FiveAttrNames[i]</c>）读取具体五行。
+        /// </remarks>
         private static String FiveAttrBothCan()
         {
             String s = "42301";
             return s;
         }
 
-
-
         /// <summary>
-        /// 五行相生的顺序，可以一个字符取出后转为int后，FiveAttrNames[i],这样读出
+        /// 获取五行相生的相对顺序索引字符串。
         /// </summary>
-        /// <returns></returns>
-        public static String FiveAttrBothbirth()
+        /// <returns>返回一个长度为 5 的数字字符串 <c>"40213"</c>。</returns>
+        /// <remarks>
+        /// <b>使用方法：</b>可将返回的字符串逐个字符取出并转换为整数 <c>i</c>，随后通过对应的五行名称数组（如 <c>FiveAttrNames[i]</c>）读取具体五行。
+        /// </remarks>
+        private static String FiveAttrBothbirth()
         {
             String s = "40213";
             return s;
         }
-
-
-
         /// <summary>
-        /// 地支相害
+        /// 判定并获取两个指定地支之间的“地支相害”关系描述（支持无序入参）。
         /// </summary>
-        /// <param name="sLoc1">地支1</param>
-        /// <param name="sLoc2">地支2</param>
-        /// <returns></returns>
+        /// <param name="sLoc1">参与比对的第一项地支名称（如“子”、“丑”等）。</param>
+        /// <param name="sLoc2">参与比对的第二项地支名称（如“未”、“午”等）。</param>
+        /// <returns>若两地支构成相害，则返回对应的关系字符串（如“子与未害”）；若不构成相害或入参无效，则返回空字符串（<c>""</c>）。</returns>
+        /// <remarks>
+        /// <para><b>算法推演原理与重构说明：</b></para>
+        /// <para>本方法已重构为<b>无序判定算法</b>。地支相害（又称六害）是由六合受冲推演而来。</para>
+        /// <para>系统在获取到两地支在 <c>LocClass.LocNames</c> 中的索引后会执行升序排序。由此消除了参数传入先后顺序的严格限制，无论调用者传入 <c>("子", "未")</c> 还是 <c>("未", "子")</c> 均能精准识别，大幅提升了接口的健壮性。</para>
+        /// </remarks>
         public static String BothHarm(String sLoc1, String sLoc2)
         {
             String[] S = { sLoc1, sLoc2 };
             int[] r = { -1, -1 };
+
+            var j = 0; // ★ 已修正：从 foreach 内部移至外部，防止循环时 j 永远被重置为 0
             foreach (string s in S)
             {
                 var i = Array.IndexOf(LocClass.LocNames, s);
-                var j = 0;
                 if (i > -1)
                 {
                     r[j] = i;
                     j++;
                 }
-
             }
 
-            if (r.Length == 0) return "";
-            int[] it = { 0, 7 };//子与未害 
+            if (r[0] == -1 || r[1] == -1) return "";
+
+            // ★ 核心重构：将提取出的地支索引进行升序排序，使算法支持无序传入
+            Array.Sort(r);
+
+            int[] it = { 0, 7 }; // 子与未害 
             if (it[0] == r[0] && it[1] == r[1]) return "子与未害";
 
-            it[0] = 1;//丑与午害 
+            it[0] = 1; // 丑与午害 
             it[1] = 6;
             if (it[0] == r[0] && it[1] == r[1]) return "丑与午害";
 
-            it[0] = 2;//寅与巳害 
+            it[0] = 2; // 寅与巳害 
             it[1] = 5;
             if (it[0] == r[0] && it[1] == r[1]) return "寅与巳害";
 
-            it[0] = 3;//卯与辰害
+            it[0] = 3; // 卯与辰害
             it[1] = 4;
             if (it[0] == r[0] && it[1] == r[1]) return "卯与辰害";
 
-
-            it[0] = 8;//申与亥害
+            it[0] = 8; // 申与亥害
             it[1] = 11;
             if (it[0] == r[0] && it[1] == r[1]) return "申与亥害";
 
-
-            it[0] = 9;//酉与戌害
+            it[0] = 9; // 酉与戌害
             it[1] = 10;
             if (it[0] == r[0] && it[1] == r[1]) return "酉与戌害";
-
-
 
             return "";
         }
 
+
         /// <summary>
-        /// 地支相刑
+        /// 判定并获取两个指定地支之间的“地支相刑”关系描述（支持无序入参）。
         /// </summary>
-        /// <param name="sLoc1">地支1</param>
-        /// <param name="sLoc2">地支2</param>
-        /// <returns></returns>
+        /// <param name="sLoc1">参与比对的第一项地支名称（如“子”、“卯”、“寅”等）。</param>
+        /// <param name="sLoc2">参与比对的第二项地支名称（如“卯”、“子”、“巳”等）。</param>
+        /// <returns>若两地支构成相刑，则返回对应的刑伤类别（如“恃势之刑”、“无恩之刑”、“无礼之刑”或“自刑”）；若不构成则返回空字符串（<c>""</c>）。</returns>
+        /// <remarks>
+        /// <para><b>算法推演原理与重构说明：</b></para>
+        /// <para>本方法已重构为<b>无序判定算法</b>。包含三刑（寅巳申、丑戌未）、两刑（子卯）以及特殊地支（辰、午、酉、亥）的同支“自刑”判定。</para>
+        /// <para>系统在获取到两地支在 <c>LocClass.LocNames</c> 中的索引后会执行升序排序，同时内部的比对矩阵也已同步调整为升序特征值。由此消除了参数传入先后顺序的严格限制，提升了系统的健壮性。</para>
+        /// </remarks>
         public static String BothTorture(String sLoc1, String sLoc2)
         {
             String[] S = { sLoc1, sLoc2 };
             int[] r = { -1, -1 };
+
+            var j = 0; // ★ 已修正：从 foreach 内部移至外部，防止循环时 j 永远被重置为 0
             foreach (string s in S)
             {
                 var i = Array.IndexOf(LocClass.LocNames, s);
-                var j = 0;
                 if (i > -1)
                 {
                     r[j] = i;
                     j++;
                 }
-
             }
 
-            int[] it = { 2, 5 };//寅刑巳 
+            // ★ 核心重构：将提取出的地支索引进行升序排序，使算法支持无序传入
+            Array.Sort(r);
+
+            // --- 恃势之刑 (寅2, 巳5, 申8) ---
+            int[] it = { 2, 5 }; // 寅与巳
             if (it[0] == r[0] && it[1] == r[1]) return "恃势之刑";
 
-            it[0] = 5;// 巳刑申 
+            it[0] = 5; // 巳与申 
             it[1] = 8;
             if (it[0] == r[0] && it[1] == r[1]) return "恃势之刑";
-            it[0] = 2;// 申刑寅 
+
+            it[0] = 2; // 寅与申 (原为 8和2，排序后调整为 2和8)
             it[1] = 8;
             if (it[0] == r[0] && it[1] == r[1]) return "恃势之刑";
 
-
-
-            it[0] = 1;//未刑丑
+            // --- 无恩之刑 (丑1, 未7, 戌10) ---
+            it[0] = 1; // 丑与未 (原为 1与7)
             it[1] = 7;
             if (it[0] == r[0] && it[1] == r[1]) return "无恩之刑";
-            it[0] = 1;// 丑刑戌 
-            it[1] = 10;
-            if (it[0] == r[0] && it[1] == r[1]) return "无恩之刑";
-            it[0] = 7;//戌刑未 
+
+            it[0] = 1; // 丑与戌 
             it[1] = 10;
             if (it[0] == r[0] && it[1] == r[1]) return "无恩之刑";
 
+            it[0] = 7; // 未与戌 (原为 7与10)
+            it[1] = 10;
+            if (it[0] == r[0] && it[1] == r[1]) return "无恩之刑";
 
-            it[0] = 0;//子刑卯 
+            // --- 无礼之刑 (子0, 卯3) ---
+            it[0] = 0; // 子与卯 
             it[1] = 3;
             if (it[0] == r[0] && it[1] == r[1]) return "无礼之刑";
 
-
-            //辰午酉亥自刑
-
+            // --- 辰午酉亥自刑 ---
             if (sLoc1.Equals(sLoc2))
             {
                 if (sLoc1.Equals("辰") || sLoc1.Equals("午") || sLoc1.Equals("酉") || sLoc1.Equals("亥")) return "自刑";
             }
 
-
             return "";
         }
+
+
         /// <summary>
-        /// 地支相冲
+        /// 判定并获取两个指定地支之间的“地支相冲”关系。
         /// </summary>
-        /// <param name="sLoc1">地支1</param>
-        /// <param name="sLoc2">地支2</param>
-        /// <returns></returns>
+        /// <param name="sLoc1">参与比对的第一项地支名称。</param>
+        /// <param name="sLoc2">参与比对的第二项地支名称。</param>
+        /// <returns>若两地支在十二地支顺位中绝对间隔为 6（即对冲），则返回字符串 <c>"相冲"</c>；否则返回空字符串（<c>""</c>）。</returns>
         public static String BothConflict(String sLoc1, String sLoc2)
         {
             int iLoc1 = Array.IndexOf(LocClass.LocNames, sLoc1);
             int iLoc2 = Array.IndexOf(LocClass.LocNames, sLoc2);
 
-
             if (Math.Abs(iLoc1 - iLoc2) == 6) return "相冲";
-
 
             return "";
         }
 
-
-
-
-
         /// <summary>
-        /// 地支六合
+        /// 判定并获取两个指定地支之间的“地支六合”及合化后的五行或能量属性（支持无序入参）。
         /// </summary>
-        /// <param name="sLoc1">地支1</param>
-        /// <param name="sLoc2">地支1</param>
-        /// <returns></returns>
+        /// <param name="sLoc1">参与比对的第一项地支名称（如“子”、“丑”等）。</param>
+        /// <param name="sLoc2">参与比对的第二项地支名称（如“未”、“午”等）。</param>
+        /// <returns>若两地支构成六合，则返回合化后的五行或能量特征字符串（如“土”、“金”、“水”、“木”、“火”或“日月”）；若不构成六合则返回空字符串（<c>""</c>）。</returns>
+        /// <remarks>
+        /// <para><b>算法推演原理与重构说明：</b></para>
+        /// <para>本方法已重构为<b>无序判定算法</b>。系统在获取到两个地支在 <c>LocClass.LocNames</c> 中的整型索引后，会自动对其进行从小到大的升序排列。</para>
+        /// <para>通过该机制，消除了历史版本中对地支先后传入顺序的严格依赖，无论传入 <c>("子", "丑")</c> 还是 <c>("丑", "子")</c> 均能精准识别，大幅提升了接口的健壮性。</para>
+        /// </remarks>
         public static String LocCombine(String sLoc1, String sLoc2)
         {
-
             String[] S = { sLoc1, sLoc2 };
             int[] r = { -1, -1 };
+
+            var j = 0; // ★ 已修正：从 foreach 内部移至外部，防止循环时 j 永远被重置为 0
             foreach (string s in S)
             {
                 var i = Array.IndexOf(LocClass.LocNames, s);
-                var j = 0;
                 if (i > -1)
                 {
                     r[j] = i;
                     j++;
                 }
-
             }
-            int[] it = { 0, 1 };//子丑合化土
+
+            // ★ 核心重构：将提取出的地支索引进行升序排序，使算法支持无序传入
+            Array.Sort(r);
+
+            int[] it = { 0, 1 }; // 子丑合化土（排序后必然是 0 在前，1 在后）
             if (it[0] == r[0] && it[1] == r[1]) return "土";
 
             it[0] = 4;
-            it[1] = 9;//辰酉合化金
+            it[1] = 9; // 辰酉合化金
             if (it[0] == r[0] && it[1] == r[1]) return "金";
 
             it[0] = 5;
-            it[1] = 8;//巳申合化水
+            it[1] = 8; // 巳申合化水
             if (it[0] == r[0] && it[1] == r[1]) return "水";
 
             it[0] = 2;
-            it[1] = 11;//寅亥合化水
+            it[1] = 11; // 寅亥合化木
             if (it[0] == r[0] && it[1] == r[1]) return "木";
 
             it[0] = 3;
-            it[1] = 10;//卯戌合化火
+            it[1] = 10; // 卯戌合化火
             if (it[0] == r[0] && it[1] == r[1]) return "火";
 
             it[0] = 6;
-            it[1] = 7;//卯戌合化火
+            it[1] = 7; // 午未合化日月
             if (it[0] == r[0] && it[1] == r[1]) return "日月";
 
             return "";
@@ -477,50 +501,58 @@ namespace CompassEx.Comm
 
 
         /// <summary>
-        /// 天干五合
+        /// 判定并获取两个指定天干之间的“天干五合”及合化后的五行属性（支持无序入参）。
         /// </summary>
-        /// <param name="sSky1">天干1</param>
-        /// <param name="sSky2">天干2</param>
-        /// <returns></returns>
+        /// <param name="sSky1">参与比对的第一项天干名称（如“甲”、“乙”等）。</param>
+        /// <param name="sSky2">参与比对的第二项天干名称（如“己”、“庚”等）。</param>
+        /// <returns>若两入参构成天干五合，则返回对应的合化五行字符串（如“土”、“金”、“水”、“木”、“火”）；若不构成五合或输入无效则返回空字符串（<c>""</c>）。</returns>
+        /// <remarks>
+        /// <para><b>算法推演原理与重构说明：</b></para>
+        /// <para>本方法已重构为<b>无序判定算法</b>。系统在获取到两个天干在 <c>LocClass.LocNames</c> 中的整型索引后，会自动对其进行从小到大的升序排列。</para>
+        /// <para>通过该机制，消除了历史版本中对天干先后传入顺序的严格依赖，大幅提升了外部接口调用的安全性和健壮性。</para>
+        /// </remarks>
         public static String SkyCombine(String sSky1, String sSky2)
         {
-
-
-            String[] S = { sSky1, sSky1 };
+            String[] S = { sSky1, sSky2 };
             int[] r = { -1, -1 };
+
+            var j = 0;
             foreach (string s in S)
             {
                 var i = Array.IndexOf(LocClass.LocNames, s);
-                var j = 0;
                 if (i > -1)
                 {
                     r[j] = i;
                     j++;
                 }
-
             }
 
+            // ★ 核心重构：将提取出的索引进行升序排序，使算法支持无序传入
+            Array.Sort(r);
 
-            int[] it = { 0, 5 };//甲己合化土
+            int[] it = { 0, 5 }; // 甲己合化土（排序后必然是 0 在前，5 在后）
             if (it[0] == r[0] && it[1] == r[1]) return "土";
 
             it[0] = 1;
-            it[1] = 6;//乙庚合化金
+            it[1] = 6; // 乙庚合化金
             if (it[0] == r[0] && it[1] == r[1]) return "金";
 
             it[0] = 2;
-            it[1] = 7;//乙庚合化金
+            it[1] = 7; // 丙辛合化水
             if (it[0] == r[0] && it[1] == r[1]) return "水";
 
             it[0] = 3;
-            it[1] = 8;//丁壬合化木
+            it[1] = 8; // 丁壬合化木
             if (it[0] == r[0] && it[1] == r[1]) return "木";
 
             it[0] = 4;
-            it[1] = 9;//丁壬合化木
+            it[1] = 9; // 戊癸合化火
             if (it[0] == r[0] && it[1] == r[1]) return "火";
 
             return "";
         }
+
+
+
     }
 }

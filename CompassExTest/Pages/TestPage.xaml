@@ -6,8 +6,8 @@
              Title="原生代码绘制罗盘">
 
     <!-- 全屏三行布局，强制中间区域吃满除输入框、提示语之外的所有剩余空间 -->
-    <ScrollView VerticalOptions="Fill" HorizontalOptions="Fill" x:Name="SV">
-    <Grid RowDefinitions="Auto, *, Auto" Padding="20" HorizontalOptions="Fill" VerticalOptions="Fill">
+ 
+        <Grid x:Name="InnerSquareGrid" RowDefinitions="Auto, *, Auto" Padding="20"    HorizontalOptions="Fill" VerticalOptions="Fill">
 
         <!-- 1. 顶部区域：输入框等 -->
         <VerticalStackLayout Grid.Row="0" Spacing="10" Margin="0,0,0,15">
@@ -22,17 +22,17 @@
 
         <!-- 2. 中间核心：全自动最大化罗盘区域 -->
         <!-- 给 Border 起个名字叫做 ContainerBorder，让里面的 Grid 有参照物 -->
-        <Border Grid.Row="1"
-                x:Name="ContainerBorder"
-                StrokeShape="RoundRectangle 20" 
-                Stroke="LightGray" 
-                StrokeThickness="1"
-                Padding="10"
-                BackgroundColor="White"
-                HorizontalOptions="Fill"
-                VerticalOptions="Fill">
+            <Border Grid.Row="1"
+        x:Name="ContainerBorder"
+        StrokeShape="RoundRectangle 20" 
+        Stroke="LightGray" 
+        StrokeThickness="1"
+        Padding="10"
+        BackgroundColor="White"
+        HorizontalOptions="Fill"
+        VerticalOptions="Fill">
 
-            <!-- 
+                <!-- 
                 核心修改：
                 将 Width 和 Height 同时绑定外层 ContainerBorder 的“实际宽度（Width）”。
                 1. 这样打破了自我绑定的死循环，MAUI 布局引擎能明确计算出尺寸。
@@ -43,14 +43,17 @@
                   HorizontalOptions="Center" 
                   VerticalOptions="Center">
 
-                <skia:SKCanvasView x:Name="SkiaCompassView" 
-                                   PaintSurface="OnPaintSurface" 
-                                   EnableTouchEvents="True" 
-                                   Background="Transparent"  
-                                   Touch="OnCanvasTouch" 
-                                   HorizontalOptions="Fill"    
-                                   VerticalOptions="Fill" />
-            </Grid>
+                    <skia:SKCanvasView x:Name="SkiaCompassView" 
+                   PaintSurface="OnPaintSurface" 
+                   EnableTouchEvents="True" 
+                                 
+                   Touch="OnCanvasTouch" 
+                   HorizontalOptions="Fill" 
+                   InputTransparent="False"
+                   VerticalOptions="Fill">
+                       
+                    </skia:SKCanvasView>
+                </Grid>
         </Border>
 
         <!-- 3. 底部区域 -->
@@ -62,5 +65,5 @@
                HorizontalOptions="Center"/>
 
     </Grid>
-    </ScrollView>
+ 
 </ContentPage>

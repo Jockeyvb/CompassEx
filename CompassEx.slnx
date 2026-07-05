@@ -4,14 +4,9 @@
     <File Path="LICENSE" />
     <File Path="README.md" />
   </Folder>
-  <Project Path="CompassEx/CompassEx.csproj">
-    <BuildType Project="Debug" />
-  </Project>
+  <Project Path="CompassEx/CompassEx.csproj" />
   <Project Path="CompassExTest/CompassExTest.csproj">
-    <BuildType Project="Debug" />
     <Deploy />
   </Project>
-  <Project Path="Generator/Generator.csproj">
-    <BuildType Project="Debug" />
-  </Project>
+  <Project Path="Generator/Generator.csproj" />
 </Solution>

@@ -1,5 +1,5 @@
 using CompassEx.Comm;
-using CompassEx.Guo;
+using CompassEx.Gua;
 using SkiaSharp;
 using SkiaSharp.Views.Maui;
 using System.ComponentModel;
@@ -44,12 +44,12 @@ public partial class TestPage : ContentPage, INotifyPropertyChanged
         Entry_TextChanged(null, null);
 
 
-        //foreach (string sn in GuoSubClass.BeforeGuoSubNames)
+        //foreach (string sn in GuaSubClass.BeforeGuaSubNames)
         //{
-        //    var sg = GuoSubClass.GetGuoSub(sn);
-        //    Debug.WriteLine(sg.GuoSubName + "，先天：" + sg.CBeforRangeDegree.Start.ToString() + "-" + sg.CBeforRangeDegree.End.ToString() + "，后天：" + sg.CAfterRangeDegree.Start.ToString() + "-" + sg.CAfterRangeDegree.End.ToString());
+        //    var sg = GuaSubClass.GetGuaSub(sn);
+        //    Debug.WriteLine(sg.GuaSubName + "，先天：" + sg.CBeforRangeDegree.Start.ToString() + "-" + sg.CBeforRangeDegree.End.ToString() + "，后天：" + sg.CAfterRangeDegree.Start.ToString() + "-" + sg.CAfterRangeDegree.End.ToString());
         //}
-        //foreach (string sn in GuoClass.GuoFullNames)
+        //foreach (string sn in GuaClass.GuaFullNames)
         //{
         //    Debug.WriteLine(sn);
         //}
@@ -57,73 +57,260 @@ public partial class TestPage : ContentPage, INotifyPropertyChanged
 
     }
 
+    // 全域變數：控制縮放
+    private float _gestureScale = 1.0f;
+
+    // 全域變數：控制拖動平移（核心）
+    private float _offsetX = 0f;
+    private float _offsetY = 0f;
+
+
+
+
+
+
     private void OnPaintSurface(object sender, SKPaintSurfaceEventArgs e)
     {
+
         SKCanvas canvas = e.Surface.Canvas;
-        SKSize size = e.Info.Size;
+        canvas.Clear(SKColors.Transparent);
+
+        // 1. 執行【畫布整體平移】
+        // 手指往右拖多少，整個畫布的坐標系就往右移動多少像素
+        canvas.Translate(_offsetX, _offsetY);
+
+        // 2. 執行【畫布中心縮放】
+        // 為了讓縮放以羅盤圓心為軸心放大，我們通常在平移後疊加中心點縮放
+        float canvasCenterX = e.Info.Width / 2f;
+        float canvasCenterY = e.Info.Height / 2f;
+        canvas.Scale(_gestureScale, _gestureScale, canvasCenterX, canvasCenterY);
 
 
 
 
-        _renderer.Render(canvas, size);
+        _renderer.Render(canvas, e.Info.Size);
     }
+    // 全域變數：記錄上一次觸控點的坐標（用於計算拖動差值）
+    private SKPoint _lastTouchPoint;
+    private bool _isDragging = false;
+    // 全局字典：用于追踪当前屏幕上的所有手指（Key为手指ID，Value为当前物理坐标）
+    private readonly System.Collections.Generic.Dictionary<long, SKPoint> _touchPoints = new();
+    // 全局变量：用于计算双指初始距离
+    private float _startPointerDistance = 0f;
+    private float _baseScaleAtPinchStart = 1.0f;
+    // 【新增控制变量】用于标记刚才是不是处于双指缩放状态，以便在松手时触发一次高清重绘
+    private bool _wasPinchZooming = false;
 
-    private void OnCanvasTouch(object sender, SKTouchEventArgs e)
+    private async void OnCanvasTouch(object sender, SKTouchEventArgs e)
     {
         try
         {
+            SKPoint currentPoint = e.Location;
 
-
-            // 仅响应按下操作
-            if (e.ActionType != SKTouchAction.Pressed)
-                return;
-
-            SKPoint touch = e.Location;
-            // 统一使用渲染器画布尺寸，不再硬编码取SkiaCompassView宽高
-            float cx = SkiaCompassView.CanvasSize.Width / 2f;
-            float cy = SkiaCompassView.CanvasSize.Height / 2f;
-
-            // 计算点击对应的罗盘刻度
-            double panelDegree = GetTouchPanelDegree(touch, cx, cy, _renderer.Rotation);
-            // 检测命中卦象
-            string? hitGua = _renderer.HitTestGua(touch, cx, cy);
-            string dirText = GetDirectionText(panelDegree);
-
-            // 执行旋转
-            _renderer.Rotation = panelDegree;
-            SkiaCompassView.InvalidateSurface();
-            // UI赋值切主线程，避免跨线程异常
-            MainThread.BeginInvokeOnMainThread(() =>
+            switch (e.ActionType)
             {
-                string info = $"{panelDegree:F1}° 方位:{dirText}（先天）";
-                if (!string.IsNullOrEmpty(hitGua))
-                {
-                    info += $" 选中:{hitGua}";
-                }
-                HeadingText = info;
+                case SKTouchAction.Pressed:
+                    if (!_touchPoints.ContainsKey(e.Id))
+                    {
+                        _touchPoints.Add(e.Id, currentPoint);
+                    }
 
-                CompassRangEX cr = new CompassRangEX(panelDegree, panelDegree);
-                List<CompassObjType> ls = cr.GetCompassObjByDegree();
-                string st = "";
-                ls.ForEach(co =>
-                {
-                    st += co.ObjTypeCNName + ",名称：" + co.Name + "，角度范围：" + co.CRDegree.Start.ToString("F1") + "-" + co.CRDegree.End.ToString("F1") + "°\n";
-                });
-                lblGetCompassObjByDegree.Text = st;
+                    if (_touchPoints.Count == 1)
+                    {
+                        _lastTouchPoint = currentPoint;
+                        _isDragging = false;
+                    }
+                    else if (_touchPoints.Count == 2)
+                    {
+                        _isDragging = false;
+                        _lastTouchPoint = SKPoint.Empty;
+                        _wasPinchZooming = true;
+
+                        var points = new System.Collections.Generic.List<SKPoint>(_touchPoints.Values);
+
+                        // 🌟【核心改善点 1】：在刚按下双指时，由于此时 SkiaCompassView.Scale 还是 1.0，
+                        // 这里的初始距离是干净的绝对物理距离，记录它。
+                        _startPointerDistance = SKPoint.Distance(points[0], points[1]);
+                        _baseScaleAtPinchStart = _gestureScale;
+                    }
+                    break;
+
+                case SKTouchAction.Moved:
+                    if (_touchPoints.ContainsKey(e.Id))
+                    {
+                        _touchPoints[e.Id] = currentPoint;
+                    }
+
+                    if (_touchPoints.Count == 1 && !_lastTouchPoint.IsEmpty)
+                    {
+                        // 【分支 A：单指拖拽平移】
+                        float deltaX = currentPoint.X - _lastTouchPoint.X;
+                        float deltaY = currentPoint.Y - _lastTouchPoint.Y;
+
+                        if (Math.Abs(deltaX) > 5 || Math.Abs(deltaY) > 5)
+                        {
+                            _isDragging = true;
+                            _offsetX += deltaX;
+                            _offsetY += deltaY;
+                            _lastTouchPoint = currentPoint;
+
+                            SkiaCompassView.InvalidateSurface();
 
 
 
-            });
+                        }
+                    }
+                    else if (_touchPoints.Count == 2 && _startPointerDistance > 0)
+                    {
+                        // 【分支 B：双指捏合缩放】
+                        var points = new System.Collections.Generic.List<SKPoint>(_touchPoints.Values);
+
+                        // 🌟【核心改善点 2】：这是解决瞬间复位的关键！
+                        // 因为你在下面改了 SkiaCompassView.Scale，此时进来的 points 坐标会被成比例缩放。
+                        // 我们必须利用当前的真实缩放值（SkiaCompassView.Scale），通过乘法逆运算，将其还原为纯净的、不受污染的物理屏幕坐标！
+                        double currentVisualScale = SkiaCompassView.Scale;
+                        SKPoint p1_raw = new SKPoint((float)(points[0].X * currentVisualScale), (float)(points[0].Y * currentVisualScale));
+                        SKPoint p2_raw = new SKPoint((float)(points[1].X * currentVisualScale), (float)(points[1].Y * currentVisualScale));
+
+                        // 🌟 用解毒后的物理坐标计算距离
+                        float currentDistance = SKPoint.Distance(p1_raw, p2_raw);
+                        if (currentDistance <= 0) return;
+
+                        // 计算当前距离与初始距离的比例
+                        float scaleFactor = currentDistance / _startPointerDistance;
+
+                        // 1. 临时计算出目标缩放比例
+                        float targetScale = _baseScaleAtPinchStart * scaleFactor;
+                        targetScale = Math.Clamp(targetScale, 0.5f, 5.0f);
+
+                        // 2. 直接操纵 MAUI 原生视图层进行硬件加速缩放
+                        if (_gestureScale > 0)
+                        {
+                            SkiaCompassView.Scale = targetScale / _gestureScale;
+                        }
+                    }
+                    break;
+
+                case SKTouchAction.Released:
+
+
+
+
+
+
+                    if (_wasPinchZooming && _touchPoints.Count == 2)
+                    {
+                        // 🌟【核心改善点 3】：松手瞬间算最终比例时，同样需要使用当前的 Scale 还原点坐标
+                        var points = new System.Collections.Generic.List<SKPoint>(_touchPoints.Values);
+
+                        double currentVisualScale = SkiaCompassView.Scale;
+                        SKPoint p1_raw = new SKPoint((float)(points[0].X * currentVisualScale), (float)(points[0].Y * currentVisualScale));
+                        SKPoint p2_raw = new SKPoint((float)(points[1].X * currentVisualScale), (float)(points[1].Y * currentVisualScale));
+
+                        float currentDistance = SKPoint.Distance(p1_raw, p2_raw);
+                        float scaleFactor = currentDistance / _startPointerDistance;
+
+                        // 1. 正式把最终缩放结果同步给内部全局变量
+                        _gestureScale = Math.Clamp(_baseScaleAtPinchStart * scaleFactor, 0.5f, 5.0f);
+
+                        // 2. 还原 MAUI 原生视图的缩放
+                        SkiaCompassView.Scale = 1.0;
+
+                        // 3. 触发仅此一次的、最终的高清重新渲染
+                        SkiaCompassView.InvalidateSurface();
+
+                        _wasPinchZooming = false;
+                    }
+
+                    if (_touchPoints.Count == 1 && !_isDragging && !_lastTouchPoint.IsEmpty && !_wasPinchZooming)
+                    {
+
+                        HandleCompassRotateOnClick(currentPoint);
+                    }
+
+                    _touchPoints.Remove(e.Id);
+
+                    if (_touchPoints.Count == 0)
+                    {
+                        _lastTouchPoint = SKPoint.Empty;
+                        _isDragging = false;
+                        _startPointerDistance = 0f;
+                        _wasPinchZooming = false;
+                    }
+                    else if (_touchPoints.Count == 1)
+                    {
+                        // 如果从双指变回了单指，此时原生 Scale 已经恢复为 1 了，直接重置单指拖动锚点
+
+                        var remainingId = new System.Collections.Generic.List<long>(_touchPoints.Keys)[0];
+                        _lastTouchPoint = _touchPoints[remainingId];
+                        _isDragging = false;
+
+                    }
+
+                    break;
+
+                case SKTouchAction.Cancelled:
+                    _touchPoints.Clear();
+                    _lastTouchPoint = SKPoint.Empty;
+                    _isDragging = false;
+                    _startPointerDistance = 0f;
+                    _wasPinchZooming = false;
+                    SkiaCompassView.Scale = 1.0;
+                    break;
+            }
         }
         catch (Exception ex)
         {
-
+            System.Diagnostics.Debug.WriteLine($"触控流错误: {ex.Message}");
         }
         finally
         {
             e.Handled = true;
         }
     }
+
+    private void HandleCompassRotateOnClick(SKPoint p)
+    {
+
+        SKPoint touch = p;
+        // 统一使用渲染器画布尺寸，不再硬编码取SkiaCompassView宽高
+        float cx = SkiaCompassView.CanvasSize.Width / 2f;
+        float cy = SkiaCompassView.CanvasSize.Height / 2f;
+
+        // 计算点击对应的罗盘刻度
+        double panelDegree = GetTouchPanelDegree(touch, cx, cy, _renderer.Rotation);
+        // 检测命中卦象
+        string? hitGua = _renderer.HitTestGua(touch, cx, cy, _gestureScale);
+        string dirText = GetDirectionText(panelDegree);
+        _isDragging = false;
+        _lastTouchPoint = SKPoint.Empty;
+        // 执行旋转
+        _renderer.Rotation = panelDegree;
+        SkiaCompassView.InvalidateSurface();
+        // UI赋值切主线程，避免跨线程异常
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            string info = $"{panelDegree:F1}° 方位:{dirText}（先天）";
+            if (!string.IsNullOrEmpty(hitGua))
+            {
+                info += $" 选中:{hitGua}";
+            }
+            HeadingText = info;
+
+            CompassRangEX cr = new CompassRangEX(panelDegree, panelDegree);
+            List<CompassObjType> ls = cr.GetCompassObjByDegree();
+            string st = "";
+            ls.ForEach(co =>
+            {
+                st += co.ObjTypeCNName + ",名称：" + co.Name + "，角度范围：" + co.CRDegree.Start.ToString("F1") + "-" + co.CRDegree.End.ToString("F1") + "°\n";
+            });
+            lblGetCompassObjByDegree.Text = st;
+
+
+
+        });
+    }
+
 
     /// <summary>
     /// 计算触摸点对应的罗盘面板刻度度数（抵消罗盘旋转）
@@ -159,14 +346,31 @@ public partial class TestPage : ContentPage, INotifyPropertyChanged
         return target;
     }
 
-    protected override void OnAppearing()
+    protected override async void OnAppearing()
     {
+        //await Task.Delay(100);
+
+        //// 2. 强行在主线程命令显卡立即刷新罗盘盘面，这样一进页面罗盘绝对不可能再隐形！
+        //MainThread.BeginInvokeOnMainThread(() =>
+        //{
+        //    SkiaCompassView?.InvalidateSurface();
+        //});
+
+
+
         var mauiWindow = this.Window ?? Application.Current?.MainPage?.Window;
         if (mauiWindow == null) return;
 
+
+
+
 #if WINDOWS
-     SV.WidthRequest = 1000;
-  
+     InnerSquareGrid.WidthRequest = 1000;
+   
+
+
+
+
     // 1. 获取 MAUI 的原生 Windows 窗口
     var handler = mauiWindow.Handler as Microsoft.Maui.Handlers.WindowHandler;
     if (handler?.PlatformView is Microsoft.UI.Xaml.Window nativeWindow)
@@ -184,11 +388,61 @@ public partial class TestPage : ContentPage, INotifyPropertyChanged
         {
             ShowWindow(windowHandle, 3); // 如果是普通窗口，就最大化
         }
+
     }
+
+     SkiaCompassView.HandlerChanged += (sender, e) =>
+    {
+        if (SkiaCompassView.Handler?.PlatformView is Microsoft.UI.Xaml.FrameworkElement winView)
+        {
+            // 直接訂閱 Windows (WinUI 3) 原生的滑鼠滾輪事件！
+            winView.PointerWheelChanged += WinView_PointerWheelChanged;
+        }
+    };
+ 
+
+
 #endif
 
         base.OnAppearing();
     }
+
+#if WINDOWS
+/// <summary>
+/// 處理 Windows 平台底層原生的滑鼠滾輪事件
+/// </summary>
+private void WinView_PointerWheelChanged(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
+{
+    // 1. 獲取目前指針（滑鼠）相對於 SkiaCompassView 控制項的屬性
+    var currentPoint = e.GetCurrentPoint(SkiaCompassView.Handler?.PlatformView as Microsoft.UI.Xaml.UIElement);
+    var properties = currentPoint.Properties;
+
+    // 2. 獲取滾輪滾動的物理增量（在 Windows 中，向前滾為正數，向後滾為負數）
+    int wheelDelta = properties.MouseWheelDelta;
+
+    if (wheelDelta != 0)
+    {
+        // 3. 根據滾輪方向計算縮放係數（向前滾放大 10%，向後滾縮小 10%）
+        float scaleFactor = wheelDelta > 0 ? 1.1f : 0.9f;
+
+        // 4. 更新全域的手勢縮放變數
+        float newScale = _gestureScale * scaleFactor;
+
+        // 5. 實施安全邊界限制（防止羅盤被無限放大或縮小到看不見）
+        _gestureScale = Math.Clamp(newScale, 0.5f, 5.0f);
+
+        // 6. 強行通知 SkiaSharp 利用 GPU 進行高精度重繪
+        SkiaCompassView.InvalidateSurface();
+
+        // 7. 標記此事件已被當前控制項徹底處理
+        // 這非常關鍵！它可以防止滾輪動作穿透到外層的 ScrollView，從而避免「縮放羅盤時頁面也跟著上下滾動」的糟糕體驗
+        e.Handled = true;
+    }
+}
+#endif
+
+
+
 
     //private void OnCompassTapped(object sender, TappedEventArgs e)
     //{
@@ -220,9 +474,9 @@ public partial class TestPage : ContentPage, INotifyPropertyChanged
 
     private string GetDirectionText(double heading)
     {
-        foreach (string sn in GuoSubClass.BeforeGuoSubNames)
+        foreach (string sn in GuaSubClass.BeforeGuaSubNames)
         {
-            GuoSubClass gs = GuoSubClass.GetGuoSub(sn, false);
+            GuaSubClass gs = GuaSubClass.GetGuaSub(sn, false);
             if (gs.CBeforRangeDegree.IsInRange(heading)) return sn;
         }
         return "";
