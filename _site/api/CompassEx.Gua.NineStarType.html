@@ -8,7 +8,7 @@
       <meta name="title" content="NineStarType 枚举
  | CompassEx API文档 ">
       
-      <meta name="description" content="九星类型">
+      <meta name="description" content="勘测系统中的九星模型分类（定义类别实例化时采用的星曜数理体系）。">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
   <h1 id="CompassEx_Gua_NineStarType" data-uid="CompassEx.Gua.NineStarType" class="text-break">
 NineStarType 枚举
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,7 @@ NineStarType 枚举
   <dl><dt>程序集</dt><dd>CompassEx.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>九星类型</p>
+  <div class="markdown summary"><p>勘测系统中的九星模型分类（定义类别实例化时采用的星曜数理体系）。</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -118,6 +118,15 @@ NineStarType 枚举
   <div>
       <a class="xref" href="CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_">Comm.ApplyBaseProperties&lt;TChild, TBase&gt;(TChild, TBase)</a>
   </div>
+  <div>
+      <a class="xref" href="CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDescription_System_Enum_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_">Comm.GetEnumDescription(Enum, string, bool, bool, bool, bool, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDict_System_Enum_">Comm.GetEnumDict(Enum)</a>
+  </div>
+  <div>
+      <a class="xref" href="CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumValues_System_Enum_">Comm.GetEnumValues(Enum)</a>
+  </div>
   </dd></dl>
 
   <h2 id="fields">字段
@@ -125,15 +134,28 @@ NineStarType 枚举
   <dl class="parameters">
     <dt id="CompassEx_Gua_NineStarType_AfterGuaNineStar"><code>AfterGuaNineStar = 0</code></dt>
   
-  <dd></dd>
+  <dd><p>后天八卦九星类型（包含五黄中宫）。</p>
+</dd>
+    <dt id="CompassEx_Gua_NineStarType_GuaFlipNineStar"><code>GuaFlipNineStar = 1</code></dt>
+  
+  <dd><p>翻卦九星类型（实质为合辅弼之后的游年八星）。</p>
+</dd>
   </dl>
 
 
+  <h2 id="CompassEx_Gua_NineStarType_remarks">备注</h2>
+  <div class="markdown level0 remarks"><p>本枚举用于区分基础易学方位星曜与进阶翻卦理气星曜的数理边界：</p>
+<ul><li>
+      <strong><a class="xref" href="CompassEx.Gua.NineStarType.html#CompassEx_Gua_NineStarType_AfterGuaNineStar">AfterGuaNineStar</a> (后天八卦九星)：</strong> 严格对应后天八卦八方宫位以及中央五黄廉贞星（共九星）。其星曜名称与峦头山星一致，但底层五行生克属性存在本质差异。
+    </li><li>
+      <strong><a class="xref" href="CompassEx.Gua.NineStarType.html#CompassEx_Gua_NineStarType_GuaFlipNineStar">GuaFlipNineStar</a> (翻卦九星)：</strong> 依据黄石公翻卦掌或辅星水法变爻推导而出的理气星曜。在底层运算中，将左辅星与右弼星合并为“辅星”进行归化，本质上为八星序列。
+    </li></ul>
+</div>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L20" class="edit-link">编辑本文</a>
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L36" class="edit-link">编辑本文</a>
         </div>
 
 

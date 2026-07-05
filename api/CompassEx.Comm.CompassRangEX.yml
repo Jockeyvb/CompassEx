@@ -9,7 +9,9 @@ items:
   - CompassEx.Comm.CompassRangEX.AngleRangeValue
   - CompassEx.Comm.CompassRangEX.AngleRangeValue(System.Double,System.Double)
   - CompassEx.Comm.CompassRangEX.End
+  - CompassEx.Comm.CompassRangEX.Equals(System.Object)
   - CompassEx.Comm.CompassRangEX.GetCompassObjByDegree
+  - CompassEx.Comm.CompassRangEX.GetHashCode
   - CompassEx.Comm.CompassRangEX.IsInRange(System.Double)
   - CompassEx.Comm.CompassRangEX.Start
   langs:
@@ -44,9 +46,7 @@ items:
   inheritance:
   - System.Object
   inheritedMembers:
-  - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
@@ -78,7 +78,7 @@ items:
   summary: 获取或设置范围的起始角度（度）。
   example: []
   syntax:
-    content: public double Start { get; set; }
+    content: public double Start { get; }
     parameters: []
     return:
       type: System.Double
@@ -110,7 +110,7 @@ items:
   summary: 获取或设置范围的结束角度（度）。
   example: []
   syntax:
-    content: public double End { get; set; }
+    content: public double End { get; }
     parameters: []
     return:
       type: System.Double
@@ -330,6 +330,72 @@ items:
         每个元素代表一个成功匹配的罗盘层级方位实体。
     content.vb: Public Function GetCompassObjByDegree() As List(Of CompassObjType)
   overload: CompassEx.Comm.CompassRangEX.GetCompassObjByDegree*
+- uid: CompassEx.Comm.CompassRangEX.Equals(System.Object)
+  commentId: M:CompassEx.Comm.CompassRangEX.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: CompassEx.Comm.CompassRangEX
+  langs:
+  - csharp
+  - vb
+  name: Equals(object)
+  nameWithType: CompassRangEX.Equals(object)
+  fullName: CompassEx.Comm.CompassRangEX.Equals(object)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/CompassRangEX.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Equals
+    path: CompassEx/Comm/CompassRangEX.cs
+    startLine: 196
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: CompassEx.Comm.CompassRangEX.Equals*
+  nameWithType.vb: CompassRangEX.Equals(Object)
+  fullName.vb: CompassEx.Comm.CompassRangEX.Equals(Object)
+  name.vb: Equals(Object)
+- uid: CompassEx.Comm.CompassRangEX.GetHashCode
+  commentId: M:CompassEx.Comm.CompassRangEX.GetHashCode
+  id: GetHashCode
+  parent: CompassEx.Comm.CompassRangEX
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: CompassRangEX.GetHashCode()
+  fullName: CompassEx.Comm.CompassRangEX.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/CompassRangEX.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetHashCode
+    path: CompassEx/Comm/CompassRangEX.cs
+    startLine: 202
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.Object.GetHashCode
+  overload: CompassEx.Comm.CompassRangEX.GetHashCode*
 references:
 - uid: CompassEx.Comm
   commentId: N:CompassEx.Comm
@@ -364,39 +430,6 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  name: Equals(object)
-  nameWithType: object.Equals(object)
-  fullName: object.Equals(object)
-  nameWithType.vb: Object.Equals(Object)
-  fullName.vb: Object.Equals(Object)
-  name.vb: Equals(Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
 - uid: System.Object.Equals(System.Object,System.Object)
   commentId: M:System.Object.Equals(System.Object,System.Object)
   parent: System.Object
@@ -441,30 +474,6 @@ references:
     name: Object
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
   - name: )
 - uid: System.Object.GetType
   commentId: M:System.Object.GetType
@@ -919,3 +928,83 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: CompassEx.Comm.CompassRangEX.Equals*
+  commentId: Overload:CompassEx.Comm.CompassRangEX.Equals
+  href: CompassEx.Comm.CompassRangEX.html#CompassEx_Comm_CompassRangEX_Equals_System_Object_
+  name: Equals
+  nameWithType: CompassRangEX.Equals
+  fullName: CompassEx.Comm.CompassRangEX.Equals
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: CompassEx.Comm.CompassRangEX.GetHashCode*
+  commentId: Overload:CompassEx.Comm.CompassRangEX.GetHashCode
+  href: CompassEx.Comm.CompassRangEX.html#CompassEx_Comm_CompassRangEX_GetHashCode
+  name: GetHashCode
+  nameWithType: CompassRangEX.GetHashCode
+  fullName: CompassEx.Comm.CompassRangEX.GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer

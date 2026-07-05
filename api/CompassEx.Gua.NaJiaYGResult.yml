@@ -23,10 +23,13 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: NaJiaYGResult
     path: CompassEx/Gua/NaJia.cs
-    startLine: 58
+    startLine: 95
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
+  summary: 杨公纳甲推演结果结构体。包含单卦、归化天干及对应的地支宫位序列。
+  remarks: 本结构体数据为风水勘测的底层核心：九星山法依此读取来龙或坐山卦的归化干支；辅星水法依此读取向卦的纳甲水流水口。
+  example: []
   syntax:
     content: 'public struct NaJiaYGResult : INaJiaResult'
     content.vb: Public Structure NaJiaYGResult Implements INaJiaResult
@@ -59,22 +62,27 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Gua
     path: CompassEx/Gua/NaJia.cs
-    startLine: 65
+    startLine: 101
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: >-
-    八卦（后天）
-
-    九星山法应该使用来龙卦，或坐卦卦
-
-    辅星水法应该使用向卦
+  summary: 当前推演所依附的后天八卦单卦（三爻卦）实例。
   example: []
   syntax:
-    content: public GuaSubClass Gua
+    content: >-
+      [JsonIgnore]
+
+      public GuaSubClass Gua
     return:
       type: CompassEx.Gua.GuaSubClass
-    content.vb: Public Gua As GuaSubClass
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Gua As GuaSubClass
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
 - uid: CompassEx.Gua.NaJiaYGResult.Type
   commentId: P:CompassEx.Gua.NaJiaYGResult.Type
   id: Type
@@ -93,17 +101,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Type
     path: CompassEx/Gua/NaJia.cs
-    startLine: 70
+    startLine: 109
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 杨公纳甲类型
+  summary: 获取杨公纳甲体系标记。
   example: []
   syntax:
     content: public NaJiaType Type { get; }
     parameters: []
     return:
       type: CompassEx.Gua.NaJiaType
+      description: 始终返回 <xref href="CompassEx.Gua.NaJiaType.YG" data-throw-if-not-resolved="false"></xref>。
     content.vb: Public ReadOnly Property Type As NaJiaType
   overload: CompassEx.Gua.NaJiaYGResult.Type*
   implements:
@@ -126,17 +135,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Sky
     path: CompassEx/Gua/NaJia.cs
-    startLine: 74
+    startLine: 117
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 所包含的
+  summary: 当前单卦所纳的专属天干实例。
+  remarks: 易学数理对应：乾纳甲、坤纳乙、艮纳丙、巽纳辛、震纳庚、兑纳丁、离纳壬、坎纳癸。
   example: []
   syntax:
-    content: public SkyLoc Sky
+    content: public SkyClass Sky
     return:
-      type: CompassEx.Comm.SkyLoc
-    content.vb: Public Sky As SkyLoc
+      type: CompassEx.Comm.SkyClass
+    content.vb: Public Sky As SkyClass
 - uid: CompassEx.Gua.NaJiaYGResult.Locs
   commentId: F:CompassEx.Gua.NaJiaYGResult.Locs
   id: Locs
@@ -155,10 +165,13 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Locs
     path: CompassEx/Gua/NaJia.cs
-    startLine: 75
+    startLine: 125
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
+  summary: 当前单卦纳甲数理所包含归化的地支（方位/时辰刻度）实例集合。
+  remarks: 四正卦依三合局归化地支：震纳亥卯未、兑纳巳酉丑、离纳寅午戌、坎纳申子辰。四维卦在风水高级理气中通常包含自身方位的延伸。
+  example: []
   syntax:
     content: public List<LocClass> Locs
     return:
@@ -543,6 +556,12 @@ references:
   name: GuaSubClass
   nameWithType: GuaSubClass
   fullName: CompassEx.Gua.GuaSubClass
+- uid: CompassEx.Gua.NaJiaType.YG
+  commentId: F:CompassEx.Gua.NaJiaType.YG
+  href: CompassEx.Gua.NaJiaType.html#CompassEx_Gua_NaJiaType_YG
+  name: YG
+  nameWithType: NaJiaType.YG
+  fullName: CompassEx.Gua.NaJiaType.YG
 - uid: CompassEx.Gua.NaJiaYGResult.Type*
   commentId: Overload:CompassEx.Gua.NaJiaYGResult.Type
   href: CompassEx.Gua.NaJiaYGResult.html#CompassEx_Gua_NaJiaYGResult_Type
@@ -563,13 +582,13 @@ references:
   name: NaJiaType
   nameWithType: NaJiaType
   fullName: CompassEx.Gua.NaJiaType
-- uid: CompassEx.Comm.SkyLoc
-  commentId: T:CompassEx.Comm.SkyLoc
+- uid: CompassEx.Comm.SkyClass
+  commentId: T:CompassEx.Comm.SkyClass
   parent: CompassEx.Comm
-  href: CompassEx.Comm.SkyLoc.html
-  name: SkyLoc
-  nameWithType: SkyLoc
-  fullName: CompassEx.Comm.SkyLoc
+  href: CompassEx.Comm.SkyClass.html
+  name: SkyClass
+  nameWithType: SkyClass
+  fullName: CompassEx.Comm.SkyClass
 - uid: System.Collections.Generic.List{CompassEx.Comm.LocClass}
   commentId: T:System.Collections.Generic.List{CompassEx.Comm.LocClass}
   parent: System.Collections.Generic

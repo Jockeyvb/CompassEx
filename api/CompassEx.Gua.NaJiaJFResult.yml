@@ -22,10 +22,13 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: NaJiaJFResult
     path: CompassEx/Gua/NaJia.cs
-    startLine: 41
+    startLine: 65
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
+  summary: 京房纳甲推演结果结构体。包含完整的六爻复卦、六亲及干支序列。
+  remarks: 本结构体数据常用于六爻预测学的装卦排盘。在天机出卦法中，亦可用于判定人命庚之干支是否得福神、官贵或犯出卦、入卦。
+  example: []
   syntax:
     content: 'public struct NaJiaJFResult : INaJiaResult'
     content.vb: Public Structure NaJiaJFResult Implements INaJiaResult
@@ -58,20 +61,27 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Gua
     path: CompassEx/Gua/NaJia.cs
-    startLine: 47
+    startLine: 71
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: >-
-    复卦（六爻卦）
-
-    可用于天机出卦法的纳甲判断人命庚之干支是否得福、官或出卦、入卦等。
+  summary: 当前推演所依附的六爻复卦（64卦别卦）实例。
   example: []
   syntax:
-    content: public GuaClass Gua
+    content: >-
+      [JsonIgnore]
+
+      public GuaClass Gua
     return:
       type: CompassEx.Gua.GuaClass
-    content.vb: Public Gua As GuaClass
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Gua As GuaClass
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
 - uid: CompassEx.Gua.NaJiaJFResult.Type
   commentId: P:CompassEx.Gua.NaJiaJFResult.Type
   id: Type
@@ -90,17 +100,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Type
     path: CompassEx/Gua/NaJia.cs
-    startLine: 51
+    startLine: 79
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 京房纳甲类型
+  summary: 获取京房纳甲体系标记。
   example: []
   syntax:
     content: public NaJiaType Type { get; }
     parameters: []
     return:
       type: CompassEx.Gua.NaJiaType
+      description: 始终返回 <xref href="CompassEx.Gua.NaJiaType.JF" data-throw-if-not-resolved="false"></xref>。
     content.vb: Public ReadOnly Property Type As NaJiaType
   overload: CompassEx.Gua.NaJiaJFResult.Type*
   implements:
@@ -123,11 +134,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SkyLocs
     path: CompassEx/Gua/NaJia.cs
-    startLine: 55
+    startLine: 84
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 六爻对应的干支
+  summary: 自下而上（初爻至上爻），六爻逐爻严格对应的干支（山字/干支时空坐标）集合。
   example: []
   syntax:
     content: public List<SkyLoc> SkyLocs
@@ -513,6 +524,12 @@ references:
   name: GuaClass
   nameWithType: GuaClass
   fullName: CompassEx.Gua.GuaClass
+- uid: CompassEx.Gua.NaJiaType.JF
+  commentId: F:CompassEx.Gua.NaJiaType.JF
+  href: CompassEx.Gua.NaJiaType.html#CompassEx_Gua_NaJiaType_JF
+  name: JF
+  nameWithType: NaJiaType.JF
+  fullName: CompassEx.Gua.NaJiaType.JF
 - uid: CompassEx.Gua.NaJiaJFResult.Type*
   commentId: Overload:CompassEx.Gua.NaJiaJFResult.Type
   href: CompassEx.Gua.NaJiaJFResult.html#CompassEx_Gua_NaJiaJFResult_Type

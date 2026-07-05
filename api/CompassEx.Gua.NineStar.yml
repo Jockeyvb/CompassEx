@@ -5,14 +5,18 @@ items:
   id: NineStar
   parent: CompassEx.Gua
   children:
-  - CompassEx.Gua.NineStar.EightMansionsStarsName
-  - CompassEx.Gua.NineStar.EightStarsFullName
-  - CompassEx.Gua.NineStar.EightStarsName
-  - CompassEx.Gua.NineStar.Index
-  - CompassEx.Gua.NineStar.NineStarFullName
+  - CompassEx.Gua.NineStar.EightHouseStarName
+  - CompassEx.Gua.NineStar.EightHouseStarNameDC
+  - CompassEx.Gua.NineStar.EightStarFullNames
+  - CompassEx.Gua.NineStar.EightStarNames
+  - CompassEx.Gua.NineStar.FullName
+  - CompassEx.Gua.NineStar.GetGuaFlipEightStar(System.Int32)
+  - CompassEx.Gua.NineStar.GetNineStarByAfterGua(CompassEx.Gua.GuaSubClass)
+  - CompassEx.Gua.NineStar.IsGood
+  - CompassEx.Gua.NineStar.Name
   - CompassEx.Gua.NineStar.NineStarFullNames
-  - CompassEx.Gua.NineStar.NineStarName
   - CompassEx.Gua.NineStar.NineStarNames
+  - CompassEx.Gua.NineStar.Type
   langs:
   - csharp
   - vb
@@ -27,10 +31,16 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: NineStar
     path: CompassEx/Gua/NineStar.cs
-    startLine: 27
+    startLine: 54
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
+  summary: 周易数理与风水理气核心：九星（游年八星/北斗九星）的数据抽象模型与静态工厂类。
+  remarks: >-
+    本类作為平台级别的「材料供应商」，保持极致的架构克制。内部仅提供绝对客观的星曜名称、类型、吉凶逻辑判定以及
+
+    游年映射，<b>不包含任何带有主观色彩的文字评语或顏色渲染样式控制</b>，完美支援外部 C# 主程序调度与第三方动态 JavaScript 插件扩充。
+  example: []
   syntax:
     content: public class NineStar
     content.vb: Public Class NineStar
@@ -64,19 +74,19 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: NineStarFullNames
     path: CompassEx/Gua/NineStar.cs
-    startLine: 42
+    startLine: 66
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 後天八卦九星（北斗九星）的完整中文名稱。
-  remarks: <p>本數組用於需要完整顯示星曜名稱的場景（如風水報告、羅盤盤面顯示）。</p>
+  summary: 后天八卦九星（北斗九星）的完整中文名称常量序列。
+  remarks: 本数组主要用于需要全称显化输出的场景（如风水综合报告、高精度罗盘盘面文字渲染）。
   example: []
   syntax:
-    content: public readonly string[] NineStarFullNames
+    content: public static readonly string[] NineStarFullNames
     return:
       type: System.String[]
-      description: 包含 9 個元素的字符串數組，順序嚴格對應北斗九星：貪狼、巨門、祿存、文曲、廉貞、武曲、破軍、左輔、右弼。
-    content.vb: Public ReadOnly NineStarFullNames As String()
+      description: 包含 9 个元素的字符串数组，顺序严格对应北斗九星：贪狼、巨门、禄存、文曲、廉贞、武曲、破军、左辅、右弼。
+    content.vb: Public Shared ReadOnly NineStarFullNames As String()
   seealso:
   - linkId: CompassEx.Gua.NineStar.NineStarNames
     commentId: F:CompassEx.Gua.NineStar.NineStarNames
@@ -98,202 +108,353 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: NineStarNames
     path: CompassEx/Gua/NineStar.cs
-    startLine: 54
+    startLine: 78
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 後天八卦九星（北斗九星）的單字簡稱。
-  remarks: 主要用於排版空間受限的場景，例如簡化版圖表、緊湊型排盤界面或終端日誌輸出。
+  summary: 后天八卦九星（北斗九星）的单字简称常量序列。
+  remarks: 主要用于排版空间受限、UI 宫格紧凑型界面显示或调试终端的日志输出。
   example: []
   syntax:
-    content: public readonly string[] NineStarNames
+    content: public static readonly string[] NineStarNames
     return:
       type: System.String[]
-      description: 包含 9 個元素的字符串數組，順序與 <xref href="CompassEx.Gua.NineStar.NineStarFullNames" data-throw-if-not-resolved="false"></xref> 完全一致：貪、巨、祿、文、廉、武、破、輔、弼。
-    content.vb: Public ReadOnly NineStarNames As String()
+      description: 包含 9 个元素的字符串数组，顺序与 <xref href="CompassEx.Gua.NineStar.NineStarFullNames" data-throw-if-not-resolved="false"></xref> 完全一致：贪、巨、禄、文、廉、武、破、辅、弼。
+    content.vb: Public Shared ReadOnly NineStarNames As String()
   seealso:
   - linkId: CompassEx.Gua.NineStar.NineStarFullNames
     commentId: F:CompassEx.Gua.NineStar.NineStarFullNames
-- uid: CompassEx.Gua.NineStar.EightStarsFullName
-  commentId: F:CompassEx.Gua.NineStar.EightStarsFullName
-  id: EightStarsFullName
+- uid: CompassEx.Gua.NineStar.EightStarFullNames
+  commentId: F:CompassEx.Gua.NineStar.EightStarFullNames
+  id: EightStarFullNames
   parent: CompassEx.Gua.NineStar
   langs:
   - csharp
   - vb
-  name: EightStarsFullName
-  nameWithType: NineStar.EightStarsFullName
-  fullName: CompassEx.Gua.NineStar.EightStarsFullName
+  name: EightStarFullNames
+  nameWithType: NineStar.EightStarFullNames
+  fullName: CompassEx.Gua.NineStar.EightStarFullNames
   type: Field
   source:
     remote:
       path: CompassEx/Gua/NineStar.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: EightStarsFullName
+    id: EightStarFullNames
     path: CompassEx/Gua/NineStar.cs
-    startLine: 59
+    startLine: 86
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 翻卦九星完整名称序列（实质是八星）,默认是山法序列（水法不一样）
+  summary: 翻卦理气核心：游年九星（实质为八星）的完整名称常量序列。
   example: []
   syntax:
-    content: public readonly string[] EightStarsFullName
+    content: public static readonly string[] EightStarFullNames
     return:
       type: System.String[]
-    content.vb: Public ReadOnly EightStarsFullName As String()
-- uid: CompassEx.Gua.NineStar.EightStarsName
-  commentId: F:CompassEx.Gua.NineStar.EightStarsName
-  id: EightStarsName
+      description: 默认遵循山法/龙法正序排列：辅弼、贪狼、巨门、禄存、文曲、廉贞、武曲、破军。（水法通过外部映射数组进行变换）。
+    content.vb: Public Shared ReadOnly EightStarFullNames As String()
+- uid: CompassEx.Gua.NineStar.EightStarNames
+  commentId: F:CompassEx.Gua.NineStar.EightStarNames
+  id: EightStarNames
   parent: CompassEx.Gua.NineStar
   langs:
   - csharp
   - vb
-  name: EightStarsName
-  nameWithType: NineStar.EightStarsName
-  fullName: CompassEx.Gua.NineStar.EightStarsName
+  name: EightStarNames
+  nameWithType: NineStar.EightStarNames
+  fullName: CompassEx.Gua.NineStar.EightStarNames
   type: Field
   source:
     remote:
       path: CompassEx/Gua/NineStar.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: EightStarsName
+    id: EightStarNames
     path: CompassEx/Gua/NineStar.cs
-    startLine: 63
+    startLine: 94
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 翻卦九星名称序列（实质是八星）,默认是山法序列（水法不一样）
+  summary: 翻卦理气核心：游年九星（实质为八星）的单字简称常量序列。
   example: []
   syntax:
-    content: public readonly string[] EightStarsName
+    content: public static readonly string[] EightStarNames
     return:
       type: System.String[]
-    content.vb: Public ReadOnly EightStarsName As String()
-- uid: CompassEx.Gua.NineStar.EightMansionsStarsName
-  commentId: F:CompassEx.Gua.NineStar.EightMansionsStarsName
-  id: EightMansionsStarsName
+      description: 默认遵循山法/龙法正序排列：辅、贪、巨、禄、文、廉、武、破。（水法通过外部映射数组进行变换）。
+    content.vb: Public Shared ReadOnly EightStarNames As String()
+- uid: CompassEx.Gua.NineStar.EightHouseStarNameDC
+  commentId: F:CompassEx.Gua.NineStar.EightHouseStarNameDC
+  id: EightHouseStarNameDC
   parent: CompassEx.Gua.NineStar
   langs:
   - csharp
   - vb
-  name: EightMansionsStarsName
-  nameWithType: NineStar.EightMansionsStarsName
-  fullName: CompassEx.Gua.NineStar.EightMansionsStarsName
+  name: EightHouseStarNameDC
+  nameWithType: NineStar.EightHouseStarNameDC
+  fullName: CompassEx.Gua.NineStar.EightHouseStarNameDC
   type: Field
   source:
     remote:
       path: CompassEx/Gua/NineStar.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: EightMansionsStarsName
+    id: EightHouseStarNameDC
     path: CompassEx/Gua/NineStar.cs
-    startLine: 67
+    startLine: 102
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 对应的翻卦八宅游年名称,默认是山法序列（水法不一样）
+  summary: 翻卦星曜单字简称与八宅游年标准名称的静态常量对照字典。
   example: []
   syntax:
-    content: public readonly string[] EightMansionsStarsName
+    content: public static readonly Dictionary<string, string> EightHouseStarNameDC
     return:
-      type: System.String[]
-    content.vb: Public ReadOnly EightMansionsStarsName As String()
-- uid: CompassEx.Gua.NineStar.Index
-  commentId: P:CompassEx.Gua.NineStar.Index
-  id: Index
+      type: System.Collections.Generic.Dictionary{System.String,System.String}
+      description: 包含 8 组映射关系，实现从星曜名（Key）到游年名（Value）的高效 O(1) 数字化转换。
+    content.vb: Public Shared ReadOnly EightHouseStarNameDC As Dictionary(Of String, String)
+- uid: CompassEx.Gua.NineStar.Type
+  commentId: P:CompassEx.Gua.NineStar.Type
+  id: Type
   parent: CompassEx.Gua.NineStar
   langs:
   - csharp
   - vb
-  name: Index
-  nameWithType: NineStar.Index
-  fullName: CompassEx.Gua.NineStar.Index
+  name: Type
+  nameWithType: NineStar.Type
+  fullName: CompassEx.Gua.NineStar.Type
   type: Property
   source:
     remote:
       path: CompassEx/Gua/NineStar.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: Index
+    id: Type
     path: CompassEx/Gua/NineStar.cs
-    startLine: 72
+    startLine: 111
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: ''
+  summary: 获取当前星曜实例的数理分类类型 (<xref href="CompassEx.Gua.NineStarType" data-throw-if-not-resolved="false"></xref>)。
   example: []
   syntax:
-    content: public int Index { set; }
+    content: public NineStarType Type { get; }
     parameters: []
     return:
+      type: CompassEx.Gua.NineStarType
+    content.vb: Public Property Type As NineStarType
+  overload: CompassEx.Gua.NineStar.Type*
+- uid: CompassEx.Gua.NineStar.IsGood
+  commentId: P:CompassEx.Gua.NineStar.IsGood
+  id: IsGood
+  parent: CompassEx.Gua.NineStar
+  langs:
+  - csharp
+  - vb
+  name: IsGood
+  nameWithType: NineStar.IsGood
+  fullName: CompassEx.Gua.NineStar.IsGood
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/NineStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: IsGood
+    path: CompassEx/Gua/NineStar.cs
+    startLine: 122
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 核心数理逻辑判定：基于传统的“四吉四凶”原则，快速验证当前星曜是否属于“四吉星”（辅、贪、巨、武）。
+  remarks: 本属性采用高效的字串包含式（<code>IndexOf</code>）底层无感算法，规避了繁琐的逻辑分支判定，专门为高并发排盘渲染和外部 JavaScript 沙箱过滤提供纯净、无偏见的布尔开关（IsGood）。
+  example: []
+  syntax:
+    content: public bool IsGood { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: 若属于伏位、生气、天医、延年对应的星曜则返回 <code>true</code>；若属于祸害、六煞、五鬼、绝命对应的星曜则返回 <code>false</code>。
+    content.vb: Public ReadOnly Property IsGood As Boolean
+  overload: CompassEx.Gua.NineStar.IsGood*
+- uid: CompassEx.Gua.NineStar.EightHouseStarName
+  commentId: P:CompassEx.Gua.NineStar.EightHouseStarName
+  id: EightHouseStarName
+  parent: CompassEx.Gua.NineStar
+  langs:
+  - csharp
+  - vb
+  name: EightHouseStarName
+  nameWithType: NineStar.EightHouseStarName
+  fullName: CompassEx.Gua.NineStar.EightHouseStarName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/NineStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: EightHouseStarName
+    path: CompassEx/Gua/NineStar.cs
+    startLine: 130
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 获取当前星曜对应的八宅游年标准名称（如：伏位、生气）。
+  example: []
+  syntax:
+    content: public string? EightHouseStarName { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: 当星曜类型为 <xref href="CompassEx.Gua.NineStarType.AfterGuaNineStar" data-throw-if-not-resolved="false"></xref> 时，该值默认为空字符串 <code>""</code>。
+    content.vb: Public Property EightHouseStarName As String
+  overload: CompassEx.Gua.NineStar.EightHouseStarName*
+- uid: CompassEx.Gua.NineStar.Name
+  commentId: P:CompassEx.Gua.NineStar.Name
+  id: Name
+  parent: CompassEx.Gua.NineStar
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: NineStar.Name
+  fullName: CompassEx.Gua.NineStar.Name
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/NineStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Name
+    path: CompassEx/Gua/NineStar.cs
+    startLine: 138
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 获取当前星曜的单字简称（如：“贪”、“巨”）。
+  remarks: 该属性对外提供全局只读（get）权限，写权限（set）锁死在类内部与工厂方法中，确保核心盘面数据不被外部代码任意篡改。
+  example: []
+  syntax:
+    content: public string? Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: CompassEx.Gua.NineStar.Name*
+- uid: CompassEx.Gua.NineStar.FullName
+  commentId: P:CompassEx.Gua.NineStar.FullName
+  id: FullName
+  parent: CompassEx.Gua.NineStar
+  langs:
+  - csharp
+  - vb
+  name: FullName
+  nameWithType: NineStar.FullName
+  fullName: CompassEx.Gua.NineStar.FullName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/NineStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FullName
+    path: CompassEx/Gua/NineStar.cs
+    startLine: 146
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 获取当前星曜的完整中文名称（如：“贪狼”、“巨门”）。
+  remarks: 经过严谨重构，已彻底修正因 Getter/Setter 权限写反导致的 JSON 序列化蒸发 BUG，可完美、完整地导出至外部接口。
+  example: []
+  syntax:
+    content: public string? FullName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property FullName As String
+  overload: CompassEx.Gua.NineStar.FullName*
+- uid: CompassEx.Gua.NineStar.GetNineStarByAfterGua(CompassEx.Gua.GuaSubClass)
+  commentId: M:CompassEx.Gua.NineStar.GetNineStarByAfterGua(CompassEx.Gua.GuaSubClass)
+  id: GetNineStarByAfterGua(CompassEx.Gua.GuaSubClass)
+  parent: CompassEx.Gua.NineStar
+  langs:
+  - csharp
+  - vb
+  name: GetNineStarByAfterGua(GuaSubClass)
+  nameWithType: NineStar.GetNineStarByAfterGua(GuaSubClass)
+  fullName: CompassEx.Gua.NineStar.GetNineStarByAfterGua(CompassEx.Gua.GuaSubClass)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/NineStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetNineStarByAfterGua
+    path: CompassEx/Gua/NineStar.cs
+    startLine: 154
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 静态工厂方法：根据传入的后天八卦基础单卦对象，快速构建并返回其对应的后天八卦九星实例。
+  example: []
+  syntax:
+    content: public static NineStar GetNineStarByAfterGua(GuaSubClass gs)
+    parameters:
+    - id: gs
+      type: CompassEx.Gua.GuaSubClass
+      description: 后天八卦单卦实例对象 (<xref href="CompassEx.Gua.GuaSubClass" data-throw-if-not-resolved="false"></xref>)。
+    return:
+      type: CompassEx.Gua.NineStar
+      description: 返回包含后天八卦九星元数据信息的 <xref href="CompassEx.Gua.NineStar" data-throw-if-not-resolved="false"></xref> 独立对象。
+    content.vb: Public Shared Function GetNineStarByAfterGua(gs As GuaSubClass) As NineStar
+  overload: CompassEx.Gua.NineStar.GetNineStarByAfterGua*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: 当传入的单卦对象为 null 时抛出。
+- uid: CompassEx.Gua.NineStar.GetGuaFlipEightStar(System.Int32)
+  commentId: M:CompassEx.Gua.NineStar.GetGuaFlipEightStar(System.Int32)
+  id: GetGuaFlipEightStar(System.Int32)
+  parent: CompassEx.Gua.NineStar
+  langs:
+  - csharp
+  - vb
+  name: GetGuaFlipEightStar(int)
+  nameWithType: NineStar.GetGuaFlipEightStar(int)
+  fullName: CompassEx.Gua.NineStar.GetGuaFlipEightStar(int)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/NineStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetGuaFlipEightStar
+    path: CompassEx/Gua/NineStar.cs
+    startLine: 173
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 静态工厂方法：根据翻卦掌诀产生的步进数字化索引，快速构建并返回对应的翻卦九星（实际为游年八星）实例。
+  example: []
+  syntax:
+    content: public static NineStar GetGuaFlipEightStar(int Index)
+    parameters:
+    - id: Index
       type: System.Int32
-    content.vb: Public Property Index As Integer
-  overload: CompassEx.Gua.NineStar.Index*
-- uid: CompassEx.Gua.NineStar.NineStarName
-  commentId: P:CompassEx.Gua.NineStar.NineStarName
-  id: NineStarName
-  parent: CompassEx.Gua.NineStar
-  langs:
-  - csharp
-  - vb
-  name: NineStarName
-  nameWithType: NineStar.NineStarName
-  fullName: CompassEx.Gua.NineStar.NineStarName
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Gua/NineStar.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: NineStarName
-    path: CompassEx/Gua/NineStar.cs
-    startLine: 77
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Gua
-  summary: 後天八卦九星（北斗九星）的简称。
-  example: []
-  syntax:
-    content: public string? NineStarName { set; }
-    parameters: []
+      description: 基于翻卦轨迹数组转换后的星曜逻辑索引（有效范围：0 到 7）。
     return:
-      type: System.String
-    content.vb: Public Property NineStarName As String
-  overload: CompassEx.Gua.NineStar.NineStarName*
-- uid: CompassEx.Gua.NineStar.NineStarFullName
-  commentId: P:CompassEx.Gua.NineStar.NineStarFullName
-  id: NineStarFullName
-  parent: CompassEx.Gua.NineStar
-  langs:
-  - csharp
-  - vb
-  name: NineStarFullName
-  nameWithType: NineStar.NineStarFullName
-  fullName: CompassEx.Gua.NineStar.NineStarFullName
-  type: Property
-  source:
-    remote:
-      path: CompassEx/Gua/NineStar.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: NineStarFullName
-    path: CompassEx/Gua/NineStar.cs
-    startLine: 81
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Gua
-  summary: 後天八卦九星（北斗九星）的完整中文名稱。
-  example: []
-  syntax:
-    content: public string? NineStarFullName { set; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property NineStarFullName As String
-  overload: CompassEx.Gua.NineStar.NineStarFullName*
+      type: CompassEx.Gua.NineStar
+      description: 返回包含完整翻卦配星与八宅游年映射信息的 <xref href="CompassEx.Gua.NineStar" data-throw-if-not-resolved="false"></xref> 独立对象。
+    content.vb: Public Shared Function GetGuaFlipEightStar(Index As Integer) As NineStar
+  overload: CompassEx.Gua.NineStar.GetGuaFlipEightStar*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: 当传入的索引超出 0-7 的数组边界时抛出。
+  nameWithType.vb: NineStar.GetGuaFlipEightStar(Integer)
+  fullName.vb: CompassEx.Gua.NineStar.GetGuaFlipEightStar(Integer)
+  name.vb: GetGuaFlipEightStar(Integer)
 references:
 - uid: CompassEx.Gua
   commentId: N:CompassEx.Gua
@@ -714,29 +875,166 @@ references:
   name: NineStarFullNames
   nameWithType: NineStar.NineStarFullNames
   fullName: CompassEx.Gua.NineStar.NineStarFullNames
-- uid: CompassEx.Gua.NineStar.Index*
-  commentId: Overload:CompassEx.Gua.NineStar.Index
-  href: CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_Index
-  name: Index
-  nameWithType: NineStar.Index
-  fullName: CompassEx.Gua.NineStar.Index
-- uid: System.Int32
-  commentId: T:System.Int32
+- uid: System.Collections.Generic.Dictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, string>
+  nameWithType: Dictionary<string, string>
+  fullName: System.Collections.Generic.Dictionary<string, string>
+  nameWithType.vb: Dictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, String)
+  name.vb: Dictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: CompassEx.Gua.NineStarType
+  commentId: T:CompassEx.Gua.NineStarType
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.NineStarType.html
+  name: NineStarType
+  nameWithType: NineStarType
+  fullName: CompassEx.Gua.NineStarType
+- uid: CompassEx.Gua.NineStar.Type*
+  commentId: Overload:CompassEx.Gua.NineStar.Type
+  href: CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_Type
+  name: Type
+  nameWithType: NineStar.Type
+  fullName: CompassEx.Gua.NineStar.Type
+- uid: CompassEx.Gua.NineStar.IsGood*
+  commentId: Overload:CompassEx.Gua.NineStar.IsGood
+  href: CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_IsGood
+  name: IsGood
+  nameWithType: NineStar.IsGood
+  fullName: CompassEx.Gua.NineStar.IsGood
+- uid: System.Boolean
+  commentId: T:System.Boolean
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
-- uid: CompassEx.Gua.NineStar.NineStarName*
-  commentId: Overload:CompassEx.Gua.NineStar.NineStarName
-  href: CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_NineStarName
-  name: NineStarName
-  nameWithType: NineStar.NineStarName
-  fullName: CompassEx.Gua.NineStar.NineStarName
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: CompassEx.Gua.NineStarType.AfterGuaNineStar
+  commentId: F:CompassEx.Gua.NineStarType.AfterGuaNineStar
+  href: CompassEx.Gua.NineStarType.html#CompassEx_Gua_NineStarType_AfterGuaNineStar
+  name: AfterGuaNineStar
+  nameWithType: NineStarType.AfterGuaNineStar
+  fullName: CompassEx.Gua.NineStarType.AfterGuaNineStar
+- uid: CompassEx.Gua.NineStar.EightHouseStarName*
+  commentId: Overload:CompassEx.Gua.NineStar.EightHouseStarName
+  href: CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_EightHouseStarName
+  name: EightHouseStarName
+  nameWithType: NineStar.EightHouseStarName
+  fullName: CompassEx.Gua.NineStar.EightHouseStarName
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -748,9 +1046,66 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: CompassEx.Gua.NineStar.NineStarFullName*
-  commentId: Overload:CompassEx.Gua.NineStar.NineStarFullName
-  href: CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_NineStarFullName
-  name: NineStarFullName
-  nameWithType: NineStar.NineStarFullName
-  fullName: CompassEx.Gua.NineStar.NineStarFullName
+- uid: CompassEx.Gua.NineStar.Name*
+  commentId: Overload:CompassEx.Gua.NineStar.Name
+  href: CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_Name
+  name: Name
+  nameWithType: NineStar.Name
+  fullName: CompassEx.Gua.NineStar.Name
+- uid: CompassEx.Gua.NineStar.FullName*
+  commentId: Overload:CompassEx.Gua.NineStar.FullName
+  href: CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_FullName
+  name: FullName
+  nameWithType: NineStar.FullName
+  fullName: CompassEx.Gua.NineStar.FullName
+- uid: CompassEx.Gua.GuaSubClass
+  commentId: T:CompassEx.Gua.GuaSubClass
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.GuaSubClass.html
+  name: GuaSubClass
+  nameWithType: GuaSubClass
+  fullName: CompassEx.Gua.GuaSubClass
+- uid: CompassEx.Gua.NineStar
+  commentId: T:CompassEx.Gua.NineStar
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.NineStar.html
+  name: NineStar
+  nameWithType: NineStar
+  fullName: CompassEx.Gua.NineStar
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: CompassEx.Gua.NineStar.GetNineStarByAfterGua*
+  commentId: Overload:CompassEx.Gua.NineStar.GetNineStarByAfterGua
+  href: CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_GetNineStarByAfterGua_CompassEx_Gua_GuaSubClass_
+  name: GetNineStarByAfterGua
+  nameWithType: NineStar.GetNineStarByAfterGua
+  fullName: CompassEx.Gua.NineStar.GetNineStarByAfterGua
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: CompassEx.Gua.NineStar.GetGuaFlipEightStar*
+  commentId: Overload:CompassEx.Gua.NineStar.GetGuaFlipEightStar
+  href: CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_GetGuaFlipEightStar_System_Int32_
+  name: GetGuaFlipEightStar
+  nameWithType: NineStar.GetGuaFlipEightStar
+  fullName: CompassEx.Gua.NineStar.GetGuaFlipEightStar
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer

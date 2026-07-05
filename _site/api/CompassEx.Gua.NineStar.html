@@ -8,7 +8,7 @@
       <meta name="title" content="NineStar 类
  | CompassEx API文档 ">
       
-      
+      <meta name="description" content="周易数理与风水理气核心：九星（游年八星/北斗九星）的数据抽象模型与静态工厂类。">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,7 +88,7 @@
 
   <h1 id="CompassEx_Gua_NineStar" data-uid="CompassEx.Gua.NineStar" class="text-break">
 NineStar 类
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -96,7 +96,8 @@ NineStar 类
   <dl><dt>程序集</dt><dd>CompassEx.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>周易数理与风水理气核心：九星（游年八星/北斗九星）的数据抽象模型与静态工厂类。</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -152,6 +153,10 @@ NineStar 类
 
 
 
+  <h2 id="CompassEx_Gua_NineStar_remarks">备注</h2>
+  <div class="markdown level0 remarks"><p>本类作為平台级别的「材料供应商」，保持极致的架构克制。内部仅提供绝对客观的星曜名称、类型、吉凶逻辑判定以及
+游年映射，<b>不包含任何带有主观色彩的文字评语或顏色渲染样式控制</b>，完美支援外部 C# 主程序调度与第三方动态 JavaScript 插件扩充。</p>
+</div>
 
 
   <h2 class="section" id="fields">字段
@@ -159,17 +164,17 @@ NineStar 类
 
 
 
-  <h3 id="CompassEx_Gua_NineStar_EightMansionsStarsName" data-uid="CompassEx.Gua.NineStar.EightMansionsStarsName">
-  EightMansionsStarsName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  <h3 id="CompassEx_Gua_NineStar_EightHouseStarNameDC" data-uid="CompassEx.Gua.NineStar.EightHouseStarNameDC">
+  EightHouseStarNameDC
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L103"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>对应的翻卦八宅游年名称,默认是山法序列（水法不一样）</p>
+  <div class="markdown level1 summary"><p>翻卦星曜单字简称与八宅游年标准名称的静态常量对照字典。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly string[] EightMansionsStarsName</code></pre>
+    <pre><code class="lang-csharp hljs">public static readonly Dictionary&lt;string, string&gt; EightHouseStarNameDC</code></pre>
   </div>
 
 
@@ -177,8 +182,9 @@ NineStar 类
 
   <h4 class="section">字段值</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>包含 8 组映射关系，实现从星曜名（Key）到游年名（Value）的高效 O(1) 数字化转换。</p>
+</dd>
   </dl>
 
 
@@ -190,17 +196,17 @@ NineStar 类
 
 
 
-  <h3 id="CompassEx_Gua_NineStar_EightStarsFullName" data-uid="CompassEx.Gua.NineStar.EightStarsFullName">
-  EightStarsFullName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  <h3 id="CompassEx_Gua_NineStar_EightStarFullNames" data-uid="CompassEx.Gua.NineStar.EightStarFullNames">
+  EightStarFullNames
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L87"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>翻卦九星完整名称序列（实质是八星）,默认是山法序列（水法不一样）</p>
+  <div class="markdown level1 summary"><p>翻卦理气核心：游年九星（实质为八星）的完整名称常量序列。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly string[] EightStarsFullName</code></pre>
+    <pre><code class="lang-csharp hljs">public static readonly string[] EightStarFullNames</code></pre>
   </div>
 
 
@@ -209,7 +215,8 @@ NineStar 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd></dd>
+    <dd><p>默认遵循山法/龙法正序排列：辅弼、贪狼、巨门、禄存、文曲、廉贞、武曲、破军。（水法通过外部映射数组进行变换）。</p>
+</dd>
   </dl>
 
 
@@ -221,17 +228,17 @@ NineStar 类
 
 
 
-  <h3 id="CompassEx_Gua_NineStar_EightStarsName" data-uid="CompassEx.Gua.NineStar.EightStarsName">
-  EightStarsName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  <h3 id="CompassEx_Gua_NineStar_EightStarNames" data-uid="CompassEx.Gua.NineStar.EightStarNames">
+  EightStarNames
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L95"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>翻卦九星名称序列（实质是八星）,默认是山法序列（水法不一样）</p>
+  <div class="markdown level1 summary"><p>翻卦理气核心：游年九星（实质为八星）的单字简称常量序列。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly string[] EightStarsName</code></pre>
+    <pre><code class="lang-csharp hljs">public static readonly string[] EightStarNames</code></pre>
   </div>
 
 
@@ -240,7 +247,8 @@ NineStar 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd></dd>
+    <dd><p>默认遵循山法/龙法正序排列：辅、贪、巨、禄、文、廉、武、破。（水法通过外部映射数组进行变换）。</p>
+</dd>
   </dl>
 
 
@@ -254,15 +262,15 @@ NineStar 类
 
   <h3 id="CompassEx_Gua_NineStar_NineStarFullNames" data-uid="CompassEx.Gua.NineStar.NineStarFullNames">
   NineStarFullNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L67"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>後天八卦九星（北斗九星）的完整中文名稱。</p>
+  <div class="markdown level1 summary"><p>后天八卦九星（北斗九星）的完整中文名称常量序列。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly string[] NineStarFullNames</code></pre>
+    <pre><code class="lang-csharp hljs">public static readonly string[] NineStarFullNames</code></pre>
   </div>
 
 
@@ -271,7 +279,7 @@ NineStar 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd><p>包含 9 個元素的字符串數組，順序嚴格對應北斗九星：貪狼、巨門、祿存、文曲、廉貞、武曲、破軍、左輔、右弼。</p>
+    <dd><p>包含 9 个元素的字符串数组，顺序严格对应北斗九星：贪狼、巨门、禄存、文曲、廉贞、武曲、破军、左辅、右弼。</p>
 </dd>
   </dl>
 
@@ -280,7 +288,7 @@ NineStar 类
 
 
   <h4 class="section" id="CompassEx_Gua_NineStar_NineStarFullNames_remarks">备注</h4>
-  <div class="markdown level1 remarks"><p>本數組用於需要完整顯示星曜名稱的場景（如風水報告、羅盤盤面顯示）。</p>
+  <div class="markdown level1 remarks"><p>本数组主要用于需要全称显化输出的场景（如风水综合报告、高精度罗盘盘面文字渲染）。</p>
 </div>
 
 
@@ -295,15 +303,15 @@ NineStar 类
 
   <h3 id="CompassEx_Gua_NineStar_NineStarNames" data-uid="CompassEx.Gua.NineStar.NineStarNames">
   NineStarNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L79"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>後天八卦九星（北斗九星）的單字簡稱。</p>
+  <div class="markdown level1 summary"><p>后天八卦九星（北斗九星）的单字简称常量序列。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly string[] NineStarNames</code></pre>
+    <pre><code class="lang-csharp hljs">public static readonly string[] NineStarNames</code></pre>
   </div>
 
 
@@ -312,7 +320,7 @@ NineStar 类
   <h4 class="section">字段值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd><p>包含 9 個元素的字符串數組，順序與 <a class="xref" href="CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_NineStarFullNames">NineStarFullNames</a> 完全一致：貪、巨、祿、文、廉、武、破、輔、弼。</p>
+    <dd><p>包含 9 个元素的字符串数组，顺序与 <a class="xref" href="CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_NineStarFullNames">NineStarFullNames</a> 完全一致：贪、巨、禄、文、廉、武、破、辅、弼。</p>
 </dd>
   </dl>
 
@@ -321,7 +329,7 @@ NineStar 类
 
 
   <h4 class="section" id="CompassEx_Gua_NineStar_NineStarNames_remarks">备注</h4>
-  <div class="markdown level1 remarks"><p>主要用於排版空間受限的場景，例如簡化版圖表、緊湊型排盤界面或終端日誌輸出。</p>
+  <div class="markdown level1 remarks"><p>主要用于排版空间受限、UI 宫格紧凑型界面显示或调试终端的日志输出。</p>
 </div>
 
 
@@ -337,18 +345,19 @@ NineStar 类
 </h2>
 
 
-  <a id="CompassEx_Gua_NineStar_Index_" data-uid="CompassEx.Gua.NineStar.Index*"></a>
+  <a id="CompassEx_Gua_NineStar_EightHouseStarName_" data-uid="CompassEx.Gua.NineStar.EightHouseStarName*"></a>
 
-  <h3 id="CompassEx_Gua_NineStar_Index" data-uid="CompassEx.Gua.NineStar.Index">
-  Index
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  <h3 id="CompassEx_Gua_NineStar_EightHouseStarName" data-uid="CompassEx.Gua.NineStar.EightHouseStarName">
+  EightHouseStarName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L131"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>获取当前星曜对应的八宅游年标准名称（如：伏位、生气）。</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Index { set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string? EightHouseStarName { get; }</code></pre>
   </div>
 
 
@@ -357,8 +366,9 @@ NineStar 类
 
   <h4 class="section">属性值</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>当星曜类型为 <a class="xref" href="CompassEx.Gua.NineStarType.html#CompassEx_Gua_NineStarType_AfterGuaNineStar">AfterGuaNineStar</a> 时，该值默认为空字符串 <code>&quot;&quot;</code>。</p>
+</dd>
   </dl>
 
 
@@ -368,19 +378,19 @@ NineStar 类
 
 
 
-  <a id="CompassEx_Gua_NineStar_NineStarFullName_" data-uid="CompassEx.Gua.NineStar.NineStarFullName*"></a>
+  <a id="CompassEx_Gua_NineStar_FullName_" data-uid="CompassEx.Gua.NineStar.FullName*"></a>
 
-  <h3 id="CompassEx_Gua_NineStar_NineStarFullName" data-uid="CompassEx.Gua.NineStar.NineStarFullName">
-  NineStarFullName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  <h3 id="CompassEx_Gua_NineStar_FullName" data-uid="CompassEx.Gua.NineStar.FullName">
+  FullName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L147"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>後天八卦九星（北斗九星）的完整中文名稱。</p>
+  <div class="markdown level1 summary"><p>获取当前星曜的完整中文名称（如：“贪狼”、“巨门”）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? NineStarFullName { set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string? FullName { get; }</code></pre>
   </div>
 
 
@@ -396,23 +406,62 @@ NineStar 类
 
 
 
+  <h4 class="section" id="CompassEx_Gua_NineStar_FullName_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>经过严谨重构，已彻底修正因 Getter/Setter 权限写反导致的 JSON 序列化蒸发 BUG，可完美、完整地导出至外部接口。</p>
+</div>
 
 
 
 
-  <a id="CompassEx_Gua_NineStar_NineStarName_" data-uid="CompassEx.Gua.NineStar.NineStarName*"></a>
+  <a id="CompassEx_Gua_NineStar_IsGood_" data-uid="CompassEx.Gua.NineStar.IsGood*"></a>
 
-  <h3 id="CompassEx_Gua_NineStar_NineStarName" data-uid="CompassEx.Gua.NineStar.NineStarName">
-  NineStarName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  <h3 id="CompassEx_Gua_NineStar_IsGood" data-uid="CompassEx.Gua.NineStar.IsGood">
+  IsGood
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L123"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>後天八卦九星（北斗九星）的简称。</p>
+  <div class="markdown level1 summary"><p>核心数理逻辑判定：基于传统的“四吉四凶”原则，快速验证当前星曜是否属于“四吉星”（辅、贪、巨、武）。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? NineStarName { set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool IsGood { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>若属于伏位、生气、天医、延年对应的星曜则返回 <code>true</code>；若属于祸害、六煞、五鬼、绝命对应的星曜则返回 <code>false</code>。</p>
+</dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="CompassEx_Gua_NineStar_IsGood_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>本属性采用高效的字串包含式（<code>IndexOf</code>）底层无感算法，规避了繁琐的逻辑分支判定，专门为高并发排盘渲染和外部 JavaScript 沙箱过滤提供纯净、无偏见的布尔开关（IsGood）。</p>
+</div>
+
+
+
+
+  <a id="CompassEx_Gua_NineStar_Name_" data-uid="CompassEx.Gua.NineStar.Name*"></a>
+
+  <h3 id="CompassEx_Gua_NineStar_Name" data-uid="CompassEx.Gua.NineStar.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L139"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获取当前星曜的单字简称（如：“贪”、“巨”）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Name { get; }</code></pre>
   </div>
 
 
@@ -428,7 +477,136 @@ NineStar 类
 
 
 
+  <h4 class="section" id="CompassEx_Gua_NineStar_Name_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>该属性对外提供全局只读（get）权限，写权限（set）锁死在类内部与工厂方法中，确保核心盘面数据不被外部代码任意篡改。</p>
+</div>
 
+
+
+
+  <a id="CompassEx_Gua_NineStar_Type_" data-uid="CompassEx.Gua.NineStar.Type*"></a>
+
+  <h3 id="CompassEx_Gua_NineStar_Type" data-uid="CompassEx.Gua.NineStar.Type">
+  Type
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获取当前星曜实例的数理分类类型 (<a class="xref" href="CompassEx.Gua.NineStarType.html">NineStarType</a>)。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NineStarType Type { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Gua.NineStarType.html">NineStarType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">方法
+</h2>
+
+
+  <a id="CompassEx_Gua_NineStar_GetGuaFlipEightStar_" data-uid="CompassEx.Gua.NineStar.GetGuaFlipEightStar*"></a>
+
+  <h3 id="CompassEx_Gua_NineStar_GetGuaFlipEightStar_System_Int32_" data-uid="CompassEx.Gua.NineStar.GetGuaFlipEightStar(System.Int32)">
+  GetGuaFlipEightStar(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L174"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>静态工厂方法：根据翻卦掌诀产生的步进数字化索引，快速构建并返回对应的翻卦九星（实际为游年八星）实例。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static NineStar GetGuaFlipEightStar(int Index)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>Index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>基于翻卦轨迹数组转换后的星曜逻辑索引（有效范围：0 到 7）。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Gua.NineStar.html">NineStar</a></dt>
+    <dd><p>返回包含完整翻卦配星与八宅游年映射信息的 <a class="xref" href="CompassEx.Gua.NineStar.html">NineStar</a> 独立对象。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">异常</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>当传入的索引超出 0-7 的数组边界时抛出。</p>
+</dd>
+  </dl>
+
+
+
+  <a id="CompassEx_Gua_NineStar_GetNineStarByAfterGua_" data-uid="CompassEx.Gua.NineStar.GetNineStarByAfterGua*"></a>
+
+  <h3 id="CompassEx_Gua_NineStar_GetNineStarByAfterGua_CompassEx_Gua_GuaSubClass_" data-uid="CompassEx.Gua.NineStar.GetNineStarByAfterGua(CompassEx.Gua.GuaSubClass)">
+  GetNineStarByAfterGua(GuaSubClass)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L155"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>静态工厂方法：根据传入的后天八卦基础单卦对象，快速构建并返回其对应的后天八卦九星实例。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static NineStar GetNineStarByAfterGua(GuaSubClass gs)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>gs</code> <a class="xref" href="CompassEx.Gua.GuaSubClass.html">GuaSubClass</a></dt>
+    <dd><p>后天八卦单卦实例对象 (<a class="xref" href="CompassEx.Gua.GuaSubClass.html">GuaSubClass</a>)。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Gua.NineStar.html">NineStar</a></dt>
+    <dd><p>返回包含后天八卦九星元数据信息的 <a class="xref" href="CompassEx.Gua.NineStar.html">NineStar</a> 独立对象。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">异常</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>当传入的单卦对象为 null 时抛出。</p>
+</dd>
+  </dl>
 
 
 
@@ -436,7 +614,7 @@ NineStar 类
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L28" class="edit-link">编辑本文</a>
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NineStar.cs/#L55" class="edit-link">编辑本文</a>
         </div>
 
 

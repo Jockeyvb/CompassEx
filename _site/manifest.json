@@ -338,6 +338,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Gua.GuaFlip.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Gua.GuaFlip.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Gua.GuaFlip",
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.GuaFlip.yml\" sourcestartlinenumber=\"1\">黄石公翻卦掌与辅星翻卦水法核心数字化推导类。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx.Gua.GuaFlipMethod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx.Gua.GuaFlipMethod.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Gua.GuaFlipMethod",
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.GuaFlipMethod.yml\" sourcestartlinenumber=\"1\">翻卦九星法：风水三大核心勘测对象（龙、山、水）的方法分类。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/CompassEx.Gua.GuaQi.yml",
       "output": {
         ".html": {
@@ -376,7 +404,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "CompassEx.Gua.INaJiaResult",
-      "Summary": "<p sourcefile=\"api/CompassEx.Gua.INaJiaResult.yml\" sourcestartlinenumber=\"1\">京房纳甲结果类,包括：64卦，天干类，地支类\n64卦类用于六爻预测学的纳甲推演（预测），天干类，地支类用于64卦装卦、排盘、起卦，天机出卦法也使用</p>\n"
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.INaJiaResult.yml\" sourcestartlinenumber=\"1\">统一的纳甲推演结果行为契约接口（用于泛型架构的强类型约束）。</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -390,7 +418,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "CompassEx.Gua.NaJia<TResult>",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.NaJia-1.yml\" sourcestartlinenumber=\"1\">泛型纳甲推演核心发动机（处理类）。</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -404,7 +432,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "CompassEx.Gua.NaJiaJFResult",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.NaJiaJFResult.yml\" sourcestartlinenumber=\"1\">京房纳甲推演结果结构体。包含完整的六爻复卦、六亲及干支序列。</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -418,7 +446,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "CompassEx.Gua.NaJiaType",
-      "Summary": "<p sourcefile=\"api/CompassEx.Gua.NaJiaType.yml\" sourcestartlinenumber=\"1\">纳甲类型</p>\n"
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.NaJiaType.yml\" sourcestartlinenumber=\"1\">易学理气核心：纳甲推演体系分类枚举。</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -432,7 +460,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "CompassEx.Gua.NaJiaYGResult",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.NaJiaYGResult.yml\" sourcestartlinenumber=\"1\">杨公纳甲推演结果结构体。包含单卦、归化天干及对应的地支宫位序列。</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -446,7 +474,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "CompassEx.Gua.NineStar",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.NineStar.yml\" sourcestartlinenumber=\"1\">周易数理与风水理气核心：九星（游年八星/北斗九星）的数据抽象模型与静态工厂类。</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -460,7 +488,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "CompassEx.Gua.NineStarType",
-      "Summary": "<p sourcefile=\"api/CompassEx.Gua.NineStarType.yml\" sourcestartlinenumber=\"1\">九星类型</p>\n"
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.NineStarType.yml\" sourcestartlinenumber=\"1\">勘测系统中的九星模型分类（定义类别实例化时采用的星曜数理体系）。</p>\n"
     },
     {
       "type": "ManagedReference",

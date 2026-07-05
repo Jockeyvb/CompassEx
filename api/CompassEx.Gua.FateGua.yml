@@ -5,7 +5,9 @@ items:
   id: FateGua
   parent: CompassEx.Gua
   children:
-  - CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass)
+  - CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass,System.Int32[])
+  - CompassEx.Gua.FateGua.BirthTime
+  - CompassEx.Gua.FateGua.FateYearSkyLoc
   - CompassEx.Gua.FateGua.GetFateGua(System.DateTime,System.String)
   - CompassEx.Gua.FateGua.GuaList
   - CompassEx.Gua.FateGua.GuaSub
@@ -245,16 +247,78 @@ items:
       type: System.String
     content.vb: Public Property Message As String
   overload: CompassEx.Gua.FateGua.Message*
-- uid: CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass)
-  commentId: M:CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass)
-  id: '#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass)'
+- uid: CompassEx.Gua.FateGua.FateYearSkyLoc
+  commentId: P:CompassEx.Gua.FateGua.FateYearSkyLoc
+  id: FateYearSkyLoc
   parent: CompassEx.Gua.FateGua
   langs:
   - csharp
   - vb
-  name: FateGua(DateTime, string, GuaClass)
-  nameWithType: FateGua.FateGua(DateTime, string, GuaClass)
-  fullName: CompassEx.Gua.FateGua.FateGua(System.DateTime, string, CompassEx.Gua.GuaClass)
+  name: FateYearSkyLoc
+  nameWithType: FateGua.FateYearSkyLoc
+  fullName: CompassEx.Gua.FateGua.FateYearSkyLoc
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/FateGuo.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FateYearSkyLoc
+    path: CompassEx/Gua/FateGuo.cs
+    startLine: 65
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 命庚干支
+  example: []
+  syntax:
+    content: public SkyLoc FateYearSkyLoc { get; }
+    parameters: []
+    return:
+      type: CompassEx.Comm.SkyLoc
+    content.vb: Public Property FateYearSkyLoc As SkyLoc
+  overload: CompassEx.Gua.FateGua.FateYearSkyLoc*
+- uid: CompassEx.Gua.FateGua.BirthTime
+  commentId: P:CompassEx.Gua.FateGua.BirthTime
+  id: BirthTime
+  parent: CompassEx.Gua.FateGua
+  langs:
+  - csharp
+  - vb
+  name: BirthTime
+  nameWithType: FateGua.BirthTime
+  fullName: CompassEx.Gua.FateGua.BirthTime
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/FateGuo.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: BirthTime
+    path: CompassEx/Gua/FateGuo.cs
+    startLine: 70
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 出生时间(公历）
+  example: []
+  syntax:
+    content: public DateTime BirthTime { get; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property BirthTime As Date
+  overload: CompassEx.Gua.FateGua.BirthTime*
+- uid: CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass,System.Int32[])
+  commentId: M:CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass,System.Int32[])
+  id: '#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass,System.Int32[])'
+  parent: CompassEx.Gua.FateGua
+  langs:
+  - csharp
+  - vb
+  name: FateGua(DateTime, string, GuaClass, params int[])
+  nameWithType: FateGua.FateGua(DateTime, string, GuaClass, params int[])
+  fullName: CompassEx.Gua.FateGua.FateGua(System.DateTime, string, CompassEx.Gua.GuaClass, params int[])
   type: Constructor
   source:
     remote:
@@ -263,14 +327,14 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Gua/FateGuo.cs
-    startLine: 74
+    startLine: 79
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
   summary: 构造函数，输入出生日期和性别，计算命卦，并获得相关的入卦和出卦等信息（包括计算立春岁数）
   example: []
   syntax:
-    content: public FateGua(DateTime d, string Sex, GuaClass ToGua8)
+    content: public FateGua(DateTime d, string Sex, GuaClass ToGua8, params int[] iYaoPos)
     parameters:
     - id: d
       type: System.DateTime
@@ -281,11 +345,14 @@ items:
     - id: ToGua8
       type: CompassEx.Gua.GuaClass
       description: 罗盘中的24山（向）所属的卦宫位置（后天）
-    content.vb: Public Sub New(d As Date, Sex As String, ToGua8 As GuaClass)
+    - id: iYaoPos
+      type: System.Int32[]
+      description: 临爻（可选最多2爻，因罗盘上抽爻最多能抽2爻），如：[4,5]，则临是5爻和上爻
+    content.vb: Public Sub New(d As Date, Sex As String, ToGua8 As GuaClass, ParamArray iYaoPos As Integer())
   overload: CompassEx.Gua.FateGua.#ctor*
-  nameWithType.vb: FateGua.New(Date, String, GuaClass)
-  fullName.vb: CompassEx.Gua.FateGua.New(Date, String, CompassEx.Gua.GuaClass)
-  name.vb: New(Date, String, GuaClass)
+  nameWithType.vb: FateGua.New(Date, String, GuaClass, ParamArray Integer())
+  fullName.vb: CompassEx.Gua.FateGua.New(Date, String, CompassEx.Gua.GuaClass, ParamArray Integer())
+  name.vb: New(Date, String, GuaClass, ParamArray Integer())
 - uid: CompassEx.Gua.FateGua.GetFateGua(System.DateTime,System.String)
   commentId: M:CompassEx.Gua.FateGua.GetFateGua(System.DateTime,System.String)
   id: GetFateGua(System.DateTime,System.String)
@@ -304,7 +371,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetFateGua
     path: CompassEx/Gua/FateGuo.cs
-    startLine: 128
+    startLine: 148
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -954,15 +1021,25 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: CompassEx.Gua.FateGua.#ctor*
-  commentId: Overload:CompassEx.Gua.FateGua.#ctor
-  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua__ctor_System_DateTime_System_String_CompassEx_Gua_GuaClass_
-  name: FateGua
-  nameWithType: FateGua.FateGua
-  fullName: CompassEx.Gua.FateGua.FateGua
-  nameWithType.vb: FateGua.New
-  fullName.vb: CompassEx.Gua.FateGua.New
-  name.vb: New
+- uid: CompassEx.Gua.FateGua.FateYearSkyLoc*
+  commentId: Overload:CompassEx.Gua.FateGua.FateYearSkyLoc
+  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_FateYearSkyLoc
+  name: FateYearSkyLoc
+  nameWithType: FateGua.FateYearSkyLoc
+  fullName: CompassEx.Gua.FateGua.FateYearSkyLoc
+- uid: CompassEx.Comm.SkyLoc
+  commentId: T:CompassEx.Comm.SkyLoc
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.SkyLoc.html
+  name: SkyLoc
+  nameWithType: SkyLoc
+  fullName: CompassEx.Comm.SkyLoc
+- uid: CompassEx.Gua.FateGua.BirthTime*
+  commentId: Overload:CompassEx.Gua.FateGua.BirthTime
+  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_BirthTime
+  name: BirthTime
+  nameWithType: FateGua.BirthTime
+  fullName: CompassEx.Gua.FateGua.BirthTime
 - uid: System.DateTime
   commentId: T:System.DateTime
   parent: System
@@ -974,6 +1051,15 @@ references:
   nameWithType.vb: Date
   fullName.vb: Date
   name.vb: Date
+- uid: CompassEx.Gua.FateGua.#ctor*
+  commentId: Overload:CompassEx.Gua.FateGua.#ctor
+  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua__ctor_System_DateTime_System_String_CompassEx_Gua_GuaClass_System_Int32___
+  name: FateGua
+  nameWithType: FateGua.FateGua
+  fullName: CompassEx.Gua.FateGua.FateGua
+  nameWithType.vb: FateGua.New
+  fullName.vb: CompassEx.Gua.FateGua.New
+  name.vb: New
 - uid: CompassEx.Gua.GuaClass
   commentId: T:CompassEx.Gua.GuaClass
   parent: CompassEx.Gua
@@ -981,6 +1067,29 @@ references:
   name: GuaClass
   nameWithType: GuaClass
   fullName: CompassEx.Gua.GuaClass
+- uid: System.Int32[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int[]
+  nameWithType: int[]
+  fullName: int[]
+  nameWithType.vb: Integer()
+  fullName.vb: Integer()
+  name.vb: Integer()
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: (
+  - name: )
 - uid: CompassEx.Gua.FateGua.GetFateGua*
   commentId: Overload:CompassEx.Gua.FateGua.GetFateGua
   href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_GetFateGua_System_DateTime_System_String_

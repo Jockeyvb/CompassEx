@@ -5,10 +5,11 @@ items:
   id: NaJia`1
   parent: CompassEx.Gua
   children:
+  - CompassEx.Gua.NaJia`1.#ctor(CompassEx.Gua.GuaClass)
+  - CompassEx.Gua.NaJia`1.#ctor(CompassEx.Gua.GuaSubClass)
   - CompassEx.Gua.NaJia`1.CreateJF(CompassEx.Gua.GuaClass)
   - CompassEx.Gua.NaJia`1.CreateYG(CompassEx.Gua.GuaSubClass)
   - CompassEx.Gua.NaJia`1.Execute
-  - CompassEx.Gua.NaJia`1.Type
   langs:
   - csharp
   - vb
@@ -23,14 +24,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: NaJia
     path: CompassEx/Gua/NaJia.cs
-    startLine: 80
+    startLine: 136
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
+  summary: 泛型纳甲推演核心发动机（处理类）。
+  remarks: >-
+    本类采用控制反转与静态工厂设计模式，将繁复的京房、杨公装卦推演逻辑封装于内部。
+
+    对外提供高内聚的统一出口方法 <xref href="CompassEx.Gua.NaJia%601.Execute" data-throw-if-not-resolved="false"></xref>，完美支持动态扩充与高效计算。
+  example: []
   syntax:
     content: 'public class NaJia<TResult> where TResult : struct, INaJiaResult'
     typeParameters:
     - id: TResult
+      description: 必须是实现了 <xref href="CompassEx.Gua.INaJiaResult" data-throw-if-not-resolved="false"></xref> 接口的结构体类型。
     content.vb: Public Class NaJia(Of TResult As {Structure, INaJiaResult})
   inheritance:
   - System.Object
@@ -47,37 +55,84 @@ items:
   nameWithType.vb: NaJia(Of TResult)
   fullName.vb: CompassEx.Gua.NaJia(Of TResult)
   name.vb: NaJia(Of TResult)
-- uid: CompassEx.Gua.NaJia`1.Type
-  commentId: P:CompassEx.Gua.NaJia`1.Type
-  id: Type
+- uid: CompassEx.Gua.NaJia`1.#ctor(CompassEx.Gua.GuaClass)
+  commentId: M:CompassEx.Gua.NaJia`1.#ctor(CompassEx.Gua.GuaClass)
+  id: '#ctor(CompassEx.Gua.GuaClass)'
   parent: CompassEx.Gua.NaJia`1
   langs:
   - csharp
   - vb
-  name: Type
-  nameWithType: NaJia<TResult>.Type
-  fullName: CompassEx.Gua.NaJia<TResult>.Type
-  type: Property
+  name: NaJia(GuaClass)
+  nameWithType: NaJia<TResult>.NaJia(GuaClass)
+  fullName: CompassEx.Gua.NaJia<TResult>.NaJia(CompassEx.Gua.GuaClass)
+  type: Constructor
   source:
     remote:
       path: CompassEx/Gua/NaJia.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: Type
+    id: .ctor
     path: CompassEx/Gua/NaJia.cs
-    startLine: 101
+    startLine: 191
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
+  summary: 初始化 <xref href="CompassEx.Gua.NaJia%601" data-throw-if-not-resolved="false"></xref> 类的新实例（供京房纳甲静态工厂调用）。
+  example: []
   syntax:
-    content: public NaJiaType Type { get; }
-    parameters: []
-    return:
-      type: CompassEx.Gua.NaJiaType
-    content.vb: Public Property Type As NaJiaType
-  overload: CompassEx.Gua.NaJia`1.Type*
-  nameWithType.vb: NaJia(Of TResult).Type
-  fullName.vb: CompassEx.Gua.NaJia(Of TResult).Type
+    content: public NaJia(GuaClass g)
+    parameters:
+    - id: g
+      type: CompassEx.Gua.GuaClass
+      description: 传入的六爻复卦别卦实例（<xref href="CompassEx.Gua.GuaClass" data-throw-if-not-resolved="false"></xref>）。
+    content.vb: Public Sub New(g As GuaClass)
+  overload: CompassEx.Gua.NaJia`1.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: 当传入的复卦数据为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> 时抛出。
+  nameWithType.vb: NaJia(Of TResult).New(GuaClass)
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).New(CompassEx.Gua.GuaClass)
+  name.vb: New(GuaClass)
+- uid: CompassEx.Gua.NaJia`1.#ctor(CompassEx.Gua.GuaSubClass)
+  commentId: M:CompassEx.Gua.NaJia`1.#ctor(CompassEx.Gua.GuaSubClass)
+  id: '#ctor(CompassEx.Gua.GuaSubClass)'
+  parent: CompassEx.Gua.NaJia`1
+  langs:
+  - csharp
+  - vb
+  name: NaJia(GuaSubClass)
+  nameWithType: NaJia<TResult>.NaJia(GuaSubClass)
+  fullName: CompassEx.Gua.NaJia<TResult>.NaJia(CompassEx.Gua.GuaSubClass)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Gua/NaJia.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Gua/NaJia.cs
+    startLine: 202
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 初始化 <xref href="CompassEx.Gua.NaJia%601" data-throw-if-not-resolved="false"></xref> 类的新实例（供杨公纳甲静态工厂调用）。
+  example: []
+  syntax:
+    content: public NaJia(GuaSubClass gs)
+    parameters:
+    - id: gs
+      type: CompassEx.Gua.GuaSubClass
+      description: 传入的后天八卦单卦实例（<xref href="CompassEx.Gua.GuaSubClass" data-throw-if-not-resolved="false"></xref>）。
+    content.vb: Public Sub New(gs As GuaSubClass)
+  overload: CompassEx.Gua.NaJia`1.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: 当传入的单卦数据为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> 时抛出。
+  nameWithType.vb: NaJia(Of TResult).New(GuaSubClass)
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).New(CompassEx.Gua.GuaSubClass)
+  name.vb: New(GuaSubClass)
 - uid: CompassEx.Gua.NaJia`1.Execute
   commentId: M:CompassEx.Gua.NaJia`1.Execute
   id: Execute
@@ -96,14 +151,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Execute
     path: CompassEx/Gua/NaJia.cs
-    startLine: 139
+    startLine: 217
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
+  summary: 执行全盘纳甲核心数理逻辑推演（统一的总出口计算方法）。
+  remarks: 本方法内部通过类型强转解包原始数据。对于杨公纳甲，通过提取单卦名称（<xref href="CompassEx.Gua.GuaSubClass.Name" data-throw-if-not-resolved="false"></xref>）检索静态数理字典，动态解包、转换并装配完整的干支模型实体。
+  example: []
   syntax:
     content: public TResult? Execute()
     return:
       type: System.Nullable{{TResult}}
+      description: 返回计算完成后对应的泛型纳甲结果结构体；若体系类型未知则返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
     content.vb: Public Function Execute() As TResult?
   overload: CompassEx.Gua.NaJia`1.Execute*
   nameWithType.vb: NaJia(Of TResult).Execute()
@@ -126,21 +185,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CreateJF
     path: CompassEx/Gua/NaJia.cs
-    startLine: 169
+    startLine: 265
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 京房纳甲的静态工厂方法，输入复卦对象，返回纳甲结果。
+  summary: 京房纳甲的静态工厂创建方法。输入六爻复卦，直接推导并返回完整的京房纳甲结果。
   example: []
   syntax:
     content: public static NaJiaJFResult? CreateJF(GuaClass g)
     parameters:
     - id: g
       type: CompassEx.Gua.GuaClass
-      description: ''
+      description: 需要计算的六爻复卦别卦实例（<xref href="CompassEx.Gua.GuaClass" data-throw-if-not-resolved="false"></xref>）。
     return:
       type: System.Nullable{CompassEx.Gua.NaJiaJFResult}
-      description: ''
+      description: 返回包含复卦与六爻干支集合的 <xref href="CompassEx.Gua.NaJiaJFResult" data-throw-if-not-resolved="false"></xref> 结构体数据。
     content.vb: Public Shared Function CreateJF(g As GuaClass) As NaJiaJFResult?
   overload: CompassEx.Gua.NaJia`1.CreateJF*
   nameWithType.vb: NaJia(Of TResult).CreateJF(GuaClass)
@@ -163,26 +222,53 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CreateYG
     path: CompassEx/Gua/NaJia.cs
-    startLine: 178
+    startLine: 277
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 杨公纳甲的静态工厂方法，输入后天八卦的单卦对象，返回纳甲结果。
+  summary: 杨公纳甲的静态工厂创建方法。输入后天单卦，直接推导并返回完整的杨公纳甲结果。
   example: []
   syntax:
     content: public static NaJiaYGResult? CreateYG(GuaSubClass gs)
     parameters:
     - id: gs
       type: CompassEx.Gua.GuaSubClass
-      description: ''
+      description: 需要计算的后天八卦单卦实例（<xref href="CompassEx.Gua.GuaSubClass" data-throw-if-not-resolved="false"></xref>）。
     return:
       type: System.Nullable{CompassEx.Gua.NaJiaYGResult}
-      description: ''
+      description: 返回包含单卦、天干及地支宫位的 <xref href="CompassEx.Gua.NaJiaYGResult" data-throw-if-not-resolved="false"></xref> 结构体数据。
     content.vb: Public Shared Function CreateYG(gs As GuaSubClass) As NaJiaYGResult?
   overload: CompassEx.Gua.NaJia`1.CreateYG*
   nameWithType.vb: NaJia(Of TResult).CreateYG(GuaSubClass)
   fullName.vb: CompassEx.Gua.NaJia(Of TResult).CreateYG(CompassEx.Gua.GuaSubClass)
 references:
+- uid: CompassEx.Gua.INaJiaResult
+  commentId: T:CompassEx.Gua.INaJiaResult
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.INaJiaResult.html
+  name: INaJiaResult
+  nameWithType: INaJiaResult
+  fullName: CompassEx.Gua.INaJiaResult
+- uid: CompassEx.Gua.NaJia`1.Execute
+  commentId: M:CompassEx.Gua.NaJia`1.Execute
+  href: CompassEx.Gua.NaJia-1.html#CompassEx_Gua_NaJia_1_Execute
+  name: Execute()
+  nameWithType: NaJia<TResult>.Execute()
+  fullName: CompassEx.Gua.NaJia<TResult>.Execute()
+  nameWithType.vb: NaJia(Of TResult).Execute()
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).Execute()
+  spec.csharp:
+  - uid: CompassEx.Gua.NaJia`1.Execute
+    name: Execute
+    href: CompassEx.Gua.NaJia-1.html#CompassEx_Gua_NaJia_1_Execute
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Gua.NaJia`1.Execute
+    name: Execute
+    href: CompassEx.Gua.NaJia-1.html#CompassEx_Gua_NaJia_1_Execute
+  - name: (
+  - name: )
 - uid: CompassEx.Gua
   commentId: N:CompassEx.Gua
   href: CompassEx.html
@@ -583,21 +669,67 @@ references:
   - uid: CompassEx.Comm
     name: Comm
     href: CompassEx.Comm.html
-- uid: CompassEx.Gua.NaJia`1.Type*
-  commentId: Overload:CompassEx.Gua.NaJia`1.Type
-  href: CompassEx.Gua.NaJia-1.html#CompassEx_Gua_NaJia_1_Type
-  name: Type
-  nameWithType: NaJia<TResult>.Type
-  fullName: CompassEx.Gua.NaJia<TResult>.Type
-  nameWithType.vb: NaJia(Of TResult).Type
-  fullName.vb: CompassEx.Gua.NaJia(Of TResult).Type
-- uid: CompassEx.Gua.NaJiaType
-  commentId: T:CompassEx.Gua.NaJiaType
+- uid: CompassEx.Gua.NaJia`1
+  commentId: T:CompassEx.Gua.NaJia`1
+  href: CompassEx.Gua.NaJia-1.html
+  name: NaJia<TResult>
+  nameWithType: NaJia<TResult>
+  fullName: CompassEx.Gua.NaJia<TResult>
+  nameWithType.vb: NaJia(Of TResult)
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult)
+  name.vb: NaJia(Of TResult)
+  spec.csharp:
+  - uid: CompassEx.Gua.NaJia`1
+    name: NaJia
+    href: CompassEx.Gua.NaJia-1.html
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: CompassEx.Gua.NaJia`1
+    name: NaJia
+    href: CompassEx.Gua.NaJia-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: CompassEx.Gua.GuaClass
+  commentId: T:CompassEx.Gua.GuaClass
   parent: CompassEx.Gua
-  href: CompassEx.Gua.NaJiaType.html
-  name: NaJiaType
-  nameWithType: NaJiaType
-  fullName: CompassEx.Gua.NaJiaType
+  href: CompassEx.Gua.GuaClass.html
+  name: GuaClass
+  nameWithType: GuaClass
+  fullName: CompassEx.Gua.GuaClass
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: CompassEx.Gua.NaJia`1.#ctor*
+  commentId: Overload:CompassEx.Gua.NaJia`1.#ctor
+  href: CompassEx.Gua.NaJia-1.html#CompassEx_Gua_NaJia_1__ctor_CompassEx_Gua_GuaClass_
+  name: NaJia
+  nameWithType: NaJia<TResult>.NaJia
+  fullName: CompassEx.Gua.NaJia<TResult>.NaJia
+  nameWithType.vb: NaJia(Of TResult).New
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).New
+  name.vb: New
+- uid: CompassEx.Gua.GuaSubClass
+  commentId: T:CompassEx.Gua.GuaSubClass
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.GuaSubClass.html
+  name: GuaSubClass
+  nameWithType: GuaSubClass
+  fullName: CompassEx.Gua.GuaSubClass
+- uid: CompassEx.Gua.GuaSubClass.Name
+  commentId: P:CompassEx.Gua.GuaSubClass.Name
+  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_Name
+  name: Name
+  nameWithType: GuaSubClass.Name
+  fullName: CompassEx.Gua.GuaSubClass.Name
 - uid: CompassEx.Gua.NaJia`1.Execute*
   commentId: Overload:CompassEx.Gua.NaJia`1.Execute
   href: CompassEx.Gua.NaJia-1.html#CompassEx_Gua_NaJia_1_Execute
@@ -647,6 +779,12 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: CompassEx.Gua.NaJiaJFResult
+  commentId: T:CompassEx.Gua.NaJiaJFResult
+  href: CompassEx.Gua.NaJiaJFResult.html
+  name: NaJiaJFResult
+  nameWithType: NaJiaJFResult
+  fullName: CompassEx.Gua.NaJiaJFResult
 - uid: CompassEx.Gua.NaJia`1.CreateJF*
   commentId: Overload:CompassEx.Gua.NaJia`1.CreateJF
   href: CompassEx.Gua.NaJia-1.html#CompassEx_Gua_NaJia_1_CreateJF_CompassEx_Gua_GuaClass_
@@ -655,13 +793,6 @@ references:
   fullName: CompassEx.Gua.NaJia<TResult>.CreateJF
   nameWithType.vb: NaJia(Of TResult).CreateJF
   fullName.vb: CompassEx.Gua.NaJia(Of TResult).CreateJF
-- uid: CompassEx.Gua.GuaClass
-  commentId: T:CompassEx.Gua.GuaClass
-  parent: CompassEx.Gua
-  href: CompassEx.Gua.GuaClass.html
-  name: GuaClass
-  nameWithType: GuaClass
-  fullName: CompassEx.Gua.GuaClass
 - uid: System.Nullable{CompassEx.Gua.NaJiaJFResult}
   commentId: T:System.Nullable{CompassEx.Gua.NaJiaJFResult}
   parent: System
@@ -680,6 +811,12 @@ references:
     name: NaJiaJFResult
     href: CompassEx.Gua.NaJiaJFResult.html
   - name: '?'
+- uid: CompassEx.Gua.NaJiaYGResult
+  commentId: T:CompassEx.Gua.NaJiaYGResult
+  href: CompassEx.Gua.NaJiaYGResult.html
+  name: NaJiaYGResult
+  nameWithType: NaJiaYGResult
+  fullName: CompassEx.Gua.NaJiaYGResult
 - uid: CompassEx.Gua.NaJia`1.CreateYG*
   commentId: Overload:CompassEx.Gua.NaJia`1.CreateYG
   href: CompassEx.Gua.NaJia-1.html#CompassEx_Gua_NaJia_1_CreateYG_CompassEx_Gua_GuaSubClass_
@@ -688,13 +825,6 @@ references:
   fullName: CompassEx.Gua.NaJia<TResult>.CreateYG
   nameWithType.vb: NaJia(Of TResult).CreateYG
   fullName.vb: CompassEx.Gua.NaJia(Of TResult).CreateYG
-- uid: CompassEx.Gua.GuaSubClass
-  commentId: T:CompassEx.Gua.GuaSubClass
-  parent: CompassEx.Gua
-  href: CompassEx.Gua.GuaSubClass.html
-  name: GuaSubClass
-  nameWithType: GuaSubClass
-  fullName: CompassEx.Gua.GuaSubClass
 - uid: System.Nullable{CompassEx.Gua.NaJiaYGResult}
   commentId: T:System.Nullable{CompassEx.Gua.NaJiaYGResult}
   parent: System

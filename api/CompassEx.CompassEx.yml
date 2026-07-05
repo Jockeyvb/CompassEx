@@ -87,7 +87,7 @@ items:
   assemblies:
   - CompassEx
   namespace: CompassEx
-  summary: 后天八卦的单卦度数。
+  summary: 先后天八卦的单卦度数。
   example: []
   syntax:
     content: public const double GuaSubDegree = 45
@@ -503,15 +503,15 @@ items:
   summary: 获取指定先天（天盘）64 卦卦名在罗盘上对应的度数范围对象。
   example: []
   syntax:
-    content: public static CompassRangEX GetCBeforeGuaDegree(string GuaName)
+    content: public static CompassRangEX GetCBeforeGuaDegree(string Name)
     parameters:
-    - id: GuaName
+    - id: Name
       type: System.String
       description: 要查询的先天 64 卦的完整卦名。
     return:
       type: CompassEx.Comm.CompassRangEX
       description: 返回对应的 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref> 度数范围对象；若在缓存中未匹配到该卦名，则返回 <code>null</code>。
-    content.vb: Public Shared Function GetCBeforeGuaDegree(GuaName As String) As CompassRangEX
+    content.vb: Public Shared Function GetCBeforeGuaDegree(Name As String) As CompassRangEX
   overload: CompassEx.CompassEx.GetCBeforeGuaDegree*
   nameWithType.vb: CompassEx.GetCBeforeGuaDegree(String)
   fullName.vb: CompassEx.CompassEx.GetCBeforeGuaDegree(String)
@@ -541,15 +541,15 @@ items:
   summary: 获取指定后天（地盘）64 卦卦名在罗盘上对应的度数范围对象。
   example: []
   syntax:
-    content: public static CompassRangEX GetCAfterGuaDegree(string GuaName)
+    content: public static CompassRangEX GetCAfterGuaDegree(string Name)
     parameters:
-    - id: GuaName
+    - id: Name
       type: System.String
       description: 要查询的后天 64 卦的完整卦名。
     return:
       type: CompassEx.Comm.CompassRangEX
       description: 返回对应的 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref> 度数范围对象；若在缓存中未匹配到该卦名，则返回 <code>null</code>。
-    content.vb: Public Shared Function GetCAfterGuaDegree(GuaName As String) As CompassRangEX
+    content.vb: Public Shared Function GetCAfterGuaDegree(Name As String) As CompassRangEX
   overload: CompassEx.CompassEx.GetCAfterGuaDegree*
   nameWithType.vb: CompassEx.GetCAfterGuaDegree(String)
   fullName.vb: CompassEx.CompassEx.GetCAfterGuaDegree(String)
@@ -817,15 +817,15 @@ items:
     <ul><li>先天八卦以<b>艮卦</b>为度数起点，初始绝对方位设为 <code>337.5</code> 度。</li><li>根据卦名在先天序列中的索引位置，按每卦 <code>45</code> 度顺时针累加。</li><li>计算结果若超过 <code>360</code> 度，系统会自动执行闭环修正以保持在 <code>0 ~ 360</code> 度范围内。</li></ul>
   example: []
   syntax:
-    content: public static CompassRangEX GetBeforGuaSubDegree(string GuaSubName)
+    content: public static CompassRangEX GetBeforGuaSubDegree(string Name)
     parameters:
-    - id: GuaSubName
+    - id: Name
       type: System.String
       description: 先天八卦的卦名（如“乾”、“坤”等）。
     return:
       type: CompassEx.Comm.CompassRangEX
       description: 返回表示该卦起始与结束角度的 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref> 范围对象。
-    content.vb: Public Shared Function GetBeforGuaSubDegree(GuaSubName As String) As CompassRangEX
+    content.vb: Public Shared Function GetBeforGuaSubDegree(Name As String) As CompassRangEX
   overload: CompassEx.CompassEx.GetBeforGuaSubDegree*
   nameWithType.vb: CompassEx.GetBeforGuaSubDegree(String)
   fullName.vb: CompassEx.CompassEx.GetBeforGuaSubDegree(String)
@@ -925,15 +925,15 @@ items:
     <ul><li>后天八卦以<b>坎卦</b>为度数起点，初始绝对方位设为 <code>337.5</code> 度。</li><li>根据卦名在后天序列中的索引位置，按每卦 <code>45</code> 度顺时针累加。</li><li>计算结果若超过 <code>360</code> 度，系统会自动执行闭环修正以保持在 <code>0 ~ 360</code> 度范围内。</li></ul>
   example: []
   syntax:
-    content: public static CompassRangEX GetAfterGuaSubDegree(string GuaSubName)
+    content: public static CompassRangEX GetAfterGuaSubDegree(string Name)
     parameters:
-    - id: GuaSubName
+    - id: Name
       type: System.String
       description: 后天八卦的卦名（如“坎”、“坤”等）。
     return:
       type: CompassEx.Comm.CompassRangEX
       description: 返回表示该卦起始与结束角度的 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref> 范围对象。
-    content.vb: Public Shared Function GetAfterGuaSubDegree(GuaSubName As String) As CompassRangEX
+    content.vb: Public Shared Function GetAfterGuaSubDegree(Name As String) As CompassRangEX
   overload: CompassEx.CompassEx.GetAfterGuaSubDegree*
   nameWithType.vb: CompassEx.GetAfterGuaSubDegree(String)
   fullName.vb: CompassEx.CompassEx.GetAfterGuaSubDegree(String)

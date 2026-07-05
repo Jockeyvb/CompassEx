@@ -121,13 +121,7 @@ CompassRangEX 类
     <dt>继承成员</dt>
     <dd>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -223,7 +217,7 @@ var crossRange = new CompassRangEX(350, 20);</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public double End { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public double End { get; }</code></pre>
   </div>
 
 
@@ -256,7 +250,7 @@ var crossRange = new CompassRangEX(350, 20);</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public double Start { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public double Start { get; }</code></pre>
   </div>
 
 
@@ -366,6 +360,42 @@ double distance = CompassRangEX.AngleRangeValue(10, 350);</code></pre>
 
 
 
+  <a id="CompassEx_Comm_CompassRangEX_Equals_" data-uid="CompassEx.Comm.CompassRangEX.Equals*"></a>
+
+  <h3 id="CompassEx_Comm_CompassRangEX_Equals_System_Object_" data-uid="CompassEx.Comm.CompassRangEX.Equals(System.Object)">
+  Equals(object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L197"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="CompassEx_Comm_CompassRangEX_GetCompassObjByDegree_" data-uid="CompassEx.Comm.CompassRangEX.GetCompassObjByDegree*"></a>
 
   <h3 id="CompassEx_Comm_CompassRangEX_GetCompassObjByDegree" data-uid="CompassEx.Comm.CompassRangEX.GetCompassObjByDegree">
@@ -402,6 +432,37 @@ double distance = CompassRangEX.AngleRangeValue(10, 350);</code></pre>
 <p><b>⚠️ 浮点数边界容差设计：</b></p>
 <p>由于计算机浮点数运算存在微小误差，且相邻山、卦之间的交界处度数完全重合。为了确保范围判定的精准性，方法在校验结束边界时，对结束度数执行了减去 <code>0.1</code> 度的容差修正（即 <code>this.End - 0.1</code>）。这样可以有效防止因临界值粘连导致误判或多抓取相邻方位对象的问题。</p>
 </div>
+
+
+
+
+  <a id="CompassEx_Comm_CompassRangEX_GetHashCode_" data-uid="CompassEx.Comm.CompassRangEX.GetHashCode*"></a>
+
+  <h3 id="CompassEx_Comm_CompassRangEX_GetHashCode" data-uid="CompassEx.Comm.CompassRangEX.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L203"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
 
 
 

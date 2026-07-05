@@ -8,7 +8,7 @@
       <meta name="title" content="NaJia&lt;TResult&gt; 类
  | CompassEx API文档 ">
       
-      
+      <meta name="description" content="泛型纳甲推演核心发动机（处理类）。">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,7 +88,7 @@
 
   <h1 id="CompassEx_Gua_NaJia_1" data-uid="CompassEx.Gua.NaJia`1" class="text-break">
 NaJia&lt;TResult&gt; 类
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L137"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -96,7 +96,8 @@ NaJia&lt;TResult&gt; 类
   <dl><dt>程序集</dt><dd>CompassEx.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>泛型纳甲推演核心发动机（处理类）。</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -108,7 +109,8 @@ NaJia&lt;TResult&gt; 类
   <h4 class="section">类型参数</h4>
   <dl class="parameters">
     <dt><code>TResult</code></dt>
-    <dd></dd>
+    <dd><p>必须是实现了 <a class="xref" href="CompassEx.Gua.INaJiaResult.html">INaJiaResult</a> 接口的结构体类型。</p>
+</dd>
   </dl>
 
   <dl class="typelist inheritance">
@@ -157,40 +159,91 @@ NaJia&lt;TResult&gt; 类
 
 
 
+  <h2 id="CompassEx_Gua_NaJia_1_remarks">备注</h2>
+  <div class="markdown level0 remarks"><p>本类采用控制反转与静态工厂设计模式，将繁复的京房、杨公装卦推演逻辑封装于内部。
+对外提供高内聚的统一出口方法 <a class="xref" href="CompassEx.Gua.NaJia-1.html#CompassEx_Gua_NaJia_1_Execute">Execute()</a>，完美支持动态扩充与高效计算。</p>
+</div>
 
 
-  <h2 class="section" id="properties">属性
+  <h2 class="section" id="constructors">构造函数
 </h2>
 
 
-  <a id="CompassEx_Gua_NaJia_1_Type_" data-uid="CompassEx.Gua.NaJia`1.Type*"></a>
+  <a id="CompassEx_Gua_NaJia_1__ctor_" data-uid="CompassEx.Gua.NaJia`1.#ctor*"></a>
 
-  <h3 id="CompassEx_Gua_NaJia_1_Type" data-uid="CompassEx.Gua.NaJia`1.Type">
-  Type
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  <h3 id="CompassEx_Gua_NaJia_1__ctor_CompassEx_Gua_GuaClass_" data-uid="CompassEx.Gua.NaJia`1.#ctor(CompassEx.Gua.GuaClass)">
+  NaJia(GuaClass)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L192"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>初始化 <a class="xref" href="CompassEx.Gua.NaJia-1.html">NaJia&lt;TResult&gt;</a> 类的新实例（供京房纳甲静态工厂调用）。</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public NaJiaType Type { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public NaJia(GuaClass g)</code></pre>
   </div>
 
-
-
-
-
-  <h4 class="section">属性值</h4>
+  <h4 class="section">参数</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="CompassEx.Gua.NaJiaType.html">NaJiaType</a></dt>
-    <dd></dd>
+    <dt><code>g</code> <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a></dt>
+    <dd><p>传入的六爻复卦别卦实例（<a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a>）。</p>
+</dd>
   </dl>
 
 
 
 
 
+
+
+
+
+  <h4 class="section">异常</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>当传入的复卦数据为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> 时抛出。</p>
+</dd>
+  </dl>
+
+
+
+  <a id="CompassEx_Gua_NaJia_1__ctor_" data-uid="CompassEx.Gua.NaJia`1.#ctor*"></a>
+
+  <h3 id="CompassEx_Gua_NaJia_1__ctor_CompassEx_Gua_GuaSubClass_" data-uid="CompassEx.Gua.NaJia`1.#ctor(CompassEx.Gua.GuaSubClass)">
+  NaJia(GuaSubClass)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L203"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>初始化 <a class="xref" href="CompassEx.Gua.NaJia-1.html">NaJia&lt;TResult&gt;</a> 类的新实例（供杨公纳甲静态工厂调用）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NaJia(GuaSubClass gs)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>gs</code> <a class="xref" href="CompassEx.Gua.GuaSubClass.html">GuaSubClass</a></dt>
+    <dd><p>传入的后天八卦单卦实例（<a class="xref" href="CompassEx.Gua.GuaSubClass.html">GuaSubClass</a>）。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">异常</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>当传入的单卦数据为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> 时抛出。</p>
+</dd>
+  </dl>
 
 
 
@@ -202,10 +255,10 @@ NaJia&lt;TResult&gt; 类
 
   <h3 id="CompassEx_Gua_NaJia_1_CreateJF_CompassEx_Gua_GuaClass_" data-uid="CompassEx.Gua.NaJia`1.CreateJF(CompassEx.Gua.GuaClass)">
   CreateJF(GuaClass)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L170"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L266"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>京房纳甲的静态工厂方法，输入复卦对象，返回纳甲结果。</p>
+  <div class="markdown level1 summary"><p>京房纳甲的静态工厂创建方法。输入六爻复卦，直接推导并返回完整的京房纳甲结果。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -216,13 +269,15 @@ NaJia&lt;TResult&gt; 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>g</code> <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a></dt>
-    <dd></dd>
+    <dd><p>需要计算的六爻复卦别卦实例（<a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a>）。</p>
+</dd>
   </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Gua.NaJiaJFResult.html">NaJiaJFResult</a>?</dt>
-    <dd></dd>
+    <dd><p>返回包含复卦与六爻干支集合的 <a class="xref" href="CompassEx.Gua.NaJiaJFResult.html">NaJiaJFResult</a> 结构体数据。</p>
+</dd>
   </dl>
 
 
@@ -239,10 +294,10 @@ NaJia&lt;TResult&gt; 类
 
   <h3 id="CompassEx_Gua_NaJia_1_CreateYG_CompassEx_Gua_GuaSubClass_" data-uid="CompassEx.Gua.NaJia`1.CreateYG(CompassEx.Gua.GuaSubClass)">
   CreateYG(GuaSubClass)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L179"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L278"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>杨公纳甲的静态工厂方法，输入后天八卦的单卦对象，返回纳甲结果。</p>
+  <div class="markdown level1 summary"><p>杨公纳甲的静态工厂创建方法。输入后天单卦，直接推导并返回完整的杨公纳甲结果。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -253,13 +308,15 @@ NaJia&lt;TResult&gt; 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>gs</code> <a class="xref" href="CompassEx.Gua.GuaSubClass.html">GuaSubClass</a></dt>
-    <dd></dd>
+    <dd><p>需要计算的后天八卦单卦实例（<a class="xref" href="CompassEx.Gua.GuaSubClass.html">GuaSubClass</a>）。</p>
+</dd>
   </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Gua.NaJiaYGResult.html">NaJiaYGResult</a>?</dt>
-    <dd></dd>
+    <dd><p>返回包含单卦、天干及地支宫位的 <a class="xref" href="CompassEx.Gua.NaJiaYGResult.html">NaJiaYGResult</a> 结构体数据。</p>
+</dd>
   </dl>
 
 
@@ -276,10 +333,11 @@ NaJia&lt;TResult&gt; 类
 
   <h3 id="CompassEx_Gua_NaJia_1_Execute" data-uid="CompassEx.Gua.NaJia`1.Execute">
   Execute()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L218"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>执行全盘纳甲核心数理逻辑推演（统一的总出口计算方法）。</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -290,7 +348,8 @@ NaJia&lt;TResult&gt; 类
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt>TResult?</dt>
-    <dd></dd>
+    <dd><p>返回计算完成后对应的泛型纳甲结果结构体；若体系类型未知则返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。</p>
+</dd>
   </dl>
 
 
@@ -299,6 +358,9 @@ NaJia&lt;TResult&gt; 类
 
 
 
+  <h4 class="section" id="CompassEx_Gua_NaJia_1_Execute_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>本方法内部通过类型强转解包原始数据。对于杨公纳甲，通过提取单卦名称（<a class="xref" href="CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_Name">Name</a>）检索静态数理字典，动态解包、转换并装配完整的干支模型实体。</p>
+</div>
 
 
 
@@ -307,7 +369,7 @@ NaJia&lt;TResult&gt; 类
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L81" class="edit-link">编辑本文</a>
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L137" class="edit-link">编辑本文</a>
         </div>
 
 

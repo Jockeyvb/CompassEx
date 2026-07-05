@@ -17,6 +17,7 @@ items:
   - CompassEx.Gua.GuaSubClass.AfterGuaSubNumerics
   - CompassEx.Gua.GuaSubClass.AfterGuaSubReluNames
   - CompassEx.Gua.GuaSubClass.AfterQuantity
+  - CompassEx.Gua.GuaSubClass.AttrName
   - CompassEx.Gua.GuaSubClass.BeforeGuaSubAttrNames
   - CompassEx.Gua.GuaSubClass.BeforeGuaSubCNQuantity
   - CompassEx.Gua.GuaSubClass.BeforeGuaSubIndex
@@ -37,14 +38,13 @@ items:
   - CompassEx.Gua.GuaSubClass.GetGuaSub(System.String,System.Boolean)
   - CompassEx.Gua.GuaSubClass.GetXorGua
   - CompassEx.Gua.GuaSubClass.GuaQi
-  - CompassEx.Gua.GuaSubClass.GuaSubAttrName
-  - CompassEx.Gua.GuaSubClass.GuaSubName
   - CompassEx.Gua.GuaSubClass.GuaSubReluName
   - CompassEx.Gua.GuaSubClass.IsDownGua
   - CompassEx.Gua.GuaSubClass.IsSun
   - CompassEx.Gua.GuaSubClass.LoadLocs
   - CompassEx.Gua.GuaSubClass.LocIndex
   - CompassEx.Gua.GuaSubClass.Locs
+  - CompassEx.Gua.GuaSubClass.Name
   - CompassEx.Gua.GuaSubClass.Sky
   - CompassEx.Gua.GuaSubClass.SkyName
   - CompassEx.Gua.GuaSubClass.Symbol
@@ -65,7 +65,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuaSubClass
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 20
+    startLine: 21
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -102,7 +102,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuaSubAttrNames
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 39
+    startLine: 40
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -136,7 +136,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuaSubReluNames
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 53
+    startLine: 54
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -170,7 +170,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuaSubNames
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 67
+    startLine: 68
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -204,7 +204,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuaSubNumerics
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 81
+    startLine: 82
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -238,7 +238,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubAttrNames
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 95
+    startLine: 96
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -272,7 +272,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubNames
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 109
+    startLine: 110
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -306,7 +306,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TiJiSymbol
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 114
+    startLine: 115
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -335,7 +335,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Symbols
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 128
+    startLine: 129
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -369,7 +369,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubNumerics
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 152
+    startLine: 153
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -403,7 +403,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubReluNames
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 166
+    startLine: 167
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -437,7 +437,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubColors
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 180
+    startLine: 181
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -471,7 +471,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubColorClasses
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 196
+    startLine: 197
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -510,7 +510,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IsSun
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 217
+    startLine: 218
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -520,7 +520,7 @@ items:
 
     根据后天八卦阴阳划分规范，属于“乾（父）、坎（中男）、艮（少男）、震（长男）”四纯单卦之一的判定为阳卦。<br />
 
-    该属性通过在字符串 <code>"乾坎艮震"</code> 中高速检索当前卦名（<xref href="CompassEx.Gua.GuaSubClass.GuaSubName" data-throw-if-not-resolved="false"></xref>）的索引来完成原子级断立。
+    该属性通过在字符串 <code>"乾坎艮震"</code> 中高速检索当前卦名（<xref href="CompassEx.Gua.GuaSubClass.Name" data-throw-if-not-resolved="false"></xref>）的索引来完成原子级断立。
   example: []
   syntax:
     content: public bool IsSun { get; }
@@ -548,7 +548,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IsDownGua
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 223
+    startLine: 224
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -580,7 +580,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuaQi
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 233
+    startLine: 234
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -591,13 +591,23 @@ items:
     动态反哺出当前位置最精准的洛书数理指标，常用于后续六爻大卦的宏观卦气判定。
   example: []
   syntax:
-    content: public GuaQi GuaQi { get; }
+    content: >-
+      [JsonIgnore]
+
+      public GuaQi GuaQi { get; }
     parameters: []
     return:
       type: CompassEx.Gua.GuaQi
       description: 返回一个全新初始化的卦气实体对象 <xref href="CompassEx.Gua.GuaSubClass.GuaQi" data-throw-if-not-resolved="false"></xref>。
-    content.vb: Public ReadOnly Property GuaQi As GuaQi
+    content.vb: >-
+      <JsonIgnore>
+
+      Public ReadOnly Property GuaQi As GuaQi
   overload: CompassEx.Gua.GuaSubClass.GuaQi*
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
 - uid: CompassEx.Gua.GuaSubClass.Yaos
   commentId: P:CompassEx.Gua.GuaSubClass.Yaos
   id: Yaos
@@ -616,7 +626,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Yaos
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 246
+    startLine: 248
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -648,7 +658,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SkyName
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 252
+    startLine: 254
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -680,7 +690,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Sky
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 261
+    startLine: 263
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -713,7 +723,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Locs
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 267
+    startLine: 269
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -745,7 +755,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LocIndex
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 273
+    startLine: 275
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -777,7 +787,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuaSubReluName
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 279
+    startLine: 281
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -809,7 +819,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubColor
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 285
+    startLine: 287
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -841,7 +851,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterQuantity
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 291
+    startLine: 293
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -873,7 +883,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeQuanity
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 297
+    startLine: 299
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -887,70 +897,70 @@ items:
       description: 整型数值。通过在 <xref href="CompassEx.Gua.GuaSubClass.BeforeGuaSubNumerics" data-throw-if-not-resolved="false"></xref> 中反查中文数（如“一”）的索引，动态加 1 转换得出其先天绝对数（乾一至坤八）。
     content.vb: Public ReadOnly Property BeforeQuanity As Integer
   overload: CompassEx.Gua.GuaSubClass.BeforeQuanity*
-- uid: CompassEx.Gua.GuaSubClass.GuaSubName
-  commentId: P:CompassEx.Gua.GuaSubClass.GuaSubName
-  id: GuaSubName
+- uid: CompassEx.Gua.GuaSubClass.Name
+  commentId: P:CompassEx.Gua.GuaSubClass.Name
+  id: Name
   parent: CompassEx.Gua.GuaSubClass
   langs:
   - csharp
   - vb
-  name: GuaSubName
-  nameWithType: GuaSubClass.GuaSubName
-  fullName: CompassEx.Gua.GuaSubClass.GuaSubName
+  name: Name
+  nameWithType: GuaSubClass.Name
+  fullName: CompassEx.Gua.GuaSubClass.Name
   type: Property
   source:
     remote:
       path: CompassEx/Gua/GuaSubClass.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: GuaSubName
+    id: Name
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 303
+    startLine: 305
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
   summary: 获取当前经卦的标准单字名称（如：“乾”、“坤”、“震”、“巽”）。
   example: []
   syntax:
-    content: public string GuaSubName { get; }
+    content: public string Name { get; }
     parameters: []
     return:
       type: System.String
       description: 代表三爻单卦的核心基础单字卦名。
-    content.vb: Public Property GuaSubName As String
-  overload: CompassEx.Gua.GuaSubClass.GuaSubName*
-- uid: CompassEx.Gua.GuaSubClass.GuaSubAttrName
-  commentId: P:CompassEx.Gua.GuaSubClass.GuaSubAttrName
-  id: GuaSubAttrName
+    content.vb: Public Property Name As String
+  overload: CompassEx.Gua.GuaSubClass.Name*
+- uid: CompassEx.Gua.GuaSubClass.AttrName
+  commentId: P:CompassEx.Gua.GuaSubClass.AttrName
+  id: AttrName
   parent: CompassEx.Gua.GuaSubClass
   langs:
   - csharp
   - vb
-  name: GuaSubAttrName
-  nameWithType: GuaSubClass.GuaSubAttrName
-  fullName: CompassEx.Gua.GuaSubClass.GuaSubAttrName
+  name: AttrName
+  nameWithType: GuaSubClass.AttrName
+  fullName: CompassEx.Gua.GuaSubClass.AttrName
   type: Property
   source:
     remote:
       path: CompassEx/Gua/GuaSubClass.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: GuaSubAttrName
+    id: AttrName
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 309
+    startLine: 311
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
   summary: 获取当前经卦在自然界中模拟构成的核心物象/属性名称（如：“天”、“地”、“雷”、“风”）。
   example: []
   syntax:
-    content: public string GuaSubAttrName { get; }
+    content: public string AttrName { get; }
     parameters: []
     return:
       type: System.String
       description: 代表经八卦自然物象的单字名称。
-    content.vb: Public Property GuaSubAttrName As String
-  overload: CompassEx.Gua.GuaSubClass.GuaSubAttrName*
+    content.vb: Public Property AttrName As String
+  overload: CompassEx.Gua.GuaSubClass.AttrName*
 - uid: CompassEx.Gua.GuaSubClass.FiveAttr
   commentId: P:CompassEx.Gua.GuaSubClass.FiveAttr
   id: FiveAttr
@@ -969,7 +979,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FiveAttr
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 315
+    startLine: 317
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1001,7 +1011,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuaSubCNQuantity
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 321
+    startLine: 323
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1033,7 +1043,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubCNQuantity
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 327
+    startLine: 329
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1065,7 +1075,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuaSubIndex
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 333
+    startLine: 335
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1097,7 +1107,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubIndex
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 339
+    startLine: 341
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1129,7 +1139,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Symbol
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 348
+    startLine: 350
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1162,7 +1172,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CAfterRangeDegree
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 354
+    startLine: 356
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1194,7 +1204,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CBeforRangeDegree
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 360
+    startLine: 362
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1226,7 +1236,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 376
+    startLine: 378
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1271,7 +1281,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 397
+    startLine: 399
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1283,7 +1293,7 @@ items:
 
     <b>经卦底层数理装配流程：</b>
 
-    <ol><li><b>安全边界校验</b>：校验输入索引。若执行不合法则瞬间熔断并抛出越界异常。</li><li><b>爻象阴阳重组（Switch 分布）</b>：依据先天八卦符号编码（0代表阴爻，1代表阳爻），由下而上对长为 3 的 <xref href="CompassEx.Gua.GuaSubClass.Yaos" data-throw-if-not-resolved="false"></xref> 数组进行赋值（如 case 1 兑卦：初爻为阳(1)、二爻为阳(1)、三爻为阴(0)）。</li><li><b>基础术数属性反哺</b>：通过索引同步锁定并充填物象（<xref href="CompassEx.Gua.GuaSubClass.GuaSubAttrName" data-throw-if-not-resolved="false"></xref>）、六亲伦理（<xref href="CompassEx.Gua.GuaSubClass.GuaSubReluName" data-throw-if-not-resolved="false"></xref>）和基本单字卦名。</li><li><b>跨体系方位映射</b>：通过后天八卦清册反查其在文王后天九宫中的绝对物理位置（<code>iPos</code>），进而将对应方位的紫白九星颜色（<xref href="CompassEx.Gua.GuaSubClass.AfterGuaSubColor" data-throw-if-not-resolved="false"></xref>）以及最终的生克五行属性（<xref href="CompassEx.Gua.GuaSubClass.FiveAttr" data-throw-if-not-resolved="false"></xref>）彻底装载完毕。</li></ol>
+    <ol><li><b>安全边界校验</b>：校验输入索引。若执行不合法则瞬间熔断并抛出越界异常。</li><li><b>爻象阴阳重组（Switch 分布）</b>：依据先天八卦符号编码（0代表阴爻，1代表阳爻），由下而上对长为 3 的 <xref href="CompassEx.Gua.GuaSubClass.Yaos" data-throw-if-not-resolved="false"></xref> 数组进行赋值（如 case 1 兑卦：初爻为阳(1)、二爻为阳(1)、三爻为阴(0)）。</li><li><b>基础术数属性反哺</b>：通过索引同步锁定并充填物象（<xref href="CompassEx.Gua.GuaSubClass.AttrName" data-throw-if-not-resolved="false"></xref>）、六亲伦理（<xref href="CompassEx.Gua.GuaSubClass.GuaSubReluName" data-throw-if-not-resolved="false"></xref>）和基本单字卦名。</li><li><b>跨体系方位映射</b>：通过后天八卦清册反查其在文王后天九宫中的绝对物理位置（<code>iPos</code>），进而将对应方位的紫白九星颜色（<xref href="CompassEx.Gua.GuaSubClass.AfterGuaSubColor" data-throw-if-not-resolved="false"></xref>）以及最终的生克五行属性（<xref href="CompassEx.Gua.GuaSubClass.FiveAttr" data-throw-if-not-resolved="false"></xref>）彻底装载完毕。</li></ol>
   example: []
   syntax:
     content: public GuaSubClass(int iBeforGuaIndex)
@@ -1318,7 +1328,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetC24Hills
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 464
+    startLine: 466
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1349,7 +1359,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetCBeforGuas
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 489
+    startLine: 491
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1380,7 +1390,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetXorGua
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 507
+    startLine: 509
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1411,7 +1421,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadLocs
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 522
+    startLine: 524
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1439,7 +1449,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 548
+    startLine: 550
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1486,7 +1496,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAfterGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 573
+    startLine: 575
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1527,7 +1537,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBeforGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 586
+    startLine: 588
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1568,7 +1578,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 598
+    startLine: 600
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1609,7 +1619,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 618
+    startLine: 620
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1650,7 +1660,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetFiveAttrName
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 686
+    startLine: 688
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2119,12 +2129,12 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.drawing.color
   - name: (
   - name: )
-- uid: CompassEx.Gua.GuaSubClass.GuaSubName
-  commentId: P:CompassEx.Gua.GuaSubClass.GuaSubName
-  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_GuaSubName
-  name: GuaSubName
-  nameWithType: GuaSubClass.GuaSubName
-  fullName: CompassEx.Gua.GuaSubClass.GuaSubName
+- uid: CompassEx.Gua.GuaSubClass.Name
+  commentId: P:CompassEx.Gua.GuaSubClass.Name
+  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_Name
+  name: Name
+  nameWithType: GuaSubClass.Name
+  fullName: CompassEx.Gua.GuaSubClass.Name
 - uid: CompassEx.Gua.GuaSubClass.IsSun*
   commentId: Overload:CompassEx.Gua.GuaSubClass.IsSun
   href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_IsSun
@@ -2385,18 +2395,18 @@ references:
   name: BeforeQuanity
   nameWithType: GuaSubClass.BeforeQuanity
   fullName: CompassEx.Gua.GuaSubClass.BeforeQuanity
-- uid: CompassEx.Gua.GuaSubClass.GuaSubName*
-  commentId: Overload:CompassEx.Gua.GuaSubClass.GuaSubName
-  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_GuaSubName
-  name: GuaSubName
-  nameWithType: GuaSubClass.GuaSubName
-  fullName: CompassEx.Gua.GuaSubClass.GuaSubName
-- uid: CompassEx.Gua.GuaSubClass.GuaSubAttrName*
-  commentId: Overload:CompassEx.Gua.GuaSubClass.GuaSubAttrName
-  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_GuaSubAttrName
-  name: GuaSubAttrName
-  nameWithType: GuaSubClass.GuaSubAttrName
-  fullName: CompassEx.Gua.GuaSubClass.GuaSubAttrName
+- uid: CompassEx.Gua.GuaSubClass.Name*
+  commentId: Overload:CompassEx.Gua.GuaSubClass.Name
+  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_Name
+  name: Name
+  nameWithType: GuaSubClass.Name
+  fullName: CompassEx.Gua.GuaSubClass.Name
+- uid: CompassEx.Gua.GuaSubClass.AttrName*
+  commentId: Overload:CompassEx.Gua.GuaSubClass.AttrName
+  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_AttrName
+  name: AttrName
+  nameWithType: GuaSubClass.AttrName
+  fullName: CompassEx.Gua.GuaSubClass.AttrName
 - uid: CompassEx.Gua.GuaSubClass.FiveAttr
   commentId: P:CompassEx.Gua.GuaSubClass.FiveAttr
   href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_FiveAttr
@@ -2673,12 +2683,12 @@ references:
   name: Yaos
   nameWithType: GuaSubClass.Yaos
   fullName: CompassEx.Gua.GuaSubClass.Yaos
-- uid: CompassEx.Gua.GuaSubClass.GuaSubAttrName
-  commentId: P:CompassEx.Gua.GuaSubClass.GuaSubAttrName
-  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_GuaSubAttrName
-  name: GuaSubAttrName
-  nameWithType: GuaSubClass.GuaSubAttrName
-  fullName: CompassEx.Gua.GuaSubClass.GuaSubAttrName
+- uid: CompassEx.Gua.GuaSubClass.AttrName
+  commentId: P:CompassEx.Gua.GuaSubClass.AttrName
+  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_AttrName
+  name: AttrName
+  nameWithType: GuaSubClass.AttrName
+  fullName: CompassEx.Gua.GuaSubClass.AttrName
 - uid: CompassEx.Gua.GuaSubClass.GuaSubReluName
   commentId: P:CompassEx.Gua.GuaSubClass.GuaSubReluName
   href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_GuaSubReluName

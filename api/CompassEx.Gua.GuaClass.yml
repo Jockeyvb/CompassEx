@@ -41,7 +41,6 @@ items:
   - CompassEx.Gua.GuaClass.GuaFullName
   - CompassEx.Gua.GuaClass.GuaFullNames
   - CompassEx.Gua.GuaClass.GuaIndex
-  - CompassEx.Gua.GuaClass.GuaName
   - CompassEx.Gua.GuaClass.GuaNames
   - CompassEx.Gua.GuaClass.GuaQi
   - CompassEx.Gua.GuaClass.GuaSelf
@@ -57,6 +56,7 @@ items:
   - CompassEx.Gua.GuaClass.LoadNoAvg
   - CompassEx.Gua.GuaClass.LoadSixRelative
   - CompassEx.Gua.GuaClass.LostLocs
+  - CompassEx.Gua.GuaClass.Name
   - CompassEx.Gua.GuaClass.SixGods
   - CompassEx.Gua.GuaClass.SixRelative
   - CompassEx.Gua.GuaClass.SkyLocs
@@ -638,23 +638,23 @@ items:
   - type: Newtonsoft.Json.JsonIgnoreAttribute
     ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
     arguments: []
-- uid: CompassEx.Gua.GuaClass.GuaName
-  commentId: P:CompassEx.Gua.GuaClass.GuaName
-  id: GuaName
+- uid: CompassEx.Gua.GuaClass.Name
+  commentId: P:CompassEx.Gua.GuaClass.Name
+  id: Name
   parent: CompassEx.Gua.GuaClass
   langs:
   - csharp
   - vb
-  name: GuaName
-  nameWithType: GuaClass.GuaName
-  fullName: CompassEx.Gua.GuaClass.GuaName
+  name: Name
+  nameWithType: GuaClass.Name
+  fullName: CompassEx.Gua.GuaClass.Name
   type: Property
   source:
     remote:
       path: CompassEx/Gua/GuaClass.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: GuaName
+    id: Name
     path: CompassEx/Gua/GuaClass.cs
     startLine: 363
   assemblies:
@@ -663,13 +663,13 @@ items:
   summary: 获取或设置当前六爻卦的两字简化卦名（如“乾”、“坤”、“屯”、“蒙”）。
   example: []
   syntax:
-    content: public string GuaName { get; }
+    content: public string Name { get; }
     parameters: []
     return:
       type: System.String
       description: 代表 64 卦通行本顺序的两字简名缩写。
-    content.vb: Public Property GuaName As String
-  overload: CompassEx.Gua.GuaClass.GuaName*
+    content.vb: Public Property Name As String
+  overload: CompassEx.Gua.GuaClass.Name*
 - uid: CompassEx.Gua.GuaClass.GuaFullName
   commentId: P:CompassEx.Gua.GuaClass.GuaFullName
   id: GuaFullName
@@ -3000,12 +3000,12 @@ references:
   name: UpGua
   nameWithType: GuaClass.UpGua
   fullName: CompassEx.Gua.GuaClass.UpGua
-- uid: CompassEx.Gua.GuaClass.GuaName*
-  commentId: Overload:CompassEx.Gua.GuaClass.GuaName
-  href: CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GuaName
-  name: GuaName
-  nameWithType: GuaClass.GuaName
-  fullName: CompassEx.Gua.GuaClass.GuaName
+- uid: CompassEx.Gua.GuaClass.Name*
+  commentId: Overload:CompassEx.Gua.GuaClass.Name
+  href: CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_Name
+  name: Name
+  nameWithType: GuaClass.Name
+  fullName: CompassEx.Gua.GuaClass.Name
 - uid: CompassEx.Gua.GuaClass.GuaFullName*
   commentId: Overload:CompassEx.Gua.GuaClass.GuaFullName
   href: CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GuaFullName

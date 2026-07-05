@@ -77,6 +77,12 @@ items:
   - uid: CompassEx.Gua.GuaClass
     name: GuaClass
     type: Class
+  - uid: CompassEx.Gua.GuaFlip
+    name: GuaFlip
+    type: Class
+  - uid: CompassEx.Gua.GuaFlipMethod
+    name: GuaFlipMethod
+    type: Enum
   - uid: CompassEx.Gua.GuaQi
     name: GuaQi
     type: Class

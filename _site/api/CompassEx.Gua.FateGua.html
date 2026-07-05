@@ -166,9 +166,9 @@ FateGua 类
 
   <a id="CompassEx_Gua_FateGua__ctor_" data-uid="CompassEx.Gua.FateGua.#ctor*"></a>
 
-  <h3 id="CompassEx_Gua_FateGua__ctor_System_DateTime_System_String_CompassEx_Gua_GuaClass_" data-uid="CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass)">
-  FateGua(DateTime, string, GuaClass)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/FateGuo.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  <h3 id="CompassEx_Gua_FateGua__ctor_System_DateTime_System_String_CompassEx_Gua_GuaClass_System_Int32___" data-uid="CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass,System.Int32[])">
+  FateGua(DateTime, string, GuaClass, params int[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/FateGuo.cs/#L80"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>构造函数，输入出生日期和性别，计算命卦，并获得相关的入卦和出卦等信息（包括计算立春岁数）</p>
@@ -176,7 +176,7 @@ FateGua 类
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public FateGua(DateTime d, string Sex, GuaClass ToGua8)</code></pre>
+    <pre><code class="lang-csharp hljs">public FateGua(DateTime d, string Sex, GuaClass ToGua8, params int[] iYaoPos)</code></pre>
   </div>
 
   <h4 class="section">参数</h4>
@@ -189,6 +189,9 @@ FateGua 类
 </dd>
     <dt><code>ToGua8</code> <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a></dt>
     <dd><p>罗盘中的24山（向）所属的卦宫位置（后天）</p>
+</dd>
+    <dt><code>iYaoPos</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</dt>
+    <dd><p>临爻（可选最多2爻，因罗盘上抽爻最多能抽2爻），如：[4,5]，则临是5爻和上爻</p>
 </dd>
   </dl>
 
@@ -205,6 +208,70 @@ FateGua 类
 
   <h2 class="section" id="properties">属性
 </h2>
+
+
+  <a id="CompassEx_Gua_FateGua_BirthTime_" data-uid="CompassEx.Gua.FateGua.BirthTime*"></a>
+
+  <h3 id="CompassEx_Gua_FateGua_BirthTime" data-uid="CompassEx.Gua.FateGua.BirthTime">
+  BirthTime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/FateGuo.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>出生时间(公历）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime BirthTime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Gua_FateGua_FateYearSkyLoc_" data-uid="CompassEx.Gua.FateGua.FateYearSkyLoc*"></a>
+
+  <h3 id="CompassEx_Gua_FateGua_FateYearSkyLoc" data-uid="CompassEx.Gua.FateGua.FateYearSkyLoc">
+  FateYearSkyLoc
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/FateGuo.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>命庚干支</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SkyLoc FateYearSkyLoc { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
 
 
   <a id="CompassEx_Gua_FateGua_GuaList_" data-uid="CompassEx.Gua.FateGua.GuaList*"></a>
@@ -407,7 +474,7 @@ FateGua 类
 
   <h3 id="CompassEx_Gua_FateGua_GetFateGua_System_DateTime_System_String_" data-uid="CompassEx.Gua.FateGua.GetFateGua(System.DateTime,System.String)">
   GetFateGua(DateTime, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/FateGuo.cs/#L129"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/FateGuo.cs/#L149"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获得当前日期的三元命卦（三爻卦）后天</p>

@@ -6,6 +6,8 @@ items:
   children:
   - CompassEx.Gua.FateGua
   - CompassEx.Gua.GuaClass
+  - CompassEx.Gua.GuaFlip
+  - CompassEx.Gua.GuaFlipMethod
   - CompassEx.Gua.GuaQi
   - CompassEx.Gua.GuaSubClass
   - CompassEx.Gua.INaJiaResult
@@ -41,6 +43,19 @@ references:
   name: GuaClass
   nameWithType: GuaClass
   fullName: CompassEx.Gua.GuaClass
+- uid: CompassEx.Gua.GuaFlipMethod
+  commentId: T:CompassEx.Gua.GuaFlipMethod
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.GuaFlipMethod.html
+  name: GuaFlipMethod
+  nameWithType: GuaFlipMethod
+  fullName: CompassEx.Gua.GuaFlipMethod
+- uid: CompassEx.Gua.GuaFlip
+  commentId: T:CompassEx.Gua.GuaFlip
+  href: CompassEx.Gua.GuaFlip.html
+  name: GuaFlip
+  nameWithType: GuaFlip
+  fullName: CompassEx.Gua.GuaFlip
 - uid: CompassEx.Gua.GuaQi
   commentId: T:CompassEx.Gua.GuaQi
   parent: CompassEx.Gua
@@ -115,6 +130,7 @@ references:
   fullName: CompassEx.Gua.NineStarType
 - uid: CompassEx.Gua.NineStar
   commentId: T:CompassEx.Gua.NineStar
+  parent: CompassEx.Gua
   href: CompassEx.Gua.NineStar.html
   name: NineStar
   nameWithType: NineStar

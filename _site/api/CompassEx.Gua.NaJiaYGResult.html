@@ -8,7 +8,7 @@
       <meta name="title" content="NaJiaYGResult 结构
  | CompassEx API文档 ">
       
-      
+      <meta name="description" content="杨公纳甲推演结果结构体。包含单卦、归化天干及对应的地支宫位序列。">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,7 +88,7 @@
 
   <h1 id="CompassEx_Gua_NaJiaYGResult" data-uid="CompassEx.Gua.NaJiaYGResult" class="text-break">
 NaJiaYGResult 结构
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L96"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -96,7 +96,8 @@ NaJiaYGResult 结构
   <dl><dt>程序集</dt><dd>CompassEx.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>杨公纳甲推演结果结构体。包含单卦、归化天干及对应的地支宫位序列。</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -148,6 +149,9 @@ NaJiaYGResult 结构
 
 
 
+  <h2 id="CompassEx_Gua_NaJiaYGResult_remarks">备注</h2>
+  <div class="markdown level0 remarks"><p>本结构体数据为风水勘测的底层核心：九星山法依此读取来龙或坐山卦的归化干支；辅星水法依此读取向卦的纳甲水流水口。</p>
+</div>
 
 
   <h2 class="section" id="fields">字段
@@ -157,17 +161,16 @@ NaJiaYGResult 结构
 
   <h3 id="CompassEx_Gua_NaJiaYGResult_Gua" data-uid="CompassEx.Gua.NaJiaYGResult.Gua">
   Gua
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L102"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>八卦（后天）
-九星山法应该使用来龙卦，或坐卦卦
-辅星水法应该使用向卦</p>
+  <div class="markdown level1 summary"><p>当前推演所依附的后天八卦单卦（三爻卦）实例。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GuaSubClass Gua</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonIgnore]
+public GuaSubClass Gua</code></pre>
   </div>
 
 
@@ -190,10 +193,11 @@ NaJiaYGResult 结构
 
   <h3 id="CompassEx_Gua_NaJiaYGResult_Locs" data-uid="CompassEx.Gua.NaJiaYGResult.Locs">
   Locs
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L126"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>当前单卦纳甲数理所包含归化的地支（方位/时辰刻度）实例集合。</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -213,6 +217,9 @@ NaJiaYGResult 结构
 
 
 
+  <h4 class="section" id="CompassEx_Gua_NaJiaYGResult_Locs_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>四正卦依三合局归化地支：震纳亥卯未、兑纳巳酉丑、离纳寅午戌、坎纳申子辰。四维卦在风水高级理气中通常包含自身方位的延伸。</p>
+</div>
 
 
 
@@ -220,15 +227,15 @@ NaJiaYGResult 结构
 
   <h3 id="CompassEx_Gua_NaJiaYGResult_Sky" data-uid="CompassEx.Gua.NaJiaYGResult.Sky">
   Sky
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L118"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>所包含的</p>
+  <div class="markdown level1 summary"><p>当前单卦所纳的专属天干实例。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SkyLoc Sky</code></pre>
+    <pre><code class="lang-csharp hljs">public SkyClass Sky</code></pre>
   </div>
 
 
@@ -236,7 +243,7 @@ NaJiaYGResult 结构
 
   <h4 class="section">字段值</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a></dt>
+    <dt><a class="xref" href="CompassEx.Comm.SkyClass.html">SkyClass</a></dt>
     <dd></dd>
   </dl>
 
@@ -244,6 +251,9 @@ NaJiaYGResult 结构
 
 
 
+  <h4 class="section" id="CompassEx_Gua_NaJiaYGResult_Sky_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>易学数理对应：乾纳甲、坤纳乙、艮纳丙、巽纳辛、震纳庚、兑纳丁、离纳壬、坎纳癸。</p>
+</div>
 
 
 
@@ -256,10 +266,10 @@ NaJiaYGResult 结构
 
   <h3 id="CompassEx_Gua_NaJiaYGResult_Type" data-uid="CompassEx.Gua.NaJiaYGResult.Type">
   Type
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L110"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>杨公纳甲类型</p>
+  <div class="markdown level1 summary"><p>获取杨公纳甲体系标记。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -274,7 +284,8 @@ NaJiaYGResult 结构
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Gua.NaJiaType.html">NaJiaType</a></dt>
-    <dd></dd>
+    <dd><p>始终返回 <a class="xref" href="CompassEx.Gua.NaJiaType.html#CompassEx_Gua_NaJiaType_YG">YG</a>。</p>
+</dd>
   </dl>
 
 
@@ -288,7 +299,7 @@ NaJiaYGResult 结构
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L59" class="edit-link">编辑本文</a>
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L96" class="edit-link">编辑本文</a>
         </div>
 
 

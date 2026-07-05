@@ -20,14 +20,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: INaJiaResult
     path: CompassEx/Gua/NaJia.cs
-    startLine: 39
+    startLine: 48
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: >-
-    京房纳甲结果类,包括：64卦，天干类，地支类
-
-    64卦类用于六爻预测学的纳甲推演（预测），天干类，地支类用于64卦装卦、排盘、起卦，天机出卦法也使用
+  summary: 统一的纳甲推演结果行为契约接口（用于泛型架构的强类型约束）。
   example: []
   syntax:
     content: public interface INaJiaResult
@@ -55,15 +52,18 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Type
     path: CompassEx/Gua/NaJia.cs
-    startLine: 39
+    startLine: 56
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
+  summary: 获取当前纳甲结果所属的推演体系类型。
+  example: []
   syntax:
     content: NaJiaType Type { get; }
     parameters: []
     return:
       type: CompassEx.Gua.NaJiaType
+      description: 一个 <xref href="CompassEx.Gua.NaJiaType" data-throw-if-not-resolved="false"></xref> 枚举值，表示所属的纳甲数理体系。
     content.vb: ReadOnly Property Type As NaJiaType
   overload: CompassEx.Gua.INaJiaResult.Type*
 references:
@@ -214,12 +214,6 @@ references:
   - uid: CompassEx.Comm
     name: Comm
     href: CompassEx.Comm.html
-- uid: CompassEx.Gua.INaJiaResult.Type*
-  commentId: Overload:CompassEx.Gua.INaJiaResult.Type
-  href: CompassEx.Gua.INaJiaResult.html#CompassEx_Gua_INaJiaResult_Type
-  name: Type
-  nameWithType: INaJiaResult.Type
-  fullName: CompassEx.Gua.INaJiaResult.Type
 - uid: CompassEx.Gua.NaJiaType
   commentId: T:CompassEx.Gua.NaJiaType
   parent: CompassEx.Gua
@@ -227,3 +221,9 @@ references:
   name: NaJiaType
   nameWithType: NaJiaType
   fullName: CompassEx.Gua.NaJiaType
+- uid: CompassEx.Gua.INaJiaResult.Type*
+  commentId: Overload:CompassEx.Gua.INaJiaResult.Type
+  href: CompassEx.Gua.INaJiaResult.html#CompassEx_Gua_INaJiaResult_Type
+  name: Type
+  nameWithType: INaJiaResult.Type
+  fullName: CompassEx.Gua.INaJiaResult.Type

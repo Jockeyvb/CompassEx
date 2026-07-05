@@ -8,7 +8,7 @@
       <meta name="title" content="NaJiaJFResult 结构
  | CompassEx API文档 ">
       
-      
+      <meta name="description" content="京房纳甲推演结果结构体。包含完整的六爻复卦、六亲及干支序列。">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,7 +88,7 @@
 
   <h1 id="CompassEx_Gua_NaJiaJFResult" data-uid="CompassEx.Gua.NaJiaJFResult" class="text-break">
 NaJiaJFResult 结构
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L66"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -96,7 +96,8 @@ NaJiaJFResult 结构
   <dl><dt>程序集</dt><dd>CompassEx.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>京房纳甲推演结果结构体。包含完整的六爻复卦、六亲及干支序列。</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -148,6 +149,9 @@ NaJiaJFResult 结构
 
 
 
+  <h2 id="CompassEx_Gua_NaJiaJFResult_remarks">备注</h2>
+  <div class="markdown level0 remarks"><p>本结构体数据常用于六爻预测学的装卦排盘。在天机出卦法中，亦可用于判定人命庚之干支是否得福神、官贵或犯出卦、入卦。</p>
+</div>
 
 
   <h2 class="section" id="fields">字段
@@ -157,16 +161,16 @@ NaJiaJFResult 结构
 
   <h3 id="CompassEx_Gua_NaJiaJFResult_Gua" data-uid="CompassEx.Gua.NaJiaJFResult.Gua">
   Gua
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>复卦（六爻卦）
-可用于天机出卦法的纳甲判断人命庚之干支是否得福、官或出卦、入卦等。</p>
+  <div class="markdown level1 summary"><p>当前推演所依附的六爻复卦（64卦别卦）实例。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GuaClass Gua</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonIgnore]
+public GuaClass Gua</code></pre>
   </div>
 
 
@@ -189,10 +193,10 @@ NaJiaJFResult 结构
 
   <h3 id="CompassEx_Gua_NaJiaJFResult_SkyLocs" data-uid="CompassEx.Gua.NaJiaJFResult.SkyLocs">
   SkyLocs
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>六爻对应的干支</p>
+  <div class="markdown level1 summary"><p>自下而上（初爻至上爻），六爻逐爻严格对应的干支（山字/干支时空坐标）集合。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -225,10 +229,10 @@ NaJiaJFResult 结构
 
   <h3 id="CompassEx_Gua_NaJiaJFResult_Type" data-uid="CompassEx.Gua.NaJiaJFResult.Type">
   Type
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L80"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>京房纳甲类型</p>
+  <div class="markdown level1 summary"><p>获取京房纳甲体系标记。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -243,7 +247,8 @@ NaJiaJFResult 结构
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Gua.NaJiaType.html">NaJiaType</a></dt>
-    <dd></dd>
+    <dd><p>始终返回 <a class="xref" href="CompassEx.Gua.NaJiaType.html#CompassEx_Gua_NaJiaType_JF">JF</a>。</p>
+</dd>
   </dl>
 
 
@@ -257,7 +262,7 @@ NaJiaJFResult 结构
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L42" class="edit-link">编辑本文</a>
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L66" class="edit-link">编辑本文</a>
         </div>
 
 
