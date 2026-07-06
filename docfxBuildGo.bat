@@ -1,4 +1,5 @@
 call docfx metadata
 call docfx build
-call npx pagefind@1.2.0 --site _site
+rem call npx pagefind@1.2.0 --site _site
+call npx pagefind@1.2.0 --site _site --force-language zh-cn
 call docfx serve _site

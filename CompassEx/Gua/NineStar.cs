@@ -17,6 +17,7 @@ namespace CompassEx.Gua
 {
     /// <summary>
     /// 勘测系统中的九星模型分类（定义类别实例化时采用的星曜数理体系）。
+    /// 紫白九星、翻卦九星。
     /// </summary>
     /// <remarks>
     /// <para>本枚举用于区分基础易学方位星曜与进阶翻卦理气星曜的数理边界：</para>
@@ -36,7 +37,7 @@ namespace CompassEx.Gua
     public enum NineStarType
     {
         /// <summary>
-        /// 后天八卦九星类型（包含五黄中宫）。
+        /// 后天八卦九星（紫白九星）类型（包含五黄中宫）。
         /// </summary>
         AfterGuaNineStar = 0,
 
@@ -46,7 +47,7 @@ namespace CompassEx.Gua
         GuaFlipNineStar = 1
     }
     /// <summary>
-    /// 周易数理与风水理气核心：九星（游年八星/北斗九星）的数据抽象模型与静态工厂类。
+    /// 周易数理与风水理气核心：九星（游年八星/紫白九星）的数据抽象模型与静态工厂类。
     /// </summary>
     /// <remarks>
     /// 本类作為平台级别的「材料供应商」，保持极致的架构克制。内部仅提供绝对客观的星曜名称、类型、吉凶逻辑判定以及
@@ -55,10 +56,10 @@ namespace CompassEx.Gua
     public class NineStar
     {
         /// <summary>
-        /// 后天八卦九星（北斗九星）的完整中文名称常量序列。
+        /// 后天八卦九星（紫白九星）的完整中文名称常量序列。
         /// </summary>
         /// <value>
-        /// 包含 9 个元素的字符串数组，顺序严格对应北斗九星：贪狼、巨门、禄存、文曲、廉贞、武曲、破军、左辅、右弼。
+        /// 包含 9 个元素的字符串数组，顺序严格对应紫白九星：贪狼、巨门、禄存、文曲、廉贞、武曲、破军、左辅、右弼。
         /// </value>
         /// <remarks>
         /// 本数组主要用于需要全称显化输出的场景（如风水综合报告、高精度罗盘盘面文字渲染）。
@@ -67,7 +68,7 @@ namespace CompassEx.Gua
         public static readonly string[] NineStarFullNames = ["贪狼", "巨门", "禄存", "文曲", "廉贞", "武曲", "破军", "左辅", "右弼"];
 
         /// <summary>
-        /// 后天八卦九星（北斗九星）的单字简称常量序列。
+        /// 后天八卦九星（紫白九星）的单字简称常量序列。
         /// </summary>
         /// <value>
         /// 包含 9 个元素的字符串数组，顺序与 <see cref="NineStarFullNames"/> 完全一致：贪、巨、禄、文、廉、武、破、辅、弼。
