@@ -55,7 +55,7 @@ jobs:
           docfx build docfx.json
           
           # 6. 为 pagefind 指定生成静态文件的相对空间
-          npx pagefind@1.2.0 --site _site
+          npx pagefind@1.2.0 --site _site --force-language zh-cn
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
