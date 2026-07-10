@@ -45,10 +45,12 @@
   <!-- 自动生成的AssemblyInfo.cs 依赖tt，仅更新标记，不要Include -->
 
   <ItemGroup>
+    <ProjectReference Include="..\CompassEx.Data\CompassEx.Data.csproj" />
     <ProjectReference Include="..\Generator\Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.79" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="tyme4net" Version="1.5.0" />
   </ItemGroup>

@@ -88,7 +88,7 @@
 
   <h1 id="CompassEx_Gua_TianJiGua" data-uid="CompassEx.Gua.TianJiGua" class="text-break">
 TianJiGua 类
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/TianJiGuo.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/TianJiGuo.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -167,7 +167,7 @@ TianJiGua 类
 
   <h3 id="CompassEx_Gua_TianJiGua__ctor_CompassEx_Gua_GuaClass_" data-uid="CompassEx.Gua.TianJiGua.#ctor(CompassEx.Gua.GuaClass)">
   TianJiGua(GuaClass)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/TianJiGuo.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/TianJiGuo.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>初始化 <a class="xref" href="CompassEx.Gua.TianJiGua.html">TianJiGua</a> 类的新实例，自动根据传入的向卦计算出对应的天机入卦与出卦集合。</p>
@@ -214,7 +214,7 @@ TianJiGua 类
 
   <h3 id="CompassEx_Gua_TianJiGua_GuaList" data-uid="CompassEx.Gua.TianJiGua.GuaList">
   GuaList
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/TianJiGuo.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/TianJiGuo.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取由当前卦宫推演出的七世飞爻卦（京房易卦序列）集合。</p>
@@ -250,7 +250,7 @@ TianJiGua 类
 
   <h3 id="CompassEx_Gua_TianJiGua_InGuaSubs" data-uid="CompassEx.Gua.TianJiGua.InGuaSubs">
   InGuaSubs
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/TianJiGuo.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/TianJiGuo.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前天机卦局所对应的“入卦”后天八卦集合。</p>
@@ -283,7 +283,7 @@ TianJiGua 类
 
   <h3 id="CompassEx_Gua_TianJiGua_OutGuaSubs" data-uid="CompassEx.Gua.TianJiGua.OutGuaSubs">
   OutGuaSubs
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/TianJiGuo.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/TianJiGuo.cs/#L58"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前天机卦局所对应的“出卦”（出煞）后天八卦集合。</p>
@@ -316,32 +316,98 @@ TianJiGua 类
 </h2>
 
 
-  <a id="CompassEx_Gua_TianJiGua_IsOutGua_" data-uid="CompassEx.Gua.TianJiGua.IsOutGua*"></a>
+  <a id="CompassEx_Gua_TianJiGua_GetOutGuas_" data-uid="CompassEx.Gua.TianJiGua.GetOutGuas*"></a>
 
-  <h3 id="CompassEx_Gua_TianJiGua_IsOutGua_CompassEx_Gua_GuaSubClass_" data-uid="CompassEx.Gua.TianJiGua.IsOutGua(CompassEx.Gua.GuaSubClass)">
-  IsOutGua(GuaSubClass)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/TianJiGuo.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  <h3 id="CompassEx_Gua_TianJiGua_GetOutGuas" data-uid="CompassEx.Gua.TianJiGua.GetOutGuas">
+  GetOutGuas()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/TianJiGuo.cs/#L193"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>判定指定的后天八卦单卦在当前天机卦局中是否属于“出卦”。</p>
+  <div class="markdown level1 summary"><p>获得天盘六十四卦中所有属于“出卦”的卦象字典集合。
+三元命卦的出卦判断不一样,要了解天机出卦法之人命卦出卦请看<a class="xref" href="CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_IsOutGua">IsOutGua</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsOutGua(GuaSubClass CompareGua)</code></pre>
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;CompassRangEX, GuaClass&gt; GetOutGuas()</code></pre>
+  </div>
+
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a>, <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a>&gt;</dt>
+    <dd><p>返回一个 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;TKey, TValue&gt;</a> 字典集合。<br>
+键（Key）为罗盘方位区间对象（<a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a>），
+值（Value）为该方位上对应且犯了“天机出卦”的六十四卦卦象对象（<a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a>）。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="CompassEx_Gua_TianJiGua_GetOutGuas_examples">示例</h4>
+  <pre><code class="lang-csharp">// 示例：获取所有天盘出卦方位，并打印出对应的方位名称与卦名
+Dictionary&lt;CompassRangEX, GuaClass&gt; outGuas = compassAnalyzer.GetOutGuas();
+foreach (var kvp in outGuas)
+{
+    Console.WriteLine($"方位 [{kvp.Key.Name}] 对应的卦象 [{kvp.Value.GuaName}] 犯天机出卦，收山出煞时应当避开。");
+}</code></pre>
+
+
+  <h4 class="section" id="CompassEx_Gua_TianJiGua_GetOutGuas_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>
+<b>天盘六十四卦与出卦应用：</b><br>
+在玄空大卦理气中，天盘主要用于<b>收纳外气、消砂纳水</b>（部分流派亦用于推算天时公转之气）。
+本方法通过遍历当前天盘中所有的初始卦象配置（<code>CompassEx.CBeforeGuas</code>），
+逐一调用 <a class="xref" href="CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_IsOutGua_CompassEx_Gua_GuaClass_">IsOutGua(GuaClass)</a> 方法进行天机出卦法的法理鉴定。
+</p>
+<p>
+<b>业务逻辑与过滤机制：</b><br>
+1. <b>高阶筛选 (Where)：</b> 利用 LINQ 表达式对天盘的方位卦象映射进行断言筛选，仅保留判定结果为“出卦”的条目。<br>
+2. <b>结构重组 (ToDictionary)：</b> 将筛选出的 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair&lt;TKey, TValue&gt;</a> 集合重新构建为强类型的字典。
+此字典常用于后续的峦头风水吉凶断验，或在绘制罗盘时对出卦方位进行特殊的红线警告或煞位标注。
+</p>
+</div>
+
+
+  <dl class="typelist seealso">
+    <dt>请参阅</dt>
+    <dd>
+    <div><a class="xref" href="CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_IsOutGua_CompassEx_Gua_GuaClass_">IsOutGua(GuaClass)</a></div>
+    </dd>
+  </dl>
+
+
+  <a id="CompassEx_Gua_TianJiGua_IsOutGua_" data-uid="CompassEx.Gua.TianJiGua.IsOutGua*"></a>
+
+  <h3 id="CompassEx_Gua_TianJiGua_IsOutGua_CompassEx_Gua_GuaClass_" data-uid="CompassEx.Gua.TianJiGua.IsOutGua(CompassEx.Gua.GuaClass)">
+  IsOutGua(GuaClass)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/TianJiGuo.cs/#L152"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>判断指定卦象是否属于“天机出卦”（用于玄空大卦物理峦头的收山出煞）
+三元命卦的出卦判断不一样,要了解天机出卦法之人命卦出卦请看<a class="xref" href="CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_IsOutGua">IsOutGua</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsOutGua(GuaClass CompareGua)</code></pre>
   </div>
 
   <h4 class="section">参数</h4>
   <dl class="parameters">
-    <dt><code>CompareGua</code> <a class="xref" href="CompassEx.Gua.GuaSubClass.html">GuaSubClass</a></dt>
-    <dd><p>需要比对、判定的后天八卦单卦对象。</p>
+    <dt><code>CompareGua</code> <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a></dt>
+    <dd><p>需要进行出卦鉴定与比对的源卦象对象（<a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a>）。</p>
 </dd>
   </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>若该单卦存在于出卦集合（<a class="xref" href="CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_OutGuaSubs">OutGuaSubs</a>）中，则返回 <code>true</code>（代表已出卦）；否则返回 <code>false</code>。</p>
+    <dd><p>如果该卦象符合天机出卦规则，则返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>（即属于出卦，峦头断为不吉）；
+如果属于大卦内气、合局通气，则返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>。</p>
 </dd>
   </dl>
 
@@ -350,10 +416,29 @@ TianJiGua 类
 
 
 
+  <h4 class="section" id="CompassEx_Gua_TianJiGua_IsOutGua_CompassEx_Gua_GuaClass__examples">示例</h4>
+  <pre><code class="lang-csharp">GuaClass currentGua = GetCurrentGua();
+if (analyzer.IsOutGua(currentGua))
+{
+    // 犯天机出卦，需调整向线或进行收山出煞消砂化解
+    Console.WriteLine("警告：此局犯天机出卦！");
+}</code></pre>
 
-  <h4 class="section" id="CompassEx_Gua_TianJiGua_IsOutGua_CompassEx_Gua_GuaSubClass__remarks">备注</h4>
-  <div class="markdown level1 remarks"><p>在玄空大卦风水体系中，主要通过此处的出卦逻辑进行<b>收山出煞</b>的度数判别（通常作用于罗盘 64 卦的分野上）。</p>
-<p><b>⚠️ 业务边界提示：</b>若您当前是要进行“三元命卦”的出卦判定，则需要严格按照纳甲法规则来进行推演。请不要使用本方法，改为调用 <code>FateGua.IsOutGua()</code> 方法。</p>
+
+  <h4 class="section" id="CompassEx_Gua_TianJiGua_IsOutGua_CompassEx_Gua_GuaClass__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>
+<b>玄空大卦天机出卦法理论概述：</b><br>
+在玄空大卦（六十四卦）理气中，三元地理以“一运、二运、三运、四运”为江东卦（地元），
+“六运、七运、八运、九运”为江西卦（天元），“五运”天心顺逆分行。<br>
+所谓<b>出卦</b>，是指龙、山、向、水的气场没有处于同一个父母卦（或同运、通气）的管辖范围内，
+导致阴阳差错、气场杂乱。在峦头修造中，若犯“天机出卦”，则无法达到“收山出煞”的效果，主凶。
+</p>
+<p>
+<b>本方法校验逻辑：</b><br>
+1. 提取对比卦（<code class="paramref">CompareGua</code>）的上卦（<code>UpGua</code>）在后天八卦或大卦系统中的量化数值（<code>AfterQuantity</code>）。<br>
+2. 在预设的出卦字典表（<code>OutGuaSubs</code>）中进行检索。<br>
+3. 若存在匹配记录，说明该卦象已跨越父母卦界限，判定为“出卦”（返回 <code>true</code>）；反之则为“不出卦”（返回 <code>false</code>）。
+</p>
 </div>
 
 
@@ -363,7 +448,7 @@ TianJiGua 类
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/TianJiGuo.cs/#L27" class="edit-link">编辑本文</a>
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/TianJiGuo.cs/#L29" class="edit-link">编辑本文</a>
         </div>
 
 

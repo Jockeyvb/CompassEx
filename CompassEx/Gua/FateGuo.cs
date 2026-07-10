@@ -91,7 +91,7 @@ namespace CompassEx.Gua
 
                 TianJiGua tjg = new TianJiGua(GuaClass.GetGuaClass(this.GuaSub.Name));//获得天机出卦法信息
 
-                this.IsOutGua = tjg.IsOutGua(ToGua8.UpGua); //天机出卦法中是否出卦
+                this.IsOutGua = tjg.IsOutGua(ToGua8); //天机出卦法中是否出卦
                 this.InGuaSubs = tjg.InGuaSubs;
                 this.OutGuaSubs = tjg.OutGuaSubs;
                 if (this.IsOutGua == false) //如果已经出卦出无须再计算
@@ -212,6 +212,28 @@ namespace CompassEx.Gua
             return gsc;
 
         }
+
+        /// <summary>
+        /// 是否为命卦出卦
+        /// </summary>
+        /// <param name="CompareGua"></param>
+        /// <returns></returns>
+        private bool IsOutByFateGua(GuaSubClass CompareGua)
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// 是否为纳甲出卦
+        /// </summary>
+        /// <param name="BirthSky"></param>
+        /// <returns></returns>
+        private bool IsOutByNaJia()
+        {
+            return false;
+        }
+
+
 
 
 

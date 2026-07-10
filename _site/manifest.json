@@ -474,7 +474,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "CompassEx.Gua.NineStar",
-      "Summary": "<p sourcefile=\"api/CompassEx.Gua.NineStar.yml\" sourcestartlinenumber=\"1\">周易数理与风水理气核心：九星（游年八星/北斗九星）的数据抽象模型与静态工厂类。</p>\n"
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.NineStar.yml\" sourcestartlinenumber=\"1\">周易数理与风水理气核心：九星（游年八星/紫白九星）的数据抽象模型与静态工厂类。</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -488,7 +488,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "CompassEx.Gua.NineStarType",
-      "Summary": "<p sourcefile=\"api/CompassEx.Gua.NineStarType.yml\" sourcestartlinenumber=\"1\">勘测系统中的九星模型分类（定义类别实例化时采用的星曜数理体系）。</p>\n"
+      "Summary": "<p sourcefile=\"api/CompassEx.Gua.NineStarType.yml\" sourcestartlinenumber=\"1\">勘测系统中的九星模型分类（定义类别实例化时采用的星曜数理体系）。\n紫白九星、翻卦九星。</p>\n"
     },
     {
       "type": "ManagedReference",

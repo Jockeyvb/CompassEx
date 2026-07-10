@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
+             x:Class="CompassExTest.Pages.MainContainerPage"
+             Title="MainContainerPage">
+    <!-- ⚡ 控死全屏布局：第 0 行自适应切换内容，第 1 行永远呆在屏幕最底部放菜单 -->
+    <Grid RowDefinitions="*, 60">
+
+        <!-- ======================================================== -->
+        <!-- 【第 0 行】：真正的页面舞台。我们用 Border 作为容器，点击菜单时直接换里面的内容 -->
+        <!-- ======================================================== -->
+        <ContentView x:Name="cv"></ContentView>
+
+
+        <!-- ======================================================== -->
+        <!-- 【第 1 行】：这才是你要的、全应用绝对通用的、锁死在最底部的状态栏 -->
+        <!-- ======================================================== -->
+        <Grid Grid.Row="1" BackgroundColor="#F5F5F5" ColumnDefinitions="*, Auto" Padding="20,0"  HorizontalOptions="Fill">
+
+            <!-- 1. 左侧：纯手写的四个菜单切换按钮 -->
+            <HorizontalStackLayout Grid.Column="0" Spacing="15" VerticalOptions="Center" HorizontalOptions="Center" >
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
+
+                    <!-- 1. 控死图片大小为 24 像素 -->
+                    <Image Source="eightword.png"  WidthRequest="24" HeightRequest="24"/>
+
+                    <!-- 2. 菜单文字 -->
+                    <Label Text="Dashboard" TextColor="Black" VerticalOptions="Center" FontSize="14"/>
+
+                    <!-- 3. ⚡ 加上点击手势，让这一整块区域点击时都能触发 Menu_Clicked -->
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Menu_Clicked" CommandParameter="Dashboard"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
+
+                    <!-- 1. 控死图片大小为 24 像素 -->
+                    <Image Source="data.png" WidthRequest="24" HeightRequest="24"/>
+
+                    <!-- 2. 菜单文字 -->
+                    <Label Text="Projects" TextColor="Black" VerticalOptions="Center" FontSize="14"/>
+
+                    <!-- 3. ⚡ 加上点击手势，让这一整块区域点击时都能触发 Menu_Clicked -->
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Menu_Clicked" CommandParameter="Projects"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
+
+                    <!-- 1. 控死图片大小为 24 像素 -->
+                    <Image Source ="compass.png"  WidthRequest="24" HeightRequest="24"/>
+
+                    <!-- 2. 菜单文字 -->
+                    <Label Text="DataTest" TextColor="Black" VerticalOptions="Center" FontSize="14"/>
+
+                    <!-- 3. ⚡ 加上点击手势，让这一整块区域点击时都能触发 Menu_Clicked -->
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Menu_Clicked" CommandParameter="DataTest"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                </VerticalStackLayout>
+
+ 
+            </HorizontalStackLayout>
+
+            <!-- 2. 右侧：并排放在最右侧的主题切换开关，全软件绝对通用 -->
+            <sf:SfSegmentedControl Grid.Column="1" 
+                VerticalOptions="Center" HorizontalOptions="End" 
+                SelectionChanged="Theme_SelectionChanged"
+                SegmentWidth="40" SegmentHeight="40">
+                <sf:SfSegmentedControl.ItemsSource>
+                    <x:Array Type="{x:Type sf:SfSegmentItem}">
+                        <sf:SfSegmentItem ImageSource="{StaticResource IconLight}"/>
+                        <sf:SfSegmentItem ImageSource="{StaticResource IconDark}"/>
+                    </x:Array>
+                </sf:SfSegmentedControl.ItemsSource>
+            </sf:SfSegmentedControl>
+        </Grid>
+
+    </Grid>
+</ContentPage>

@@ -10,8 +10,10 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
+using CompassEx.Comm;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CompassEx.Gua
 {
@@ -113,20 +115,88 @@ namespace CompassEx.Gua
 
 
         #region 方法
+        /// <summary>
+        /// 判断指定卦象是否属于“天机出卦”（用于玄空大卦物理峦头的收山出煞）
+        /// 三元命卦的出卦判断不一样,要了解天机出卦法之人命卦出卦请看<see cref="FateGua.IsOutGua"/>
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// <b>玄空大卦天机出卦法理论概述：</b><br/>
+        /// 在玄空大卦（六十四卦）理气中，三元地理以“一运、二运、三运、四运”为江东卦（地元），
+        /// “六运、七运、八运、九运”为江西卦（天元），“五运”天心顺逆分行。<br/>
+        /// 所谓<b>出卦</b>，是指龙、山、向、水的气场没有处于同一个父母卦（或同运、通气）的管辖范围内，
+        /// 导致阴阳差错、气场杂乱。在峦头修造中，若犯“天机出卦”，则无法达到“收山出煞”的效果，主凶。
+        /// </para>
+        /// <para>
+        /// <b>本方法校验逻辑：</b><br/>
+        /// 1. 提取对比卦（<paramref name="CompareGua"/>）的上卦（<c>UpGua</c>）在后天八卦或大卦系统中的量化数值（<c>AfterQuantity</c>）。<br/>
+        /// 2. 在预设的出卦字典表（<c>OutGuaSubs</c>）中进行检索。<br/>
+        /// 3. 若存在匹配记录，说明该卦象已跨越父母卦界限，判定为“出卦”（返回 <c>true</c>）；反之则为“不出卦”（返回 <c>false</c>）。
+        /// </para>
+        /// </remarks>
+        /// <param name="CompareGua">需要进行出卦鉴定与比对的源卦象对象（<see cref="GuaClass"/>）。</param>
+        /// <returns>
+        /// 如果该卦象符合天机出卦规则，则返回 <see langword="true"/>（即属于出卦，峦头断为不吉）；
+        /// 如果属于大卦内气、合局通气，则返回 <see langword="false"/>。
+        /// </returns>
+        /// <example>
+        /// <code>
+        /// GuaClass currentGua = GetCurrentGua();
+        /// if (analyzer.IsOutGua(currentGua))
+        /// {
+        ///     // 犯天机出卦，需调整向线或进行收山出煞消砂化解
+        ///     Console.WriteLine("警告：此局犯天机出卦！");
+        /// }
+        /// </code>
+        /// </example>
+        public bool IsOutGua(GuaClass CompareGua)
+        {
+            var r = OutGuaSubs.Where(gs => gs.Value.Name == CompareGua.UpGua.Name);
+            //  Debug.Print(r.Any().ToString());
+            return r.Any(); // 优化点：使用 Any() 比 Count() > 0 性能更好，内部只要找到一个就立即返回
+        }
 
         /// <summary>
-        /// 判定指定的后天八卦单卦在当前天机卦局中是否属于“出卦”。
+        /// 获得天盘六十四卦中所有属于“出卦”的卦象字典集合。
+        /// 三元命卦的出卦判断不一样,要了解天机出卦法之人命卦出卦请看<see cref="FateGua.IsOutGua"/>
         /// </summary>
-        /// <param name="CompareGua">需要比对、判定的后天八卦单卦对象。</param>
-        /// <returns>若该单卦存在于出卦集合（<see cref="OutGuaSubs"/>）中，则返回 <c>true</c>（代表已出卦）；否则返回 <c>false</c>。</returns>
         /// <remarks>
-        /// <para>在玄空大卦风水体系中，主要通过此处的出卦逻辑进行<b>收山出煞</b>的度数判别（通常作用于罗盘 64 卦的分野上）。</para>
-        /// <para><b>⚠️ 业务边界提示：</b>若您当前是要进行“三元命卦”的出卦判定，则需要严格按照纳甲法规则来进行推演。请不要使用本方法，改为调用 <c>FateGua.IsOutGua()</c> 方法。</para>
+        /// <para>
+        /// <b>天盘六十四卦与出卦应用：</b><br/>
+        /// 在玄空大卦理气中，天盘主要用于<b>收纳外气、消砂纳水</b>（部分流派亦用于推算天时公转之气）。
+        /// 本方法通过遍历当前天盘中所有的初始卦象配置（<c>CompassEx.CBeforeGuas</c>），
+        /// 逐一调用 <see cref="IsOutGua(GuaClass)"/> 方法进行天机出卦法的法理鉴定。
+        /// </para>
+        /// <para>
+        /// <b>业务逻辑与过滤机制：</b><br/>
+        /// 1. <b>高阶筛选 (Where)：</b> 利用 LINQ 表达式对天盘的方位卦象映射进行断言筛选，仅保留判定结果为“出卦”的条目。<br/>
+        /// 2. <b>结构重组 (ToDictionary)：</b> 将筛选出的 <see cref="KeyValuePair{CompassRangEX, GuaClass}"/> 集合重新构建为强类型的字典。
+        /// 此字典常用于后续的峦头风水吉凶断验，或在绘制罗盘时对出卦方位进行特殊的红线警告或煞位标注。
+        /// </para>
         /// </remarks>
-        public bool IsOutGua(GuaSubClass CompareGua)
+        /// <returns>
+        /// 返回一个 <see cref="Dictionary{CompassRangEX, GuaClass}"/> 字典集合。<br/>
+        /// 键（Key）为罗盘方位区间对象（<see cref="CompassRangEX"/>），
+        /// 值（Value）为该方位上对应且犯了“天机出卦”的六十四卦卦象对象（<see cref="GuaClass"/>）。
+        /// </returns>
+        /// <seealso cref="IsOutGua(GuaClass)"/>
+        /// <example>
+        /// <code>
+        /// // 示例：获取所有天盘出卦方位，并打印出对应的方位名称与卦名
+        /// Dictionary&lt;CompassRangEX, GuaClass&gt; outGuas = compassAnalyzer.GetOutGuas();
+        /// foreach (var kvp in outGuas)
+        /// {
+        ///     Console.WriteLine($"方位 [{kvp.Key.Name}] 对应的卦象 [{kvp.Value.GuaName}] 犯天机出卦，收山出煞时应当避开。");
+        /// }
+        /// </code>
+        /// </example>
+        public Dictionary<CompassRangEX, GuaClass> GetOutGuas()
         {
-            return OutGuaSubs.ContainsKey(CompareGua.Name);
+            return CompassEx.CBeforeGuas
+                .Where(kv => IsOutGua(kv.Value))
+                .ToDictionary(kv => kv.Key, kv => kv.Value);
         }
+
 
         #endregion
     }

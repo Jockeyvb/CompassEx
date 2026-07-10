@@ -10,7 +10,7 @@ namespace CompassExTest
         {
             InitializeComponent();
             var currentTheme = Application.Current!.RequestedTheme;
-            ThemeSegmentedControl.SelectedIndex = currentTheme == AppTheme.Light ? 0 : 1;
+            // ThemeSegmentedControl.SelectedIndex = currentTheme == AppTheme.Light ? 0 : 1;
         }
         public static async Task DisplaySnackbarAsync(string message)
         {
@@ -42,6 +42,17 @@ namespace CompassExTest
             var cts = new CancellationTokenSource(TimeSpan.FromSeconds(5));
             await toast.Show(cts.Token);
         }
+
+        // ⚡ 必须确保方法名称、大小写、以及参数类型 (object, ToggledEventArgs) 完全一致
+        private void GlobalThemeSwitch_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (Application.Current != null)
+            {
+                // e.Value 为 true 代表开关被打开（深色），false 代表关闭（浅色）
+                Application.Current.UserAppTheme = e.Value ? AppTheme.Dark : AppTheme.Light;
+            }
+        }
+
 
         private void SfSegmentedControl_SelectionChanged(object sender, Syncfusion.Maui.Toolkit.SegmentedControl.SelectionChangedEventArgs e)
         {

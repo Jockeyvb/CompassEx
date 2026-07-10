@@ -1,45 +1,36 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<!-- ⚡ 根標籤徹底換成 ContentView -->
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:pageModels="clr-namespace:CompassExTest.PageModels"
-             xmlns:models="clr-namespace:CompassExTest.Models"
-             xmlns:controls="clr-namespace:CompassExTest.Pages.Controls"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:Class="CompassExTest.Pages.ProjectListPage"
-             x:DataType="pageModels:ProjectListPageModel"
-             x:Name="ProjectList"
-             Title="Projects">
+             xmlns:local="clr-namespace:CompassExTest.Pages"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
+             x:Class="CompassExTest.Pages.ProjectListPage">
+    <!-- 💡 改用最乾淨、最不會出寬高 Bug 的佈局方式 -->
+    <VerticalStackLayout Padding="10" Spacing="10">
 
+        <!-- 這行紅色的字是你的保險。如果你看得到它，代表頁面成功加載了 -->
+        <Label Text="頁面渲染成功，正在加載資料..." TextColor="Red" FontSize="18" HorizontalOptions="Center" />
 
-    <ContentPage.Behaviors>
-        <toolkit:EventToCommandBehavior
-                BindingContext="{Binding Path=BindingContext, Source={x:Reference ProjectList}, x:DataType=ContentPage}"
-                EventName="Appearing"                
-                Command="{Binding AppearingCommand}" />
-    </ContentPage.Behaviors>
-    <Grid>
-      <ScrollView>
-        <VerticalStackLayout 
-            BindableLayout.ItemsSource="{Binding Projects}" 
-            Margin="{StaticResource LayoutPadding}" 
-            Spacing="{StaticResource LayoutSpacing}">
-            <BindableLayout.ItemTemplate>
-                <DataTemplate x:DataType="models:Project">
-                    <Border>
-                        <VerticalStackLayout Padding="10">
-                            <Label Text="{Binding Name}" FontSize="24" />
-                            <Label Text="{Binding Description}" />
-                        </VerticalStackLayout>
-                        <Border.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding NavigateToProjectCommand, Source={RelativeSource AncestorType={x:Type pageModels:ProjectListPageModel}}, x:DataType=pageModels:ProjectListPageModel}" CommandParameter="{Binding .}"/>
-                        </Border.GestureRecognizers>
-                    </Border>
+        <!-- ⚡ 換成 MAUI 官方首選的 CollectionView，並手動鎖死寬高 (500像素) -->
+        <CollectionView x:Name="MyCollectionView" ItemsSource="{Binding TblGoodDayList}" 
+                        HeightRequest="500"
+                        Margin="10">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <!-- ⚠️ 警告：CollectionView 內部不要寫 <ViewCell>，直接放佈局控制項！ -->
+                    <HorizontalStackLayout Spacing="25" Padding="15">
+
+                        <!-- ⚡【終極防禦】強制指定極其鮮豔的「藍色/橘色」，防止深色模式讓文字隱形 -->
+                        <Label Text="{Binding Month}" FontSize="18" FontAttributes="Bold" TextColor="Blue" />
+                        <Label Text="{Binding DayLoc}" FontSize="16" TextColor="Orange" />
+                        <Label Text="{Binding Info}" FontSize="14" TextColor="Green" LineBreakMode="WordWrap" />
+
+                    </HorizontalStackLayout>
                 </DataTemplate>
-            </BindableLayout.ItemTemplate>
-        </VerticalStackLayout>
-      </ScrollView>
+            </CollectionView.ItemTemplate>
 
-        <controls:AddButton 
-            Command="{Binding AddProjectCommand}" />
-    </Grid>
-</ContentPage>
+        </CollectionView>
+    </VerticalStackLayout>
+
+</ContentView>

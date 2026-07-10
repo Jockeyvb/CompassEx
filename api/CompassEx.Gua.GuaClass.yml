@@ -16,6 +16,7 @@ items:
   - CompassEx.Gua.GuaClass.Get7HereYaoGua
   - CompassEx.Gua.GuaClass.GetChangeGua
   - CompassEx.Gua.GuaClass.GetChangeGuaFace
+  - CompassEx.Gua.GuaClass.GetGoodDayList
   - CompassEx.Gua.GuaClass.GetGuaClass(System.Collections.Generic.List{System.Int32})
   - CompassEx.Gua.GuaClass.GetGuaClass(System.Int32)
   - CompassEx.Gua.GuaClass.GetGuaClass(System.Int32[])
@@ -1355,7 +1356,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ExchangeGua
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 582
+    startLine: 583
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1394,7 +1395,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Get7HereYaoGua
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 604
+    startLine: 605
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1436,7 +1437,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetStringYaos
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 668
+    startLine: 669
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1467,7 +1468,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetYaos
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 690
+    startLine: 691
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1506,7 +1507,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetChangeGua
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 716
+    startLine: 717
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1543,7 +1544,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSykStr
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 758
+    startLine: 759
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1575,7 +1576,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetHereThereStr
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 774
+    startLine: 775
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1612,7 +1613,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetHideRelativeStr
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 797
+    startLine: 798
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1649,7 +1650,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetYaosSkyLocStrShort
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 827
+    startLine: 828
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1680,7 +1681,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetYaosSkyLocStr
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 849
+    startLine: 850
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1711,7 +1712,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSixGodStr
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 871
+    startLine: 872
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1742,7 +1743,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSixRelativeStr
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 892
+    startLine: 893
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1784,7 +1785,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSixRelativeStr
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 923
+    startLine: 924
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1823,7 +1824,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadAll
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 946
+    startLine: 947
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1861,7 +1862,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadNoAvg
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 959
+    startLine: 960
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1890,7 +1891,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaFace
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 981
+    startLine: 982
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1935,7 +1936,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaFace
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1004
+    startLine: 1005
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1972,7 +1973,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetChangeGuaFace
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1051
+    startLine: 1052
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2009,7 +2010,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadHideRelative
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1085
+    startLine: 1086
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2041,7 +2042,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadSixRelative
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1132
+    startLine: 1133
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2075,7 +2076,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadGuaAliasName
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1166
+    startLine: 1167
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2110,7 +2111,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetLostLocs
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1284
+    startLine: 1285
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2159,7 +2160,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaClassBySkyLoc
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1421
+    startLine: 1422
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2197,7 +2198,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaClass
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1436
+    startLine: 1437
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2235,7 +2236,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaClass
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1446
+    startLine: 1447
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2273,7 +2274,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaClass
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1456
+    startLine: 1457
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2311,7 +2312,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaClass
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1473
+    startLine: 1474
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2353,7 +2354,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FlowerGuaClass
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1515
+    startLine: 1516
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2385,6 +2386,34 @@ items:
   nameWithType.vb: GuaClass.FlowerGuaClass(Integer, Integer)
   fullName.vb: CompassEx.Gua.GuaClass.FlowerGuaClass(Integer, Integer)
   name.vb: FlowerGuaClass(Integer, Integer)
+- uid: CompassEx.Gua.GuaClass.GetGoodDayList
+  commentId: M:CompassEx.Gua.GuaClass.GetGoodDayList
+  id: GetGoodDayList
+  parent: CompassEx.Gua.GuaClass
+  langs:
+  - csharp
+  - vb
+  name: GetGoodDayList()
+  nameWithType: GuaClass.GetGoodDayList()
+  fullName: CompassEx.Gua.GuaClass.GetGoodDayList()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/GuaClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetGoodDayList
+    path: CompassEx/Gua/GuaClass.cs
+    startLine: 1549
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  syntax:
+    content: public static List<TblGoodDay> GetGoodDayList()
+    return:
+      type: System.Collections.Generic.List{CompassEx.Data.Models.TblGoodDay}
+    content.vb: Public Shared Function GetGoodDayList() As List(Of TblGoodDay)
+  overload: CompassEx.Gua.GuaClass.GetGoodDayList*
 references:
 - uid: CompassEx.Gua
   commentId: N:CompassEx.Gua
@@ -3961,3 +3990,40 @@ references:
   name: FlowerGuaClass
   nameWithType: GuaClass.FlowerGuaClass
   fullName: CompassEx.Gua.GuaClass.FlowerGuaClass
+- uid: CompassEx.Gua.GuaClass.GetGoodDayList*
+  commentId: Overload:CompassEx.Gua.GuaClass.GetGoodDayList
+  href: CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGoodDayList
+  name: GetGoodDayList
+  nameWithType: GuaClass.GetGoodDayList
+  fullName: CompassEx.Gua.GuaClass.GetGoodDayList
+- uid: System.Collections.Generic.List{CompassEx.Data.Models.TblGoodDay}
+  commentId: T:System.Collections.Generic.List{CompassEx.Data.Models.TblGoodDay}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<TblGoodDay>
+  nameWithType: List<TblGoodDay>
+  fullName: System.Collections.Generic.List<CompassEx.Data.Models.TblGoodDay>
+  nameWithType.vb: List(Of TblGoodDay)
+  fullName.vb: System.Collections.Generic.List(Of CompassEx.Data.Models.TblGoodDay)
+  name.vb: List(Of TblGoodDay)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: CompassEx.Data.Models.TblGoodDay
+    name: TblGoodDay
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Data.Models.TblGoodDay
+    name: TblGoodDay
+  - name: )

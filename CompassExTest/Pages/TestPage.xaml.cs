@@ -1,6 +1,5 @@
 using CompassEx.Comm;
 using CompassEx.Gua;
-using Newtonsoft.Json;
 using SkiaSharp;
 using SkiaSharp.Views.Maui;
 using System.ComponentModel;
@@ -8,7 +7,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 namespace CompassExTest.Pages;
 
-public partial class TestPage : ContentPage, INotifyPropertyChanged
+public partial class TestPage : INotifyPropertyChanged
 {
     private double _compassRotation;
     private string _headingText = "请点击罗盘调整方位";
@@ -57,25 +56,38 @@ public partial class TestPage : ContentPage, INotifyPropertyChanged
         //}
 
 
-        foreach (string sn in GuaSubClass.AfterGuaSubNames)
+        //foreach (string sn in GuaSubClass.AfterGuaSubNames)
+        //{
+        //    if (sn != "黄")
+        //    {
+        //        var sg = GuaSubClass.GetGuaSub(sn);
+        //        var fn = GuaFlip.GetGuaFlipNineStarDC(sg, GuaFlipMethod.Dragon);
+        //        Dictionary<string, NineStar> dc = new Dictionary<string, NineStar>();
+        //        var nj = NaJia<NaJiaYGResult>.CreateYG(sg);
+        //        foreach (var kv in fn)
+        //        {
+        //            dc.Add(kv.Key.Name, kv.Value);
+        //        }
+
+        //        Debug.WriteLine("\n主卦" + GuaFlipMethod.Dragon.ToString() + "：" + sn + "\n" + JsonConvert.SerializeObject(dc) + "\n，主卦纳甲：" + JsonConvert.SerializeObject(nj));
+
+
+        //    }
+
+        //}
+
+        var g = new GuaClass("晋");
+        var tj = new TianJiGua(g);
+        var ls = tj.GetOutGuas();
+        string st = string.Join(",", tj.OutGuaSubs.Select(tg => tg.Value.Name + tg.Value.AfterQuantity));
+
+        Debug.WriteLine($"晋卦的卦宫是：【{g.GuaSelf.Name}】，天机出卦的后天洛数是：" + st + "六爻卦出卦：");
+        foreach (var kv in ls)
         {
-            if (sn != "黄")
-            {
-                var sg = GuaSubClass.GetGuaSub(sn);
-                var fn = GuaFlip.GetGuaFlipNineStarDC(sg, GuaFlipMethod.Dragon);
-                Dictionary<string, NineStar> dc = new Dictionary<string, NineStar>();
-                var nj = NaJia<NaJiaYGResult>.CreateYG(sg);
-                foreach (var kv in fn)
-                {
-                    dc.Add(kv.Key.Name, kv.Value);
-                }
-
-                Debug.WriteLine("\n主卦" + GuaFlipMethod.Dragon.ToString() + "：" + sn + "\n" + JsonConvert.SerializeObject(dc) + "\n，主卦纳甲：" + JsonConvert.SerializeObject(nj));
-
-
-            }
-
+            Debug.Write("," + kv.Value.GuaFullName);
         }
+
+
 
     }
 
@@ -368,67 +380,23 @@ public partial class TestPage : ContentPage, INotifyPropertyChanged
         return target;
     }
 
-    protected override async void OnAppearing()
+
+    protected override void OnParentSet()
     {
-        //await Task.Delay(100);
-
-        //// 2. 强行在主线程命令显卡立即刷新罗盘盘面，这样一进页面罗盘绝对不可能再隐形！
-        //MainThread.BeginInvokeOnMainThread(() =>
-        //{
-        //    SkiaCompassView?.InvalidateSurface();
-        //});
-
-
-
-        var mauiWindow = this.Window ?? Application.Current?.MainPage?.Window;
-        if (mauiWindow == null) return;
-
-
-
-
 #if WINDOWS
-     InnerSquareGrid.WidthRequest = 1000;
-   
-
-
-
-
-    // 1. 获取 MAUI 的原生 Windows 窗口
-    var handler = mauiWindow.Handler as Microsoft.Maui.Handlers.WindowHandler;
-    if (handler?.PlatformView is Microsoft.UI.Xaml.Window nativeWindow)
-    {
-        // 2. 拿到窗口的绝对物理句柄 HWND
-        IntPtr windowHandle = WinRT.Interop.WindowNative.GetWindowHandle(nativeWindow);
-        
-        // 3. 直接通过 Windows 底层用户界面 API 最大化窗口
-        // 3 代表最大化 (SW_MAXIMIZE)，1 代表正常还原 (SW_SHOWNORMAL)
-        if (IsZoomed(windowHandle))
+ InnerSquareGrid.WidthRequest = 1000;
+        SkiaCompassView.HandlerChanged += (sender, e) =>
         {
-            ShowWindow(windowHandle, 1); // 如果已经最大化了，就还原
-        }
-        else
-        {
-            ShowWindow(windowHandle, 3); // 如果是普通窗口，就最大化
-        }
-
-    }
-
-     SkiaCompassView.HandlerChanged += (sender, e) =>
-    {
-        if (SkiaCompassView.Handler?.PlatformView is Microsoft.UI.Xaml.FrameworkElement winView)
-        {
-            // 直接訂閱 Windows (WinUI 3) 原生的滑鼠滾輪事件！
-            winView.PointerWheelChanged += WinView_PointerWheelChanged;
-        }
-    };
- 
-
-
+            if (SkiaCompassView.Handler?.PlatformView is Microsoft.UI.Xaml.FrameworkElement winView)
+            {
+                // 直接訂閱 Windows (WinUI 3) 原生的滑鼠滾輪事件！
+                winView.PointerWheelChanged += WinView_PointerWheelChanged;
+            }
+        };
 #endif
 
-        base.OnAppearing();
+        base.OnParentSet();
     }
-
 #if WINDOWS
 /// <summary>
 /// 處理 Windows 平台底層原生的滑鼠滾輪事件

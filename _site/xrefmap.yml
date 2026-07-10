@@ -1831,6 +1831,19 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.GuaClass.GetChangeGuaFace
   nameWithType: GuaClass.GetChangeGuaFace
+- uid: CompassEx.Gua.GuaClass.GetGoodDayList
+  name: GetGoodDayList()
+  href: api/CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGoodDayList
+  commentId: M:CompassEx.Gua.GuaClass.GetGoodDayList
+  fullName: CompassEx.Gua.GuaClass.GetGoodDayList()
+  nameWithType: GuaClass.GetGoodDayList()
+- uid: CompassEx.Gua.GuaClass.GetGoodDayList*
+  name: GetGoodDayList
+  href: api/CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGoodDayList_
+  commentId: Overload:CompassEx.Gua.GuaClass.GetGoodDayList
+  isSpec: "True"
+  fullName: CompassEx.Gua.GuaClass.GetGoodDayList
+  nameWithType: GuaClass.GetGoodDayList
 - uid: CompassEx.Gua.GuaClass.GetGuaClass(System.Collections.Generic.List{System.Int32})
   name: GetGuaClass(List<int>)
   href: api/CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGuaClass_System_Collections_Generic_List_System_Int32__
@@ -3580,6 +3593,19 @@ references:
   fullName.vb: CompassEx.Gua.TianJiGua.New
   nameWithType: TianJiGua.TianJiGua
   nameWithType.vb: TianJiGua.New
+- uid: CompassEx.Gua.TianJiGua.GetOutGuas
+  name: GetOutGuas()
+  href: api/CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_GetOutGuas
+  commentId: M:CompassEx.Gua.TianJiGua.GetOutGuas
+  fullName: CompassEx.Gua.TianJiGua.GetOutGuas()
+  nameWithType: TianJiGua.GetOutGuas()
+- uid: CompassEx.Gua.TianJiGua.GetOutGuas*
+  name: GetOutGuas
+  href: api/CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_GetOutGuas_
+  commentId: Overload:CompassEx.Gua.TianJiGua.GetOutGuas
+  isSpec: "True"
+  fullName: CompassEx.Gua.TianJiGua.GetOutGuas
+  nameWithType: TianJiGua.GetOutGuas
 - uid: CompassEx.Gua.TianJiGua.GuaList
   name: GuaList
   href: api/CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_GuaList
@@ -3606,12 +3632,12 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.TianJiGua.InGuaSubs
   nameWithType: TianJiGua.InGuaSubs
-- uid: CompassEx.Gua.TianJiGua.IsOutGua(CompassEx.Gua.GuaSubClass)
-  name: IsOutGua(GuaSubClass)
-  href: api/CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_IsOutGua_CompassEx_Gua_GuaSubClass_
-  commentId: M:CompassEx.Gua.TianJiGua.IsOutGua(CompassEx.Gua.GuaSubClass)
-  fullName: CompassEx.Gua.TianJiGua.IsOutGua(CompassEx.Gua.GuaSubClass)
-  nameWithType: TianJiGua.IsOutGua(GuaSubClass)
+- uid: CompassEx.Gua.TianJiGua.IsOutGua(CompassEx.Gua.GuaClass)
+  name: IsOutGua(GuaClass)
+  href: api/CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_IsOutGua_CompassEx_Gua_GuaClass_
+  commentId: M:CompassEx.Gua.TianJiGua.IsOutGua(CompassEx.Gua.GuaClass)
+  fullName: CompassEx.Gua.TianJiGua.IsOutGua(CompassEx.Gua.GuaClass)
+  nameWithType: TianJiGua.IsOutGua(GuaClass)
 - uid: CompassEx.Gua.TianJiGua.IsOutGua*
   name: IsOutGua
   href: api/CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_IsOutGua_

@@ -66,7 +66,7 @@ namespace CompassEx.Gua
         public FiveAttr FiveAttr { get { return this.GuaQiFiveAttr[this.GuaQiNumber]; } }
 
         /// <summary>
-        /// 动态计算并获取当前单卦所落先天的空间卦位在罗盘上对应的后天洛书卦气数。
+        /// 先天洛数：动态计算并获取当前单卦所落先天的空间卦位在罗盘上对应的后天洛书卦气数。
         /// </summary>
         /// <value>
         /// 一个 <see cref="int"/> 整数，代表一至九运的玄空大卦洛书数（通常为后天卦序数加一）。
@@ -83,8 +83,8 @@ namespace CompassEx.Gua
                 // 利用 LINQ 优雅检索完全覆盖目标先天卦位起点的后天八卦对象
                 var matchNumber = GuaSubClass.BeforeGuaSubNames
                     .Select(sn => GuaSubClass.GetGuaSub(sn))
-                    .Where(gs => gs != null && this.GuaSub.CBeforRangeDegree.IsInRange(gs.CAfterRangeDegree.Start))
-                    .Select(gs => (int?)(gs.AfterQuantity + 1))
+                    .Where(gs => gs != null && this.GuaSub.CBeforRangeDegree.IsInRange(gs.CAfterRangeDegree.Start)) //找出先天卦
+                    .Select(gs => (int?)(gs.AfterQuantity))
                     .FirstOrDefault();
 
                 if (matchNumber.HasValue)

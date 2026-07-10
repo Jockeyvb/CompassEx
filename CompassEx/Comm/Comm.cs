@@ -18,6 +18,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Xml.Linq;
+using DBComm = global::CompassEx.Data.Comm;
 namespace CompassEx.Comm
 {
     /// <summary>
@@ -301,6 +302,7 @@ namespace CompassEx.Comm
         {
             CompassEx.LoadAllCAfterGuas();
             CompassEx.LoadAllCBeforeGuas();
+            DBComm.InitializeDatabase();
 
         }
 

@@ -21,11 +21,14 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: NineStarType
     path: CompassEx/Gua/NineStar.cs
-    startLine: 35
+    startLine: 36
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 勘测系统中的九星模型分类（定义类别实例化时采用的星曜数理体系）。
+  summary: >-
+    勘测系统中的九星模型分类（定义类别实例化时采用的星曜数理体系）。
+
+    紫白九星、翻卦九星。
   remarks: >-
     <p>本枚举用于区分基础易学方位星曜与进阶翻卦理气星曜的数理边界：</p>
 
@@ -61,11 +64,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaNineStar
     path: CompassEx/Gua/NineStar.cs
-    startLine: 40
+    startLine: 41
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 后天八卦九星类型（包含五黄中宫）。
+  summary: 后天八卦九星（紫白九星）类型（包含五黄中宫）。
   example: []
   syntax:
     content: AfterGuaNineStar = 0
@@ -89,7 +92,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuaFlipNineStar
     path: CompassEx/Gua/NineStar.cs
-    startLine: 45
+    startLine: 46
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua

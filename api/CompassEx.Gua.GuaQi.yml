@@ -170,7 +170,7 @@ items:
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 动态计算并获取当前单卦所落先天的空间卦位在罗盘上对应的后天洛书卦气数。
+  summary: 先天洛数：动态计算并获取当前单卦所落先天的空间卦位在罗盘上对应的后天洛书卦气数。
   remarks: >-
     <b>★ LINQ 架构重构解析：</b>
 

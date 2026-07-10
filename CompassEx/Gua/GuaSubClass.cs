@@ -291,7 +291,7 @@ namespace CompassEx.Gua
         /// 计算并获取当前单卦对应的文王后天八卦洛书九宫绝对数（整型：1 至 9）。
         /// </summary>
         /// <value>整型数值。通过在 <see cref="AfterGuaSubNumerics"/> 中反查中文数（如“八”）的索引，动态加 1 转换得出其九宫绝对物理运数。</value>
-        public int AfterQuantity { get { return AfterGuaSubNumerics.IndexOf(this.AfterGuaSubCNQuantity); } }//后天八卦数
+        public int AfterQuantity { get { return AfterGuaSubNumerics.IndexOf(this.AfterGuaSubCNQuantity) + 1; } }//后天八卦数
 
         /// <summary>
         /// 计算并获取当前单卦对应的伏羲先天八卦绝对数（整型：1 至 8）。
@@ -696,5 +696,7 @@ namespace CompassEx.Gua
 
             return null;
         }
+
+
     }
 }

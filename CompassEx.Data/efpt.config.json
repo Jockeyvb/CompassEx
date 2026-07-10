@@ -1,0 +1,86 @@
+﻿{
+   "CodeGenerationMode": 4,
+   "ContextClassName": "F:\\Project\\Program\\CompassEx\\CompassEx.Data\\JockeyCalendar.db3Context",
+   "ContextNamespace": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "IrregularWords": null,
+   "MinimumProductVersion": "2.6.1604",
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Models",
+   "PluralRules": null,
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "CompassEx.Data",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 2,
+   "SelectedToBeGenerated": 2,
+   "SingularRules": null,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "tbl_GoodDay",
+         "ObjectType": 0
+      },
+      {
+         "Name": "tbl_GoodHour",
+         "ObjectType": 0
+      },
+      {
+         "Name": "tbl_Person8WordList",
+         "ObjectType": 0
+      },
+      {
+         "Name": "tbl_PersonBigGuo",
+         "ObjectType": 0
+      },
+      {
+         "Name": "tbl_PersonEightWord",
+         "ObjectType": 0
+      },
+      {
+         "Name": "tbl_PersonGuo",
+         "ObjectType": 0
+      },
+      {
+         "Name": "tbl_PersonGuoList",
+         "ObjectType": 0
+      },
+      {
+         "Name": "tbl_PersonPower",
+         "ObjectType": 0
+      },
+      {
+         "Name": "tbl_SixGod",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": null,
+   "UncountableWords": null,
+   "UseAsyncStoredProcedureCalls": true,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDatabaseNamesForRoutines": true,
+   "UseDateOnlyTimeOnly": true,
+   "UseDbContextSplitting": false,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseInternalAccessModifiersForSprocsAndFunctions": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UsePrefixNavigationNaming": false,
+   "UseSchemaFolders": true,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": true,
+   "UseT4Split": false,
+   "UseTypedTvpParameters": true
+}

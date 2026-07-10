@@ -9,15 +9,15 @@
 // // For commercial use, you must obtain a commercial license from the author.
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
-
 using CompassEx.Comm;
+using CompassEx.Data.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
-
+using DBComm = global::CompassEx.Data.Comm;
 
 namespace CompassEx.Gua
 {
@@ -519,6 +519,7 @@ namespace CompassEx.Gua
             this.DownGua = GuaSubClass.GetGuaSub(sDownGuaName, true);
             this.GuaIndex = Array.IndexOf(GuaClass.GuaFullNames, this.GuaFullName);
             this.Name = GuaClass.GuaNames[this.GuaIndex];
+            LoadGuaSelfandHereThere();
         }
 
 
@@ -605,7 +606,7 @@ namespace CompassEx.Gua
         public List<GuaClass> Get7HereYaoGua()
         {
             //64卦变卦规则:初爻变出第一世飞爻卦,以后的飞爻卦由上一个飞爻卦的初爻变出,共变5次后，再返回第5爻变（游魂卦），再把下卦三爻全变（归魂卦），
-            if (this.UpGua != this.DownGua) throw new Exception("本卦不是纯卦，不能用于计算7世飞爻卦");
+            if (this.UpGua.Name != this.DownGua.Name) throw new Exception("本卦不是纯卦，不能用于计算7世飞爻卦");
 
             List<GuaClass> GuaIns = new List<GuaClass>();
             GuaIns.Add(this);
@@ -1193,7 +1194,7 @@ namespace CompassEx.Gua
         /// <b>归藏法与世应推导数理逻辑：</b>
         /// <list type="number">
         /// <item><description><b>爻象归藏合并</b>：将下卦（内卦）与上卦（外卦）对应的初爻、中爻、上爻各自的阴阳状态码（0或1）进行两两相加。若相加结果大于 1（即 1+1=2）则强制归 0，完成异或（XOR）数理合并。</description></item>
-        /// <item><description><b>融合卦象识别</b>：调用 <see cref="GuaSubClass.GetGuaSub"/> 将合并后的三枚爻重组为一枚全新的三爻经卦 <c>gsc</c>。</description></item>
+        /// <item><description><b>融合卦象识别</b>：调用 <see cref="GuaSubClass.GetGuaSub(int ,int ,int ,bool )"/> 将合并后的三枚爻重组为一枚全新的三爻经卦 <c>gsc</c>。</description></item>
         /// <item><description><b>定位母宫与世应</b>：依据 <c>gsc</c> 的卦名组合，严格执行京房易八宫排卦法门：
         /// <list type="bullet">
         /// <item><description><b>乾/兑/震宫</b>：世爻分别在三、二、初爻，卦宫归属于<b>外卦（上卦）</b>。</description></item>
@@ -1544,6 +1545,18 @@ namespace CompassEx.Gua
 
             return gc;
         }
+
+
+        public static List<TblGoodDay> GetGoodDayList()
+        {
+            ;
+            DBComm.InitializeDatabase();
+
+            // 示例 A：直接使用封装好的全局快捷方法查询 tbl_GoodDay
+            return DBComm.Query<TblGoodDay>("SELECT * FROM tbl_GoodDay").ToList();
+
+        }
+
 
         #endregion
     }

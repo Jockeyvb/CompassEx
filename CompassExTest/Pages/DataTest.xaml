@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CompassExTest.Pages.DataTest"
+             BindingContext="{Binding Source={RelativeSource Self}}"
+             Title="DataTest">
+    <VerticalStackLayout Padding="10" Spacing="10">
+
+        <!-- 這行紅色的字是你的保險。如果你看得到它，代表頁面成功加載了 -->
+        <Label Text="頁面渲染成功，正在加載資料..." TextColor="Red" FontSize="18" HorizontalOptions="Center" />
+
+        <!-- ⚡ 換成 MAUI 官方首選的 CollectionView，並手動鎖死寬高 (500像素) -->
+        <CollectionView x:Name="MyCollectionView" ItemsSource="{Binding TblGoodDayList}" 
+                        HeightRequest="500"
+                        Margin="10">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <!-- ⚠️ 警告：CollectionView 內部不要寫 <ViewCell>，直接放佈局控制項！ -->
+                    <HorizontalStackLayout Spacing="25" Padding="15">
+
+                        <!-- ⚡【終極防禦】強制指定極其鮮豔的「藍色/橘色」，防止深色模式讓文字隱形 -->
+                        <Label Text="{Binding Month}" FontSize="18" FontAttributes="Bold" TextColor="Blue" />
+                        <Label Text="{Binding DayLoc}" FontSize="16" TextColor="Orange" />
+                        <Label Text="{Binding Info}" FontSize="14" TextColor="Green" LineBreakMode="WordWrap" />
+
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

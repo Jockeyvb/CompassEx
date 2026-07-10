@@ -25,7 +25,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Comm
     path: CompassEx/Comm/Comm.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -63,7 +63,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetEnumValues
     path: CompassEx/Comm/Comm.cs
-    startLine: 33
+    startLine: 34
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -98,7 +98,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: EnumToDict
     path: CompassEx/Comm/Comm.cs
-    startLine: 58
+    startLine: 59
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -143,7 +143,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetEnumDict
     path: CompassEx/Comm/Comm.cs
-    startLine: 104
+    startLine: 105
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -179,7 +179,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetEnumDescription
     path: CompassEx/Comm/Comm.cs
-    startLine: 131
+    startLine: 132
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -235,7 +235,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AllInit
     path: CompassEx/Comm/Comm.cs
-    startLine: 299
+    startLine: 300
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -271,7 +271,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ApplyBaseProperties
     path: CompassEx/Comm/Comm.cs
-    startLine: 322
+    startLine: 324
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
