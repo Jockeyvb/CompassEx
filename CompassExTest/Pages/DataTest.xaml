@@ -6,9 +6,8 @@
              Title="DataTest">
     <VerticalStackLayout Padding="10" Spacing="10">
 
-        <!-- 這行紅色的字是你的保險。如果你看得到它，代表頁面成功加載了 -->
-        <Label Text="頁面渲染成功，正在加載資料..." TextColor="Red" FontSize="18" HorizontalOptions="Center" />
-
+        <Button Text="加载数据"  Clicked="Button_Clicked_1" HorizontalOptions="Center"></Button>
+<Button Text="测试" Clicked="Button_Clicked" HorizontalOptions="Center"></Button>
         <!-- ⚡ 換成 MAUI 官方首選的 CollectionView，並手動鎖死寬高 (500像素) -->
         <CollectionView x:Name="MyCollectionView" ItemsSource="{Binding TblGoodDayList}" 
                         HeightRequest="500"

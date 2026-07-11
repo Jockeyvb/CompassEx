@@ -24,7 +24,9 @@ namespace CompassEx.Gua
 
 
 
-
+    /// <summary>
+    /// 六爻卦
+    /// </summary>
     public class GuaClass
     {
 
@@ -414,6 +416,8 @@ namespace CompassEx.Gua
         /// <value>包含已发生动变的爻位编号或变爻数据列表。</value>
         [JsonIgnore]
         public List<int> ChangedYao { get; private set; } //变化后的爻
+
+
 
         /// <summary>
         /// 获取或设置当前六爻卦的八宫所属别名分类（如：“归魂卦”、“游魂卦”、“纯卦/八纯”或常规的几世卦）。
@@ -1557,7 +1561,11 @@ namespace CompassEx.Gua
 
         }
 
-
+        public override bool Equals(object obj)
+        {
+            var g = (GuaClass)obj;
+            return g.Name == this.Name;
+        }
         #endregion
     }
 }

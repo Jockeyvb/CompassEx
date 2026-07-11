@@ -23,7 +23,7 @@ namespace CompassExTest.Pages
         {
             base.OnParentSet();
 
-            TblGoodDayList = TblGoodDay.GetTblGoodDayCol(pageIndex: 2).ToObservableCollection();
+            TblGoodDayList = TblGoodDay.GetTblGoodDayCol(pageIndex: 2).Result.ReturnObj.ToObservableCollection();
             MyCollectionView.ItemsSource = TblGoodDayList;
 
         }

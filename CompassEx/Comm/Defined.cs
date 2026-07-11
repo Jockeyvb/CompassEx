@@ -15,7 +15,6 @@ using System;
 namespace CompassEx.Comm
 
 {
-
     /// <summary>
     /// 用于封装和标识罗盘对象的元数据及其实例的结构体。
     /// </summary>

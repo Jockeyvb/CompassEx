@@ -1,5 +1,6 @@
 using CompassEx.Comm;
 using CompassEx.Gua;
+using Newtonsoft.Json;
 using SkiaSharp;
 using SkiaSharp.Views.Maui;
 using System.ComponentModel;
@@ -75,17 +76,22 @@ public partial class TestPage : INotifyPropertyChanged
         //    }
 
         //}
+        //==============================罗盘的天机出卦==============================
+        //var g = new GuaClass("晋");
+        //var tj = new TianJiGua(g);
+        //var ls = tj.GetOutGuas();
+        //string st = string.Join(",", tj.OutGuaSubs.Select(tg => tg.Value.Name + tg.Value.AfterQuantity));
 
-        var g = new GuaClass("晋");
-        var tj = new TianJiGua(g);
-        var ls = tj.GetOutGuas();
-        string st = string.Join(",", tj.OutGuaSubs.Select(tg => tg.Value.Name + tg.Value.AfterQuantity));
+        //Debug.WriteLine($"晋卦的卦宫是：【{g.GuaSelf.Name}】，天机出卦的后天洛数是：" + st + "六爻卦出卦：");
+        //foreach (var kv in ls)
+        //{
+        //    Debug.Write("," + kv.Value.GuaFullName);
+        //}
+        //==============================罗盘的天机出卦==============================
 
-        Debug.WriteLine($"晋卦的卦宫是：【{g.GuaSelf.Name}】，天机出卦的后天洛数是：" + st + "六爻卦出卦：");
-        foreach (var kv in ls)
-        {
-            Debug.Write("," + kv.Value.GuaFullName);
-        }
+        FateGua fg = new FateGua(DateTime.Parse("2007-02-13"), "女", new GuaClass("姤"));
+
+        Debug.Print(JsonConvert.SerializeObject(fg.Infos));
 
 
 

@@ -19,6 +19,9 @@ using System.Drawing;
 
 namespace CompassEx.Gua
 {
+    /// <summary>
+    /// 三爻卦
+    /// </summary>
     public class GuaSubClass
     {
         #region 字段 
@@ -261,7 +264,7 @@ namespace CompassEx.Gua
         /// <remarks>
         /// 内部通过当前单卦纳支开始的索引位置（<see cref="LocIndex"/>）作为参数，动态反哺出契合数理的纳甲天干。
         /// </remarks>
-        public SkyClass Sky { get { return new SkyClass(this.LocIndex); } }
+        public SkyClass Sky { get { return new SkyClass(this.SkyName); } }
 
         /// <summary>
         /// 获取当前经卦从初爻、二爻至上爻顺次装配出的地支爻位实体对象列表。
@@ -458,6 +461,20 @@ namespace CompassEx.Gua
 
         #endregion
 
+
+
+
+        #region 方法
+
+
+        /// <summary>
+        /// 转成六爻卦(上、下三爻卦相同）
+        /// </summary>
+        /// <returns></returns>
+        public GuaClass ToGuaClass()
+        {
+            return new GuaClass(this.Name);
+        }
 
 
         /// <summary>
@@ -698,5 +715,12 @@ namespace CompassEx.Gua
         }
 
 
+        public override bool Equals(object obj)
+        {
+            var g = (GuaSubClass)obj;
+            return g.Name == this.Name;
+        }
+
+        #endregion 
     }
 }

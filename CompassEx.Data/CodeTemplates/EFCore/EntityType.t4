@@ -14,15 +14,18 @@
 <#@ import namespace="Microsoft.EntityFrameworkCore.Design" #>
 <#@ import namespace="Microsoft.Extensions.DependencyInjection" #>
 <#
-    // Template version: 800 - Dapper Active Record OOP Standard (Single & Collection)
+    // Template version: 800
     if (EntityType.IsSimpleManyToManyJoinEntityType())
     {
         return "";
     }
 
     var services = (IServiceProvider)Host;
-    var annotationCodeGenerator = services.GetRequiredService<IAnnotationCodeGenerator>();
     var code = services.GetRequiredService<ICSharpHelper>();
+    var tableName = EntityType.GetTableName() ?? EntityType.Name;
+
+    // 💡 智慧識別：檢查當前類別是否包含 CreateTime 欄位
+    var hasCreateTime = EntityType.GetProperties().Any(p => p.Name.Equals("CreateTime", StringComparison.OrdinalIgnoreCase));
 
     var usings = new List<string>
     {
@@ -31,189 +34,343 @@
         "System.Data",               
         "Dapper.Contrib.Extensions",
         "Dapper",
-        "System.Linq"
+        "System.Linq",
+        "System.Collections.ObjectModel",  
+        "System.ComponentModel",              
+        "System.Runtime.CompilerServices"     
     };
-
-    if (!string.IsNullOrEmpty(NamespaceHint))
-    {
 #>
-namespace <#= NamespaceHint #>
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Dapper;
+using Dapper.Contrib.Extensions;
+
+namespace <#= string.IsNullOrEmpty(NamespaceHint) ? "CompassEx.Models" : NamespaceHint #>
 {
-<#
-    }
+   
 
-    var tableName = EntityType.GetTableName();
-    if (!string.IsNullOrEmpty(tableName))
-    {
-#>
     [Dapper.Contrib.Extensions.Table("<#= tableName #>")]
-<#
-    }
-#>
     public partial class <#= EntityType.Name #>
     {
 <#
-        var firstProperty = true;
-        foreach (var property in EntityType.GetProperties().OrderBy(p => p.GetColumnOrder() ?? -1))
+        foreach (var property in EntityType.GetProperties())
         {
-            if (!firstProperty)
-            {
-                WriteLine("");
-            }
-
-            if (!string.IsNullOrEmpty(property.GetComment()))
-            {
-#>
-        /// <summary>
-        /// <#= code.XmlComment(property.GetComment(), indent: 2) #>
-        /// </summary>
-<#
-            }
-
+            var typeName = code.Reference(property.ClrType);
+            var isNullable = property.IsNullable && !property.ClrType.IsValueType;
+            
             if (property.IsPrimaryKey())
             {
 #>
         [Dapper.Contrib.Extensions.Key]
 <#
             }
-
-            usings.AddRange(code.GetRequiredUsings(property.ClrType));
-
-            var needsNullable = Options.UseNullableReferenceTypes && property.IsNullable && !property.ClrType.IsValueType;
-            var needsInitializer = Options.UseNullableReferenceTypes && !property.IsNullable && !property.ClrType.IsValueType;
 #>
-        public <#= code.Reference(property.ClrType) #><#= needsNullable ? "?" : "" #> <#= property.Name #> { get; set; }<#= needsInitializer ? " = null!;" : "" #>
+        public <#= typeName #><#= isNullable ? "?" : "" #> <#= property.Name #> { get; set; }
 <#
-            firstProperty = false;
         }
 #>
 
-        #region 💡 萬能自動 OOP 資料庫操作方法 (優化版 Active Record)
+       #region 💡 萬能自動 OOP 資料庫操作方法 (Active Record)
 
-        /// <summary>
-        /// 【OOP 靜態新增】將一個新物件直接寫入資料庫，並回傳新產生的自增 ID
-        /// </summary>
-        public static long Addnew(<#= EntityType.Name #> entity)
+        public static ReturnResultType Addnew(<#= EntityType.Name #> entity)
         {
-            if (entity == null) throw new ArgumentNullException(nameof(entity));
-            
-            using (IDbConnection db = CompassEx.Data.Comm.GetOpenConnection())
+            var rrt = new ReturnResultType();
+            if (entity == null)
             {
-                return db.Insert(entity);
+                rrt.RESULT = 0;
+                rrt.Message = "傳入的實體不能為空 (ArgumentNullException)。";
+                rrt.Failure = 1;
+                return rrt;
             }
+
+            try
+            {
+                using (IDbConnection db = Comm.GetOpenConnection())
+                {
+                    long id = db.Insert(entity);
+                    
+                    // 💡 修正：long 型別的識別碼或狀態直接對應為 RESULT 與 Success 數量
+                    rrt.RESULT = id > 0 ? (int)id : 0; 
+                    if (id > 0)
+                    {
+                        rrt.Success = 1;
+                    }
+                    else
+                    {
+                        rrt.Failure = 1;
+                        rrt.Message = "新增失敗，未生成有效的識別碼。";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                rrt.RESULT = 0;
+                rrt.Failure = 1;
+                rrt.Message = Comm.IsRRTErrorDetailed ? ex.ToString() : ex.Message;
+            }
+            return rrt;
         }
 
-        /// <summary>
-        /// 【OOP 實例修改】根據當前物件的主鍵 [Key]，自動更新其他所有欄位資料
-        /// </summary>
-        public bool Update()
+        public ReturnResultType Update()
         {
-            using (IDbConnection db = CompassEx.Data.Comm.GetOpenConnection())
+            var rrt = new ReturnResultType();
+            try
             {
-                return db.Update(this);
+                using (IDbConnection db = Comm.GetOpenConnection())
+                {
+                    bool isSuccess = db.Update(this);
+                    
+                    // 💡 修正：bool 結果直接映射為 RESULT、Success 或 Failure
+                    rrt.RESULT = isSuccess ? 1 : 0;
+                    if (isSuccess)
+                    {
+                        rrt.Success = 1;
+                    }
+                    else
+                    {
+                        rrt.Failure = 1;
+                        rrt.Message = "更新失敗，可能該資料已被刪除或未發生變更。";
+                    }
+                }
             }
+            catch (Exception ex)
+            {
+                rrt.RESULT = 0;
+                rrt.Failure = 1;
+                rrt.Message = Comm.IsRRTErrorDetailed ? ex.ToString() : ex.Message;
+            }
+            return rrt;
         }
 
-        /// <summary>
-        /// 【OOP 實例刪除】根據當前物件的主鍵 [Key]，直接從資料庫移除此筆資料
-        /// </summary>
-        public bool Delete()
+        public ReturnResultType Delete()
         {
-            using (IDbConnection db = CompassEx.Data.Comm.GetOpenConnection())
+            var rrt = new ReturnResultType();
+            try
             {
-                return db.Delete(this);
+                using (IDbConnection db = Comm.GetOpenConnection())
+                {
+                    bool isSuccess = db.Delete(this);
+                    
+                    // 💡 修正：bool 結果直接映射為 RESULT、Success 或 Failure
+                    rrt.RESULT = isSuccess ? 1 : 0;
+                    if (isSuccess)
+                    {
+                        rrt.Success = 1;
+                    }
+                    else
+                    {
+                        rrt.Failure = 1;
+                        rrt.Message = "刪除失敗，找不到指定的資料紀錄。";
+                    }
+                }
             }
+            catch (Exception ex)
+            {
+                rrt.RESULT = 0;
+                rrt.Failure = 1;
+                rrt.Message = Comm.IsRRTErrorDetailed ? ex.ToString() : ex.Message;
+            }
+            return rrt;
         }
 
         #endregion
 
-        #region 💡 萬能進階動態查詢方法 (單個與集合分離)
+        #region 💡 萬能進階動態查詢方法
 
-        /// <summary>
-        /// 【OOP 精確單個查詢】獲取符合條件的單個實體對象（只取符合條件的第一筆）
-        /// </summary>
-        /// <param name="where">篩選條件字典 (Key為欄位名, Value為比對值)</param>
-        /// <param name="orderBy">排序欄位陣列 (例如: new[] { "GoodDayID DESC" })</param>
-        public static <#= EntityType.Name #> Get<#= EntityType.Name #>(Dictionary<string, object> where = null, string[] orderBy = null)
+        public static ReturnResultType<<#= EntityType.Name #>> Get<#= EntityType.Name #>(string where = "", List<(string name,object value)> nameValue = null, string orderBy = "")
         {
-            // ⚡ 完美符合您的邏輯：回傳單個對象。傳入 (1, 1) 在底層精確限制 LIMIT 1 OFFSET 0
-            var list = Get<#= EntityType.Name #>Col(where, orderBy, 1, 1);
-           return list?.FirstOrDefault();
+            var rrt = new ReturnResultType<<#= EntityType.Name #>>();
+            try
+            {
+                var colResult = Get<#= EntityType.Name #>Col(where, nameValue, orderBy, 1, 1);
+                
+                if (colResult.RESULT == 0)
+                {
+                    rrt.RESULT = 0;
+                    rrt.Failure = 1;
+                    rrt.Message = colResult.Message;
+                    return rrt;
+                }
+
+                var item = colResult.ReturnObj?.FirstOrDefault();
+                if (item != null)
+                {
+                    rrt.ReturnObj = item;
+                    rrt.RESULT = 1;
+                    rrt.Success = 1;
+                }
+                else
+                {
+                    rrt.RESULT = 0;
+                    rrt.Failure = 1;
+                    rrt.Message = "未找到符合條件的資料。";
+                }
+            }
+            catch (Exception ex)
+            {
+                rrt.RESULT = 0;
+                rrt.Failure = 1;
+                rrt.Message = Comm.IsRRTErrorDetailed ? ex.ToString() : ex.Message;
+            }
+            return rrt;
         }
 
-        /// <summary>
-        /// 【OOP 萬能集合查詢】獲取分頁資料，支援動態篩選與多欄位排序。當 pageIndex <= 0 時，分頁功能自動關閉，撈取全表全部數據。
-        /// </summary>
-        /// <param name="where">篩選條件字典 (Key為欄位名, Value為比對值)</param>
-        /// <param name="orderBy">排序欄位陣列 (例如: new[] { "GoodDayID DESC" })</param>
-        /// <param name="pageIndex">目前頁碼 (從 1 開始計算，小於等於 0 則自動關閉分頁提取全表)</param>
-        /// <param name="pageSize">每頁顯示筆數</param>
-        public static List<<#= EntityType.Name #>> Get<#= EntityType.Name #>Col(Dictionary<string, object> where = null, string[] orderBy = null, int pageIndex = 0, int pageSize = 10)
+        public static ReturnResultType<List<<#= EntityType.Name #>>> Get<#= EntityType.Name #>Col(string where = "", List<(string name,object value)> nameValue = null, string orderBy = "" , int pageIndex = 0, int pageSize = 10)
         {
-            var p = new DynamicParameters();
-            var sqlBuilder = new System.Text.StringBuilder();
+            var rrt = new ReturnResultType<List<<#= EntityType.Name #>>>();
             
-            // 基礎 SQL 語句
-            sqlBuilder.Append("SELECT * FROM [<#= tableName #>] WHERE 1=1");
-
-            // 1. 全自動參數化拼接 WHERE 條件，100% 防注入
-            if (where != null && where.Count > 0)
+            try
             {
-                foreach (var item in where)
+                var sqlBuilder = new System.Text.StringBuilder();
+                sqlBuilder.Append("SELECT * FROM [<#= tableName #>] WHERE 1=1");
+
+                if (!string.IsNullOrWhiteSpace(where))
                 {
-                    sqlBuilder.Append($" AND [{item.Key}] = @{item.Key}");
-                    p.Add(item.Key, item.Value);
+                    string cleanWhere = where.Trim();
+                    if (!cleanWhere.StartsWith("AND", StringComparison.OrdinalIgnoreCase) && !cleanWhere.StartsWith("OR", StringComparison.OrdinalIgnoreCase))
+                    {
+                        sqlBuilder.Append(" AND ");
+                    }
+                    else
+                    {
+                        sqlBuilder.Append(" ");
+                    }
+                    sqlBuilder.Append(cleanWhere);
+                }
+
+<#
+                if (hasCreateTime)
+                {
+#>
+                if (string.IsNullOrWhiteSpace(orderBy))
+                {
+                    orderBy = "CreateTime DESC";
+                }
+<#
+                }
+#>
+
+                if (!string.IsNullOrWhiteSpace(orderBy))
+                {
+                    string cleanOrder = orderBy.Trim();
+                    if (cleanOrder.StartsWith("order by", StringComparison.OrdinalIgnoreCase))
+                    {
+                        cleanOrder = cleanOrder.Substring(8).Trim();
+                    }
+                    sqlBuilder.Append(" ORDER BY " + cleanOrder);
+                }
+
+                if (pageIndex > 0 && pageSize > 0)
+                {
+                    sqlBuilder.Append($" LIMIT {pageSize} OFFSET {(pageIndex - 1) * pageSize}");
+                }
+
+                var dp = new DynamicParameters();
+                if (nameValue != null && nameValue.Count > 0)
+                {
+                    foreach (var p in nameValue)
+                    {
+                        dp.Add(p.name, p.value);
+                    }
+                }
+
+                using (IDbConnection db = Comm.GetOpenConnection())
+                {
+                    var list = db.Query<<#= EntityType.Name #>>(sqlBuilder.ToString(), dp).ToList();
+                    rrt.ReturnObj = list;
+                    rrt.RESULT = 1;
+                    rrt.Success = list.Count;
+                }
+            }
+            catch (Exception ex)
+            {
+                rrt.RESULT = 0;
+                rrt.Failure = 1;
+                rrt.Message = Comm.IsRRTErrorDetailed ? ex.ToString() : ex.Message;
+                
+            }
+
+            return rrt;
+        }
+ 
+
+
+        #endregion
+
+        #region 💡 工廠方法：轉換為 100% 相容的內部 ViewModel
+
+        public ViewModel GetVM()
+        {
+            var vm = new ViewModel();
+<#
+            foreach (var property in EntityType.GetProperties())
+            {
+#>
+            vm.<#= property.Name #> = this.<#= property.Name #>;
+<#
+            }
+#>
+            return vm;
+        }
+ 
+        #endregion
+
+        /// <summary>
+        /// 💡 專門給 MAUI UI 綁定的視圖模型類別 (巢狀設計)
+        /// </summary>
+        public class ViewModel : INotifyPropertyChanged
+        {
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
+
+<#
+            foreach (var property in EntityType.GetProperties())
+            {
+                var typeName = code.Reference(property.ClrType);
+                var isNullable = property.IsNullable && !property.ClrType.IsValueType;
+                var typeStr = typeName + (isNullable ? "?" : "");
+                var fieldName = "_" + char.ToLower(property.Name[0]) + property.Name.Substring(1);
+#>
+            private <#= typeStr #> <#= fieldName #>;
+            public <#= typeStr #> <#= property.Name #>
+            {
+                get => <#= fieldName #>;
+                set
+                {
+                    if (!EqualityComparer<<#= typeStr #>>.Default.Equals(<#= fieldName #>, value))
+                    {
+                        <#= fieldName #> = value;
+                        OnPropertyChanged();
+                    }
                 }
             }
 
-            // 2. 全自動拼接多欄位排序
-            if (orderBy != null && orderBy.Length > 0)
-            {
-                sqlBuilder.Append(" ORDER BY " + string.Join(", ", orderBy));
+<#
             }
-
-            // 3. 精準分頁控制：只有當 pageIndex > 0 時才拼接 SQLite 分頁語法
-            if (pageIndex > 0 && pageSize > 0)
+#>
+            public <#= EntityType.Name #> ToModel()
             {
-                sqlBuilder.Append($" LIMIT {pageSize} OFFSET {(pageIndex - 1) * pageSize}");
-            }
-
-            // 4. 呼叫連線執行
-            using (IDbConnection db = CompassEx.Data.Comm.GetOpenConnection())
-            {
-                return db.Query<<#= EntityType.Name #>>(sqlBuilder.ToString(), p).ToList();
+                return new <#= EntityType.Name #>
+                {
+<#
+                foreach (var property in EntityType.GetProperties())
+                {
+#>
+                    <#= property.Name #> = this.<#= property.Name #>,
+<#
+                }
+#>
+                };
             }
         }
-
-        #endregion
     }
-<#
-    if (!string.IsNullOrEmpty(NamespaceHint))
-    {
-#>
 }
-<#
-    }
-
-    var previousOutput = GenerationEnvironment;
-    GenerationEnvironment = new StringBuilder();
-    
-    WriteLine("// <auto-generated> This file has been auto generated by EF Core Power Tools (Dapper OOP Advanced Single/Col Template). </auto-generated>");
-    WriteLine("#nullable disable"); 
-    WriteLine("");
-
-    foreach (var ns in usings.Distinct().OrderBy(x => x, new NamespaceComparer()))
-    {
-        if (ns == "Microsoft.EntityFrameworkCore" || ns == "System.ComponentModel.DataAnnotations" || ns == "System.ComponentModel.DataAnnotations.Schema")
-        {
-            continue;
-        }
-#>
-using <#= ns #>;
-<#
-    }
-
-    WriteLine("");
-
-    GenerationEnvironment.Append(previousOutput);
-#>

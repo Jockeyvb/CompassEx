@@ -114,6 +114,7 @@
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
 		<PackageReference Include="CommunityToolkit.Maui" Version="11.1.1" />
 		<PackageReference Include="Microsoft.Data.Sqlite.Core" Version="8.0.28" />
+		<PackageReference Include="Mopups" Version="1.3.4" />
 		<PackageReference Include="SkiaSharp" Version="4.148.0" />
 		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="4.148.0" />
 		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.10" />
@@ -126,6 +127,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Pages\Controls\HudMessagePopup.xaml.cs">
+	    <DependentUpon>HudMessagePopup.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\TestPage.xaml.cs">
 	    <DependentUpon>TestPage.xaml</DependentUpon>
 	  </Compile>
@@ -138,6 +142,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Pages\Controls\HudMessagePopup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\DataTest.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

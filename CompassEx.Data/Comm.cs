@@ -8,15 +8,21 @@ using System.Reflection;
 
 namespace CompassEx.Data
 {
+
+
     public static class Comm
     {
+
         /// <summary>
         /// 全局 SQLite 连接字符串
         /// </summary>
         public static string ConnectionString { get; private set; }
 
 
-
+        /// <summary>
+        /// 设置错误返回是否为详细
+        /// </summary>
+        public static bool IsRRTErrorDetailed { get; set; } = true;
 
 
 

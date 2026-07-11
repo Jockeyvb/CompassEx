@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using Mopups.Hosting;
 using SkiaSharp.Views.Maui.Controls.Hosting;
 using Syncfusion.Maui.Toolkit.Hosting;
 namespace CompassExTest
@@ -12,6 +13,7 @@ namespace CompassExTest
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
+                .ConfigureMopups()
                 .UseSkiaSharp()
                 .ConfigureSyncfusionToolkit()
                 .ConfigureMauiHandlers(handlers =>

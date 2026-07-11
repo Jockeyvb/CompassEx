@@ -62,6 +62,20 @@ namespace CompassEx.Gua
 
         #region 构造函数
 
+
+        /// <summary>
+        /// 基于指定三爻命卦初始化天机卦实例，用于命卦推演场景，可参与出卦、入卦逻辑运算
+        /// </summary>
+        /// <remarks>
+        /// 重载构造方法，接收三爻命卦实体 <see cref="GuaSubClass"/>，自动提取其卦名并转发至主构造函数完成天机卦初始化；
+        /// 适用于三元罗盘命卦推演流程，专门处理以命卦为基准的出卦、入卦计算业务。
+        /// </remarks>
+        /// <param name="FateGua">三爻命卦实体对象，从该对象读取卦名作为天机卦的基础标识</param>
+        public TianJiGua(GuaSubClass FateGua) : this(new GuaClass(FateGua.Name))
+        {
+
+        }
+
         /// <summary>
         /// 初始化 <see cref="TianJiGua"/> 类的新实例，自动根据传入的向卦计算出对应的天机入卦与出卦集合。
         /// </summary>

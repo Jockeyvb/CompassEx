@@ -215,7 +215,7 @@ namespace CompassEx.Gua
         /// <remarks>
         /// 本方法内部通过类型强转解包原始数据。对于杨公纳甲，通过提取单卦名称（<see cref="GuaSubClass.Name"/>）检索静态数理字典，动态解包、转换并装配完整的干支模型实体。
         /// </remarks>
-        public TResult? Execute()
+        public TResult Execute()
         {
             // 1. 京房纳甲数理分支
             if (CalculationType == NaJiaType.JF)
@@ -253,7 +253,7 @@ namespace CompassEx.Gua
                 return (TResult)(object)result;
             }
 
-            return null;
+            return default;
         }
 
         /// <summary>
@@ -263,7 +263,7 @@ namespace CompassEx.Gua
         /// <returns>
         /// 返回包含复卦与六爻干支集合的 <see cref="NaJiaJFResult"/> 结构体数据。
         /// </returns>
-        public static NaJiaJFResult? CreateJF(GuaClass g)
+        public static NaJiaJFResult CreateJF(GuaClass g)
         {
             return (new NaJia<NaJiaJFResult>(g)).Execute();
         }
