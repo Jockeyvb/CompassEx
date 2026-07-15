@@ -8,7 +8,7 @@
       <meta name="title" content="CompassEx 类
  | CompassEx API文档 ">
       
-      <meta name="description" content="罗盘的基本类">
+      <meta name="description" content="罗盘的基础核心类。">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,7 +88,7 @@
 
   <h1 id="CompassEx_CompassEx" data-uid="CompassEx.CompassEx" class="text-break">
 CompassEx 类
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -96,7 +96,7 @@ CompassEx 类
   <dl><dt>程序集</dt><dd>CompassEx.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>罗盘的基本类</p>
+  <div class="markdown summary"><p>罗盘的基础核心类。</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -116,6 +116,13 @@ CompassEx 类
   </dl>
 
 
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="CompassEx.C3H.html">C3H</a></div>
+      <div><a class="xref" href="CompassEx.C3Y.html">C3Y</a></div>
+    </dd>
+  </dl>
 
   <dl class="typelist inheritedMembers">
     <dt>继承成员</dt>
@@ -153,6 +160,10 @@ CompassEx 类
 
 
 
+  <h2 id="CompassEx_CompassEx_remarks">备注</h2>
+  <div class="markdown level0 remarks"><p>本类包含了基础的先后天八卦、二十四山等核心角度常量与方位信息的定义与计算逻辑。</p>
+<p>作为核心基类，三元罗盘类 <a class="xref" href="CompassEx.C3Y.html">C3Y</a> 与三合罗盘类 <a class="xref" href="CompassEx.C3H.html">C3H</a> 将在本类的基础上进行继承、方法扩展以及属性补充。</p>
+</div>
 
 
   <h2 class="section" id="constructors">构造函数
@@ -163,7 +174,7 @@ CompassEx 类
 
   <h3 id="CompassEx_CompassEx__ctor_System_Double_" data-uid="CompassEx.CompassEx.#ctor(System.Double)">
   CompassEx(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L129"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>初始化 <a class="xref" href="CompassEx.CompassEx.html">CompassEx</a> 类的新实例，并根据传入的度数完成罗盘各方位对象的初始化。</p>
@@ -190,7 +201,7 @@ CompassEx 类
 
   <h4 class="section" id="CompassEx_CompassEx__ctor_System_Double__remarks">备注</h4>
   <div class="markdown level1 remarks"><p>实例化该对象时，传入的度数会直接赋值给 <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_Degree">Degree</a> 属性。</p>
-<p>由此会隐式触发内部的初始化流程，自动计算并填充对应的后天八卦（<a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_AfterGuaSub">AfterGuaSub</a>）、二十四山（<a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_C24Hill">C24Hill</a>）以及先天 64 卦（<a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_BeforGua">BeforGua</a>）等关联对象。</p>
+<p>由此会隐式触发内部的初始化流程，自动计算并填充对应的后天八卦（<a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_AfterGuaSub">AfterGuaSub</a>）、二十四山（<a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_C24Hill">C24Hill</a>）以及先天 64 卦（<a class="xref" href="CompassEx.C3Y.html#CompassEx_C3Y_BeforGua">BeforGua</a>）等关联对象。</p>
 </div>
 
 
@@ -201,85 +212,9 @@ CompassEx 类
 
 
 
-  <h3 id="CompassEx_CompassEx_CAfterGuas" data-uid="CompassEx.CompassEx.CAfterGuas">
-  CAfterGuas
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L73"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>后天 64 卦对象字典缓存（地盘）。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonIgnore]
-public static Dictionary&lt;CompassRangEX, GuaClass&gt; CAfterGuas</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">字段值</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a>, <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a>&gt;</dt>
-    <dd><p>键为 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 范围，值为对应的 <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a> 卦象对象。</p>
-</dd>
-  </dl>
-
-
-
-
-
-  <h4 class="section" id="CompassEx_CompassEx_CAfterGuas_remarks">备注</h4>
-  <div class="markdown level1 remarks"><p><b>性能说明：</b>使用字典缓存所有 64 卦对象，避免每次计算时重复创建新对象，提高执行性能。系统启动时需要优先初始化此字典。</p>
-<p><b>排列规则：</b>罗盘上后天排行从子为乾9、兑4、离3、震8（阳仪），巽2、坎7、艮6、坤1（阴仪）。</p>
-<p><b>度数映射：</b>罗盘上子乾（360度）至午坤（180度）。从乾 0 度至雷地豫 180 度，坤左为顺 180 度至地雷复 360 度。外卦为卦宫，内卦相荡而成。</p>
-</div>
-
-
-
-
-
-  <h3 id="CompassEx_CompassEx_CBeforeGuas" data-uid="CompassEx.CompassEx.CBeforeGuas">
-  CBeforeGuas
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L59"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>先天 64 卦对象字典缓存（天盘）。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonIgnore]
-public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">字段值</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a>, <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a>&gt;</dt>
-    <dd><p>键为 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 范围，值为对应的 <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a> 卦象对象。</p>
-</dd>
-  </dl>
-
-
-
-
-
-  <h4 class="section" id="CompassEx_CompassEx_CBeforeGuas_remarks">备注</h4>
-  <div class="markdown level1 remarks"><p><b>性能说明：</b>使用字典缓存所有 64 卦对象，避免每次计算时重复创建新对象，提高执行性能。系统启动时需要优先初始化此字典。</p>
-<p><b>排列规则：</b>罗盘上先天排行从午为乾1、兑2、离3、震4（阳仪），巽5、坎6、艮7、坤8（阴仪）。</p>
-<p><b>度数映射：</b>罗盘上子坤（360度）至午乾（180度）。从坤 0 度至天风姤 180 度，乾左为顺 180 度至地雷复 360 度。内卦为卦宫，外卦相荡而成。</p>
-</div>
-
-
-
-
-
   <h3 id="CompassEx_CompassEx_CHillDegree" data-uid="CompassEx.CompassEx.CHillDegree">
   CHillDegree
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>罗盘二十四山的单山度数。</p>
@@ -311,7 +246,7 @@ public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
 
   <h3 id="CompassEx_CompassEx_CompassAfterGuaSubNames" data-uid="CompassEx.CompassEx.CompassAfterGuaSubNames">
   CompassAfterGuaSubNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>罗盘后天八卦的卦名序列。</p>
@@ -343,7 +278,7 @@ public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
 
   <h3 id="CompassEx_CompassEx_CompassBeforGuaSubNames" data-uid="CompassEx.CompassEx.CompassBeforGuaSubNames">
   CompassBeforGuaSubNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L51"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>罗盘先天八卦的卦名序列。</p>
@@ -373,41 +308,9 @@ public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
 
 
 
-  <h3 id="CompassEx_CompassEx_CompassGuaDegree" data-uid="CompassEx.CompassEx.CompassGuaDegree">
-  CompassGuaDegree
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L79"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>罗盘 64 卦的单卦度数。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const double CompassGuaDegree = 5.625</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">字段值</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
-    <dd><p>默认值为 5.625 度（360度 / 64卦）。</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="CompassEx_CompassEx_GuaSubDegree" data-uid="CompassEx.CompassEx.GuaSubDegree">
   GuaSubDegree
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>先后天八卦的单卦度数。</p>
@@ -436,6 +339,36 @@ public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
 
 
 
+
+  <h3 id="CompassEx_CompassEx_degree" data-uid="CompassEx.CompassEx.degree">
+  degree
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected double degree</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">字段值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="properties">属性
 </h2>
 
@@ -444,7 +377,7 @@ public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
 
   <h3 id="CompassEx_CompassEx_AfterGuaSub" data-uid="CompassEx.CompassEx.AfterGuaSub">
   AfterGuaSub
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L134"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L109"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前罗盘度数对应的后天八卦对象。</p>
@@ -452,7 +385,7 @@ public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GuaSubClass AfterGuaSub { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public GuaSubClass AfterGuaSub { get; protected set; }</code></pre>
   </div>
 
 
@@ -473,44 +406,11 @@ public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
 
 
 
-  <a id="CompassEx_CompassEx_BeforGua_" data-uid="CompassEx.CompassEx.BeforGua*"></a>
-
-  <h3 id="CompassEx_CompassEx_BeforGua" data-uid="CompassEx.CompassEx.BeforGua">
-  BeforGua
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L145"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>获取当前罗盘度数对应的先天 64 卦对象。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GuaClass BeforGua { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">属性值</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a></dt>
-    <dd><p>返回一个 <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a> 对象，表示当前度数在天盘上对应的先天 64 卦象。</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
   <a id="CompassEx_CompassEx_C24Hill_" data-uid="CompassEx.CompassEx.C24Hill*"></a>
 
   <h3 id="CompassEx_CompassEx_C24Hill" data-uid="CompassEx.CompassEx.C24Hill">
   C24Hill
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前罗盘度数对应的二十四山对象。</p>
@@ -543,7 +443,7 @@ public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
 
   <h3 id="CompassEx_CompassEx_Degree" data-uid="CompassEx.CompassEx.Degree">
   Degree
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取或设置当前罗盘指向的度数。</p>
@@ -584,7 +484,7 @@ public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
 
   <h3 id="CompassEx_CompassEx_Get24Hill" data-uid="CompassEx.CompassEx.Get24Hill">
   Get24Hill()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L267"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L163"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据当前罗盘指向的度数，计算并获取对应的二十四山对象。</p>
@@ -617,7 +517,7 @@ public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
 
   <h3 id="CompassEx_CompassEx_Get24HillDegree_System_String_" data-uid="CompassEx.CompassEx.Get24HillDegree(System.String)">
   Get24HillDegree(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L294"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L190"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据指定的山名，计算并获取该山在二十四山罗盘中所占据的绝对度数范围。</p>
@@ -660,7 +560,7 @@ public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
 
   <h3 id="CompassEx_CompassEx_GetAfterGuaSub" data-uid="CompassEx.CompassEx.GetAfterGuaSub">
   GetAfterGuaSub()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L369"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L265"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据当前罗盘指向的度数，计算并获取对应的后天八卦单卦对象。</p>
@@ -693,7 +593,7 @@ public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
 
   <h3 id="CompassEx_CompassEx_GetAfterGuaSubDegree_CompassEx_Gua_GuaSubClass_" data-uid="CompassEx.CompassEx.GetAfterGuaSubDegree(CompassEx.Gua.GuaSubClass)">
   GetAfterGuaSubDegree(GuaSubClass)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L388"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L284"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取指定后天八卦对象在罗盘上对应的度数范围对象。</p>
@@ -732,7 +632,7 @@ public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
 
   <h3 id="CompassEx_CompassEx_GetAfterGuaSubDegree_System_String_" data-uid="CompassEx.CompassEx.GetAfterGuaSubDegree(System.String)">
   GetAfterGuaSubDegree(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L406"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L302"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据指定的后天八卦卦名，计算并获取其在罗盘上所占据的绝对度数范围。</p>
@@ -775,7 +675,7 @@ public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
 
   <h3 id="CompassEx_CompassEx_GetBeforGuaSubDegree_CompassEx_Gua_GuaSubClass_" data-uid="CompassEx.CompassEx.GetBeforGuaSubDegree(CompassEx.Gua.GuaSubClass)">
   GetBeforGuaSubDegree(GuaSubClass)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L332"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L228"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取指定先天八卦对象在罗盘上对应的度数范围对象。</p>
@@ -814,7 +714,7 @@ public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
 
   <h3 id="CompassEx_CompassEx_GetBeforGuaSubDegree_System_String_" data-uid="CompassEx.CompassEx.GetBeforGuaSubDegree(System.String)">
   GetBeforGuaSubDegree(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L350"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L246"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据指定的先天八卦卦名，计算并获取其在罗盘上所占据的绝对度数范围。</p>
@@ -857,7 +757,7 @@ public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
 
   <h3 id="CompassEx_CompassEx_GetBeforeGuaSub" data-uid="CompassEx.CompassEx.GetBeforeGuaSub">
   GetBeforeGuaSub()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L313"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L209"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据当前罗盘指向的度数，计算并获取对应的先天八卦单卦对象。</p>
@@ -886,184 +786,11 @@ public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
 
 
 
-  <a id="CompassEx_CompassEx_GetCAfterGuaDegree_" data-uid="CompassEx.CompassEx.GetCAfterGuaDegree*"></a>
-
-  <h3 id="CompassEx_CompassEx_GetCAfterGuaDegree_System_String_" data-uid="CompassEx.CompassEx.GetCAfterGuaDegree(System.String)">
-  GetCAfterGuaDegree(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L211"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>获取指定后天（地盘）64 卦卦名在罗盘上对应的度数范围对象。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static CompassRangEX GetCAfterGuaDegree(string Name)</code></pre>
-  </div>
-
-  <h4 class="section">参数</h4>
-  <dl class="parameters">
-    <dt><code>Name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>要查询的后天 64 卦的完整卦名。</p>
-</dd>
-  </dl>
-
-  <h4 class="section">返回</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a></dt>
-    <dd><p>返回对应的 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 度数范围对象；若在缓存中未匹配到该卦名，则返回 <code>null</code>。</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="CompassEx_CompassEx_GetCBeforeGua_" data-uid="CompassEx.CompassEx.GetCBeforeGua*"></a>
-
-  <h3 id="CompassEx_CompassEx_GetCBeforeGua" data-uid="CompassEx.CompassEx.GetCBeforeGua">
-  GetCBeforeGua()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L227"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>根据当前罗盘指向的度数，匹配并获取对应的先天 64 卦对象。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GuaClass GetCBeforeGua()</code></pre>
-  </div>
-
-
-  <h4 class="section">返回</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a></dt>
-    <dd><p>返回当前度数所在的 <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a> 先天 64 卦对象；若未找到匹配的范围则返回 <code>null</code>。</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="CompassEx_CompassEx_GetCBeforeGuaDegree_" data-uid="CompassEx.CompassEx.GetCBeforeGuaDegree*"></a>
-
-  <h3 id="CompassEx_CompassEx_GetCBeforeGuaDegree_System_String_" data-uid="CompassEx.CompassEx.GetCBeforeGuaDegree(System.String)">
-  GetCBeforeGuaDegree(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L194"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>获取指定先天（天盘）64 卦卦名在罗盘上对应的度数范围对象。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static CompassRangEX GetCBeforeGuaDegree(string Name)</code></pre>
-  </div>
-
-  <h4 class="section">参数</h4>
-  <dl class="parameters">
-    <dt><code>Name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>要查询的先天 64 卦的完整卦名。</p>
-</dd>
-  </dl>
-
-  <h4 class="section">返回</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a></dt>
-    <dd><p>返回对应的 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 度数范围对象；若在缓存中未匹配到该卦名，则返回 <code>null</code>。</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="CompassEx_CompassEx_LoadAllCAfterGuas_" data-uid="CompassEx.CompassEx.LoadAllCAfterGuas*"></a>
-
-  <h3 id="CompassEx_CompassEx_LoadAllCAfterGuas" data-uid="CompassEx.CompassEx.LoadAllCAfterGuas">
-  LoadAllCAfterGuas()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L246"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>从数据源加载并初始化罗盘上的所有后天 64 卦（地盘）全局静态缓存字典。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void LoadAllCAfterGuas()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-  <h4 class="section" id="CompassEx_CompassEx_LoadAllCAfterGuas_remarks">备注</h4>
-  <div class="markdown level1 remarks"><p><b>排列规则：</b>卦象按照顺时针方向在罗盘上排布，从坤卦开始，每个卦位占据 5.625 度（逆时针荡卦推演），共计 64 个卦象。</p>
-<p>该方法应在程序启动或系统初始化阶段优先执行。</p>
-</div>
-
-
-
-
-  <a id="CompassEx_CompassEx_LoadAllCBeforeGuas_" data-uid="CompassEx.CompassEx.LoadAllCBeforeGuas*"></a>
-
-  <h3 id="CompassEx_CompassEx_LoadAllCBeforeGuas" data-uid="CompassEx.CompassEx.LoadAllCBeforeGuas">
-  LoadAllCBeforeGuas()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L258"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>从数据源加载并初始化罗盘上的所有先天 64 卦（天盘）全局静态缓存字典。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void LoadAllCBeforeGuas()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-  <h4 class="section" id="CompassEx_CompassEx_LoadAllCBeforeGuas_remarks">备注</h4>
-  <div class="markdown level1 remarks"><p><b>排列规则：</b>卦象按照顺时针方向在罗盘上排布，从坤卦开始，每个卦位占据 5.625 度（逆时针荡卦推演），共计 64 个卦象。</p>
-<p>该方法应在程序启动或系统初始化阶段优先执行。</p>
-</div>
-
-
-
-
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L25" class="edit-link">编辑本文</a>
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L31" class="edit-link">编辑本文</a>
         </div>
 
 

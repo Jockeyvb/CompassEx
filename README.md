@@ -41,3 +41,15 @@ winUI:<br/>
 ## 免责声明
 
 本库仅提供客观数值计算能力，不包含吉凶、运势、祸福判断逻辑，禁止将本库用于封建迷信、命理预测相关经营活动。
+
+
+## 🛠️ 第三方组件与致谢 (Third-Party Components)
+
+本项目在开发过程中引用或依赖了以下优秀的开源组件，特此向原作者致谢：
+
+*   **[tyme4net](https://github.com)** (v1.5.0) · [MIT License](https://github.com/blob/main/LICENSE)
+    *   **用途**：用于处理国学、阴阳历、干支纪年等传统历法与时间计算。
+*   **[Dapper](https://github.com)** (v2.1.79) · [Apache License 2.0](https://github.com/blob/main/License.txt)
+    *   **用途**：轻量级高性能对象关系映射（Micro-ORM）工具，用于高效的数据读取与交互。
+*   **[Newtonsoft.Json](https://github.com)** (v13.0.4) · [MIT License](https://github.com/blob/master/LICENSE.md)
+    *   **用途**：高性能的 JSON 序列化与反序列化处理库。

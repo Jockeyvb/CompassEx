@@ -904,6 +904,7 @@ references:
   name.vb: String
 - uid: CompassEx.Gua.GuaClass.UpGua
   commentId: P:CompassEx.Gua.GuaClass.UpGua
+  parent: CompassEx.Gua.GuaClass
   href: CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_UpGua
   name: UpGua
   nameWithType: GuaClass.UpGua

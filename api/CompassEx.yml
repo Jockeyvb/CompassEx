@@ -4,6 +4,9 @@ items:
   commentId: N:CompassEx
   id: CompassEx
   children:
+  - CompassEx.C3H
+  - CompassEx.C3Y
+  - CompassEx.CGuaClass
   - CompassEx.CHill
   - CompassEx.CompassEx
   - CompassEx.LicenseWatermark
@@ -17,6 +20,25 @@ items:
   assemblies:
   - CompassEx
 references:
+- uid: CompassEx.C3H
+  commentId: T:CompassEx.C3H
+  href: CompassEx.C3H.html
+  name: C3H
+  nameWithType: C3H
+  fullName: CompassEx.C3H
+- uid: CompassEx.C3Y
+  commentId: T:CompassEx.C3Y
+  href: CompassEx.C3Y.html
+  name: C3Y
+  nameWithType: C3Y
+  fullName: CompassEx.C3Y
+- uid: CompassEx.CGuaClass
+  commentId: T:CompassEx.CGuaClass
+  parent: CompassEx
+  href: CompassEx.CGuaClass.html
+  name: CGuaClass
+  nameWithType: CGuaClass
+  fullName: CompassEx.CGuaClass
 - uid: CompassEx.CHill
   commentId: T:CompassEx.CHill
   parent: CompassEx
@@ -26,6 +48,7 @@ references:
   fullName: CompassEx.CHill
 - uid: CompassEx.CompassEx
   commentId: T:CompassEx.CompassEx
+  parent: CompassEx
   href: CompassEx.CompassEx.html
   name: CompassEx
   nameWithType: CompassEx

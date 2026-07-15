@@ -10,11 +10,73 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
+using CompassEx.Gua;
 using System;
+using System.Collections.Generic;
 
 namespace CompassEx.Comm
 
 {
+
+    /// <summary>
+    /// 表示三元64卦中所临卦的卦爻纳甲信息（采用京房纳甲体系）。
+    /// </summary>
+    /// <remarks>
+    /// <para>本结构体用于记录六爻预测或易学计算中，具体某一个爻位的核心属性。</para>
+    /// <para>包含了爻位索引、对应的六亲关系、天干地支（纳甲）信息，以及该爻位下可能隐藏的<b>伏神六亲</b>信息。</para>
+    /// </remarks>  
+    public struct PlaceYaosJFNaJiaType
+    {
+        /// <summary>
+        /// 获取或设置所临爻的位置索引。
+        /// </summary>
+        /// <value>
+        /// 爻位索引范围为 <c>0</c> 到 <c>5</c>。
+        /// <list type="bullet">
+        /// <item><description><c>0</c>：初爻（最下方）</description></item>
+        /// <item><description><c>1</c>：二爻</description></item>
+        /// <item><description><c>2</c>：三爻</description></item>
+        /// <item><description><c>3</c>：四爻</description></item>
+        /// <item><description><c>4</c>：五爻</description></item>
+        /// <item><description><c>5</c>：上爻（最上方）</description></item>
+        /// </list>
+        /// </value>
+        public int PlaceYao { get; set; }
+
+        /// <summary>
+        /// 获取或设置所临爻的六亲属性（此爻位显现的“飞神”六亲）。
+        /// </summary>
+        /// <value>
+        /// 包含父母、兄弟、子孙、妻财、官鬼等六亲枚举值。
+        /// </value>
+        /// <seealso cref="SixRelativeClass"/>
+        public SixRelativeClass SixRelative { get; set; }
+
+        /// <summary>
+        /// 获取或设置所临爻的纳甲干支（天干地支）。
+        /// </summary>
+        /// <value>
+        /// 存储该爻位依据京房纳甲规则所配的天干与地支。
+        /// </value>
+        /// <seealso cref="SkyLoc"/>
+        public SkyLoc SkyLoc { get; set; }
+
+        /// <summary>
+        /// 获取或设置该爻位下隐藏的伏神六亲属性数组。
+        /// </summary>
+        /// <value>
+        /// 一个 <see cref="SixRelativeClass"/> 枚举数组，代表本爻（飞神）下方所伏藏的六亲。
+        /// <list type="bullet">
+        /// <item><description>若当前爻位无伏神，该属性可为 <see langword="null"/> 或空数组。</description></item>
+        /// <item><description>在常规京房易学中通常至多 1 个伏神，但在特定排卦或三元盘复合算法中允许存在多个伏神（多伏情况）。</description></item>
+        /// </list>
+        /// </value>
+        /// <remarks>
+        /// 易学中，当本卦（用卦）缺某六亲时，需去首卦（本宫八纯卦）对应的爻位寻找。此时本卦的爻称为“飞神”，找出来的本宫卦六亲即为“伏神”，伏于飞神之下。
+        /// </remarks>
+        /// <seealso cref="SixRelativeClass"/>
+        public SixRelativeClass HideRelative { get; set; }
+    }
     /// <summary>
     /// 用于封装和标识罗盘对象的元数据及其实例的结构体。
     /// </summary>

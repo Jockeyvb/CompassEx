@@ -5,16 +5,22 @@ items:
   id: FateGua
   parent: CompassEx.Gua
   children:
-  - CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass,System.Int32[])
+  - CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass)
   - CompassEx.Gua.FateGua.BirthTime
+  - CompassEx.Gua.FateGua.FateGuaSub
   - CompassEx.Gua.FateGua.FateYearSkyLoc
   - CompassEx.Gua.FateGua.GetFateGua(System.DateTime,System.String)
   - CompassEx.Gua.FateGua.GuaList
-  - CompassEx.Gua.FateGua.GuaSub
+  - CompassEx.Gua.FateGua.InGuaGoodSL
+  - CompassEx.Gua.FateGua.InGuaGoodYear
   - CompassEx.Gua.FateGua.InGuaSubs
+  - CompassEx.Gua.FateGua.Infos
+  - CompassEx.Gua.FateGua.IsFateGuaOut
+  - CompassEx.Gua.FateGua.IsNaJiaOut
   - CompassEx.Gua.FateGua.IsOutGua
-  - CompassEx.Gua.FateGua.Message
   - CompassEx.Gua.FateGua.OutGuaSubs
+  - CompassEx.Gua.FateGua.TJGua
+  - CompassEx.Gua.FateGua.ToGua
   langs:
   - csharp
   - vb
@@ -24,11 +30,11 @@ items:
   type: Class
   source:
     remote:
-      path: CompassEx/Gua/FateGuo.cs
+      path: CompassEx/Gua/FateGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FateGua
-    path: CompassEx/Gua/FateGuo.cs
+    path: CompassEx/Gua/FateGua.cs
     startLine: 29
   assemblies:
   - CompassEx
@@ -40,7 +46,7 @@ items:
 
     余胜唐所著的《玄空大卦些子法真诀》与《三元直指》中的天机出卦法：余胜唐在《三元直指》书中177页中，明确指出天机出卦法是纳甲用法（三元命卦无关）且并没涉及玄空大卦中的五行之论（虽然书中不全论大卦，亦应注或提示），如不查他其他著作完全不知道要如何使用且《玄空大卦些子法真诀》中的天机出卦法只说【命卦】又不指出命卦具体是三元命卦还是纳甲之卦，使用方法是以向卦为论，那么玄空大卦中是以所向的成卦之卦宫为论？还是以后天八卦为论？还是纳甲卦为论？真让人摸不着头脑。著书者应当严明解说；学习风水者应细仔研究考究为用，不可单论。<br />
 
-    2、在刘贲所作《玄空大卦透析》书中456页第十九章中提到相似，甚至比余写的更为清晰指出以三元64卦以卦气为论，命卦则是纳甲（包括京房与杨公之纳甲法）用户可以参考其计算方法与判断方法。<br />
+    2、在刘贲所作《玄空大卦透析》书中456页第十九章中提到相似，甚至比余写的更为清晰指出以三元64卦以卦气为论，命卦则是纳甲（包括京房加入杨公之纳甲法）用户可以参考其计算方法与判断方法。<br />    
 
     关于京房纳甲与杨公纳甲资料，请自行查阅区别与使用<br />
 
@@ -61,37 +67,38 @@ items:
   - System.Object.ToString
   extensionMethods:
   - CompassEx.Gua.FateGua.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
-- uid: CompassEx.Gua.FateGua.GuaSub
-  commentId: P:CompassEx.Gua.FateGua.GuaSub
-  id: GuaSub
+- uid: CompassEx.Gua.FateGua.FateGuaSub
+  commentId: P:CompassEx.Gua.FateGua.FateGuaSub
+  id: FateGuaSub
   parent: CompassEx.Gua.FateGua
   langs:
   - csharp
   - vb
-  name: GuaSub
-  nameWithType: FateGua.GuaSub
-  fullName: CompassEx.Gua.FateGua.GuaSub
+  name: FateGuaSub
+  nameWithType: FateGua.FateGuaSub
+  fullName: CompassEx.Gua.FateGua.FateGuaSub
   type: Property
   source:
     remote:
-      path: CompassEx/Gua/FateGuo.cs
+      path: CompassEx/Gua/FateGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: GuaSub
-    path: CompassEx/Gua/FateGuo.cs
-    startLine: 37
+    id: FateGuaSub
+    path: CompassEx/Gua/FateGua.cs
+    startLine: 36
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 所属命卦
+  summary: 个人本命三元后天三爻命卦
   example: []
   syntax:
-    content: public GuaSubClass GuaSub { get; }
+    content: public GuaSubClass FateGuaSub { get; }
     parameters: []
     return:
       type: CompassEx.Gua.GuaSubClass
-    content.vb: Public Property GuaSub As GuaSubClass
-  overload: CompassEx.Gua.FateGua.GuaSub*
+      description: 存储由出生年月日、性别推演得出的本命三爻卦实例，外部只读
+    content.vb: Public Property FateGuaSub As GuaSubClass
+  overload: CompassEx.Gua.FateGua.FateGuaSub*
 - uid: CompassEx.Gua.FateGua.InGuaSubs
   commentId: P:CompassEx.Gua.FateGua.InGuaSubs
   id: InGuaSubs
@@ -105,22 +112,23 @@ items:
   type: Property
   source:
     remote:
-      path: CompassEx/Gua/FateGuo.cs
+      path: CompassEx/Gua/FateGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: InGuaSubs
-    path: CompassEx/Gua/FateGuo.cs
+    path: CompassEx/Gua/FateGua.cs
     startLine: 42
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 入卦（三爻卦）后天，入卦数为5个
+  summary: 天机卦系统 后天入卦集合（共5个入卦三爻卦）
   example: []
   syntax:
     content: public Dictionary<string, GuaSubClass> InGuaSubs { get; }
     parameters: []
     return:
       type: System.Collections.Generic.Dictionary{System.String,CompassEx.Gua.GuaSubClass}
+      description: Key：卦标识，Value：对应后天三爻卦实例，用于入卦得福判定
     content.vb: Public Property InGuaSubs As Dictionary(Of String, GuaSubClass)
   overload: CompassEx.Gua.FateGua.InGuaSubs*
 - uid: CompassEx.Gua.FateGua.OutGuaSubs
@@ -136,22 +144,23 @@ items:
   type: Property
   source:
     remote:
-      path: CompassEx/Gua/FateGuo.cs
+      path: CompassEx/Gua/FateGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: OutGuaSubs
-    path: CompassEx/Gua/FateGuo.cs
-    startLine: 46
+    path: CompassEx/Gua/FateGua.cs
+    startLine: 48
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 出卦（三爻卦）后天，出卦数为3个
+  summary: 天机卦系统 后天出卦集合（共3个出卦三爻卦）
   example: []
   syntax:
     content: public Dictionary<string, GuaSubClass> OutGuaSubs { get; }
     parameters: []
     return:
       type: System.Collections.Generic.Dictionary{System.String,CompassEx.Gua.GuaSubClass}
+      description: Key：卦标识，Value：对应后天三爻卦实例，用于出卦凶性判定
     content.vb: Public Property OutGuaSubs As Dictionary(Of String, GuaSubClass)
   overload: CompassEx.Gua.FateGua.OutGuaSubs*
 - uid: CompassEx.Gua.FateGua.GuaList
@@ -167,24 +176,87 @@ items:
   type: Property
   source:
     remote:
-      path: CompassEx/Gua/FateGuo.cs
+      path: CompassEx/Gua/FateGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuaList
-    path: CompassEx/Gua/FateGuo.cs
-    startLine: 51
+    path: CompassEx/Gua/FateGua.cs
+    startLine: 54
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 7世飞爻卦(京房易卦法)（由初爻开始往上变，以后最卦接着变出共变7次，共8个卦）
+  summary: 京房易七世飞爻卦列表
   example: []
   syntax:
     content: public List<GuaClass> GuaList { get; }
     parameters: []
     return:
       type: System.Collections.Generic.List{CompassEx.Gua.GuaClass}
+      description: 由初爻依次变爻生成，共8卦（本卦+七世变卦），用于定位卦位、游魂/归魂判定、得福流年取值
     content.vb: Public Property GuaList As List(Of GuaClass)
   overload: CompassEx.Gua.FateGua.GuaList*
+- uid: CompassEx.Gua.FateGua.IsFateGuaOut
+  commentId: P:CompassEx.Gua.FateGua.IsFateGuaOut
+  id: IsFateGuaOut
+  parent: CompassEx.Gua.FateGua
+  langs:
+  - csharp
+  - vb
+  name: IsFateGuaOut
+  nameWithType: FateGua.IsFateGuaOut
+  fullName: CompassEx.Gua.FateGua.IsFateGuaOut
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/FateGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: IsFateGuaOut
+    path: CompassEx/Gua/FateGua.cs
+    startLine: 59
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 是否命卦出卦
+  example: []
+  syntax:
+    content: public bool IsFateGuaOut { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsFateGuaOut As Boolean
+  overload: CompassEx.Gua.FateGua.IsFateGuaOut*
+- uid: CompassEx.Gua.FateGua.IsNaJiaOut
+  commentId: P:CompassEx.Gua.FateGua.IsNaJiaOut
+  id: IsNaJiaOut
+  parent: CompassEx.Gua.FateGua
+  langs:
+  - csharp
+  - vb
+  name: IsNaJiaOut
+  nameWithType: FateGua.IsNaJiaOut
+  fullName: CompassEx.Gua.FateGua.IsNaJiaOut
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/FateGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: IsNaJiaOut
+    path: CompassEx/Gua/FateGua.cs
+    startLine: 64
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 是否纳甲出卦
+  example: []
+  syntax:
+    content: public bool IsNaJiaOut { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsNaJiaOut As Boolean
+  overload: CompassEx.Gua.FateGua.IsNaJiaOut*
 - uid: CompassEx.Gua.FateGua.IsOutGua
   commentId: P:CompassEx.Gua.FateGua.IsOutGua
   id: IsOutGua
@@ -198,55 +270,57 @@ items:
   type: Property
   source:
     remote:
-      path: CompassEx/Gua/FateGuo.cs
+      path: CompassEx/Gua/FateGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IsOutGua
-    path: CompassEx/Gua/FateGuo.cs
-    startLine: 56
+    path: CompassEx/Gua/FateGua.cs
+    startLine: 71
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 是否出卦
+  summary: 命卦是否判定为出卦状态
   example: []
   syntax:
     content: public bool IsOutGua { get; }
     parameters: []
     return:
       type: System.Boolean
+      description: true=出卦（天机外安、主不吉），false=入卦（天机内安、主吉）
     content.vb: Public Property IsOutGua As Boolean
   overload: CompassEx.Gua.FateGua.IsOutGua*
-- uid: CompassEx.Gua.FateGua.Message
-  commentId: P:CompassEx.Gua.FateGua.Message
-  id: Message
+- uid: CompassEx.Gua.FateGua.Infos
+  commentId: P:CompassEx.Gua.FateGua.Infos
+  id: Infos
   parent: CompassEx.Gua.FateGua
   langs:
   - csharp
   - vb
-  name: Message
-  nameWithType: FateGua.Message
-  fullName: CompassEx.Gua.FateGua.Message
+  name: Infos
+  nameWithType: FateGua.Infos
+  fullName: CompassEx.Gua.FateGua.Infos
   type: Property
   source:
     remote:
-      path: CompassEx/Gua/FateGuo.cs
+      path: CompassEx/Gua/FateGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: Message
-    path: CompassEx/Gua/FateGuo.cs
-    startLine: 60
+    id: Infos
+    path: CompassEx/Gua/FateGua.cs
+    startLine: 77
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 相关信息，例如：如果无法计算命卦，则会在这里记录错误信息
+  summary: 命卦推演吉凶消息容器
   example: []
   syntax:
-    content: public string Message { get; }
+    content: public GoodBadInfos Infos { get; }
     parameters: []
     return:
-      type: System.String
-    content.vb: Public Property Message As String
-  overload: CompassEx.Gua.FateGua.Message*
+      type: CompassEx.Comm.GoodBadInfos
+      description: 存储推演过程中的提示、吉断、异常错误信息，用于前端展示与日志输出
+    content.vb: Public Property Infos As GoodBadInfos
+  overload: CompassEx.Gua.FateGua.Infos*
 - uid: CompassEx.Gua.FateGua.FateYearSkyLoc
   commentId: P:CompassEx.Gua.FateGua.FateYearSkyLoc
   id: FateYearSkyLoc
@@ -260,22 +334,23 @@ items:
   type: Property
   source:
     remote:
-      path: CompassEx/Gua/FateGuo.cs
+      path: CompassEx/Gua/FateGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FateYearSkyLoc
-    path: CompassEx/Gua/FateGuo.cs
-    startLine: 65
+    path: CompassEx/Gua/FateGua.cs
+    startLine: 83
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 命庚干支
+  summary: 本命出生年干支（命庚）
   example: []
   syntax:
     content: public SkyLoc FateYearSkyLoc { get; }
     parameters: []
     return:
       type: CompassEx.Comm.SkyLoc
+      description: 由公历生日换算农历六十甲子年干支，用于纳甲出卦、得福人判定
     content.vb: Public Property FateYearSkyLoc As SkyLoc
   overload: CompassEx.Gua.FateGua.FateYearSkyLoc*
 - uid: CompassEx.Gua.FateGua.BirthTime
@@ -291,68 +366,211 @@ items:
   type: Property
   source:
     remote:
-      path: CompassEx/Gua/FateGuo.cs
+      path: CompassEx/Gua/FateGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BirthTime
-    path: CompassEx/Gua/FateGuo.cs
-    startLine: 70
+    path: CompassEx/Gua/FateGua.cs
+    startLine: 89
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 出生时间(公历）
+  summary: 公历出生时间
   example: []
   syntax:
     content: public DateTime BirthTime { get; }
     parameters: []
     return:
       type: System.DateTime
+      description: 用于立春分界判断、真实命年校正、干支换算
     content.vb: Public Property BirthTime As Date
   overload: CompassEx.Gua.FateGua.BirthTime*
-- uid: CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass,System.Int32[])
-  commentId: M:CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass,System.Int32[])
-  id: '#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass,System.Int32[])'
+- uid: CompassEx.Gua.FateGua.ToGua
+  commentId: P:CompassEx.Gua.FateGua.ToGua
+  id: ToGua
   parent: CompassEx.Gua.FateGua
   langs:
   - csharp
   - vb
-  name: FateGua(DateTime, string, GuaClass, params int[])
-  nameWithType: FateGua.FateGua(DateTime, string, GuaClass, params int[])
-  fullName: CompassEx.Gua.FateGua.FateGua(System.DateTime, string, CompassEx.Gua.GuaClass, params int[])
-  type: Constructor
+  name: ToGua
+  nameWithType: FateGua.ToGua
+  fullName: CompassEx.Gua.FateGua.ToGua
+  type: Property
   source:
     remote:
-      path: CompassEx/Gua/FateGuo.cs
+      path: CompassEx/Gua/FateGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: .ctor
-    path: CompassEx/Gua/FateGuo.cs
-    startLine: 79
+    id: ToGua
+    path: CompassEx/Gua/FateGua.cs
+    startLine: 95
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 构造函数，输入出生日期和性别，计算命卦，并获得相关的入卦和出卦等信息（包括计算立春岁数）
+  summary: 罗盘坐向对应的六爻向卦
   example: []
   syntax:
-    content: public FateGua(DateTime d, string Sex, GuaClass ToGua8, params int[] iYaoPos)
+    content: public GuaClass ToGua { get; }
+    parameters: []
+    return:
+      type: CompassEx.Gua.GuaClass
+      description: 风水罗盘24山对应六爻卦，为出入卦、纳甲推演的基准卦体
+    content.vb: Public Property ToGua As GuaClass
+  overload: CompassEx.Gua.FateGua.ToGua*
+- uid: CompassEx.Gua.FateGua.TJGua
+  commentId: P:CompassEx.Gua.FateGua.TJGua
+  id: TJGua
+  parent: CompassEx.Gua.FateGua
+  langs:
+  - csharp
+  - vb
+  name: TJGua
+  nameWithType: FateGua.TJGua
+  fullName: CompassEx.Gua.FateGua.TJGua
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/FateGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: TJGua
+    path: CompassEx/Gua/FateGua.cs
+    startLine: 101
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 天机出卦法推演实例
+  example: []
+  syntax:
+    content: public TianJiGua TJGua { get; }
+    parameters: []
+    return:
+      type: CompassEx.Gua.TianJiGua
+      description: 承载向卦天机出入卦、飞爻卦列表等核心推演数据
+    content.vb: Public Property TJGua As TianJiGua
+  overload: CompassEx.Gua.FateGua.TJGua*
+- uid: CompassEx.Gua.FateGua.InGuaGoodSL
+  commentId: P:CompassEx.Gua.FateGua.InGuaGoodSL
+  id: InGuaGoodSL
+  parent: CompassEx.Gua.FateGua
+  langs:
+  - csharp
+  - vb
+  name: InGuaGoodSL
+  nameWithType: FateGua.InGuaGoodSL
+  fullName: CompassEx.Gua.FateGua.InGuaGoodSL
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/FateGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: InGuaGoodSL
+    path: CompassEx/Gua/FateGua.cs
+    startLine: 107
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 入卦得福对应命庚干支集合
+  example: []
+  syntax:
+    content: public string[] InGuaGoodSL { get; }
+    parameters: []
+    return:
+      type: System.String[]
+      description: 符合本卦入卦得福的出生年天干，对应得福人群
+    content.vb: Public Property InGuaGoodSL As String()
+  overload: CompassEx.Gua.FateGua.InGuaGoodSL*
+- uid: CompassEx.Gua.FateGua.InGuaGoodYear
+  commentId: P:CompassEx.Gua.FateGua.InGuaGoodYear
+  id: InGuaGoodYear
+  parent: CompassEx.Gua.FateGua
+  langs:
+  - csharp
+  - vb
+  name: InGuaGoodYear
+  nameWithType: FateGua.InGuaGoodYear
+  fullName: CompassEx.Gua.FateGua.InGuaGoodYear
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/FateGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: InGuaGoodYear
+    path: CompassEx/Gua/FateGua.cs
+    startLine: 113
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 入卦得福对应流年干支集合
+  example: []
+  syntax:
+    content: public string[] InGuaGoodYear { get; }
+    parameters: []
+    return:
+      type: System.String[]
+      description: 本卦体系下对应的得福年份，用于择日择年参考
+    content.vb: Public Property InGuaGoodYear As String()
+  overload: CompassEx.Gua.FateGua.InGuaGoodYear*
+- uid: CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass)
+  commentId: M:CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass)
+  id: '#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass)'
+  parent: CompassEx.Gua.FateGua
+  langs:
+  - csharp
+  - vb
+  name: FateGua(DateTime, string, GuaClass)
+  nameWithType: FateGua.FateGua(DateTime, string, GuaClass)
+  fullName: CompassEx.Gua.FateGua.FateGua(System.DateTime, string, CompassEx.Gua.GuaClass)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Gua/FateGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Gua/FateGua.cs
+    startLine: 132
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: >-
+    初始化命卦推演实例，自动完成本命卦、出入卦、纳甲吉凶、得福干支年份全量计算(<font color="red"><b>非收山出煞之用，理气罗盘上的收山出煞，请看：<xref href="CompassEx.Gua.TianJiGua" data-throw-if-not-resolved="false"></xref>天机出卦法</b></font>)<br />
+
+    <font color="color">三元命卦之天机出卦法推算原理：例用：向卦：晋卦，卦宫为【乾】，出卦及卦气是：【坎】7、【震】8、【兑】4<br />
+
+    1、人命出卦：如1951年男命为【4绿巽】命，后天洛数为4。<br />
+        用命卦的后天洛数4与出晋卦之卦宫的出卦中的先天洛数对比则：【坎】7、【震】8、【兑】4<br />
+        则结果4绿巽为出卦<br />
+    2、以向卦的京房纳甲<xref href="CompassEx.Gua.NaJiaJFResult" data-throw-if-not-resolved="false"></xref>加杨公纳甲<xref href="CompassEx.Gua.NaJiaYGResult" data-throw-if-not-resolved="false"></xref>，判断是否命庚（干支）出卦和得福，例：1981年男命（辛酉） 命卦：【1白坎】命，向卦亦用【晋】卦，出卦参考上三卦<br />
+      （1）命庚出卦：乾宫之出卦：【坎】纳戊、【震】纳庚、【兑】纳丁 ，如果戊、庚、丁年出生的人亦为出卦。例中：辛酉年则为入卦，可得福。<br />
+      （2）得福人命庚：除了出卦的命庚则应为得福，如：甲、乙、丙、己、辛、壬、癸年出生。<br />
+      （3）得福最大的命庚：看晋卦在【乾】宫中七世飞爻卦（1乾、2姤、3遁、4否、5观、6剥、7晋[游魂卦]、8大有[归魂卦]）第几卦，以爻动推算：乾卦为本宫则纳甲、壬年生人命庚得福，姤为初爻变出下卦为巽纳辛，以此类推<br />
+       (4)得福之年：看卦宫【乾】七世飞爻变出的第几爻，如按姤卦，则按初爻变是甲子年，遁卦按二爻变是甲寅年如此类推。若是乾本宫则按天干论，则甲、壬年得福，晋为第7卦游魂卦,特别处理的按变第4爻得福处理，则壬午年得福，则以观卦得福年一致。<br />
+    人命出卦与纳甲出卦同是出卦论。</font>
+  example: []
+  syntax:
+    content: public FateGua(DateTime d, string Sex, GuaClass ToGua)
     parameters:
     - id: d
       type: System.DateTime
-      description: 命卦日期
+      description: 公历出生时间(最好带时分秒），用于校正立春真实命年（确定精确的生肖与三元命年分界线）
     - id: Sex
       type: System.String
-      description: 性别
-    - id: ToGua8
+      description: 性别，仅支持【男/女】，男女命卦计算对应的数学公式与飞星轨迹不同
+    - id: ToGua
       type: CompassEx.Gua.GuaClass
-      description: 罗盘中的24山（向）所属的卦宫位置（后天）
-    - id: iYaoPos
-      type: System.Int32[]
-      description: 临爻（可选最多2爻，因罗盘上抽爻最多能抽2爻），如：[4,5]，则临是5爻和上爻
-    content.vb: Public Sub New(d As Date, Sex As String, ToGua8 As GuaClass, ParamArray iYaoPos As Integer())
+      description: 罗盘六爻向卦实例，不可为空（用于比对房屋坐向与个人命卦的吉凶关系）
+    content.vb: Public Sub New(d As Date, Sex As String, ToGua As GuaClass)
   overload: CompassEx.Gua.FateGua.#ctor*
-  nameWithType.vb: FateGua.New(Date, String, GuaClass, ParamArray Integer())
-  fullName.vb: CompassEx.Gua.FateGua.New(Date, String, CompassEx.Gua.GuaClass, ParamArray Integer())
-  name.vb: New(Date, String, GuaClass, ParamArray Integer())
+  exceptions:
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: 出生日期非法、性别非法、向卦为空、命卦计算异常、出卦数据异常时抛出
+  nameWithType.vb: FateGua.New(Date, String, GuaClass)
+  fullName.vb: CompassEx.Gua.FateGua.New(Date, String, CompassEx.Gua.GuaClass)
+  name.vb: New(Date, String, GuaClass)
 - uid: CompassEx.Gua.FateGua.GetFateGua(System.DateTime,System.String)
   commentId: M:CompassEx.Gua.FateGua.GetFateGua(System.DateTime,System.String)
   id: GetFateGua(System.DateTime,System.String)
@@ -366,29 +584,34 @@ items:
   type: Method
   source:
     remote:
-      path: CompassEx/Gua/FateGuo.cs
+      path: CompassEx/Gua/FateGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetFateGua
-    path: CompassEx/Gua/FateGuo.cs
-    startLine: 148
+    path: CompassEx/Gua/FateGua.cs
+    startLine: 215
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 获得当前日期的三元命卦（三爻卦）后天
+  summary: 根据公历生日、性别，计算校正立春后的【三元后天三爻本命卦】
+  remarks: >-
+    本算法严格遵循传统三元九运紫白飞星命卦口诀进行数学建模：
+
+
+    <ol><li><b>岁首分界：</b> 严格以立春精确交节时间为准。立春前出生者自动视作上一年出生，年份减1。</li><li><b>年数求一（九进制约简）：</b> 将公历年份四位数字逐位累加，直到缩减为 1~9 的个位基数（等价于 Mod 9 算法）。</li><li><b>男命公式：</b> 运星逆行，使用 <code>11 - 基数</code>。若余数为5寄宫于【坤二宫】，为0归【坎一宫】。</li><li><b>女命公式：</b> 运星顺行，使用 <code>基数 + 4</code>（即加9取余）。若余数为5寄宫于【艮八宫】，为0归【离九宫】。</li><li><b>后天映射：</b> 最终数字 1~9 严格映射后天八卦卦宫位置返回。</li></ol>
   example: []
   syntax:
     content: public static GuaSubClass GetFateGua(DateTime d, string Sex)
     parameters:
     - id: d
       type: System.DateTime
-      description: 出生日期（公历），将自动计算立春前后的真实年份
+      description: 公历出生时间，自动识别立春前后校正命年
     - id: Sex
       type: System.String
-      description: 性别
+      description: 性别【男/女】，区分不同命卦公式
     return:
       type: CompassEx.Gua.GuaSubClass
-      description: ''
+      description: 校正并计算完成后的三元后天三爻命卦实例 <xref href="CompassEx.Gua.GuaSubClass" data-throw-if-not-resolved="false"></xref>
     content.vb: Public Shared Function GetFateGua(d As Date, Sex As String) As GuaSubClass
   overload: CompassEx.Gua.FateGua.GetFateGua*
   nameWithType.vb: FateGua.GetFateGua(Date, String)
@@ -779,12 +1002,12 @@ references:
   - uid: CompassEx.Comm
     name: Comm
     href: CompassEx.Comm.html
-- uid: CompassEx.Gua.FateGua.GuaSub*
-  commentId: Overload:CompassEx.Gua.FateGua.GuaSub
-  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_GuaSub
-  name: GuaSub
-  nameWithType: FateGua.GuaSub
-  fullName: CompassEx.Gua.FateGua.GuaSub
+- uid: CompassEx.Gua.FateGua.FateGuaSub*
+  commentId: Overload:CompassEx.Gua.FateGua.FateGuaSub
+  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_FateGuaSub
+  name: FateGuaSub
+  nameWithType: FateGua.FateGuaSub
+  fullName: CompassEx.Gua.FateGua.FateGuaSub
 - uid: CompassEx.Gua.GuaSubClass
   commentId: T:CompassEx.Gua.GuaSubClass
   parent: CompassEx.Gua
@@ -987,12 +1210,12 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: CompassEx.Gua.FateGua.IsOutGua*
-  commentId: Overload:CompassEx.Gua.FateGua.IsOutGua
-  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_IsOutGua
-  name: IsOutGua
-  nameWithType: FateGua.IsOutGua
-  fullName: CompassEx.Gua.FateGua.IsOutGua
+- uid: CompassEx.Gua.FateGua.IsFateGuaOut*
+  commentId: Overload:CompassEx.Gua.FateGua.IsFateGuaOut
+  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_IsFateGuaOut
+  name: IsFateGuaOut
+  nameWithType: FateGua.IsFateGuaOut
+  fullName: CompassEx.Gua.FateGua.IsFateGuaOut
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -1004,23 +1227,31 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: CompassEx.Gua.FateGua.Message*
-  commentId: Overload:CompassEx.Gua.FateGua.Message
-  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_Message
-  name: Message
-  nameWithType: FateGua.Message
-  fullName: CompassEx.Gua.FateGua.Message
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
+- uid: CompassEx.Gua.FateGua.IsNaJiaOut*
+  commentId: Overload:CompassEx.Gua.FateGua.IsNaJiaOut
+  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_IsNaJiaOut
+  name: IsNaJiaOut
+  nameWithType: FateGua.IsNaJiaOut
+  fullName: CompassEx.Gua.FateGua.IsNaJiaOut
+- uid: CompassEx.Gua.FateGua.IsOutGua*
+  commentId: Overload:CompassEx.Gua.FateGua.IsOutGua
+  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_IsOutGua
+  name: IsOutGua
+  nameWithType: FateGua.IsOutGua
+  fullName: CompassEx.Gua.FateGua.IsOutGua
+- uid: CompassEx.Gua.FateGua.Infos*
+  commentId: Overload:CompassEx.Gua.FateGua.Infos
+  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_Infos
+  name: Infos
+  nameWithType: FateGua.Infos
+  fullName: CompassEx.Gua.FateGua.Infos
+- uid: CompassEx.Comm.GoodBadInfos
+  commentId: T:CompassEx.Comm.GoodBadInfos
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.GoodBadInfos.html
+  name: GoodBadInfos
+  nameWithType: GoodBadInfos
+  fullName: CompassEx.Comm.GoodBadInfos
 - uid: CompassEx.Gua.FateGua.FateYearSkyLoc*
   commentId: Overload:CompassEx.Gua.FateGua.FateYearSkyLoc
   href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_FateYearSkyLoc
@@ -1051,15 +1282,12 @@ references:
   nameWithType.vb: Date
   fullName.vb: Date
   name.vb: Date
-- uid: CompassEx.Gua.FateGua.#ctor*
-  commentId: Overload:CompassEx.Gua.FateGua.#ctor
-  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua__ctor_System_DateTime_System_String_CompassEx_Gua_GuaClass_System_Int32___
-  name: FateGua
-  nameWithType: FateGua.FateGua
-  fullName: CompassEx.Gua.FateGua.FateGua
-  nameWithType.vb: FateGua.New
-  fullName.vb: CompassEx.Gua.FateGua.New
-  name.vb: New
+- uid: CompassEx.Gua.FateGua.ToGua*
+  commentId: Overload:CompassEx.Gua.FateGua.ToGua
+  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_ToGua
+  name: ToGua
+  nameWithType: FateGua.ToGua
+  fullName: CompassEx.Gua.FateGua.ToGua
 - uid: CompassEx.Gua.GuaClass
   commentId: T:CompassEx.Gua.GuaClass
   parent: CompassEx.Gua
@@ -1067,29 +1295,95 @@ references:
   name: GuaClass
   nameWithType: GuaClass
   fullName: CompassEx.Gua.GuaClass
-- uid: System.Int32[]
+- uid: CompassEx.Gua.FateGua.TJGua*
+  commentId: Overload:CompassEx.Gua.FateGua.TJGua
+  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_TJGua
+  name: TJGua
+  nameWithType: FateGua.TJGua
+  fullName: CompassEx.Gua.FateGua.TJGua
+- uid: CompassEx.Gua.TianJiGua
+  commentId: T:CompassEx.Gua.TianJiGua
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.TianJiGua.html
+  name: TianJiGua
+  nameWithType: TianJiGua
+  fullName: CompassEx.Gua.TianJiGua
+- uid: CompassEx.Gua.FateGua.InGuaGoodSL*
+  commentId: Overload:CompassEx.Gua.FateGua.InGuaGoodSL
+  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_InGuaGoodSL
+  name: InGuaGoodSL
+  nameWithType: FateGua.InGuaGoodSL
+  fullName: CompassEx.Gua.FateGua.InGuaGoodSL
+- uid: System.String[]
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int[]
-  nameWithType: int[]
-  fullName: int[]
-  nameWithType.vb: Integer()
-  fullName.vb: Integer()
-  name.vb: Integer()
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
   spec.csharp:
-  - uid: System.Int32
-    name: int
+  - uid: System.String
+    name: string
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: '['
   - name: ']'
   spec.vb:
-  - uid: System.Int32
-    name: Integer
+  - uid: System.String
+    name: String
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: (
   - name: )
+- uid: CompassEx.Gua.FateGua.InGuaGoodYear*
+  commentId: Overload:CompassEx.Gua.FateGua.InGuaGoodYear
+  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_InGuaGoodYear
+  name: InGuaGoodYear
+  nameWithType: FateGua.InGuaGoodYear
+  fullName: CompassEx.Gua.FateGua.InGuaGoodYear
+- uid: CompassEx.Gua.NaJiaJFResult
+  commentId: T:CompassEx.Gua.NaJiaJFResult
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.NaJiaJFResult.html
+  name: NaJiaJFResult
+  nameWithType: NaJiaJFResult
+  fullName: CompassEx.Gua.NaJiaJFResult
+- uid: CompassEx.Gua.NaJiaYGResult
+  commentId: T:CompassEx.Gua.NaJiaYGResult
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.NaJiaYGResult.html
+  name: NaJiaYGResult
+  nameWithType: NaJiaYGResult
+  fullName: CompassEx.Gua.NaJiaYGResult
+- uid: System.Exception
+  commentId: T:System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: CompassEx.Gua.FateGua.#ctor*
+  commentId: Overload:CompassEx.Gua.FateGua.#ctor
+  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua__ctor_System_DateTime_System_String_CompassEx_Gua_GuaClass_
+  name: FateGua
+  nameWithType: FateGua.FateGua
+  fullName: CompassEx.Gua.FateGua.FateGua
+  nameWithType.vb: FateGua.New
+  fullName.vb: CompassEx.Gua.FateGua.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: CompassEx.Gua.FateGua.GetFateGua*
   commentId: Overload:CompassEx.Gua.FateGua.GetFateGua
   href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_GetFateGua_System_DateTime_System_String_

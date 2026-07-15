@@ -8,7 +8,7 @@
       <meta name="title" content="GuaClass 类
  | CompassEx API文档 ">
       
-      
+      <meta name="description" content="六爻卦">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,7 +88,7 @@
 
   <h1 id="CompassEx_Gua_GuaClass" data-uid="CompassEx.Gua.GuaClass" class="text-break">
 GuaClass 类
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -96,11 +96,12 @@ GuaClass 类
   <dl><dt>程序集</dt><dd>CompassEx.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>六爻卦</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class GuaClass</code></pre>
+    <pre><code class="lang-csharp hljs">public class GuaClass : IEquatable&lt;GuaClass&gt;</code></pre>
   </div>
 
 
@@ -114,19 +115,25 @@ GuaClass 类
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>实现</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a>&gt;</div>
+    </dd>
+  </dl>
 
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="CompassEx.CGuaClass.html">CGuaClass</a></div>
+    </dd>
+  </dl>
 
   <dl class="typelist inheritedMembers">
     <dt>继承成员</dt>
     <dd>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -162,7 +169,7 @@ GuaClass 类
 
   <h3 id="CompassEx_Gua_GuaClass__ctor_System_Int32_" data-uid="CompassEx.Gua.GuaClass.#ctor(System.Int32)">
   GuaClass(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L509"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L513"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>依据卦序索引初始化复卦（六爻卦）对象实例（核心构造函数）。</p>
@@ -205,7 +212,7 @@ GuaClass 类
 
   <h3 id="CompassEx_Gua_GuaClass__ctor_System_String_" data-uid="CompassEx.Gua.GuaClass.#ctor(System.String)">
   GuaClass(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L490"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L494"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>依据简名初始化复卦（六爻卦）对象实例。</p>
@@ -219,7 +226,7 @@ GuaClass 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>GuaNameOrAttrName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>输入的先天 64 卦简名（例如：“乾”、“坤”、“屯”、“蒙”）。</p>
+    <dd><p>输入的先天 64 卦简名（例如：“乾”、“坤”、“屯”、“蒙”）或属性名，如火风、水雷、火雷，则自动获得相关的卦,可参考：<a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GuaFullNames">GuaFullNames</a> 。</p>
 </dd>
   </dl>
 
@@ -251,7 +258,7 @@ GuaClass 类
 
   <h3 id="CompassEx_Gua_GuaClass_GuaFateNames" data-uid="CompassEx.Gua.GuaClass.GuaFateNames">
   GuaFateNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L159"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>獲取玄空大卦算法中對應的「卦運」（江東卦、江西卦、南北八大純卦等一至九運）名稱列表。</p>
@@ -284,7 +291,7 @@ GuaClass 类
 
   <h3 id="CompassEx_Gua_GuaClass_GuaFullNames" data-uid="CompassEx.Gua.GuaClass.GuaFullNames">
   GuaFullNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取周易 64 卦的完整名字（包含上下卦象组合，如“乾为天”）。</p>
@@ -317,7 +324,7 @@ public static readonly string[] GuaFullNames</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GuaNames" data-uid="CompassEx.Gua.GuaClass.GuaNames">
   GuaNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取周易 64 卦的顺序简名列表（通行本卦序）。</p>
@@ -350,7 +357,7 @@ public static readonly string[] GuaNames</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GuaSkyLocs" data-uid="CompassEx.Gua.GuaClass.GuaSkyLocs">
   GuaSkyLocs
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L66"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取 64 卦依特定术数（如大成卦分度、值旬等）所对应的 60 甲子分布表。</p>
@@ -383,7 +390,7 @@ public static readonly string[] GuaSkyLocs</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_Symbols" data-uid="CompassEx.Gua.GuaClass.Symbols">
   Symbols
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L81"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取 64 卦对应的 Unicode 易经六爻符号（从 \u4DC0 至 \u4DFF）。</p>
@@ -425,7 +432,7 @@ Index 51-64: ䷲(震), ䷳(艮), ䷴(渐), ䷵(归妹), ䷶(丰), ䷷(旅), ䷸(
 
   <h3 id="CompassEx_Gua_GuaClass_CAfterRangeDegree" data-uid="CompassEx.Gua.GuaClass.CAfterRangeDegree">
   CAfterRangeDegree
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L469"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L473"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取该卦在三元地理罗盘中对应的后天（地盘）图度数范围对象，用于判定当前卦在罗盘圆周上的物理空间边界。</p>
@@ -444,7 +451,7 @@ public CompassRangEX CAfterRangeDegree { get; }</code></pre>
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a></dt>
-    <dd><p>动态调用 <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_GetCAfterGuaDegree_System_String_">GetCAfterGuaDegree(string)</a> 方法，返回其专属的 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 周天度数范围。</p>
+    <dd><p>动态调用 <a class="xref" href="CompassEx.C3Y.html#CompassEx_C3Y_GetCAfterGuaDegree_System_String_">GetCAfterGuaDegree(string)</a> 方法，返回其专属的 <a class="xref" href="CompassEx.C3Y.html">C3Y</a> 周天度数范围。</p>
 </dd>
   </dl>
 
@@ -459,7 +466,7 @@ public CompassRangEX CAfterRangeDegree { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_CBeforeRangeDegree" data-uid="CompassEx.Gua.GuaClass.CBeforeRangeDegree">
   CBeforeRangeDegree
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L460"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L464"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取该卦在三元地理罗盘中对应的先天（天盘）度数范围对象，用于判定当前卦在罗盘圆周上的物理空间边界。</p>
@@ -478,7 +485,7 @@ public CompassRangEX CBeforeRangeDegree { get; }</code></pre>
   <h4 class="section">属性值</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a></dt>
-    <dd><p>动态调用 <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforeGuaDegree_System_String_">GetCBeforeGuaDegree(string)</a> 方法，返回其专属的 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 周天度数范围。</p>
+    <dd><p>动态调用 <a class="xref" href="CompassEx.C3Y.html#CompassEx_C3Y_GetCBeforeGuaDegree_System_String_">GetCBeforeGuaDegree(string)</a> 方法，返回其专属的 <a class="xref" href="CompassEx.C3Y.html">C3Y</a> 周天度数范围。</p>
 </dd>
   </dl>
 
@@ -493,7 +500,7 @@ public CompassRangEX CBeforeRangeDegree { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_ChangedYao" data-uid="CompassEx.Gua.GuaClass.ChangedYao">
   ChangedYao
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L415"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L417"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前卦在发动变卦后，各个爻位发生阴阳变换（少阳变老阴、少阴变老阳）后的动变地支或结果列表。</p>
@@ -527,7 +534,7 @@ public List&lt;int&gt; ChangedYao { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_DownGua" data-uid="CompassEx.Gua.GuaClass.DownGua">
   DownGua
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L350"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L352"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前六爻卦的下卦（又称内卦、贞卦），为三爻卦结构。</p>
@@ -561,7 +568,7 @@ public GuaSubClass DownGua { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GuaAliasName" data-uid="CompassEx.Gua.GuaClass.GuaAliasName">
   GuaAliasName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L422"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L426"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取或设置当前六爻卦的八宫所属别名分类（如：“归魂卦”、“游魂卦”、“纯卦/八纯”或常规的几世卦）。</p>
@@ -594,7 +601,7 @@ public GuaSubClass DownGua { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GuaAttr" data-uid="CompassEx.Gua.GuaClass.GuaAttr">
   GuaAttr
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L245"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L247"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>计算并返回当前复卦的后天五行九宫数。</p>
@@ -633,7 +640,7 @@ public int GuaAttr { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GuaFate" data-uid="CompassEx.Gua.GuaClass.GuaFate">
   GuaFate
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L298"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L300"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>计算并返回当前复卦对应的三元玄空“大卦运”名称（一运至九运）。</p>
@@ -672,7 +679,7 @@ public string GuaFate { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GuaFullName" data-uid="CompassEx.Gua.GuaClass.GuaFullName">
   GuaFullName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L370"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L372"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取或设置当前六爻卦的四字全名（包含上下卦象组合，如“乾为天”、“地水师”）。</p>
@@ -705,7 +712,7 @@ public string GuaFate { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GuaIndex" data-uid="CompassEx.Gua.GuaClass.GuaIndex">
   GuaIndex
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L376"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L378"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取或设置当前卦在 64 卦数据库或特定排列模型中的原始数组索引。</p>
@@ -738,7 +745,7 @@ public string GuaFate { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GuaQi" data-uid="CompassEx.Gua.GuaClass.GuaQi">
   GuaQi
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L208"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L210"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前六爻卦对应的 64 卦卦气（即洛书数，用作先天五行数计算）。</p>
@@ -776,7 +783,7 @@ public GuaQi GuaQi { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GuaSelf" data-uid="CompassEx.Gua.GuaClass.GuaSelf">
   GuaSelf
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L428"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L432"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前六爻卦所归属的“卦宫”（本宫三爻纯卦，如乾宫、坤宫、震宫等）。</p>
@@ -810,7 +817,7 @@ public GuaSubClass GuaSelf { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GuaSkyLoc" data-uid="CompassEx.Gua.GuaClass.GuaSkyLoc">
   GuaSkyLoc
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L224"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L226"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前复卦依易经传统卦序所映射的 60 甲子原天干地支结构对象。</p>
@@ -847,7 +854,7 @@ public SkyLoc GuaSkyLoc { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GuaSymbol" data-uid="CompassEx.Gua.GuaClass.GuaSymbol">
   GuaSymbol
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L195"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L197"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前六爻卦所对应的标准 Unicode 易经六爻图形符号。</p>
@@ -885,7 +892,7 @@ public string GuaSymbol { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_HereYao" data-uid="CompassEx.Gua.GuaClass.HereYao">
   HereYao
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L403"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L405"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取或设置当前卦的“世爻”所在位置（即六爻预设的世位）。</p>
@@ -918,7 +925,7 @@ public string GuaSymbol { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_HideRelative" data-uid="CompassEx.Gua.GuaClass.HideRelative">
   HideRelative
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L435"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L439"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前六爻卦中，因本卦地支缺项而隐藏在各爻位之下的“伏神”六亲列表。</p>
@@ -952,7 +959,7 @@ public List&lt;SixRelativeClass&gt; HideRelative { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_HideRelativeYaos" data-uid="CompassEx.Gua.GuaClass.HideRelativeYaos">
   HideRelativeYaos
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L442"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L446"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前卦中各个伏神具体依附并“隐藏”在主卦中的爻位索引列表。</p>
@@ -986,7 +993,7 @@ public List&lt;int&gt; HideRelativeYaos { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_LostLocs" data-uid="CompassEx.Gua.GuaClass.LostLocs">
   LostLocs
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L396"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L398"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前六爻卦依据预设旬空规则推导出的两个处于“空亡”状态的地支对象。</p>
@@ -1020,7 +1027,7 @@ public List&lt;LocClass&gt; LostLocs { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_Name" data-uid="CompassEx.Gua.GuaClass.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L364"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L366"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取或设置当前六爻卦的两字简化卦名（如“乾”、“坤”、“屯”、“蒙”）。</p>
@@ -1053,7 +1060,7 @@ public List&lt;LocClass&gt; LostLocs { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_SixGods" data-uid="CompassEx.Gua.GuaClass.SixGods">
   SixGods
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L382"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L384"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前六爻卦依据日干推导出的六神（又称六兽：青龙、朱雀、勾陈、螣蛇、白虎、玄武）分布列表。</p>
@@ -1087,7 +1094,7 @@ public List&lt;SixGodClass&gt; SixGods { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_SixRelative" data-uid="CompassEx.Gua.GuaClass.SixRelative">
   SixRelative
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L389"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L391"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前六爻卦依据本宫五行与纳支推导出的本卦“六亲”（父母、兄弟、子孙、妻财、官鬼）属性列表。</p>
@@ -1121,7 +1128,7 @@ public List&lt;SixRelativeClass&gt; SixRelative { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_SkyLocs" data-uid="CompassEx.Gua.GuaClass.SkyLocs">
   SkyLocs
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L167"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L169"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>复卦的六爻干枝集合</p>
@@ -1153,7 +1160,7 @@ public List&lt;SixRelativeClass&gt; SixRelative { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_ThereYao" data-uid="CompassEx.Gua.GuaClass.ThereYao">
   ThereYao
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L409"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L411"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取或设置当前卦的“应爻”所在位置（即六爻预设的应位）。</p>
@@ -1186,7 +1193,7 @@ public List&lt;SixRelativeClass&gt; SixRelative { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_UpGua" data-uid="CompassEx.Gua.GuaClass.UpGua">
   UpGua
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L357"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L359"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前六爻卦的上卦（又称外卦、悔卦），为三爻卦结构。</p>
@@ -1220,7 +1227,7 @@ public GuaSubClass UpGua { get; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_YaoDoing" data-uid="CompassEx.Gua.GuaClass.YaoDoing">
   YaoDoing
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L453"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L457"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取或设置当前卦的“爻动”状态，标记哪些爻位发生了发动（老阴 ○ 或老阳 ❌ ）。</p>
@@ -1254,11 +1261,47 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 </h2>
 
 
+  <a id="CompassEx_Gua_GuaClass_Equals_" data-uid="CompassEx.Gua.GuaClass.Equals*"></a>
+
+  <h3 id="CompassEx_Gua_GuaClass_Equals_System_Object_" data-uid="CompassEx.Gua.GuaClass.Equals(System.Object)">
+  Equals(object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1561"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="CompassEx_Gua_GuaClass_ExchangeGua_" data-uid="CompassEx.Gua.GuaClass.ExchangeGua*"></a>
 
   <h3 id="CompassEx_Gua_GuaClass_ExchangeGua" data-uid="CompassEx.Gua.GuaClass.ExchangeGua">
   ExchangeGua()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L584"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L588"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>推演当前本卦所对应的“通卦”（又称互通卦）。</p>
@@ -1297,7 +1340,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_FlowerGuaClass_System_Int32_System_Int32_" data-uid="CompassEx.Gua.GuaClass.FlowerGuaClass(System.Int32,System.Int32)">
   FlowerGuaClass(int, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1517"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1518"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>静态工厂方法（术数算法）：执行经典的先天梅花易数数字起卦逻辑，推演并返回对应带有动爻的复卦。</p>
@@ -1345,7 +1388,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_Get7HereYaoGua" data-uid="CompassEx.Gua.GuaClass.Get7HereYaoGua">
   Get7HereYaoGua()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L606"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L610"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>计算并演录当前纯卦的“京房易八宫卦变规律”，生成完整的七世飞爻卦链表（含主卦共 8 个卦）。</p>
@@ -1389,7 +1432,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetChangeGua" data-uid="CompassEx.Gua.GuaClass.GetChangeGua">
   GetChangeGua()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L718"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L722"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据当前本卦设定的动爻状态（<a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_YaoDoing">YaoDoing</a>）推演并取得变卦。</p>
@@ -1427,7 +1470,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetChangeGuaFace" data-uid="CompassEx.Gua.GuaClass.GetChangeGuaFace">
   GetChangeGuaFace()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1053"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1057"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获得发生动变后的变卦对照排盘图形（在发生变动的爻位前追加指向性箭头标记）。</p>
@@ -1465,7 +1508,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetGoodDayList" data-uid="CompassEx.Gua.GuaClass.GetGoodDayList">
   GetGoodDayList()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1550"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1551"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1496,7 +1539,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetGuaClass_System_Collections_Generic_List_System_Int32__" data-uid="CompassEx.Gua.GuaClass.GetGuaClass(System.Collections.Generic.List{System.Int32})">
   GetGuaClass(List&lt;int&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1475"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1476"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>静态工厂方法：接收一个包含 6 个爻状态码的整型列表，重组并反灌创建带有变爻动静的复卦对象实例。</p>
@@ -1539,7 +1582,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetGuaClass_System_Int32_" data-uid="CompassEx.Gua.GuaClass.GetGuaClass(System.Int32)">
   GetGuaClass(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1448"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1449"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>静态工厂方法：依据先天卦序索引创建复卦（六爻卦）对象实例。</p>
@@ -1578,7 +1621,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetGuaClass_System_Int32___" data-uid="CompassEx.Gua.GuaClass.GetGuaClass(System.Int32[])">
   GetGuaClass(int[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1458"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1459"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>静态工厂方法：接收一个包含 6 个爻状态码的整型数组，重组并反灌创建带有变爻动静的复卦对象实例。</p>
@@ -1617,7 +1660,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetGuaClass_System_String_" data-uid="CompassEx.Gua.GuaClass.GetGuaClass(System.String)">
   GetGuaClass(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1438"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1439"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>静态工厂方法：依据两字简名创建复卦（六爻卦）对象实例。</p>
@@ -1656,7 +1699,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetGuaClassBySkyLoc_System_String_" data-uid="CompassEx.Gua.GuaClass.GetGuaClassBySkyLoc(System.String)">
   GetGuaClassBySkyLoc(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1423"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1424"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>静态工厂方法：依据 64 卦对应的 60 甲子干支名称反向检索并创建对应的复卦对象实例。</p>
@@ -1695,7 +1738,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetGuaFace" data-uid="CompassEx.Gua.GuaClass.GetGuaFace">
   GetGuaFace()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1006"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1010"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>将当前复卦实例（结合动爻状态）转化为直观的排盘图形字符串。</p>
@@ -1733,7 +1776,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetGuaFace_System_Collections_Generic_List_System_Int32__" data-uid="CompassEx.Gua.GuaClass.GetGuaFace(System.Collections.Generic.List{System.Int32})">
   GetGuaFace(List&lt;int&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L983"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L987"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>静态公共方法：将扁平化的爻象阴阳状态码序列，逆向渲染为标准易学卦象图形。</p>
@@ -1773,11 +1816,42 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
 
 
+  <a id="CompassEx_Gua_GuaClass_GetHashCode_" data-uid="CompassEx.Gua.GuaClass.GetHashCode*"></a>
+
+  <h3 id="CompassEx_Gua_GuaClass_GetHashCode" data-uid="CompassEx.Gua.GuaClass.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1570"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="CompassEx_Gua_GuaClass_GetHereThereStr_" data-uid="CompassEx.Gua.GuaClass.GetHereThereStr*"></a>
 
   <h3 id="CompassEx_Gua_GuaClass_GetHereThereStr" data-uid="CompassEx.Gua.GuaClass.GetHereThereStr">
   GetHereThereStr()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L776"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L780"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获得当前卦中“世爻”与“应爻”位置的文本可视化排盘字符形式。</p>
@@ -1815,7 +1889,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetHideRelativeStr" data-uid="CompassEx.Gua.GuaClass.GetHideRelativeStr">
   GetHideRelativeStr()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L799"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L803"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前本卦中所有隐藏“伏神”的文本排盘可视化字符形式。</p>
@@ -1853,7 +1927,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetLostLocs_System_String_System_String_" data-uid="CompassEx.Gua.GuaClass.GetLostLocs(System.String,System.String)">
   GetLostLocs(string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1286"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1291"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>静态公共方法：依据输入的日柱天干与地支，动态推导并获取该旬中处于“空亡”状态的两个地支对象。</p>
@@ -1901,7 +1975,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetSixGodStr" data-uid="CompassEx.Gua.GuaClass.GetSixGodStr">
   GetSixGodStr()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L873"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L877"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获得本卦六爻排盘配出的“六神”（六兽）文本排盘字符形式。</p>
@@ -1934,7 +2008,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetSixRelativeStr_System_Boolean_" data-uid="CompassEx.Gua.GuaClass.GetSixRelativeStr(System.Boolean)">
   GetSixRelativeStr(bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L925"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L929"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前本卦内置已加载的“六千”（六亲）文本排盘字符形式。</p>
@@ -1976,7 +2050,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetSixRelativeStr_System_String_System_Boolean_" data-uid="CompassEx.Gua.GuaClass.GetSixRelativeStr(System.String,System.Boolean)">
   GetSixRelativeStr(string, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L894"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L898"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>基于手动传入的本宫五行属性，动态推导并生成本卦六爻的“六亲”文本排盘字符形式。</p>
@@ -2021,7 +2095,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetStringYaos" data-uid="CompassEx.Gua.GuaClass.GetStringYaos">
   GetStringYaos()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L670"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L674"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>将本卦的六个爻的阴阳状态输出为用逗号隔开的扁平化中继字符串。</p>
@@ -2054,7 +2128,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetSykStr" data-uid="CompassEx.Gua.GuaClass.GetSykStr">
   GetSykStr()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L760"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L764"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前复卦上下两卦的纳甲天干字符形式（京房卦象纳甲体例）。</p>
@@ -2090,7 +2164,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetYaos" data-uid="CompassEx.Gua.GuaClass.GetYaos">
   GetYaos()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L692"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L696"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>正向还原并拼接该复卦（六爻卦）从初爻至上爻共 6 个基本爻位组成的整型状态数组。</p>
@@ -2129,7 +2203,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetYaosSkyLocStr" data-uid="CompassEx.Gua.GuaClass.GetYaosSkyLocStr">
   GetYaosSkyLocStr()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L851"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L855"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获得本卦六爻地支连同其所属五行属性的完整文本排盘字符形式。</p>
@@ -2162,7 +2236,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_GetYaosSkyLocStrShort" data-uid="CompassEx.Gua.GuaClass.GetYaosSkyLocStrShort">
   GetYaosSkyLocStrShort()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L829"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L833"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获得本卦六爻地支名称的简化文本排盘字符（不夹带五行属性）。</p>
@@ -2195,7 +2269,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_LoadAll_System_String_System_String_" data-uid="CompassEx.Gua.GuaClass.LoadAll(System.String,System.String)">
   LoadAll(string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L948"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L952"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>显式调用：一键完整加载当前复卦的所有断卦外围相关参数（含世应别名、空亡、六神、伏神等）。</p>
@@ -2231,7 +2305,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_LoadGuaAliasName" data-uid="CompassEx.Gua.GuaClass.LoadGuaAliasName">
   LoadGuaAliasName()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1168"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1173"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>扫描当前复卦内卦与外卦相互对应的爻位地支，自动运算并加载“六合卦”与“六冲卦”的特定吉凶别名。</p>
@@ -2263,7 +2337,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_LoadHideRelative" data-uid="CompassEx.Gua.GuaClass.LoadHideRelative">
   LoadHideRelative()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1087"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1091"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>逆向检索并自动装载主卦所缺失的隐藏“伏神”六亲数据及其所潜伏的爻位。</p>
@@ -2294,7 +2368,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_LoadNoAvg" data-uid="CompassEx.Gua.GuaClass.LoadNoAvg">
   LoadNoAvg()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L961"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L965"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>无参数依赖初始化：全自动加载复卦基础的世应爻位、京房别名、六亲分配及伏神结构。</p>
@@ -2324,7 +2398,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 
   <h3 id="CompassEx_Gua_GuaClass_LoadSixRelative" data-uid="CompassEx.Gua.GuaClass.LoadSixRelative">
   LoadSixRelative()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1134"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L1139"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>核心方法：根据本宫纯卦五行与地支纳音生克关系，全自动装配主卦初爻至上爻的“六亲”属性。</p>
@@ -2356,7 +2430,7 @@ public List&lt;int&gt; YaoDoing { get; set; }</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L28" class="edit-link">编辑本文</a>
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/GuaClass.cs/#L30" class="edit-link">编辑本文</a>
         </div>
 
 

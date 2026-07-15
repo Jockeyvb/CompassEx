@@ -1,0 +1,548 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Gua.NaJia`1.NaJiaYGItem
+  commentId: T:CompassEx.Gua.NaJia`1.NaJiaYGItem
+  id: NaJia`1.NaJiaYGItem
+  parent: CompassEx.Gua
+  children:
+  - CompassEx.Gua.NaJia`1.NaJiaYGItem.LocNames
+  - CompassEx.Gua.NaJia`1.NaJiaYGItem.SkyName
+  langs:
+  - csharp
+  - vb
+  name: NaJia<TResult>.NaJiaYGItem
+  nameWithType: NaJia<TResult>.NaJiaYGItem
+  fullName: CompassEx.Gua.NaJia<TResult>.NaJiaYGItem
+  type: Class
+  source:
+    remote:
+      path: CompassEx/Gua/NaJia.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: NaJiaYGItem
+    path: CompassEx/Gua/NaJia.cs
+    startLine: 141
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 内部私有类：用于静态配置杨公纳甲天干地支原始映射项的轻量级实体。
+  example: []
+  syntax:
+    content: public class NaJia<TResult>.NaJiaYGItem
+    content.vb: Public Class NaJia(Of TResult).NaJiaYGItem
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - CompassEx.Gua.NaJia`1.NaJiaYGItem.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  nameWithType.vb: NaJia(Of TResult).NaJiaYGItem
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).NaJiaYGItem
+  name.vb: NaJia(Of TResult).NaJiaYGItem
+- uid: CompassEx.Gua.NaJia`1.NaJiaYGItem.SkyName
+  commentId: P:CompassEx.Gua.NaJia`1.NaJiaYGItem.SkyName
+  id: SkyName
+  parent: CompassEx.Gua.NaJia`1.NaJiaYGItem
+  langs:
+  - csharp
+  - vb
+  name: SkyName
+  nameWithType: NaJia<TResult>.NaJiaYGItem.SkyName
+  fullName: CompassEx.Gua.NaJia<TResult>.NaJiaYGItem.SkyName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/NaJia.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SkyName
+    path: CompassEx/Gua/NaJia.cs
+    startLine: 146
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 获取或设置归化的天干名称（如 "甲"、"乙"）。
+  example: []
+  syntax:
+    content: public string? SkyName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property SkyName As String
+  overload: CompassEx.Gua.NaJia`1.NaJiaYGItem.SkyName*
+  nameWithType.vb: NaJia(Of TResult).NaJiaYGItem.SkyName
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).NaJiaYGItem.SkyName
+- uid: CompassEx.Gua.NaJia`1.NaJiaYGItem.LocNames
+  commentId: P:CompassEx.Gua.NaJia`1.NaJiaYGItem.LocNames
+  id: LocNames
+  parent: CompassEx.Gua.NaJia`1.NaJiaYGItem
+  langs:
+  - csharp
+  - vb
+  name: LocNames
+  nameWithType: NaJia<TResult>.NaJiaYGItem.LocNames
+  fullName: CompassEx.Gua.NaJia<TResult>.NaJiaYGItem.LocNames
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/NaJia.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: LocNames
+    path: CompassEx/Gua/NaJia.cs
+    startLine: 151
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 获取或设置归化的地支名称集合（如 ["亥", "卯", "未"]）。
+  example: []
+  syntax:
+    content: public string[]? LocNames { get; set; }
+    parameters: []
+    return:
+      type: System.String[]
+    content.vb: Public Property LocNames As String()
+  overload: CompassEx.Gua.NaJia`1.NaJiaYGItem.LocNames*
+  nameWithType.vb: NaJia(Of TResult).NaJiaYGItem.LocNames
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).NaJiaYGItem.LocNames
+references:
+- uid: CompassEx.Gua
+  commentId: N:CompassEx.Gua
+  href: CompassEx.html
+  name: CompassEx.Gua
+  nameWithType: CompassEx.Gua
+  fullName: CompassEx.Gua
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CompassEx.Gua.NaJia`1.NaJiaYGItem.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<NaJiaYGItem, TBase>(NaJiaYGItem, TBase)
+  nameWithType: Comm.ApplyBaseProperties<NaJia<TResult>.NaJiaYGItem, TBase>(NaJia<TResult>.NaJiaYGItem, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.Gua.NaJia<TResult>.NaJiaYGItem, TBase>(CompassEx.Gua.NaJia<TResult>.NaJiaYGItem, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of NaJia(Of TResult).NaJiaYGItem, TBase)(NaJia(Of TResult).NaJiaYGItem, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.Gua.NaJia(Of TResult).NaJiaYGItem, TBase)(CompassEx.Gua.NaJia(Of TResult).NaJiaYGItem, TBase)
+  name.vb: ApplyBaseProperties(Of NaJiaYGItem, TBase)(NaJiaYGItem, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Gua.NaJia{`0}.NaJiaYGItem,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.Gua.NaJia`1.NaJiaYGItem
+    name: NaJiaYGItem
+    href: CompassEx.Gua.NaJia-1.NaJiaYGItem.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.Gua.NaJia`1.NaJiaYGItem
+    name: NaJiaYGItem
+    href: CompassEx.Gua.NaJia-1.NaJiaYGItem.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Gua.NaJia{`0}.NaJiaYGItem,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Gua.NaJia`1.NaJiaYGItem
+    name: NaJiaYGItem
+    href: CompassEx.Gua.NaJia-1.NaJiaYGItem.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.Gua.NaJia`1.NaJiaYGItem
+    name: NaJiaYGItem
+    href: CompassEx.Gua.NaJia-1.NaJiaYGItem.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: CompassEx.Gua.NaJia`1.NaJiaYGItem.SkyName*
+  commentId: Overload:CompassEx.Gua.NaJia`1.NaJiaYGItem.SkyName
+  href: CompassEx.Gua.NaJia-1.NaJiaYGItem.html#CompassEx_Gua_NaJia_1_NaJiaYGItem_SkyName
+  name: SkyName
+  nameWithType: NaJia<TResult>.NaJiaYGItem.SkyName
+  fullName: CompassEx.Gua.NaJia<TResult>.NaJiaYGItem.SkyName
+  nameWithType.vb: NaJia(Of TResult).NaJiaYGItem.SkyName
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).NaJiaYGItem.SkyName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CompassEx.Gua.NaJia`1.NaJiaYGItem.LocNames*
+  commentId: Overload:CompassEx.Gua.NaJia`1.NaJiaYGItem.LocNames
+  href: CompassEx.Gua.NaJia-1.NaJiaYGItem.html#CompassEx_Gua_NaJia_1_NaJiaYGItem_LocNames
+  name: LocNames
+  nameWithType: NaJia<TResult>.NaJiaYGItem.LocNames
+  fullName: CompassEx.Gua.NaJia<TResult>.NaJiaYGItem.LocNames
+  nameWithType.vb: NaJia(Of TResult).NaJiaYGItem.LocNames
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).NaJiaYGItem.LocNames
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )

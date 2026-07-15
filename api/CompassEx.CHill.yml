@@ -10,8 +10,10 @@ items:
   - CompassEx.CHill.C24HillNames
   - CompassEx.CHill.C24HillSunNames
   - CompassEx.CHill.CRangeDegree
+  - CompassEx.CHill.Equals(System.Object)
   - CompassEx.CHill.GetAfterGua
   - CompassEx.CHill.GetCBeforGuas
+  - CompassEx.CHill.GetHashCode
   - CompassEx.CHill.IsSun
   - CompassEx.CHill.Name
   langs:
@@ -36,14 +38,14 @@ items:
   remarks: 二十四山是风水罗盘的核心组成部分，本类提供了基于正针二十四山的名称定位、阴阳属性判别、绝对度数范围计算，以及与之关联的后天八卦与先天 64 卦的嵌套推演功能。
   example: []
   syntax:
-    content: public class CHill
-    content.vb: Public Class CHill
+    content: 'public class CHill : IEquatable<CHill>'
+    content.vb: Public Class CHill Implements IEquatable(Of CHill)
   inheritance:
   - System.Object
+  implements:
+  - System.IEquatable{CompassEx.CHill}
   inheritedMembers:
-  - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
@@ -357,6 +359,72 @@ items:
       description: 返回一个以 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref> 为键、<xref href="CompassEx.Gua.GuaClass" data-throw-if-not-resolved="false"></xref> 为值的字典集合，包含所有落入该山范围内的卦象。
     content.vb: Public Function GetCBeforGuas() As Dictionary(Of CompassRangEX, GuaClass)
   overload: CompassEx.CHill.GetCBeforGuas*
+- uid: CompassEx.CHill.Equals(System.Object)
+  commentId: M:CompassEx.CHill.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: CompassEx.CHill
+  langs:
+  - csharp
+  - vb
+  name: Equals(object)
+  nameWithType: CHill.Equals(object)
+  fullName: CompassEx.CHill.Equals(object)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/CHill.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Equals
+    path: CompassEx/CHill.cs
+    startLine: 156
+  assemblies:
+  - CompassEx
+  namespace: CompassEx
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: CompassEx.CHill.Equals*
+  nameWithType.vb: CHill.Equals(Object)
+  fullName.vb: CompassEx.CHill.Equals(Object)
+  name.vb: Equals(Object)
+- uid: CompassEx.CHill.GetHashCode
+  commentId: M:CompassEx.CHill.GetHashCode
+  id: GetHashCode
+  parent: CompassEx.CHill
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: CHill.GetHashCode()
+  fullName: CompassEx.CHill.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/CHill.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetHashCode
+    path: CompassEx/CHill.cs
+    startLine: 163
+  assemblies:
+  - CompassEx
+  namespace: CompassEx
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.Object.GetHashCode
+  overload: CompassEx.CHill.GetHashCode*
 references:
 - uid: CompassEx
   commentId: N:CompassEx
@@ -375,38 +443,38 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  name: Equals(object)
-  nameWithType: object.Equals(object)
-  fullName: object.Equals(object)
-  nameWithType.vb: Object.Equals(Object)
-  fullName.vb: Object.Equals(Object)
-  name.vb: Equals(Object)
+- uid: System.IEquatable{CompassEx.CHill}
+  commentId: T:System.IEquatable{CompassEx.CHill}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<CHill>
+  nameWithType: IEquatable<CHill>
+  fullName: System.IEquatable<CompassEx.CHill>
+  nameWithType.vb: IEquatable(Of CHill)
+  fullName.vb: System.IEquatable(Of CompassEx.CHill)
+  name.vb: IEquatable(Of CHill)
   spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
+  - uid: System.IEquatable`1
+    name: IEquatable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: CompassEx.CHill
+    name: CHill
+    href: CompassEx.CHill.html
+  - name: '>'
   spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
+  - uid: System.IEquatable`1
+    name: IEquatable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
   - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: Of
+  - name: " "
+  - uid: CompassEx.CHill
+    name: CHill
+    href: CompassEx.CHill.html
   - name: )
 - uid: System.Object.Equals(System.Object,System.Object)
   commentId: M:System.Object.Equals(System.Object,System.Object)
@@ -452,30 +520,6 @@ references:
     name: Object
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
   - name: )
 - uid: System.Object.GetType
   commentId: M:System.Object.GetType
@@ -654,6 +698,34 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
   commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
   href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
@@ -792,6 +864,7 @@ references:
   fullName: CompassEx.Comm.CompassRangEX
 - uid: CompassEx.CompassEx.Get24HillDegree(System.String)
   commentId: M:CompassEx.CompassEx.Get24HillDegree(System.String)
+  parent: CompassEx.CompassEx
   isExternal: true
   href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_
   name: Get24HillDegree(string)
@@ -832,6 +905,13 @@ references:
   name: CRangeDegree
   nameWithType: CHill.CRangeDegree
   fullName: CompassEx.CHill.CRangeDegree
+- uid: CompassEx.CompassEx
+  commentId: T:CompassEx.CompassEx
+  parent: CompassEx
+  href: CompassEx.CompassEx.html
+  name: CompassEx
+  nameWithType: CompassEx
+  fullName: CompassEx.CompassEx
 - uid: CompassEx.CHill
   commentId: T:CompassEx.CHill
   parent: CompassEx
@@ -885,12 +965,6 @@ references:
   name: Start
   nameWithType: CompassRangEX.Start
   fullName: CompassEx.Comm.CompassRangEX.Start
-- uid: CompassEx.CompassEx
-  commentId: T:CompassEx.CompassEx
-  href: CompassEx.CompassEx.html
-  name: CompassEx
-  nameWithType: CompassEx
-  fullName: CompassEx.CompassEx
 - uid: CompassEx.CHill.GetAfterGua*
   commentId: Overload:CompassEx.CHill.GetAfterGua
   href: CompassEx.CHill.html#CompassEx_CHill_GetAfterGua
@@ -1046,3 +1120,72 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: CompassEx.CHill.Equals*
+  commentId: Overload:CompassEx.CHill.Equals
+  href: CompassEx.CHill.html#CompassEx_CHill_Equals_System_Object_
+  name: Equals
+  nameWithType: CHill.Equals
+  fullName: CompassEx.CHill.Equals
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: CompassEx.CHill.GetHashCode*
+  commentId: Overload:CompassEx.CHill.GetHashCode
+  href: CompassEx.CHill.html#CompassEx_CHill_GetHashCode
+  name: GetHashCode
+  nameWithType: CHill.GetHashCode
+  fullName: CompassEx.CHill.GetHashCode

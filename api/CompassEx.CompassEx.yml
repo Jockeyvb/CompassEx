@@ -7,14 +7,10 @@ items:
   children:
   - CompassEx.CompassEx.#ctor(System.Double)
   - CompassEx.CompassEx.AfterGuaSub
-  - CompassEx.CompassEx.BeforGua
   - CompassEx.CompassEx.C24Hill
-  - CompassEx.CompassEx.CAfterGuas
-  - CompassEx.CompassEx.CBeforeGuas
   - CompassEx.CompassEx.CHillDegree
   - CompassEx.CompassEx.CompassAfterGuaSubNames
   - CompassEx.CompassEx.CompassBeforGuaSubNames
-  - CompassEx.CompassEx.CompassGuaDegree
   - CompassEx.CompassEx.Degree
   - CompassEx.CompassEx.Get24Hill
   - CompassEx.CompassEx.Get24HillDegree(System.String)
@@ -24,12 +20,8 @@ items:
   - CompassEx.CompassEx.GetBeforGuaSubDegree(CompassEx.Gua.GuaSubClass)
   - CompassEx.CompassEx.GetBeforGuaSubDegree(System.String)
   - CompassEx.CompassEx.GetBeforeGuaSub
-  - CompassEx.CompassEx.GetCAfterGuaDegree(System.String)
-  - CompassEx.CompassEx.GetCBeforeGua
-  - CompassEx.CompassEx.GetCBeforeGuaDegree(System.String)
   - CompassEx.CompassEx.GuaSubDegree
-  - CompassEx.CompassEx.LoadAllCAfterGuas
-  - CompassEx.CompassEx.LoadAllCBeforeGuas
+  - CompassEx.CompassEx.degree
   langs:
   - csharp
   - vb
@@ -44,17 +36,24 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CompassEx
     path: CompassEx/CompassEx.cs
-    startLine: 24
+    startLine: 30
   assemblies:
   - CompassEx
   namespace: CompassEx
-  summary: 罗盘的基本类
+  summary: 罗盘的基础核心类。
+  remarks: >-
+    <p>本类包含了基础的先后天八卦、二十四山等核心角度常量与方位信息的定义与计算逻辑。</p>
+
+    <p>作为核心基类，三元罗盘类 <xref href="CompassEx.C3Y" data-throw-if-not-resolved="false"></xref> 与三合罗盘类 <xref href="CompassEx.C3H" data-throw-if-not-resolved="false"></xref> 将在本类的基础上进行继承、方法扩展以及属性补充。</p>
   example: []
   syntax:
     content: public class CompassEx
     content.vb: Public Class CompassEx
   inheritance:
   - System.Object
+  derivedClasses:
+  - CompassEx.C3H
+  - CompassEx.C3Y
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -83,7 +82,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuaSubDegree
     path: CompassEx/CompassEx.cs
-    startLine: 32
+    startLine: 38
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -113,7 +112,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CompassAfterGuaSubNames
     path: CompassEx/CompassEx.cs
-    startLine: 38
+    startLine: 44
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -143,7 +142,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CompassBeforGuaSubNames
     path: CompassEx/CompassEx.cs
-    startLine: 44
+    startLine: 50
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -155,128 +154,6 @@ items:
       type: System.String[]
       description: 包含 8 个先天卦名："坤", "震", "离", "兑", "乾", "巽", "坎", "艮"。
     content.vb: Public Shared ReadOnly CompassBeforGuaSubNames As String()
-- uid: CompassEx.CompassEx.CBeforeGuas
-  commentId: F:CompassEx.CompassEx.CBeforeGuas
-  id: CBeforeGuas
-  parent: CompassEx.CompassEx
-  langs:
-  - csharp
-  - vb
-  name: CBeforeGuas
-  nameWithType: CompassEx.CBeforeGuas
-  fullName: CompassEx.CompassEx.CBeforeGuas
-  type: Field
-  source:
-    remote:
-      path: CompassEx/CompassEx.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: CBeforeGuas
-    path: CompassEx/CompassEx.cs
-    startLine: 58
-  assemblies:
-  - CompassEx
-  namespace: CompassEx
-  summary: 先天 64 卦对象字典缓存（天盘）。
-  remarks: >-
-    <p><b>性能说明：</b>使用字典缓存所有 64 卦对象，避免每次计算时重复创建新对象，提高执行性能。系统启动时需要优先初始化此字典。</p>
-
-    <p><b>排列规则：</b>罗盘上先天排行从午为乾1、兑2、离3、震4（阳仪），巽5、坎6、艮7、坤8（阴仪）。</p>
-
-    <p><b>度数映射：</b>罗盘上子坤（360度）至午乾（180度）。从坤 0 度至天风姤 180 度，乾左为顺 180 度至地雷复 360 度。内卦为卦宫，外卦相荡而成。</p>
-  example: []
-  syntax:
-    content: >-
-      [JsonIgnore]
-
-      public static Dictionary<CompassRangEX, GuaClass> CBeforeGuas
-    return:
-      type: System.Collections.Generic.Dictionary{CompassEx.Comm.CompassRangEX,CompassEx.Gua.GuaClass}
-      description: 键为 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref> 范围，值为对应的 <xref href="CompassEx.Gua.GuaClass" data-throw-if-not-resolved="false"></xref> 卦象对象。
-    content.vb: >-
-      <JsonIgnore>
-
-      Public Shared CBeforeGuas As Dictionary(Of CompassRangEX, GuaClass)
-  attributes:
-  - type: Newtonsoft.Json.JsonIgnoreAttribute
-    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
-    arguments: []
-- uid: CompassEx.CompassEx.CAfterGuas
-  commentId: F:CompassEx.CompassEx.CAfterGuas
-  id: CAfterGuas
-  parent: CompassEx.CompassEx
-  langs:
-  - csharp
-  - vb
-  name: CAfterGuas
-  nameWithType: CompassEx.CAfterGuas
-  fullName: CompassEx.CompassEx.CAfterGuas
-  type: Field
-  source:
-    remote:
-      path: CompassEx/CompassEx.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: CAfterGuas
-    path: CompassEx/CompassEx.cs
-    startLine: 72
-  assemblies:
-  - CompassEx
-  namespace: CompassEx
-  summary: 后天 64 卦对象字典缓存（地盘）。
-  remarks: >-
-    <p><b>性能说明：</b>使用字典缓存所有 64 卦对象，避免每次计算时重复创建新对象，提高执行性能。系统启动时需要优先初始化此字典。</p>
-
-    <p><b>排列规则：</b>罗盘上后天排行从子为乾9、兑4、离3、震8（阳仪），巽2、坎7、艮6、坤1（阴仪）。</p>
-
-    <p><b>度数映射：</b>罗盘上子乾（360度）至午坤（180度）。从乾 0 度至雷地豫 180 度，坤左为顺 180 度至地雷复 360 度。外卦为卦宫，内卦相荡而成。</p>
-  example: []
-  syntax:
-    content: >-
-      [JsonIgnore]
-
-      public static Dictionary<CompassRangEX, GuaClass> CAfterGuas
-    return:
-      type: System.Collections.Generic.Dictionary{CompassEx.Comm.CompassRangEX,CompassEx.Gua.GuaClass}
-      description: 键为 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref> 范围，值为对应的 <xref href="CompassEx.Gua.GuaClass" data-throw-if-not-resolved="false"></xref> 卦象对象。
-    content.vb: >-
-      <JsonIgnore>
-
-      Public Shared CAfterGuas As Dictionary(Of CompassRangEX, GuaClass)
-  attributes:
-  - type: Newtonsoft.Json.JsonIgnoreAttribute
-    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
-    arguments: []
-- uid: CompassEx.CompassEx.CompassGuaDegree
-  commentId: F:CompassEx.CompassEx.CompassGuaDegree
-  id: CompassGuaDegree
-  parent: CompassEx.CompassEx
-  langs:
-  - csharp
-  - vb
-  name: CompassGuaDegree
-  nameWithType: CompassEx.CompassGuaDegree
-  fullName: CompassEx.CompassEx.CompassGuaDegree
-  type: Field
-  source:
-    remote:
-      path: CompassEx/CompassEx.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: CompassGuaDegree
-    path: CompassEx/CompassEx.cs
-    startLine: 78
-  assemblies:
-  - CompassEx
-  namespace: CompassEx
-  summary: 罗盘 64 卦的单卦度数。
-  example: []
-  syntax:
-    content: public const double CompassGuaDegree = 5.625
-    return:
-      type: System.Double
-      description: 默认值为 5.625 度（360度 / 64卦）。
-    content.vb: Public Const CompassGuaDegree As Double = 5.625
 - uid: CompassEx.CompassEx.CHillDegree
   commentId: F:CompassEx.CompassEx.CHillDegree
   id: CHillDegree
@@ -295,7 +172,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CHillDegree
     path: CompassEx/CompassEx.cs
-    startLine: 84
+    startLine: 59
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -325,7 +202,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: C24Hill
     path: CompassEx/CompassEx.cs
-    startLine: 99
+    startLine: 74
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -339,6 +216,33 @@ items:
       description: 返回一个 <xref href="CompassEx.CHill" data-throw-if-not-resolved="false"></xref> 对象，表示当前度数所落入的二十四山方位。
     content.vb: Public ReadOnly Property C24Hill As CHill
   overload: CompassEx.CompassEx.C24Hill*
+- uid: CompassEx.CompassEx.degree
+  commentId: F:CompassEx.CompassEx.degree
+  id: degree
+  parent: CompassEx.CompassEx
+  langs:
+  - csharp
+  - vb
+  name: degree
+  nameWithType: CompassEx.degree
+  fullName: CompassEx.CompassEx.degree
+  type: Field
+  source:
+    remote:
+      path: CompassEx/CompassEx.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: degree
+    path: CompassEx/CompassEx.cs
+    startLine: 77
+  assemblies:
+  - CompassEx
+  namespace: CompassEx
+  syntax:
+    content: protected double degree
+    return:
+      type: System.Double
+    content.vb: Protected degree As Double
 - uid: CompassEx.CompassEx.Degree
   commentId: P:CompassEx.CompassEx.Degree
   id: Degree
@@ -357,7 +261,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Degree
     path: CompassEx/CompassEx.cs
-    startLine: 114
+    startLine: 89
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -393,52 +297,20 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSub
     path: CompassEx/CompassEx.cs
-    startLine: 133
+    startLine: 108
   assemblies:
   - CompassEx
   namespace: CompassEx
   summary: 获取当前罗盘度数对应的后天八卦对象。
   example: []
   syntax:
-    content: public GuaSubClass AfterGuaSub { get; }
+    content: public GuaSubClass AfterGuaSub { get; protected set; }
     parameters: []
     return:
       type: CompassEx.Gua.GuaSubClass
       description: 返回一个 <xref href="CompassEx.Gua.GuaSubClass" data-throw-if-not-resolved="false"></xref> 对象，表示当前度数所属的后天单卦方位。
-    content.vb: Public ReadOnly Property AfterGuaSub As GuaSubClass
+    content.vb: Public Property AfterGuaSub As GuaSubClass
   overload: CompassEx.CompassEx.AfterGuaSub*
-- uid: CompassEx.CompassEx.BeforGua
-  commentId: P:CompassEx.CompassEx.BeforGua
-  id: BeforGua
-  parent: CompassEx.CompassEx
-  langs:
-  - csharp
-  - vb
-  name: BeforGua
-  nameWithType: CompassEx.BeforGua
-  fullName: CompassEx.CompassEx.BeforGua
-  type: Property
-  source:
-    remote:
-      path: CompassEx/CompassEx.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: BeforGua
-    path: CompassEx/CompassEx.cs
-    startLine: 144
-  assemblies:
-  - CompassEx
-  namespace: CompassEx
-  summary: 获取当前罗盘度数对应的先天 64 卦对象。
-  example: []
-  syntax:
-    content: public GuaClass BeforGua { get; }
-    parameters: []
-    return:
-      type: CompassEx.Gua.GuaClass
-      description: 返回一个 <xref href="CompassEx.Gua.GuaClass" data-throw-if-not-resolved="false"></xref> 对象，表示当前度数在天盘上对应的先天 64 卦象。
-    content.vb: Public ReadOnly Property BeforGua As GuaClass
-  overload: CompassEx.CompassEx.BeforGua*
 - uid: CompassEx.CompassEx.#ctor(System.Double)
   commentId: M:CompassEx.CompassEx.#ctor(System.Double)
   id: '#ctor(System.Double)'
@@ -457,7 +329,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/CompassEx.cs
-    startLine: 160
+    startLine: 128
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -465,7 +337,7 @@ items:
   remarks: >-
     <p>实例化该对象时，传入的度数会直接赋值给 <xref href="CompassEx.CompassEx.Degree" data-throw-if-not-resolved="false"></xref> 属性。</p>
 
-    <p>由此会隐式触发内部的初始化流程，自动计算并填充对应的后天八卦（<xref href="CompassEx.CompassEx.AfterGuaSub" data-throw-if-not-resolved="false"></xref>）、二十四山（<xref href="CompassEx.CompassEx.C24Hill" data-throw-if-not-resolved="false"></xref>）以及先天 64 卦（<xref href="CompassEx.CompassEx.BeforGua" data-throw-if-not-resolved="false"></xref>）等关联对象。</p>
+    <p>由此会隐式触发内部的初始化流程，自动计算并填充对应的后天八卦（<xref href="CompassEx.CompassEx.AfterGuaSub" data-throw-if-not-resolved="false"></xref>）、二十四山（<xref href="CompassEx.CompassEx.C24Hill" data-throw-if-not-resolved="false"></xref>）以及先天 64 卦（<xref href="CompassEx.C3Y.BeforGua" data-throw-if-not-resolved="false"></xref>）等关联对象。</p>
   example: []
   syntax:
     content: public CompassEx(double Degreen)
@@ -478,177 +350,6 @@ items:
   nameWithType.vb: CompassEx.New(Double)
   fullName.vb: CompassEx.CompassEx.New(Double)
   name.vb: New(Double)
-- uid: CompassEx.CompassEx.GetCBeforeGuaDegree(System.String)
-  commentId: M:CompassEx.CompassEx.GetCBeforeGuaDegree(System.String)
-  id: GetCBeforeGuaDegree(System.String)
-  parent: CompassEx.CompassEx
-  langs:
-  - csharp
-  - vb
-  name: GetCBeforeGuaDegree(string)
-  nameWithType: CompassEx.GetCBeforeGuaDegree(string)
-  fullName: CompassEx.CompassEx.GetCBeforeGuaDegree(string)
-  type: Method
-  source:
-    remote:
-      path: CompassEx/CompassEx.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: GetCBeforeGuaDegree
-    path: CompassEx/CompassEx.cs
-    startLine: 193
-  assemblies:
-  - CompassEx
-  namespace: CompassEx
-  summary: 获取指定先天（天盘）64 卦卦名在罗盘上对应的度数范围对象。
-  example: []
-  syntax:
-    content: public static CompassRangEX GetCBeforeGuaDegree(string Name)
-    parameters:
-    - id: Name
-      type: System.String
-      description: 要查询的先天 64 卦的完整卦名。
-    return:
-      type: CompassEx.Comm.CompassRangEX
-      description: 返回对应的 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref> 度数范围对象；若在缓存中未匹配到该卦名，则返回 <code>null</code>。
-    content.vb: Public Shared Function GetCBeforeGuaDegree(Name As String) As CompassRangEX
-  overload: CompassEx.CompassEx.GetCBeforeGuaDegree*
-  nameWithType.vb: CompassEx.GetCBeforeGuaDegree(String)
-  fullName.vb: CompassEx.CompassEx.GetCBeforeGuaDegree(String)
-  name.vb: GetCBeforeGuaDegree(String)
-- uid: CompassEx.CompassEx.GetCAfterGuaDegree(System.String)
-  commentId: M:CompassEx.CompassEx.GetCAfterGuaDegree(System.String)
-  id: GetCAfterGuaDegree(System.String)
-  parent: CompassEx.CompassEx
-  langs:
-  - csharp
-  - vb
-  name: GetCAfterGuaDegree(string)
-  nameWithType: CompassEx.GetCAfterGuaDegree(string)
-  fullName: CompassEx.CompassEx.GetCAfterGuaDegree(string)
-  type: Method
-  source:
-    remote:
-      path: CompassEx/CompassEx.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: GetCAfterGuaDegree
-    path: CompassEx/CompassEx.cs
-    startLine: 210
-  assemblies:
-  - CompassEx
-  namespace: CompassEx
-  summary: 获取指定后天（地盘）64 卦卦名在罗盘上对应的度数范围对象。
-  example: []
-  syntax:
-    content: public static CompassRangEX GetCAfterGuaDegree(string Name)
-    parameters:
-    - id: Name
-      type: System.String
-      description: 要查询的后天 64 卦的完整卦名。
-    return:
-      type: CompassEx.Comm.CompassRangEX
-      description: 返回对应的 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref> 度数范围对象；若在缓存中未匹配到该卦名，则返回 <code>null</code>。
-    content.vb: Public Shared Function GetCAfterGuaDegree(Name As String) As CompassRangEX
-  overload: CompassEx.CompassEx.GetCAfterGuaDegree*
-  nameWithType.vb: CompassEx.GetCAfterGuaDegree(String)
-  fullName.vb: CompassEx.CompassEx.GetCAfterGuaDegree(String)
-  name.vb: GetCAfterGuaDegree(String)
-- uid: CompassEx.CompassEx.GetCBeforeGua
-  commentId: M:CompassEx.CompassEx.GetCBeforeGua
-  id: GetCBeforeGua
-  parent: CompassEx.CompassEx
-  langs:
-  - csharp
-  - vb
-  name: GetCBeforeGua()
-  nameWithType: CompassEx.GetCBeforeGua()
-  fullName: CompassEx.CompassEx.GetCBeforeGua()
-  type: Method
-  source:
-    remote:
-      path: CompassEx/CompassEx.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: GetCBeforeGua
-    path: CompassEx/CompassEx.cs
-    startLine: 226
-  assemblies:
-  - CompassEx
-  namespace: CompassEx
-  summary: 根据当前罗盘指向的度数，匹配并获取对应的先天 64 卦对象。
-  example: []
-  syntax:
-    content: public GuaClass GetCBeforeGua()
-    return:
-      type: CompassEx.Gua.GuaClass
-      description: 返回当前度数所在的 <xref href="CompassEx.Gua.GuaClass" data-throw-if-not-resolved="false"></xref> 先天 64 卦对象；若未找到匹配的范围则返回 <code>null</code>。
-    content.vb: Public Function GetCBeforeGua() As GuaClass
-  overload: CompassEx.CompassEx.GetCBeforeGua*
-- uid: CompassEx.CompassEx.LoadAllCAfterGuas
-  commentId: M:CompassEx.CompassEx.LoadAllCAfterGuas
-  id: LoadAllCAfterGuas
-  parent: CompassEx.CompassEx
-  langs:
-  - csharp
-  - vb
-  name: LoadAllCAfterGuas()
-  nameWithType: CompassEx.LoadAllCAfterGuas()
-  fullName: CompassEx.CompassEx.LoadAllCAfterGuas()
-  type: Method
-  source:
-    remote:
-      path: CompassEx/CompassEx.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: LoadAllCAfterGuas
-    path: CompassEx/CompassEx.cs
-    startLine: 245
-  assemblies:
-  - CompassEx
-  namespace: CompassEx
-  summary: 从数据源加载并初始化罗盘上的所有后天 64 卦（地盘）全局静态缓存字典。
-  remarks: >-
-    <p><b>排列规则：</b>卦象按照顺时针方向在罗盘上排布，从坤卦开始，每个卦位占据 5.625 度（逆时针荡卦推演），共计 64 个卦象。</p>
-
-    <p>该方法应在程序启动或系统初始化阶段优先执行。</p>
-  example: []
-  syntax:
-    content: public static void LoadAllCAfterGuas()
-    content.vb: Public Shared Sub LoadAllCAfterGuas()
-  overload: CompassEx.CompassEx.LoadAllCAfterGuas*
-- uid: CompassEx.CompassEx.LoadAllCBeforeGuas
-  commentId: M:CompassEx.CompassEx.LoadAllCBeforeGuas
-  id: LoadAllCBeforeGuas
-  parent: CompassEx.CompassEx
-  langs:
-  - csharp
-  - vb
-  name: LoadAllCBeforeGuas()
-  nameWithType: CompassEx.LoadAllCBeforeGuas()
-  fullName: CompassEx.CompassEx.LoadAllCBeforeGuas()
-  type: Method
-  source:
-    remote:
-      path: CompassEx/CompassEx.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: LoadAllCBeforeGuas
-    path: CompassEx/CompassEx.cs
-    startLine: 257
-  assemblies:
-  - CompassEx
-  namespace: CompassEx
-  summary: 从数据源加载并初始化罗盘上的所有先天 64 卦（天盘）全局静态缓存字典。
-  remarks: >-
-    <p><b>排列规则：</b>卦象按照顺时针方向在罗盘上排布，从坤卦开始，每个卦位占据 5.625 度（逆时针荡卦推演），共计 64 个卦象。</p>
-
-    <p>该方法应在程序启动或系统初始化阶段优先执行。</p>
-  example: []
-  syntax:
-    content: public static void LoadAllCBeforeGuas()
-    content.vb: Public Shared Sub LoadAllCBeforeGuas()
-  overload: CompassEx.CompassEx.LoadAllCBeforeGuas*
 - uid: CompassEx.CompassEx.Get24Hill
   commentId: M:CompassEx.CompassEx.Get24Hill
   id: Get24Hill
@@ -667,7 +368,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Get24Hill
     path: CompassEx/CompassEx.cs
-    startLine: 266
+    startLine: 162
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -698,7 +399,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Get24HillDegree
     path: CompassEx/CompassEx.cs
-    startLine: 293
+    startLine: 189
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -740,7 +441,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBeforeGuaSub
     path: CompassEx/CompassEx.cs
-    startLine: 312
+    startLine: 208
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -771,7 +472,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBeforGuaSubDegree
     path: CompassEx/CompassEx.cs
-    startLine: 331
+    startLine: 227
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -806,7 +507,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBeforGuaSubDegree
     path: CompassEx/CompassEx.cs
-    startLine: 349
+    startLine: 245
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -848,7 +549,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAfterGuaSub
     path: CompassEx/CompassEx.cs
-    startLine: 368
+    startLine: 264
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -879,7 +580,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAfterGuaSubDegree
     path: CompassEx/CompassEx.cs
-    startLine: 387
+    startLine: 283
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -914,7 +615,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAfterGuaSubDegree
     path: CompassEx/CompassEx.cs
-    startLine: 405
+    startLine: 301
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -939,6 +640,18 @@ items:
   fullName.vb: CompassEx.CompassEx.GetAfterGuaSubDegree(String)
   name.vb: GetAfterGuaSubDegree(String)
 references:
+- uid: CompassEx.C3Y
+  commentId: T:CompassEx.C3Y
+  href: CompassEx.C3Y.html
+  name: C3Y
+  nameWithType: C3Y
+  fullName: CompassEx.C3Y
+- uid: CompassEx.C3H
+  commentId: T:CompassEx.C3H
+  href: CompassEx.C3H.html
+  name: C3H
+  nameWithType: C3H
+  fullName: CompassEx.C3H
 - uid: CompassEx
   commentId: N:CompassEx
   href: CompassEx.html
@@ -1341,156 +1054,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: (
   - name: )
-- uid: CompassEx.Comm.CompassRangEX
-  commentId: T:CompassEx.Comm.CompassRangEX
-  parent: CompassEx.Comm
-  href: CompassEx.Comm.CompassRangEX.html
-  name: CompassRangEX
-  nameWithType: CompassRangEX
-  fullName: CompassEx.Comm.CompassRangEX
-- uid: CompassEx.Gua.GuaClass
-  commentId: T:CompassEx.Gua.GuaClass
-  parent: CompassEx.Gua
-  href: CompassEx.Gua.GuaClass.html
-  name: GuaClass
-  nameWithType: GuaClass
-  fullName: CompassEx.Gua.GuaClass
-- uid: System.Collections.Generic.Dictionary{CompassEx.Comm.CompassRangEX,CompassEx.Gua.GuaClass}
-  commentId: T:System.Collections.Generic.Dictionary{CompassEx.Comm.CompassRangEX,CompassEx.Gua.GuaClass}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.Dictionary`2
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  name: Dictionary<CompassRangEX, GuaClass>
-  nameWithType: Dictionary<CompassRangEX, GuaClass>
-  fullName: System.Collections.Generic.Dictionary<CompassEx.Comm.CompassRangEX, CompassEx.Gua.GuaClass>
-  nameWithType.vb: Dictionary(Of CompassRangEX, GuaClass)
-  fullName.vb: System.Collections.Generic.Dictionary(Of CompassEx.Comm.CompassRangEX, CompassEx.Gua.GuaClass)
-  name.vb: Dictionary(Of CompassRangEX, GuaClass)
-  spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: <
-  - uid: CompassEx.Comm.CompassRangEX
-    name: CompassRangEX
-    href: CompassEx.Comm.CompassRangEX.html
-  - name: ','
-  - name: " "
-  - uid: CompassEx.Gua.GuaClass
-    name: GuaClass
-    href: CompassEx.Gua.GuaClass.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: CompassEx.Comm.CompassRangEX
-    name: CompassRangEX
-    href: CompassEx.Comm.CompassRangEX.html
-  - name: ','
-  - name: " "
-  - uid: CompassEx.Gua.GuaClass
-    name: GuaClass
-    href: CompassEx.Gua.GuaClass.html
-  - name: )
-- uid: CompassEx.Gua
-  commentId: N:CompassEx.Gua
-  href: CompassEx.html
-  name: CompassEx.Gua
-  nameWithType: CompassEx.Gua
-  fullName: CompassEx.Gua
-  spec.csharp:
-  - uid: CompassEx
-    name: CompassEx
-    href: CompassEx.html
-  - name: .
-  - uid: CompassEx.Gua
-    name: Gua
-    href: CompassEx.Gua.html
-  spec.vb:
-  - uid: CompassEx
-    name: CompassEx
-    href: CompassEx.html
-  - name: .
-  - uid: CompassEx.Gua
-    name: Gua
-    href: CompassEx.Gua.html
-- uid: System.Collections.Generic.Dictionary`2
-  commentId: T:System.Collections.Generic.Dictionary`2
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  name: Dictionary<TKey, TValue>
-  nameWithType: Dictionary<TKey, TValue>
-  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
-  nameWithType.vb: Dictionary(Of TKey, TValue)
-  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
-  name.vb: Dictionary(Of TKey, TValue)
-  spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: <
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: CompassEx.CHill
   commentId: T:CompassEx.CHill
   parent: CompassEx
@@ -1523,42 +1086,62 @@ references:
   name: AfterGuaSub
   nameWithType: CompassEx.AfterGuaSub
   fullName: CompassEx.CompassEx.AfterGuaSub
-- uid: CompassEx.CompassEx.BeforGua*
-  commentId: Overload:CompassEx.CompassEx.BeforGua
-  href: CompassEx.CompassEx.html#CompassEx_CompassEx_BeforGua
-  name: BeforGua
-  nameWithType: CompassEx.BeforGua
-  fullName: CompassEx.CompassEx.BeforGua
+- uid: CompassEx.Gua
+  commentId: N:CompassEx.Gua
+  href: CompassEx.html
+  name: CompassEx.Gua
+  nameWithType: CompassEx.Gua
+  fullName: CompassEx.Gua
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
 - uid: CompassEx.CompassEx
   commentId: T:CompassEx.CompassEx
+  parent: CompassEx
   href: CompassEx.CompassEx.html
   name: CompassEx
   nameWithType: CompassEx
   fullName: CompassEx.CompassEx
 - uid: CompassEx.CompassEx.Degree
   commentId: P:CompassEx.CompassEx.Degree
+  parent: CompassEx.CompassEx
   href: CompassEx.CompassEx.html#CompassEx_CompassEx_Degree
   name: Degree
   nameWithType: CompassEx.Degree
   fullName: CompassEx.CompassEx.Degree
 - uid: CompassEx.CompassEx.AfterGuaSub
   commentId: P:CompassEx.CompassEx.AfterGuaSub
+  parent: CompassEx.CompassEx
   href: CompassEx.CompassEx.html#CompassEx_CompassEx_AfterGuaSub
   name: AfterGuaSub
   nameWithType: CompassEx.AfterGuaSub
   fullName: CompassEx.CompassEx.AfterGuaSub
 - uid: CompassEx.CompassEx.C24Hill
   commentId: P:CompassEx.CompassEx.C24Hill
+  parent: CompassEx.CompassEx
   href: CompassEx.CompassEx.html#CompassEx_CompassEx_C24Hill
   name: C24Hill
   nameWithType: CompassEx.C24Hill
   fullName: CompassEx.CompassEx.C24Hill
-- uid: CompassEx.CompassEx.BeforGua
-  commentId: P:CompassEx.CompassEx.BeforGua
-  href: CompassEx.CompassEx.html#CompassEx_CompassEx_BeforGua
+- uid: CompassEx.C3Y.BeforGua
+  commentId: P:CompassEx.C3Y.BeforGua
+  href: CompassEx.C3Y.html#CompassEx_C3Y_BeforGua
   name: BeforGua
-  nameWithType: CompassEx.BeforGua
-  fullName: CompassEx.CompassEx.BeforGua
+  nameWithType: C3Y.BeforGua
+  fullName: CompassEx.C3Y.BeforGua
 - uid: CompassEx.CompassEx.#ctor*
   commentId: Overload:CompassEx.CompassEx.#ctor
   href: CompassEx.CompassEx.html#CompassEx_CompassEx__ctor_System_Double_
@@ -1568,12 +1151,25 @@ references:
   nameWithType.vb: CompassEx.New
   fullName.vb: CompassEx.CompassEx.New
   name.vb: New
-- uid: CompassEx.CompassEx.GetCBeforeGuaDegree*
-  commentId: Overload:CompassEx.CompassEx.GetCBeforeGuaDegree
-  href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforeGuaDegree_System_String_
-  name: GetCBeforeGuaDegree
-  nameWithType: CompassEx.GetCBeforeGuaDegree
-  fullName: CompassEx.CompassEx.GetCBeforeGuaDegree
+- uid: CompassEx.CompassEx.Get24Hill*
+  commentId: Overload:CompassEx.CompassEx.Get24Hill
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24Hill
+  name: Get24Hill
+  nameWithType: CompassEx.Get24Hill
+  fullName: CompassEx.CompassEx.Get24Hill
+- uid: CompassEx.Comm.CompassRangEX
+  commentId: T:CompassEx.Comm.CompassRangEX
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.CompassRangEX.html
+  name: CompassRangEX
+  nameWithType: CompassRangEX
+  fullName: CompassEx.Comm.CompassRangEX
+- uid: CompassEx.CompassEx.Get24HillDegree*
+  commentId: Overload:CompassEx.CompassEx.Get24HillDegree
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_
+  name: Get24HillDegree
+  nameWithType: CompassEx.Get24HillDegree
+  fullName: CompassEx.CompassEx.Get24HillDegree
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -1585,42 +1181,6 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: CompassEx.CompassEx.GetCAfterGuaDegree*
-  commentId: Overload:CompassEx.CompassEx.GetCAfterGuaDegree
-  href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetCAfterGuaDegree_System_String_
-  name: GetCAfterGuaDegree
-  nameWithType: CompassEx.GetCAfterGuaDegree
-  fullName: CompassEx.CompassEx.GetCAfterGuaDegree
-- uid: CompassEx.CompassEx.GetCBeforeGua*
-  commentId: Overload:CompassEx.CompassEx.GetCBeforeGua
-  href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforeGua
-  name: GetCBeforeGua
-  nameWithType: CompassEx.GetCBeforeGua
-  fullName: CompassEx.CompassEx.GetCBeforeGua
-- uid: CompassEx.CompassEx.LoadAllCAfterGuas*
-  commentId: Overload:CompassEx.CompassEx.LoadAllCAfterGuas
-  href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCAfterGuas
-  name: LoadAllCAfterGuas
-  nameWithType: CompassEx.LoadAllCAfterGuas
-  fullName: CompassEx.CompassEx.LoadAllCAfterGuas
-- uid: CompassEx.CompassEx.LoadAllCBeforeGuas*
-  commentId: Overload:CompassEx.CompassEx.LoadAllCBeforeGuas
-  href: CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforeGuas
-  name: LoadAllCBeforeGuas
-  nameWithType: CompassEx.LoadAllCBeforeGuas
-  fullName: CompassEx.CompassEx.LoadAllCBeforeGuas
-- uid: CompassEx.CompassEx.Get24Hill*
-  commentId: Overload:CompassEx.CompassEx.Get24Hill
-  href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24Hill
-  name: Get24Hill
-  nameWithType: CompassEx.Get24Hill
-  fullName: CompassEx.CompassEx.Get24Hill
-- uid: CompassEx.CompassEx.Get24HillDegree*
-  commentId: Overload:CompassEx.CompassEx.Get24HillDegree
-  href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_
-  name: Get24HillDegree
-  nameWithType: CompassEx.Get24HillDegree
-  fullName: CompassEx.CompassEx.Get24HillDegree
 - uid: CompassEx.CompassEx.GetBeforeGuaSub*
   commentId: Overload:CompassEx.CompassEx.GetBeforeGuaSub
   href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforeGuaSub

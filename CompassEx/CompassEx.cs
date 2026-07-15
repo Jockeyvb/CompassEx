@@ -11,16 +11,22 @@
 //
 
 
+
 using CompassEx.Comm;
 using CompassEx.Gua;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+
 namespace CompassEx
 {
     /// <summary>
-    /// 罗盘的基本类
+    /// 罗盘的基础核心类。
     /// </summary>
+    /// <remarks>
+    /// <para>本类包含了基础的先后天八卦、二十四山等核心角度常量与方位信息的定义与计算逻辑。</para>
+    /// <para>作为核心基类，三元罗盘类 <see cref="C3Y"/> 与三合罗盘类 <see cref="C3H"/> 将在本类的基础上进行继承、方法扩展以及属性补充。</para>
+    /// </remarks>
 
     public class CompassEx
     {
@@ -44,39 +50,8 @@ namespace CompassEx
         /// <value>包含 8 个先天卦名："坤", "震", "离", "兑", "乾", "巽", "坎", "艮"。</value>
         public static readonly string[] CompassBeforGuaSubNames = { "坤", "震", "离", "兑", "乾", "巽", "坎", "艮" };
 
-        /// <summary>
-        /// 先天 64 卦对象字典缓存（天盘）。
-        /// </summary>
-        /// <value>
-        /// 键为 <see cref="CompassRangEX"/> 范围，值为对应的 <see cref="GuaClass"/> 卦象对象。
-        /// </value>
-        /// <remarks>
-        /// <para><b>性能说明：</b>使用字典缓存所有 64 卦对象，避免每次计算时重复创建新对象，提高执行性能。系统启动时需要优先初始化此字典。</para>
-        /// <para><b>排列规则：</b>罗盘上先天排行从午为乾1、兑2、离3、震4（阳仪），巽5、坎6、艮7、坤8（阴仪）。</para>
-        /// <para><b>度数映射：</b>罗盘上子坤（360度）至午乾（180度）。从坤 0 度至天风姤 180 度，乾左为顺 180 度至地雷复 360 度。内卦为卦宫，外卦相荡而成。</para>
-        /// </remarks>
-        [JsonIgnore]
-        public static Dictionary<CompassRangEX, GuaClass> CBeforeGuas;
 
-        /// <summary>
-        /// 后天 64 卦对象字典缓存（地盘）。
-        /// </summary>
-        /// <value>
-        /// 键为 <see cref="CompassRangEX"/> 范围，值为对应的 <see cref="GuaClass"/> 卦象对象。
-        /// </value>
-        /// <remarks>
-        /// <para><b>性能说明：</b>使用字典缓存所有 64 卦对象，避免每次计算时重复创建新对象，提高执行性能。系统启动时需要优先初始化此字典。</para>
-        /// <para><b>排列规则：</b>罗盘上后天排行从子为乾9、兑4、离3、震8（阳仪），巽2、坎7、艮6、坤1（阴仪）。</para>
-        /// <para><b>度数映射：</b>罗盘上子乾（360度）至午坤（180度）。从乾 0 度至雷地豫 180 度，坤左为顺 180 度至地雷复 360 度。外卦为卦宫，内卦相荡而成。</para>
-        /// </remarks>
-        [JsonIgnore]
-        public static Dictionary<CompassRangEX, GuaClass> CAfterGuas;
 
-        /// <summary>
-        /// 罗盘 64 卦的单卦度数。
-        /// </summary>
-        /// <value>默认值为 5.625 度（360度 / 64卦）。</value>
-        public const double CompassGuaDegree = 5.625;
 
         /// <summary>
         /// 罗盘二十四山的单山度数。
@@ -100,7 +75,7 @@ namespace CompassEx
         public CHill C24Hill { get => c24Hill; }
 
 
-        private double degree;
+        protected double degree;
 
         /// <summary>
         /// 获取或设置当前罗盘指向的度数。
@@ -123,7 +98,7 @@ namespace CompassEx
         }
 
 
-        private GuaSubClass AfterGuaSub_;
+
 
         /// <summary>
         /// 获取当前罗盘度数对应的后天八卦对象。
@@ -131,18 +106,11 @@ namespace CompassEx
         /// <value>
         /// 返回一个 <see cref="GuaSubClass"/> 对象，表示当前度数所属的后天单卦方位。
         /// </value>
-        public GuaSubClass AfterGuaSub { get => AfterGuaSub_; }
+        public GuaSubClass AfterGuaSub { get; protected set; }
 
 
-        private GuaClass beforGua;
 
-        /// <summary>
-        /// 获取当前罗盘度数对应的先天 64 卦对象。
-        /// </summary>
-        /// <value>
-        /// 返回一个 <see cref="GuaClass"/> 对象，表示当前度数在天盘上对应的先天 64 卦象。
-        /// </value>
-        public GuaClass BeforGua { get => beforGua; }
+
 
         #endregion
 
@@ -156,7 +124,7 @@ namespace CompassEx
         /// <param name="Degreen">当前罗盘指向的度数（通常为 0 至 360 度）。</param>
         /// <remarks>
         /// <para>实例化该对象时，传入的度数会直接赋值给 <see cref="Degree"/> 属性。</para>
-        /// <para>由此会隐式触发内部的初始化流程，自动计算并填充对应的后天八卦（<see cref="AfterGuaSub"/>）、二十四山（<see cref="C24Hill"/>）以及先天 64 卦（<see cref="BeforGua"/>）等关联对象。</para>
+        /// <para>由此会隐式触发内部的初始化流程，自动计算并填充对应的后天八卦（<see cref="AfterGuaSub"/>）、二十四山（<see cref="C24Hill"/>）以及先天 64 卦（<see cref="C3Y.BeforGua"/>）等关联对象。</para>
         /// </remarks>
         public CompassEx(double Degreen)
         {
@@ -174,91 +142,19 @@ namespace CompassEx
         /// <remarks>
         /// 该方法在私有字段更新时被内部触发，依次调用并刷新以下对象：
         /// <list type="bullet">
-        /// <item><description>后天八卦对象：<see cref="AfterGuaSub_"/></description></item>
+        /// <item><description>后天八卦对象：<see cref="AfterGuaSub"/></description></item>
         /// <item><description>二十四山对象：<see cref="c24Hill"/></description></item>
-        /// <item><description>先天 64 卦对象：<see cref="beforGua"/></description></item>
+        /// <item><description>先天 64 卦对象：<see cref="C3Y.BeforGua"/></description></item>
         /// </list>
         /// </remarks>
         private void Init()
         {
-            this.AfterGuaSub_ = GetAfterGuaSub();
+
             this.c24Hill = Get24Hill();
-            this.beforGua = GetCBeforeGua();
+
         }
 
-        /// <summary>
-        /// 获取指定先天（天盘）64 卦卦名在罗盘上对应的度数范围对象。
-        /// </summary>
-        /// <param name="Name">要查询的先天 64 卦的完整卦名。</param>
-        /// <returns>返回对应的 <see cref="CompassRangEX"/> 度数范围对象；若在缓存中未匹配到该卦名，则返回 <c>null</c>。</returns>
-        public static CompassRangEX GetCBeforeGuaDegree(string Name)
-        {
-            foreach (var kv in CBeforeGuas)
-            {
-                if (kv.Value.Name == Name)
-                {
-                    return kv.Key;
-                }
-            }
-            return null;
-        }
 
-        /// <summary>
-        /// 获取指定后天（地盘）64 卦卦名在罗盘上对应的度数范围对象。
-        /// </summary>
-        /// <param name="Name">要查询的后天 64 卦的完整卦名。</param>
-        /// <returns>返回对应的 <see cref="CompassRangEX"/> 度数范围对象；若在缓存中未匹配到该卦名，则返回 <c>null</c>。</returns>
-        public static CompassRangEX GetCAfterGuaDegree(string Name)
-        {
-            foreach (var kv in CAfterGuas)
-            {
-                if (kv.Value.Name == Name)
-                {
-                    return kv.Key;
-                }
-            }
-            return null;
-        }
-
-        /// <summary>
-        /// 根据当前罗盘指向的度数，匹配并获取对应的先天 64 卦对象。
-        /// </summary>
-        /// <returns>返回当前度数所在的 <see cref="GuaClass"/> 先天 64 卦对象；若未找到匹配的范围则返回 <c>null</c>。</returns>
-        public GuaClass GetCBeforeGua()
-        {
-            foreach (var kv in CBeforeGuas)
-            {
-                if (kv.Key.IsInRange(this.degree))
-                {
-                    return kv.Value;
-                }
-            }
-            return null;
-        }
-
-        /// <summary>
-        /// 从数据源加载并初始化罗盘上的所有后天 64 卦（地盘）全局静态缓存字典。
-        /// </summary>
-        /// <remarks>
-        /// <para><b>排列规则：</b>卦象按照顺时针方向在罗盘上排布，从坤卦开始，每个卦位占据 5.625 度（逆时针荡卦推演），共计 64 个卦象。</para>
-        /// <para>该方法应在程序启动或系统初始化阶段优先执行。</para>
-        /// </remarks>
-        public static void LoadAllCAfterGuas()
-        {
-            CAfterGuas = C3Y.C3Y.GetAllCAfterGuas();
-        }
-
-        /// <summary>
-        /// 从数据源加载并初始化罗盘上的所有先天 64 卦（天盘）全局静态缓存字典。
-        /// </summary>
-        /// <remarks>
-        /// <para><b>排列规则：</b>卦象按照顺时针方向在罗盘上排布，从坤卦开始，每个卦位占据 5.625 度（逆时针荡卦推演），共计 64 个卦象。</para>
-        /// <para>该方法应在程序启动或系统初始化阶段优先执行。</para>
-        /// </remarks>
-        public static void LoadAllCBeforeGuas()
-        {
-            CBeforeGuas = C3Y.C3Y.GetAllBeforGuas();
-        }
 
         /// <summary>
         /// 根据当前罗盘指向的度数，计算并获取对应的二十四山对象。

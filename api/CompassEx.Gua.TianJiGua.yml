@@ -5,12 +5,15 @@ items:
   id: TianJiGua
   parent: CompassEx.Gua
   children:
+  - CompassEx.Gua.TianJiGua.#ctor(CompassEx.CGuaClass)
   - CompassEx.Gua.TianJiGua.#ctor(CompassEx.Gua.GuaClass)
   - CompassEx.Gua.TianJiGua.GetOutGuas
   - CompassEx.Gua.TianJiGua.GuaList
   - CompassEx.Gua.TianJiGua.InGuaSubs
   - CompassEx.Gua.TianJiGua.IsOutGua(CompassEx.Gua.GuaClass)
   - CompassEx.Gua.TianJiGua.OutGuaSubs
+  - CompassEx.Gua.TianJiGua.PlaceYaoTypes
+  - CompassEx.Gua.TianJiGua.YaoTypes
   langs:
   - csharp
   - vb
@@ -20,20 +23,28 @@ items:
   type: Class
   source:
     remote:
-      path: CompassEx/Gua/TianJiGuo.cs
+      path: CompassEx/Gua/TianJiGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TianJiGua
-    path: CompassEx/Gua/TianJiGuo.cs
-    startLine: 28
+    path: CompassEx/Gua/TianJiGua.cs
+    startLine: 33
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
   summary: 表示天机出卦法的推演与判定实体类。
   remarks: >-
-    <p><b>文献记载：</b>本算法依据余胜唐、刘贲等老师的著作记载进行工程化实现，一般用于风水学中的“收山出煞”以及“三元命卦判断”等业务场景。</p>
+    <p><b>书籍记载：</b>本算法依据余胜唐、刘贲等老师的著作记载进行工程化实现，一般用于风水学中的“收山出煞”(非三元命卦)业务场景。
 
-    <p><b>算法原理：</b>根据六爻卦之卦宫（六纯卦）进行八卦爻变，通过京房易卦法的七世飞爻得出五卦（六爻卦），其上下拆分出的三爻卦集合（共 5 个）定义为“入卦”；其余未出现的 3 个三爻卦则定义为“出煞（出卦）”。</p>
+    <br />在立向时可使用<xref href="CompassEx.Gua.TianJiGua.GetOutGuas" data-throw-if-not-resolved="false"></xref> 方法获得所有出卦的六爻卦
+
+    <br />若要使用“三元命卦判断”请查看<xref href="CompassEx.Gua.FateGua" data-throw-if-not-resolved="false"></xref>及<xref href="CompassEx.Gua.FateGua.%23ctor(System.DateTime%2cSystem.String%2cCompassEx.Gua.GuaClass)" data-throw-if-not-resolved="false"></xref>。</p>
+
+    <p><b>算法原理：</b>根据六爻卦之卦宫（六纯卦）进行八卦爻变，通过京房易卦法的七世飞爻得出五卦（六爻卦），其上下拆分出的三爻卦集合（共 5 个）定义为“入卦”；其余未出现的 3 个三爻卦则定义为“出煞（出卦）”。
+
+    </p>
+
+    <b><font color="red">立向时必须注意不能立在卦中的伏神所在的爻<xref href="CompassEx.Gua.TianJiGua.YaoTypes" data-throw-if-not-resolved="false"></xref>属性，注意检视：<xref href="CompassEx.Comm.PlaceYaosJFNaJiaType" data-throw-if-not-resolved="false"></xref>类型和<xref href="CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative" data-throw-if-not-resolved="false"></xref>伏神所在之爻应该避开</font></b>
   example: []
   syntax:
     content: public class TianJiGua
@@ -63,12 +74,12 @@ items:
   type: Property
   source:
     remote:
-      path: CompassEx/Gua/TianJiGuo.cs
+      path: CompassEx/Gua/TianJiGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuaList
-    path: CompassEx/Gua/TianJiGuo.cs
-    startLine: 41
+    path: CompassEx/Gua/TianJiGua.cs
+    startLine: 46
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -96,12 +107,12 @@ items:
   type: Property
   source:
     remote:
-      path: CompassEx/Gua/TianJiGuo.cs
+      path: CompassEx/Gua/TianJiGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: InGuaSubs
-    path: CompassEx/Gua/TianJiGuo.cs
-    startLine: 49
+    path: CompassEx/Gua/TianJiGua.cs
+    startLine: 54
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -128,12 +139,12 @@ items:
   type: Property
   source:
     remote:
-      path: CompassEx/Gua/TianJiGuo.cs
+      path: CompassEx/Gua/TianJiGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: OutGuaSubs
-    path: CompassEx/Gua/TianJiGuo.cs
-    startLine: 57
+    path: CompassEx/Gua/TianJiGua.cs
+    startLine: 62
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -147,6 +158,156 @@ items:
       description: 键为后天八卦卦名，值为对应的 <xref href="CompassEx.Gua.GuaSubClass" data-throw-if-not-resolved="false"></xref> 单卦对象字典。
     content.vb: Public Property OutGuaSubs As Dictionary(Of String, GuaSubClass)
   overload: CompassEx.Gua.TianJiGua.OutGuaSubs*
+- uid: CompassEx.Gua.TianJiGua.PlaceYaoTypes
+  commentId: P:CompassEx.Gua.TianJiGua.PlaceYaoTypes
+  id: PlaceYaoTypes
+  parent: CompassEx.Gua.TianJiGua
+  langs:
+  - csharp
+  - vb
+  name: PlaceYaoTypes
+  nameWithType: TianJiGua.PlaceYaoTypes
+  fullName: CompassEx.Gua.TianJiGua.PlaceYaoTypes
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/TianJiGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: PlaceYaoTypes
+    path: CompassEx/Gua/TianJiGua.cs
+    startLine: 83
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 获取向卦立的爻数信息数组（使用三元盘卦构建）。
+  remarks: >-
+    <p><b>⚠️ 核心使用条件：</b></p>
+
+    <p>本属性默认可能无值。在使用前，必须先调用 <xref href="CompassEx.Gua.TianJiGua.%23ctor(CompassEx.CGuaClass)" data-throw-if-not-resolved="false"></xref> 方法对当前实例进行构建，随后该属性才会被赋予相应的计算值。</p>
+
+    <p>该属性基于三元盘卦体系构建，关联对象请参见 <xref href="CompassEx.CGuaClass" data-throw-if-not-resolved="false"></xref>。</p>
+  example: []
+  syntax:
+    content: public PlaceYaosJFNaJiaType[] PlaceYaoTypes { get; }
+    parameters: []
+    return:
+      type: CompassEx.Comm.PlaceYaosJFNaJiaType[]
+      description: >-
+        存储该卦所临爻位的京房纳甲与六亲信息。该属性返回值遵循以下规则：
+
+
+        <ul><li>支持返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>，表示当前处于“无临爻”状态。</li><li>数组长度限制为 <code>0</code> 到 <code>2</code>，即最多只会存储 2 个临爻的序号及数据(只能相邻两个爻）。</li><li>数组元素中完整包含了对应爻位的六亲属性与纳甲干支。</li></ul>
+    content.vb: Public ReadOnly Property PlaceYaoTypes As PlaceYaosJFNaJiaType()
+  overload: CompassEx.Gua.TianJiGua.PlaceYaoTypes*
+  seealso:
+  - linkId: CompassEx.Comm.PlaceYaosJFNaJiaType
+    commentId: T:CompassEx.Comm.PlaceYaosJFNaJiaType
+  - linkId: CompassEx.CGuaClass
+    commentId: T:CompassEx.CGuaClass
+- uid: CompassEx.Gua.TianJiGua.YaoTypes
+  commentId: P:CompassEx.Gua.TianJiGua.YaoTypes
+  id: YaoTypes
+  parent: CompassEx.Gua.TianJiGua
+  langs:
+  - csharp
+  - vb
+  name: YaoTypes
+  nameWithType: TianJiGua.YaoTypes
+  fullName: CompassEx.Gua.TianJiGua.YaoTypes
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/TianJiGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: YaoTypes
+    path: CompassEx/Gua/TianJiGua.cs
+    startLine: 100
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 获取从普通卦中读取的所有京房纳甲爻类型完整信息数组。
+  example: []
+  syntax:
+    content: public PlaceYaosJFNaJiaType[] YaoTypes { get; }
+    parameters: []
+    return:
+      type: CompassEx.Comm.PlaceYaosJFNaJiaType[]
+      description: >-
+        包含该卦所有爻位完整排盘数据的 <xref href="CompassEx.Comm.PlaceYaosJFNaJiaType" data-throw-if-not-resolved="false"></xref> 结构体数组。
+
+
+        <p>与仅包含向卦临爻（最多2个）的 <xref href="CompassEx.Gua.TianJiGua.PlaceYaoTypes" data-throw-if-not-resolved="false"></xref> 不同，本属性通常用于存储和获取该卦完整的六个爻位（从初爻到上爻）的纳甲、六亲及伏神基础数据。</p>
+    content.vb: Public Property YaoTypes As PlaceYaosJFNaJiaType()
+  overload: CompassEx.Gua.TianJiGua.YaoTypes*
+  seealso:
+  - linkId: CompassEx.Comm.PlaceYaosJFNaJiaType
+    commentId: T:CompassEx.Comm.PlaceYaosJFNaJiaType
+  - linkId: CompassEx.Gua.TianJiGua.PlaceYaoTypes
+    commentId: P:CompassEx.Gua.TianJiGua.PlaceYaoTypes
+- uid: CompassEx.Gua.TianJiGua.#ctor(CompassEx.CGuaClass)
+  commentId: M:CompassEx.Gua.TianJiGua.#ctor(CompassEx.CGuaClass)
+  id: '#ctor(CompassEx.CGuaClass)'
+  parent: CompassEx.Gua.TianJiGua
+  langs:
+  - csharp
+  - vb
+  name: TianJiGua(CGuaClass)
+  nameWithType: TianJiGua.TianJiGua(CGuaClass)
+  fullName: CompassEx.Gua.TianJiGua.TianJiGua(CompassEx.CGuaClass)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Gua/TianJiGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Gua/TianJiGua.cs
+    startLine: 137
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 加载三元罗盘上的 64 卦中的向卦类实例。
+  remarks: >-
+    <p><b>🔄 易学数据加载与投影流程：</b></p>
+
+    <ol><li>
+
+    <b>状态激活：</b>依次调用 <code>LoadHideRelative()</code> 与 <code>LoadSixRelative()</code> 方法，确保向卦实例的伏神和六亲底层数据被完整加载至内存。
+
+    </li><li>
+
+    <b>数理组装：</b>通过 LINQ 表达式遍历临爻索引集合，按爻位从向卦中精准提取对应的纳甲干支（<code>SkyLocs</code>）、六亲（<code>SixRelative</code>）以及伏神数据。
+
+    </li><li>
+
+    <b>结果交付：</b>最终将提取的数据转换为全新的 <xref href="CompassEx.Comm.PlaceYaosJFNaJiaType" data-throw-if-not-resolved="false"></xref> 结构体数组，并赋值给当前实例的 <xref href="CompassEx.Gua.TianJiGua.PlaceYaoTypes" data-throw-if-not-resolved="false"></xref> 属性。
+
+    </li></ol>
+  example: []
+  syntax:
+    content: public TianJiGua(CGuaClass ToGua)
+    parameters:
+    - id: ToGua
+      type: CompassEx.CGuaClass
+      description: >-
+        传入的向卦对象实例（<xref href="CompassEx.CGuaClass" data-throw-if-not-resolved="false"></xref>）。
+
+
+        <p>内部将基于该对象的临爻位置集合（<code>PlaceYaos</code>）进行动态数据提取与纳甲绑定。</p>
+    content.vb: Public Sub New(ToGua As CGuaClass)
+  overload: CompassEx.Gua.TianJiGua.#ctor*
+  seealso:
+  - linkId: CompassEx.CGuaClass
+    commentId: T:CompassEx.CGuaClass
+  - linkId: CompassEx.Comm.PlaceYaosJFNaJiaType
+    commentId: T:CompassEx.Comm.PlaceYaosJFNaJiaType
+  - linkId: CompassEx.Gua.TianJiGua.PlaceYaoTypes
+    commentId: P:CompassEx.Gua.TianJiGua.PlaceYaoTypes
+  nameWithType.vb: TianJiGua.New(CGuaClass)
+  fullName.vb: CompassEx.Gua.TianJiGua.New(CompassEx.CGuaClass)
+  name.vb: New(CGuaClass)
 - uid: CompassEx.Gua.TianJiGua.#ctor(CompassEx.Gua.GuaClass)
   commentId: M:CompassEx.Gua.TianJiGua.#ctor(CompassEx.Gua.GuaClass)
   id: '#ctor(CompassEx.Gua.GuaClass)'
@@ -160,33 +321,35 @@ items:
   type: Constructor
   source:
     remote:
-      path: CompassEx/Gua/TianJiGuo.cs
+      path: CompassEx/Gua/TianJiGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
-    path: CompassEx/Gua/TianJiGuo.cs
-    startLine: 77
+    path: CompassEx/Gua/TianJiGua.cs
+    startLine: 164
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 初始化 <xref href="CompassEx.Gua.TianJiGua" data-throw-if-not-resolved="false"></xref> 类的新实例，自动根据传入的向卦计算出对应的天机入卦与出卦集合。
+  summary: 天机出卦法类的构造函数。
   remarks: >-
-    <p><b>初始化逻辑：</b></p>
+    本构造函数专门用于风水理气中的“收山出煞”判定。
 
-    <ol><li>通过向卦（<code class="paramref">ToGua</code>）自动寻找其所属的六纯卦卦宫（<code>GuaSelf</code>）。</li><li>基于卦宫展开京房易卦飞爻算法，提取上下卦（三爻卦）去重后填充至 <xref href="CompassEx.Gua.TianJiGua.InGuaSubs" data-throw-if-not-resolved="false"></xref> 入卦集合。</li><li>将未在入卦集合中出现的其余后天单卦提取出来，填充至 <xref href="CompassEx.Gua.TianJiGua.OutGuaSubs" data-throw-if-not-resolved="false"></xref> 出卦集合，用以进行出煞判定。</li></ol>
+    通过推导当前向卦所属卦宫的飞爻状态，划分出哪些后天三爻卦属于理气相合的“入卦（吉）”，哪些属于犯煞的“出卦（凶）”。
+
+    <b>注意：</b> 本构造函数不用于判断个人本命卦是否出卦。若需推演个人命卦与住宅的出入卦吉凶，请参阅 <xref href="CompassEx.Gua.FateGua" data-throw-if-not-resolved="false"></xref>。
   example: []
   syntax:
     content: public TianJiGua(GuaClass ToGua)
     parameters:
     - id: ToGua
       type: CompassEx.Gua.GuaClass
-      description: 输入的罗盘向卦对象（六爻卦结构）。
+      description: 罗盘24山向对应的六爻向卦实例。作为理气推演的基准立向，不可为空。
     content.vb: Public Sub New(ToGua As GuaClass)
   overload: CompassEx.Gua.TianJiGua.#ctor*
   exceptions:
   - type: System.ArgumentNullException
     commentId: T:System.ArgumentNullException
-    description: 当传入的 <code class="paramref">ToGua</code> 对象为 <code>null</code> 时抛出此异常。
+    description: 当传入的向卦参数 <code class="paramref">ToGua</code> 为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> 时抛出。
   nameWithType.vb: TianJiGua.New(GuaClass)
   fullName.vb: CompassEx.Gua.TianJiGua.New(CompassEx.Gua.GuaClass)
   name.vb: New(GuaClass)
@@ -203,12 +366,12 @@ items:
   type: Method
   source:
     remote:
-      path: CompassEx/Gua/TianJiGuo.cs
+      path: CompassEx/Gua/TianJiGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IsOutGua
-    path: CompassEx/Gua/TianJiGuo.cs
-    startLine: 151
+    path: CompassEx/Gua/TianJiGua.cs
+    startLine: 293
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -279,12 +442,12 @@ items:
   type: Method
   source:
     remote:
-      path: CompassEx/Gua/TianJiGuo.cs
+      path: CompassEx/Gua/TianJiGua.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetOutGuas
-    path: CompassEx/Gua/TianJiGuo.cs
-    startLine: 192
+    path: CompassEx/Gua/TianJiGua.cs
+    startLine: 334
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -343,6 +506,98 @@ items:
   - linkId: CompassEx.Gua.TianJiGua.IsOutGua(CompassEx.Gua.GuaClass)
     commentId: M:CompassEx.Gua.TianJiGua.IsOutGua(CompassEx.Gua.GuaClass)
 references:
+- uid: CompassEx.Gua.TianJiGua.GetOutGuas
+  commentId: M:CompassEx.Gua.TianJiGua.GetOutGuas
+  href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_GetOutGuas
+  name: GetOutGuas()
+  nameWithType: TianJiGua.GetOutGuas()
+  fullName: CompassEx.Gua.TianJiGua.GetOutGuas()
+  spec.csharp:
+  - uid: CompassEx.Gua.TianJiGua.GetOutGuas
+    name: GetOutGuas
+    href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_GetOutGuas
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Gua.TianJiGua.GetOutGuas
+    name: GetOutGuas
+    href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_GetOutGuas
+  - name: (
+  - name: )
+- uid: CompassEx.Gua.FateGua
+  commentId: T:CompassEx.Gua.FateGua
+  href: CompassEx.Gua.FateGua.html
+  name: FateGua
+  nameWithType: FateGua
+  fullName: CompassEx.Gua.FateGua
+- uid: CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass)
+  commentId: M:CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass)
+  isExternal: true
+  href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua__ctor_System_DateTime_System_String_CompassEx_Gua_GuaClass_
+  name: FateGua(DateTime, string, GuaClass)
+  nameWithType: FateGua.FateGua(DateTime, string, GuaClass)
+  fullName: CompassEx.Gua.FateGua.FateGua(System.DateTime, string, CompassEx.Gua.GuaClass)
+  nameWithType.vb: FateGua.New(Date, String, GuaClass)
+  fullName.vb: CompassEx.Gua.FateGua.New(Date, String, CompassEx.Gua.GuaClass)
+  name.vb: New(Date, String, GuaClass)
+  spec.csharp:
+  - uid: CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass)
+    name: FateGua
+    href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua__ctor_System_DateTime_System_String_CompassEx_Gua_GuaClass_
+  - name: (
+  - uid: System.DateTime
+    name: DateTime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: CompassEx.Gua.GuaClass
+    name: GuaClass
+    href: CompassEx.Gua.GuaClass.html
+  - name: )
+  spec.vb:
+  - name: New
+  - name: (
+  - uid: System.DateTime
+    name: Date
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: CompassEx.Gua.GuaClass
+    name: GuaClass
+    href: CompassEx.Gua.GuaClass.html
+  - name: )
+- uid: CompassEx.Gua.TianJiGua.YaoTypes
+  commentId: P:CompassEx.Gua.TianJiGua.YaoTypes
+  href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_YaoTypes
+  name: YaoTypes
+  nameWithType: TianJiGua.YaoTypes
+  fullName: CompassEx.Gua.TianJiGua.YaoTypes
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType
+  commentId: T:CompassEx.Comm.PlaceYaosJFNaJiaType
+  href: CompassEx.Comm.PlaceYaosJFNaJiaType.html
+  name: PlaceYaosJFNaJiaType
+  nameWithType: PlaceYaosJFNaJiaType
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative
+  commentId: P:CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative
+  href: CompassEx.Comm.PlaceYaosJFNaJiaType.html#CompassEx_Comm_PlaceYaosJFNaJiaType_HideRelative
+  name: HideRelative
+  nameWithType: PlaceYaosJFNaJiaType.HideRelative
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative
 - uid: CompassEx.Gua
   commentId: N:CompassEx.Gua
   href: CompassEx.html
@@ -936,24 +1191,92 @@ references:
   name: OutGuaSubs
   nameWithType: TianJiGua.OutGuaSubs
   fullName: CompassEx.Gua.TianJiGua.OutGuaSubs
-- uid: CompassEx.Gua.TianJiGua
-  commentId: T:CompassEx.Gua.TianJiGua
-  href: CompassEx.Gua.TianJiGua.html
+- uid: CompassEx.CGuaClass
+  commentId: T:CompassEx.CGuaClass
+  parent: CompassEx
+  href: CompassEx.CGuaClass.html
+  name: CGuaClass
+  nameWithType: CGuaClass
+  fullName: CompassEx.CGuaClass
+- uid: CompassEx.Gua.TianJiGua.#ctor(CompassEx.CGuaClass)
+  commentId: M:CompassEx.Gua.TianJiGua.#ctor(CompassEx.CGuaClass)
+  href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua__ctor_CompassEx_CGuaClass_
+  name: TianJiGua(CGuaClass)
+  nameWithType: TianJiGua.TianJiGua(CGuaClass)
+  fullName: CompassEx.Gua.TianJiGua.TianJiGua(CompassEx.CGuaClass)
+  nameWithType.vb: TianJiGua.New(CGuaClass)
+  fullName.vb: CompassEx.Gua.TianJiGua.New(CompassEx.CGuaClass)
+  name.vb: New(CGuaClass)
+  spec.csharp:
+  - uid: CompassEx.Gua.TianJiGua.#ctor(CompassEx.CGuaClass)
+    name: TianJiGua
+    href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua__ctor_CompassEx_CGuaClass_
+  - name: (
+  - uid: CompassEx.CGuaClass
+    name: CGuaClass
+    href: CompassEx.CGuaClass.html
+  - name: )
+  spec.vb:
+  - name: New
+  - name: (
+  - uid: CompassEx.CGuaClass
+    name: CGuaClass
+    href: CompassEx.CGuaClass.html
+  - name: )
+- uid: CompassEx.Gua.TianJiGua.PlaceYaoTypes*
+  commentId: Overload:CompassEx.Gua.TianJiGua.PlaceYaoTypes
+  href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_PlaceYaoTypes
+  name: PlaceYaoTypes
+  nameWithType: TianJiGua.PlaceYaoTypes
+  fullName: CompassEx.Gua.TianJiGua.PlaceYaoTypes
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType[]
+  isExternal: true
+  href: CompassEx.Comm.PlaceYaosJFNaJiaType.html
+  name: PlaceYaosJFNaJiaType[]
+  nameWithType: PlaceYaosJFNaJiaType[]
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType[]
+  nameWithType.vb: PlaceYaosJFNaJiaType()
+  fullName.vb: CompassEx.Comm.PlaceYaosJFNaJiaType()
+  name.vb: PlaceYaosJFNaJiaType()
+  spec.csharp:
+  - uid: CompassEx.Comm.PlaceYaosJFNaJiaType
+    name: PlaceYaosJFNaJiaType
+    href: CompassEx.Comm.PlaceYaosJFNaJiaType.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: CompassEx.Comm.PlaceYaosJFNaJiaType
+    name: PlaceYaosJFNaJiaType
+    href: CompassEx.Comm.PlaceYaosJFNaJiaType.html
+  - name: (
+  - name: )
+- uid: CompassEx
+  commentId: N:CompassEx
+  href: CompassEx.html
+  name: CompassEx
+  nameWithType: CompassEx
+  fullName: CompassEx
+- uid: CompassEx.Gua.TianJiGua.PlaceYaoTypes
+  commentId: P:CompassEx.Gua.TianJiGua.PlaceYaoTypes
+  href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_PlaceYaoTypes
+  name: PlaceYaoTypes
+  nameWithType: TianJiGua.PlaceYaoTypes
+  fullName: CompassEx.Gua.TianJiGua.PlaceYaoTypes
+- uid: CompassEx.Gua.TianJiGua.YaoTypes*
+  commentId: Overload:CompassEx.Gua.TianJiGua.YaoTypes
+  href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_YaoTypes
+  name: YaoTypes
+  nameWithType: TianJiGua.YaoTypes
+  fullName: CompassEx.Gua.TianJiGua.YaoTypes
+- uid: CompassEx.Gua.TianJiGua.#ctor*
+  commentId: Overload:CompassEx.Gua.TianJiGua.#ctor
+  href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua__ctor_CompassEx_CGuaClass_
   name: TianJiGua
-  nameWithType: TianJiGua
-  fullName: CompassEx.Gua.TianJiGua
-- uid: CompassEx.Gua.TianJiGua.InGuaSubs
-  commentId: P:CompassEx.Gua.TianJiGua.InGuaSubs
-  href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_InGuaSubs
-  name: InGuaSubs
-  nameWithType: TianJiGua.InGuaSubs
-  fullName: CompassEx.Gua.TianJiGua.InGuaSubs
-- uid: CompassEx.Gua.TianJiGua.OutGuaSubs
-  commentId: P:CompassEx.Gua.TianJiGua.OutGuaSubs
-  href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_OutGuaSubs
-  name: OutGuaSubs
-  nameWithType: TianJiGua.OutGuaSubs
-  fullName: CompassEx.Gua.TianJiGua.OutGuaSubs
+  nameWithType: TianJiGua.TianJiGua
+  fullName: CompassEx.Gua.TianJiGua.TianJiGua
+  nameWithType.vb: TianJiGua.New
+  fullName.vb: CompassEx.Gua.TianJiGua.New
+  name.vb: New
 - uid: System.ArgumentNullException
   commentId: T:System.ArgumentNullException
   isExternal: true
@@ -961,15 +1284,6 @@ references:
   name: ArgumentNullException
   nameWithType: ArgumentNullException
   fullName: System.ArgumentNullException
-- uid: CompassEx.Gua.TianJiGua.#ctor*
-  commentId: Overload:CompassEx.Gua.TianJiGua.#ctor
-  href: CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua__ctor_CompassEx_Gua_GuaClass_
-  name: TianJiGua
-  nameWithType: TianJiGua.TianJiGua
-  fullName: CompassEx.Gua.TianJiGua.TianJiGua
-  nameWithType.vb: TianJiGua.New
-  fullName.vb: CompassEx.Gua.TianJiGua.New
-  name.vb: New
 - uid: CompassEx.Gua.FateGua.IsOutGua
   commentId: P:CompassEx.Gua.FateGua.IsOutGua
   href: CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_IsOutGua

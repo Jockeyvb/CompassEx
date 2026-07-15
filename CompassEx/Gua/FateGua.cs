@@ -23,7 +23,7 @@ namespace CompassEx.Gua
     /// 是命卦的结构类型，包含了命卦的六爻纯卦和一些相关属性，例如：命卦的五行属性，命卦的运等<br/>
     /// 1、涉及余胜的命卦计算方法，命卦的入卦和出卦的计算方法，命卦的七爻飞爻卦的计算方法，以及命卦与罗盘24山（向）的关系等内容。
     /// 余胜唐所著的《玄空大卦些子法真诀》与《三元直指》中的天机出卦法：余胜唐在《三元直指》书中177页中，明确指出天机出卦法是纳甲用法（三元命卦无关）且并没涉及玄空大卦中的五行之论（虽然书中不全论大卦，亦应注或提示），如不查他其他著作完全不知道要如何使用且《玄空大卦些子法真诀》中的天机出卦法只说【命卦】又不指出命卦具体是三元命卦还是纳甲之卦，使用方法是以向卦为论，那么玄空大卦中是以所向的成卦之卦宫为论？还是以后天八卦为论？还是纳甲卦为论？真让人摸不着头脑。著书者应当严明解说；学习风水者应细仔研究考究为用，不可单论。<br/>
-    /// 2、在刘贲所作《玄空大卦透析》书中456页第十九章中提到相似，甚至比余写的更为清晰指出以三元64卦以卦气为论，命卦则是纳甲（包括京房与杨公之纳甲法）用户可以参考其计算方法与判断方法。<br/>
+    /// 2、在刘贲所作《玄空大卦透析》书中456页第十九章中提到相似，甚至比余写的更为清晰指出以三元64卦以卦气为论，命卦则是纳甲（包括京房加入杨公之纳甲法）用户可以参考其计算方法与判断方法。<br/>    
     /// 关于京房纳甲与杨公纳甲资料，请自行查阅区别与使用<br />
     /// <b><font color="red">仅参供参考，请谨慎看待使用</font></b>
     /// </summary>
@@ -53,6 +53,17 @@ namespace CompassEx.Gua
         /// </summary>
         /// <value>由初爻依次变爻生成，共8卦（本卦+七世变卦），用于定位卦位、游魂/归魂判定、得福流年取值</value>
         public List<GuaClass> GuaList { get; private set; } = null;
+
+        /// <summary>
+        /// 是否命卦出卦
+        /// </summary>
+        public bool IsFateGuaOut { get; private set; }
+
+        /// <summary>
+        /// 是否纳甲出卦
+        /// </summary>
+        public bool IsNaJiaOut { get; private set; }
+
 
         /// <summary>
         /// 命卦是否判定为出卦状态
@@ -103,9 +114,19 @@ namespace CompassEx.Gua
         public string[] InGuaGoodYear { get; private set; }
 
         /// <summary>
-        /// 初始化命卦推演实例，自动完成本命卦、出入卦、纳甲吉凶、得福干支年份全量计算
+        /// 初始化命卦推演实例，自动完成本命卦、出入卦、纳甲吉凶、得福干支年份全量计算(<font color="red"><b>非收山出煞之用，理气罗盘上的收山出煞，请看：<see cref="TianJiGua"/>天机出卦法</b></font>)<br/>
+        /// <font color="color">三元命卦之天机出卦法推算原理：例用：向卦：晋卦，卦宫为【乾】，出卦及卦气是：【坎】7、【震】8、【兑】4<br/>
+        /// 1、人命出卦：如1951年男命为【4绿巽】命，后天洛数为4。<br/>
+        ///     用命卦的后天洛数4与出晋卦之卦宫的出卦中的先天洛数对比则：【坎】7、【震】8、【兑】4<br/>
+        ///     则结果4绿巽为出卦<br/>
+        /// 2、以向卦的京房纳甲<see cref="NaJiaJFResult"/>加杨公纳甲<see cref="NaJiaYGResult"/>，判断是否命庚（干支）出卦和得福，例：1981年男命（辛酉） 命卦：【1白坎】命，向卦亦用【晋】卦，出卦参考上三卦<br/>
+        ///   （1）命庚出卦：乾宫之出卦：【坎】纳戊、【震】纳庚、【兑】纳丁 ，如果戊、庚、丁年出生的人亦为出卦。例中：辛酉年则为入卦，可得福。<br/>
+        ///   （2）得福人命庚：除了出卦的命庚则应为得福，如：甲、乙、丙、己、辛、壬、癸年出生。<br/>
+        ///   （3）得福最大的命庚：看晋卦在【乾】宫中七世飞爻卦（1乾、2姤、3遁、4否、5观、6剥、7晋[游魂卦]、8大有[归魂卦]）第几卦，以爻动推算：乾卦为本宫则纳甲、壬年生人命庚得福，姤为初爻变出下卦为巽纳辛，以此类推<br/>
+        ///    (4)得福之年：看卦宫【乾】七世飞爻变出的第几爻，如按姤卦，则按初爻变是甲子年，遁卦按二爻变是甲寅年如此类推。若是乾本宫则按天干论，则甲、壬年得福，晋为第7卦游魂卦,特别处理的按变第4爻得福处理，则壬午年得福，则以观卦得福年一致。<br/>
+        /// 人命出卦与纳甲出卦同是出卦论。</font>
         /// </summary>
-        /// <param name="d">公历出生时间，用于校正立春真实命年（确定精确的生肖与三元命年分界线）</param>
+        /// <param name="d">公历出生时间(最好带时分秒），用于校正立春真实命年（确定精确的生肖与三元命年分界线）</param>
         /// <param name="Sex">性别，仅支持【男/女】，男女命卦计算对应的数学公式与飞星轨迹不同</param>
         /// <param name="ToGua">罗盘六爻向卦实例，不可为空（用于比对房屋坐向与个人命卦的吉凶关系）</param>
         /// <exception cref="Exception">出生日期非法、性别非法、向卦为空、命卦计算异常、出卦数据异常时抛出</exception>
@@ -138,20 +159,19 @@ namespace CompassEx.Gua
                 this.TJGua = tjg;
                 this.InGuaSubs = tjg.InGuaSubs;   // 获取理气相合、未出卦的吉祥干支方位
                 this.OutGuaSubs = tjg.OutGuaSubs; // 获取理气不合、犯出卦的凶祸干支方位
-
+                this.GuaList = tjg.GuaList;
                 // -----------------------------------------------------------------
                 // 4. 出卦状态深度校验（交叉判定）
                 // -----------------------------------------------------------------
                 // 步骤A：优先验证用户的“本命卦”与当前房屋坐向之间是否产生“同宫出卦”或“两界出卦”
-                this.IsOutGua = IsOutByFateGua(); //天机出卦法中（命卦）是否出卦
+                this.IsFateGuaOut = IsOutByFateGua(); //天机出卦法中（命卦）是否出卦
 
                 // 步骤B：若天机法判定未出卦（即属于吉或平），则进一步引入“纳甲法”进行细化演算
                 // 校验命卦与向卦的纳甲五行生克，若纳甲理气不和导致出卦，则生成对应的吉凶坏消息
-                if (this.IsOutGua == false) //如果已经出卦出无须再计算
-                {
-                    this.IsOutGua = IsOutByNaJia(); //计算向卦与命卦中是否出卦并生成好坏消息
-                }
 
+                this.IsNaJiaOut = IsOutByNaJia(); //计算向卦与命卦中是否出卦并生成好坏消息
+
+                this.IsOutGua = this.IsNaJiaOut || this.IsFateGuaOut; //命卦出卦或纳甲出卦都属于整体出卦
                 // -----------------------------------------------------------------
                 // 5. 组装输出文本信息
                 // -----------------------------------------------------------------
@@ -285,10 +305,10 @@ namespace CompassEx.Gua
         private bool IsOutByFateGua()
         {
             if (this.OutGuaSubs.Any() == false) throw new Exception("出卦数据异常：" + nameof(OutGuaSubs));
-            var ls = OutGuaSubs.Where(sg => this.ToGua.GuaQi.GuaQiNumber == sg.Value.AfterQuantity);
+            var ls = OutGuaSubs.Where(sg => this.FateGuaSub.AfterQuantity == sg.Value.GuaQi.GuaQiNumber);
             if (ls.Any())
             {
-                Infos.BadInfos.Add(new InfoType(false) { Info = "本命卦于向卦【" + this.ToGua.Name + "】中属于出卦" });
+                Infos.BadInfos.Add(new InfoType(false) { Info = "本命卦于向卦【" + this.ToGua.Name + "】中属于出卦【" + string.Join(",", this.OutGuaSubs.Values.Select(gs => gs.Name + "卦气:" + gs.GuaQi.GuaQiNumber.ToString())) + "】" });
             }
             else
             {
@@ -313,20 +333,23 @@ namespace CompassEx.Gua
             string FateYearSLName = st.SolarDay.GetLunarDay().GetSixtyCycleDay().Year.GetName();//命庚干支
             this.FateYearSkyLoc = new SkyLoc(FateYearSLName);
             NaJiaJFResult JFR = NaJia<NaJiaJFResult>.CreateJF(ToGua);//向卦做京房纳甲
-
+            bool IsOut = false;
             //========先计算命庚天干是否存于出卦的纳甲里，如果存在则是出卦==========
             var outsnj = this.OutGuaSubs.Select(gs => NaJia<NaJiaJFResult>.CreateJF(new GuaClass(gs.Value.Name)));
             var outs = outsnj.Where(nj => nj.SkyLocs.Where(sl => sl.Sky.Name == FateYearSkyLoc.Sky.Name).Any());
             if (outs.Any())//如果存在出卦中的纳甲天干中，则是出卦
             {
                 this.Infos.BadInfos.Add(new InfoType(false) { Info = "本命庚【" + FateYearSLName + "】于出卦：【" + outs.FirstOrDefault().Gua.Name + "】纳甲中【" + string.Join(",", outs.FirstOrDefault().SkyLocs.Select(sl => sl.Sky.Name).Distinct()) + "】，属于出卦" });
-                return true;
+                IsOut = true;
             }
             //========先计算命庚天干是否存于出卦的纳甲里，如果存在则是出卦==========
 
             if (JFR.SkyLocs != null && JFR.SkyLocs.Any())
             {
                 var rs = JFR.SkyLocs.Select(sl => sl.Sky.Name);//找到向卦的纳甲天干
+                string[] JFNJs = rs.ToArray();//保存京房纳甲
+
+
                 if (rs.Any())
                 {
                     //==============找出卦宫的纲甲判断那年得福====================
@@ -335,25 +358,33 @@ namespace CompassEx.Gua
                     {
                         if (iPos < TJGua.GuaList.Count() - 1) //第8个则是归魂卦，则不能判断得福年间
                         {
-                            //获得卦宫的纳甲
+                            //获得卦宫的纳甲                        
+
                             var gselfNJ = NaJia<NaJiaJFResult>.CreateJF(this.ToGua.GuaSelf.ToGuaClass());
+
                             int iYao = iPos == 0 ? -1 : iPos - 1;//如果向卦在七世飞爻卦中的第一个卦则是为卦宫本身，则直接取宫的干支为得福年份-1表是卦宫,如乾卦，为甲年或壬年(只论年干)
                             if (iPos == 6) iYao = 3; //游魂卦等于变在第4爻
-                            if (iYao == -1) //-1表是卦宫,如乾卦，为甲年或壬年(只论年干)
+                            if (iYao == -1) //-1表是卦宫,如乾卦，为甲年或壬年(只论年干)(六冲卦需要纳入杨公，主要是坎纳戊癸和离纳己壬）
                             {
                                 //=============判断得福人===============================
-                                this.InGuaGoodSL = rs.Distinct().ToArray();
-                                this.Infos.GoodInfos.Add(new InfoType(true) { Info = "命庚是【" + string.Join(",", this.InGuaGoodSL) + "】的人得福" });
+
+
+                                NaJiaYGResult YGR = NaJia<NaJiaYGResult>.CreateYG(ToGua.UpGua);//杨公纳甲
+
+                                var allNJs = JFNJs.ToList();
+                                allNJs.Add(YGR.Sky.Name);  //直接加入杨公纳甲数组中
+                                this.InGuaGoodSL = allNJs.Distinct().ToArray();//去重
+                                this.Infos.GoodInfos.Add(new InfoType(true) { Info = "命庚是【" + string.Join(",", this.InGuaGoodSL) + "】得福" });
                                 //=============判断得福人===============================
-                                this.InGuaGoodYear = gselfNJ.SkyLocs.Select(sl => sl.Sky.Name).Distinct().ToArray();
+                                this.InGuaGoodYear = this.InGuaGoodSL;
                                 this.Infos.GoodInfos.Add(new InfoType(true) { Info = "【" + string.Join(",", InGuaGoodYear) + "】年得福" });
 
                             }
                             else//其余按干支论
                             {
                                 //=============判断得福人===============================
-                                this.InGuaGoodSL = [rs.ElementAt(iYao)];
-                                this.Infos.GoodInfos.Add(new InfoType(true) { Info = "命庚是【" + string.Join(",", this.InGuaGoodSL) + "】的人得福" });
+                                this.InGuaGoodSL = [JFNJs.ElementAt(iYao)];
+                                this.Infos.GoodInfos.Add(new InfoType(true) { Info = "命庚是【" + string.Join(",", this.InGuaGoodSL) + "】得福" });
                                 //=============判断得福人===============================
 
                                 this.InGuaGoodYear = [gselfNJ.SkyLocs.ElementAt(iYao).SkyLocName];

@@ -101,7 +101,7 @@ CHill 类
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CHill</code></pre>
+    <pre><code class="lang-csharp hljs">public class CHill : IEquatable&lt;CHill&gt;</code></pre>
   </div>
 
 
@@ -115,19 +115,19 @@ CHill 类
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>实现</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="CompassEx.CHill.html">CHill</a>&gt;</div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
     <dt>继承成员</dt>
     <dd>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -420,6 +420,42 @@ CHill 类
 </h2>
 
 
+  <a id="CompassEx_CHill_Equals_" data-uid="CompassEx.CHill.Equals*"></a>
+
+  <h3 id="CompassEx_CHill_Equals_System_Object_" data-uid="CompassEx.CHill.Equals(System.Object)">
+  Equals(object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="CompassEx_CHill_GetAfterGua_" data-uid="CompassEx.CHill.GetAfterGua*"></a>
 
   <h3 id="CompassEx_CHill_GetAfterGua" data-uid="CompassEx.CHill.GetAfterGua">
@@ -490,6 +526,37 @@ CHill 类
 <p>由于二十四山的分野（每山 15 度）与 64 卦的分野（每卦 5.625 度）在几何上并不整齐重合，存在交错跨越的现象。</p>
 <p>为了实现高精度的卦象检索，本方法在比对结束边界时，对结束度数执行了减去 <code>0.01</code> 度的微小容差修正（即 <code>kv.Key.End - 0.01</code>），从而能够完美、精确地将临界卦象对象拉入当前二十四山的归属区间内。</p>
 </div>
+
+
+
+
+  <a id="CompassEx_CHill_GetHashCode_" data-uid="CompassEx.CHill.GetHashCode*"></a>
+
+  <h3 id="CompassEx_CHill_GetHashCode" data-uid="CompassEx.CHill.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L164"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
 
 
 

@@ -23,7 +23,7 @@ namespace CompassEx
     /// <remarks>
     /// 二十四山是风水罗盘的核心组成部分，本类提供了基于正针二十四山的名称定位、阴阳属性判别、绝对度数范围计算，以及与之关联的后天八卦与先天 64 卦的嵌套推演功能。
     /// </remarks>
-    public class CHill
+    public class CHill : IEquatable<CHill>
     {
         #region 字段
 
@@ -141,7 +141,7 @@ namespace CompassEx
         {
             Dictionary<CompassRangEX, GuaClass> dc = new Dictionary<CompassRangEX, GuaClass>();
             CompassRangEX CRE = this.CRangeDegree;
-            foreach (var kv in CompassEx.CBeforeGuas)
+            foreach (var kv in C3Y.CBeforeGuas)
             {
                 if (CRE.IsInRange(kv.Key.Start) || CRE.IsInRange(kv.Key.End - 0.01))
                 {
@@ -151,6 +151,26 @@ namespace CompassEx
             return dc;
         }
 
+
+
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            // 强制转换为接口类型去调用，这样就能精准找到你下面写的方法，打破死循环！
+            return ((IEquatable<CHill>)this).Equals(obj as CHill);
+        }
+        // 新增哈希方法，参与相等判断的字段全部组合计算
+        public override int GetHashCode()
+        {
+            return Name != null ? Name.GetHashCode() : 0;
+        }
+
+        bool IEquatable<CHill>.Equals(CHill other)
+        {
+            if (other == null) return false;
+            return other.Name == this.Name;
+        }
         #endregion
     }
 

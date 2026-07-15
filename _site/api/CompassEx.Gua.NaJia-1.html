@@ -247,6 +247,45 @@ NaJia&lt;TResult&gt; 类
 
 
 
+  <h2 class="section" id="fields">字段
+</h2>
+
+
+
+  <h3 id="CompassEx_Gua_NaJia_1_YGNaJiaDC" data-uid="CompassEx.Gua.NaJia`1.YGNaJiaDC">
+  YGNaJiaDC
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L165"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>静态只读的杨公纳甲数理映射字典。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Dictionary&lt;string, NaJia&lt;TResult&gt;.NaJiaYGItem&gt; YGNaJiaDC</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">字段值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="CompassEx.Gua.NaJia-1.html">NaJia</a>&lt;TResult&gt;.<a class="xref" href="CompassEx.Gua.NaJia-1.NaJiaYGItem.html">NaJiaYGItem</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="CompassEx_Gua_NaJia_1_YGNaJiaDC_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>严格遵循地理风水“净阴净阳”及“二十四山纳甲”数理基础规则：</p>
+<ul><li><b>乾坤艮巽（四维卦）：</b> 纳纯干，地支序列初始为空（高级理气应用中可根据需要扩充其同名方位山字）。</li><li><b>震兑离坎（四正卦）：</b> 依纳干所属五行的三合局归化地支（震木局[ "亥", "卯", "未"]、兑金局["巳", "酉", "丑"]、离火局["寅", "午", "戌"]、坎水局["申", "子", "辰"]）。</li></ul>
+</div>
+
+
+
+
   <h2 class="section" id="methods">方法
 </h2>
 
@@ -263,7 +302,7 @@ NaJia&lt;TResult&gt; 类
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static NaJiaJFResult? CreateJF(GuaClass g)</code></pre>
+    <pre><code class="lang-csharp hljs">public static NaJiaJFResult CreateJF(GuaClass g)</code></pre>
   </div>
 
   <h4 class="section">参数</h4>
@@ -275,7 +314,7 @@ NaJia&lt;TResult&gt; 类
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="CompassEx.Gua.NaJiaJFResult.html">NaJiaJFResult</a>?</dt>
+    <dt><a class="xref" href="CompassEx.Gua.NaJiaJFResult.html">NaJiaJFResult</a></dt>
     <dd><p>返回包含复卦与六爻干支集合的 <a class="xref" href="CompassEx.Gua.NaJiaJFResult.html">NaJiaJFResult</a> 结构体数据。</p>
 </dd>
   </dl>
@@ -302,7 +341,7 @@ NaJia&lt;TResult&gt; 类
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static NaJiaYGResult? CreateYG(GuaSubClass gs)</code></pre>
+    <pre><code class="lang-csharp hljs">public static NaJiaYGResult CreateYG(GuaSubClass gs)</code></pre>
   </div>
 
   <h4 class="section">参数</h4>
@@ -314,7 +353,7 @@ NaJia&lt;TResult&gt; 类
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="CompassEx.Gua.NaJiaYGResult.html">NaJiaYGResult</a>?</dt>
+    <dt><a class="xref" href="CompassEx.Gua.NaJiaYGResult.html">NaJiaYGResult</a></dt>
     <dd><p>返回包含单卦、天干及地支宫位的 <a class="xref" href="CompassEx.Gua.NaJiaYGResult.html">NaJiaYGResult</a> 结构体数据。</p>
 </dd>
   </dl>
@@ -341,13 +380,13 @@ NaJia&lt;TResult&gt; 类
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TResult? Execute()</code></pre>
+    <pre><code class="lang-csharp hljs">public TResult Execute()</code></pre>
   </div>
 
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
-    <dt>TResult?</dt>
+    <dt><span class="xref">TResult</span></dt>
     <dd><p>返回计算完成后对应的泛型纳甲结果结构体；若体系类型未知则返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。</p>
 </dd>
   </dl>

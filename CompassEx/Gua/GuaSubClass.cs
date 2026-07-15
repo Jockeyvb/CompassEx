@@ -22,7 +22,7 @@ namespace CompassEx.Gua
     /// <summary>
     /// 三爻卦
     /// </summary>
-    public class GuaSubClass
+    public class GuaSubClass : IEquatable<GuaSubClass>
     {
         #region 字段 
 
@@ -510,7 +510,7 @@ namespace CompassEx.Gua
         {
             Dictionary<CompassRangEX, GuaClass> dc = new Dictionary<CompassRangEX, GuaClass>();
             CompassRangEX CRE = this.CAfterRangeDegree;
-            foreach (var kv in CompassEx.CBeforeGuas)
+            foreach (var kv in C3Y.CBeforeGuas)
             {
                 if (CRE.IsInRange(kv.Key.Start))
                 {
@@ -717,10 +717,21 @@ namespace CompassEx.Gua
 
         public override bool Equals(object obj)
         {
-            var g = (GuaSubClass)obj;
-            return g.Name == this.Name;
+            if (obj == null) return false;
+            // 强制转换为接口类型去调用，这样就能精准找到你下面写的方法，打破死循环！
+            return ((IEquatable<GuaSubClass>)this).Equals(obj as GuaSubClass);
+        }
+        // 新增哈希方法，参与相等判断的字段全部组合计算
+        public override int GetHashCode()
+        {
+            return Name != null ? Name.GetHashCode() : 0;
         }
 
+        bool IEquatable<GuaSubClass>.Equals(GuaSubClass other)
+        {
+            if (other == null) return false;
+            return other.Name == this.Name;
+        }
         #endregion 
     }
 }

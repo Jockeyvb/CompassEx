@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>CGuaClass 类
+ | CompassEx API文档 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="CGuaClass 类
+ | CompassEx API文档 ">
+      
+      <meta name="description" content="三元罗盘专用六爻卦实体类，继承基础卦类">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Jockeyvb/CompassEx/new/master/apiSpec/new?filename=CompassEx_CGuaClass.md&amp;value=---%0Auid%3A%20CompassEx.CGuaClass%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="本文内容">
+      <meta name="loc:searchResultsCount" content="找到{count}个“{query}”的搜索结果">
+      <meta name="loc:searchNoResults" content="没有找到“{query}”的搜索结果">
+      <meta name="loc:tocFilter" content="按标题筛选">
+      <meta name="loc:nextArticle" content="下一篇">
+      <meta name="loc:prevArticle" content="上一篇">
+      <meta name="loc:themeLight" content="白天">
+      <meta name="loc:themeDark" content="夜晚">
+      <meta name="loc:themeAuto" content="自动">
+      <meta name="loc:changeTheme" content="切换主题">
+      <meta name="loc:copy" content="复制">
+      <meta name="loc:downloadPdf" content="下载 PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="CompassEx 罗盘算法类库">
+            CompassEx 罗盘算法类库
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="CompassEx.CGuaClass">
+
+
+
+  <h1 id="CompassEx_CGuaClass" data-uid="CompassEx.CGuaClass" class="text-break">
+CGuaClass 类
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/CGuaClass.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>命名空间</dt><dd><a class="xref" href="CompassEx.html">CompassEx</a></dd></dl>
+  <dl><dt>程序集</dt><dd>CompassEx.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>三元罗盘专用六爻卦实体类，继承基础卦类 <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a></p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CGuaClass : GuaClass, IEquatable&lt;GuaClass&gt;</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>继承</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a></div>
+      <div><span class="xref">CGuaClass</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>实现</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>继承成员</dt>
+    <dd>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GuaNames">GuaClass.GuaNames</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GuaFullNames">GuaClass.GuaFullNames</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GuaSkyLocs">GuaClass.GuaSkyLocs</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_Symbols">GuaClass.Symbols</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GuaFateNames">GuaClass.GuaFateNames</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_SkyLocs">GuaClass.SkyLocs</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GuaSymbol">GuaClass.GuaSymbol</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GuaQi">GuaClass.GuaQi</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GuaSkyLoc">GuaClass.GuaSkyLoc</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GuaAttr">GuaClass.GuaAttr</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GuaFate">GuaClass.GuaFate</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_DownGua">GuaClass.DownGua</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_UpGua">GuaClass.UpGua</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_Name">GuaClass.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GuaFullName">GuaClass.GuaFullName</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GuaIndex">GuaClass.GuaIndex</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_SixGods">GuaClass.SixGods</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_SixRelative">GuaClass.SixRelative</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_LostLocs">GuaClass.LostLocs</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_HereYao">GuaClass.HereYao</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_ThereYao">GuaClass.ThereYao</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_ChangedYao">GuaClass.ChangedYao</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GuaAliasName">GuaClass.GuaAliasName</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GuaSelf">GuaClass.GuaSelf</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_HideRelative">GuaClass.HideRelative</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_HideRelativeYaos">GuaClass.HideRelativeYaos</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_YaoDoing">GuaClass.YaoDoing</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_CBeforeRangeDegree">GuaClass.CBeforeRangeDegree</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_CAfterRangeDegree">GuaClass.CAfterRangeDegree</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_ExchangeGua">GuaClass.ExchangeGua()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_Get7HereYaoGua">GuaClass.Get7HereYaoGua()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetStringYaos">GuaClass.GetStringYaos()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetYaos">GuaClass.GetYaos()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetChangeGua">GuaClass.GetChangeGua()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetSykStr">GuaClass.GetSykStr()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetHereThereStr">GuaClass.GetHereThereStr()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetHideRelativeStr">GuaClass.GetHideRelativeStr()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetYaosSkyLocStrShort">GuaClass.GetYaosSkyLocStrShort()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetYaosSkyLocStr">GuaClass.GetYaosSkyLocStr()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetSixGodStr">GuaClass.GetSixGodStr()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetSixRelativeStr_System_String_System_Boolean_">GuaClass.GetSixRelativeStr(string, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetSixRelativeStr_System_Boolean_">GuaClass.GetSixRelativeStr(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_LoadAll_System_String_System_String_">GuaClass.LoadAll(string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_LoadNoAvg">GuaClass.LoadNoAvg()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGuaFace_System_Collections_Generic_List_System_Int32__">GuaClass.GetGuaFace(List&lt;int&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGuaFace">GuaClass.GetGuaFace()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetChangeGuaFace">GuaClass.GetChangeGuaFace()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_LoadHideRelative">GuaClass.LoadHideRelative()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_LoadSixRelative">GuaClass.LoadSixRelative()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_LoadGuaAliasName">GuaClass.LoadGuaAliasName()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetLostLocs_System_String_System_String_">GuaClass.GetLostLocs(string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGuaClassBySkyLoc_System_String_">GuaClass.GetGuaClassBySkyLoc(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGuaClass_System_String_">GuaClass.GetGuaClass(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGuaClass_System_Int32_">GuaClass.GetGuaClass(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGuaClass_System_Int32___">GuaClass.GetGuaClass(int[])</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGuaClass_System_Collections_Generic_List_System_Int32__">GuaClass.GetGuaClass(List&lt;int&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_FlowerGuaClass_System_Int32_System_Int32_">GuaClass.FlowerGuaClass(int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGoodDayList">GuaClass.GetGoodDayList()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_Equals_System_Object_">GuaClass.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetHashCode">GuaClass.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>扩展方法</dt>
+    <dd>
+  <div>
+      <a class="xref" href="CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_">Comm.ApplyBaseProperties&lt;TChild, TBase&gt;(TChild, TBase)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="CompassEx_CGuaClass_remarks">备注</h2>
+  <div class="markdown level0 remarks"><p>扩展基础卦结构，增加「卦所临爻位」数据存储，用于三元玄空罗盘纳甲、断卦时标记该卦对应的1～2个爻位；
+约束规则：单个卦最多只能关联2个爻位，超出则抛出参数越界异常。</p>
+</div>
+
+
+  <h2 class="section" id="constructors">构造函数
+</h2>
+
+
+  <a id="CompassEx_CGuaClass__ctor_" data-uid="CompassEx.CGuaClass.#ctor*"></a>
+
+  <h3 id="CompassEx_CGuaClass__ctor_System_String_System_Int32___" data-uid="CompassEx.CGuaClass.#ctor(System.String,System.Int32[])">
+  CGuaClass(string, params int[]?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/CGuaClass.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>初始化三元罗盘六爻卦实例，并绑定该卦对应的临爻位。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CGuaClass(string GuaNameOrAttrName, params int[]? PlaceYaos)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>GuaNameOrAttrName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>卦的唯一标识。支持以下两种格式之一：</p>
+<table><thead><tr><th class="term">格式类型</th><th class="description">传入示例与说明</th></tr></thead><tbody><tr><td class="term">标准卦名</td><td class="description">如 <code>"乾"</code>、<code>"坤"</code>、<code>"震"</code>、<code>"巽"</code> 等标准六十四卦汉字名称。</td></tr><tr><td class="term">属性字段名</td><td class="description">底层数据模型映射的属性名称，内部将通过反射机制自动匹配卦体信息。</td></tr></tbody></table>
+</dd>
+    <dt><code>PlaceYaos</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</dt>
+    <dd><p>一个可变长度的整数数组（<code>params</code>），代表当前卦所临的爻位序号。</p>
+<p>该参数使用极其灵活，支持以下传参方式：</p>
+<ul><li>不传任何参数、传入 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> 或空数组：表示当前卦无临爻。</li><li>传入 1 个整数：绑定单个临爻。</li><li>传入 2 个整数：绑定双临爻。<b>注意：这两个爻位必须是连续相邻的。</b></li></ul>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="CompassEx_CGuaClass__ctor_System_String_System_Int32____remarks">备注</h4>
+  <div class="markdown level1 remarks"><p><b>⚠️ 业务建模约束：</b></p>
+<p>在三元罗盘的六爻卦逻辑中，单卦所临的爻位存在严格的空间/数理限制：</p>
+<ol><li><b>数量上限：</b>单个卦最多只能同时关联 2 个爻位。</li><li><b>位置关联：</b>当同时存在 2 个临爻时，它们在空间上必须连续（例如：初爻与二爻、三爻与四爻），不可跨爻绑定。</li></ol>
+</div>
+
+  <h4 class="section">异常</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>当传入的 <code class="paramref">PlaceYaos</code> 数组长度大于 <code>2</code> 时抛出。提示单个卦最多仅能关联 2 个爻位。</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>当传入的 <code class="paramref">PlaceYaos</code> 数组长度等于 <code>2</code>，但两个爻位序号不连续（不相邻）时抛出。</p>
+</dd>
+  </dl>
+
+
+
+  <h2 class="section" id="properties">属性
+</h2>
+
+
+  <a id="CompassEx_CGuaClass_PlaceYaos_" data-uid="CompassEx.CGuaClass.PlaceYaos*"></a>
+
+  <h3 id="CompassEx_CGuaClass_PlaceYaos" data-uid="CompassEx.CGuaClass.PlaceYaos">
+  PlaceYaos
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/CGuaClass.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获取当前卦在三元盘中所临的爻位编号数组</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int[]? PlaceYaos { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</dt>
+    <dd><p>允许 null（无临爻）；数组长度限制 0～2，最多存储2个爻序号(只能是相邻两个爻）</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/CGuaClass.cs/#L26" class="edit-link">编辑本文</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

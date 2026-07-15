@@ -27,7 +27,7 @@ namespace CompassEx.Gua
     /// <summary>
     /// 六爻卦
     /// </summary>
-    public class GuaClass
+    public class GuaClass : IEquatable<GuaClass>
     {
 
         #region 字段
@@ -460,18 +460,18 @@ namespace CompassEx.Gua
         /// <summary>
         /// 获取该卦在三元地理罗盘中对应的先天（天盘）度数范围对象，用于判定当前卦在罗盘圆周上的物理空间边界。
         /// </summary>
-        /// <value>动态调用 <see cref="CompassEx.GetCBeforeGuaDegree(string)"/> 方法，返回其专属的 <see cref="CompassRangEX"/> 周天度数范围。</value>
+        /// <value>动态调用 <see cref="C3Y.GetCBeforeGuaDegree(string)"/> 方法，返回其专属的 <see cref="C3Y"/> 周天度数范围。</value>
         [JsonIgnore]
-        public CompassRangEX CBeforeRangeDegree { get { return CompassEx.GetCBeforeGuaDegree(this.Name); } }
+        public CompassRangEX CBeforeRangeDegree { get { return C3Y.GetCBeforeGuaDegree(this.Name); } }
 
 
 
         /// <summary>
         /// 获取该卦在三元地理罗盘中对应的后天（地盘）图度数范围对象，用于判定当前卦在罗盘圆周上的物理空间边界。
         /// </summary>
-        /// <value>动态调用 <see cref="CompassEx.GetCAfterGuaDegree(string)"/> 方法，返回其专属的 <see cref="CompassRangEX"/> 周天度数范围。</value>
+        /// <value>动态调用 <see cref="C3Y.GetCAfterGuaDegree(string)"/> 方法，返回其专属的 <see cref="C3Y"/> 周天度数范围。</value>
         [JsonIgnore]
-        public CompassRangEX CAfterRangeDegree { get { return CompassEx.GetCAfterGuaDegree(this.Name); } }
+        public CompassRangEX CAfterRangeDegree { get { return C3Y.GetCAfterGuaDegree(this.Name); } }
 
 
         #endregion
@@ -485,7 +485,7 @@ namespace CompassEx.Gua
         /// <summary>
         /// 依据简名初始化复卦（六爻卦）对象实例。
         /// </summary>
-        /// <param name="GuaNameOrAttrName">输入的先天 64 卦简名（例如：“乾”、“坤”、“屯”、“蒙”）。</param>
+        /// <param name="GuaNameOrAttrName">输入的先天 64 卦简名（例如：“乾”、“坤”、“屯”、“蒙”）或属性名，如火风、水雷、火雷，则自动获得相关的卦,可参考：<see cref="GuaFullNames"/> 。</param>
         /// <exception cref="IndexOutOfRangeException">当输入的卦名在内置的 <see cref="GuaNames"/> 列表中不存在时抛出该异常。</exception>
         /// <remarks>
         /// 该构造函数是一个便捷入口。它会通过内部查找，将传入的中文卦名自动转换为与之对应的数组索引，
@@ -1120,6 +1120,7 @@ namespace CompassEx.Gua
                 SixRelativeClass src = gc.SixRelative[i];
                 if (sHad.IndexOf(src.StartIndex.ToString()) == -1)
                 {
+                    src.YaoPosIndex = i;
                     hsrys.Add(i);//保存位置
                     this.HideRelative.Add(src);//保存这个六亲作为伏神
                 }
@@ -1346,7 +1347,7 @@ namespace CompassEx.Gua
             int iPos = GuaNames.IndexOf(GuaNameOrAttrName);//判断是否是卦名
             if (iPos > -1) return GuaFullNames[iPos]; //直接返回全名
             if (sName.Length == 1)
-            {//一字卦，全部转成三字卦
+            {
                 iPos = Array.IndexOf(GuaNames, sName);
                 if (iPos > -1)
                 {
@@ -1358,22 +1359,18 @@ namespace CompassEx.Gua
                     if (iPos > -1)
                     {//属性纯卦
                         s = GuaSubClass.AfterGuaSubNames[iPos];
-                        return GetFullGuaName(s);//递归
+                        sFullName = GetFullGuaName(s);//递归
                     }
                 }
 
             }
-            else if (sName.Length > 2)
+            else if (sName.Length >= 2)
             {
                 sName = sName.Replace("?", "");
-                for (int i = 0; i < GuaFullNames.Length; i++)
-                {
-                    if (GuaFullNames[i].IndexOf(sName) != -1)
-                    {
-                        sFullName = GuaFullNames[i];
-                        break;
-                    }
-                }
+
+                var r = GuaFullNames.Where(sn => sn.IndexOf(sName) > -1);
+                sFullName = r.FirstOrDefault();
+
 
             }
             return sFullName;
@@ -1563,8 +1560,22 @@ namespace CompassEx.Gua
 
         public override bool Equals(object obj)
         {
-            var g = (GuaClass)obj;
-            return g.Name == this.Name;
+            if (obj == null) return false;
+
+            // 强制转换为接口类型去调用，这样就能精准找到你下面写的方法，打破死循环！
+            return ((IEquatable<GuaClass>)this).Equals(obj as GuaClass);
+        }
+
+        // 新增哈希方法，参与相等判断的字段全部组合计算
+        public override int GetHashCode()
+        {
+            return Name != null ? Name.GetHashCode() : 0;
+        }
+
+        bool IEquatable<GuaClass>.Equals(GuaClass other)
+        {
+            if (other == null) return false;
+            return other.Name == this.Name;
         }
         #endregion
     }

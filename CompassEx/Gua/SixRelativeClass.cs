@@ -35,6 +35,11 @@ namespace CompassEx.Gua
         #region 属性
 
         /// <summary>
+        /// 表示在卦中第几爻
+        /// </summary>
+        public int YaoPosIndex { get; set; }
+
+        /// <summary>
         /// 获取当前六亲实体的字面名称（如“父母”、“子孙”等）。
         /// </summary>
         /// <value>一个 <see cref="string"/> 字符串，表示当前爻位对应的六亲称谓。</value>

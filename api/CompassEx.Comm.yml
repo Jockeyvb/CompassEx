@@ -12,7 +12,10 @@ items:
   - CompassEx.Comm.FactYearEnum
   - CompassEx.Comm.FiveAttr
   - CompassEx.Comm.FiveAttrRule
+  - CompassEx.Comm.GoodBadInfos
+  - CompassEx.Comm.InfoType
   - CompassEx.Comm.LocClass
+  - CompassEx.Comm.PlaceYaosJFNaJiaType
   - CompassEx.Comm.SkyClass
   - CompassEx.Comm.SkyLoc
   - CompassEx.Comm.TymeTimeExtensions
@@ -46,6 +49,12 @@ references:
   name: CompassRangEX
   nameWithType: CompassRangEX
   fullName: CompassEx.Comm.CompassRangEX
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType
+  commentId: T:CompassEx.Comm.PlaceYaosJFNaJiaType
+  href: CompassEx.Comm.PlaceYaosJFNaJiaType.html
+  name: PlaceYaosJFNaJiaType
+  nameWithType: PlaceYaosJFNaJiaType
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType
 - uid: CompassEx.Comm.CompassObjType
   commentId: T:CompassEx.Comm.CompassObjType
   href: CompassEx.Comm.CompassObjType.html
@@ -79,6 +88,20 @@ references:
   name: FiveAttr
   nameWithType: FiveAttr
   fullName: CompassEx.Comm.FiveAttr
+- uid: CompassEx.Comm.InfoType
+  commentId: T:CompassEx.Comm.InfoType
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.InfoType.html
+  name: InfoType
+  nameWithType: InfoType
+  fullName: CompassEx.Comm.InfoType
+- uid: CompassEx.Comm.GoodBadInfos
+  commentId: T:CompassEx.Comm.GoodBadInfos
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.GoodBadInfos.html
+  name: GoodBadInfos
+  nameWithType: GoodBadInfos
+  fullName: CompassEx.Comm.GoodBadInfos
 - uid: CompassEx.Comm.LocClass
   commentId: T:CompassEx.Comm.LocClass
   parent: CompassEx.Comm

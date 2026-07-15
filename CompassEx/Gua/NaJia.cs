@@ -139,7 +139,7 @@ namespace CompassEx.Gua
         /// <summary>
         /// 内部私有类：用于静态配置杨公纳甲天干地支原始映射项的轻量级实体。
         /// </summary>
-        private class NaJiaYGItem
+        public class NaJiaYGItem
         {
             /// <summary>
             /// 获取或设置归化的天干名称（如 "甲"、"乙"）。
@@ -159,10 +159,10 @@ namespace CompassEx.Gua
         /// 严格遵循地理风水“净阴净阳”及“二十四山纳甲”数理基础规则：
         /// <list type="bullet">
         ///   <item><description><b>乾坤艮巽（四维卦）：</b> 纳纯干，地支序列初始为空（高级理气应用中可根据需要扩充其同名方位山字）。</description></item>
-        ///   <item><description><b>震兑离坎（四正卦）：</b> 依纳干所属五行的三合局归化地支（木局、金局、火局、水局）。</description></item>
+        ///   <item><description><b>震兑离坎（四正卦）：</b> 依纳干所属五行的三合局归化地支（震木局[ "亥", "卯", "未"]、兑金局["巳", "酉", "丑"]、离火局["寅", "午", "戌"]、坎水局["申", "子", "辰"]）。</description></item>
         /// </list>
         /// </remarks>
-        private readonly Dictionary<string, NaJiaYGItem> YGNaJiaDC = new Dictionary<string, NaJiaYGItem>
+        public static readonly Dictionary<string, NaJiaYGItem> YGNaJiaDC = new Dictionary<string, NaJiaYGItem>
     {
         { "乾", new NaJiaYGItem { SkyName = "甲", LocNames = new string[] { } } },
         { "坤", new NaJiaYGItem { SkyName = "乙", LocNames = new string[] { } } },
@@ -275,7 +275,7 @@ namespace CompassEx.Gua
         /// <returns>
         /// 返回包含单卦、天干及地支宫位的 <see cref="NaJiaYGResult"/> 结构体数据。
         /// </returns>
-        public static NaJiaYGResult? CreateYG(GuaSubClass gs)
+        public static NaJiaYGResult CreateYG(GuaSubClass gs)
         {
             return (new NaJia<NaJiaYGResult>(gs)).Execute();
         }

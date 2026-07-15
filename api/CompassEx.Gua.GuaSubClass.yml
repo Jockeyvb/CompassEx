@@ -27,6 +27,7 @@ items:
   - CompassEx.Gua.GuaSubClass.BeforeQuanity
   - CompassEx.Gua.GuaSubClass.CAfterRangeDegree
   - CompassEx.Gua.GuaSubClass.CBeforRangeDegree
+  - CompassEx.Gua.GuaSubClass.Equals(System.Object)
   - CompassEx.Gua.GuaSubClass.FiveAttr
   - CompassEx.Gua.GuaSubClass.GetAfterGuaSub(System.Int32,System.Boolean)
   - CompassEx.Gua.GuaSubClass.GetBeforGuaSub(System.Int32,System.Boolean)
@@ -36,6 +37,7 @@ items:
   - CompassEx.Gua.GuaSubClass.GetGuaSub(System.Int32,System.Boolean)
   - CompassEx.Gua.GuaSubClass.GetGuaSub(System.Int32,System.Int32,System.Int32,System.Boolean)
   - CompassEx.Gua.GuaSubClass.GetGuaSub(System.String,System.Boolean)
+  - CompassEx.Gua.GuaSubClass.GetHashCode
   - CompassEx.Gua.GuaSubClass.GetXorGua
   - CompassEx.Gua.GuaSubClass.GuaQi
   - CompassEx.Gua.GuaSubClass.GuaSubReluName
@@ -50,6 +52,7 @@ items:
   - CompassEx.Gua.GuaSubClass.Symbol
   - CompassEx.Gua.GuaSubClass.Symbols
   - CompassEx.Gua.GuaSubClass.TiJiSymbol
+  - CompassEx.Gua.GuaSubClass.ToGuaClass
   - CompassEx.Gua.GuaSubClass.Yaos
   langs:
   - csharp
@@ -65,19 +68,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuaSubClass
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 21
+    startLine: 24
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
+  summary: 三爻卦
+  example: []
   syntax:
-    content: public class GuaSubClass
-    content.vb: Public Class GuaSubClass
+    content: 'public class GuaSubClass : IEquatable<GuaSubClass>'
+    content.vb: Public Class GuaSubClass Implements IEquatable(Of GuaSubClass)
   inheritance:
   - System.Object
+  implements:
+  - System.IEquatable{CompassEx.Gua.GuaSubClass}
   inheritedMembers:
-  - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
@@ -102,7 +107,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuaSubAttrNames
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 40
+    startLine: 43
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -136,7 +141,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuaSubReluNames
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 54
+    startLine: 57
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -170,7 +175,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuaSubNames
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 68
+    startLine: 71
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -204,7 +209,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuaSubNumerics
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 82
+    startLine: 85
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -238,7 +243,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubAttrNames
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 96
+    startLine: 99
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -272,7 +277,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubNames
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 110
+    startLine: 113
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -306,7 +311,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TiJiSymbol
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 115
+    startLine: 118
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -335,7 +340,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Symbols
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 129
+    startLine: 132
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -369,7 +374,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubNumerics
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 153
+    startLine: 156
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -403,7 +408,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubReluNames
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 167
+    startLine: 170
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -437,7 +442,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubColors
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 181
+    startLine: 184
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -471,7 +476,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubColorClasses
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 197
+    startLine: 200
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -510,7 +515,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IsSun
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 218
+    startLine: 221
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -548,7 +553,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IsDownGua
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 224
+    startLine: 227
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -580,7 +585,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuaQi
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 234
+    startLine: 237
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -626,7 +631,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Yaos
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 248
+    startLine: 251
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -658,7 +663,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SkyName
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 254
+    startLine: 257
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -690,7 +695,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Sky
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 263
+    startLine: 266
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -723,7 +728,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Locs
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 269
+    startLine: 272
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -755,7 +760,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LocIndex
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 275
+    startLine: 278
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -787,7 +792,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuaSubReluName
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 281
+    startLine: 284
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -819,7 +824,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubColor
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 287
+    startLine: 290
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -851,7 +856,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterQuantity
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 293
+    startLine: 296
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -883,7 +888,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeQuanity
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 299
+    startLine: 302
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -915,7 +920,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Name
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 305
+    startLine: 308
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -947,7 +952,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AttrName
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 311
+    startLine: 314
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -979,7 +984,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FiveAttr
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 317
+    startLine: 320
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1011,7 +1016,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuaSubCNQuantity
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 323
+    startLine: 326
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1043,7 +1048,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubCNQuantity
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 329
+    startLine: 332
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1075,7 +1080,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuaSubIndex
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 335
+    startLine: 338
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1107,7 +1112,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubIndex
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 341
+    startLine: 344
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1139,7 +1144,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Symbol
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 350
+    startLine: 353
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1172,7 +1177,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CAfterRangeDegree
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 356
+    startLine: 359
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1204,7 +1209,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CBeforRangeDegree
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 362
+    startLine: 365
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1236,7 +1241,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 378
+    startLine: 381
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1281,7 +1286,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 399
+    startLine: 402
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1310,6 +1315,37 @@ items:
   nameWithType.vb: GuaSubClass.New(Integer)
   fullName.vb: CompassEx.Gua.GuaSubClass.New(Integer)
   name.vb: New(Integer)
+- uid: CompassEx.Gua.GuaSubClass.ToGuaClass
+  commentId: M:CompassEx.Gua.GuaSubClass.ToGuaClass
+  id: ToGuaClass
+  parent: CompassEx.Gua.GuaSubClass
+  langs:
+  - csharp
+  - vb
+  name: ToGuaClass()
+  nameWithType: GuaSubClass.ToGuaClass()
+  fullName: CompassEx.Gua.GuaSubClass.ToGuaClass()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/GuaSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToGuaClass
+    path: CompassEx/Gua/GuaSubClass.cs
+    startLine: 473
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 转成六爻卦(上、下三爻卦相同）
+  example: []
+  syntax:
+    content: public GuaClass ToGuaClass()
+    return:
+      type: CompassEx.Gua.GuaClass
+      description: ''
+    content.vb: Public Function ToGuaClass() As GuaClass
+  overload: CompassEx.Gua.GuaSubClass.ToGuaClass*
 - uid: CompassEx.Gua.GuaSubClass.GetC24Hills
   commentId: M:CompassEx.Gua.GuaSubClass.GetC24Hills
   id: GetC24Hills
@@ -1328,7 +1364,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetC24Hills
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 466
+    startLine: 483
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1359,7 +1395,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetCBeforGuas
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 491
+    startLine: 508
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1390,7 +1426,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetXorGua
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 509
+    startLine: 526
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1421,7 +1457,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadLocs
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 524
+    startLine: 541
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1449,7 +1485,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 550
+    startLine: 567
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1496,7 +1532,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAfterGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 575
+    startLine: 592
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1537,7 +1573,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBeforGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 588
+    startLine: 605
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1578,7 +1614,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 600
+    startLine: 617
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1619,7 +1655,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 620
+    startLine: 637
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1660,7 +1696,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetFiveAttrName
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 688
+    startLine: 705
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1680,6 +1716,72 @@ items:
   nameWithType.vb: GuaSubClass.GetFiveAttrName(String)
   fullName.vb: CompassEx.Gua.GuaSubClass.GetFiveAttrName(String)
   name.vb: GetFiveAttrName(String)
+- uid: CompassEx.Gua.GuaSubClass.Equals(System.Object)
+  commentId: M:CompassEx.Gua.GuaSubClass.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: CompassEx.Gua.GuaSubClass
+  langs:
+  - csharp
+  - vb
+  name: Equals(object)
+  nameWithType: GuaSubClass.Equals(object)
+  fullName: CompassEx.Gua.GuaSubClass.Equals(object)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/GuaSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Equals
+    path: CompassEx/Gua/GuaSubClass.cs
+    startLine: 717
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: CompassEx.Gua.GuaSubClass.Equals*
+  nameWithType.vb: GuaSubClass.Equals(Object)
+  fullName.vb: CompassEx.Gua.GuaSubClass.Equals(Object)
+  name.vb: Equals(Object)
+- uid: CompassEx.Gua.GuaSubClass.GetHashCode
+  commentId: M:CompassEx.Gua.GuaSubClass.GetHashCode
+  id: GetHashCode
+  parent: CompassEx.Gua.GuaSubClass
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: GuaSubClass.GetHashCode()
+  fullName: CompassEx.Gua.GuaSubClass.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/GuaSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetHashCode
+    path: CompassEx/Gua/GuaSubClass.cs
+    startLine: 724
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.Object.GetHashCode
+  overload: CompassEx.Gua.GuaSubClass.GetHashCode*
 references:
 - uid: CompassEx.Gua
   commentId: N:CompassEx.Gua
@@ -1714,38 +1816,38 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  name: Equals(object)
-  nameWithType: object.Equals(object)
-  fullName: object.Equals(object)
-  nameWithType.vb: Object.Equals(Object)
-  fullName.vb: Object.Equals(Object)
-  name.vb: Equals(Object)
+- uid: System.IEquatable{CompassEx.Gua.GuaSubClass}
+  commentId: T:System.IEquatable{CompassEx.Gua.GuaSubClass}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<GuaSubClass>
+  nameWithType: IEquatable<GuaSubClass>
+  fullName: System.IEquatable<CompassEx.Gua.GuaSubClass>
+  nameWithType.vb: IEquatable(Of GuaSubClass)
+  fullName.vb: System.IEquatable(Of CompassEx.Gua.GuaSubClass)
+  name.vb: IEquatable(Of GuaSubClass)
   spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
+  - uid: System.IEquatable`1
+    name: IEquatable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: CompassEx.Gua.GuaSubClass
+    name: GuaSubClass
+    href: CompassEx.Gua.GuaSubClass.html
+  - name: '>'
   spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
+  - uid: System.IEquatable`1
+    name: IEquatable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
   - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Gua.GuaSubClass
+    name: GuaSubClass
+    href: CompassEx.Gua.GuaSubClass.html
   - name: )
 - uid: System.Object.Equals(System.Object,System.Object)
   commentId: M:System.Object.Equals(System.Object,System.Object)
@@ -1791,30 +1893,6 @@ references:
     name: Object
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
   - name: )
 - uid: System.Object.GetType
   commentId: M:System.Object.GetType
@@ -1993,6 +2071,34 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
   commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
   href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
@@ -2101,6 +2207,7 @@ references:
   name.vb: String
 - uid: System.Drawing.Color
   commentId: T:System.Drawing.Color
+  parent: System.Drawing
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.drawing.color
   name: Color
@@ -2129,6 +2236,33 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.drawing.color
   - name: (
   - name: )
+- uid: System.Drawing
+  commentId: N:System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Drawing
+  nameWithType: System.Drawing
+  fullName: System.Drawing
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
 - uid: CompassEx.Gua.GuaSubClass.Name
   commentId: P:CompassEx.Gua.GuaSubClass.Name
   href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_Name
@@ -2482,6 +2616,7 @@ references:
   fullName: CompassEx.Gua.GuaSubClass.Symbol
 - uid: CompassEx.CompassEx.GetAfterGuaSubDegree(CompassEx.Gua.GuaSubClass)
   commentId: M:CompassEx.CompassEx.GetAfterGuaSubDegree(CompassEx.Gua.GuaSubClass)
+  parent: CompassEx.CompassEx
   href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetAfterGuaSubDegree_CompassEx_Gua_GuaSubClass_
   name: GetAfterGuaSubDegree(GuaSubClass)
   nameWithType: CompassEx.GetAfterGuaSubDegree(GuaSubClass)
@@ -2517,8 +2652,22 @@ references:
   name: CAfterRangeDegree
   nameWithType: GuaSubClass.CAfterRangeDegree
   fullName: CompassEx.Gua.GuaSubClass.CAfterRangeDegree
+- uid: CompassEx.CompassEx
+  commentId: T:CompassEx.CompassEx
+  parent: CompassEx
+  href: CompassEx.CompassEx.html
+  name: CompassEx
+  nameWithType: CompassEx
+  fullName: CompassEx.CompassEx
+- uid: CompassEx
+  commentId: N:CompassEx
+  href: CompassEx.html
+  name: CompassEx
+  nameWithType: CompassEx
+  fullName: CompassEx
 - uid: CompassEx.CompassEx.GetBeforGuaSubDegree(CompassEx.Gua.GuaSubClass)
   commentId: M:CompassEx.CompassEx.GetBeforGuaSubDegree(CompassEx.Gua.GuaSubClass)
+  parent: CompassEx.CompassEx
   href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforGuaSubDegree_CompassEx_Gua_GuaSubClass_
   name: GetBeforGuaSubDegree(GuaSubClass)
   nameWithType: CompassEx.GetBeforGuaSubDegree(GuaSubClass)
@@ -2701,6 +2850,19 @@ references:
   name: AfterGuaSubColor
   nameWithType: GuaSubClass.AfterGuaSubColor
   fullName: CompassEx.Gua.GuaSubClass.AfterGuaSubColor
+- uid: CompassEx.Gua.GuaSubClass.ToGuaClass*
+  commentId: Overload:CompassEx.Gua.GuaSubClass.ToGuaClass
+  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_ToGuaClass
+  name: ToGuaClass
+  nameWithType: GuaSubClass.ToGuaClass
+  fullName: CompassEx.Gua.GuaSubClass.ToGuaClass
+- uid: CompassEx.Gua.GuaClass
+  commentId: T:CompassEx.Gua.GuaClass
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.GuaClass.html
+  name: GuaClass
+  nameWithType: GuaClass
+  fullName: CompassEx.Gua.GuaClass
 - uid: CompassEx.Gua.GuaSubClass.GetC24Hills*
   commentId: Overload:CompassEx.Gua.GuaSubClass.GetC24Hills
   href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_GetC24Hills
@@ -2876,3 +3038,72 @@ references:
   name: GetFiveAttrName
   nameWithType: GuaSubClass.GetFiveAttrName
   fullName: CompassEx.Gua.GuaSubClass.GetFiveAttrName
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: CompassEx.Gua.GuaSubClass.Equals*
+  commentId: Overload:CompassEx.Gua.GuaSubClass.Equals
+  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_Equals_System_Object_
+  name: Equals
+  nameWithType: GuaSubClass.Equals
+  fullName: CompassEx.Gua.GuaSubClass.Equals
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: CompassEx.Gua.GuaSubClass.GetHashCode*
+  commentId: Overload:CompassEx.Gua.GuaSubClass.GetHashCode
+  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_GetHashCode
+  name: GetHashCode
+  nameWithType: GuaSubClass.GetHashCode
+  fullName: CompassEx.Gua.GuaSubClass.GetHashCode

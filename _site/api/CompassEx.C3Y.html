@@ -2,13 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>CompassEx.C3Y 命名空间
+      <title>C3Y 类
  | CompassEx API文档 </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="CompassEx.C3Y 命名空间
+      <meta name="title" content="C3Y 类
  | CompassEx API文档 ">
       
-      
+      <meta name="description" content="三元罗盘类。">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -18,7 +18,7 @@
       
       
       
-      
+      <meta name="docfx:docurl" content="https://github.com/Jockeyvb/CompassEx/new/master/apiSpec/new?filename=CompassEx_C3Y.md&amp;value=---%0Auid%3A%20CompassEx.C3Y%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="本文内容">
       <meta name="loc:searchResultsCount" content="找到{count}个“{query}”的搜索结果">
       <meta name="loc:searchNoResults" content="没有找到“{query}”的搜索结果">
@@ -84,25 +84,569 @@
 
         <article data-uid="CompassEx.C3Y">
 
-  <h1 id="CompassEx_C3Y" data-uid="CompassEx.C3Y" class="text-break">CompassEx.C3Y 命名空间
-</h1>
-  <div class="markdown level0 summary"></div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
 
-    <h3 id="classes">
-类
-</h3>
-    <dl class="jumplist">
-      <dt><a class="xref" href="CompassEx.C3Y.C3Y.html">C3Y</a></dt>
-      <dd><p>三元罗盘类</p>
+
+  <h1 id="CompassEx_C3Y" data-uid="CompassEx.C3Y" class="text-break">
+C3Y 类
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/C3Y.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>命名空间</dt><dd><a class="xref" href="CompassEx.html">CompassEx</a></dd></dl>
+  <dl><dt>程序集</dt><dd>CompassEx.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>三元罗盘类。</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class C3Y : CompassEx</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>继承</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="CompassEx.CompassEx.html">CompassEx</a></div>
+      <div><span class="xref">C3Y</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>继承成员</dt>
+    <dd>
+    <div>
+      <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_GuaSubDegree">CompassEx.GuaSubDegree</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_CompassAfterGuaSubNames">CompassEx.CompassAfterGuaSubNames</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_CompassBeforGuaSubNames">CompassEx.CompassBeforGuaSubNames</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_CHillDegree">CompassEx.CHillDegree</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_C24Hill">CompassEx.C24Hill</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_degree">CompassEx.degree</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_Degree">CompassEx.Degree</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_AfterGuaSub">CompassEx.AfterGuaSub</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_Get24Hill">CompassEx.Get24Hill()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_">CompassEx.Get24HillDegree(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforeGuaSub">CompassEx.GetBeforeGuaSub()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforGuaSubDegree_CompassEx_Gua_GuaSubClass_">CompassEx.GetBeforGuaSubDegree(GuaSubClass)</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforGuaSubDegree_System_String_">CompassEx.GetBeforGuaSubDegree(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_GetAfterGuaSub">CompassEx.GetAfterGuaSub()</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_GetAfterGuaSubDegree_CompassEx_Gua_GuaSubClass_">CompassEx.GetAfterGuaSubDegree(GuaSubClass)</a>
+    </div>
+    <div>
+      <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_GetAfterGuaSubDegree_System_String_">CompassEx.GetAfterGuaSubDegree(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>扩展方法</dt>
+    <dd>
+  <div>
+      <a class="xref" href="CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_">Comm.ApplyBaseProperties&lt;TChild, TBase&gt;(TChild, TBase)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="CompassEx_C3Y_remarks">备注</h2>
+  <div class="markdown level0 remarks"><p>本类继承自 <a class="xref" href="CompassEx.CompassEx.html">CompassEx</a>，主要用于处理三元罗盘体系下的先天六十四卦（天盘）与后天六十四卦（地盘）的度数映射与卦象计算。</p>
+</div>
+
+
+  <h2 class="section" id="constructors">构造函数
+</h2>
+
+
+  <a id="CompassEx_C3Y__ctor_" data-uid="CompassEx.C3Y.#ctor*"></a>
+
+  <h3 id="CompassEx_C3Y__ctor_System_Double_" data-uid="CompassEx.C3Y.#ctor(System.Double)">
+  C3Y(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/C3Y.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>初始化 <a class="xref" href="CompassEx.C3Y.html">C3Y</a> 类的新实例。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public C3Y(double Degreen)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>Degreen</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>当前罗盘的初始度数（角度值值）。</p>
 </dd>
-    </dl>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="CompassEx_C3Y__ctor_System_Double__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>构造函数在初始化时，会自动计算并填充当前度数对应的地盘后天卦（通过调用 <code>GetAfterGuaSub()</code>）以及天盘先天卦（通过调用 <code>GetCBeforeGua()</code>）。</p>
+</div>
+
+
+
+
+  <h2 class="section" id="fields">字段
+</h2>
+
+
+
+  <h3 id="CompassEx_C3Y_CAfterGuas" data-uid="CompassEx.C3Y.CAfterGuas">
+  CAfterGuas
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/C3Y.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>后天 64 卦对象字典缓存（地盘）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonIgnore]
+public static Dictionary&lt;CompassRangEX, GuaClass&gt; CAfterGuas</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">字段值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a>, <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a>&gt;</dt>
+    <dd><p>键为 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 范围，值为对应的 <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a> 卦象对象。</p>
+</dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="CompassEx_C3Y_CAfterGuas_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p><b>性能说明：</b></p>
+<p>使用字典缓存所有 64 卦对象，避免每次计算时重复创建新对象，提高执行性能。系统启动时需要优先初始化此字典。</p>
+<p><b>排列规则：</b></p>
+<p>罗盘上后天排行从子为乾9、兑4、离3、震8（阳仪），巽2、坎7、艮6、坤1（阴仪）。</p>
+<p><b>度数映射：</b></p>
+<p>罗盘上子乾（360度）至午坤（180度）。从乾 0 度至雷地豫 180 度，坤左为顺 180 度至地雷复 360 度。外卦为卦宫，内卦相荡而成。</p>
+</div>
+
+
+
+
+
+  <h3 id="CompassEx_C3Y_CBeforeGuas" data-uid="CompassEx.C3Y.CBeforeGuas">
+  CBeforeGuas
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/C3Y.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>先天 64 卦对象字典缓存（天盘）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonIgnore]
+public static Dictionary&lt;CompassRangEX, GuaClass&gt; CBeforeGuas</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">字段值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a>, <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a>&gt;</dt>
+    <dd><p>键为 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 范围，值为对应的 <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a> 卦象对象。</p>
+</dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="CompassEx_C3Y_CBeforeGuas_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p><b>性能说明：</b></p>
+<p>使用字典缓存所有 64 卦对象，避免每次计算时重复创建新对象，提高执行性能。系统启动时需要优先初始化此字典。</p>
+<p><b>排列规则：</b></p>
+<p>罗盘上先天排行从午为乾1、兑2、离3、震4（阳仪），巽5、坎6、艮7、坤8（阴仪）。</p>
+<p><b>度数映射：</b></p>
+<p>罗盘上子坤（360度）至午乾（180度）。从坤 0 度至天风姤 180 度，乾左为顺 180 度至地雷复 360 度。内卦为卦宫，外卦相荡而成。</p>
+</div>
+
+
+
+
+
+  <h3 id="CompassEx_C3Y_CompassGuaDegree" data-uid="CompassEx.C3Y.CompassGuaDegree">
+  CompassGuaDegree
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/C3Y.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>罗盘 64 卦的单卦度数。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const double CompassGuaDegree = 5.625</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">字段值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>默认值为 5.625 度（360度 / 64卦）。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">属性
+</h2>
+
+
+  <a id="CompassEx_C3Y_BeforGua_" data-uid="CompassEx.C3Y.BeforGua*"></a>
+
+  <h3 id="CompassEx_C3Y_BeforGua" data-uid="CompassEx.C3Y.BeforGua">
+  BeforGua
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/C3Y.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获取当前罗盘度数对应的先天 64 卦对象（天盘）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GuaClass BeforGua { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a></dt>
+    <dd><p>返回一个 <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a> 对象，表示当前罗盘度数在天盘上对应的先天 64 卦象。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">方法
+</h2>
+
+
+  <a id="CompassEx_C3Y_GetAllBeforGuas_" data-uid="CompassEx.C3Y.GetAllBeforGuas*"></a>
+
+  <h3 id="CompassEx_C3Y_GetAllBeforGuas" data-uid="CompassEx.C3Y.GetAllBeforGuas">
+  GetAllBeforGuas()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/C3Y.cs/#L239"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>加载罗盘上的所有先天64卦（天盘）对象，按照顺时针方向排列，从坤卦开始，每5.625度一个卦逆时针，共64个卦</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Dictionary&lt;CompassRangEX, GuaClass&gt; GetAllBeforGuas()</code></pre>
+  </div>
+
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a>, <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_C3Y_GetAllCAfterGuas_" data-uid="CompassEx.C3Y.GetAllCAfterGuas*"></a>
+
+  <h3 id="CompassEx_C3Y_GetAllCAfterGuas" data-uid="CompassEx.C3Y.GetAllCAfterGuas">
+  GetAllCAfterGuas()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/C3Y.cs/#L174"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>加载并初始化罗盘上的所有后天64卦（地盘）对象，按照顺时针方向排列，从坤卦开始，每5.625度一个卦逆时针，共64个卦</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Dictionary&lt;CompassRangEX, GuaClass&gt; GetAllCAfterGuas()</code></pre>
+  </div>
+
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a>, <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_C3Y_GetCAfterGuaDegree_" data-uid="CompassEx.C3Y.GetCAfterGuaDegree*"></a>
+
+  <h3 id="CompassEx_C3Y_GetCAfterGuaDegree_System_String_" data-uid="CompassEx.C3Y.GetCAfterGuaDegree(System.String)">
+  GetCAfterGuaDegree(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/C3Y.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获取指定后天（地盘）64 卦卦名在罗盘上对应的度数范围对象。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CompassRangEX GetCAfterGuaDegree(string Name)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>Name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>要查询的后天 64 卦的完整卦名。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a></dt>
+    <dd><p>返回对应的 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 度数范围对象；若在缓存中未匹配到该卦名，则返回 <code>null</code>。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_C3Y_GetCBeforeGua_" data-uid="CompassEx.C3Y.GetCBeforeGua*"></a>
+
+  <h3 id="CompassEx_C3Y_GetCBeforeGua" data-uid="CompassEx.C3Y.GetCBeforeGua">
+  GetCBeforeGua()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/C3Y.cs/#L131"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>根据当前罗盘指向的度数，匹配并获取对应的先天 64 卦对象。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GuaClass GetCBeforeGua()</code></pre>
+  </div>
+
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a></dt>
+    <dd><p>返回当前度数所在的 <a class="xref" href="CompassEx.Gua.GuaClass.html">GuaClass</a> 先天 64 卦对象；若未找到匹配的范围则返回 <code>null</code>。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_C3Y_GetCBeforeGuaDegree_" data-uid="CompassEx.C3Y.GetCBeforeGuaDegree*"></a>
+
+  <h3 id="CompassEx_C3Y_GetCBeforeGuaDegree_System_String_" data-uid="CompassEx.C3Y.GetCBeforeGuaDegree(System.String)">
+  GetCBeforeGuaDegree(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/C3Y.cs/#L98"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获取指定先天（天盘）64 卦卦名在罗盘上对应的度数范围对象。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CompassRangEX GetCBeforeGuaDegree(string Name)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>Name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>要查询的先天 64 卦的完整卦名。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a></dt>
+    <dd><p>返回对应的 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 度数范围对象；若在缓存中未匹配到该卦名，则返回 <code>null</code>。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_C3Y_LoadAllCAfterGuas_" data-uid="CompassEx.C3Y.LoadAllCAfterGuas*"></a>
+
+  <h3 id="CompassEx_C3Y_LoadAllCAfterGuas" data-uid="CompassEx.C3Y.LoadAllCAfterGuas">
+  LoadAllCAfterGuas()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/C3Y.cs/#L151"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>从数据源加载并初始化罗盘上的所有后天 64 卦（地盘）全局静态缓存字典。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void LoadAllCAfterGuas()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+  <h4 class="section" id="CompassEx_C3Y_LoadAllCAfterGuas_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>该方法应在程序启动或系统初始化阶段优先执行。</p>
+</div>
+
+
+
+
+  <a id="CompassEx_C3Y_LoadAllCBeforeGuas_" data-uid="CompassEx.C3Y.LoadAllCBeforeGuas*"></a>
+
+  <h3 id="CompassEx_C3Y_LoadAllCBeforeGuas" data-uid="CompassEx.C3Y.LoadAllCBeforeGuas">
+  LoadAllCBeforeGuas()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/C3Y.cs/#L164"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>从数据源加载并初始化罗盘上的所有先天 64 卦（天盘）全局静态缓存字典。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void LoadAllCBeforeGuas()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+  <h4 class="section" id="CompassEx_C3Y_LoadAllCBeforeGuas_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p><b>排列规则：</b>卦象按照顺时针方向在罗盘上排布，从坤卦开始，每个卦位占据 5.625 度（逆时针荡卦推演），共计 64 个卦象。</p>
+<p>该方法应在程序启动或系统初始化阶段优先执行。</p>
+</div>
+
+
+
 
 
 </article>
 
         <div class="contribution d-print-none">
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/C3Y/C3Y.cs/#L26" class="edit-link">编辑本文</a>
         </div>
 
 

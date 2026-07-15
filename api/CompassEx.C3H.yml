@@ -1,23 +1,755 @@
 ### YamlMime:ManagedReference
 items:
 - uid: CompassEx.C3H
-  commentId: N:CompassEx.C3H
-  id: CompassEx.C3H
+  commentId: T:CompassEx.C3H
+  id: C3H
+  parent: CompassEx
   children:
-  - CompassEx.C3H.C3H
+  - CompassEx.C3H.#ctor(System.Double)
   langs:
   - csharp
   - vb
-  name: CompassEx.C3H
-  nameWithType: CompassEx.C3H
-  fullName: CompassEx.C3H
-  type: Namespace
-  assemblies:
-  - CompassEx
-references:
-- uid: CompassEx.C3H.C3H
-  commentId: T:CompassEx.C3H.C3H
-  href: CompassEx.C3H.C3H.html
   name: C3H
   nameWithType: C3H
+  fullName: CompassEx.C3H
+  type: Class
+  source:
+    remote:
+      path: CompassEx/C3H/C3H.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: C3H
+    path: CompassEx/C3H/C3H.cs
+    startLine: 21
+  assemblies:
+  - CompassEx
+  namespace: CompassEx
+  summary: 三合罗盘类。
+  remarks: 本类继承自 <xref href="CompassEx.CompassEx" data-throw-if-not-resolved="false"></xref>，主要用于处理三合罗盘体系（地盘正针、人盘中针、天盘缝针等三盘派系）的度数映射与罗盘层级计算。
+  example: []
+  syntax:
+    content: 'public class C3H : CompassEx'
+    content.vb: Public Class C3H Inherits CompassEx
+  inheritance:
+  - System.Object
+  - CompassEx.CompassEx
+  inheritedMembers:
+  - CompassEx.CompassEx.GuaSubDegree
+  - CompassEx.CompassEx.CompassAfterGuaSubNames
+  - CompassEx.CompassEx.CompassBeforGuaSubNames
+  - CompassEx.CompassEx.CHillDegree
+  - CompassEx.CompassEx.C24Hill
+  - CompassEx.CompassEx.degree
+  - CompassEx.CompassEx.Degree
+  - CompassEx.CompassEx.AfterGuaSub
+  - CompassEx.CompassEx.Get24Hill
+  - CompassEx.CompassEx.Get24HillDegree(System.String)
+  - CompassEx.CompassEx.GetBeforeGuaSub
+  - CompassEx.CompassEx.GetBeforGuaSubDegree(CompassEx.Gua.GuaSubClass)
+  - CompassEx.CompassEx.GetBeforGuaSubDegree(System.String)
+  - CompassEx.CompassEx.GetAfterGuaSub
+  - CompassEx.CompassEx.GetAfterGuaSubDegree(CompassEx.Gua.GuaSubClass)
+  - CompassEx.CompassEx.GetAfterGuaSubDegree(System.String)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - CompassEx.C3H.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CompassEx.C3H.#ctor(System.Double)
+  commentId: M:CompassEx.C3H.#ctor(System.Double)
+  id: '#ctor(System.Double)'
+  parent: CompassEx.C3H
+  langs:
+  - csharp
+  - vb
+  name: C3H(double)
+  nameWithType: C3H.C3H(double)
+  fullName: CompassEx.C3H.C3H(double)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/C3H/C3H.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/C3H/C3H.cs
+    startLine: 30
+  assemblies:
+  - CompassEx
+  namespace: CompassEx
+  summary: 初始化 <xref href="CompassEx.C3H" data-throw-if-not-resolved="false"></xref> 类的新实例。
+  remarks: 构造函数通过调用基类 <xref href="CompassEx.CompassEx" data-throw-if-not-resolved="false"></xref> 的构造函数来完成基本度数的初始化。
+  example: []
+  syntax:
+    content: public C3H(double Degreen)
+    parameters:
+    - id: Degreen
+      type: System.Double
+      description: 当前罗盘的初始度数（角度值）。
+    content.vb: Public Sub New(Degreen As Double)
+  overload: CompassEx.C3H.#ctor*
+  nameWithType.vb: C3H.New(Double)
+  fullName.vb: CompassEx.C3H.New(Double)
+  name.vb: New(Double)
+references:
+- uid: CompassEx.CompassEx
+  commentId: T:CompassEx.CompassEx
+  parent: CompassEx
+  href: CompassEx.CompassEx.html
+  name: CompassEx
+  nameWithType: CompassEx
+  fullName: CompassEx.CompassEx
+- uid: CompassEx
+  commentId: N:CompassEx
+  href: CompassEx.html
+  name: CompassEx
+  nameWithType: CompassEx
+  fullName: CompassEx
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: CompassEx.CompassEx.GuaSubDegree
+  commentId: F:CompassEx.CompassEx.GuaSubDegree
+  parent: CompassEx.CompassEx
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_GuaSubDegree
+  name: GuaSubDegree
+  nameWithType: CompassEx.GuaSubDegree
+  fullName: CompassEx.CompassEx.GuaSubDegree
+- uid: CompassEx.CompassEx.CompassAfterGuaSubNames
+  commentId: F:CompassEx.CompassEx.CompassAfterGuaSubNames
+  parent: CompassEx.CompassEx
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_CompassAfterGuaSubNames
+  name: CompassAfterGuaSubNames
+  nameWithType: CompassEx.CompassAfterGuaSubNames
+  fullName: CompassEx.CompassEx.CompassAfterGuaSubNames
+- uid: CompassEx.CompassEx.CompassBeforGuaSubNames
+  commentId: F:CompassEx.CompassEx.CompassBeforGuaSubNames
+  parent: CompassEx.CompassEx
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_CompassBeforGuaSubNames
+  name: CompassBeforGuaSubNames
+  nameWithType: CompassEx.CompassBeforGuaSubNames
+  fullName: CompassEx.CompassEx.CompassBeforGuaSubNames
+- uid: CompassEx.CompassEx.CHillDegree
+  commentId: F:CompassEx.CompassEx.CHillDegree
+  parent: CompassEx.CompassEx
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_CHillDegree
+  name: CHillDegree
+  nameWithType: CompassEx.CHillDegree
+  fullName: CompassEx.CompassEx.CHillDegree
+- uid: CompassEx.CompassEx.C24Hill
+  commentId: P:CompassEx.CompassEx.C24Hill
+  parent: CompassEx.CompassEx
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_C24Hill
+  name: C24Hill
+  nameWithType: CompassEx.C24Hill
+  fullName: CompassEx.CompassEx.C24Hill
+- uid: CompassEx.CompassEx.degree
+  commentId: F:CompassEx.CompassEx.degree
+  parent: CompassEx.CompassEx
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_degree
+  name: degree
+  nameWithType: CompassEx.degree
+  fullName: CompassEx.CompassEx.degree
+- uid: CompassEx.CompassEx.Degree
+  commentId: P:CompassEx.CompassEx.Degree
+  parent: CompassEx.CompassEx
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_Degree
+  name: Degree
+  nameWithType: CompassEx.Degree
+  fullName: CompassEx.CompassEx.Degree
+- uid: CompassEx.CompassEx.AfterGuaSub
+  commentId: P:CompassEx.CompassEx.AfterGuaSub
+  parent: CompassEx.CompassEx
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_AfterGuaSub
+  name: AfterGuaSub
+  nameWithType: CompassEx.AfterGuaSub
+  fullName: CompassEx.CompassEx.AfterGuaSub
+- uid: CompassEx.CompassEx.Get24Hill
+  commentId: M:CompassEx.CompassEx.Get24Hill
+  parent: CompassEx.CompassEx
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24Hill
+  name: Get24Hill()
+  nameWithType: CompassEx.Get24Hill()
+  fullName: CompassEx.CompassEx.Get24Hill()
+  spec.csharp:
+  - uid: CompassEx.CompassEx.Get24Hill
+    name: Get24Hill
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24Hill
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: CompassEx.CompassEx.Get24Hill
+    name: Get24Hill
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24Hill
+  - name: (
+  - name: )
+- uid: CompassEx.CompassEx.Get24HillDegree(System.String)
+  commentId: M:CompassEx.CompassEx.Get24HillDegree(System.String)
+  parent: CompassEx.CompassEx
+  isExternal: true
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_
+  name: Get24HillDegree(string)
+  nameWithType: CompassEx.Get24HillDegree(string)
+  fullName: CompassEx.CompassEx.Get24HillDegree(string)
+  nameWithType.vb: CompassEx.Get24HillDegree(String)
+  fullName.vb: CompassEx.CompassEx.Get24HillDegree(String)
+  name.vb: Get24HillDegree(String)
+  spec.csharp:
+  - uid: CompassEx.CompassEx.Get24HillDegree(System.String)
+    name: Get24HillDegree
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CompassEx.CompassEx.Get24HillDegree(System.String)
+    name: Get24HillDegree
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CompassEx.CompassEx.GetBeforeGuaSub
+  commentId: M:CompassEx.CompassEx.GetBeforeGuaSub
+  parent: CompassEx.CompassEx
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforeGuaSub
+  name: GetBeforeGuaSub()
+  nameWithType: CompassEx.GetBeforeGuaSub()
+  fullName: CompassEx.CompassEx.GetBeforeGuaSub()
+  spec.csharp:
+  - uid: CompassEx.CompassEx.GetBeforeGuaSub
+    name: GetBeforeGuaSub
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforeGuaSub
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: CompassEx.CompassEx.GetBeforeGuaSub
+    name: GetBeforeGuaSub
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforeGuaSub
+  - name: (
+  - name: )
+- uid: CompassEx.CompassEx.GetBeforGuaSubDegree(CompassEx.Gua.GuaSubClass)
+  commentId: M:CompassEx.CompassEx.GetBeforGuaSubDegree(CompassEx.Gua.GuaSubClass)
+  parent: CompassEx.CompassEx
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforGuaSubDegree_CompassEx_Gua_GuaSubClass_
+  name: GetBeforGuaSubDegree(GuaSubClass)
+  nameWithType: CompassEx.GetBeforGuaSubDegree(GuaSubClass)
+  fullName: CompassEx.CompassEx.GetBeforGuaSubDegree(CompassEx.Gua.GuaSubClass)
+  spec.csharp:
+  - uid: CompassEx.CompassEx.GetBeforGuaSubDegree(CompassEx.Gua.GuaSubClass)
+    name: GetBeforGuaSubDegree
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforGuaSubDegree_CompassEx_Gua_GuaSubClass_
+  - name: (
+  - uid: CompassEx.Gua.GuaSubClass
+    name: GuaSubClass
+    href: CompassEx.Gua.GuaSubClass.html
+  - name: )
+  spec.vb:
+  - uid: CompassEx.CompassEx.GetBeforGuaSubDegree(CompassEx.Gua.GuaSubClass)
+    name: GetBeforGuaSubDegree
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforGuaSubDegree_CompassEx_Gua_GuaSubClass_
+  - name: (
+  - uid: CompassEx.Gua.GuaSubClass
+    name: GuaSubClass
+    href: CompassEx.Gua.GuaSubClass.html
+  - name: )
+- uid: CompassEx.CompassEx.GetBeforGuaSubDegree(System.String)
+  commentId: M:CompassEx.CompassEx.GetBeforGuaSubDegree(System.String)
+  parent: CompassEx.CompassEx
+  isExternal: true
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforGuaSubDegree_System_String_
+  name: GetBeforGuaSubDegree(string)
+  nameWithType: CompassEx.GetBeforGuaSubDegree(string)
+  fullName: CompassEx.CompassEx.GetBeforGuaSubDegree(string)
+  nameWithType.vb: CompassEx.GetBeforGuaSubDegree(String)
+  fullName.vb: CompassEx.CompassEx.GetBeforGuaSubDegree(String)
+  name.vb: GetBeforGuaSubDegree(String)
+  spec.csharp:
+  - uid: CompassEx.CompassEx.GetBeforGuaSubDegree(System.String)
+    name: GetBeforGuaSubDegree
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforGuaSubDegree_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CompassEx.CompassEx.GetBeforGuaSubDegree(System.String)
+    name: GetBeforGuaSubDegree
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforGuaSubDegree_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CompassEx.CompassEx.GetAfterGuaSub
+  commentId: M:CompassEx.CompassEx.GetAfterGuaSub
+  parent: CompassEx.CompassEx
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetAfterGuaSub
+  name: GetAfterGuaSub()
+  nameWithType: CompassEx.GetAfterGuaSub()
+  fullName: CompassEx.CompassEx.GetAfterGuaSub()
+  spec.csharp:
+  - uid: CompassEx.CompassEx.GetAfterGuaSub
+    name: GetAfterGuaSub
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetAfterGuaSub
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: CompassEx.CompassEx.GetAfterGuaSub
+    name: GetAfterGuaSub
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetAfterGuaSub
+  - name: (
+  - name: )
+- uid: CompassEx.CompassEx.GetAfterGuaSubDegree(CompassEx.Gua.GuaSubClass)
+  commentId: M:CompassEx.CompassEx.GetAfterGuaSubDegree(CompassEx.Gua.GuaSubClass)
+  parent: CompassEx.CompassEx
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetAfterGuaSubDegree_CompassEx_Gua_GuaSubClass_
+  name: GetAfterGuaSubDegree(GuaSubClass)
+  nameWithType: CompassEx.GetAfterGuaSubDegree(GuaSubClass)
+  fullName: CompassEx.CompassEx.GetAfterGuaSubDegree(CompassEx.Gua.GuaSubClass)
+  spec.csharp:
+  - uid: CompassEx.CompassEx.GetAfterGuaSubDegree(CompassEx.Gua.GuaSubClass)
+    name: GetAfterGuaSubDegree
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetAfterGuaSubDegree_CompassEx_Gua_GuaSubClass_
+  - name: (
+  - uid: CompassEx.Gua.GuaSubClass
+    name: GuaSubClass
+    href: CompassEx.Gua.GuaSubClass.html
+  - name: )
+  spec.vb:
+  - uid: CompassEx.CompassEx.GetAfterGuaSubDegree(CompassEx.Gua.GuaSubClass)
+    name: GetAfterGuaSubDegree
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetAfterGuaSubDegree_CompassEx_Gua_GuaSubClass_
+  - name: (
+  - uid: CompassEx.Gua.GuaSubClass
+    name: GuaSubClass
+    href: CompassEx.Gua.GuaSubClass.html
+  - name: )
+- uid: CompassEx.CompassEx.GetAfterGuaSubDegree(System.String)
+  commentId: M:CompassEx.CompassEx.GetAfterGuaSubDegree(System.String)
+  parent: CompassEx.CompassEx
+  isExternal: true
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetAfterGuaSubDegree_System_String_
+  name: GetAfterGuaSubDegree(string)
+  nameWithType: CompassEx.GetAfterGuaSubDegree(string)
+  fullName: CompassEx.CompassEx.GetAfterGuaSubDegree(string)
+  nameWithType.vb: CompassEx.GetAfterGuaSubDegree(String)
+  fullName.vb: CompassEx.CompassEx.GetAfterGuaSubDegree(String)
+  name.vb: GetAfterGuaSubDegree(String)
+  spec.csharp:
+  - uid: CompassEx.CompassEx.GetAfterGuaSubDegree(System.String)
+    name: GetAfterGuaSubDegree
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetAfterGuaSubDegree_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CompassEx.CompassEx.GetAfterGuaSubDegree(System.String)
+    name: GetAfterGuaSubDegree
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetAfterGuaSubDegree_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CompassEx.C3H.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<C3H, TBase>(C3H, TBase)
+  nameWithType: Comm.ApplyBaseProperties<C3H, TBase>(C3H, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.C3H, TBase>(CompassEx.C3H, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of C3H, TBase)(C3H, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.C3H, TBase)(CompassEx.C3H, TBase)
+  name.vb: ApplyBaseProperties(Of C3H, TBase)(C3H, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.C3H,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.C3H
+    name: C3H
+    href: CompassEx.C3H.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.C3H
+    name: C3H
+    href: CompassEx.C3H.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.C3H,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.C3H
+    name: C3H
+    href: CompassEx.C3H.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.C3H
+    name: C3H
+    href: CompassEx.C3H.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: CompassEx.C3H
+  commentId: T:CompassEx.C3H
+  href: CompassEx.C3H.html
+  name: C3H
+  nameWithType: C3H
+  fullName: CompassEx.C3H
+- uid: CompassEx.C3H.#ctor*
+  commentId: Overload:CompassEx.C3H.#ctor
+  href: CompassEx.C3H.html#CompassEx_C3H__ctor_System_Double_
+  name: C3H
+  nameWithType: C3H.C3H
   fullName: CompassEx.C3H.C3H
+  nameWithType.vb: C3H.New
+  fullName.vb: CompassEx.C3H.New
+  name.vb: New
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double

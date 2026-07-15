@@ -293,7 +293,7 @@ public class CompassSkiaRenderer
             dcs.Path = sectorPath;
             GuaSectorCache.Add((cbGua.Name, sectorPath, cbGua.CBeforRangeDegree));
 
-            Debug.WriteLine(cbGua.Symbol);
+            // Debug.WriteLine(cbGua.Symbol);
 
 
             canvas.DrawPath(sectorPath, PathPaint);
@@ -391,7 +391,7 @@ public class CompassSkiaRenderer
 
         LastR = LastR + ysplace;
         //===============================画地盘六十四卦(后天)===========================
-        foreach (var dc in CompassEx.CompassEx.CAfterGuas)
+        foreach (var dc in C3Y.CAfterGuas)
         {
             var CR = dc.Key;
             var G = dc.Value;
@@ -448,7 +448,7 @@ public class CompassSkiaRenderer
         LastR = LastR + ysplace;
 
         //===============================画天盘六十四卦(先天)===========================
-        foreach (var dc in CompassEx.CompassEx.CBeforeGuas)
+        foreach (var dc in C3Y.CBeforeGuas)
         {
             var CR = dc.Key;
             var G = dc.Value;
@@ -503,7 +503,7 @@ public class CompassSkiaRenderer
 
         ysplace = RoundH / 2f;
         //===============================画卦气===========================
-        foreach (var dc in CompassEx.CompassEx.CBeforeGuas)
+        foreach (var dc in C3Y.CBeforeGuas)
         {
             var CR = dc.Key;
             var G = dc.Value;

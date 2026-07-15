@@ -15,6 +15,7 @@ items:
   - CompassEx.Gua.NaJiaType
   - CompassEx.Gua.NaJiaYGResult
   - CompassEx.Gua.NaJia`1
+  - CompassEx.Gua.NaJia`1.NaJiaYGItem
   - CompassEx.Gua.NineStar
   - CompassEx.Gua.NineStarType
   - CompassEx.Gua.SixGodClass
@@ -86,12 +87,14 @@ references:
   fullName: CompassEx.Gua.INaJiaResult
 - uid: CompassEx.Gua.NaJiaJFResult
   commentId: T:CompassEx.Gua.NaJiaJFResult
+  parent: CompassEx.Gua
   href: CompassEx.Gua.NaJiaJFResult.html
   name: NaJiaJFResult
   nameWithType: NaJiaJFResult
   fullName: CompassEx.Gua.NaJiaJFResult
 - uid: CompassEx.Gua.NaJiaYGResult
   commentId: T:CompassEx.Gua.NaJiaYGResult
+  parent: CompassEx.Gua
   href: CompassEx.Gua.NaJiaYGResult.html
   name: NaJiaYGResult
   nameWithType: NaJiaYGResult
@@ -121,6 +124,39 @@ references:
   - name: " "
   - name: TResult
   - name: )
+- uid: CompassEx.Gua.NaJia`1.NaJiaYGItem
+  commentId: T:CompassEx.Gua.NaJia`1.NaJiaYGItem
+  href: CompassEx.Gua.NaJia-1.html
+  name: NaJia<TResult>.NaJiaYGItem
+  nameWithType: NaJia<TResult>.NaJiaYGItem
+  fullName: CompassEx.Gua.NaJia<TResult>.NaJiaYGItem
+  nameWithType.vb: NaJia(Of TResult).NaJiaYGItem
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).NaJiaYGItem
+  name.vb: NaJia(Of TResult).NaJiaYGItem
+  spec.csharp:
+  - uid: CompassEx.Gua.NaJia`1
+    name: NaJia
+    href: CompassEx.Gua.NaJia-1.html
+  - name: <
+  - name: TResult
+  - name: '>'
+  - name: .
+  - uid: CompassEx.Gua.NaJia`1.NaJiaYGItem
+    name: NaJiaYGItem
+    href: CompassEx.Gua.NaJia-1.NaJiaYGItem.html
+  spec.vb:
+  - uid: CompassEx.Gua.NaJia`1
+    name: NaJia
+    href: CompassEx.Gua.NaJia-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+  - name: .
+  - uid: CompassEx.Gua.NaJia`1.NaJiaYGItem
+    name: NaJiaYGItem
+    href: CompassEx.Gua.NaJia-1.NaJiaYGItem.html
 - uid: CompassEx.Gua.NineStarType
   commentId: T:CompassEx.Gua.NineStarType
   parent: CompassEx.Gua
@@ -150,6 +186,7 @@ references:
   fullName: CompassEx.Gua.SixRelativeClass
 - uid: CompassEx.Gua.TianJiGua
   commentId: T:CompassEx.Gua.TianJiGua
+  parent: CompassEx.Gua
   href: CompassEx.Gua.TianJiGua.html
   name: TianJiGua
   nameWithType: TianJiGua

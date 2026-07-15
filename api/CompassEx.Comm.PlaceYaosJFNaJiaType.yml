@@ -1,0 +1,613 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType
+  commentId: T:CompassEx.Comm.PlaceYaosJFNaJiaType
+  id: PlaceYaosJFNaJiaType
+  parent: CompassEx.Comm
+  children:
+  - CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative
+  - CompassEx.Comm.PlaceYaosJFNaJiaType.PlaceYao
+  - CompassEx.Comm.PlaceYaosJFNaJiaType.SixRelative
+  - CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc
+  langs:
+  - csharp
+  - vb
+  name: PlaceYaosJFNaJiaType
+  nameWithType: PlaceYaosJFNaJiaType
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType
+  type: Struct
+  source:
+    remote:
+      path: CompassEx/Comm/Defined.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: PlaceYaosJFNaJiaType
+    path: CompassEx/Comm/Defined.cs
+    startLine: 27
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 表示三元64卦中所临卦的卦爻纳甲信息（采用京房纳甲体系）。
+  remarks: >-
+    <p>本结构体用于记录六爻预测或易学计算中，具体某一个爻位的核心属性。</p>
+
+    <p>包含了爻位索引、对应的六亲关系、天干地支（纳甲）信息，以及该爻位下可能隐藏的<b>伏神六亲</b>信息。</p>
+  example: []
+  syntax:
+    content: public struct PlaceYaosJFNaJiaType
+    content.vb: Public Structure PlaceYaosJFNaJiaType
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  extensionMethods:
+  - CompassEx.Comm.PlaceYaosJFNaJiaType.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.PlaceYao
+  commentId: P:CompassEx.Comm.PlaceYaosJFNaJiaType.PlaceYao
+  id: PlaceYao
+  parent: CompassEx.Comm.PlaceYaosJFNaJiaType
+  langs:
+  - csharp
+  - vb
+  name: PlaceYao
+  nameWithType: PlaceYaosJFNaJiaType.PlaceYao
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.PlaceYao
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/Defined.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: PlaceYao
+    path: CompassEx/Comm/Defined.cs
+    startLine: 43
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取或设置所临爻的位置索引。
+  example: []
+  syntax:
+    content: public int PlaceYao { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: >-
+        爻位索引范围为 <code>0</code> 到 <code>5</code>。
+
+
+        <ul><li><code>0</code>：初爻（最下方）</li><li><code>1</code>：二爻</li><li><code>2</code>：三爻</li><li><code>3</code>：四爻</li><li><code>4</code>：五爻</li><li><code>5</code>：上爻（最上方）</li></ul>
+    content.vb: Public Property PlaceYao As Integer
+  overload: CompassEx.Comm.PlaceYaosJFNaJiaType.PlaceYao*
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.SixRelative
+  commentId: P:CompassEx.Comm.PlaceYaosJFNaJiaType.SixRelative
+  id: SixRelative
+  parent: CompassEx.Comm.PlaceYaosJFNaJiaType
+  langs:
+  - csharp
+  - vb
+  name: SixRelative
+  nameWithType: PlaceYaosJFNaJiaType.SixRelative
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.SixRelative
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/Defined.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SixRelative
+    path: CompassEx/Comm/Defined.cs
+    startLine: 52
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取或设置所临爻的六亲属性（此爻位显现的“飞神”六亲）。
+  example: []
+  syntax:
+    content: public SixRelativeClass SixRelative { readonly get; set; }
+    parameters: []
+    return:
+      type: CompassEx.Gua.SixRelativeClass
+      description: 包含父母、兄弟、子孙、妻财、官鬼等六亲枚举值。
+    content.vb: Public Property SixRelative As SixRelativeClass
+  overload: CompassEx.Comm.PlaceYaosJFNaJiaType.SixRelative*
+  seealso:
+  - linkId: CompassEx.Gua.SixRelativeClass
+    commentId: T:CompassEx.Gua.SixRelativeClass
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc
+  commentId: P:CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc
+  id: SkyLoc
+  parent: CompassEx.Comm.PlaceYaosJFNaJiaType
+  langs:
+  - csharp
+  - vb
+  name: SkyLoc
+  nameWithType: PlaceYaosJFNaJiaType.SkyLoc
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/Defined.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SkyLoc
+    path: CompassEx/Comm/Defined.cs
+    startLine: 61
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取或设置所临爻的纳甲干支（天干地支）。
+  example: []
+  syntax:
+    content: public SkyLoc SkyLoc { readonly get; set; }
+    parameters: []
+    return:
+      type: CompassEx.Comm.SkyLoc
+      description: 存储该爻位依据京房纳甲规则所配的天干与地支。
+    content.vb: Public Property SkyLoc As SkyLoc
+  overload: CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc*
+  seealso:
+  - linkId: CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc
+    commentId: P:CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative
+  commentId: P:CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative
+  id: HideRelative
+  parent: CompassEx.Comm.PlaceYaosJFNaJiaType
+  langs:
+  - csharp
+  - vb
+  name: HideRelative
+  nameWithType: PlaceYaosJFNaJiaType.HideRelative
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/Defined.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: HideRelative
+    path: CompassEx/Comm/Defined.cs
+    startLine: 77
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取或设置该爻位下隐藏的伏神六亲属性数组。
+  remarks: 易学中，当本卦（用卦）缺某六亲时，需去首卦（本宫八纯卦）对应的爻位寻找。此时本卦的爻称为“飞神”，找出来的本宫卦六亲即为“伏神”，伏于飞神之下。
+  example: []
+  syntax:
+    content: public SixRelativeClass HideRelative { readonly get; set; }
+    parameters: []
+    return:
+      type: CompassEx.Gua.SixRelativeClass
+      description: >-
+        一个 <xref href="CompassEx.Gua.SixRelativeClass" data-throw-if-not-resolved="false"></xref> 枚举数组，代表本爻（飞神）下方所伏藏的六亲。
+
+
+        <ul><li>若当前爻位无伏神，该属性可为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> 或空数组。</li><li>在常规京房易学中通常至多 1 个伏神，但在特定排卦或三元盘复合算法中允许存在多个伏神（多伏情况）。</li></ul>
+    content.vb: Public Property HideRelative As SixRelativeClass
+  overload: CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative*
+  seealso:
+  - linkId: CompassEx.Gua.SixRelativeClass
+    commentId: T:CompassEx.Gua.SixRelativeClass
+references:
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<PlaceYaosJFNaJiaType, TBase>(PlaceYaosJFNaJiaType, TBase)
+  nameWithType: Comm.ApplyBaseProperties<PlaceYaosJFNaJiaType, TBase>(PlaceYaosJFNaJiaType, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.Comm.PlaceYaosJFNaJiaType, TBase>(CompassEx.Comm.PlaceYaosJFNaJiaType, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of PlaceYaosJFNaJiaType, TBase)(PlaceYaosJFNaJiaType, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.Comm.PlaceYaosJFNaJiaType, TBase)(CompassEx.Comm.PlaceYaosJFNaJiaType, TBase)
+  name.vb: ApplyBaseProperties(Of PlaceYaosJFNaJiaType, TBase)(PlaceYaosJFNaJiaType, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Comm.PlaceYaosJFNaJiaType,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.Comm.PlaceYaosJFNaJiaType
+    name: PlaceYaosJFNaJiaType
+    href: CompassEx.Comm.PlaceYaosJFNaJiaType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.Comm.PlaceYaosJFNaJiaType
+    name: PlaceYaosJFNaJiaType
+    href: CompassEx.Comm.PlaceYaosJFNaJiaType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Comm.PlaceYaosJFNaJiaType,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Comm.PlaceYaosJFNaJiaType
+    name: PlaceYaosJFNaJiaType
+    href: CompassEx.Comm.PlaceYaosJFNaJiaType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.Comm.PlaceYaosJFNaJiaType
+    name: PlaceYaosJFNaJiaType
+    href: CompassEx.Comm.PlaceYaosJFNaJiaType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.PlaceYao*
+  commentId: Overload:CompassEx.Comm.PlaceYaosJFNaJiaType.PlaceYao
+  href: CompassEx.Comm.PlaceYaosJFNaJiaType.html#CompassEx_Comm_PlaceYaosJFNaJiaType_PlaceYao
+  name: PlaceYao
+  nameWithType: PlaceYaosJFNaJiaType.PlaceYao
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.PlaceYao
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: CompassEx.Gua.SixRelativeClass
+  commentId: T:CompassEx.Gua.SixRelativeClass
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.SixRelativeClass.html
+  name: SixRelativeClass
+  nameWithType: SixRelativeClass
+  fullName: CompassEx.Gua.SixRelativeClass
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.SixRelative*
+  commentId: Overload:CompassEx.Comm.PlaceYaosJFNaJiaType.SixRelative
+  href: CompassEx.Comm.PlaceYaosJFNaJiaType.html#CompassEx_Comm_PlaceYaosJFNaJiaType_SixRelative
+  name: SixRelative
+  nameWithType: PlaceYaosJFNaJiaType.SixRelative
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.SixRelative
+- uid: CompassEx.Gua
+  commentId: N:CompassEx.Gua
+  href: CompassEx.html
+  name: CompassEx.Gua
+  nameWithType: CompassEx.Gua
+  fullName: CompassEx.Gua
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc
+  commentId: P:CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc
+  href: CompassEx.Comm.PlaceYaosJFNaJiaType.html#CompassEx_Comm_PlaceYaosJFNaJiaType_SkyLoc
+  name: SkyLoc
+  nameWithType: PlaceYaosJFNaJiaType.SkyLoc
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc*
+  commentId: Overload:CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc
+  href: CompassEx.Comm.PlaceYaosJFNaJiaType.html#CompassEx_Comm_PlaceYaosJFNaJiaType_SkyLoc
+  name: SkyLoc
+  nameWithType: PlaceYaosJFNaJiaType.SkyLoc
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc
+- uid: CompassEx.Comm.SkyLoc
+  commentId: T:CompassEx.Comm.SkyLoc
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.SkyLoc.html
+  name: SkyLoc
+  nameWithType: SkyLoc
+  fullName: CompassEx.Comm.SkyLoc
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative*
+  commentId: Overload:CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative
+  href: CompassEx.Comm.PlaceYaosJFNaJiaType.html#CompassEx_Comm_PlaceYaosJFNaJiaType_HideRelative
+  name: HideRelative
+  nameWithType: PlaceYaosJFNaJiaType.HideRelative
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative

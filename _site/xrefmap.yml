@@ -8,55 +8,221 @@ references:
   fullName: CompassEx
   nameWithType: CompassEx
 - uid: CompassEx.C3H
-  name: CompassEx.C3H
-  href: api/CompassEx.C3H.html
-  commentId: N:CompassEx.C3H
-  fullName: CompassEx.C3H
-  nameWithType: CompassEx.C3H
-- uid: CompassEx.C3H.C3H
   name: C3H
-  href: api/CompassEx.C3H.C3H.html
-  commentId: T:CompassEx.C3H.C3H
-  fullName: CompassEx.C3H.C3H
+  href: api/CompassEx.C3H.html
+  commentId: T:CompassEx.C3H
+  fullName: CompassEx.C3H
   nameWithType: C3H
+- uid: CompassEx.C3H.#ctor(System.Double)
+  name: C3H(double)
+  href: api/CompassEx.C3H.html#CompassEx_C3H__ctor_System_Double_
+  commentId: M:CompassEx.C3H.#ctor(System.Double)
+  name.vb: New(Double)
+  fullName: CompassEx.C3H.C3H(double)
+  fullName.vb: CompassEx.C3H.New(Double)
+  nameWithType: C3H.C3H(double)
+  nameWithType.vb: C3H.New(Double)
+- uid: CompassEx.C3H.#ctor*
+  name: C3H
+  href: api/CompassEx.C3H.html#CompassEx_C3H__ctor_
+  commentId: Overload:CompassEx.C3H.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: CompassEx.C3H.C3H
+  fullName.vb: CompassEx.C3H.New
+  nameWithType: C3H.C3H
+  nameWithType.vb: C3H.New
 - uid: CompassEx.C3Y
-  name: CompassEx.C3Y
-  href: api/CompassEx.C3Y.html
-  commentId: N:CompassEx.C3Y
-  fullName: CompassEx.C3Y
-  nameWithType: CompassEx.C3Y
-- uid: CompassEx.C3Y.C3Y
   name: C3Y
-  href: api/CompassEx.C3Y.C3Y.html
-  commentId: T:CompassEx.C3Y.C3Y
-  fullName: CompassEx.C3Y.C3Y
+  href: api/CompassEx.C3Y.html
+  commentId: T:CompassEx.C3Y
+  fullName: CompassEx.C3Y
   nameWithType: C3Y
-- uid: CompassEx.C3Y.C3Y.GetAllBeforGuas
+- uid: CompassEx.C3Y.#ctor(System.Double)
+  name: C3Y(double)
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y__ctor_System_Double_
+  commentId: M:CompassEx.C3Y.#ctor(System.Double)
+  name.vb: New(Double)
+  fullName: CompassEx.C3Y.C3Y(double)
+  fullName.vb: CompassEx.C3Y.New(Double)
+  nameWithType: C3Y.C3Y(double)
+  nameWithType.vb: C3Y.New(Double)
+- uid: CompassEx.C3Y.#ctor*
+  name: C3Y
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y__ctor_
+  commentId: Overload:CompassEx.C3Y.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: CompassEx.C3Y.C3Y
+  fullName.vb: CompassEx.C3Y.New
+  nameWithType: C3Y.C3Y
+  nameWithType.vb: C3Y.New
+- uid: CompassEx.C3Y.BeforGua
+  name: BeforGua
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_BeforGua
+  commentId: P:CompassEx.C3Y.BeforGua
+  fullName: CompassEx.C3Y.BeforGua
+  nameWithType: C3Y.BeforGua
+- uid: CompassEx.C3Y.BeforGua*
+  name: BeforGua
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_BeforGua_
+  commentId: Overload:CompassEx.C3Y.BeforGua
+  isSpec: "True"
+  fullName: CompassEx.C3Y.BeforGua
+  nameWithType: C3Y.BeforGua
+- uid: CompassEx.C3Y.CAfterGuas
+  name: CAfterGuas
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_CAfterGuas
+  commentId: F:CompassEx.C3Y.CAfterGuas
+  fullName: CompassEx.C3Y.CAfterGuas
+  nameWithType: C3Y.CAfterGuas
+- uid: CompassEx.C3Y.CBeforeGuas
+  name: CBeforeGuas
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_CBeforeGuas
+  commentId: F:CompassEx.C3Y.CBeforeGuas
+  fullName: CompassEx.C3Y.CBeforeGuas
+  nameWithType: C3Y.CBeforeGuas
+- uid: CompassEx.C3Y.CompassGuaDegree
+  name: CompassGuaDegree
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_CompassGuaDegree
+  commentId: F:CompassEx.C3Y.CompassGuaDegree
+  fullName: CompassEx.C3Y.CompassGuaDegree
+  nameWithType: C3Y.CompassGuaDegree
+- uid: CompassEx.C3Y.GetAllBeforGuas
   name: GetAllBeforGuas()
-  href: api/CompassEx.C3Y.C3Y.html#CompassEx_C3Y_C3Y_GetAllBeforGuas
-  commentId: M:CompassEx.C3Y.C3Y.GetAllBeforGuas
-  fullName: CompassEx.C3Y.C3Y.GetAllBeforGuas()
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_GetAllBeforGuas
+  commentId: M:CompassEx.C3Y.GetAllBeforGuas
+  fullName: CompassEx.C3Y.GetAllBeforGuas()
   nameWithType: C3Y.GetAllBeforGuas()
-- uid: CompassEx.C3Y.C3Y.GetAllBeforGuas*
+- uid: CompassEx.C3Y.GetAllBeforGuas*
   name: GetAllBeforGuas
-  href: api/CompassEx.C3Y.C3Y.html#CompassEx_C3Y_C3Y_GetAllBeforGuas_
-  commentId: Overload:CompassEx.C3Y.C3Y.GetAllBeforGuas
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_GetAllBeforGuas_
+  commentId: Overload:CompassEx.C3Y.GetAllBeforGuas
   isSpec: "True"
-  fullName: CompassEx.C3Y.C3Y.GetAllBeforGuas
+  fullName: CompassEx.C3Y.GetAllBeforGuas
   nameWithType: C3Y.GetAllBeforGuas
-- uid: CompassEx.C3Y.C3Y.GetAllCAfterGuas
+- uid: CompassEx.C3Y.GetAllCAfterGuas
   name: GetAllCAfterGuas()
-  href: api/CompassEx.C3Y.C3Y.html#CompassEx_C3Y_C3Y_GetAllCAfterGuas
-  commentId: M:CompassEx.C3Y.C3Y.GetAllCAfterGuas
-  fullName: CompassEx.C3Y.C3Y.GetAllCAfterGuas()
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_GetAllCAfterGuas
+  commentId: M:CompassEx.C3Y.GetAllCAfterGuas
+  fullName: CompassEx.C3Y.GetAllCAfterGuas()
   nameWithType: C3Y.GetAllCAfterGuas()
-- uid: CompassEx.C3Y.C3Y.GetAllCAfterGuas*
+- uid: CompassEx.C3Y.GetAllCAfterGuas*
   name: GetAllCAfterGuas
-  href: api/CompassEx.C3Y.C3Y.html#CompassEx_C3Y_C3Y_GetAllCAfterGuas_
-  commentId: Overload:CompassEx.C3Y.C3Y.GetAllCAfterGuas
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_GetAllCAfterGuas_
+  commentId: Overload:CompassEx.C3Y.GetAllCAfterGuas
   isSpec: "True"
-  fullName: CompassEx.C3Y.C3Y.GetAllCAfterGuas
+  fullName: CompassEx.C3Y.GetAllCAfterGuas
   nameWithType: C3Y.GetAllCAfterGuas
+- uid: CompassEx.C3Y.GetCAfterGuaDegree(System.String)
+  name: GetCAfterGuaDegree(string)
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_GetCAfterGuaDegree_System_String_
+  commentId: M:CompassEx.C3Y.GetCAfterGuaDegree(System.String)
+  name.vb: GetCAfterGuaDegree(String)
+  fullName: CompassEx.C3Y.GetCAfterGuaDegree(string)
+  fullName.vb: CompassEx.C3Y.GetCAfterGuaDegree(String)
+  nameWithType: C3Y.GetCAfterGuaDegree(string)
+  nameWithType.vb: C3Y.GetCAfterGuaDegree(String)
+- uid: CompassEx.C3Y.GetCAfterGuaDegree*
+  name: GetCAfterGuaDegree
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_GetCAfterGuaDegree_
+  commentId: Overload:CompassEx.C3Y.GetCAfterGuaDegree
+  isSpec: "True"
+  fullName: CompassEx.C3Y.GetCAfterGuaDegree
+  nameWithType: C3Y.GetCAfterGuaDegree
+- uid: CompassEx.C3Y.GetCBeforeGua
+  name: GetCBeforeGua()
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_GetCBeforeGua
+  commentId: M:CompassEx.C3Y.GetCBeforeGua
+  fullName: CompassEx.C3Y.GetCBeforeGua()
+  nameWithType: C3Y.GetCBeforeGua()
+- uid: CompassEx.C3Y.GetCBeforeGua*
+  name: GetCBeforeGua
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_GetCBeforeGua_
+  commentId: Overload:CompassEx.C3Y.GetCBeforeGua
+  isSpec: "True"
+  fullName: CompassEx.C3Y.GetCBeforeGua
+  nameWithType: C3Y.GetCBeforeGua
+- uid: CompassEx.C3Y.GetCBeforeGuaDegree(System.String)
+  name: GetCBeforeGuaDegree(string)
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_GetCBeforeGuaDegree_System_String_
+  commentId: M:CompassEx.C3Y.GetCBeforeGuaDegree(System.String)
+  name.vb: GetCBeforeGuaDegree(String)
+  fullName: CompassEx.C3Y.GetCBeforeGuaDegree(string)
+  fullName.vb: CompassEx.C3Y.GetCBeforeGuaDegree(String)
+  nameWithType: C3Y.GetCBeforeGuaDegree(string)
+  nameWithType.vb: C3Y.GetCBeforeGuaDegree(String)
+- uid: CompassEx.C3Y.GetCBeforeGuaDegree*
+  name: GetCBeforeGuaDegree
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_GetCBeforeGuaDegree_
+  commentId: Overload:CompassEx.C3Y.GetCBeforeGuaDegree
+  isSpec: "True"
+  fullName: CompassEx.C3Y.GetCBeforeGuaDegree
+  nameWithType: C3Y.GetCBeforeGuaDegree
+- uid: CompassEx.C3Y.LoadAllCAfterGuas
+  name: LoadAllCAfterGuas()
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_LoadAllCAfterGuas
+  commentId: M:CompassEx.C3Y.LoadAllCAfterGuas
+  fullName: CompassEx.C3Y.LoadAllCAfterGuas()
+  nameWithType: C3Y.LoadAllCAfterGuas()
+- uid: CompassEx.C3Y.LoadAllCAfterGuas*
+  name: LoadAllCAfterGuas
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_LoadAllCAfterGuas_
+  commentId: Overload:CompassEx.C3Y.LoadAllCAfterGuas
+  isSpec: "True"
+  fullName: CompassEx.C3Y.LoadAllCAfterGuas
+  nameWithType: C3Y.LoadAllCAfterGuas
+- uid: CompassEx.C3Y.LoadAllCBeforeGuas
+  name: LoadAllCBeforeGuas()
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_LoadAllCBeforeGuas
+  commentId: M:CompassEx.C3Y.LoadAllCBeforeGuas
+  fullName: CompassEx.C3Y.LoadAllCBeforeGuas()
+  nameWithType: C3Y.LoadAllCBeforeGuas()
+- uid: CompassEx.C3Y.LoadAllCBeforeGuas*
+  name: LoadAllCBeforeGuas
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_LoadAllCBeforeGuas_
+  commentId: Overload:CompassEx.C3Y.LoadAllCBeforeGuas
+  isSpec: "True"
+  fullName: CompassEx.C3Y.LoadAllCBeforeGuas
+  nameWithType: C3Y.LoadAllCBeforeGuas
+- uid: CompassEx.CGuaClass
+  name: CGuaClass
+  href: api/CompassEx.CGuaClass.html
+  commentId: T:CompassEx.CGuaClass
+  fullName: CompassEx.CGuaClass
+  nameWithType: CGuaClass
+- uid: CompassEx.CGuaClass.#ctor(System.String,System.Int32[])
+  name: CGuaClass(string, params int[]?)
+  href: api/CompassEx.CGuaClass.html#CompassEx_CGuaClass__ctor_System_String_System_Int32___
+  commentId: M:CompassEx.CGuaClass.#ctor(System.String,System.Int32[])
+  name.vb: New(String, ParamArray Integer())
+  fullName: CompassEx.CGuaClass.CGuaClass(string, params int[]?)
+  fullName.vb: CompassEx.CGuaClass.New(String, ParamArray Integer())
+  nameWithType: CGuaClass.CGuaClass(string, params int[]?)
+  nameWithType.vb: CGuaClass.New(String, ParamArray Integer())
+- uid: CompassEx.CGuaClass.#ctor*
+  name: CGuaClass
+  href: api/CompassEx.CGuaClass.html#CompassEx_CGuaClass__ctor_
+  commentId: Overload:CompassEx.CGuaClass.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: CompassEx.CGuaClass.CGuaClass
+  fullName.vb: CompassEx.CGuaClass.New
+  nameWithType: CGuaClass.CGuaClass
+  nameWithType.vb: CGuaClass.New
+- uid: CompassEx.CGuaClass.PlaceYaos
+  name: PlaceYaos
+  href: api/CompassEx.CGuaClass.html#CompassEx_CGuaClass_PlaceYaos
+  commentId: P:CompassEx.CGuaClass.PlaceYaos
+  fullName: CompassEx.CGuaClass.PlaceYaos
+  nameWithType: CGuaClass.PlaceYaos
+- uid: CompassEx.CGuaClass.PlaceYaos*
+  name: PlaceYaos
+  href: api/CompassEx.CGuaClass.html#CompassEx_CGuaClass_PlaceYaos_
+  commentId: Overload:CompassEx.CGuaClass.PlaceYaos
+  isSpec: "True"
+  fullName: CompassEx.CGuaClass.PlaceYaos
+  nameWithType: CGuaClass.PlaceYaos
 - uid: CompassEx.CHill
   name: CHill
   href: api/CompassEx.CHill.html
@@ -116,6 +282,22 @@ references:
   isSpec: "True"
   fullName: CompassEx.CHill.CRangeDegree
   nameWithType: CHill.CRangeDegree
+- uid: CompassEx.CHill.Equals(System.Object)
+  name: Equals(object)
+  href: api/CompassEx.CHill.html#CompassEx_CHill_Equals_System_Object_
+  commentId: M:CompassEx.CHill.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: CompassEx.CHill.Equals(object)
+  fullName.vb: CompassEx.CHill.Equals(Object)
+  nameWithType: CHill.Equals(object)
+  nameWithType.vb: CHill.Equals(Object)
+- uid: CompassEx.CHill.Equals*
+  name: Equals
+  href: api/CompassEx.CHill.html#CompassEx_CHill_Equals_
+  commentId: Overload:CompassEx.CHill.Equals
+  isSpec: "True"
+  fullName: CompassEx.CHill.Equals
+  nameWithType: CHill.Equals
 - uid: CompassEx.CHill.GetAfterGua
   name: GetAfterGua()
   href: api/CompassEx.CHill.html#CompassEx_CHill_GetAfterGua
@@ -142,6 +324,19 @@ references:
   isSpec: "True"
   fullName: CompassEx.CHill.GetCBeforGuas
   nameWithType: CHill.GetCBeforGuas
+- uid: CompassEx.CHill.GetHashCode
+  name: GetHashCode()
+  href: api/CompassEx.CHill.html#CompassEx_CHill_GetHashCode
+  commentId: M:CompassEx.CHill.GetHashCode
+  fullName: CompassEx.CHill.GetHashCode()
+  nameWithType: CHill.GetHashCode()
+- uid: CompassEx.CHill.GetHashCode*
+  name: GetHashCode
+  href: api/CompassEx.CHill.html#CompassEx_CHill_GetHashCode_
+  commentId: Overload:CompassEx.CHill.GetHashCode
+  isSpec: "True"
+  fullName: CompassEx.CHill.GetHashCode
+  nameWithType: CHill.GetHashCode
 - uid: CompassEx.CHill.IsSun
   name: IsSun
   href: api/CompassEx.CHill.html#CompassEx_CHill_IsSun
@@ -819,6 +1014,240 @@ references:
   commentId: F:CompassEx.Comm.FiveAttrRule.SameMe
   fullName: CompassEx.Comm.FiveAttrRule.SameMe
   nameWithType: FiveAttrRule.SameMe
+- uid: CompassEx.Comm.GoodBadInfos
+  name: GoodBadInfos
+  href: api/CompassEx.Comm.GoodBadInfos.html
+  commentId: T:CompassEx.Comm.GoodBadInfos
+  fullName: CompassEx.Comm.GoodBadInfos
+  nameWithType: GoodBadInfos
+- uid: CompassEx.Comm.GoodBadInfos.#ctor
+  name: GoodBadInfos()
+  href: api/CompassEx.Comm.GoodBadInfos.html#CompassEx_Comm_GoodBadInfos__ctor
+  commentId: M:CompassEx.Comm.GoodBadInfos.#ctor
+  name.vb: New()
+  fullName: CompassEx.Comm.GoodBadInfos.GoodBadInfos()
+  fullName.vb: CompassEx.Comm.GoodBadInfos.New()
+  nameWithType: GoodBadInfos.GoodBadInfos()
+  nameWithType.vb: GoodBadInfos.New()
+- uid: CompassEx.Comm.GoodBadInfos.#ctor*
+  name: GoodBadInfos
+  href: api/CompassEx.Comm.GoodBadInfos.html#CompassEx_Comm_GoodBadInfos__ctor_
+  commentId: Overload:CompassEx.Comm.GoodBadInfos.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: CompassEx.Comm.GoodBadInfos.GoodBadInfos
+  fullName.vb: CompassEx.Comm.GoodBadInfos.New
+  nameWithType: GoodBadInfos.GoodBadInfos
+  nameWithType.vb: GoodBadInfos.New
+- uid: CompassEx.Comm.GoodBadInfos.BadInfos
+  name: BadInfos
+  href: api/CompassEx.Comm.GoodBadInfos.html#CompassEx_Comm_GoodBadInfos_BadInfos
+  commentId: P:CompassEx.Comm.GoodBadInfos.BadInfos
+  fullName: CompassEx.Comm.GoodBadInfos.BadInfos
+  nameWithType: GoodBadInfos.BadInfos
+- uid: CompassEx.Comm.GoodBadInfos.BadInfos*
+  name: BadInfos
+  href: api/CompassEx.Comm.GoodBadInfos.html#CompassEx_Comm_GoodBadInfos_BadInfos_
+  commentId: Overload:CompassEx.Comm.GoodBadInfos.BadInfos
+  isSpec: "True"
+  fullName: CompassEx.Comm.GoodBadInfos.BadInfos
+  nameWithType: GoodBadInfos.BadInfos
+- uid: CompassEx.Comm.GoodBadInfos.GoodInfos
+  name: GoodInfos
+  href: api/CompassEx.Comm.GoodBadInfos.html#CompassEx_Comm_GoodBadInfos_GoodInfos
+  commentId: P:CompassEx.Comm.GoodBadInfos.GoodInfos
+  fullName: CompassEx.Comm.GoodBadInfos.GoodInfos
+  nameWithType: GoodBadInfos.GoodInfos
+- uid: CompassEx.Comm.GoodBadInfos.GoodInfos*
+  name: GoodInfos
+  href: api/CompassEx.Comm.GoodBadInfos.html#CompassEx_Comm_GoodBadInfos_GoodInfos_
+  commentId: Overload:CompassEx.Comm.GoodBadInfos.GoodInfos
+  isSpec: "True"
+  fullName: CompassEx.Comm.GoodBadInfos.GoodInfos
+  nameWithType: GoodBadInfos.GoodInfos
+- uid: CompassEx.Comm.GoodBadInfos.Info
+  name: Info
+  href: api/CompassEx.Comm.GoodBadInfos.html#CompassEx_Comm_GoodBadInfos_Info
+  commentId: P:CompassEx.Comm.GoodBadInfos.Info
+  fullName: CompassEx.Comm.GoodBadInfos.Info
+  nameWithType: GoodBadInfos.Info
+- uid: CompassEx.Comm.GoodBadInfos.Info*
+  name: Info
+  href: api/CompassEx.Comm.GoodBadInfos.html#CompassEx_Comm_GoodBadInfos_Info_
+  commentId: Overload:CompassEx.Comm.GoodBadInfos.Info
+  isSpec: "True"
+  fullName: CompassEx.Comm.GoodBadInfos.Info
+  nameWithType: GoodBadInfos.Info
+- uid: CompassEx.Comm.GoodBadInfos.ToHTML(System.Boolean)
+  name: ToHTML(bool)
+  href: api/CompassEx.Comm.GoodBadInfos.html#CompassEx_Comm_GoodBadInfos_ToHTML_System_Boolean_
+  commentId: M:CompassEx.Comm.GoodBadInfos.ToHTML(System.Boolean)
+  name.vb: ToHTML(Boolean)
+  fullName: CompassEx.Comm.GoodBadInfos.ToHTML(bool)
+  fullName.vb: CompassEx.Comm.GoodBadInfos.ToHTML(Boolean)
+  nameWithType: GoodBadInfos.ToHTML(bool)
+  nameWithType.vb: GoodBadInfos.ToHTML(Boolean)
+- uid: CompassEx.Comm.GoodBadInfos.ToHTML*
+  name: ToHTML
+  href: api/CompassEx.Comm.GoodBadInfos.html#CompassEx_Comm_GoodBadInfos_ToHTML_
+  commentId: Overload:CompassEx.Comm.GoodBadInfos.ToHTML
+  isSpec: "True"
+  fullName: CompassEx.Comm.GoodBadInfos.ToHTML
+  nameWithType: GoodBadInfos.ToHTML
+- uid: CompassEx.Comm.GoodBadInfos.ToString
+  name: ToString()
+  href: api/CompassEx.Comm.GoodBadInfos.html#CompassEx_Comm_GoodBadInfos_ToString
+  commentId: M:CompassEx.Comm.GoodBadInfos.ToString
+  fullName: CompassEx.Comm.GoodBadInfos.ToString()
+  nameWithType: GoodBadInfos.ToString()
+- uid: CompassEx.Comm.GoodBadInfos.ToString*
+  name: ToString
+  href: api/CompassEx.Comm.GoodBadInfos.html#CompassEx_Comm_GoodBadInfos_ToString_
+  commentId: Overload:CompassEx.Comm.GoodBadInfos.ToString
+  isSpec: "True"
+  fullName: CompassEx.Comm.GoodBadInfos.ToString
+  nameWithType: GoodBadInfos.ToString
+- uid: CompassEx.Comm.InfoType
+  name: InfoType
+  href: api/CompassEx.Comm.InfoType.html
+  commentId: T:CompassEx.Comm.InfoType
+  fullName: CompassEx.Comm.InfoType
+  nameWithType: InfoType
+- uid: CompassEx.Comm.InfoType.#ctor
+  name: InfoType()
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType__ctor
+  commentId: M:CompassEx.Comm.InfoType.#ctor
+  name.vb: New()
+  fullName: CompassEx.Comm.InfoType.InfoType()
+  fullName.vb: CompassEx.Comm.InfoType.New()
+  nameWithType: InfoType.InfoType()
+  nameWithType.vb: InfoType.New()
+- uid: CompassEx.Comm.InfoType.#ctor(System.Boolean)
+  name: InfoType(bool)
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType__ctor_System_Boolean_
+  commentId: M:CompassEx.Comm.InfoType.#ctor(System.Boolean)
+  name.vb: New(Boolean)
+  fullName: CompassEx.Comm.InfoType.InfoType(bool)
+  fullName.vb: CompassEx.Comm.InfoType.New(Boolean)
+  nameWithType: InfoType.InfoType(bool)
+  nameWithType.vb: InfoType.New(Boolean)
+- uid: CompassEx.Comm.InfoType.#ctor*
+  name: InfoType
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType__ctor_
+  commentId: Overload:CompassEx.Comm.InfoType.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: CompassEx.Comm.InfoType.InfoType
+  fullName.vb: CompassEx.Comm.InfoType.New
+  nameWithType: InfoType.InfoType
+  nameWithType.vb: InfoType.New
+- uid: CompassEx.Comm.InfoType.BGcolor
+  name: BGcolor
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType_BGcolor
+  commentId: P:CompassEx.Comm.InfoType.BGcolor
+  fullName: CompassEx.Comm.InfoType.BGcolor
+  nameWithType: InfoType.BGcolor
+- uid: CompassEx.Comm.InfoType.BGcolor*
+  name: BGcolor
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType_BGcolor_
+  commentId: Overload:CompassEx.Comm.InfoType.BGcolor
+  isSpec: "True"
+  fullName: CompassEx.Comm.InfoType.BGcolor
+  nameWithType: InfoType.BGcolor
+- uid: CompassEx.Comm.InfoType.FontSize
+  name: FontSize
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType_FontSize
+  commentId: P:CompassEx.Comm.InfoType.FontSize
+  fullName: CompassEx.Comm.InfoType.FontSize
+  nameWithType: InfoType.FontSize
+- uid: CompassEx.Comm.InfoType.FontSize*
+  name: FontSize
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType_FontSize_
+  commentId: Overload:CompassEx.Comm.InfoType.FontSize
+  isSpec: "True"
+  fullName: CompassEx.Comm.InfoType.FontSize
+  nameWithType: InfoType.FontSize
+- uid: CompassEx.Comm.InfoType.FontWeight
+  name: FontWeight
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType_FontWeight
+  commentId: P:CompassEx.Comm.InfoType.FontWeight
+  fullName: CompassEx.Comm.InfoType.FontWeight
+  nameWithType: InfoType.FontWeight
+- uid: CompassEx.Comm.InfoType.FontWeight*
+  name: FontWeight
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType_FontWeight_
+  commentId: Overload:CompassEx.Comm.InfoType.FontWeight
+  isSpec: "True"
+  fullName: CompassEx.Comm.InfoType.FontWeight
+  nameWithType: InfoType.FontWeight
+- uid: CompassEx.Comm.InfoType.Info
+  name: Info
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType_Info
+  commentId: P:CompassEx.Comm.InfoType.Info
+  fullName: CompassEx.Comm.InfoType.Info
+  nameWithType: InfoType.Info
+- uid: CompassEx.Comm.InfoType.Info*
+  name: Info
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType_Info_
+  commentId: Overload:CompassEx.Comm.InfoType.Info
+  isSpec: "True"
+  fullName: CompassEx.Comm.InfoType.Info
+  nameWithType: InfoType.Info
+- uid: CompassEx.Comm.InfoType.TextColor
+  name: TextColor
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType_TextColor
+  commentId: P:CompassEx.Comm.InfoType.TextColor
+  fullName: CompassEx.Comm.InfoType.TextColor
+  nameWithType: InfoType.TextColor
+- uid: CompassEx.Comm.InfoType.TextColor*
+  name: TextColor
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType_TextColor_
+  commentId: Overload:CompassEx.Comm.InfoType.TextColor
+  isSpec: "True"
+  fullName: CompassEx.Comm.InfoType.TextColor
+  nameWithType: InfoType.TextColor
+- uid: CompassEx.Comm.InfoType.ToFullHtml(System.Boolean)
+  name: ToFullHtml(bool)
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType_ToFullHtml_System_Boolean_
+  commentId: M:CompassEx.Comm.InfoType.ToFullHtml(System.Boolean)
+  name.vb: ToFullHtml(Boolean)
+  fullName: CompassEx.Comm.InfoType.ToFullHtml(bool)
+  fullName.vb: CompassEx.Comm.InfoType.ToFullHtml(Boolean)
+  nameWithType: InfoType.ToFullHtml(bool)
+  nameWithType.vb: InfoType.ToFullHtml(Boolean)
+- uid: CompassEx.Comm.InfoType.ToFullHtml*
+  name: ToFullHtml
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType_ToFullHtml_
+  commentId: Overload:CompassEx.Comm.InfoType.ToFullHtml
+  isSpec: "True"
+  fullName: CompassEx.Comm.InfoType.ToFullHtml
+  nameWithType: InfoType.ToFullHtml
+- uid: CompassEx.Comm.InfoType.ToHtmlStyle
+  name: ToHtmlStyle()
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType_ToHtmlStyle
+  commentId: M:CompassEx.Comm.InfoType.ToHtmlStyle
+  fullName: CompassEx.Comm.InfoType.ToHtmlStyle()
+  nameWithType: InfoType.ToHtmlStyle()
+- uid: CompassEx.Comm.InfoType.ToHtmlStyle*
+  name: ToHtmlStyle
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType_ToHtmlStyle_
+  commentId: Overload:CompassEx.Comm.InfoType.ToHtmlStyle
+  isSpec: "True"
+  fullName: CompassEx.Comm.InfoType.ToHtmlStyle
+  nameWithType: InfoType.ToHtmlStyle
+- uid: CompassEx.Comm.InfoType.ToString
+  name: ToString()
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType_ToString
+  commentId: M:CompassEx.Comm.InfoType.ToString
+  fullName: CompassEx.Comm.InfoType.ToString()
+  nameWithType: InfoType.ToString()
+- uid: CompassEx.Comm.InfoType.ToString*
+  name: ToString
+  href: api/CompassEx.Comm.InfoType.html#CompassEx_Comm_InfoType_ToString_
+  commentId: Overload:CompassEx.Comm.InfoType.ToString
+  isSpec: "True"
+  fullName: CompassEx.Comm.InfoType.ToString
+  nameWithType: InfoType.ToString
 - uid: CompassEx.Comm.LocClass
   name: LocClass
   href: api/CompassEx.Comm.LocClass.html
@@ -980,6 +1409,64 @@ references:
   isSpec: "True"
   fullName: CompassEx.Comm.LocClass.TimeValueInRangIndex
   nameWithType: LocClass.TimeValueInRangIndex
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType
+  name: PlaceYaosJFNaJiaType
+  href: api/CompassEx.Comm.PlaceYaosJFNaJiaType.html
+  commentId: T:CompassEx.Comm.PlaceYaosJFNaJiaType
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType
+  nameWithType: PlaceYaosJFNaJiaType
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative
+  name: HideRelative
+  href: api/CompassEx.Comm.PlaceYaosJFNaJiaType.html#CompassEx_Comm_PlaceYaosJFNaJiaType_HideRelative
+  commentId: P:CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative
+  nameWithType: PlaceYaosJFNaJiaType.HideRelative
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative*
+  name: HideRelative
+  href: api/CompassEx.Comm.PlaceYaosJFNaJiaType.html#CompassEx_Comm_PlaceYaosJFNaJiaType_HideRelative_
+  commentId: Overload:CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative
+  isSpec: "True"
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.HideRelative
+  nameWithType: PlaceYaosJFNaJiaType.HideRelative
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.PlaceYao
+  name: PlaceYao
+  href: api/CompassEx.Comm.PlaceYaosJFNaJiaType.html#CompassEx_Comm_PlaceYaosJFNaJiaType_PlaceYao
+  commentId: P:CompassEx.Comm.PlaceYaosJFNaJiaType.PlaceYao
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.PlaceYao
+  nameWithType: PlaceYaosJFNaJiaType.PlaceYao
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.PlaceYao*
+  name: PlaceYao
+  href: api/CompassEx.Comm.PlaceYaosJFNaJiaType.html#CompassEx_Comm_PlaceYaosJFNaJiaType_PlaceYao_
+  commentId: Overload:CompassEx.Comm.PlaceYaosJFNaJiaType.PlaceYao
+  isSpec: "True"
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.PlaceYao
+  nameWithType: PlaceYaosJFNaJiaType.PlaceYao
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.SixRelative
+  name: SixRelative
+  href: api/CompassEx.Comm.PlaceYaosJFNaJiaType.html#CompassEx_Comm_PlaceYaosJFNaJiaType_SixRelative
+  commentId: P:CompassEx.Comm.PlaceYaosJFNaJiaType.SixRelative
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.SixRelative
+  nameWithType: PlaceYaosJFNaJiaType.SixRelative
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.SixRelative*
+  name: SixRelative
+  href: api/CompassEx.Comm.PlaceYaosJFNaJiaType.html#CompassEx_Comm_PlaceYaosJFNaJiaType_SixRelative_
+  commentId: Overload:CompassEx.Comm.PlaceYaosJFNaJiaType.SixRelative
+  isSpec: "True"
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.SixRelative
+  nameWithType: PlaceYaosJFNaJiaType.SixRelative
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc
+  name: SkyLoc
+  href: api/CompassEx.Comm.PlaceYaosJFNaJiaType.html#CompassEx_Comm_PlaceYaosJFNaJiaType_SkyLoc
+  commentId: P:CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc
+  nameWithType: PlaceYaosJFNaJiaType.SkyLoc
+- uid: CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc*
+  name: SkyLoc
+  href: api/CompassEx.Comm.PlaceYaosJFNaJiaType.html#CompassEx_Comm_PlaceYaosJFNaJiaType_SkyLoc_
+  commentId: Overload:CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc
+  isSpec: "True"
+  fullName: CompassEx.Comm.PlaceYaosJFNaJiaType.SkyLoc
+  nameWithType: PlaceYaosJFNaJiaType.SkyLoc
 - uid: CompassEx.Comm.SkyClass
   name: SkyClass
   href: api/CompassEx.Comm.SkyClass.html
@@ -1275,19 +1762,6 @@ references:
   isSpec: "True"
   fullName: CompassEx.CompassEx.AfterGuaSub
   nameWithType: CompassEx.AfterGuaSub
-- uid: CompassEx.CompassEx.BeforGua
-  name: BeforGua
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_BeforGua
-  commentId: P:CompassEx.CompassEx.BeforGua
-  fullName: CompassEx.CompassEx.BeforGua
-  nameWithType: CompassEx.BeforGua
-- uid: CompassEx.CompassEx.BeforGua*
-  name: BeforGua
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_BeforGua_
-  commentId: Overload:CompassEx.CompassEx.BeforGua
-  isSpec: "True"
-  fullName: CompassEx.CompassEx.BeforGua
-  nameWithType: CompassEx.BeforGua
 - uid: CompassEx.CompassEx.C24Hill
   name: C24Hill
   href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_C24Hill
@@ -1301,18 +1775,6 @@ references:
   isSpec: "True"
   fullName: CompassEx.CompassEx.C24Hill
   nameWithType: CompassEx.C24Hill
-- uid: CompassEx.CompassEx.CAfterGuas
-  name: CAfterGuas
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_CAfterGuas
-  commentId: F:CompassEx.CompassEx.CAfterGuas
-  fullName: CompassEx.CompassEx.CAfterGuas
-  nameWithType: CompassEx.CAfterGuas
-- uid: CompassEx.CompassEx.CBeforeGuas
-  name: CBeforeGuas
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_CBeforeGuas
-  commentId: F:CompassEx.CompassEx.CBeforeGuas
-  fullName: CompassEx.CompassEx.CBeforeGuas
-  nameWithType: CompassEx.CBeforeGuas
 - uid: CompassEx.CompassEx.CHillDegree
   name: CHillDegree
   href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_CHillDegree
@@ -1331,12 +1793,6 @@ references:
   commentId: F:CompassEx.CompassEx.CompassBeforGuaSubNames
   fullName: CompassEx.CompassEx.CompassBeforGuaSubNames
   nameWithType: CompassEx.CompassBeforGuaSubNames
-- uid: CompassEx.CompassEx.CompassGuaDegree
-  name: CompassGuaDegree
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_CompassGuaDegree
-  commentId: F:CompassEx.CompassEx.CompassGuaDegree
-  fullName: CompassEx.CompassEx.CompassGuaDegree
-  nameWithType: CompassEx.CompassGuaDegree
 - uid: CompassEx.CompassEx.Degree
   name: Degree
   href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_Degree
@@ -1449,83 +1905,18 @@ references:
   isSpec: "True"
   fullName: CompassEx.CompassEx.GetBeforeGuaSub
   nameWithType: CompassEx.GetBeforeGuaSub
-- uid: CompassEx.CompassEx.GetCAfterGuaDegree(System.String)
-  name: GetCAfterGuaDegree(string)
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GetCAfterGuaDegree_System_String_
-  commentId: M:CompassEx.CompassEx.GetCAfterGuaDegree(System.String)
-  name.vb: GetCAfterGuaDegree(String)
-  fullName: CompassEx.CompassEx.GetCAfterGuaDegree(string)
-  fullName.vb: CompassEx.CompassEx.GetCAfterGuaDegree(String)
-  nameWithType: CompassEx.GetCAfterGuaDegree(string)
-  nameWithType.vb: CompassEx.GetCAfterGuaDegree(String)
-- uid: CompassEx.CompassEx.GetCAfterGuaDegree*
-  name: GetCAfterGuaDegree
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GetCAfterGuaDegree_
-  commentId: Overload:CompassEx.CompassEx.GetCAfterGuaDegree
-  isSpec: "True"
-  fullName: CompassEx.CompassEx.GetCAfterGuaDegree
-  nameWithType: CompassEx.GetCAfterGuaDegree
-- uid: CompassEx.CompassEx.GetCBeforeGua
-  name: GetCBeforeGua()
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforeGua
-  commentId: M:CompassEx.CompassEx.GetCBeforeGua
-  fullName: CompassEx.CompassEx.GetCBeforeGua()
-  nameWithType: CompassEx.GetCBeforeGua()
-- uid: CompassEx.CompassEx.GetCBeforeGua*
-  name: GetCBeforeGua
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforeGua_
-  commentId: Overload:CompassEx.CompassEx.GetCBeforeGua
-  isSpec: "True"
-  fullName: CompassEx.CompassEx.GetCBeforeGua
-  nameWithType: CompassEx.GetCBeforeGua
-- uid: CompassEx.CompassEx.GetCBeforeGuaDegree(System.String)
-  name: GetCBeforeGuaDegree(string)
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforeGuaDegree_System_String_
-  commentId: M:CompassEx.CompassEx.GetCBeforeGuaDegree(System.String)
-  name.vb: GetCBeforeGuaDegree(String)
-  fullName: CompassEx.CompassEx.GetCBeforeGuaDegree(string)
-  fullName.vb: CompassEx.CompassEx.GetCBeforeGuaDegree(String)
-  nameWithType: CompassEx.GetCBeforeGuaDegree(string)
-  nameWithType.vb: CompassEx.GetCBeforeGuaDegree(String)
-- uid: CompassEx.CompassEx.GetCBeforeGuaDegree*
-  name: GetCBeforeGuaDegree
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GetCBeforeGuaDegree_
-  commentId: Overload:CompassEx.CompassEx.GetCBeforeGuaDegree
-  isSpec: "True"
-  fullName: CompassEx.CompassEx.GetCBeforeGuaDegree
-  nameWithType: CompassEx.GetCBeforeGuaDegree
 - uid: CompassEx.CompassEx.GuaSubDegree
   name: GuaSubDegree
   href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_GuaSubDegree
   commentId: F:CompassEx.CompassEx.GuaSubDegree
   fullName: CompassEx.CompassEx.GuaSubDegree
   nameWithType: CompassEx.GuaSubDegree
-- uid: CompassEx.CompassEx.LoadAllCAfterGuas
-  name: LoadAllCAfterGuas()
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCAfterGuas
-  commentId: M:CompassEx.CompassEx.LoadAllCAfterGuas
-  fullName: CompassEx.CompassEx.LoadAllCAfterGuas()
-  nameWithType: CompassEx.LoadAllCAfterGuas()
-- uid: CompassEx.CompassEx.LoadAllCAfterGuas*
-  name: LoadAllCAfterGuas
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCAfterGuas_
-  commentId: Overload:CompassEx.CompassEx.LoadAllCAfterGuas
-  isSpec: "True"
-  fullName: CompassEx.CompassEx.LoadAllCAfterGuas
-  nameWithType: CompassEx.LoadAllCAfterGuas
-- uid: CompassEx.CompassEx.LoadAllCBeforeGuas
-  name: LoadAllCBeforeGuas()
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforeGuas
-  commentId: M:CompassEx.CompassEx.LoadAllCBeforeGuas
-  fullName: CompassEx.CompassEx.LoadAllCBeforeGuas()
-  nameWithType: CompassEx.LoadAllCBeforeGuas()
-- uid: CompassEx.CompassEx.LoadAllCBeforeGuas*
-  name: LoadAllCBeforeGuas
-  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_LoadAllCBeforeGuas_
-  commentId: Overload:CompassEx.CompassEx.LoadAllCBeforeGuas
-  isSpec: "True"
-  fullName: CompassEx.CompassEx.LoadAllCBeforeGuas
-  nameWithType: CompassEx.LoadAllCBeforeGuas
+- uid: CompassEx.CompassEx.degree
+  name: degree
+  href: api/CompassEx.CompassEx.html#CompassEx_CompassEx_degree
+  commentId: F:CompassEx.CompassEx.degree
+  fullName: CompassEx.CompassEx.degree
+  nameWithType: CompassEx.degree
 - uid: CompassEx.Gua
   name: CompassEx.Gua
   href: api/CompassEx.Gua.html
@@ -1538,15 +1929,15 @@ references:
   commentId: T:CompassEx.Gua.FateGua
   fullName: CompassEx.Gua.FateGua
   nameWithType: FateGua
-- uid: CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass,System.Int32[])
-  name: FateGua(DateTime, string, GuaClass, params int[])
-  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua__ctor_System_DateTime_System_String_CompassEx_Gua_GuaClass_System_Int32___
-  commentId: M:CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass,System.Int32[])
-  name.vb: New(Date, String, GuaClass, ParamArray Integer())
-  fullName: CompassEx.Gua.FateGua.FateGua(System.DateTime, string, CompassEx.Gua.GuaClass, params int[])
-  fullName.vb: CompassEx.Gua.FateGua.New(Date, String, CompassEx.Gua.GuaClass, ParamArray Integer())
-  nameWithType: FateGua.FateGua(DateTime, string, GuaClass, params int[])
-  nameWithType.vb: FateGua.New(Date, String, GuaClass, ParamArray Integer())
+- uid: CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass)
+  name: FateGua(DateTime, string, GuaClass)
+  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua__ctor_System_DateTime_System_String_CompassEx_Gua_GuaClass_
+  commentId: M:CompassEx.Gua.FateGua.#ctor(System.DateTime,System.String,CompassEx.Gua.GuaClass)
+  name.vb: New(Date, String, GuaClass)
+  fullName: CompassEx.Gua.FateGua.FateGua(System.DateTime, string, CompassEx.Gua.GuaClass)
+  fullName.vb: CompassEx.Gua.FateGua.New(Date, String, CompassEx.Gua.GuaClass)
+  nameWithType: FateGua.FateGua(DateTime, string, GuaClass)
+  nameWithType.vb: FateGua.New(Date, String, GuaClass)
 - uid: CompassEx.Gua.FateGua.#ctor*
   name: FateGua
   href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua__ctor_
@@ -1570,6 +1961,19 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.FateGua.BirthTime
   nameWithType: FateGua.BirthTime
+- uid: CompassEx.Gua.FateGua.FateGuaSub
+  name: FateGuaSub
+  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_FateGuaSub
+  commentId: P:CompassEx.Gua.FateGua.FateGuaSub
+  fullName: CompassEx.Gua.FateGua.FateGuaSub
+  nameWithType: FateGua.FateGuaSub
+- uid: CompassEx.Gua.FateGua.FateGuaSub*
+  name: FateGuaSub
+  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_FateGuaSub_
+  commentId: Overload:CompassEx.Gua.FateGua.FateGuaSub
+  isSpec: "True"
+  fullName: CompassEx.Gua.FateGua.FateGuaSub
+  nameWithType: FateGua.FateGuaSub
 - uid: CompassEx.Gua.FateGua.FateYearSkyLoc
   name: FateYearSkyLoc
   href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_FateYearSkyLoc
@@ -1612,19 +2016,32 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.FateGua.GuaList
   nameWithType: FateGua.GuaList
-- uid: CompassEx.Gua.FateGua.GuaSub
-  name: GuaSub
-  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_GuaSub
-  commentId: P:CompassEx.Gua.FateGua.GuaSub
-  fullName: CompassEx.Gua.FateGua.GuaSub
-  nameWithType: FateGua.GuaSub
-- uid: CompassEx.Gua.FateGua.GuaSub*
-  name: GuaSub
-  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_GuaSub_
-  commentId: Overload:CompassEx.Gua.FateGua.GuaSub
+- uid: CompassEx.Gua.FateGua.InGuaGoodSL
+  name: InGuaGoodSL
+  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_InGuaGoodSL
+  commentId: P:CompassEx.Gua.FateGua.InGuaGoodSL
+  fullName: CompassEx.Gua.FateGua.InGuaGoodSL
+  nameWithType: FateGua.InGuaGoodSL
+- uid: CompassEx.Gua.FateGua.InGuaGoodSL*
+  name: InGuaGoodSL
+  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_InGuaGoodSL_
+  commentId: Overload:CompassEx.Gua.FateGua.InGuaGoodSL
   isSpec: "True"
-  fullName: CompassEx.Gua.FateGua.GuaSub
-  nameWithType: FateGua.GuaSub
+  fullName: CompassEx.Gua.FateGua.InGuaGoodSL
+  nameWithType: FateGua.InGuaGoodSL
+- uid: CompassEx.Gua.FateGua.InGuaGoodYear
+  name: InGuaGoodYear
+  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_InGuaGoodYear
+  commentId: P:CompassEx.Gua.FateGua.InGuaGoodYear
+  fullName: CompassEx.Gua.FateGua.InGuaGoodYear
+  nameWithType: FateGua.InGuaGoodYear
+- uid: CompassEx.Gua.FateGua.InGuaGoodYear*
+  name: InGuaGoodYear
+  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_InGuaGoodYear_
+  commentId: Overload:CompassEx.Gua.FateGua.InGuaGoodYear
+  isSpec: "True"
+  fullName: CompassEx.Gua.FateGua.InGuaGoodYear
+  nameWithType: FateGua.InGuaGoodYear
 - uid: CompassEx.Gua.FateGua.InGuaSubs
   name: InGuaSubs
   href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_InGuaSubs
@@ -1638,6 +2055,45 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.FateGua.InGuaSubs
   nameWithType: FateGua.InGuaSubs
+- uid: CompassEx.Gua.FateGua.Infos
+  name: Infos
+  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_Infos
+  commentId: P:CompassEx.Gua.FateGua.Infos
+  fullName: CompassEx.Gua.FateGua.Infos
+  nameWithType: FateGua.Infos
+- uid: CompassEx.Gua.FateGua.Infos*
+  name: Infos
+  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_Infos_
+  commentId: Overload:CompassEx.Gua.FateGua.Infos
+  isSpec: "True"
+  fullName: CompassEx.Gua.FateGua.Infos
+  nameWithType: FateGua.Infos
+- uid: CompassEx.Gua.FateGua.IsFateGuaOut
+  name: IsFateGuaOut
+  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_IsFateGuaOut
+  commentId: P:CompassEx.Gua.FateGua.IsFateGuaOut
+  fullName: CompassEx.Gua.FateGua.IsFateGuaOut
+  nameWithType: FateGua.IsFateGuaOut
+- uid: CompassEx.Gua.FateGua.IsFateGuaOut*
+  name: IsFateGuaOut
+  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_IsFateGuaOut_
+  commentId: Overload:CompassEx.Gua.FateGua.IsFateGuaOut
+  isSpec: "True"
+  fullName: CompassEx.Gua.FateGua.IsFateGuaOut
+  nameWithType: FateGua.IsFateGuaOut
+- uid: CompassEx.Gua.FateGua.IsNaJiaOut
+  name: IsNaJiaOut
+  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_IsNaJiaOut
+  commentId: P:CompassEx.Gua.FateGua.IsNaJiaOut
+  fullName: CompassEx.Gua.FateGua.IsNaJiaOut
+  nameWithType: FateGua.IsNaJiaOut
+- uid: CompassEx.Gua.FateGua.IsNaJiaOut*
+  name: IsNaJiaOut
+  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_IsNaJiaOut_
+  commentId: Overload:CompassEx.Gua.FateGua.IsNaJiaOut
+  isSpec: "True"
+  fullName: CompassEx.Gua.FateGua.IsNaJiaOut
+  nameWithType: FateGua.IsNaJiaOut
 - uid: CompassEx.Gua.FateGua.IsOutGua
   name: IsOutGua
   href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_IsOutGua
@@ -1651,19 +2107,6 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.FateGua.IsOutGua
   nameWithType: FateGua.IsOutGua
-- uid: CompassEx.Gua.FateGua.Message
-  name: Message
-  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_Message
-  commentId: P:CompassEx.Gua.FateGua.Message
-  fullName: CompassEx.Gua.FateGua.Message
-  nameWithType: FateGua.Message
-- uid: CompassEx.Gua.FateGua.Message*
-  name: Message
-  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_Message_
-  commentId: Overload:CompassEx.Gua.FateGua.Message
-  isSpec: "True"
-  fullName: CompassEx.Gua.FateGua.Message
-  nameWithType: FateGua.Message
 - uid: CompassEx.Gua.FateGua.OutGuaSubs
   name: OutGuaSubs
   href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_OutGuaSubs
@@ -1677,6 +2120,32 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.FateGua.OutGuaSubs
   nameWithType: FateGua.OutGuaSubs
+- uid: CompassEx.Gua.FateGua.TJGua
+  name: TJGua
+  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_TJGua
+  commentId: P:CompassEx.Gua.FateGua.TJGua
+  fullName: CompassEx.Gua.FateGua.TJGua
+  nameWithType: FateGua.TJGua
+- uid: CompassEx.Gua.FateGua.TJGua*
+  name: TJGua
+  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_TJGua_
+  commentId: Overload:CompassEx.Gua.FateGua.TJGua
+  isSpec: "True"
+  fullName: CompassEx.Gua.FateGua.TJGua
+  nameWithType: FateGua.TJGua
+- uid: CompassEx.Gua.FateGua.ToGua
+  name: ToGua
+  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_ToGua
+  commentId: P:CompassEx.Gua.FateGua.ToGua
+  fullName: CompassEx.Gua.FateGua.ToGua
+  nameWithType: FateGua.ToGua
+- uid: CompassEx.Gua.FateGua.ToGua*
+  name: ToGua
+  href: api/CompassEx.Gua.FateGua.html#CompassEx_Gua_FateGua_ToGua_
+  commentId: Overload:CompassEx.Gua.FateGua.ToGua
+  isSpec: "True"
+  fullName: CompassEx.Gua.FateGua.ToGua
+  nameWithType: FateGua.ToGua
 - uid: CompassEx.Gua.GuaClass
   name: GuaClass
   href: api/CompassEx.Gua.GuaClass.html
@@ -1763,6 +2232,22 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.GuaClass.DownGua
   nameWithType: GuaClass.DownGua
+- uid: CompassEx.Gua.GuaClass.Equals(System.Object)
+  name: Equals(object)
+  href: api/CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_Equals_System_Object_
+  commentId: M:CompassEx.Gua.GuaClass.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: CompassEx.Gua.GuaClass.Equals(object)
+  fullName.vb: CompassEx.Gua.GuaClass.Equals(Object)
+  nameWithType: GuaClass.Equals(object)
+  nameWithType.vb: GuaClass.Equals(Object)
+- uid: CompassEx.Gua.GuaClass.Equals*
+  name: Equals
+  href: api/CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_Equals_
+  commentId: Overload:CompassEx.Gua.GuaClass.Equals
+  isSpec: "True"
+  fullName: CompassEx.Gua.GuaClass.Equals
+  nameWithType: GuaClass.Equals
 - uid: CompassEx.Gua.GuaClass.ExchangeGua
   name: ExchangeGua()
   href: api/CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_ExchangeGua
@@ -1925,6 +2410,19 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.GuaClass.GetGuaFace
   nameWithType: GuaClass.GetGuaFace
+- uid: CompassEx.Gua.GuaClass.GetHashCode
+  name: GetHashCode()
+  href: api/CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetHashCode
+  commentId: M:CompassEx.Gua.GuaClass.GetHashCode
+  fullName: CompassEx.Gua.GuaClass.GetHashCode()
+  nameWithType: GuaClass.GetHashCode()
+- uid: CompassEx.Gua.GuaClass.GetHashCode*
+  name: GetHashCode
+  href: api/CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetHashCode_
+  commentId: Overload:CompassEx.Gua.GuaClass.GetHashCode
+  isSpec: "True"
+  fullName: CompassEx.Gua.GuaClass.GetHashCode
+  nameWithType: GuaClass.GetHashCode
 - uid: CompassEx.Gua.GuaClass.GetHereThereStr
   name: GetHereThereStr()
   href: api/CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetHereThereStr
@@ -2796,6 +3294,22 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.GuaSubClass.CBeforRangeDegree
   nameWithType: GuaSubClass.CBeforRangeDegree
+- uid: CompassEx.Gua.GuaSubClass.Equals(System.Object)
+  name: Equals(object)
+  href: api/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_Equals_System_Object_
+  commentId: M:CompassEx.Gua.GuaSubClass.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: CompassEx.Gua.GuaSubClass.Equals(object)
+  fullName.vb: CompassEx.Gua.GuaSubClass.Equals(Object)
+  nameWithType: GuaSubClass.Equals(object)
+  nameWithType.vb: GuaSubClass.Equals(Object)
+- uid: CompassEx.Gua.GuaSubClass.Equals*
+  name: Equals
+  href: api/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_Equals_
+  commentId: Overload:CompassEx.Gua.GuaSubClass.Equals
+  isSpec: "True"
+  fullName: CompassEx.Gua.GuaSubClass.Equals
+  nameWithType: GuaSubClass.Equals
 - uid: CompassEx.Gua.GuaSubClass.FiveAttr
   name: FiveAttr
   href: api/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_FiveAttr
@@ -2917,6 +3431,19 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.GuaSubClass.GetGuaSub
   nameWithType: GuaSubClass.GetGuaSub
+- uid: CompassEx.Gua.GuaSubClass.GetHashCode
+  name: GetHashCode()
+  href: api/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_GetHashCode
+  commentId: M:CompassEx.Gua.GuaSubClass.GetHashCode
+  fullName: CompassEx.Gua.GuaSubClass.GetHashCode()
+  nameWithType: GuaSubClass.GetHashCode()
+- uid: CompassEx.Gua.GuaSubClass.GetHashCode*
+  name: GetHashCode
+  href: api/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_GetHashCode_
+  commentId: Overload:CompassEx.Gua.GuaSubClass.GetHashCode
+  isSpec: "True"
+  fullName: CompassEx.Gua.GuaSubClass.GetHashCode
+  nameWithType: GuaSubClass.GetHashCode
 - uid: CompassEx.Gua.GuaSubClass.GetXorGua
   name: GetXorGua()
   href: api/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_GetXorGua
@@ -3085,6 +3612,19 @@ references:
   commentId: F:CompassEx.Gua.GuaSubClass.TiJiSymbol
   fullName: CompassEx.Gua.GuaSubClass.TiJiSymbol
   nameWithType: GuaSubClass.TiJiSymbol
+- uid: CompassEx.Gua.GuaSubClass.ToGuaClass
+  name: ToGuaClass()
+  href: api/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_ToGuaClass
+  commentId: M:CompassEx.Gua.GuaSubClass.ToGuaClass
+  fullName: CompassEx.Gua.GuaSubClass.ToGuaClass()
+  nameWithType: GuaSubClass.ToGuaClass()
+- uid: CompassEx.Gua.GuaSubClass.ToGuaClass*
+  name: ToGuaClass
+  href: api/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_ToGuaClass_
+  commentId: Overload:CompassEx.Gua.GuaSubClass.ToGuaClass
+  isSpec: "True"
+  fullName: CompassEx.Gua.GuaSubClass.ToGuaClass
+  nameWithType: GuaSubClass.ToGuaClass
 - uid: CompassEx.Gua.GuaSubClass.Yaos
   name: Yaos
   href: api/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_Yaos
@@ -3291,6 +3831,57 @@ references:
   fullName.vb: CompassEx.Gua.NaJia(Of TResult).Execute
   nameWithType: NaJia<TResult>.Execute
   nameWithType.vb: NaJia(Of TResult).Execute
+- uid: CompassEx.Gua.NaJia`1.NaJiaYGItem
+  name: NaJia<TResult>.NaJiaYGItem
+  href: api/CompassEx.Gua.NaJia-1.NaJiaYGItem.html
+  commentId: T:CompassEx.Gua.NaJia`1.NaJiaYGItem
+  name.vb: NaJia(Of TResult).NaJiaYGItem
+  fullName: CompassEx.Gua.NaJia<TResult>.NaJiaYGItem
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).NaJiaYGItem
+  nameWithType: NaJia<TResult>.NaJiaYGItem
+  nameWithType.vb: NaJia(Of TResult).NaJiaYGItem
+- uid: CompassEx.Gua.NaJia`1.NaJiaYGItem.LocNames
+  name: LocNames
+  href: api/CompassEx.Gua.NaJia-1.NaJiaYGItem.html#CompassEx_Gua_NaJia_1_NaJiaYGItem_LocNames
+  commentId: P:CompassEx.Gua.NaJia`1.NaJiaYGItem.LocNames
+  fullName: CompassEx.Gua.NaJia<TResult>.NaJiaYGItem.LocNames
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).NaJiaYGItem.LocNames
+  nameWithType: NaJia<TResult>.NaJiaYGItem.LocNames
+  nameWithType.vb: NaJia(Of TResult).NaJiaYGItem.LocNames
+- uid: CompassEx.Gua.NaJia`1.NaJiaYGItem.LocNames*
+  name: LocNames
+  href: api/CompassEx.Gua.NaJia-1.NaJiaYGItem.html#CompassEx_Gua_NaJia_1_NaJiaYGItem_LocNames_
+  commentId: Overload:CompassEx.Gua.NaJia`1.NaJiaYGItem.LocNames
+  isSpec: "True"
+  fullName: CompassEx.Gua.NaJia<TResult>.NaJiaYGItem.LocNames
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).NaJiaYGItem.LocNames
+  nameWithType: NaJia<TResult>.NaJiaYGItem.LocNames
+  nameWithType.vb: NaJia(Of TResult).NaJiaYGItem.LocNames
+- uid: CompassEx.Gua.NaJia`1.NaJiaYGItem.SkyName
+  name: SkyName
+  href: api/CompassEx.Gua.NaJia-1.NaJiaYGItem.html#CompassEx_Gua_NaJia_1_NaJiaYGItem_SkyName
+  commentId: P:CompassEx.Gua.NaJia`1.NaJiaYGItem.SkyName
+  fullName: CompassEx.Gua.NaJia<TResult>.NaJiaYGItem.SkyName
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).NaJiaYGItem.SkyName
+  nameWithType: NaJia<TResult>.NaJiaYGItem.SkyName
+  nameWithType.vb: NaJia(Of TResult).NaJiaYGItem.SkyName
+- uid: CompassEx.Gua.NaJia`1.NaJiaYGItem.SkyName*
+  name: SkyName
+  href: api/CompassEx.Gua.NaJia-1.NaJiaYGItem.html#CompassEx_Gua_NaJia_1_NaJiaYGItem_SkyName_
+  commentId: Overload:CompassEx.Gua.NaJia`1.NaJiaYGItem.SkyName
+  isSpec: "True"
+  fullName: CompassEx.Gua.NaJia<TResult>.NaJiaYGItem.SkyName
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).NaJiaYGItem.SkyName
+  nameWithType: NaJia<TResult>.NaJiaYGItem.SkyName
+  nameWithType.vb: NaJia(Of TResult).NaJiaYGItem.SkyName
+- uid: CompassEx.Gua.NaJia`1.YGNaJiaDC
+  name: YGNaJiaDC
+  href: api/CompassEx.Gua.NaJia-1.html#CompassEx_Gua_NaJia_1_YGNaJiaDC
+  commentId: F:CompassEx.Gua.NaJia`1.YGNaJiaDC
+  fullName: CompassEx.Gua.NaJia<TResult>.YGNaJiaDC
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).YGNaJiaDC
+  nameWithType: NaJia<TResult>.YGNaJiaDC
+  nameWithType.vb: NaJia(Of TResult).YGNaJiaDC
 - uid: CompassEx.Gua.NineStar
   name: NineStar
   href: api/CompassEx.Gua.NineStar.html
@@ -3568,12 +4159,34 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.SixRelativeClass.StartIndex
   nameWithType: SixRelativeClass.StartIndex
+- uid: CompassEx.Gua.SixRelativeClass.YaoPosIndex
+  name: YaoPosIndex
+  href: api/CompassEx.Gua.SixRelativeClass.html#CompassEx_Gua_SixRelativeClass_YaoPosIndex
+  commentId: P:CompassEx.Gua.SixRelativeClass.YaoPosIndex
+  fullName: CompassEx.Gua.SixRelativeClass.YaoPosIndex
+  nameWithType: SixRelativeClass.YaoPosIndex
+- uid: CompassEx.Gua.SixRelativeClass.YaoPosIndex*
+  name: YaoPosIndex
+  href: api/CompassEx.Gua.SixRelativeClass.html#CompassEx_Gua_SixRelativeClass_YaoPosIndex_
+  commentId: Overload:CompassEx.Gua.SixRelativeClass.YaoPosIndex
+  isSpec: "True"
+  fullName: CompassEx.Gua.SixRelativeClass.YaoPosIndex
+  nameWithType: SixRelativeClass.YaoPosIndex
 - uid: CompassEx.Gua.TianJiGua
   name: TianJiGua
   href: api/CompassEx.Gua.TianJiGua.html
   commentId: T:CompassEx.Gua.TianJiGua
   fullName: CompassEx.Gua.TianJiGua
   nameWithType: TianJiGua
+- uid: CompassEx.Gua.TianJiGua.#ctor(CompassEx.CGuaClass)
+  name: TianJiGua(CGuaClass)
+  href: api/CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua__ctor_CompassEx_CGuaClass_
+  commentId: M:CompassEx.Gua.TianJiGua.#ctor(CompassEx.CGuaClass)
+  name.vb: New(CGuaClass)
+  fullName: CompassEx.Gua.TianJiGua.TianJiGua(CompassEx.CGuaClass)
+  fullName.vb: CompassEx.Gua.TianJiGua.New(CompassEx.CGuaClass)
+  nameWithType: TianJiGua.TianJiGua(CGuaClass)
+  nameWithType.vb: TianJiGua.New(CGuaClass)
 - uid: CompassEx.Gua.TianJiGua.#ctor(CompassEx.Gua.GuaClass)
   name: TianJiGua(GuaClass)
   href: api/CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua__ctor_CompassEx_Gua_GuaClass_
@@ -3658,6 +4271,32 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.TianJiGua.OutGuaSubs
   nameWithType: TianJiGua.OutGuaSubs
+- uid: CompassEx.Gua.TianJiGua.PlaceYaoTypes
+  name: PlaceYaoTypes
+  href: api/CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_PlaceYaoTypes
+  commentId: P:CompassEx.Gua.TianJiGua.PlaceYaoTypes
+  fullName: CompassEx.Gua.TianJiGua.PlaceYaoTypes
+  nameWithType: TianJiGua.PlaceYaoTypes
+- uid: CompassEx.Gua.TianJiGua.PlaceYaoTypes*
+  name: PlaceYaoTypes
+  href: api/CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_PlaceYaoTypes_
+  commentId: Overload:CompassEx.Gua.TianJiGua.PlaceYaoTypes
+  isSpec: "True"
+  fullName: CompassEx.Gua.TianJiGua.PlaceYaoTypes
+  nameWithType: TianJiGua.PlaceYaoTypes
+- uid: CompassEx.Gua.TianJiGua.YaoTypes
+  name: YaoTypes
+  href: api/CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_YaoTypes
+  commentId: P:CompassEx.Gua.TianJiGua.YaoTypes
+  fullName: CompassEx.Gua.TianJiGua.YaoTypes
+  nameWithType: TianJiGua.YaoTypes
+- uid: CompassEx.Gua.TianJiGua.YaoTypes*
+  name: YaoTypes
+  href: api/CompassEx.Gua.TianJiGua.html#CompassEx_Gua_TianJiGua_YaoTypes_
+  commentId: Overload:CompassEx.Gua.TianJiGua.YaoTypes
+  isSpec: "True"
+  fullName: CompassEx.Gua.TianJiGua.YaoTypes
+  nameWithType: TianJiGua.YaoTypes
 - uid: CompassEx.LicenseWatermark
   name: LicenseWatermark
   href: api/CompassEx.LicenseWatermark.html

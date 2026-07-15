@@ -1,3 +1,5 @@
+
+using CompassEx;
 using CompassEx.Comm;
 using CompassEx.Gua;
 using Newtonsoft.Json;
@@ -77,7 +79,7 @@ public partial class TestPage : INotifyPropertyChanged
 
         //}
         //==============================罗盘的天机出卦==============================
-        //var g = new GuaClass("晋");
+        //var g = new CGuaClass("晋");
         //var tj = new TianJiGua(g);
         //var ls = tj.GetOutGuas();
         //string st = string.Join(",", tj.OutGuaSubs.Select(tg => tg.Value.Name + tg.Value.AfterQuantity));
@@ -89,9 +91,30 @@ public partial class TestPage : INotifyPropertyChanged
         //}
         //==============================罗盘的天机出卦==============================
 
-        FateGua fg = new FateGua(DateTime.Parse("2007-02-13"), "女", new GuaClass("姤"));
 
-        Debug.Print(JsonConvert.SerializeObject(fg.Infos));
+
+
+
+        List<(string, string, string)> ls = [("J", "1981-09-16", "男"), ("英", "1981-09-14", "女"), ("韵", "2007-02-13", "女"), ("恒", "2010-09-20", "男"), ("o", "1979-09-20", "男"), ("诗", "2004-06-01", "女"), ("炽", "1958-08-01", "男"), ("兴", "1956-10-25", "女")];
+        foreach (var l in ls)
+        {
+            FateGua fg = new FateGua(DateTime.Parse(l.Item2), l.Item3, new GuaClass("恒"));
+
+            Debug.WriteLine("\n" + l.Item1 + "：" + JsonConvert.SerializeObject(fg.Infos));
+
+        }
+
+
+        ////==============================罗盘的天机出卦(带临爻）==============================
+        var g = new CGuaClass("恒", 1, 2);
+        var tj = new TianJiGua(g);
+        Debug.WriteLine("\nGetOutGuas:" + string.Join(",", tj.GetOutGuas().Select(g => g.Value.GuaFullName)));
+
+        Debug.WriteLine("\nYaoTypes:" + JsonConvert.SerializeObject(tj.YaoTypes));
+        Debug.WriteLine("\nPlaceYaoTypes:" + JsonConvert.SerializeObject(tj.PlaceYaoTypes));
+
+
+        ////==============================罗盘的天机出卦(带临爻）==============================
 
 
 

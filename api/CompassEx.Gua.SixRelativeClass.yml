@@ -10,6 +10,7 @@ items:
   - CompassEx.Gua.SixRelativeClass.Name
   - CompassEx.Gua.SixRelativeClass.SixRelatives
   - CompassEx.Gua.SixRelativeClass.StartIndex
+  - CompassEx.Gua.SixRelativeClass.YaoPosIndex
   langs:
   - csharp
   - vb
@@ -79,6 +80,37 @@ items:
       type: System.String[]
       description: 包含 5 个标准六亲名称：妻财(0)、子孙(1)、兄弟(2)、官鬼(3)、父母(4)。
     content.vb: Public Shared ReadOnly SixRelatives As String()
+- uid: CompassEx.Gua.SixRelativeClass.YaoPosIndex
+  commentId: P:CompassEx.Gua.SixRelativeClass.YaoPosIndex
+  id: YaoPosIndex
+  parent: CompassEx.Gua.SixRelativeClass
+  langs:
+  - csharp
+  - vb
+  name: YaoPosIndex
+  nameWithType: SixRelativeClass.YaoPosIndex
+  fullName: CompassEx.Gua.SixRelativeClass.YaoPosIndex
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Gua/SixRelativeClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: YaoPosIndex
+    path: CompassEx/Gua/SixRelativeClass.cs
+    startLine: 39
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 表示在卦中第几爻
+  example: []
+  syntax:
+    content: public int YaoPosIndex { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property YaoPosIndex As Integer
+  overload: CompassEx.Gua.SixRelativeClass.YaoPosIndex*
 - uid: CompassEx.Gua.SixRelativeClass.Name
   commentId: P:CompassEx.Gua.SixRelativeClass.Name
   id: Name
@@ -97,7 +129,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Name
     path: CompassEx/Gua/SixRelativeClass.cs
-    startLine: 40
+    startLine: 45
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -129,7 +161,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: StartIndex
     path: CompassEx/Gua/SixRelativeClass.cs
-    startLine: 46
+    startLine: 51
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -161,7 +193,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSixRelative
     path: CompassEx/Gua/SixRelativeClass.cs
-    startLine: 58
+    startLine: 63
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -199,7 +231,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSixRelative
     path: CompassEx/Gua/SixRelativeClass.cs
-    startLine: 79
+    startLine: 84
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -641,6 +673,23 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: (
   - name: )
+- uid: CompassEx.Gua.SixRelativeClass.YaoPosIndex*
+  commentId: Overload:CompassEx.Gua.SixRelativeClass.YaoPosIndex
+  href: CompassEx.Gua.SixRelativeClass.html#CompassEx_Gua_SixRelativeClass_YaoPosIndex
+  name: YaoPosIndex
+  nameWithType: SixRelativeClass.YaoPosIndex
+  fullName: CompassEx.Gua.SixRelativeClass.YaoPosIndex
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -658,17 +707,6 @@ references:
   name: Name
   nameWithType: SixRelativeClass.Name
   fullName: CompassEx.Gua.SixRelativeClass.Name
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
 - uid: CompassEx.Gua.SixRelativeClass.SixRelatives
   commentId: F:CompassEx.Gua.SixRelativeClass.SixRelatives
   href: CompassEx.Gua.SixRelativeClass.html#CompassEx_Gua_SixRelativeClass_SixRelatives
