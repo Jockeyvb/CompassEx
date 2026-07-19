@@ -8,12 +8,12 @@ namespace CompassExTest.Pages;
 
 public partial class DataTest : ContentPage, INotifyPropertyChanged
 {
-    public ObservableCollection<TblGoodDay.ViewModel> TblGoodDayList { get; set; } = new();
+    public ObservableCollection<tbl_GoodDayVM> TblGoodDayList { get; set; }
     public DataTest()
     {
 
         InitializeComponent();
-        this.BindingContext = this;
+
 
 
 
@@ -27,22 +27,26 @@ public partial class DataTest : ContentPage, INotifyPropertyChanged
 
         // 1. 拿出第一個物件
         var item = TblGoodDayList[0];
-
+        var c = TblGoodDayList[1] as tbl_GoodDay;
         // 2. 修改屬性
         item.Info = "test..............";
-
+        TblGoodDayList.RemoveAt(1);
     }
 
     private async void Button_Clicked_1(object sender, EventArgs e)
     {
-        string sWhere = " and ( Month=@m1  or Month=@m2)   ";
-        var rrt = TblGoodDay.GetTblGoodDayCol(sWhere, [("m1", "五")], orderBy: " Order by Month asc",
-            pageIndex: 1, pageSize: 30
-        ).Result;
-        if (rrt.RESULT == 0)
+
+        // 1. 获取原始数据
+        TblGoodDayList = tbl_GoodDay.List(l => l.Month == "五" || l.Month == "六", 1, 30).Select(x => x.ToViewModel()).ToObservableCollection();
+
+        //// 2. 规范转换为 VM 集合
+        //TblGoodDayList = new ObservableCollection<tbl_GoodDayVM>(
+        //    rawData.Select(x => x.Totbl_GoodDayVM())
+        //);
+        if (!TblGoodDayList.Any())
         {
             // 💡 建立剛才寫好的熱門 Mopups HUD 實例
-            var hud = new CompassExTest.Pages.Controls.HudMessagePopup(rrt.Message);
+            var hud = new CompassExTest.Pages.Controls.HudMessagePopup("无法获得数据");
 
             // 💡 異步調用全域圖層服務，這在 WinUI 桌面端百分之百能立馬彈出
             MainThread.BeginInvokeOnMainThread(async () =>
@@ -53,8 +57,10 @@ public partial class DataTest : ContentPage, INotifyPropertyChanged
         }
         else
         {
-            TblGoodDayList = rrt.ReturnObj.Select(g => g.GetVM()).ToObservableCollection();
+
             MyCollectionView.ItemsSource = TblGoodDayList;
+
         }
+
     }
 }

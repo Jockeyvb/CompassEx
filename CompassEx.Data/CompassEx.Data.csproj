@@ -15,9 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="2.1.79" />
-    <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
-    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="8.0.28" />
+    <PackageReference Include="FreeSql" Version="3.5.310" />
+    <PackageReference Include="FreeSql.Provider.Sqlite" Version="3.5.310" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
   </ItemGroup>
 
 </Project>

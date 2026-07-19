@@ -1,5 +1,4 @@
-﻿using Dapper;               // 💡 请确保 NuGet 安装了 Dapper
-using Microsoft.Data.Sqlite; // 💡 请确保 NuGet 安装了 Microsoft.Data.Sqlite.Core
+﻿
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,6 +11,10 @@ namespace CompassEx.Data
 
     public static class Comm
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IFreeSql Orm;
 
         /// <summary>
         /// 全局 SQLite 连接字符串
@@ -26,29 +29,17 @@ namespace CompassEx.Data
 
 
 
-
-        /// <summary>
-        /// 获取一个全新的、已经打开的 SQLite 数据库连接（供 Dapper 使用）
-        /// </summary>
-        /// <returns>已打开的 IDbConnection 对象</returns>
-        public static IDbConnection GetOpenConnection()
+        private static void CreateFSQL()
         {
-            if (string.IsNullOrEmpty(ConnectionString))
-            {
-                throw new InvalidOperationException("数据库尚未初始化！请先调用 Comm.InitializeDatabase() 方法。");
-            }
-
-            // 建立原生 SQLite 连接
-            var connection = new SqliteConnection(ConnectionString);
-
-            // 显式打开连接（Dapper 虽然能自动打开，但手动打开在多线程下更安全）
-            if (connection.State != ConnectionState.Open)
-            {
-                connection.Open();
-            }
-
-            return connection;
+            IFreeSql fsql = new FreeSql.FreeSqlBuilder()
+    .UseConnectionString(FreeSql.DataType.Sqlite, ConnectionString)
+    //Automatically synchronize the entity structure to the database.
+    //FreeSql will not scan the assembly, and will generate a table if and only when the CRUD instruction is executed.
+    .UseAutoSyncStructure(true)
+    .Build();
+            Orm = fsql;
         }
+
 
         /// <summary>
         /// 检查并从 DLL 中释放 SQLite 数据库文件到指定的实体路径
@@ -70,6 +61,8 @@ namespace CompassEx.Data
             // 1. 如果实体文件已经存在，直接跳过（避免覆盖掉用户之后写入的新数据！）
             if (File.Exists(dbPath))
             {
+
+                CreateFSQL();
                 return;
             }
 
@@ -105,34 +98,10 @@ namespace CompassEx.Data
                 }
             }
 
-
-
+            CreateFSQL();
         }
 
-        #region 全局通用 Dapper 快捷方法示例（选填，可选保留）
 
-        /// <summary>
-        /// 全局通用：执行无返回值的 SQL 语句（如 INSERT, UPDATE, DELETE）
-        /// </summary>
-        public static int Execute(string sql, object param = null)
-        {
-            using (IDbConnection db = GetOpenConnection())
-            {
-                return db.Execute(sql, param);
-            }
-        }
 
-        /// <summary>
-        /// 全局通用：查询数据列表
-        /// </summary>
-        public static IEnumerable<T> Query<T>(string sql, object param = null)
-        {
-            using (IDbConnection db = GetOpenConnection())
-            {
-                return db.Query<T>(sql, param);
-            }
-        }
-
-        #endregion
     }
 }

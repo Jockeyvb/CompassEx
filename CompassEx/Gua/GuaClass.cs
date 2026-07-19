@@ -10,14 +10,14 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 using CompassEx.Comm;
-using CompassEx.Data.Models;
+
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
-using DBComm = global::CompassEx.Data.Comm;
+
 
 namespace CompassEx.Gua
 {
@@ -1548,15 +1548,7 @@ namespace CompassEx.Gua
         }
 
 
-        public static List<TblGoodDay> GetGoodDayList()
-        {
-            ;
-            DBComm.InitializeDatabase();
 
-            // 示例 A：直接使用封装好的全局快捷方法查询 tbl_GoodDay
-            return DBComm.Query<TblGoodDay>("SELECT * FROM tbl_GoodDay").ToList();
-
-        }
 
         public override bool Equals(object obj)
         {

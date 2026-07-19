@@ -7,7 +7,7 @@ namespace CompassExTest.Pages
 {
     public partial class ProjectListPage : INotifyPropertyChanged
     {
-        public ObservableCollection<TblGoodDay> TblGoodDayList { get; set; } = new();
+        public ObservableCollection<tbl_GoodDayVM> TblGoodDayList { get; set; } = new();
         public ProjectListPage()
         {
 
@@ -23,8 +23,7 @@ namespace CompassExTest.Pages
         {
             base.OnParentSet();
 
-            TblGoodDayList = TblGoodDay.GetTblGoodDayCol(pageIndex: 2).Result.ReturnObj.ToObservableCollection();
-            MyCollectionView.ItemsSource = TblGoodDayList;
+            TblGoodDayList = tbl_GoodDay.List(l => l.Month == "五" && l.Month == "六", 1, 30).Select(x => x.ToViewModel()).ToObservableCollection();
 
         }
 
