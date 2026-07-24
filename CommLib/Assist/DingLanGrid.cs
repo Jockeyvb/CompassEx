@@ -225,7 +225,7 @@ namespace CommLib
     /// 提供小格名称、刻度区间、父级绑定、按组获取同组4小格能力
     /// 丁兰尺单细分小格固定尺寸：9.695MM
     /// </remarks>
-    private class DingLanSubGrid
+    public class DingLanSubGrid
     {
         /// <summary>
         /// 丁兰尺全部细分小格名称数组
