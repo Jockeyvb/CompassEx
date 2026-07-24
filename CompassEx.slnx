@@ -4,6 +4,7 @@
     <File Path="LICENSE" />
     <File Path="README.md" />
   </Folder>
+  <Project Path="CommLib/CommLib.csproj" />
   <Project Path="CompassEx.Data/CompassEx.Data.csproj" Id="ee7a2bbc-0a99-42c7-85ee-377f4693dddc" />
   <Project Path="CompassEx/CompassEx.csproj" />
   <Project Path="CompassExTest/CompassExTest.csproj">

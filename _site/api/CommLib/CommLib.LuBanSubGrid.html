@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>LuBanSubGrid 类
+ | CompassEx API文档 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="LuBanSubGrid 类
+ | CompassEx API文档 ">
+      
+      <meta name="description" content="鲁班尺细分小格计算实体类">
+      <link rel="icon" href="../../images/logo.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Jockeyvb/CompassEx/new/master/apiSpec/new?filename=CommLib_LuBanSubGrid.md&amp;value=---%0Auid%3A%20CommLib.LuBanSubGrid%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="本文内容">
+      <meta name="loc:searchResultsCount" content="找到{count}个“{query}”的搜索结果">
+      <meta name="loc:searchNoResults" content="没有找到“{query}”的搜索结果">
+      <meta name="loc:tocFilter" content="按标题筛选">
+      <meta name="loc:nextArticle" content="下一篇">
+      <meta name="loc:prevArticle" content="上一篇">
+      <meta name="loc:themeLight" content="白天">
+      <meta name="loc:themeDark" content="夜晚">
+      <meta name="loc:themeAuto" content="自动">
+      <meta name="loc:changeTheme" content="切换主题">
+      <meta name="loc:copy" content="复制">
+      <meta name="loc:downloadPdf" content="下载 PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo.png" alt="CompassEx 罗盘算法类库">
+            CompassEx 罗盘算法类库
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="CommLib.LuBanSubGrid">
+
+
+
+  <h1 id="CommLib_LuBanSubGrid" data-uid="CommLib.LuBanSubGrid" class="text-break">
+LuBanSubGrid 类
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L232"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>命名空间</dt><dd><a class="xref" href="CommLib.html">CommLib</a></dd></dl>
+  <dl><dt>程序集</dt><dd>CommLib.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>鲁班尺细分小格计算实体类</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class LuBanSubGrid</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>继承</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">LuBanSubGrid</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>继承成员</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="CommLib_LuBanSubGrid_remarks">备注</h2>
+  <div class="markdown level0 remarks"><p>核心功能：用于解析鲁班尺最小细分刻度，每4个小格组成一个鲁班大格，
+提供小格名称、吉凶释义、刻度区间、所属父级大格，支持按刻度/名称初始化、按组获取同组4小格数据
+鲁班尺单小格固定尺寸：13.40625MM</p>
+</div>
+
+
+  <h2 class="section" id="constructors">构造函数
+</h2>
+
+
+  <a id="CommLib_LuBanSubGrid__ctor_" data-uid="CommLib.LuBanSubGrid.#ctor*"></a>
+
+  <h3 id="CommLib_LuBanSubGrid__ctor_System_Double_" data-uid="CommLib.LuBanSubGrid.#ctor(System.Double)">
+  LuBanSubGrid(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L410"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>根据具体的物理刻度值初始化鲁班细分小格对象。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LuBanSubGrid(double Value)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>Value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>输入的鲁班尺刻度值（单位：毫米，MM）。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="CommLib_LuBanSubGrid__ctor_System_Double__remarks">备注</h4>
+  <div class="markdown level1 remarks"><ol>
+<li>刻度值会自动向下取整（<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.math.floor#system-math-floor(system-double)">Floor(double)</a>），确保系统计算精度统一。<br></li>
+<li>根据取整后的刻度与每格固定尺寸（<a class="xref" href="CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid_SubGridFixed">SubGridFixed</a>）计算出所属的小格累计步数。<br></li>
+<li>自动匹配并加载对应的循环小格中文名称、吉凶断语释义、理论刻度区间及循环索引。<br></li>
+<li>传入负数刻度属非法输入，将直接拦截并提前终止后续的所有初始化配置。</li>
+</ol>
+</div>
+
+
+
+
+  <a id="CommLib_LuBanSubGrid__ctor_" data-uid="CommLib.LuBanSubGrid.#ctor*"></a>
+
+  <h3 id="CommLib_LuBanSubGrid__ctor_System_String_" data-uid="CommLib.LuBanSubGrid.#ctor(System.String)">
+  LuBanSubGrid(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L391"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>根据小格中文名称初始化鲁班细分小格对象。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LuBanSubGrid(string SubGridName)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>SubGridName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>要匹配的鲁班尺 32 种细分小格名称（例如“大吉”、“财德”）。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="CommLib_LuBanSubGrid__ctor_System_String__remarks">备注</h4>
+  <div class="markdown level1 remarks"><ol>
+<li>方法会检索传入名称在 <a class="xref" href="CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid_LuBanSubGridNames">LuBanSubGridNames</a> 数组中的位置索引。<br></li>
+<li>若传入无效或不存在的名称（找不到对应索引），则触发健壮性拦截，提前终止后续的所有初始化配置。</li>
+</ol>
+</div>
+
+
+
+
+  <h2 class="section" id="fields">字段
+</h2>
+
+
+
+  <h3 id="CommLib_LuBanSubGrid_LuBanSubGridNames" data-uid="CommLib.LuBanSubGrid.LuBanSubGridNames">
+  LuBanSubGridNames
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L238"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>鲁班尺全部细分小格名称数组（共32个细分吉凶档位，循环匹配）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly string[] LuBanSubGridNames</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">字段值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="CommLib_LuBanSubGrid_LuBanSubGridNames_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>存储所有鲁班尺最小格位名称，与 LuBanSubGridInfos 索引一一对应</p>
+</div>
+
+
+
+
+
+  <h3 id="CommLib_LuBanSubGrid_SubGridFixed" data-uid="CommLib.LuBanSubGrid.SubGridFixed">
+  SubGridFixed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L331"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>鲁班尺单细分小格固定标准尺寸</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const double SubGridFixed = 13.40625</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">字段值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="CommLib_LuBanSubGrid_SubGridFixed_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>固定值 13.40625MM，4个小格拼接为一个大格 53.625MM</p>
+</div>
+
+
+
+
+  <h2 class="section" id="properties">属性
+</h2>
+
+
+  <a id="CommLib_LuBanSubGrid_EndValue_" data-uid="CommLib.LuBanSubGrid.EndValue*"></a>
+
+  <h3 id="CommLib_LuBanSubGrid_EndValue" data-uid="CommLib.LuBanSubGrid.EndValue">
+  EndValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L308"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前鲁班细分小格结束刻度（单位：MM，向下取整）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double EndValue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_LuBanSubGrid_Index_" data-uid="CommLib.LuBanSubGrid.Index*"></a>
+
+  <h3 id="CommLib_LuBanSubGrid_Index" data-uid="CommLib.LuBanSubGrid.Index">
+  Index
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L298"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前细分小格在32格序列中的循环索引</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Index { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>对32取模循环，对应名称、释义数组下标</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_LuBanSubGrid_LuBanSubGridInfo_" data-uid="CommLib.LuBanSubGrid.LuBanSubGridInfo*"></a>
+
+  <h3 id="CommLib_LuBanSubGrid_LuBanSubGridInfo" data-uid="CommLib.LuBanSubGrid.LuBanSubGridInfo">
+  LuBanSubGridInfo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L319"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前小格对应的吉凶文字释义</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LuBanSubGridInfo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_LuBanSubGrid_Parent_" data-uid="CommLib.LuBanSubGrid.Parent*"></a>
+
+  <h3 id="CommLib_LuBanSubGrid_Parent" data-uid="CommLib.LuBanSubGrid.Parent">
+  Parent
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L292"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前小格所属的父级鲁班大格对象</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LuBanGrid Parent { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CommLib.LuBanGrid.html">LuBanGrid</a></dt>
+    <dd><p>可空，用于绑定大小格层级关系，获取父级大格信息</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_LuBanSubGrid_StartValue_" data-uid="CommLib.LuBanSubGrid.StartValue*"></a>
+
+  <h3 id="CommLib_LuBanSubGrid_StartValue" data-uid="CommLib.LuBanSubGrid.StartValue">
+  StartValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L303"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前鲁班细分小格起始刻度（单位：MM，向下取整）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double StartValue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_LuBanSubGrid_SubGridName_" data-uid="CommLib.LuBanSubGrid.SubGridName*"></a>
+
+  <h3 id="CommLib_LuBanSubGrid_SubGridName" data-uid="CommLib.LuBanSubGrid.SubGridName">
+  SubGridName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L325"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前细分小格中文名称</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SubGridName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>取值自 LuBanSubGridNames 对应索引</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_LuBanSubGrid_Value_" data-uid="CommLib.LuBanSubGrid.Value*"></a>
+
+  <h3 id="CommLib_LuBanSubGrid_Value" data-uid="CommLib.LuBanSubGrid.Value">
+  Value
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L314"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前初始化使用的目标刻度值</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Value { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>默认-1为未赋值，未赋值时自动取当前小格起始刻度</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">方法
+</h2>
+
+
+  <a id="CommLib_LuBanSubGrid_GetGroup_" data-uid="CommLib.LuBanSubGrid.GetGroup*"></a>
+
+  <h3 id="CommLib_LuBanSubGrid_GetGroup_System_Double_CommLib_LuBanGrid_" data-uid="CommLib.LuBanSubGrid.GetGroup(System.Double,CommLib.LuBanGrid)">
+  GetGroup(double, LuBanGrid)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L359"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获取当前刻度所属大格内的 4 个一组完整细分小格集合。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;LuBanSubGrid&gt; GetGroup(double value, LuBanGrid parent = null)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>目标鲁班尺长度刻度值（单位：毫米，MM）。</p>
+</dd>
+    <dt><code>parent</code> <a class="xref" href="CommLib.LuBanGrid.html">LuBanGrid</a></dt>
+    <dd><p>归属的父级鲁班大格对象，若不传则默认为空（<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>）。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="CommLib.LuBanSubGrid.html">LuBanSubGrid</a>&gt;</dt>
+    <dd><p>返回当前大格对应的连续 4 个鲁班细分小格列表。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="CommLib_LuBanSubGrid_GetGroup_System_Double_CommLib_LuBanGrid__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>鲁班尺算法规则：每 4 个细分小格（分格）构成一个完整的大格单元。<br>
+该方法通过传入的任意刻度进行锚定位移，逆向推算并自动补齐当前组内的全部 4 个连续小格。</p>
+</div>
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L232" class="edit-link">编辑本文</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

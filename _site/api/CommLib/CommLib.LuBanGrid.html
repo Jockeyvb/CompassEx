@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>LuBanGrid 类
+ | CompassEx API文档 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="LuBanGrid 类
+ | CompassEx API文档 ">
+      
+      <meta name="description" content="鲁班尺大格计算实体类">
+      <link rel="icon" href="../../images/logo.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Jockeyvb/CompassEx/new/master/apiSpec/new?filename=CommLib_LuBanGrid.md&amp;value=---%0Auid%3A%20CommLib.LuBanGrid%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="本文内容">
+      <meta name="loc:searchResultsCount" content="找到{count}个“{query}”的搜索结果">
+      <meta name="loc:searchNoResults" content="没有找到“{query}”的搜索结果">
+      <meta name="loc:tocFilter" content="按标题筛选">
+      <meta name="loc:nextArticle" content="下一篇">
+      <meta name="loc:prevArticle" content="上一篇">
+      <meta name="loc:themeLight" content="白天">
+      <meta name="loc:themeDark" content="夜晚">
+      <meta name="loc:themeAuto" content="自动">
+      <meta name="loc:changeTheme" content="切换主题">
+      <meta name="loc:copy" content="复制">
+      <meta name="loc:downloadPdf" content="下载 PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo.png" alt="CompassEx 罗盘算法类库">
+            CompassEx 罗盘算法类库
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="CommLib.LuBanGrid">
+
+
+
+  <h1 id="CommLib_LuBanGrid" data-uid="CommLib.LuBanGrid" class="text-break">
+LuBanGrid 类
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>命名空间</dt><dd><a class="xref" href="CommLib.html">CommLib</a></dd></dl>
+  <dl><dt>程序集</dt><dd>CommLib.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>鲁班尺大格计算实体类</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class LuBanGrid</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>继承</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">LuBanGrid</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>继承成员</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="CommLib_LuBanGrid_remarks">备注</h2>
+  <div class="markdown level0 remarks"><p>核心功能：根据输入刻度值/格位索引，解析鲁班尺八大基础格位（财、病、离、义、官、劫、害、吉），
+自动匹配格位吉凶颜色、起止刻度、所属小格，同时提供左右相邻最近吉值查询能力
+鲁班尺单大格固定尺寸：53.625MM，8个大格为一组循环往复</p>
+</div>
+
+
+  <h2 class="section" id="constructors">构造函数
+</h2>
+
+
+  <a id="CommLib_LuBanGrid__ctor_" data-uid="CommLib.LuBanGrid.#ctor*"></a>
+
+  <h3 id="CommLib_LuBanGrid__ctor_System_Double_" data-uid="CommLib.LuBanGrid.#ctor(System.Double)">
+  LuBanGrid(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L210"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>通过【具体刻度值】初始化鲁班大格对象（核心构造函数）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LuBanGrid(double Value)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>Value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>输入的鲁班尺刻度值（单位：MM）</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="CommLib_LuBanGrid__ctor_System_Double__remarks">备注</h4>
+  <div class="markdown level1 remarks"><ol>
+<li>刻度值向下取整，适配鲁班尺整数刻度规则</li>
+<li>通过刻度/单格尺寸计算所属格位循环倍数</li>
+<li>自动初始化当前格所有属性、子格、吉凶数据</li>
+<li>传入负数不初始化任何数据</li>
+</ol>
+</div>
+
+
+
+
+  <a id="CommLib_LuBanGrid__ctor_" data-uid="CommLib.LuBanGrid.#ctor*"></a>
+
+  <h3 id="CommLib_LuBanGrid__ctor_System_String_" data-uid="CommLib.LuBanGrid.#ctor(System.String)">
+  LuBanGrid(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L190"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>通过【大格名称】初始化鲁班大格对象</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LuBanGrid(string GridName)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>GridName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>八大格名称（财/病/离/义/官/劫/害/吉）</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="CommLib_LuBanGrid__ctor_System_String__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>传入无效名称则不初始化任何属性</p>
+</div>
+
+
+
+
+  <h2 class="section" id="fields">字段
+</h2>
+
+
+
+  <h3 id="CommLib_LuBanGrid_GridFixed" data-uid="CommLib.LuBanGrid.GridFixed">
+  GridFixed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>鲁班尺单一大格固定标准尺寸</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const double GridFixed = 53.625</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">字段值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>固定值 53.625MM，为鲁班尺标准单格刻度宽度</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="CommLib_LuBanGrid_LuBanGridColor" data-uid="CommLib.LuBanGrid.LuBanGridColor">
+  LuBanGridColor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>鲁班尺八大格对应吉凶颜色数组</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Color[] LuBanGridColor</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">字段值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a>[]</dt>
+    <dd><p>Red=吉格，Black=凶格，与 LuBanGridNames 索引一一对应</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="CommLib_LuBanGrid_LuBanGridNames" data-uid="CommLib.LuBanGrid.LuBanGridNames">
+  LuBanGridNames
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>鲁班尺八大基础大格名称数组（固定顺序：财、病、离、义、官、劫、害、吉）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly string[] LuBanGridNames</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">字段值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd><p>固定8个基础格位名称，循环遍历计算格位索引</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">属性
+</h2>
+
+
+  <a id="CommLib_LuBanGrid_Child_" data-uid="CommLib.LuBanGrid.Child*"></a>
+
+  <h3 id="CommLib_LuBanGrid_Child" data-uid="CommLib.LuBanGrid.Child">
+  Child
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前大格下包含的所有鲁班尺细分小格集合</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;LuBanSubGrid&gt; Child { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="CommLib.LuBanSubGrid.html">LuBanSubGrid</a>&gt;</dt>
+    <dd><p>自动加载当前大格对应的全部子格数据</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_LuBanGrid_EndValue_" data-uid="CommLib.LuBanGrid.EndValue*"></a>
+
+  <h3 id="CommLib_LuBanGrid_EndValue" data-uid="CommLib.LuBanGrid.EndValue">
+  EndValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前鲁班大格的结束刻度（单位：MM，向下取整）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double EndValue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_LuBanGrid_GridColor_" data-uid="CommLib.LuBanGrid.GridColor*"></a>
+
+  <h3 id="CommLib_LuBanGrid_GridColor" data-uid="CommLib.LuBanGrid.GridColor">
+  GridColor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前大格的吉凶展示颜色</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color GridColor { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a></dt>
+    <dd><p>根据当前格位索引自动匹配，红为吉、黑为凶</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_LuBanGrid_GridName_" data-uid="CommLib.LuBanGrid.GridName*"></a>
+
+  <h3 id="CommLib_LuBanGrid_GridName" data-uid="CommLib.LuBanGrid.GridName">
+  GridName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前大格的中文名称</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GridName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>取值于 LuBanGridNames 对应索引名称</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_LuBanGrid_Index_" data-uid="CommLib.LuBanGrid.Index*"></a>
+
+  <h3 id="CommLib_LuBanGrid_Index" data-uid="CommLib.LuBanGrid.Index">
+  Index
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前大格在八大格组中的索引（0-7 循环）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Index { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>对应 LuBanGridNames、LuBanGridColor 数组下标</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_LuBanGrid_LeftGoodValue_" data-uid="CommLib.LuBanGrid.LeftGoodValue*"></a>
+
+  <h3 id="CommLib_LuBanGrid_LeftGoodValue" data-uid="CommLib.LuBanGrid.LeftGoodValue">
+  LeftGoodValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获取【小于当前刻度】的最近吉祥刻度值（向左寻吉）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double LeftGoodValue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>-1：未赋值 / 当前格本身为吉格，无需寻吉；
+有效值：左侧最近吉格的结束刻度值</p>
+</dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="CommLib_LuBanGrid_LeftGoodValue_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>仅当前格为凶格时生效，从当前上一格开始向前遍历吉格，取首个吉格结束值</p>
+</div>
+
+
+
+
+  <a id="CommLib_LuBanGrid_RightGoodValue_" data-uid="CommLib.LuBanGrid.RightGoodValue*"></a>
+
+  <h3 id="CommLib_LuBanGrid_RightGoodValue" data-uid="CommLib.LuBanGrid.RightGoodValue">
+  RightGoodValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获取【大于当前刻度】的最近吉祥刻度值（向右寻吉）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double RightGoodValue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>-1：未赋值 / 当前格本身为吉格，无需寻吉；
+有效值：右侧最近吉格的起始刻度值</p>
+</dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="CommLib_LuBanGrid_RightGoodValue_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>仅当前格为凶格时生效，从当前下一格开始向后遍历吉格，取首个吉格起始值</p>
+</div>
+
+
+
+
+  <a id="CommLib_LuBanGrid_SG_" data-uid="CommLib.LuBanGrid.SG*"></a>
+
+  <h3 id="CommLib_LuBanGrid_SG" data-uid="CommLib.LuBanGrid.SG">
+  SG
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前刻度归属的鲁班尺最小细分格实体</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LuBanSubGrid SG { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CommLib.LuBanSubGrid.html">LuBanSubGrid</a></dt>
+    <dd><p>基于当前 Value 解析对应的子格，绑定父级大格对象</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_LuBanGrid_StartValue_" data-uid="CommLib.LuBanGrid.StartValue*"></a>
+
+  <h3 id="CommLib_LuBanGrid_StartValue" data-uid="CommLib.LuBanGrid.StartValue">
+  StartValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前鲁班大格的起始刻度（单位：MM，向下取整）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double StartValue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_LuBanGrid_Value_" data-uid="CommLib.LuBanGrid.Value*"></a>
+
+  <h3 id="CommLib_LuBanGrid_Value" data-uid="CommLib.LuBanGrid.Value">
+  Value
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前传入的目标刻度值（单位：MM）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Value { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="CommLib_LuBanGrid_Value_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>默认初始值 -1 代表未赋值；根据名称初始化时，值默认取当前格起始值</p>
+</div>
+
+
+
+
+  <h2 class="section" id="methods">方法
+</h2>
+
+
+  <a id="CommLib_LuBanGrid_SetGrid_" data-uid="CommLib.LuBanGrid.SetGrid*"></a>
+
+  <h3 id="CommLib_LuBanGrid_SetGrid_System_Int32_" data-uid="CommLib.LuBanGrid.SetGrid(System.Int32)">
+  SetGrid(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>根据循环倍数索引，初始化当前大格所有属性</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetGrid(int Times)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>Times</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>格位循环倍数，用于计算8格循环后的实际索引和刻度区间</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="CommLib_LuBanGrid_SetGrid_System_Int32__remarks">备注</h4>
+  <div class="markdown level1 remarks"><ol>
+<li>对8格取模得到当前基础格索引</li>
+<li>自动计算当前格起止刻度、名称、吉凶颜色</li>
+<li>绑定当前归属细分小格、加载当前大格下所有子格数据</li>
+</ol>
+</div>
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/LuBanGrid.cs/#L17" class="edit-link">编辑本文</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>DingLanGrid 类
+ | CompassEx API文档 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="DingLanGrid 类
+ | CompassEx API文档 ">
+      
+      <meta name="description" content="丁兰尺大格计算实体类">
+      <link rel="icon" href="../../images/logo.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Jockeyvb/CompassEx/new/master/apiSpec/new?filename=CommLib_DingLanGrid.md&amp;value=---%0Auid%3A%20CommLib.DingLanGrid%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="本文内容">
+      <meta name="loc:searchResultsCount" content="找到{count}个“{query}”的搜索结果">
+      <meta name="loc:searchNoResults" content="没有找到“{query}”的搜索结果">
+      <meta name="loc:tocFilter" content="按标题筛选">
+      <meta name="loc:nextArticle" content="下一篇">
+      <meta name="loc:prevArticle" content="上一篇">
+      <meta name="loc:themeLight" content="白天">
+      <meta name="loc:themeDark" content="夜晚">
+      <meta name="loc:themeAuto" content="自动">
+      <meta name="loc:changeTheme" content="切换主题">
+      <meta name="loc:copy" content="复制">
+      <meta name="loc:downloadPdf" content="下载 PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo.png" alt="CompassEx 罗盘算法类库">
+            CompassEx 罗盘算法类库
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="CommLib.DingLanGrid">
+
+
+
+  <h1 id="CommLib_DingLanGrid" data-uid="CommLib.DingLanGrid" class="text-break">
+DingLanGrid 类
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>命名空间</dt><dd><a class="xref" href="CommLib.html">CommLib</a></dd></dl>
+  <dl><dt>程序集</dt><dd>CommLib.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>丁兰尺大格计算实体类</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DingLanGrid</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>继承</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">DingLanGrid</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>继承成员</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="CommLib_DingLanGrid_remarks">备注</h2>
+  <div class="markdown level0 remarks"><p>核心功能：根据输入刻度值/格位循环次数，解析丁兰尺十大基础大格，
+自动匹配格位名称、吉凶释义、吉凶颜色、起止刻度、归属细分小格，
+支持获取当前凶格左右最近吉祥刻度值，10个大格为一组循环往复
+丁兰尺单标准大格固定尺寸：38.78MM</p>
+</div>
+
+
+  <h2 class="section" id="constructors">构造函数
+</h2>
+
+
+  <a id="CommLib_DingLanGrid__ctor_" data-uid="CommLib.DingLanGrid.#ctor*"></a>
+
+  <h3 id="CommLib_DingLanGrid__ctor_System_Double_" data-uid="CommLib.DingLanGrid.#ctor(System.Double)">
+  DingLanGrid(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L209"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>根据具体刻度值初始化丁兰大格对象（核心构造函数）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DingLanGrid(double Value)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>Value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>输入的丁兰尺刻度值（单位：MM）</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="CommLib_DingLanGrid__ctor_System_Double__remarks">备注</h4>
+  <div class="markdown level1 remarks"><ol>
+<li>刻度向下取整，统一计算精度</li>
+<li>通过刻度/单格尺寸计算所属大格循环倍数</li>
+<li>自动初始化所有大格属性、子格、吉凶数据</li>
+<li>传入负数不初始化任何数据</li>
+</ol>
+</div>
+
+
+
+
+  <a id="CommLib_DingLanGrid__ctor_" data-uid="CommLib.DingLanGrid.#ctor*"></a>
+
+  <h3 id="CommLib_DingLanGrid__ctor_System_String_" data-uid="CommLib.DingLanGrid.#ctor(System.String)">
+  DingLanGrid(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L191"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>根据大格名称初始化丁兰大格对象</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DingLanGrid(string GridName)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>GridName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>丁兰十大基础大格名称</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="CommLib_DingLanGrid__ctor_System_String__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>传入无效名称则不初始化任何属性</p>
+</div>
+
+
+
+
+  <h2 class="section" id="fields">字段
+</h2>
+
+
+
+  <h3 id="CommLib_DingLanGrid_DingLanGridColor" data-uid="CommLib.DingLanGrid.DingLanGridColor">
+  DingLanGridColor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>丁兰尺十大大格吉凶颜色映射数组</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Color[] DingLanGridColor</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">字段值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a>[]</dt>
+    <dd><p>Red=吉格，Black=凶格，与名称、释义数组索引完全对应</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="CommLib_DingLanGrid_DingLanGridInfos" data-uid="CommLib.DingLanGrid.DingLanGridInfos">
+  DingLanGridInfos
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>丁兰尺十大大格吉凶释义说明数组</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly string[] DingLanGridInfos</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">字段值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd><p>与 DingLanGridNames 索引一一对应，存储每格吉凶详细释义</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="CommLib_DingLanGrid_DingLanGridNames" data-uid="CommLib.DingLanGrid.DingLanGridNames">
+  DingLanGridNames
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>丁兰尺十大基础大格名称数组（固定循环顺序）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly string[] DingLanGridNames</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">字段值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd><p>存储10个基础大格名称，用于取模循环计算格位索引</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="CommLib_DingLanGrid_GridFixed" data-uid="CommLib.DingLanGrid.GridFixed">
+  GridFixed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>丁兰尺单一大格固定标准刻度宽度</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const double GridFixed = 38.78</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">字段值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>固定值 38.78MM，为丁兰尺标准单大格尺寸</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">属性
+</h2>
+
+
+  <a id="CommLib_DingLanGrid_Child_" data-uid="CommLib.DingLanGrid.Child*"></a>
+
+  <h3 id="CommLib_DingLanGrid_Child" data-uid="CommLib.DingLanGrid.Child">
+  Child
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前大格包含的所有细分小格子级集合</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;DingLanSubGrid&gt; Child { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="CommLib.DingLanSubGrid.html">DingLanSubGrid</a>&gt;</dt>
+    <dd><p>自动加载当前大格对应的4个一组细分小格数据</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_DingLanGrid_DingLanGridInfo_" data-uid="CommLib.DingLanGrid.DingLanGridInfo*"></a>
+
+  <h3 id="CommLib_DingLanGrid_DingLanGridInfo" data-uid="CommLib.DingLanGrid.DingLanGridInfo">
+  DingLanGridInfo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前大格的吉凶文字说明</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DingLanGridInfo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_DingLanGrid_EndValue_" data-uid="CommLib.DingLanGrid.EndValue*"></a>
+
+  <h3 id="CommLib_DingLanGrid_EndValue" data-uid="CommLib.DingLanGrid.EndValue">
+  EndValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前丁兰大格结束刻度（单位：MM，向下取整）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double EndValue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_DingLanGrid_GridColor_" data-uid="CommLib.DingLanGrid.GridColor*"></a>
+
+  <h3 id="CommLib_DingLanGrid_GridColor" data-uid="CommLib.DingLanGrid.GridColor">
+  GridColor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前大格对应的吉凶展示颜色</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color GridColor { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a></dt>
+    <dd><p>根据当前格位索引自动匹配，红色为吉、黑色为凶</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_DingLanGrid_GridName_" data-uid="CommLib.DingLanGrid.GridName*"></a>
+
+  <h3 id="CommLib_DingLanGrid_GridName" data-uid="CommLib.DingLanGrid.GridName">
+  GridName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前大格中文名称</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GridName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>取值于 DingLanGridNames 对应索引名称</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_DingLanGrid_Index_" data-uid="CommLib.DingLanGrid.Index*"></a>
+
+  <h3 id="CommLib_DingLanGrid_Index" data-uid="CommLib.DingLanGrid.Index">
+  Index
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前大格在10格循环组中的索引</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Index { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>对应名称、释义、颜色数组下标（0-9循环）</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_DingLanGrid_LeftGoodValue_" data-uid="CommLib.DingLanGrid.LeftGoodValue*"></a>
+
+  <h3 id="CommLib_DingLanGrid_LeftGoodValue" data-uid="CommLib.DingLanGrid.LeftGoodValue">
+  LeftGoodValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L141"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获取【小于当前刻度】的最近吉祥刻度（向左寻吉）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double LeftGoodValue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>-1：刻度未赋值 / 当前格为吉格无需查找；
+有效数值：左侧首个吉格的结束刻度</p>
+</dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="CommLib_DingLanGrid_LeftGoodValue_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>仅当前格为凶格时生效，向前遍历10大格循环组，匹配首个吉色格位</p>
+</div>
+
+
+
+
+  <a id="CommLib_DingLanGrid_RightGoodValue_" data-uid="CommLib.DingLanGrid.RightGoodValue*"></a>
+
+  <h3 id="CommLib_DingLanGrid_RightGoodValue" data-uid="CommLib.DingLanGrid.RightGoodValue">
+  RightGoodValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获取【大于当前刻度】的最近吉祥刻度（向右寻吉）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double RightGoodValue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>-1：刻度未赋值 / 当前格为吉格无需查找；
+有效数值：右侧首个吉格的起始刻度+1</p>
+</dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="CommLib_DingLanGrid_RightGoodValue_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>仅当前格为凶格时生效，向后遍历10大格循环组，匹配首个吉色格位</p>
+</div>
+
+
+
+
+  <a id="CommLib_DingLanGrid_SG_" data-uid="CommLib.DingLanGrid.SG*"></a>
+
+  <h3 id="CommLib_DingLanGrid_SG" data-uid="CommLib.DingLanGrid.SG">
+  SG
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前刻度归属的丁兰细分小格实体</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DingLanSubGrid SG { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CommLib.DingLanSubGrid.html">DingLanSubGrid</a></dt>
+    <dd><p>绑定当前刻度对应的最小细分格对象，关联父级大格</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_DingLanGrid_StartValue_" data-uid="CommLib.DingLanGrid.StartValue*"></a>
+
+  <h3 id="CommLib_DingLanGrid_StartValue" data-uid="CommLib.DingLanGrid.StartValue">
+  StartValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前丁兰大格起始刻度（单位：MM，向下取整）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double StartValue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CommLib_DingLanGrid_Value_" data-uid="CommLib.DingLanGrid.Value*"></a>
+
+  <h3 id="CommLib_DingLanGrid_Value" data-uid="CommLib.DingLanGrid.Value">
+  Value
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>当前计算的目标刻度值</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Value { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="CommLib_DingLanGrid_Value_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>默认初始值 -1 代表未赋值；根据名称初始化时，默认赋值为格起始值</p>
+</div>
+
+
+
+
+  <h2 class="section" id="methods">方法
+</h2>
+
+
+  <a id="CommLib_DingLanGrid_SetGrid_" data-uid="CommLib.DingLanGrid.SetGrid*"></a>
+
+  <h3 id="CommLib_DingLanGrid_SetGrid_System_Int32_" data-uid="CommLib.DingLanGrid.SetGrid(System.Int32)">
+  SetGrid(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>根据循环次数初始化当前大格所有属性</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetGrid(int Times)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>Times</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>大格循环倍数，用于计算10格循环索引与刻度区间</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="CommLib_DingLanGrid_SetGrid_System_Int32__remarks">备注</h4>
+  <div class="markdown level1 remarks"><ol>
+<li>对10大格取模获取循环索引</li>
+<li>自动赋值名称、释义、吉凶颜色、起止刻度</li>
+<li>绑定对应细分小格、加载本组子格列表</li>
+</ol>
+</div>
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Assist/DingLanGrid.cs/#L17" class="edit-link">编辑本文</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

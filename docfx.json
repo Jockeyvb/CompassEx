@@ -4,11 +4,28 @@
     {
       "src": [
         {
-          "files": [ "CompassEx/*.csproj" ],
+          "files": [ "CompassEx/CompassEx.csproj" ],
+          "cwd": "CompassEx",
           "exclude": [ "**/bin/**", "**/obj/**" ]
         }
       ],
-      "dest": "api"
+      "dest": "api/CompassEx",
+      "properties": {
+        "Configuration": "Release"
+      }
+    },
+    {
+      "src": [
+        {
+          "files": [ "CompassEx/CommLib.csproj" ],
+          "cwd": "CommLib",
+          "exclude": [ "**/bin/**", "**/obj/**" ]
+        }
+      ],
+      "dest": "api/CommLib",
+      "properties": {
+        "Configuration": "Release"
+      }
     }
   ],
   "build": {
@@ -47,7 +64,9 @@
       "_enableSearch": false, 
       "_appLogoPath": "",
        "_appLang": "zh-CN",
-      "pdf": true
+      "pdf": true,
+         "_appLogoPath": "images/logo.png",       // 👈 設置頂部導航欄的 Logo 圖標
+      "_appFaviconPath": "images/logo.png", // 👈 設置瀏覽器標籤頁的 Favicon 圖標
     }
   }
 }

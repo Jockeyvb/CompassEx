@@ -45,6 +45,7 @@
   <!-- 自动生成的AssemblyInfo.cs 依赖tt，仅更新标记，不要Include -->
 
   <ItemGroup>
+    <ProjectReference Include="..\CommLib\CommLib.csproj" />
     <ProjectReference Include="..\Generator\Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
 

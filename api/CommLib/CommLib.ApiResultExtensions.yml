@@ -1,0 +1,470 @@
+### YamlMime:ManagedReference
+items:
+- uid: CommLib.ApiResultExtensions
+  commentId: T:CommLib.ApiResultExtensions
+  id: ApiResultExtensions
+  parent: CommLib
+  children:
+  - CommLib.ApiResultExtensions.ToResult``1(CommLib.ApiDynamicResult)
+  langs:
+  - csharp
+  - vb
+  name: ApiResultExtensions
+  nameWithType: ApiResultExtensions
+  fullName: CommLib.ApiResultExtensions
+  type: Class
+  source:
+    remote:
+      path: CommLib/ApiDynamicResult.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ApiResultExtensions
+    path: CommLib/ApiDynamicResult.cs
+    startLine: 98
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  summary: 针对原先 <xref href="CommLib.ApiDynamicResult" data-throw-if-not-resolved="false"></xref> 的动态高级转换链式扩展工具类。
+  example: []
+  syntax:
+    content: public static class ApiResultExtensions
+    content.vb: Public Module ApiResultExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CommLib.ApiResultExtensions.ToResult``1(CommLib.ApiDynamicResult)
+  commentId: M:CommLib.ApiResultExtensions.ToResult``1(CommLib.ApiDynamicResult)
+  id: ToResult``1(CommLib.ApiDynamicResult)
+  isExtensionMethod: true
+  parent: CommLib.ApiResultExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToResult<T>(ApiDynamicResult)
+  nameWithType: ApiResultExtensions.ToResult<T>(ApiDynamicResult)
+  fullName: CommLib.ApiResultExtensions.ToResult<T>(CommLib.ApiDynamicResult)
+  type: Method
+  source:
+    remote:
+      path: CommLib/ApiDynamicResult.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToResult
+    path: CommLib/ApiDynamicResult.cs
+    startLine: 111
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  summary: 将万能的动态 <xref href="Newtonsoft.Json.Linq.JToken" data-throw-if-not-resolved="false"></xref> 瞬间强转映射为指定的任意强类型泛型包装对象。
+  remarks: >-
+    1. 若传入的动态源为空（<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>），则直接安全断言并返回空。<br />
+
+    2. 方法会自动校验业务状态标识 <xref href="CommLib.ApiDynamicResult.Succeeded" data-throw-if-not-resolved="false"></xref>；若接口判定失败、或者核心数据节点无有效内容，则直接截断后续的反射开销，安全赋予泛型默认值（<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/default">default</a>）。<br />
+
+    3. 反序列化底层采用 Newtonsoft 的元数据逆向对账机制（<xref href="Newtonsoft.Json.Linq.JToken.ToObject%60%601" data-throw-if-not-resolved="false"></xref>），支持自动抹平因大小写差异或非对等结构导致的微小错配。
+  example: []
+  syntax:
+    content: public static ApiResult<T> ToResult<T>(this ApiDynamicResult dynamicResult)
+    parameters:
+    - id: dynamicResult
+      type: CommLib.ApiDynamicResult
+      description: 当前正在执行链式调用的原始动态 API 结果实例。
+    typeParameters:
+    - id: T
+      description: 期望转换并填充的目标强类型（例如实体列表或布尔值）。
+    return:
+      type: CommLib.ApiResult{{T}}
+      description: 返回装配完毕、带有强类型业务数据的全新 <xref href="CommLib.ApiResult%601" data-throw-if-not-resolved="false"></xref> 外壳实例。
+    content.vb: Public Shared Function ToResult(Of T)(dynamicResult As ApiDynamicResult) As ApiResult(Of T)
+  overload: CommLib.ApiResultExtensions.ToResult*
+  nameWithType.vb: ApiResultExtensions.ToResult(Of T)(ApiDynamicResult)
+  fullName.vb: CommLib.ApiResultExtensions.ToResult(Of T)(CommLib.ApiDynamicResult)
+  name.vb: ToResult(Of T)(ApiDynamicResult)
+references:
+- uid: CommLib.ApiDynamicResult
+  commentId: T:CommLib.ApiDynamicResult
+  parent: CommLib
+  href: CommLib.ApiDynamicResult.html
+  name: ApiDynamicResult
+  nameWithType: ApiDynamicResult
+  fullName: CommLib.ApiDynamicResult
+- uid: CommLib
+  commentId: N:CommLib
+  href: CommLib.html
+  name: CommLib
+  nameWithType: CommLib
+  fullName: CommLib
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Newtonsoft.Json.Linq.JToken
+  commentId: T:Newtonsoft.Json.Linq.JToken
+  parent: Newtonsoft.Json.Linq
+  isExternal: true
+  name: JToken
+  nameWithType: JToken
+  fullName: Newtonsoft.Json.Linq.JToken
+- uid: CommLib.ApiResult`1
+  commentId: T:CommLib.ApiResult`1
+  href: CommLib.ApiResult-1.html
+  name: ApiResult<T>
+  nameWithType: ApiResult<T>
+  fullName: CommLib.ApiResult<T>
+  nameWithType.vb: ApiResult(Of T)
+  fullName.vb: CommLib.ApiResult(Of T)
+  name.vb: ApiResult(Of T)
+  spec.csharp:
+  - uid: CommLib.ApiResult`1
+    name: ApiResult
+    href: CommLib.ApiResult-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: CommLib.ApiResult`1
+    name: ApiResult
+    href: CommLib.ApiResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CommLib.ApiDynamicResult.Succeeded
+  commentId: P:CommLib.ApiDynamicResult.Succeeded
+  href: CommLib.ApiDynamicResult.html#CommLib_ApiDynamicResult_Succeeded
+  name: Succeeded
+  nameWithType: ApiDynamicResult.Succeeded
+  fullName: CommLib.ApiDynamicResult.Succeeded
+- uid: Newtonsoft.Json.Linq.JToken.ToObject``1
+  commentId: M:Newtonsoft.Json.Linq.JToken.ToObject``1
+  isExternal: true
+  name: ToObject<T>()
+  nameWithType: JToken.ToObject<T>()
+  fullName: Newtonsoft.Json.Linq.JToken.ToObject<T>()
+  nameWithType.vb: JToken.ToObject(Of T)()
+  fullName.vb: Newtonsoft.Json.Linq.JToken.ToObject(Of T)()
+  name.vb: ToObject(Of T)()
+  spec.csharp:
+  - uid: Newtonsoft.Json.Linq.JToken.ToObject``1
+    name: ToObject
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Newtonsoft.Json.Linq.JToken.ToObject``1
+    name: ToObject
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: CommLib.ApiResultExtensions.ToResult*
+  commentId: Overload:CommLib.ApiResultExtensions.ToResult
+  href: CommLib.ApiResultExtensions.html#CommLib_ApiResultExtensions_ToResult__1_CommLib_ApiDynamicResult_
+  name: ToResult
+  nameWithType: ApiResultExtensions.ToResult
+  fullName: CommLib.ApiResultExtensions.ToResult
+- uid: CommLib.ApiResult{{T}}
+  commentId: T:CommLib.ApiResult{``0}
+  parent: CommLib
+  definition: CommLib.ApiResult`1
+  href: CommLib.ApiResult-1.html
+  name: ApiResult<T>
+  nameWithType: ApiResult<T>
+  fullName: CommLib.ApiResult<T>
+  nameWithType.vb: ApiResult(Of T)
+  fullName.vb: CommLib.ApiResult(Of T)
+  name.vb: ApiResult(Of T)
+  spec.csharp:
+  - uid: CommLib.ApiResult`1
+    name: ApiResult
+    href: CommLib.ApiResult-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: CommLib.ApiResult`1
+    name: ApiResult
+    href: CommLib.ApiResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Newtonsoft.Json.Linq
+  commentId: N:Newtonsoft.Json.Linq
+  isExternal: true
+  name: Newtonsoft.Json.Linq
+  nameWithType: Newtonsoft.Json.Linq
+  fullName: Newtonsoft.Json.Linq
+  spec.csharp:
+  - uid: Newtonsoft
+    name: Newtonsoft
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json
+    name: Json
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json.Linq
+    name: Linq
+    isExternal: true
+  spec.vb:
+  - uid: Newtonsoft
+    name: Newtonsoft
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json
+    name: Json
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json.Linq
+    name: Linq
+    isExternal: true

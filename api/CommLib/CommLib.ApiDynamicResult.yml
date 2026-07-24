@@ -1,0 +1,670 @@
+### YamlMime:ManagedReference
+items:
+- uid: CommLib.ApiDynamicResult
+  commentId: T:CommLib.ApiDynamicResult
+  id: ApiDynamicResult
+  parent: CommLib
+  children:
+  - CommLib.ApiDynamicResult.Data
+  - CommLib.ApiDynamicResult.Errors
+  - CommLib.ApiDynamicResult.Extras
+  - CommLib.ApiDynamicResult.StatusCode
+  - CommLib.ApiDynamicResult.Succeeded
+  - CommLib.ApiDynamicResult.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: ApiDynamicResult
+  nameWithType: ApiDynamicResult
+  fullName: CommLib.ApiDynamicResult
+  type: Class
+  source:
+    remote:
+      path: CommLib/ApiDynamicResult.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ApiDynamicResult
+    path: CommLib/ApiDynamicResult.cs
+    startLine: 13
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  summary: 通用动态类型 API 返回结果实体类。
+  remarks: 本类用于在 Web 接口层进行初级报文拦截或多层网关转发，通过统一的动态契约封装返回结构。
+  example: []
+  syntax:
+    content: public class ApiDynamicResult
+    content.vb: Public Class ApiDynamicResult
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - CommLib.ApiDynamicResult.CommLib.ApiResultExtensions.ToResult``1
+- uid: CommLib.ApiDynamicResult.StatusCode
+  commentId: P:CommLib.ApiDynamicResult.StatusCode
+  id: StatusCode
+  parent: CommLib.ApiDynamicResult
+  langs:
+  - csharp
+  - vb
+  name: StatusCode
+  nameWithType: ApiDynamicResult.StatusCode
+  fullName: CommLib.ApiDynamicResult.StatusCode
+  type: Property
+  source:
+    remote:
+      path: CommLib/ApiDynamicResult.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: StatusCode
+    path: CommLib/ApiDynamicResult.cs
+    startLine: 19
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  summary: 获取或设置 HTTP 或业务自定义状态码。
+  example: []
+  syntax:
+    content: public int StatusCode { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: 整型状态码，通常 200 代表成功，4xx/5xx 代表各级业务或系统异常。
+    content.vb: Public Property StatusCode As Integer
+  overload: CommLib.ApiDynamicResult.StatusCode*
+- uid: CommLib.ApiDynamicResult.Data
+  commentId: P:CommLib.ApiDynamicResult.Data
+  id: Data
+  parent: CommLib.ApiDynamicResult
+  langs:
+  - csharp
+  - vb
+  name: Data
+  nameWithType: ApiDynamicResult.Data
+  fullName: CommLib.ApiDynamicResult.Data
+  type: Property
+  source:
+    remote:
+      path: CommLib/ApiDynamicResult.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Data
+    path: CommLib/ApiDynamicResult.cs
+    startLine: 25
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  summary: 获取或设置动态 JSON 令牌内容。
+  example: []
+  syntax:
+    content: public JToken Data { get; set; }
+    parameters: []
+    return:
+      type: Newtonsoft.Json.Linq.JToken
+      description: 声明为万能的 <xref href="Newtonsoft.Json.Linq.JToken" data-throw-if-not-resolved="false"></xref>，可完美兼容并解析一切 {}（对象）和 []（数组）等复杂的 JSON 拓扑结构。
+    content.vb: Public Property Data As JToken
+  overload: CommLib.ApiDynamicResult.Data*
+- uid: CommLib.ApiDynamicResult.Succeeded
+  commentId: P:CommLib.ApiDynamicResult.Succeeded
+  id: Succeeded
+  parent: CommLib.ApiDynamicResult
+  langs:
+  - csharp
+  - vb
+  name: Succeeded
+  nameWithType: ApiDynamicResult.Succeeded
+  fullName: CommLib.ApiDynamicResult.Succeeded
+  type: Property
+  source:
+    remote:
+      path: CommLib/ApiDynamicResult.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Succeeded
+    path: CommLib/ApiDynamicResult.cs
+    startLine: 31
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  summary: 获取或设置一个值，该值指示本次 API 请求业务层是否成功执行。
+  example: []
+  syntax:
+    content: public bool Succeeded { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: 若成功执行则为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>。
+    content.vb: Public Property Succeeded As Boolean
+  overload: CommLib.ApiDynamicResult.Succeeded*
+- uid: CommLib.ApiDynamicResult.Errors
+  commentId: P:CommLib.ApiDynamicResult.Errors
+  id: Errors
+  parent: CommLib.ApiDynamicResult
+  langs:
+  - csharp
+  - vb
+  name: Errors
+  nameWithType: ApiDynamicResult.Errors
+  fullName: CommLib.ApiDynamicResult.Errors
+  type: Property
+  source:
+    remote:
+      path: CommLib/ApiDynamicResult.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Errors
+    path: CommLib/ApiDynamicResult.cs
+    startLine: 37
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  summary: 获取或设置接口发生错误时的异常或错误详情描述对象。
+  example: []
+  syntax:
+    content: public object Errors { get; set; }
+    parameters: []
+    return:
+      type: System.Object
+      description: 通常表现为标准字典、字符串数组或自定义错误对象结构。
+    content.vb: Public Property Errors As Object
+  overload: CommLib.ApiDynamicResult.Errors*
+- uid: CommLib.ApiDynamicResult.Extras
+  commentId: P:CommLib.ApiDynamicResult.Extras
+  id: Extras
+  parent: CommLib.ApiDynamicResult
+  langs:
+  - csharp
+  - vb
+  name: Extras
+  nameWithType: ApiDynamicResult.Extras
+  fullName: CommLib.ApiDynamicResult.Extras
+  type: Property
+  source:
+    remote:
+      path: CommLib/ApiDynamicResult.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Extras
+    path: CommLib/ApiDynamicResult.cs
+    startLine: 43
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  summary: 获取或设置接口返回的附加扩展信息对象。
+  example: []
+  syntax:
+    content: public object Extras { get; set; }
+    parameters: []
+    return:
+      type: System.Object
+      description: 用于传递分页元数据、性能耗时等不需要合并入核心 Data 节点的附加指标。
+    content.vb: Public Property Extras As Object
+  overload: CommLib.ApiDynamicResult.Extras*
+- uid: CommLib.ApiDynamicResult.Timestamp
+  commentId: P:CommLib.ApiDynamicResult.Timestamp
+  id: Timestamp
+  parent: CommLib.ApiDynamicResult
+  langs:
+  - csharp
+  - vb
+  name: Timestamp
+  nameWithType: ApiDynamicResult.Timestamp
+  fullName: CommLib.ApiDynamicResult.Timestamp
+  type: Property
+  source:
+    remote:
+      path: CommLib/ApiDynamicResult.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Timestamp
+    path: CommLib/ApiDynamicResult.cs
+    startLine: 49
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  summary: 获取或设置服务器响应时的 Unix 时间戳（毫秒级）。
+  example: []
+  syntax:
+    content: public long Timestamp { get; set; }
+    parameters: []
+    return:
+      type: System.Int64
+      description: 自 1970-01-01 00:00:00 UTC 起算的累计毫秒数，常用于多端时区对齐或接口幂等指纹校验。
+    content.vb: Public Property Timestamp As Long
+  overload: CommLib.ApiDynamicResult.Timestamp*
+references:
+- uid: CommLib
+  commentId: N:CommLib
+  href: CommLib.html
+  name: CommLib
+  nameWithType: CommLib
+  fullName: CommLib
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CommLib.ApiDynamicResult.CommLib.ApiResultExtensions.ToResult``1
+  commentId: M:CommLib.ApiResultExtensions.ToResult``1(CommLib.ApiDynamicResult)
+  parent: CommLib.ApiResultExtensions
+  definition: CommLib.ApiResultExtensions.ToResult``1(CommLib.ApiDynamicResult)
+  href: CommLib.ApiResultExtensions.html#CommLib_ApiResultExtensions_ToResult__1_CommLib_ApiDynamicResult_
+  name: ToResult<T>(ApiDynamicResult)
+  nameWithType: ApiResultExtensions.ToResult<T>(ApiDynamicResult)
+  fullName: CommLib.ApiResultExtensions.ToResult<T>(CommLib.ApiDynamicResult)
+  nameWithType.vb: ApiResultExtensions.ToResult(Of T)(ApiDynamicResult)
+  fullName.vb: CommLib.ApiResultExtensions.ToResult(Of T)(CommLib.ApiDynamicResult)
+  name.vb: ToResult(Of T)(ApiDynamicResult)
+  spec.csharp:
+  - uid: CommLib.ApiResultExtensions.ToResult``1(CommLib.ApiDynamicResult)
+    name: ToResult
+    href: CommLib.ApiResultExtensions.html#CommLib_ApiResultExtensions_ToResult__1_CommLib_ApiDynamicResult_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: CommLib.ApiDynamicResult
+    name: ApiDynamicResult
+    href: CommLib.ApiDynamicResult.html
+  - name: )
+  spec.vb:
+  - uid: CommLib.ApiResultExtensions.ToResult``1(CommLib.ApiDynamicResult)
+    name: ToResult
+    href: CommLib.ApiResultExtensions.html#CommLib_ApiResultExtensions_ToResult__1_CommLib_ApiDynamicResult_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: CommLib.ApiDynamicResult
+    name: ApiDynamicResult
+    href: CommLib.ApiDynamicResult.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CommLib.ApiResultExtensions.ToResult``1(CommLib.ApiDynamicResult)
+  commentId: M:CommLib.ApiResultExtensions.ToResult``1(CommLib.ApiDynamicResult)
+  href: CommLib.ApiResultExtensions.html#CommLib_ApiResultExtensions_ToResult__1_CommLib_ApiDynamicResult_
+  name: ToResult<T>(ApiDynamicResult)
+  nameWithType: ApiResultExtensions.ToResult<T>(ApiDynamicResult)
+  fullName: CommLib.ApiResultExtensions.ToResult<T>(CommLib.ApiDynamicResult)
+  nameWithType.vb: ApiResultExtensions.ToResult(Of T)(ApiDynamicResult)
+  fullName.vb: CommLib.ApiResultExtensions.ToResult(Of T)(CommLib.ApiDynamicResult)
+  name.vb: ToResult(Of T)(ApiDynamicResult)
+  spec.csharp:
+  - uid: CommLib.ApiResultExtensions.ToResult``1(CommLib.ApiDynamicResult)
+    name: ToResult
+    href: CommLib.ApiResultExtensions.html#CommLib_ApiResultExtensions_ToResult__1_CommLib_ApiDynamicResult_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: CommLib.ApiDynamicResult
+    name: ApiDynamicResult
+    href: CommLib.ApiDynamicResult.html
+  - name: )
+  spec.vb:
+  - uid: CommLib.ApiResultExtensions.ToResult``1(CommLib.ApiDynamicResult)
+    name: ToResult
+    href: CommLib.ApiResultExtensions.html#CommLib_ApiResultExtensions_ToResult__1_CommLib_ApiDynamicResult_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: CommLib.ApiDynamicResult
+    name: ApiDynamicResult
+    href: CommLib.ApiDynamicResult.html
+  - name: )
+- uid: CommLib.ApiResultExtensions
+  commentId: T:CommLib.ApiResultExtensions
+  parent: CommLib
+  href: CommLib.ApiResultExtensions.html
+  name: ApiResultExtensions
+  nameWithType: ApiResultExtensions
+  fullName: CommLib.ApiResultExtensions
+- uid: CommLib.ApiDynamicResult.StatusCode*
+  commentId: Overload:CommLib.ApiDynamicResult.StatusCode
+  href: CommLib.ApiDynamicResult.html#CommLib_ApiDynamicResult_StatusCode
+  name: StatusCode
+  nameWithType: ApiDynamicResult.StatusCode
+  fullName: CommLib.ApiDynamicResult.StatusCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Newtonsoft.Json.Linq.JToken
+  commentId: T:Newtonsoft.Json.Linq.JToken
+  parent: Newtonsoft.Json.Linq
+  isExternal: true
+  name: JToken
+  nameWithType: JToken
+  fullName: Newtonsoft.Json.Linq.JToken
+- uid: CommLib.ApiDynamicResult.Data*
+  commentId: Overload:CommLib.ApiDynamicResult.Data
+  href: CommLib.ApiDynamicResult.html#CommLib_ApiDynamicResult_Data
+  name: Data
+  nameWithType: ApiDynamicResult.Data
+  fullName: CommLib.ApiDynamicResult.Data
+- uid: Newtonsoft.Json.Linq
+  commentId: N:Newtonsoft.Json.Linq
+  isExternal: true
+  name: Newtonsoft.Json.Linq
+  nameWithType: Newtonsoft.Json.Linq
+  fullName: Newtonsoft.Json.Linq
+  spec.csharp:
+  - uid: Newtonsoft
+    name: Newtonsoft
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json
+    name: Json
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json.Linq
+    name: Linq
+    isExternal: true
+  spec.vb:
+  - uid: Newtonsoft
+    name: Newtonsoft
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json
+    name: Json
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json.Linq
+    name: Linq
+    isExternal: true
+- uid: CommLib.ApiDynamicResult.Succeeded*
+  commentId: Overload:CommLib.ApiDynamicResult.Succeeded
+  href: CommLib.ApiDynamicResult.html#CommLib_ApiDynamicResult_Succeeded
+  name: Succeeded
+  nameWithType: ApiDynamicResult.Succeeded
+  fullName: CommLib.ApiDynamicResult.Succeeded
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: CommLib.ApiDynamicResult.Errors*
+  commentId: Overload:CommLib.ApiDynamicResult.Errors
+  href: CommLib.ApiDynamicResult.html#CommLib_ApiDynamicResult_Errors
+  name: Errors
+  nameWithType: ApiDynamicResult.Errors
+  fullName: CommLib.ApiDynamicResult.Errors
+- uid: CommLib.ApiDynamicResult.Extras*
+  commentId: Overload:CommLib.ApiDynamicResult.Extras
+  href: CommLib.ApiDynamicResult.html#CommLib_ApiDynamicResult_Extras
+  name: Extras
+  nameWithType: ApiDynamicResult.Extras
+  fullName: CommLib.ApiDynamicResult.Extras
+- uid: CommLib.ApiDynamicResult.Timestamp*
+  commentId: Overload:CommLib.ApiDynamicResult.Timestamp
+  href: CommLib.ApiDynamicResult.html#CommLib_ApiDynamicResult_Timestamp
+  name: Timestamp
+  nameWithType: ApiDynamicResult.Timestamp
+  fullName: CommLib.ApiDynamicResult.Timestamp
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
