@@ -5,9 +5,10 @@ items:
   id: CompassEx.Gua
   children:
   - CompassEx.Gua.FateGua
+  - CompassEx.Gua.FiveGhostWealth
+  - CompassEx.Gua.FlipGua
+  - CompassEx.Gua.FlipGuaMethod
   - CompassEx.Gua.GuaClass
-  - CompassEx.Gua.GuaFlip
-  - CompassEx.Gua.GuaFlipMethod
   - CompassEx.Gua.GuaQi
   - CompassEx.Gua.GuaSubClass
   - CompassEx.Gua.INaJiaResult
@@ -37,6 +38,26 @@ references:
   name: FateGua
   nameWithType: FateGua
   fullName: CompassEx.Gua.FateGua
+- uid: CompassEx.Gua.FiveGhostWealth
+  commentId: T:CompassEx.Gua.FiveGhostWealth
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.FiveGhostWealth.html
+  name: FiveGhostWealth
+  nameWithType: FiveGhostWealth
+  fullName: CompassEx.Gua.FiveGhostWealth
+- uid: CompassEx.Gua.FlipGuaMethod
+  commentId: T:CompassEx.Gua.FlipGuaMethod
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.FlipGuaMethod.html
+  name: FlipGuaMethod
+  nameWithType: FlipGuaMethod
+  fullName: CompassEx.Gua.FlipGuaMethod
+- uid: CompassEx.Gua.FlipGua
+  commentId: T:CompassEx.Gua.FlipGua
+  href: CompassEx.Gua.FlipGua.html
+  name: FlipGua
+  nameWithType: FlipGua
+  fullName: CompassEx.Gua.FlipGua
 - uid: CompassEx.Gua.GuaClass
   commentId: T:CompassEx.Gua.GuaClass
   parent: CompassEx.Gua
@@ -44,19 +65,6 @@ references:
   name: GuaClass
   nameWithType: GuaClass
   fullName: CompassEx.Gua.GuaClass
-- uid: CompassEx.Gua.GuaFlipMethod
-  commentId: T:CompassEx.Gua.GuaFlipMethod
-  parent: CompassEx.Gua
-  href: CompassEx.Gua.GuaFlipMethod.html
-  name: GuaFlipMethod
-  nameWithType: GuaFlipMethod
-  fullName: CompassEx.Gua.GuaFlipMethod
-- uid: CompassEx.Gua.GuaFlip
-  commentId: T:CompassEx.Gua.GuaFlip
-  href: CompassEx.Gua.GuaFlip.html
-  name: GuaFlip
-  nameWithType: GuaFlip
-  fullName: CompassEx.Gua.GuaFlip
 - uid: CompassEx.Gua.GuaQi
   commentId: T:CompassEx.Gua.GuaQi
   parent: CompassEx.Gua

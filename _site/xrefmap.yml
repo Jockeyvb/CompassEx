@@ -1,6 +1,516 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: CommLib
+  name: CommLib
+  href: api/CommLib.html
+  commentId: N:CommLib
+  fullName: CommLib
+  nameWithType: CommLib
+- uid: CommLib.DingLanGrid
+  name: DingLanGrid
+  href: api/CommLib.DingLanGrid.html
+  commentId: T:CommLib.DingLanGrid
+  fullName: CommLib.DingLanGrid
+  nameWithType: DingLanGrid
+- uid: CommLib.DingLanGrid.#ctor(System.Double)
+  name: DingLanGrid(double)
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid__ctor_System_Double_
+  commentId: M:CommLib.DingLanGrid.#ctor(System.Double)
+  name.vb: New(Double)
+  fullName: CommLib.DingLanGrid.DingLanGrid(double)
+  fullName.vb: CommLib.DingLanGrid.New(Double)
+  nameWithType: DingLanGrid.DingLanGrid(double)
+  nameWithType.vb: DingLanGrid.New(Double)
+- uid: CommLib.DingLanGrid.#ctor(System.String)
+  name: DingLanGrid(string)
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid__ctor_System_String_
+  commentId: M:CommLib.DingLanGrid.#ctor(System.String)
+  name.vb: New(String)
+  fullName: CommLib.DingLanGrid.DingLanGrid(string)
+  fullName.vb: CommLib.DingLanGrid.New(String)
+  nameWithType: DingLanGrid.DingLanGrid(string)
+  nameWithType.vb: DingLanGrid.New(String)
+- uid: CommLib.DingLanGrid.#ctor*
+  name: DingLanGrid
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid__ctor_
+  commentId: Overload:CommLib.DingLanGrid.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: CommLib.DingLanGrid.DingLanGrid
+  fullName.vb: CommLib.DingLanGrid.New
+  nameWithType: DingLanGrid.DingLanGrid
+  nameWithType.vb: DingLanGrid.New
+- uid: CommLib.DingLanGrid.Child
+  name: Child
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_Child
+  commentId: F:CommLib.DingLanGrid.Child
+  fullName: CommLib.DingLanGrid.Child
+  nameWithType: DingLanGrid.Child
+- uid: CommLib.DingLanGrid.DingLanGridColor
+  name: DingLanGridColor
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_DingLanGridColor
+  commentId: F:CommLib.DingLanGrid.DingLanGridColor
+  fullName: CommLib.DingLanGrid.DingLanGridColor
+  nameWithType: DingLanGrid.DingLanGridColor
+- uid: CommLib.DingLanGrid.DingLanGridInfo
+  name: DingLanGridInfo
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_DingLanGridInfo
+  commentId: F:CommLib.DingLanGrid.DingLanGridInfo
+  fullName: CommLib.DingLanGrid.DingLanGridInfo
+  nameWithType: DingLanGrid.DingLanGridInfo
+- uid: CommLib.DingLanGrid.DingLanGridInfos
+  name: DingLanGridInfos
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_DingLanGridInfos
+  commentId: F:CommLib.DingLanGrid.DingLanGridInfos
+  fullName: CommLib.DingLanGrid.DingLanGridInfos
+  nameWithType: DingLanGrid.DingLanGridInfos
+- uid: CommLib.DingLanGrid.DingLanGridName
+  name: DingLanGridName
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_DingLanGridName
+  commentId: F:CommLib.DingLanGrid.DingLanGridName
+  fullName: CommLib.DingLanGrid.DingLanGridName
+  nameWithType: DingLanGrid.DingLanGridName
+- uid: CommLib.DingLanGrid.EndValue
+  name: EndValue
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_EndValue
+  commentId: F:CommLib.DingLanGrid.EndValue
+  fullName: CommLib.DingLanGrid.EndValue
+  nameWithType: DingLanGrid.EndValue
+- uid: CommLib.DingLanGrid.GridColor
+  name: GridColor
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_GridColor
+  commentId: F:CommLib.DingLanGrid.GridColor
+  fullName: CommLib.DingLanGrid.GridColor
+  nameWithType: DingLanGrid.GridColor
+- uid: CommLib.DingLanGrid.GridFixed
+  name: GridFixed
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_GridFixed
+  commentId: F:CommLib.DingLanGrid.GridFixed
+  fullName: CommLib.DingLanGrid.GridFixed
+  nameWithType: DingLanGrid.GridFixed
+- uid: CommLib.DingLanGrid.GridName
+  name: GridName
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_GridName
+  commentId: F:CommLib.DingLanGrid.GridName
+  fullName: CommLib.DingLanGrid.GridName
+  nameWithType: DingLanGrid.GridName
+- uid: CommLib.DingLanGrid.Index
+  name: Index
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_Index
+  commentId: F:CommLib.DingLanGrid.Index
+  fullName: CommLib.DingLanGrid.Index
+  nameWithType: DingLanGrid.Index
+- uid: CommLib.DingLanGrid.LeftGoodValue
+  name: LeftGoodValue
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_LeftGoodValue
+  commentId: P:CommLib.DingLanGrid.LeftGoodValue
+  fullName: CommLib.DingLanGrid.LeftGoodValue
+  nameWithType: DingLanGrid.LeftGoodValue
+- uid: CommLib.DingLanGrid.LeftGoodValue*
+  name: LeftGoodValue
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_LeftGoodValue_
+  commentId: Overload:CommLib.DingLanGrid.LeftGoodValue
+  isSpec: "True"
+  fullName: CommLib.DingLanGrid.LeftGoodValue
+  nameWithType: DingLanGrid.LeftGoodValue
+- uid: CommLib.DingLanGrid.RightGoodValue
+  name: RightGoodValue
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_RightGoodValue
+  commentId: P:CommLib.DingLanGrid.RightGoodValue
+  fullName: CommLib.DingLanGrid.RightGoodValue
+  nameWithType: DingLanGrid.RightGoodValue
+- uid: CommLib.DingLanGrid.RightGoodValue*
+  name: RightGoodValue
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_RightGoodValue_
+  commentId: Overload:CommLib.DingLanGrid.RightGoodValue
+  isSpec: "True"
+  fullName: CommLib.DingLanGrid.RightGoodValue
+  nameWithType: DingLanGrid.RightGoodValue
+- uid: CommLib.DingLanGrid.SG
+  name: SG
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_SG
+  commentId: F:CommLib.DingLanGrid.SG
+  fullName: CommLib.DingLanGrid.SG
+  nameWithType: DingLanGrid.SG
+- uid: CommLib.DingLanGrid.SetGrid(System.Int32)
+  name: SetGrid(int)
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_SetGrid_System_Int32_
+  commentId: M:CommLib.DingLanGrid.SetGrid(System.Int32)
+  name.vb: SetGrid(Integer)
+  fullName: CommLib.DingLanGrid.SetGrid(int)
+  fullName.vb: CommLib.DingLanGrid.SetGrid(Integer)
+  nameWithType: DingLanGrid.SetGrid(int)
+  nameWithType.vb: DingLanGrid.SetGrid(Integer)
+- uid: CommLib.DingLanGrid.SetGrid*
+  name: SetGrid
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_SetGrid_
+  commentId: Overload:CommLib.DingLanGrid.SetGrid
+  isSpec: "True"
+  fullName: CommLib.DingLanGrid.SetGrid
+  nameWithType: DingLanGrid.SetGrid
+- uid: CommLib.DingLanGrid.StartValue
+  name: StartValue
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_StartValue
+  commentId: F:CommLib.DingLanGrid.StartValue
+  fullName: CommLib.DingLanGrid.StartValue
+  nameWithType: DingLanGrid.StartValue
+- uid: CommLib.DingLanGrid.Value
+  name: Value
+  href: api/CommLib.DingLanGrid.html#CommLib_DingLanGrid_Value
+  commentId: F:CommLib.DingLanGrid.Value
+  fullName: CommLib.DingLanGrid.Value
+  nameWithType: DingLanGrid.Value
+- uid: CommLib.DingLanSubGrid
+  name: DingLanSubGrid
+  href: api/CommLib.DingLanSubGrid.html
+  commentId: T:CommLib.DingLanSubGrid
+  fullName: CommLib.DingLanSubGrid
+  nameWithType: DingLanSubGrid
+- uid: CommLib.DingLanSubGrid.#ctor(System.Double)
+  name: DingLanSubGrid(double)
+  href: api/CommLib.DingLanSubGrid.html#CommLib_DingLanSubGrid__ctor_System_Double_
+  commentId: M:CommLib.DingLanSubGrid.#ctor(System.Double)
+  name.vb: New(Double)
+  fullName: CommLib.DingLanSubGrid.DingLanSubGrid(double)
+  fullName.vb: CommLib.DingLanSubGrid.New(Double)
+  nameWithType: DingLanSubGrid.DingLanSubGrid(double)
+  nameWithType.vb: DingLanSubGrid.New(Double)
+- uid: CommLib.DingLanSubGrid.#ctor(System.String)
+  name: DingLanSubGrid(string)
+  href: api/CommLib.DingLanSubGrid.html#CommLib_DingLanSubGrid__ctor_System_String_
+  commentId: M:CommLib.DingLanSubGrid.#ctor(System.String)
+  name.vb: New(String)
+  fullName: CommLib.DingLanSubGrid.DingLanSubGrid(string)
+  fullName.vb: CommLib.DingLanSubGrid.New(String)
+  nameWithType: DingLanSubGrid.DingLanSubGrid(string)
+  nameWithType.vb: DingLanSubGrid.New(String)
+- uid: CommLib.DingLanSubGrid.#ctor*
+  name: DingLanSubGrid
+  href: api/CommLib.DingLanSubGrid.html#CommLib_DingLanSubGrid__ctor_
+  commentId: Overload:CommLib.DingLanSubGrid.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: CommLib.DingLanSubGrid.DingLanSubGrid
+  fullName.vb: CommLib.DingLanSubGrid.New
+  nameWithType: DingLanSubGrid.DingLanSubGrid
+  nameWithType.vb: DingLanSubGrid.New
+- uid: CommLib.DingLanSubGrid.DingLanSubGridInfo
+  name: DingLanSubGridInfo
+  href: api/CommLib.DingLanSubGrid.html#CommLib_DingLanSubGrid_DingLanSubGridInfo
+  commentId: F:CommLib.DingLanSubGrid.DingLanSubGridInfo
+  fullName: CommLib.DingLanSubGrid.DingLanSubGridInfo
+  nameWithType: DingLanSubGrid.DingLanSubGridInfo
+- uid: CommLib.DingLanSubGrid.DingLanSubGridName
+  name: DingLanSubGridName
+  href: api/CommLib.DingLanSubGrid.html#CommLib_DingLanSubGrid_DingLanSubGridName
+  commentId: F:CommLib.DingLanSubGrid.DingLanSubGridName
+  fullName: CommLib.DingLanSubGrid.DingLanSubGridName
+  nameWithType: DingLanSubGrid.DingLanSubGridName
+- uid: CommLib.DingLanSubGrid.EndValue
+  name: EndValue
+  href: api/CommLib.DingLanSubGrid.html#CommLib_DingLanSubGrid_EndValue
+  commentId: F:CommLib.DingLanSubGrid.EndValue
+  fullName: CommLib.DingLanSubGrid.EndValue
+  nameWithType: DingLanSubGrid.EndValue
+- uid: CommLib.DingLanSubGrid.GetGroup(System.Double,CommLib.DingLanGrid)
+  name: GetGroup(double, DingLanGrid)
+  href: api/CommLib.DingLanSubGrid.html#CommLib_DingLanSubGrid_GetGroup_System_Double_CommLib_DingLanGrid_
+  commentId: M:CommLib.DingLanSubGrid.GetGroup(System.Double,CommLib.DingLanGrid)
+  name.vb: GetGroup(Double, DingLanGrid)
+  fullName: CommLib.DingLanSubGrid.GetGroup(double, CommLib.DingLanGrid)
+  fullName.vb: CommLib.DingLanSubGrid.GetGroup(Double, CommLib.DingLanGrid)
+  nameWithType: DingLanSubGrid.GetGroup(double, DingLanGrid)
+  nameWithType.vb: DingLanSubGrid.GetGroup(Double, DingLanGrid)
+- uid: CommLib.DingLanSubGrid.GetGroup*
+  name: GetGroup
+  href: api/CommLib.DingLanSubGrid.html#CommLib_DingLanSubGrid_GetGroup_
+  commentId: Overload:CommLib.DingLanSubGrid.GetGroup
+  isSpec: "True"
+  fullName: CommLib.DingLanSubGrid.GetGroup
+  nameWithType: DingLanSubGrid.GetGroup
+- uid: CommLib.DingLanSubGrid.Index
+  name: Index
+  href: api/CommLib.DingLanSubGrid.html#CommLib_DingLanSubGrid_Index
+  commentId: F:CommLib.DingLanSubGrid.Index
+  fullName: CommLib.DingLanSubGrid.Index
+  nameWithType: DingLanSubGrid.Index
+- uid: CommLib.DingLanSubGrid.Parent
+  name: Parent
+  href: api/CommLib.DingLanSubGrid.html#CommLib_DingLanSubGrid_Parent
+  commentId: F:CommLib.DingLanSubGrid.Parent
+  fullName: CommLib.DingLanSubGrid.Parent
+  nameWithType: DingLanSubGrid.Parent
+- uid: CommLib.DingLanSubGrid.StartValue
+  name: StartValue
+  href: api/CommLib.DingLanSubGrid.html#CommLib_DingLanSubGrid_StartValue
+  commentId: F:CommLib.DingLanSubGrid.StartValue
+  fullName: CommLib.DingLanSubGrid.StartValue
+  nameWithType: DingLanSubGrid.StartValue
+- uid: CommLib.DingLanSubGrid.SubGridFixed
+  name: SubGridFixed
+  href: api/CommLib.DingLanSubGrid.html#CommLib_DingLanSubGrid_SubGridFixed
+  commentId: F:CommLib.DingLanSubGrid.SubGridFixed
+  fullName: CommLib.DingLanSubGrid.SubGridFixed
+  nameWithType: DingLanSubGrid.SubGridFixed
+- uid: CommLib.DingLanSubGrid.SubGridName
+  name: SubGridName
+  href: api/CommLib.DingLanSubGrid.html#CommLib_DingLanSubGrid_SubGridName
+  commentId: F:CommLib.DingLanSubGrid.SubGridName
+  fullName: CommLib.DingLanSubGrid.SubGridName
+  nameWithType: DingLanSubGrid.SubGridName
+- uid: CommLib.DingLanSubGrid.Value
+  name: Value
+  href: api/CommLib.DingLanSubGrid.html#CommLib_DingLanSubGrid_Value
+  commentId: F:CommLib.DingLanSubGrid.Value
+  fullName: CommLib.DingLanSubGrid.Value
+  nameWithType: DingLanSubGrid.Value
+- uid: CommLib.LuBanGrid
+  name: LuBanGrid
+  href: api/CommLib.LuBanGrid.html
+  commentId: T:CommLib.LuBanGrid
+  fullName: CommLib.LuBanGrid
+  nameWithType: LuBanGrid
+- uid: CommLib.LuBanGrid.#ctor(System.Double)
+  name: LuBanGrid(double)
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid__ctor_System_Double_
+  commentId: M:CommLib.LuBanGrid.#ctor(System.Double)
+  name.vb: New(Double)
+  fullName: CommLib.LuBanGrid.LuBanGrid(double)
+  fullName.vb: CommLib.LuBanGrid.New(Double)
+  nameWithType: LuBanGrid.LuBanGrid(double)
+  nameWithType.vb: LuBanGrid.New(Double)
+- uid: CommLib.LuBanGrid.#ctor(System.String)
+  name: LuBanGrid(string)
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid__ctor_System_String_
+  commentId: M:CommLib.LuBanGrid.#ctor(System.String)
+  name.vb: New(String)
+  fullName: CommLib.LuBanGrid.LuBanGrid(string)
+  fullName.vb: CommLib.LuBanGrid.New(String)
+  nameWithType: LuBanGrid.LuBanGrid(string)
+  nameWithType.vb: LuBanGrid.New(String)
+- uid: CommLib.LuBanGrid.#ctor*
+  name: LuBanGrid
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid__ctor_
+  commentId: Overload:CommLib.LuBanGrid.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: CommLib.LuBanGrid.LuBanGrid
+  fullName.vb: CommLib.LuBanGrid.New
+  nameWithType: LuBanGrid.LuBanGrid
+  nameWithType.vb: LuBanGrid.New
+- uid: CommLib.LuBanGrid.Child
+  name: Child
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid_Child
+  commentId: F:CommLib.LuBanGrid.Child
+  fullName: CommLib.LuBanGrid.Child
+  nameWithType: LuBanGrid.Child
+- uid: CommLib.LuBanGrid.EndValue
+  name: EndValue
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid_EndValue
+  commentId: F:CommLib.LuBanGrid.EndValue
+  fullName: CommLib.LuBanGrid.EndValue
+  nameWithType: LuBanGrid.EndValue
+- uid: CommLib.LuBanGrid.GridColor
+  name: GridColor
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid_GridColor
+  commentId: F:CommLib.LuBanGrid.GridColor
+  fullName: CommLib.LuBanGrid.GridColor
+  nameWithType: LuBanGrid.GridColor
+- uid: CommLib.LuBanGrid.GridFixed
+  name: GridFixed
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid_GridFixed
+  commentId: F:CommLib.LuBanGrid.GridFixed
+  fullName: CommLib.LuBanGrid.GridFixed
+  nameWithType: LuBanGrid.GridFixed
+- uid: CommLib.LuBanGrid.GridName
+  name: GridName
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid_GridName
+  commentId: F:CommLib.LuBanGrid.GridName
+  fullName: CommLib.LuBanGrid.GridName
+  nameWithType: LuBanGrid.GridName
+- uid: CommLib.LuBanGrid.Index
+  name: Index
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid_Index
+  commentId: F:CommLib.LuBanGrid.Index
+  fullName: CommLib.LuBanGrid.Index
+  nameWithType: LuBanGrid.Index
+- uid: CommLib.LuBanGrid.LeftGoodValue
+  name: LeftGoodValue
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid_LeftGoodValue
+  commentId: P:CommLib.LuBanGrid.LeftGoodValue
+  fullName: CommLib.LuBanGrid.LeftGoodValue
+  nameWithType: LuBanGrid.LeftGoodValue
+- uid: CommLib.LuBanGrid.LeftGoodValue*
+  name: LeftGoodValue
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid_LeftGoodValue_
+  commentId: Overload:CommLib.LuBanGrid.LeftGoodValue
+  isSpec: "True"
+  fullName: CommLib.LuBanGrid.LeftGoodValue
+  nameWithType: LuBanGrid.LeftGoodValue
+- uid: CommLib.LuBanGrid.LuBanGridColor
+  name: LuBanGridColor
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid_LuBanGridColor
+  commentId: F:CommLib.LuBanGrid.LuBanGridColor
+  fullName: CommLib.LuBanGrid.LuBanGridColor
+  nameWithType: LuBanGrid.LuBanGridColor
+- uid: CommLib.LuBanGrid.LuBanGridName
+  name: LuBanGridName
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid_LuBanGridName
+  commentId: F:CommLib.LuBanGrid.LuBanGridName
+  fullName: CommLib.LuBanGrid.LuBanGridName
+  nameWithType: LuBanGrid.LuBanGridName
+- uid: CommLib.LuBanGrid.RightGoodValue
+  name: RightGoodValue
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid_RightGoodValue
+  commentId: P:CommLib.LuBanGrid.RightGoodValue
+  fullName: CommLib.LuBanGrid.RightGoodValue
+  nameWithType: LuBanGrid.RightGoodValue
+- uid: CommLib.LuBanGrid.RightGoodValue*
+  name: RightGoodValue
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid_RightGoodValue_
+  commentId: Overload:CommLib.LuBanGrid.RightGoodValue
+  isSpec: "True"
+  fullName: CommLib.LuBanGrid.RightGoodValue
+  nameWithType: LuBanGrid.RightGoodValue
+- uid: CommLib.LuBanGrid.SG
+  name: SG
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid_SG
+  commentId: F:CommLib.LuBanGrid.SG
+  fullName: CommLib.LuBanGrid.SG
+  nameWithType: LuBanGrid.SG
+- uid: CommLib.LuBanGrid.SetGrid(System.Int32)
+  name: SetGrid(int)
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid_SetGrid_System_Int32_
+  commentId: M:CommLib.LuBanGrid.SetGrid(System.Int32)
+  name.vb: SetGrid(Integer)
+  fullName: CommLib.LuBanGrid.SetGrid(int)
+  fullName.vb: CommLib.LuBanGrid.SetGrid(Integer)
+  nameWithType: LuBanGrid.SetGrid(int)
+  nameWithType.vb: LuBanGrid.SetGrid(Integer)
+- uid: CommLib.LuBanGrid.SetGrid*
+  name: SetGrid
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid_SetGrid_
+  commentId: Overload:CommLib.LuBanGrid.SetGrid
+  isSpec: "True"
+  fullName: CommLib.LuBanGrid.SetGrid
+  nameWithType: LuBanGrid.SetGrid
+- uid: CommLib.LuBanGrid.StartValue
+  name: StartValue
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid_StartValue
+  commentId: F:CommLib.LuBanGrid.StartValue
+  fullName: CommLib.LuBanGrid.StartValue
+  nameWithType: LuBanGrid.StartValue
+- uid: CommLib.LuBanGrid.Value
+  name: Value
+  href: api/CommLib.LuBanGrid.html#CommLib_LuBanGrid_Value
+  commentId: F:CommLib.LuBanGrid.Value
+  fullName: CommLib.LuBanGrid.Value
+  nameWithType: LuBanGrid.Value
+- uid: CommLib.LuBanSubGrid
+  name: LuBanSubGrid
+  href: api/CommLib.LuBanSubGrid.html
+  commentId: T:CommLib.LuBanSubGrid
+  fullName: CommLib.LuBanSubGrid
+  nameWithType: LuBanSubGrid
+- uid: CommLib.LuBanSubGrid.#ctor(System.Double)
+  name: LuBanSubGrid(double)
+  href: api/CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid__ctor_System_Double_
+  commentId: M:CommLib.LuBanSubGrid.#ctor(System.Double)
+  name.vb: New(Double)
+  fullName: CommLib.LuBanSubGrid.LuBanSubGrid(double)
+  fullName.vb: CommLib.LuBanSubGrid.New(Double)
+  nameWithType: LuBanSubGrid.LuBanSubGrid(double)
+  nameWithType.vb: LuBanSubGrid.New(Double)
+- uid: CommLib.LuBanSubGrid.#ctor(System.String)
+  name: LuBanSubGrid(string)
+  href: api/CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid__ctor_System_String_
+  commentId: M:CommLib.LuBanSubGrid.#ctor(System.String)
+  name.vb: New(String)
+  fullName: CommLib.LuBanSubGrid.LuBanSubGrid(string)
+  fullName.vb: CommLib.LuBanSubGrid.New(String)
+  nameWithType: LuBanSubGrid.LuBanSubGrid(string)
+  nameWithType.vb: LuBanSubGrid.New(String)
+- uid: CommLib.LuBanSubGrid.#ctor*
+  name: LuBanSubGrid
+  href: api/CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid__ctor_
+  commentId: Overload:CommLib.LuBanSubGrid.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: CommLib.LuBanSubGrid.LuBanSubGrid
+  fullName.vb: CommLib.LuBanSubGrid.New
+  nameWithType: LuBanSubGrid.LuBanSubGrid
+  nameWithType.vb: LuBanSubGrid.New
+- uid: CommLib.LuBanSubGrid.EndValue
+  name: EndValue
+  href: api/CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid_EndValue
+  commentId: F:CommLib.LuBanSubGrid.EndValue
+  fullName: CommLib.LuBanSubGrid.EndValue
+  nameWithType: LuBanSubGrid.EndValue
+- uid: CommLib.LuBanSubGrid.GetGroup(System.Double,CommLib.LuBanGrid)
+  name: GetGroup(double, LuBanGrid)
+  href: api/CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid_GetGroup_System_Double_CommLib_LuBanGrid_
+  commentId: M:CommLib.LuBanSubGrid.GetGroup(System.Double,CommLib.LuBanGrid)
+  name.vb: GetGroup(Double, LuBanGrid)
+  fullName: CommLib.LuBanSubGrid.GetGroup(double, CommLib.LuBanGrid)
+  fullName.vb: CommLib.LuBanSubGrid.GetGroup(Double, CommLib.LuBanGrid)
+  nameWithType: LuBanSubGrid.GetGroup(double, LuBanGrid)
+  nameWithType.vb: LuBanSubGrid.GetGroup(Double, LuBanGrid)
+- uid: CommLib.LuBanSubGrid.GetGroup*
+  name: GetGroup
+  href: api/CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid_GetGroup_
+  commentId: Overload:CommLib.LuBanSubGrid.GetGroup
+  isSpec: "True"
+  fullName: CommLib.LuBanSubGrid.GetGroup
+  nameWithType: LuBanSubGrid.GetGroup
+- uid: CommLib.LuBanSubGrid.Index
+  name: Index
+  href: api/CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid_Index
+  commentId: F:CommLib.LuBanSubGrid.Index
+  fullName: CommLib.LuBanSubGrid.Index
+  nameWithType: LuBanSubGrid.Index
+- uid: CommLib.LuBanSubGrid.LuBanSubGridInfo
+  name: LuBanSubGridInfo
+  href: api/CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid_LuBanSubGridInfo
+  commentId: F:CommLib.LuBanSubGrid.LuBanSubGridInfo
+  fullName: CommLib.LuBanSubGrid.LuBanSubGridInfo
+  nameWithType: LuBanSubGrid.LuBanSubGridInfo
+- uid: CommLib.LuBanSubGrid.LuBanSubGridName
+  name: LuBanSubGridName
+  href: api/CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid_LuBanSubGridName
+  commentId: F:CommLib.LuBanSubGrid.LuBanSubGridName
+  fullName: CommLib.LuBanSubGrid.LuBanSubGridName
+  nameWithType: LuBanSubGrid.LuBanSubGridName
+- uid: CommLib.LuBanSubGrid.Parent
+  name: Parent
+  href: api/CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid_Parent
+  commentId: F:CommLib.LuBanSubGrid.Parent
+  fullName: CommLib.LuBanSubGrid.Parent
+  nameWithType: LuBanSubGrid.Parent
+- uid: CommLib.LuBanSubGrid.StartValue
+  name: StartValue
+  href: api/CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid_StartValue
+  commentId: F:CommLib.LuBanSubGrid.StartValue
+  fullName: CommLib.LuBanSubGrid.StartValue
+  nameWithType: LuBanSubGrid.StartValue
+- uid: CommLib.LuBanSubGrid.SubGridFixed
+  name: SubGridFixed
+  href: api/CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid_SubGridFixed
+  commentId: F:CommLib.LuBanSubGrid.SubGridFixed
+  fullName: CommLib.LuBanSubGrid.SubGridFixed
+  nameWithType: LuBanSubGrid.SubGridFixed
+- uid: CommLib.LuBanSubGrid.SubGridName
+  name: SubGridName
+  href: api/CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid_SubGridName
+  commentId: F:CommLib.LuBanSubGrid.SubGridName
+  fullName: CommLib.LuBanSubGrid.SubGridName
+  nameWithType: LuBanSubGrid.SubGridName
+- uid: CommLib.LuBanSubGrid.Value
+  name: Value
+  href: api/CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid_Value
+  commentId: F:CommLib.LuBanSubGrid.Value
+  fullName: CommLib.LuBanSubGrid.Value
+  nameWithType: LuBanSubGrid.Value
 - uid: CompassEx
   name: CompassEx
   href: api/CompassEx.html
@@ -159,6 +669,12 @@ references:
   isSpec: "True"
   fullName: CompassEx.C3Y.GetCBeforeGuaDegree
   nameWithType: C3Y.GetCBeforeGuaDegree
+- uid: CompassEx.C3Y.GuaYaosDegree
+  name: GuaYaosDegree
+  href: api/CompassEx.C3Y.html#CompassEx_C3Y_GuaYaosDegree
+  commentId: F:CompassEx.C3Y.GuaYaosDegree
+  fullName: CompassEx.C3Y.GuaYaosDegree
+  nameWithType: C3Y.GuaYaosDegree
 - uid: CompassEx.C3Y.LoadAllCAfterGuas
   name: LoadAllCAfterGuas()
   href: api/CompassEx.C3Y.html#CompassEx_C3Y_LoadAllCAfterGuas
@@ -1409,6 +1925,19 @@ references:
   isSpec: "True"
   fullName: CompassEx.Comm.LocClass.TimeValueInRangIndex
   nameWithType: LocClass.TimeValueInRangIndex
+- uid: CompassEx.Comm.LocClass.ToString
+  name: ToString()
+  href: api/CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_ToString
+  commentId: M:CompassEx.Comm.LocClass.ToString
+  fullName: CompassEx.Comm.LocClass.ToString()
+  nameWithType: LocClass.ToString()
+- uid: CompassEx.Comm.LocClass.ToString*
+  name: ToString
+  href: api/CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_ToString_
+  commentId: Overload:CompassEx.Comm.LocClass.ToString
+  isSpec: "True"
+  fullName: CompassEx.Comm.LocClass.ToString
+  nameWithType: LocClass.ToString
 - uid: CompassEx.Comm.PlaceYaosJFNaJiaType
   name: PlaceYaosJFNaJiaType
   href: api/CompassEx.Comm.PlaceYaosJFNaJiaType.html
@@ -1584,6 +2113,19 @@ references:
   commentId: F:CompassEx.Comm.SkyClass.SkyNames
   fullName: CompassEx.Comm.SkyClass.SkyNames
   nameWithType: SkyClass.SkyNames
+- uid: CompassEx.Comm.SkyClass.ToString
+  name: ToString()
+  href: api/CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_ToString
+  commentId: M:CompassEx.Comm.SkyClass.ToString
+  fullName: CompassEx.Comm.SkyClass.ToString()
+  nameWithType: SkyClass.ToString()
+- uid: CompassEx.Comm.SkyClass.ToString*
+  name: ToString
+  href: api/CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_ToString_
+  commentId: Overload:CompassEx.Comm.SkyClass.ToString
+  isSpec: "True"
+  fullName: CompassEx.Comm.SkyClass.ToString
+  nameWithType: SkyClass.ToString
 - uid: CompassEx.Comm.SkyLoc
   name: SkyLoc
   href: api/CompassEx.Comm.SkyLoc.html
@@ -2146,6 +2688,124 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.FateGua.ToGua
   nameWithType: FateGua.ToGua
+- uid: CompassEx.Gua.FiveGhostWealth
+  name: FiveGhostWealth
+  href: api/CompassEx.Gua.FiveGhostWealth.html
+  commentId: T:CompassEx.Gua.FiveGhostWealth
+  fullName: CompassEx.Gua.FiveGhostWealth
+  nameWithType: FiveGhostWealth
+- uid: CompassEx.Gua.FiveGhostWealth.ComeWaterDirection
+  name: ComeWaterDirection
+  href: api/CompassEx.Gua.FiveGhostWealth.html#CompassEx_Gua_FiveGhostWealth_ComeWaterDirection
+  commentId: F:CompassEx.Gua.FiveGhostWealth.ComeWaterDirection
+  fullName: CompassEx.Gua.FiveGhostWealth.ComeWaterDirection
+  nameWithType: FiveGhostWealth.ComeWaterDirection
+- uid: CompassEx.Gua.FiveGhostWealth.DoorDirection
+  name: DoorDirection
+  href: api/CompassEx.Gua.FiveGhostWealth.html#CompassEx_Gua_FiveGhostWealth_DoorDirection
+  commentId: F:CompassEx.Gua.FiveGhostWealth.DoorDirection
+  fullName: CompassEx.Gua.FiveGhostWealth.DoorDirection
+  nameWithType: FiveGhostWealth.DoorDirection
+- uid: CompassEx.Gua.FiveGhostWealth.DragonDirection
+  name: DragonDirection
+  href: api/CompassEx.Gua.FiveGhostWealth.html#CompassEx_Gua_FiveGhostWealth_DragonDirection
+  commentId: F:CompassEx.Gua.FiveGhostWealth.DragonDirection
+  fullName: CompassEx.Gua.FiveGhostWealth.DragonDirection
+  nameWithType: FiveGhostWealth.DragonDirection
+- uid: CompassEx.Gua.FiveGhostWealth.RawDC
+  name: RawDC
+  href: api/CompassEx.Gua.FiveGhostWealth.html#CompassEx_Gua_FiveGhostWealth_RawDC
+  commentId: F:CompassEx.Gua.FiveGhostWealth.RawDC
+  fullName: CompassEx.Gua.FiveGhostWealth.RawDC
+  nameWithType: FiveGhostWealth.RawDC
+- uid: CompassEx.Gua.FiveGhostWealth.ToString
+  name: ToString()
+  href: api/CompassEx.Gua.FiveGhostWealth.html#CompassEx_Gua_FiveGhostWealth_ToString
+  commentId: M:CompassEx.Gua.FiveGhostWealth.ToString
+  fullName: CompassEx.Gua.FiveGhostWealth.ToString()
+  nameWithType: FiveGhostWealth.ToString()
+- uid: CompassEx.Gua.FiveGhostWealth.ToString*
+  name: ToString
+  href: api/CompassEx.Gua.FiveGhostWealth.html#CompassEx_Gua_FiveGhostWealth_ToString_
+  commentId: Overload:CompassEx.Gua.FiveGhostWealth.ToString
+  isSpec: "True"
+  fullName: CompassEx.Gua.FiveGhostWealth.ToString
+  nameWithType: FiveGhostWealth.ToString
+- uid: CompassEx.Gua.FlipGua
+  name: FlipGua
+  href: api/CompassEx.Gua.FlipGua.html
+  commentId: T:CompassEx.Gua.FlipGua
+  fullName: CompassEx.Gua.FlipGua
+  nameWithType: FlipGua
+- uid: CompassEx.Gua.FlipGua.GetFiveGhostWealth(CompassEx.CHill)
+  name: GetFiveGhostWealth(CHill)
+  href: api/CompassEx.Gua.FlipGua.html#CompassEx_Gua_FlipGua_GetFiveGhostWealth_CompassEx_CHill_
+  commentId: M:CompassEx.Gua.FlipGua.GetFiveGhostWealth(CompassEx.CHill)
+  fullName: CompassEx.Gua.FlipGua.GetFiveGhostWealth(CompassEx.CHill)
+  nameWithType: FlipGua.GetFiveGhostWealth(CHill)
+- uid: CompassEx.Gua.FlipGua.GetFiveGhostWealth*
+  name: GetFiveGhostWealth
+  href: api/CompassEx.Gua.FlipGua.html#CompassEx_Gua_FlipGua_GetFiveGhostWealth_
+  commentId: Overload:CompassEx.Gua.FlipGua.GetFiveGhostWealth
+  isSpec: "True"
+  fullName: CompassEx.Gua.FlipGua.GetFiveGhostWealth
+  nameWithType: FlipGua.GetFiveGhostWealth
+- uid: CompassEx.Gua.FlipGua.GetFlipGuaGuas(CompassEx.Gua.GuaSubClass)
+  name: GetFlipGuaGuas(GuaSubClass)
+  href: api/CompassEx.Gua.FlipGua.html#CompassEx_Gua_FlipGua_GetFlipGuaGuas_CompassEx_Gua_GuaSubClass_
+  commentId: M:CompassEx.Gua.FlipGua.GetFlipGuaGuas(CompassEx.Gua.GuaSubClass)
+  fullName: CompassEx.Gua.FlipGua.GetFlipGuaGuas(CompassEx.Gua.GuaSubClass)
+  nameWithType: FlipGua.GetFlipGuaGuas(GuaSubClass)
+- uid: CompassEx.Gua.FlipGua.GetFlipGuaGuas*
+  name: GetFlipGuaGuas
+  href: api/CompassEx.Gua.FlipGua.html#CompassEx_Gua_FlipGua_GetFlipGuaGuas_
+  commentId: Overload:CompassEx.Gua.FlipGua.GetFlipGuaGuas
+  isSpec: "True"
+  fullName: CompassEx.Gua.FlipGua.GetFlipGuaGuas
+  nameWithType: FlipGua.GetFlipGuaGuas
+- uid: CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC(CompassEx.CHill,CompassEx.Gua.FlipGuaMethod)
+  name: GetFlipGuaNineStarDC(CHill, FlipGuaMethod)
+  href: api/CompassEx.Gua.FlipGua.html#CompassEx_Gua_FlipGua_GetFlipGuaNineStarDC_CompassEx_CHill_CompassEx_Gua_FlipGuaMethod_
+  commentId: M:CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC(CompassEx.CHill,CompassEx.Gua.FlipGuaMethod)
+  fullName: CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC(CompassEx.CHill, CompassEx.Gua.FlipGuaMethod)
+  nameWithType: FlipGua.GetFlipGuaNineStarDC(CHill, FlipGuaMethod)
+- uid: CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC(CompassEx.Gua.GuaSubClass,CompassEx.Gua.FlipGuaMethod)
+  name: GetFlipGuaNineStarDC(GuaSubClass, FlipGuaMethod)
+  href: api/CompassEx.Gua.FlipGua.html#CompassEx_Gua_FlipGua_GetFlipGuaNineStarDC_CompassEx_Gua_GuaSubClass_CompassEx_Gua_FlipGuaMethod_
+  commentId: M:CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC(CompassEx.Gua.GuaSubClass,CompassEx.Gua.FlipGuaMethod)
+  fullName: CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC(CompassEx.Gua.GuaSubClass, CompassEx.Gua.FlipGuaMethod)
+  nameWithType: FlipGua.GetFlipGuaNineStarDC(GuaSubClass, FlipGuaMethod)
+- uid: CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC*
+  name: GetFlipGuaNineStarDC
+  href: api/CompassEx.Gua.FlipGua.html#CompassEx_Gua_FlipGua_GetFlipGuaNineStarDC_
+  commentId: Overload:CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC
+  isSpec: "True"
+  fullName: CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC
+  nameWithType: FlipGua.GetFlipGuaNineStarDC
+- uid: CompassEx.Gua.FlipGuaMethod
+  name: FlipGuaMethod
+  href: api/CompassEx.Gua.FlipGuaMethod.html
+  commentId: T:CompassEx.Gua.FlipGuaMethod
+  fullName: CompassEx.Gua.FlipGuaMethod
+  nameWithType: FlipGuaMethod
+- uid: CompassEx.Gua.FlipGuaMethod.Dragon
+  name: Dragon
+  href: api/CompassEx.Gua.FlipGuaMethod.html#CompassEx_Gua_FlipGuaMethod_Dragon
+  commentId: F:CompassEx.Gua.FlipGuaMethod.Dragon
+  fullName: CompassEx.Gua.FlipGuaMethod.Dragon
+  nameWithType: FlipGuaMethod.Dragon
+- uid: CompassEx.Gua.FlipGuaMethod.Hill
+  name: Hill
+  href: api/CompassEx.Gua.FlipGuaMethod.html#CompassEx_Gua_FlipGuaMethod_Hill
+  commentId: F:CompassEx.Gua.FlipGuaMethod.Hill
+  fullName: CompassEx.Gua.FlipGuaMethod.Hill
+  nameWithType: FlipGuaMethod.Hill
+- uid: CompassEx.Gua.FlipGuaMethod.Water
+  name: Water
+  href: api/CompassEx.Gua.FlipGuaMethod.html#CompassEx_Gua_FlipGuaMethod_Water
+  commentId: F:CompassEx.Gua.FlipGuaMethod.Water
+  fullName: CompassEx.Gua.FlipGuaMethod.Water
+  nameWithType: FlipGuaMethod.Water
 - uid: CompassEx.Gua.GuaClass
   name: GuaClass
   href: api/CompassEx.Gua.GuaClass.html
@@ -2316,19 +2976,6 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.GuaClass.GetChangeGuaFace
   nameWithType: GuaClass.GetChangeGuaFace
-- uid: CompassEx.Gua.GuaClass.GetGoodDayList
-  name: GetGoodDayList()
-  href: api/CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGoodDayList
-  commentId: M:CompassEx.Gua.GuaClass.GetGoodDayList
-  fullName: CompassEx.Gua.GuaClass.GetGoodDayList()
-  nameWithType: GuaClass.GetGoodDayList()
-- uid: CompassEx.Gua.GuaClass.GetGoodDayList*
-  name: GetGoodDayList
-  href: api/CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGoodDayList_
-  commentId: Overload:CompassEx.Gua.GuaClass.GetGoodDayList
-  isSpec: "True"
-  fullName: CompassEx.Gua.GuaClass.GetGoodDayList
-  nameWithType: GuaClass.GetGoodDayList
 - uid: CompassEx.Gua.GuaClass.GetGuaClass(System.Collections.Generic.List{System.Int32})
   name: GetGuaClass(List<int>)
   href: api/CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGuaClass_System_Collections_Generic_List_System_Int32__
@@ -2926,62 +3573,6 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.GuaClass.YaoDoing
   nameWithType: GuaClass.YaoDoing
-- uid: CompassEx.Gua.GuaFlip
-  name: GuaFlip
-  href: api/CompassEx.Gua.GuaFlip.html
-  commentId: T:CompassEx.Gua.GuaFlip
-  fullName: CompassEx.Gua.GuaFlip
-  nameWithType: GuaFlip
-- uid: CompassEx.Gua.GuaFlip.GetGuaFlipGuas(CompassEx.Gua.GuaSubClass)
-  name: GetGuaFlipGuas(GuaSubClass)
-  href: api/CompassEx.Gua.GuaFlip.html#CompassEx_Gua_GuaFlip_GetGuaFlipGuas_CompassEx_Gua_GuaSubClass_
-  commentId: M:CompassEx.Gua.GuaFlip.GetGuaFlipGuas(CompassEx.Gua.GuaSubClass)
-  fullName: CompassEx.Gua.GuaFlip.GetGuaFlipGuas(CompassEx.Gua.GuaSubClass)
-  nameWithType: GuaFlip.GetGuaFlipGuas(GuaSubClass)
-- uid: CompassEx.Gua.GuaFlip.GetGuaFlipGuas*
-  name: GetGuaFlipGuas
-  href: api/CompassEx.Gua.GuaFlip.html#CompassEx_Gua_GuaFlip_GetGuaFlipGuas_
-  commentId: Overload:CompassEx.Gua.GuaFlip.GetGuaFlipGuas
-  isSpec: "True"
-  fullName: CompassEx.Gua.GuaFlip.GetGuaFlipGuas
-  nameWithType: GuaFlip.GetGuaFlipGuas
-- uid: CompassEx.Gua.GuaFlip.GetGuaFlipNineStarDC(CompassEx.Gua.GuaSubClass,CompassEx.Gua.GuaFlipMethod)
-  name: GetGuaFlipNineStarDC(GuaSubClass, GuaFlipMethod)
-  href: api/CompassEx.Gua.GuaFlip.html#CompassEx_Gua_GuaFlip_GetGuaFlipNineStarDC_CompassEx_Gua_GuaSubClass_CompassEx_Gua_GuaFlipMethod_
-  commentId: M:CompassEx.Gua.GuaFlip.GetGuaFlipNineStarDC(CompassEx.Gua.GuaSubClass,CompassEx.Gua.GuaFlipMethod)
-  fullName: CompassEx.Gua.GuaFlip.GetGuaFlipNineStarDC(CompassEx.Gua.GuaSubClass, CompassEx.Gua.GuaFlipMethod)
-  nameWithType: GuaFlip.GetGuaFlipNineStarDC(GuaSubClass, GuaFlipMethod)
-- uid: CompassEx.Gua.GuaFlip.GetGuaFlipNineStarDC*
-  name: GetGuaFlipNineStarDC
-  href: api/CompassEx.Gua.GuaFlip.html#CompassEx_Gua_GuaFlip_GetGuaFlipNineStarDC_
-  commentId: Overload:CompassEx.Gua.GuaFlip.GetGuaFlipNineStarDC
-  isSpec: "True"
-  fullName: CompassEx.Gua.GuaFlip.GetGuaFlipNineStarDC
-  nameWithType: GuaFlip.GetGuaFlipNineStarDC
-- uid: CompassEx.Gua.GuaFlipMethod
-  name: GuaFlipMethod
-  href: api/CompassEx.Gua.GuaFlipMethod.html
-  commentId: T:CompassEx.Gua.GuaFlipMethod
-  fullName: CompassEx.Gua.GuaFlipMethod
-  nameWithType: GuaFlipMethod
-- uid: CompassEx.Gua.GuaFlipMethod.Dragon
-  name: Dragon
-  href: api/CompassEx.Gua.GuaFlipMethod.html#CompassEx_Gua_GuaFlipMethod_Dragon
-  commentId: F:CompassEx.Gua.GuaFlipMethod.Dragon
-  fullName: CompassEx.Gua.GuaFlipMethod.Dragon
-  nameWithType: GuaFlipMethod.Dragon
-- uid: CompassEx.Gua.GuaFlipMethod.Hill
-  name: Hill
-  href: api/CompassEx.Gua.GuaFlipMethod.html#CompassEx_Gua_GuaFlipMethod_Hill
-  commentId: F:CompassEx.Gua.GuaFlipMethod.Hill
-  fullName: CompassEx.Gua.GuaFlipMethod.Hill
-  nameWithType: GuaFlipMethod.Hill
-- uid: CompassEx.Gua.GuaFlipMethod.Water
-  name: Water
-  href: api/CompassEx.Gua.GuaFlipMethod.html#CompassEx_Gua_GuaFlipMethod_Water
-  commentId: F:CompassEx.Gua.GuaFlipMethod.Water
-  fullName: CompassEx.Gua.GuaFlipMethod.Water
-  nameWithType: GuaFlipMethod.Water
 - uid: CompassEx.Gua.GuaQi
   name: GuaQi
   href: api/CompassEx.Gua.GuaQi.html
@@ -3663,6 +4254,41 @@ references:
   commentId: T:CompassEx.Gua.NaJiaJFResult
   fullName: CompassEx.Gua.NaJiaJFResult
   nameWithType: NaJiaJFResult
+- uid: CompassEx.Gua.NaJiaJFResult.Equals(CompassEx.Gua.NaJiaJFResult)
+  name: Equals(NaJiaJFResult)
+  href: api/CompassEx.Gua.NaJiaJFResult.html#CompassEx_Gua_NaJiaJFResult_Equals_CompassEx_Gua_NaJiaJFResult_
+  commentId: M:CompassEx.Gua.NaJiaJFResult.Equals(CompassEx.Gua.NaJiaJFResult)
+  fullName: CompassEx.Gua.NaJiaJFResult.Equals(CompassEx.Gua.NaJiaJFResult)
+  nameWithType: NaJiaJFResult.Equals(NaJiaJFResult)
+- uid: CompassEx.Gua.NaJiaJFResult.Equals(System.Object)
+  name: Equals(object)
+  href: api/CompassEx.Gua.NaJiaJFResult.html#CompassEx_Gua_NaJiaJFResult_Equals_System_Object_
+  commentId: M:CompassEx.Gua.NaJiaJFResult.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: CompassEx.Gua.NaJiaJFResult.Equals(object)
+  fullName.vb: CompassEx.Gua.NaJiaJFResult.Equals(Object)
+  nameWithType: NaJiaJFResult.Equals(object)
+  nameWithType.vb: NaJiaJFResult.Equals(Object)
+- uid: CompassEx.Gua.NaJiaJFResult.Equals*
+  name: Equals
+  href: api/CompassEx.Gua.NaJiaJFResult.html#CompassEx_Gua_NaJiaJFResult_Equals_
+  commentId: Overload:CompassEx.Gua.NaJiaJFResult.Equals
+  isSpec: "True"
+  fullName: CompassEx.Gua.NaJiaJFResult.Equals
+  nameWithType: NaJiaJFResult.Equals
+- uid: CompassEx.Gua.NaJiaJFResult.GetHashCode
+  name: GetHashCode()
+  href: api/CompassEx.Gua.NaJiaJFResult.html#CompassEx_Gua_NaJiaJFResult_GetHashCode
+  commentId: M:CompassEx.Gua.NaJiaJFResult.GetHashCode
+  fullName: CompassEx.Gua.NaJiaJFResult.GetHashCode()
+  nameWithType: NaJiaJFResult.GetHashCode()
+- uid: CompassEx.Gua.NaJiaJFResult.GetHashCode*
+  name: GetHashCode
+  href: api/CompassEx.Gua.NaJiaJFResult.html#CompassEx_Gua_NaJiaJFResult_GetHashCode_
+  commentId: Overload:CompassEx.Gua.NaJiaJFResult.GetHashCode
+  isSpec: "True"
+  fullName: CompassEx.Gua.NaJiaJFResult.GetHashCode
+  nameWithType: NaJiaJFResult.GetHashCode
 - uid: CompassEx.Gua.NaJiaJFResult.Gua
   name: Gua
   href: api/CompassEx.Gua.NaJiaJFResult.html#CompassEx_Gua_NaJiaJFResult_Gua
@@ -3688,6 +4314,44 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.NaJiaJFResult.Type
   nameWithType: NaJiaJFResult.Type
+- uid: CompassEx.Gua.NaJiaJFResult.op_Equality(CompassEx.Gua.NaJiaJFResult,CompassEx.Gua.NaJiaJFResult)
+  name: operator ==(NaJiaJFResult, NaJiaJFResult)
+  href: api/CompassEx.Gua.NaJiaJFResult.html#CompassEx_Gua_NaJiaJFResult_op_Equality_CompassEx_Gua_NaJiaJFResult_CompassEx_Gua_NaJiaJFResult_
+  commentId: M:CompassEx.Gua.NaJiaJFResult.op_Equality(CompassEx.Gua.NaJiaJFResult,CompassEx.Gua.NaJiaJFResult)
+  name.vb: =(NaJiaJFResult, NaJiaJFResult)
+  fullName: CompassEx.Gua.NaJiaJFResult.operator ==(CompassEx.Gua.NaJiaJFResult, CompassEx.Gua.NaJiaJFResult)
+  fullName.vb: CompassEx.Gua.NaJiaJFResult.=(CompassEx.Gua.NaJiaJFResult, CompassEx.Gua.NaJiaJFResult)
+  nameWithType: NaJiaJFResult.operator ==(NaJiaJFResult, NaJiaJFResult)
+  nameWithType.vb: NaJiaJFResult.=(NaJiaJFResult, NaJiaJFResult)
+- uid: CompassEx.Gua.NaJiaJFResult.op_Equality*
+  name: operator ==
+  href: api/CompassEx.Gua.NaJiaJFResult.html#CompassEx_Gua_NaJiaJFResult_op_Equality_
+  commentId: Overload:CompassEx.Gua.NaJiaJFResult.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: CompassEx.Gua.NaJiaJFResult.operator ==
+  fullName.vb: CompassEx.Gua.NaJiaJFResult.=
+  nameWithType: NaJiaJFResult.operator ==
+  nameWithType.vb: NaJiaJFResult.=
+- uid: CompassEx.Gua.NaJiaJFResult.op_Inequality(CompassEx.Gua.NaJiaJFResult,CompassEx.Gua.NaJiaJFResult)
+  name: operator !=(NaJiaJFResult, NaJiaJFResult)
+  href: api/CompassEx.Gua.NaJiaJFResult.html#CompassEx_Gua_NaJiaJFResult_op_Inequality_CompassEx_Gua_NaJiaJFResult_CompassEx_Gua_NaJiaJFResult_
+  commentId: M:CompassEx.Gua.NaJiaJFResult.op_Inequality(CompassEx.Gua.NaJiaJFResult,CompassEx.Gua.NaJiaJFResult)
+  name.vb: <>(NaJiaJFResult, NaJiaJFResult)
+  fullName: CompassEx.Gua.NaJiaJFResult.operator !=(CompassEx.Gua.NaJiaJFResult, CompassEx.Gua.NaJiaJFResult)
+  fullName.vb: CompassEx.Gua.NaJiaJFResult.<>(CompassEx.Gua.NaJiaJFResult, CompassEx.Gua.NaJiaJFResult)
+  nameWithType: NaJiaJFResult.operator !=(NaJiaJFResult, NaJiaJFResult)
+  nameWithType.vb: NaJiaJFResult.<>(NaJiaJFResult, NaJiaJFResult)
+- uid: CompassEx.Gua.NaJiaJFResult.op_Inequality*
+  name: operator !=
+  href: api/CompassEx.Gua.NaJiaJFResult.html#CompassEx_Gua_NaJiaJFResult_op_Inequality_
+  commentId: Overload:CompassEx.Gua.NaJiaJFResult.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: CompassEx.Gua.NaJiaJFResult.operator !=
+  fullName.vb: CompassEx.Gua.NaJiaJFResult.<>
+  nameWithType: NaJiaJFResult.operator !=
+  nameWithType.vb: NaJiaJFResult.<>
 - uid: CompassEx.Gua.NaJiaType
   name: NaJiaType
   href: api/CompassEx.Gua.NaJiaType.html
@@ -3712,6 +4376,41 @@ references:
   commentId: T:CompassEx.Gua.NaJiaYGResult
   fullName: CompassEx.Gua.NaJiaYGResult
   nameWithType: NaJiaYGResult
+- uid: CompassEx.Gua.NaJiaYGResult.Equals(CompassEx.Gua.NaJiaYGResult)
+  name: Equals(NaJiaYGResult)
+  href: api/CompassEx.Gua.NaJiaYGResult.html#CompassEx_Gua_NaJiaYGResult_Equals_CompassEx_Gua_NaJiaYGResult_
+  commentId: M:CompassEx.Gua.NaJiaYGResult.Equals(CompassEx.Gua.NaJiaYGResult)
+  fullName: CompassEx.Gua.NaJiaYGResult.Equals(CompassEx.Gua.NaJiaYGResult)
+  nameWithType: NaJiaYGResult.Equals(NaJiaYGResult)
+- uid: CompassEx.Gua.NaJiaYGResult.Equals(System.Object)
+  name: Equals(object)
+  href: api/CompassEx.Gua.NaJiaYGResult.html#CompassEx_Gua_NaJiaYGResult_Equals_System_Object_
+  commentId: M:CompassEx.Gua.NaJiaYGResult.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: CompassEx.Gua.NaJiaYGResult.Equals(object)
+  fullName.vb: CompassEx.Gua.NaJiaYGResult.Equals(Object)
+  nameWithType: NaJiaYGResult.Equals(object)
+  nameWithType.vb: NaJiaYGResult.Equals(Object)
+- uid: CompassEx.Gua.NaJiaYGResult.Equals*
+  name: Equals
+  href: api/CompassEx.Gua.NaJiaYGResult.html#CompassEx_Gua_NaJiaYGResult_Equals_
+  commentId: Overload:CompassEx.Gua.NaJiaYGResult.Equals
+  isSpec: "True"
+  fullName: CompassEx.Gua.NaJiaYGResult.Equals
+  nameWithType: NaJiaYGResult.Equals
+- uid: CompassEx.Gua.NaJiaYGResult.GetHashCode
+  name: GetHashCode()
+  href: api/CompassEx.Gua.NaJiaYGResult.html#CompassEx_Gua_NaJiaYGResult_GetHashCode
+  commentId: M:CompassEx.Gua.NaJiaYGResult.GetHashCode
+  fullName: CompassEx.Gua.NaJiaYGResult.GetHashCode()
+  nameWithType: NaJiaYGResult.GetHashCode()
+- uid: CompassEx.Gua.NaJiaYGResult.GetHashCode*
+  name: GetHashCode
+  href: api/CompassEx.Gua.NaJiaYGResult.html#CompassEx_Gua_NaJiaYGResult_GetHashCode_
+  commentId: Overload:CompassEx.Gua.NaJiaYGResult.GetHashCode
+  isSpec: "True"
+  fullName: CompassEx.Gua.NaJiaYGResult.GetHashCode
+  nameWithType: NaJiaYGResult.GetHashCode
 - uid: CompassEx.Gua.NaJiaYGResult.Gua
   name: Gua
   href: api/CompassEx.Gua.NaJiaYGResult.html#CompassEx_Gua_NaJiaYGResult_Gua
@@ -3730,6 +4429,19 @@ references:
   commentId: F:CompassEx.Gua.NaJiaYGResult.Sky
   fullName: CompassEx.Gua.NaJiaYGResult.Sky
   nameWithType: NaJiaYGResult.Sky
+- uid: CompassEx.Gua.NaJiaYGResult.ToString
+  name: ToString()
+  href: api/CompassEx.Gua.NaJiaYGResult.html#CompassEx_Gua_NaJiaYGResult_ToString
+  commentId: M:CompassEx.Gua.NaJiaYGResult.ToString
+  fullName: CompassEx.Gua.NaJiaYGResult.ToString()
+  nameWithType: NaJiaYGResult.ToString()
+- uid: CompassEx.Gua.NaJiaYGResult.ToString*
+  name: ToString
+  href: api/CompassEx.Gua.NaJiaYGResult.html#CompassEx_Gua_NaJiaYGResult_ToString_
+  commentId: Overload:CompassEx.Gua.NaJiaYGResult.ToString
+  isSpec: "True"
+  fullName: CompassEx.Gua.NaJiaYGResult.ToString
+  nameWithType: NaJiaYGResult.ToString
 - uid: CompassEx.Gua.NaJiaYGResult.Type
   name: Type
   href: api/CompassEx.Gua.NaJiaYGResult.html#CompassEx_Gua_NaJiaYGResult_Type
@@ -3743,6 +4455,44 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.NaJiaYGResult.Type
   nameWithType: NaJiaYGResult.Type
+- uid: CompassEx.Gua.NaJiaYGResult.op_Equality(CompassEx.Gua.NaJiaYGResult,CompassEx.Gua.NaJiaYGResult)
+  name: operator ==(NaJiaYGResult, NaJiaYGResult)
+  href: api/CompassEx.Gua.NaJiaYGResult.html#CompassEx_Gua_NaJiaYGResult_op_Equality_CompassEx_Gua_NaJiaYGResult_CompassEx_Gua_NaJiaYGResult_
+  commentId: M:CompassEx.Gua.NaJiaYGResult.op_Equality(CompassEx.Gua.NaJiaYGResult,CompassEx.Gua.NaJiaYGResult)
+  name.vb: =(NaJiaYGResult, NaJiaYGResult)
+  fullName: CompassEx.Gua.NaJiaYGResult.operator ==(CompassEx.Gua.NaJiaYGResult, CompassEx.Gua.NaJiaYGResult)
+  fullName.vb: CompassEx.Gua.NaJiaYGResult.=(CompassEx.Gua.NaJiaYGResult, CompassEx.Gua.NaJiaYGResult)
+  nameWithType: NaJiaYGResult.operator ==(NaJiaYGResult, NaJiaYGResult)
+  nameWithType.vb: NaJiaYGResult.=(NaJiaYGResult, NaJiaYGResult)
+- uid: CompassEx.Gua.NaJiaYGResult.op_Equality*
+  name: operator ==
+  href: api/CompassEx.Gua.NaJiaYGResult.html#CompassEx_Gua_NaJiaYGResult_op_Equality_
+  commentId: Overload:CompassEx.Gua.NaJiaYGResult.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: CompassEx.Gua.NaJiaYGResult.operator ==
+  fullName.vb: CompassEx.Gua.NaJiaYGResult.=
+  nameWithType: NaJiaYGResult.operator ==
+  nameWithType.vb: NaJiaYGResult.=
+- uid: CompassEx.Gua.NaJiaYGResult.op_Inequality(CompassEx.Gua.NaJiaYGResult,CompassEx.Gua.NaJiaYGResult)
+  name: operator !=(NaJiaYGResult, NaJiaYGResult)
+  href: api/CompassEx.Gua.NaJiaYGResult.html#CompassEx_Gua_NaJiaYGResult_op_Inequality_CompassEx_Gua_NaJiaYGResult_CompassEx_Gua_NaJiaYGResult_
+  commentId: M:CompassEx.Gua.NaJiaYGResult.op_Inequality(CompassEx.Gua.NaJiaYGResult,CompassEx.Gua.NaJiaYGResult)
+  name.vb: <>(NaJiaYGResult, NaJiaYGResult)
+  fullName: CompassEx.Gua.NaJiaYGResult.operator !=(CompassEx.Gua.NaJiaYGResult, CompassEx.Gua.NaJiaYGResult)
+  fullName.vb: CompassEx.Gua.NaJiaYGResult.<>(CompassEx.Gua.NaJiaYGResult, CompassEx.Gua.NaJiaYGResult)
+  nameWithType: NaJiaYGResult.operator !=(NaJiaYGResult, NaJiaYGResult)
+  nameWithType.vb: NaJiaYGResult.<>(NaJiaYGResult, NaJiaYGResult)
+- uid: CompassEx.Gua.NaJiaYGResult.op_Inequality*
+  name: operator !=
+  href: api/CompassEx.Gua.NaJiaYGResult.html#CompassEx_Gua_NaJiaYGResult_op_Inequality_
+  commentId: Overload:CompassEx.Gua.NaJiaYGResult.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: CompassEx.Gua.NaJiaYGResult.operator !=
+  fullName.vb: CompassEx.Gua.NaJiaYGResult.<>
+  nameWithType: NaJiaYGResult.operator !=
+  nameWithType.vb: NaJiaYGResult.<>
 - uid: CompassEx.Gua.NaJia`1
   name: NaJia<TResult>
   href: api/CompassEx.Gua.NaJia-1.html
@@ -3797,6 +4547,14 @@ references:
   fullName.vb: CompassEx.Gua.NaJia(Of TResult).CreateJF
   nameWithType: NaJia<TResult>.CreateJF
   nameWithType.vb: NaJia(Of TResult).CreateJF
+- uid: CompassEx.Gua.NaJia`1.CreateYG(CompassEx.CHill)
+  name: CreateYG(CHill)
+  href: api/CompassEx.Gua.NaJia-1.html#CompassEx_Gua_NaJia_1_CreateYG_CompassEx_CHill_
+  commentId: M:CompassEx.Gua.NaJia`1.CreateYG(CompassEx.CHill)
+  fullName: CompassEx.Gua.NaJia<TResult>.CreateYG(CompassEx.CHill)
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).CreateYG(CompassEx.CHill)
+  nameWithType: NaJia<TResult>.CreateYG(CHill)
+  nameWithType.vb: NaJia(Of TResult).CreateYG(CHill)
 - uid: CompassEx.Gua.NaJia`1.CreateYG(CompassEx.Gua.GuaSubClass)
   name: CreateYG(GuaSubClass)
   href: api/CompassEx.Gua.NaJia-1.html#CompassEx_Gua_NaJia_1_CreateYG_CompassEx_Gua_GuaSubClass_
@@ -3932,22 +4690,22 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.NineStar.FullName
   nameWithType: NineStar.FullName
-- uid: CompassEx.Gua.NineStar.GetGuaFlipEightStar(System.Int32)
-  name: GetGuaFlipEightStar(int)
-  href: api/CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_GetGuaFlipEightStar_System_Int32_
-  commentId: M:CompassEx.Gua.NineStar.GetGuaFlipEightStar(System.Int32)
-  name.vb: GetGuaFlipEightStar(Integer)
-  fullName: CompassEx.Gua.NineStar.GetGuaFlipEightStar(int)
-  fullName.vb: CompassEx.Gua.NineStar.GetGuaFlipEightStar(Integer)
-  nameWithType: NineStar.GetGuaFlipEightStar(int)
-  nameWithType.vb: NineStar.GetGuaFlipEightStar(Integer)
-- uid: CompassEx.Gua.NineStar.GetGuaFlipEightStar*
-  name: GetGuaFlipEightStar
-  href: api/CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_GetGuaFlipEightStar_
-  commentId: Overload:CompassEx.Gua.NineStar.GetGuaFlipEightStar
+- uid: CompassEx.Gua.NineStar.GetFlipGuaEightStar(System.Int32)
+  name: GetFlipGuaEightStar(int)
+  href: api/CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_GetFlipGuaEightStar_System_Int32_
+  commentId: M:CompassEx.Gua.NineStar.GetFlipGuaEightStar(System.Int32)
+  name.vb: GetFlipGuaEightStar(Integer)
+  fullName: CompassEx.Gua.NineStar.GetFlipGuaEightStar(int)
+  fullName.vb: CompassEx.Gua.NineStar.GetFlipGuaEightStar(Integer)
+  nameWithType: NineStar.GetFlipGuaEightStar(int)
+  nameWithType.vb: NineStar.GetFlipGuaEightStar(Integer)
+- uid: CompassEx.Gua.NineStar.GetFlipGuaEightStar*
+  name: GetFlipGuaEightStar
+  href: api/CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_GetFlipGuaEightStar_
+  commentId: Overload:CompassEx.Gua.NineStar.GetFlipGuaEightStar
   isSpec: "True"
-  fullName: CompassEx.Gua.NineStar.GetGuaFlipEightStar
-  nameWithType: NineStar.GetGuaFlipEightStar
+  fullName: CompassEx.Gua.NineStar.GetFlipGuaEightStar
+  nameWithType: NineStar.GetFlipGuaEightStar
 - uid: CompassEx.Gua.NineStar.GetNineStarByAfterGua(CompassEx.Gua.GuaSubClass)
   name: GetNineStarByAfterGua(GuaSubClass)
   href: api/CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_GetNineStarByAfterGua_CompassEx_Gua_GuaSubClass_
@@ -4024,12 +4782,12 @@ references:
   commentId: F:CompassEx.Gua.NineStarType.AfterGuaNineStar
   fullName: CompassEx.Gua.NineStarType.AfterGuaNineStar
   nameWithType: NineStarType.AfterGuaNineStar
-- uid: CompassEx.Gua.NineStarType.GuaFlipNineStar
-  name: GuaFlipNineStar
-  href: api/CompassEx.Gua.NineStarType.html#CompassEx_Gua_NineStarType_GuaFlipNineStar
-  commentId: F:CompassEx.Gua.NineStarType.GuaFlipNineStar
-  fullName: CompassEx.Gua.NineStarType.GuaFlipNineStar
-  nameWithType: NineStarType.GuaFlipNineStar
+- uid: CompassEx.Gua.NineStarType.FlipGuaNineStar
+  name: FlipGuaNineStar
+  href: api/CompassEx.Gua.NineStarType.html#CompassEx_Gua_NineStarType_FlipGuaNineStar
+  commentId: F:CompassEx.Gua.NineStarType.FlipGuaNineStar
+  fullName: CompassEx.Gua.NineStarType.FlipGuaNineStar
+  nameWithType: NineStarType.FlipGuaNineStar
 - uid: CompassEx.Gua.SixGodClass
   name: SixGodClass
   href: api/CompassEx.Gua.SixGodClass.html

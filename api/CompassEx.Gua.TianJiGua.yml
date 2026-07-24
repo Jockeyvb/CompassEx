@@ -371,7 +371,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IsOutGua
     path: CompassEx/Gua/TianJiGua.cs
-    startLine: 293
+    startLine: 295
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -447,7 +447,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetOutGuas
     path: CompassEx/Gua/TianJiGua.cs
-    startLine: 334
+    startLine: 336
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua

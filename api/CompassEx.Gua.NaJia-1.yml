@@ -8,6 +8,7 @@ items:
   - CompassEx.Gua.NaJia`1.#ctor(CompassEx.Gua.GuaClass)
   - CompassEx.Gua.NaJia`1.#ctor(CompassEx.Gua.GuaSubClass)
   - CompassEx.Gua.NaJia`1.CreateJF(CompassEx.Gua.GuaClass)
+  - CompassEx.Gua.NaJia`1.CreateYG(CompassEx.CHill)
   - CompassEx.Gua.NaJia`1.CreateYG(CompassEx.Gua.GuaSubClass)
   - CompassEx.Gua.NaJia`1.Execute
   - CompassEx.Gua.NaJia`1.YGNaJiaDC
@@ -25,7 +26,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: NaJia
     path: CompassEx/Gua/NaJia.cs
-    startLine: 136
+    startLine: 224
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -74,7 +75,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: YGNaJiaDC
     path: CompassEx/Gua/NaJia.cs
-    startLine: 164
+    startLine: 252
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -110,7 +111,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Gua/NaJia.cs
-    startLine: 191
+    startLine: 279
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -149,7 +150,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Gua/NaJia.cs
-    startLine: 202
+    startLine: 290
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -170,6 +171,57 @@ items:
   nameWithType.vb: NaJia(Of TResult).New(GuaSubClass)
   fullName.vb: CompassEx.Gua.NaJia(Of TResult).New(CompassEx.Gua.GuaSubClass)
   name.vb: New(GuaSubClass)
+- uid: CompassEx.Gua.NaJia`1.CreateYG(CompassEx.CHill)
+  commentId: M:CompassEx.Gua.NaJia`1.CreateYG(CompassEx.CHill)
+  id: CreateYG(CompassEx.CHill)
+  parent: CompassEx.Gua.NaJia`1
+  langs:
+  - csharp
+  - vb
+  name: CreateYG(CHill)
+  nameWithType: NaJia<TResult>.CreateYG(CHill)
+  fullName: CompassEx.Gua.NaJia<TResult>.CreateYG(CompassEx.CHill)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/NaJia.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: CreateYG
+    path: CompassEx/Gua/NaJia.cs
+    startLine: 309
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 根据正针（地盘）二十四山向，计算并获取对应的杨公纳甲特异性结果。
+  remarks: >-
+    <p><b>【业务背景】</b> 本方法实现了杨公堪舆理气中的“纳甲”核心逻辑。通过检索输入的二十四山向名称，自动匹配并归纳出其所属的八卦本宫或干支纳甲归属（天干纳甲、地支纳甲）。</p>
+
+    <p><b>【架构安全机制】</b> 本方法虽声明在泛型类中，但属于杨公派系的<b>特异性静态方法</b>。内部引入了运行时类型锁，强制限定只有当类泛型参数 <code class="typeparamref">TResult</code> 确为 <xref href="CompassEx.Gua.NaJiaYGResult" data-throw-if-not-resolved="false"></xref> 时方可成功执行，从而在多派系并存的堪舆系统中确保数理逻辑的安全隔离。</p>
+  example: []
+  syntax:
+    content: public static NaJiaYGResult CreateYG(CHill c)
+    parameters:
+    - id: c
+      type: CompassEx.CHill
+      description: 输入的正针二十四山向实例对象 (<xref href="CompassEx.CHill" data-throw-if-not-resolved="false"></xref>)。
+    return:
+      type: CompassEx.Gua.NaJiaYGResult
+      description: 返回构建完成的杨公纳甲专属结果实例 (<xref href="CompassEx.Gua.NaJiaYGResult" data-throw-if-not-resolved="false"></xref>)。
+    content.vb: Public Shared Function CreateYG(c As CHill) As NaJiaYGResult
+  overload: CompassEx.Gua.NaJia`1.CreateYG*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: 当调用本方法的泛型类上下文（<code class="typeparamref">TResult</code>）不是指定的 <xref href="CompassEx.Gua.NaJiaYGResult" data-throw-if-not-resolved="false"></xref> 时阻断抛出。
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: 当传入的正针二十四山向参数 <code class="paramref">c</code> 为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> 时抛出。
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: 当入参山向名称在杨公纳甲映射字典 <code>YGNaJiaDC</code> 中未能匹配到任何对应的归属卦象时抛出。
+  nameWithType.vb: NaJia(Of TResult).CreateYG(CHill)
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).CreateYG(CompassEx.CHill)
 - uid: CompassEx.Gua.NaJia`1.Execute
   commentId: M:CompassEx.Gua.NaJia`1.Execute
   id: Execute
@@ -188,7 +240,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Execute
     path: CompassEx/Gua/NaJia.cs
-    startLine: 217
+    startLine: 337
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -222,7 +274,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CreateJF
     path: CompassEx/Gua/NaJia.cs
-    startLine: 265
+    startLine: 385
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -259,7 +311,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CreateYG
     path: CompassEx/Gua/NaJia.cs
-    startLine: 277
+    startLine: 397
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -893,6 +945,48 @@ references:
   name: GuaSubClass
   nameWithType: GuaSubClass
   fullName: CompassEx.Gua.GuaSubClass
+- uid: CompassEx.Gua.NaJiaYGResult
+  commentId: T:CompassEx.Gua.NaJiaYGResult
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.NaJiaYGResult.html
+  name: NaJiaYGResult
+  nameWithType: NaJiaYGResult
+  fullName: CompassEx.Gua.NaJiaYGResult
+- uid: CompassEx.CHill
+  commentId: T:CompassEx.CHill
+  parent: CompassEx
+  href: CompassEx.CHill.html
+  name: CHill
+  nameWithType: CHill
+  fullName: CompassEx.CHill
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: CompassEx.Gua.NaJia`1.CreateYG*
+  commentId: Overload:CompassEx.Gua.NaJia`1.CreateYG
+  href: CompassEx.Gua.NaJia-1.html#CompassEx_Gua_NaJia_1_CreateYG_CompassEx_CHill_
+  name: CreateYG
+  nameWithType: NaJia<TResult>.CreateYG
+  fullName: CompassEx.Gua.NaJia<TResult>.CreateYG
+  nameWithType.vb: NaJia(Of TResult).CreateYG
+  fullName.vb: CompassEx.Gua.NaJia(Of TResult).CreateYG
+- uid: CompassEx
+  commentId: N:CompassEx
+  href: CompassEx.html
+  name: CompassEx
+  nameWithType: CompassEx
+  fullName: CompassEx
 - uid: CompassEx.Gua.GuaSubClass.Name
   commentId: P:CompassEx.Gua.GuaSubClass.Name
   href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_Name
@@ -933,18 +1027,3 @@ references:
   fullName: CompassEx.Gua.NaJia<TResult>.CreateJF
   nameWithType.vb: NaJia(Of TResult).CreateJF
   fullName.vb: CompassEx.Gua.NaJia(Of TResult).CreateJF
-- uid: CompassEx.Gua.NaJiaYGResult
-  commentId: T:CompassEx.Gua.NaJiaYGResult
-  parent: CompassEx.Gua
-  href: CompassEx.Gua.NaJiaYGResult.html
-  name: NaJiaYGResult
-  nameWithType: NaJiaYGResult
-  fullName: CompassEx.Gua.NaJiaYGResult
-- uid: CompassEx.Gua.NaJia`1.CreateYG*
-  commentId: Overload:CompassEx.Gua.NaJia`1.CreateYG
-  href: CompassEx.Gua.NaJia-1.html#CompassEx_Gua_NaJia_1_CreateYG_CompassEx_Gua_GuaSubClass_
-  name: CreateYG
-  nameWithType: NaJia<TResult>.CreateYG
-  fullName: CompassEx.Gua.NaJia<TResult>.CreateYG
-  nameWithType.vb: NaJia(Of TResult).CreateYG
-  fullName.vb: CompassEx.Gua.NaJia(Of TResult).CreateYG

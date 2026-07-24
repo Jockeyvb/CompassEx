@@ -50,9 +50,7 @@ namespace CompassEx.Data.Models {
 
 		private static IFreeSql SafeOrm => Orm ?? throw new Exception($"{nameof(tbl_GoGuoLog)}.Orm 未在程序启动时初始化。");
 
-		// ==========================================
-		// 🚀 【实例方法 (非静态)】：操作对象状态
-		// ==========================================
+	 
 		/// <summary>
 		/// 🎯 【正宗 Refresh】：从数据库抓取最新记录，完美回刷并同步当前实例的所有属性
 		/// </summary>

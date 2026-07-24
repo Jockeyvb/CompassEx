@@ -15,6 +15,7 @@ items:
   - CompassEx.C3Y.GetCAfterGuaDegree(System.String)
   - CompassEx.C3Y.GetCBeforeGua
   - CompassEx.C3Y.GetCBeforeGuaDegree(System.String)
+  - CompassEx.C3Y.GuaYaosDegree
   - CompassEx.C3Y.LoadAllCAfterGuas
   - CompassEx.C3Y.LoadAllCBeforeGuas
   langs:
@@ -88,18 +89,49 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CompassGuaDegree
     path: CompassEx/C3Y/C3Y.cs
-    startLine: 33
+    startLine: 34
   assemblies:
   - CompassEx
   namespace: CompassEx
-  summary: 罗盘 64 卦的单卦度数。
+  summary: 罗盘六十四卦的单卦度数常量。
   example: []
   syntax:
     content: public const double CompassGuaDegree = 5.625
     return:
       type: System.Double
-      description: 默认值为 5.625 度（360度 / 64卦）。
+      description: 默认值为 <code>5.625</code> 度。计算公式为：360度 / 64卦。
     content.vb: Public Const CompassGuaDegree As Double = 5.625
+- uid: CompassEx.C3Y.GuaYaosDegree
+  commentId: F:CompassEx.C3Y.GuaYaosDegree
+  id: GuaYaosDegree
+  parent: CompassEx.C3Y
+  langs:
+  - csharp
+  - vb
+  name: GuaYaosDegree
+  nameWithType: C3Y.GuaYaosDegree
+  fullName: CompassEx.C3Y.GuaYaosDegree
+  type: Field
+  source:
+    remote:
+      path: CompassEx/C3Y/C3Y.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GuaYaosDegree
+    path: CompassEx/C3Y/C3Y.cs
+    startLine: 45
+  assemblies:
+  - CompassEx
+  namespace: CompassEx
+  summary: 每一爻（Gua Yao）所占用的罗盘度数常量。
+  remarks: 本常量用于在罗盘排盘计算时，进一步精细定位当前度数处于某卦的哪一爻（初爻至上爻）。
+  example: []
+  syntax:
+    content: public const double GuaYaosDegree = 0.9375
+    return:
+      type: System.Double
+      description: 默认值约为 <code>0.9375</code> 度。计算公式为：单卦度数 <xref href="CompassEx.C3Y.CompassGuaDegree" data-throw-if-not-resolved="false"></xref> / 6爻。
+    content.vb: Public Const GuaYaosDegree As Double = 0.9375
 - uid: CompassEx.C3Y.BeforGua
   commentId: P:CompassEx.C3Y.BeforGua
   id: BeforGua
@@ -118,7 +150,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforGua
     path: CompassEx/C3Y/C3Y.cs
-    startLine: 42
+    startLine: 55
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -150,7 +182,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CBeforeGuas
     path: CompassEx/C3Y/C3Y.cs
-    startLine: 59
+    startLine: 72
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -202,7 +234,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CAfterGuas
     path: CompassEx/C3Y/C3Y.cs
-    startLine: 76
+    startLine: 89
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -254,7 +286,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/C3Y/C3Y.cs
-    startLine: 85
+    startLine: 98
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -290,7 +322,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetCBeforeGuaDegree
     path: CompassEx/C3Y/C3Y.cs
-    startLine: 97
+    startLine: 110
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -328,7 +360,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetCAfterGuaDegree
     path: CompassEx/C3Y/C3Y.cs
-    startLine: 114
+    startLine: 127
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -366,7 +398,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetCBeforeGua
     path: CompassEx/C3Y/C3Y.cs
-    startLine: 130
+    startLine: 143
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -397,7 +429,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadAllCAfterGuas
     path: CompassEx/C3Y/C3Y.cs
-    startLine: 150
+    startLine: 163
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -426,7 +458,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadAllCBeforeGuas
     path: CompassEx/C3Y/C3Y.cs
-    startLine: 163
+    startLine: 176
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -458,7 +490,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAllCAfterGuas
     path: CompassEx/C3Y/C3Y.cs
-    startLine: 173
+    startLine: 186
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -489,7 +521,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAllBeforGuas
     path: CompassEx/C3Y/C3Y.cs
-    startLine: 238
+    startLine: 251
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -1145,6 +1177,12 @@ references:
   nameWithType.vb: Double
   fullName.vb: Double
   name.vb: Double
+- uid: CompassEx.C3Y.CompassGuaDegree
+  commentId: F:CompassEx.C3Y.CompassGuaDegree
+  href: CompassEx.C3Y.html#CompassEx_C3Y_CompassGuaDegree
+  name: CompassGuaDegree
+  nameWithType: C3Y.CompassGuaDegree
+  fullName: CompassEx.C3Y.CompassGuaDegree
 - uid: CompassEx.Gua.GuaClass
   commentId: T:CompassEx.Gua.GuaClass
   parent: CompassEx.Gua

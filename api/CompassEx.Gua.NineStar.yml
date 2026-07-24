@@ -10,7 +10,7 @@ items:
   - CompassEx.Gua.NineStar.EightStarFullNames
   - CompassEx.Gua.NineStar.EightStarNames
   - CompassEx.Gua.NineStar.FullName
-  - CompassEx.Gua.NineStar.GetGuaFlipEightStar(System.Int32)
+  - CompassEx.Gua.NineStar.GetFlipGuaEightStar(System.Int32)
   - CompassEx.Gua.NineStar.GetNineStarByAfterGua(CompassEx.Gua.GuaSubClass)
   - CompassEx.Gua.NineStar.IsGood
   - CompassEx.Gua.NineStar.Name
@@ -413,23 +413,23 @@ items:
   - type: System.ArgumentNullException
     commentId: T:System.ArgumentNullException
     description: 当传入的单卦对象为 null 时抛出。
-- uid: CompassEx.Gua.NineStar.GetGuaFlipEightStar(System.Int32)
-  commentId: M:CompassEx.Gua.NineStar.GetGuaFlipEightStar(System.Int32)
-  id: GetGuaFlipEightStar(System.Int32)
+- uid: CompassEx.Gua.NineStar.GetFlipGuaEightStar(System.Int32)
+  commentId: M:CompassEx.Gua.NineStar.GetFlipGuaEightStar(System.Int32)
+  id: GetFlipGuaEightStar(System.Int32)
   parent: CompassEx.Gua.NineStar
   langs:
   - csharp
   - vb
-  name: GetGuaFlipEightStar(int)
-  nameWithType: NineStar.GetGuaFlipEightStar(int)
-  fullName: CompassEx.Gua.NineStar.GetGuaFlipEightStar(int)
+  name: GetFlipGuaEightStar(int)
+  nameWithType: NineStar.GetFlipGuaEightStar(int)
+  fullName: CompassEx.Gua.NineStar.GetFlipGuaEightStar(int)
   type: Method
   source:
     remote:
       path: CompassEx/Gua/NineStar.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: GetGuaFlipEightStar
+    id: GetFlipGuaEightStar
     path: CompassEx/Gua/NineStar.cs
     startLine: 174
   assemblies:
@@ -438,7 +438,7 @@ items:
   summary: 静态工厂方法：根据翻卦掌诀产生的步进数字化索引，快速构建并返回对应的翻卦九星（实际为游年八星）实例。
   example: []
   syntax:
-    content: public static NineStar GetGuaFlipEightStar(int Index)
+    content: public static NineStar GetFlipGuaEightStar(int Index)
     parameters:
     - id: Index
       type: System.Int32
@@ -446,15 +446,15 @@ items:
     return:
       type: CompassEx.Gua.NineStar
       description: 返回包含完整翻卦配星与八宅游年映射信息的 <xref href="CompassEx.Gua.NineStar" data-throw-if-not-resolved="false"></xref> 独立对象。
-    content.vb: Public Shared Function GetGuaFlipEightStar(Index As Integer) As NineStar
-  overload: CompassEx.Gua.NineStar.GetGuaFlipEightStar*
+    content.vb: Public Shared Function GetFlipGuaEightStar(Index As Integer) As NineStar
+  overload: CompassEx.Gua.NineStar.GetFlipGuaEightStar*
   exceptions:
   - type: System.ArgumentOutOfRangeException
     commentId: T:System.ArgumentOutOfRangeException
     description: 当传入的索引超出 0-7 的数组边界时抛出。
-  nameWithType.vb: NineStar.GetGuaFlipEightStar(Integer)
-  fullName.vb: CompassEx.Gua.NineStar.GetGuaFlipEightStar(Integer)
-  name.vb: GetGuaFlipEightStar(Integer)
+  nameWithType.vb: NineStar.GetFlipGuaEightStar(Integer)
+  fullName.vb: CompassEx.Gua.NineStar.GetFlipGuaEightStar(Integer)
+  name.vb: GetFlipGuaEightStar(Integer)
 references:
 - uid: CompassEx.Gua
   commentId: N:CompassEx.Gua
@@ -1092,12 +1092,12 @@ references:
   name: ArgumentOutOfRangeException
   nameWithType: ArgumentOutOfRangeException
   fullName: System.ArgumentOutOfRangeException
-- uid: CompassEx.Gua.NineStar.GetGuaFlipEightStar*
-  commentId: Overload:CompassEx.Gua.NineStar.GetGuaFlipEightStar
-  href: CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_GetGuaFlipEightStar_System_Int32_
-  name: GetGuaFlipEightStar
-  nameWithType: NineStar.GetGuaFlipEightStar
-  fullName: CompassEx.Gua.NineStar.GetGuaFlipEightStar
+- uid: CompassEx.Gua.NineStar.GetFlipGuaEightStar*
+  commentId: Overload:CompassEx.Gua.NineStar.GetFlipGuaEightStar
+  href: CompassEx.Gua.NineStar.html#CompassEx_Gua_NineStar_GetFlipGuaEightStar_System_Int32_
+  name: GetFlipGuaEightStar
+  nameWithType: NineStar.GetFlipGuaEightStar
+  fullName: CompassEx.Gua.NineStar.GetFlipGuaEightStar
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System

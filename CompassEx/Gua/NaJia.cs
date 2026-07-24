@@ -63,7 +63,7 @@ namespace CompassEx.Gua
     /// <remarks>
     /// 本结构体数据常用于六爻预测学的装卦排盘。在天机出卦法中，亦可用于判定人命庚之干支是否得福神、官贵或犯出卦、入卦。
     /// </remarks>
-    public struct NaJiaJFResult : INaJiaResult
+    public struct NaJiaJFResult : INaJiaResult, IEquatable<NaJiaJFResult>
     {
         /// <summary>
         /// 当前推演所依附的六爻复卦（64卦别卦）实例。
@@ -83,6 +83,47 @@ namespace CompassEx.Gua
         /// 自下而上（初爻至上爻），六爻逐爻严格对应的干支（山字/干支时空坐标）集合。
         /// </summary>
         public List<SkyLoc> SkyLocs;
+
+
+        /// <summary>
+        /// 获取当前结构的哈希值，用以支持基于哈希算法的集合检索（如 <see cref="System.Collections.Generic.Dictionary{TKey, TValue}"/>）。
+        /// </summary>
+        /// <returns>返回根据内部关键字段生成的哈希整数值。</returns>
+        public override int GetHashCode()
+        {
+
+            return Gua?.Name?.GetHashCode() ?? 0;
+        }
+
+        public bool Equals(NaJiaJFResult other)
+        {
+            string thisName = this.Gua?.Name;
+            string otherName = other.Gua?.Name;
+
+            // 如果两个都是 null（即都没有卦象），在业务上它们也算作相等
+            return string.Equals(thisName, otherName, StringComparison.Ordinal);
+        }
+        public override bool Equals(object obj)
+        {
+            // 先检查 obj 是否是 NaJiaJFResult 类型，如果是，直接转发给强类型的 Equals 比较，避免重复编写逻辑
+            return obj is NaJiaJFResult other && Equals(other);
+        }
+        /// <summary>
+        /// 重载等于运算符 (<c>==</c>)，支持语法级直观对比。
+        /// </summary>
+        public static bool operator ==(NaJiaJFResult left, NaJiaJFResult right)
+        {
+            return left.Equals(right);
+        }
+
+        /// <summary>
+        /// 重载不等于运算符 (<c>!=</c>)，支持语法级直观对比。
+        /// </summary>
+        public static bool operator !=(NaJiaJFResult left, NaJiaJFResult right)
+        {
+            return !left.Equals(right);
+        }
+
     }
 
 
@@ -93,7 +134,7 @@ namespace CompassEx.Gua
     /// <remarks>
     /// 本结构体数据为风水勘测的底层核心：九星山法依此读取来龙或坐山卦的归化干支；辅星水法依此读取向卦的纳甲水流水口。
     /// </remarks>
-    public struct NaJiaYGResult : INaJiaResult
+    public struct NaJiaYGResult : INaJiaResult, IEquatable<NaJiaYGResult>
     {
         /// <summary>
         /// 当前推演所依附的后天八卦单卦（三爻卦）实例。
@@ -124,6 +165,53 @@ namespace CompassEx.Gua
         /// 四正卦依三合局归化地支：震纳亥卯未、兑纳巳酉丑、离纳寅午戌、坎纳申子辰。四维卦在风水高级理气中通常包含自身方位的延伸。
         /// </remarks>
         public List<LocClass> Locs;
+
+        public override string ToString()
+        {
+            string st = "【" + Gua?.Name + "】：[天干：" + Sky.ToString() + ",地支：" + string.Join(",", Locs.Select(lc => lc.ToString())) + "]";
+            return st;
+        }
+
+        /// <summary>
+        /// 获取当前结构的哈希值，用以支持基于哈希算法的集合检索（如 <see cref="System.Collections.Generic.Dictionary{TKey, TValue}"/>）。
+        /// </summary>
+        /// <returns>返回根据内部关键字段生成的哈希整数值。</returns>
+        public override int GetHashCode()
+        {
+
+            return Gua?.Name?.GetHashCode() ?? 0;
+        }
+
+        public override bool Equals(object obj)
+        {
+            // 先检查 obj 是否是 NaJiaYGResult 类型，如果是，直接转发给强类型的 Equals 比较，避免重复编写逻辑
+            return obj is NaJiaYGResult other && Equals(other);
+        }
+
+        public bool Equals(NaJiaYGResult other)
+        {
+            string thisName = this.Gua?.Name;
+            string otherName = other.Gua?.Name;
+
+            // 如果两个都是 null（即都没有卦象），在业务上它们也算作相等
+            return string.Equals(thisName, otherName, StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        /// 重载等于运算符 (<c>==</c>)，支持语法级直观对比。
+        /// </summary>
+        public static bool operator ==(NaJiaYGResult left, NaJiaYGResult right)
+        {
+            return left.Equals(right);
+        }
+
+        /// <summary>
+        /// 重载不等于运算符 (<c>!=</c>)，支持语法级直观对比。
+        /// </summary>
+        public static bool operator !=(NaJiaYGResult left, NaJiaYGResult right)
+        {
+            return !left.Equals(right);
+        }
     }
 
     /// <summary>
@@ -205,6 +293,38 @@ namespace CompassEx.Gua
             _GuaData = gs ?? throw new ArgumentNullException(nameof(gs), "[数理错误] 杨公纳甲输入的单卦数据不能为 null。");
             CalculationType = NaJiaType.YG;
         }
+
+
+        /// <summary>
+        /// 根据正针（地盘）二十四山向，计算并获取对应的杨公纳甲特异性结果。
+        /// </summary>
+        /// <remarks>
+        /// <para><b>【业务背景】</b> 本方法实现了杨公堪舆理气中的“纳甲”核心逻辑。通过检索输入的二十四山向名称，自动匹配并归纳出其所属的八卦本宫或干支纳甲归属（天干纳甲、地支纳甲）。</para>
+        /// <para><b>【架构安全机制】</b> 本方法虽声明在泛型类中，但属于杨公派系的<b>特异性静态方法</b>。内部引入了运行时类型锁，强制限定只有当类泛型参数 <typeparamref name="TResult"/> 确为 <see cref="NaJiaYGResult"/> 时方可成功执行，从而在多派系并存的堪舆系统中确保数理逻辑的安全隔离。</para>
+        /// </remarks>
+        /// <param name="c">输入的正针二十四山向实例对象 (<see cref="CHill"/>)。</param>
+        /// <returns>返回构建完成的杨公纳甲专属结果实例 (<see cref="NaJiaYGResult"/>)。</returns>
+        /// <exception cref="NotSupportedException">当调用本方法的泛型类上下文（<typeparamref name="TResult"/>）不是指定的 <see cref="NaJiaYGResult"/> 时阻断抛出。</exception>
+        /// <exception cref="ArgumentNullException">当传入的正针二十四山向参数 <paramref name="c"/> 为 <see langword="null"/> 时抛出。</exception>
+        /// <exception cref="ArgumentException">当入参山向名称在杨公纳甲映射字典 <c>YGNaJiaDC</c> 中未能匹配到任何对应的归属卦象时抛出。</exception>
+        public static NaJiaYGResult CreateYG(CHill c)
+        {
+            if (typeof(TResult) != typeof(NaJiaYGResult))
+            {
+                throw new NotSupportedException("[数理阻断] 该静态方法专属于杨公纳甲业务，当前泛型上下文无权调用。");
+            }
+
+            if (c == null) throw new ArgumentNullException(nameof(c));
+
+            var kv = YGNaJiaDC.Where(kv => kv.Key.Contains(c.Name) || kv.Value.SkyName.Equals(c.Name) || kv.Value.LocNames?.IndexOf(c.Name) > -1);//找到纳甲所在的卦
+            if (!kv.Any()) throw new ArgumentException("入参中未能找到相关纳甲之卦", nameof(c));
+            GuaSubClass gsc = new GuaSubClass(kv.FirstOrDefault().Key);
+            return CreateYG(gsc);
+        }
+
+
+
+
 
         /// <summary>
         /// 执行全盘纳甲核心数理逻辑推演（统一的总出口计算方法）。

@@ -1,0 +1,1253 @@
+### YamlMime:ManagedReference
+items:
+- uid: CommLib.DingLanGrid
+  commentId: T:CommLib.DingLanGrid
+  id: DingLanGrid
+  parent: CommLib
+  children:
+  - CommLib.DingLanGrid.#ctor(System.Double)
+  - CommLib.DingLanGrid.#ctor(System.String)
+  - CommLib.DingLanGrid.Child
+  - CommLib.DingLanGrid.DingLanGridColor
+  - CommLib.DingLanGrid.DingLanGridInfo
+  - CommLib.DingLanGrid.DingLanGridInfos
+  - CommLib.DingLanGrid.DingLanGridName
+  - CommLib.DingLanGrid.EndValue
+  - CommLib.DingLanGrid.GridColor
+  - CommLib.DingLanGrid.GridFixed
+  - CommLib.DingLanGrid.GridName
+  - CommLib.DingLanGrid.Index
+  - CommLib.DingLanGrid.LeftGoodValue
+  - CommLib.DingLanGrid.RightGoodValue
+  - CommLib.DingLanGrid.SG
+  - CommLib.DingLanGrid.SetGrid(System.Int32)
+  - CommLib.DingLanGrid.StartValue
+  - CommLib.DingLanGrid.Value
+  langs:
+  - csharp
+  - vb
+  name: DingLanGrid
+  nameWithType: DingLanGrid
+  fullName: CommLib.DingLanGrid
+  type: Class
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: DingLanGrid
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 29
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 丁兰尺大格（分格）类。
+  remarks: >-
+    该类用于计算和表达传统堪舆学中“丁兰尺”的 10 个大格（如丁、害、旺、苦等）。
+
+    丁兰尺主要用于阴宅、祖先神位等尺寸的吉凶量度。
+
+    每个大格内部包含 4 个小格，大格的物理固定循环尺寸常数定义为 38.78 毫米。
+  example: []
+  syntax:
+    content: public class DingLanGrid
+    content.vb: Public Class DingLanGrid
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - CommLib.DingLanGrid.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CommLib.DingLanGrid.DingLanGridName
+  commentId: F:CommLib.DingLanGrid.DingLanGridName
+  id: DingLanGridName
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: DingLanGridName
+  nameWithType: DingLanGrid.DingLanGridName
+  fullName: CommLib.DingLanGrid.DingLanGridName
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: DingLanGridName
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 34
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 丁兰尺 10 大格名称的静态只读数组。
+  example: []
+  syntax:
+    content: public static string[] DingLanGridName
+    return:
+      type: System.String[]
+    content.vb: Public Shared DingLanGridName As String()
+- uid: CommLib.DingLanGrid.DingLanGridInfos
+  commentId: F:CommLib.DingLanGrid.DingLanGridInfos
+  id: DingLanGridInfos
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: DingLanGridInfos
+  nameWithType: DingLanGrid.DingLanGridInfos
+  fullName: CommLib.DingLanGrid.DingLanGridInfos
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: DingLanGridInfos
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 39
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 丁兰尺 10 大格各自对应的吉凶断语说明文字。
+  example: []
+  syntax:
+    content: public static string[] DingLanGridInfos
+    return:
+      type: System.String[]
+    content.vb: Public Shared DingLanGridInfos As String()
+- uid: CommLib.DingLanGrid.DingLanGridColor
+  commentId: F:CommLib.DingLanGrid.DingLanGridColor
+  id: DingLanGridColor
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: DingLanGridColor
+  nameWithType: DingLanGrid.DingLanGridColor
+  fullName: CommLib.DingLanGrid.DingLanGridColor
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: DingLanGridColor
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 44
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 丁兰尺 10 大格对应的传统吉凶颜色标记数组（<xref href="System.Drawing.Color.Red" data-throw-if-not-resolved="false"></xref> 代表吉，<xref href="System.Drawing.Color.Black" data-throw-if-not-resolved="false"></xref> 代表凶）。
+  example: []
+  syntax:
+    content: public static Color[] DingLanGridColor
+    return:
+      type: System.Drawing.Color[]
+    content.vb: Public Shared DingLanGridColor As Color()
+- uid: CommLib.DingLanGrid.GridColor
+  commentId: F:CommLib.DingLanGrid.GridColor
+  id: GridColor
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: GridColor
+  nameWithType: DingLanGrid.GridColor
+  fullName: CommLib.DingLanGrid.GridColor
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GridColor
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 49
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 当前大格实例对应的吉凶颜色（红吉，黑凶）。
+  example: []
+  syntax:
+    content: public Color GridColor
+    return:
+      type: System.Drawing.Color
+    content.vb: Public GridColor As Color
+- uid: CommLib.DingLanGrid.Index
+  commentId: F:CommLib.DingLanGrid.Index
+  id: Index
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: Index
+  nameWithType: DingLanGrid.Index
+  fullName: CommLib.DingLanGrid.Index
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Index
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 54
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 当前大格在 10 个循环大格中的绝对索引值（取值范围：0 - 9）。
+  example: []
+  syntax:
+    content: public int Index
+    return:
+      type: System.Int32
+    content.vb: Public Index As Integer
+- uid: CommLib.DingLanGrid.StartValue
+  commentId: F:CommLib.DingLanGrid.StartValue
+  id: StartValue
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: StartValue
+  nameWithType: DingLanGrid.StartValue
+  fullName: CommLib.DingLanGrid.StartValue
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: StartValue
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 59
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 当前大格在丁兰尺上的理论起始刻度值（单位：毫米）。
+  example: []
+  syntax:
+    content: public double StartValue
+    return:
+      type: System.Double
+    content.vb: Public StartValue As Double
+- uid: CommLib.DingLanGrid.EndValue
+  commentId: F:CommLib.DingLanGrid.EndValue
+  id: EndValue
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: EndValue
+  nameWithType: DingLanGrid.EndValue
+  fullName: CommLib.DingLanGrid.EndValue
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: EndValue
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 64
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 当前大格在丁兰尺上的理论结束刻度值（单位：毫米）。
+  example: []
+  syntax:
+    content: public double EndValue
+    return:
+      type: System.Double
+    content.vb: Public EndValue As Double
+- uid: CommLib.DingLanGrid.GridName
+  commentId: F:CommLib.DingLanGrid.GridName
+  id: GridName
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: GridName
+  nameWithType: DingLanGrid.GridName
+  fullName: CommLib.DingLanGrid.GridName
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GridName
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 69
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 当前大格的名称（如“丁”、“害”等）。
+  example: []
+  syntax:
+    content: public string GridName
+    return:
+      type: System.String
+    content.vb: Public GridName As String
+- uid: CommLib.DingLanGrid.GridFixed
+  commentId: F:CommLib.DingLanGrid.GridFixed
+  id: GridFixed
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: GridFixed
+  nameWithType: DingLanGrid.GridFixed
+  fullName: CommLib.DingLanGrid.GridFixed
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GridFixed
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 74
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 丁兰尺每个大格的固定循环尺寸常数（定义为 38.78 毫米）。
+  example: []
+  syntax:
+    content: public const double GridFixed = 38.78
+    return:
+      type: System.Double
+    content.vb: Public Const GridFixed As Double = 38.78
+- uid: CommLib.DingLanGrid.Value
+  commentId: F:CommLib.DingLanGrid.Value
+  id: Value
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: DingLanGrid.Value
+  fullName: CommLib.DingLanGrid.Value
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Value
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 79
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 触发或传入的实际实现刻度值（若创建时未显式指定有效的刻度，则默认返回 <xref href="CommLib.DingLanGrid.StartValue" data-throw-if-not-resolved="false"></xref>）。
+  example: []
+  syntax:
+    content: public double Value
+    return:
+      type: System.Double
+    content.vb: Public Value As Double
+- uid: CommLib.DingLanGrid.SG
+  commentId: F:CommLib.DingLanGrid.SG
+  id: SG
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: SG
+  nameWithType: DingLanGrid.SG
+  fullName: CommLib.DingLanGrid.SG
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SG
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 84
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 当前物理刻度值精确落在哪一个具体的丁兰小格对象（<xref href="CommLib.DingLanSubGrid" data-throw-if-not-resolved="false"></xref>）上。
+  example: []
+  syntax:
+    content: public DingLanSubGrid SG
+    return:
+      type: CommLib.DingLanSubGrid
+    content.vb: Public SG As DingLanSubGrid
+- uid: CommLib.DingLanGrid.DingLanGridInfo
+  commentId: F:CommLib.DingLanGrid.DingLanGridInfo
+  id: DingLanGridInfo
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: DingLanGridInfo
+  nameWithType: DingLanGrid.DingLanGridInfo
+  fullName: CommLib.DingLanGrid.DingLanGridInfo
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: DingLanGridInfo
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 89
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 当前大格对应的吉凶断语详细说明。
+  example: []
+  syntax:
+    content: public string DingLanGridInfo
+    return:
+      type: System.String
+    content.vb: Public DingLanGridInfo As String
+- uid: CommLib.DingLanGrid.Child
+  commentId: F:CommLib.DingLanGrid.Child
+  id: Child
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: Child
+  nameWithType: DingLanGrid.Child
+  fullName: CommLib.DingLanGrid.Child
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Child
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 94
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 当前大格内部所包含的全部 4 个连续小格的集合列表。
+  example: []
+  syntax:
+    content: public List<DingLanSubGrid> Child
+    return:
+      type: System.Collections.Generic.List{CommLib.DingLanSubGrid}
+    content.vb: Public Child As List(Of DingLanSubGrid)
+- uid: CommLib.DingLanGrid.RightGoodValue
+  commentId: P:CommLib.DingLanGrid.RightGoodValue
+  id: RightGoodValue
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: RightGoodValue
+  nameWithType: DingLanGrid.RightGoodValue
+  fullName: CommLib.DingLanGrid.RightGoodValue
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: RightGoodValue
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 108
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 获取比当前刻度值更大的最近一个吉利（红色）刻度边界值。
+  example: []
+  syntax:
+    content: public double RightGoodValue { get; }
+    parameters: []
+    return:
+      type: System.Double
+      description: >-
+        如果当前值非法返回 -1；若当前大格本身就是吉（红色），则无需寻找，直接返回 -1；
+
+        否则向右（向后）遍历尺面大格周期，寻找到第一个吉利大格的起始刻度加 1 毫米。
+    content.vb: Public ReadOnly Property RightGoodValue As Double
+  overload: CommLib.DingLanGrid.RightGoodValue*
+- uid: CommLib.DingLanGrid.LeftGoodValue
+  commentId: P:CommLib.DingLanGrid.LeftGoodValue
+  id: LeftGoodValue
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: LeftGoodValue
+  nameWithType: DingLanGrid.LeftGoodValue
+  fullName: CommLib.DingLanGrid.LeftGoodValue
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: LeftGoodValue
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 147
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 获取比当前刻度值更小的最近一个吉利（红色）刻度边界值。
+  example: []
+  syntax:
+    content: public double LeftGoodValue { get; }
+    parameters: []
+    return:
+      type: System.Double
+      description: >-
+        如果当前值非法返回 -1；若当前大格本身就是吉（红色），则无需寻找，直接返回 -1；
+
+        否则向左（向前）遍历尺面大格周期，寻找到第一个吉利大格的结束刻度。
+    content.vb: Public ReadOnly Property LeftGoodValue As Double
+  overload: CommLib.DingLanGrid.LeftGoodValue*
+- uid: CommLib.DingLanGrid.SetGrid(System.Int32)
+  commentId: M:CommLib.DingLanGrid.SetGrid(System.Int32)
+  id: SetGrid(System.Int32)
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: SetGrid(int)
+  nameWithType: DingLanGrid.SetGrid(int)
+  fullName: CommLib.DingLanGrid.SetGrid(int)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SetGrid
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 178
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 根据累计的大格总步数（次数）统一计算并配置当前大格实例的所有相关吉凶属性、关联小格。
+  example: []
+  syntax:
+    content: public void SetGrid(int Times)
+    parameters:
+    - id: Times
+      type: System.Int32
+      description: 累计的大格总步数（未取余的原始计数）。
+    content.vb: Public Sub SetGrid(Times As Integer)
+  overload: CommLib.DingLanGrid.SetGrid*
+  nameWithType.vb: DingLanGrid.SetGrid(Integer)
+  fullName.vb: CommLib.DingLanGrid.SetGrid(Integer)
+  name.vb: SetGrid(Integer)
+- uid: CommLib.DingLanGrid.#ctor(System.String)
+  commentId: M:CommLib.DingLanGrid.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: DingLanGrid(string)
+  nameWithType: DingLanGrid.DingLanGrid(string)
+  fullName: CommLib.DingLanGrid.DingLanGrid(string)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 221
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 根据大格名称（如“丁”）实例化一个丁兰大格对象。
+  example: []
+  syntax:
+    content: public DingLanGrid(string GridName)
+    parameters:
+    - id: GridName
+      type: System.String
+      description: 要匹配的大格名称字符串。
+    content.vb: Public Sub New(GridName As String)
+  overload: CommLib.DingLanGrid.#ctor*
+  nameWithType.vb: DingLanGrid.New(String)
+  fullName.vb: CommLib.DingLanGrid.New(String)
+  name.vb: New(String)
+- uid: CommLib.DingLanGrid.#ctor(System.Double)
+  commentId: M:CommLib.DingLanGrid.#ctor(System.Double)
+  id: '#ctor(System.Double)'
+  parent: CommLib.DingLanGrid
+  langs:
+  - csharp
+  - vb
+  name: DingLanGrid(double)
+  nameWithType: DingLanGrid.DingLanGrid(double)
+  fullName: CommLib.DingLanGrid.DingLanGrid(double)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Assist/DingLanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Assist/DingLanGrid.cs
+    startLine: 237
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 根据指定的丁兰尺物理实际刻度值实例化一个大格对象。
+  example: []
+  syntax:
+    content: public DingLanGrid(double Value)
+    parameters:
+    - id: Value
+      type: System.Double
+      description: 输入的长度刻度值（单位：毫米）。
+    content.vb: Public Sub New(Value As Double)
+  overload: CommLib.DingLanGrid.#ctor*
+  nameWithType.vb: DingLanGrid.New(Double)
+  fullName.vb: CommLib.DingLanGrid.New(Double)
+  name.vb: New(Double)
+references:
+- uid: CommLib
+  commentId: N:CommLib
+  href: CommLib.html
+  name: CommLib
+  nameWithType: CommLib
+  fullName: CommLib
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CommLib.DingLanGrid.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<DingLanGrid, TBase>(DingLanGrid, TBase)
+  nameWithType: Comm.ApplyBaseProperties<DingLanGrid, TBase>(DingLanGrid, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CommLib.DingLanGrid, TBase>(CommLib.DingLanGrid, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of DingLanGrid, TBase)(DingLanGrid, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CommLib.DingLanGrid, TBase)(CommLib.DingLanGrid, TBase)
+  name.vb: ApplyBaseProperties(Of DingLanGrid, TBase)(DingLanGrid, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CommLib.DingLanGrid,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CommLib.DingLanGrid
+    name: DingLanGrid
+    href: CommLib.DingLanGrid.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CommLib.DingLanGrid
+    name: DingLanGrid
+    href: CommLib.DingLanGrid.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CommLib.DingLanGrid,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CommLib.DingLanGrid
+    name: DingLanGrid
+    href: CommLib.DingLanGrid.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CommLib.DingLanGrid
+    name: DingLanGrid
+    href: CommLib.DingLanGrid.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: System.Drawing.Color.Red
+  commentId: P:System.Drawing.Color.Red
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.color.red
+  name: Red
+  nameWithType: Color.Red
+  fullName: System.Drawing.Color.Red
+- uid: System.Drawing.Color.Black
+  commentId: P:System.Drawing.Color.Black
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.color.black
+  name: Black
+  nameWithType: Color.Black
+  fullName: System.Drawing.Color.Black
+- uid: System.Drawing.Color[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  name: Color[]
+  nameWithType: Color[]
+  fullName: System.Drawing.Color[]
+  nameWithType.vb: Color()
+  fullName.vb: System.Drawing.Color()
+  name.vb: Color()
+  spec.csharp:
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: (
+  - name: )
+- uid: System.Drawing.Color
+  commentId: T:System.Drawing.Color
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  name: Color
+  nameWithType: Color
+  fullName: System.Drawing.Color
+- uid: System.Drawing
+  commentId: N:System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Drawing
+  nameWithType: System.Drawing
+  fullName: System.Drawing
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CommLib.DingLanGrid.StartValue
+  commentId: F:CommLib.DingLanGrid.StartValue
+  href: CommLib.DingLanGrid.html#CommLib_DingLanGrid_StartValue
+  name: StartValue
+  nameWithType: DingLanGrid.StartValue
+  fullName: CommLib.DingLanGrid.StartValue
+- uid: CommLib.DingLanSubGrid
+  commentId: T:CommLib.DingLanSubGrid
+  parent: CommLib
+  href: CommLib.DingLanSubGrid.html
+  name: DingLanSubGrid
+  nameWithType: DingLanSubGrid
+  fullName: CommLib.DingLanSubGrid
+- uid: System.Collections.Generic.List{CommLib.DingLanSubGrid}
+  commentId: T:System.Collections.Generic.List{CommLib.DingLanSubGrid}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<DingLanSubGrid>
+  nameWithType: List<DingLanSubGrid>
+  fullName: System.Collections.Generic.List<CommLib.DingLanSubGrid>
+  nameWithType.vb: List(Of DingLanSubGrid)
+  fullName.vb: System.Collections.Generic.List(Of CommLib.DingLanSubGrid)
+  name.vb: List(Of DingLanSubGrid)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: CommLib.DingLanSubGrid
+    name: DingLanSubGrid
+    href: CommLib.DingLanSubGrid.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CommLib.DingLanSubGrid
+    name: DingLanSubGrid
+    href: CommLib.DingLanSubGrid.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: CommLib.DingLanGrid.RightGoodValue*
+  commentId: Overload:CommLib.DingLanGrid.RightGoodValue
+  href: CommLib.DingLanGrid.html#CommLib_DingLanGrid_RightGoodValue
+  name: RightGoodValue
+  nameWithType: DingLanGrid.RightGoodValue
+  fullName: CommLib.DingLanGrid.RightGoodValue
+- uid: CommLib.DingLanGrid.LeftGoodValue*
+  commentId: Overload:CommLib.DingLanGrid.LeftGoodValue
+  href: CommLib.DingLanGrid.html#CommLib_DingLanGrid_LeftGoodValue
+  name: LeftGoodValue
+  nameWithType: DingLanGrid.LeftGoodValue
+  fullName: CommLib.DingLanGrid.LeftGoodValue
+- uid: CommLib.DingLanGrid.SetGrid*
+  commentId: Overload:CommLib.DingLanGrid.SetGrid
+  href: CommLib.DingLanGrid.html#CommLib_DingLanGrid_SetGrid_System_Int32_
+  name: SetGrid
+  nameWithType: DingLanGrid.SetGrid
+  fullName: CommLib.DingLanGrid.SetGrid
+- uid: CommLib.DingLanGrid.#ctor*
+  commentId: Overload:CommLib.DingLanGrid.#ctor
+  href: CommLib.DingLanGrid.html#CommLib_DingLanGrid__ctor_System_String_
+  name: DingLanGrid
+  nameWithType: DingLanGrid.DingLanGrid
+  fullName: CommLib.DingLanGrid.DingLanGrid
+  nameWithType.vb: DingLanGrid.New
+  fullName.vb: CommLib.DingLanGrid.New
+  name.vb: New

@@ -147,7 +147,10 @@ namespace CompassEx.Comm
         #endregion
 
         #region 方法
-
+        public override string ToString()
+        {
+            return this.Name.ToString();
+        }
         /// <summary>
         /// 判定指定的日期时间对象是否落入当前地支所代表的时辰范围内（仅提取小时进行比对）。
         /// </summary>

@@ -1,0 +1,878 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Gua.FlipGua
+  commentId: T:CompassEx.Gua.FlipGua
+  id: FlipGua
+  parent: CompassEx.Gua
+  children:
+  - CompassEx.Gua.FlipGua.GetFiveGhostWealth(CompassEx.CHill)
+  - CompassEx.Gua.FlipGua.GetFlipGuaGuas(CompassEx.Gua.GuaSubClass)
+  - CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC(CompassEx.CHill,CompassEx.Gua.FlipGuaMethod)
+  - CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC(CompassEx.Gua.GuaSubClass,CompassEx.Gua.FlipGuaMethod)
+  langs:
+  - csharp
+  - vb
+  name: FlipGua
+  nameWithType: FlipGua
+  fullName: CompassEx.Gua.FlipGua
+  type: Class
+  source:
+    remote:
+      path: CompassEx/Gua/FlipGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FlipGua
+    path: CompassEx/Gua/FlipGua.cs
+    startLine: 91
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 黄石公翻卦掌与辅星翻卦水法核心数字化推导类。
+  remarks: >-
+    本类作为 <code>CompassEx.Gua</code> 命名空间下的运算引擎，负责执行底层八卦变爻翻转计算。
+
+    内部核心轨迹已通过 O(1) 效率的数字化索引进行无缝链式建模，全面兼容 C# 主程序调用与第三方 JavaScript 插件扩展。
+  example: []
+  syntax:
+    content: public class FlipGua
+    content.vb: Public Class FlipGua
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - CompassEx.Gua.FlipGua.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CompassEx.Gua.FlipGua.GetFiveGhostWealth(CompassEx.CHill)
+  commentId: M:CompassEx.Gua.FlipGua.GetFiveGhostWealth(CompassEx.CHill)
+  id: GetFiveGhostWealth(CompassEx.CHill)
+  parent: CompassEx.Gua.FlipGua
+  langs:
+  - csharp
+  - vb
+  name: GetFiveGhostWealth(CHill)
+  nameWithType: FlipGua.GetFiveGhostWealth(CHill)
+  fullName: CompassEx.Gua.FlipGua.GetFiveGhostWealth(CompassEx.CHill)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/FlipGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetFiveGhostWealth
+    path: CompassEx/Gua/FlipGua.cs
+    startLine: 142
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 获得在不同 24 山太极点的五鬼运财方位结构。
+  remarks: >-
+    该方法属于堪舆学（风水）算法，通过传入的龙山（CHill），
+
+    运用翻卦掌诀（龙上翻卦）计算出九星翻卦对冲关系，
+
+    进而推导出辅星、五鬼（廉贞）临门以及天医来水的具体 24 山方位。
+  example: []
+  syntax:
+    content: public static FiveGhostWealth GetFiveGhostWealth(CHill DragonHill)
+    parameters:
+    - id: DragonHill
+      type: CompassEx.CHill
+      description: 输入的龙山对象，代表当前计算的 24 山太极点坐标。
+    return:
+      type: CompassEx.Gua.FiveGhostWealth
+      description: 返回一个包装了龙山方位、五鬼临门方位及天医来水方位的 <xref href="CompassEx.Gua.FiveGhostWealth" data-throw-if-not-resolved="false"></xref> 结构对象。
+    content.vb: Public Shared Function GetFiveGhostWealth(DragonHill As CHill) As FiveGhostWealth
+  overload: CompassEx.Gua.FlipGua.GetFiveGhostWealth*
+  exceptions:
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: 当翻卦算法内部逻辑出错，未能正确匹配到“辅”、“廉”或“医”星数据时抛出异常。
+- uid: CompassEx.Gua.FlipGua.GetFlipGuaGuas(CompassEx.Gua.GuaSubClass)
+  commentId: M:CompassEx.Gua.FlipGua.GetFlipGuaGuas(CompassEx.Gua.GuaSubClass)
+  id: GetFlipGuaGuas(CompassEx.Gua.GuaSubClass)
+  parent: CompassEx.Gua.FlipGua
+  langs:
+  - csharp
+  - vb
+  name: GetFlipGuaGuas(GuaSubClass)
+  nameWithType: FlipGua.GetFlipGuaGuas(GuaSubClass)
+  fullName: CompassEx.Gua.FlipGua.GetFlipGuaGuas(CompassEx.Gua.GuaSubClass)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/FlipGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetFlipGuaGuas
+    path: CompassEx/Gua/FlipGua.cs
+    startLine: 197
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 根据输入的初始主卦，推导并生成其完整的 8 步纳甲翻卦后天八卦序列。
+  remarks: >-
+    本方法是翻卦核心算法。根据易学翻卦掌诀（九星翻卦、黄泉翻卦等业务基底），
+
+    通过内部维护的翻卦索引字典 <code>FlipGuasDC</code> 定位主卦的本宫变换路径，
+
+    并依次映射实例化出对应的八个易卦。
+  example: []
+  syntax:
+    content: public static List<GuaSubClass> GetFlipGuaGuas(GuaSubClass gs)
+    parameters:
+    - id: gs
+      type: CompassEx.Gua.GuaSubClass
+      description: 要执行翻卦的基础主卦实例 (<xref href="CompassEx.Gua.GuaSubClass" data-throw-if-not-resolved="false"></xref>)。
+    return:
+      type: System.Collections.Generic.List{CompassEx.Gua.GuaSubClass}
+      description: 返回一个包含 8 个严格按翻卦掌诀顺序排列的 <xref href="CompassEx.Gua.GuaSubClass" data-throw-if-not-resolved="false"></xref> 独立对象列表。
+    content.vb: Public Shared Function GetFlipGuaGuas(gs As GuaSubClass) As List(Of GuaSubClass)
+  overload: CompassEx.Gua.FlipGua.GetFlipGuaGuas*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: 当传入的主卦对象 <code class="paramref">gs</code> 为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> 时抛出。
+  - type: System.Collections.Generic.KeyNotFoundException
+    commentId: T:System.Collections.Generic.KeyNotFoundException
+    description: 当传入的卦名（如 乾、兑、离 等）不在标准的后天八卦映射字典中时抛出。
+- uid: CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC(CompassEx.CHill,CompassEx.Gua.FlipGuaMethod)
+  commentId: M:CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC(CompassEx.CHill,CompassEx.Gua.FlipGuaMethod)
+  id: GetFlipGuaNineStarDC(CompassEx.CHill,CompassEx.Gua.FlipGuaMethod)
+  parent: CompassEx.Gua.FlipGua
+  langs:
+  - csharp
+  - vb
+  name: GetFlipGuaNineStarDC(CHill, FlipGuaMethod)
+  nameWithType: FlipGua.GetFlipGuaNineStarDC(CHill, FlipGuaMethod)
+  fullName: CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC(CompassEx.CHill, CompassEx.Gua.FlipGuaMethod)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/FlipGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetFlipGuaNineStarDC
+    path: CompassEx/Gua/FlipGua.cs
+    startLine: 222
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 根据输入的正针（地盘）二十四山向与指定的翻卦方法，推导并获取完整的九星翻卦映射字典。
+  remarks: >-
+    本方法是杨公风水堪舆中九星翻卦（如贪狼、巨门、禄存等）的核心入口。
+
+    它首先依据杨公纳甲法则锁定传入山向的初始纳甲八卦作为翻卦起点，随后依据指定的翻卦掌诀（如黄泉翻卦、地母翻卦等）推演出全部的九星变卦序列。
+  example: []
+  syntax:
+    content: public static Dictionary<NaJiaYGResult, NineStar> GetFlipGuaNineStarDC(CHill c, FlipGuaMethod m)
+    parameters:
+    - id: c
+      type: CompassEx.CHill
+      description: 输入的正针二十四山向实例对象 (<xref href="CompassEx.CHill" data-throw-if-not-resolved="false"></xref>)。
+    - id: m
+      type: CompassEx.Gua.FlipGuaMethod
+      description: 执行翻卦时采用的具体掌诀法则(山法与水法)(<xref href="CompassEx.Gua.FlipGuaMethod" data-throw-if-not-resolved="false"></xref>)。
+    return:
+      type: System.Collections.Generic.Dictionary{CompassEx.Gua.NaJiaYGResult,CompassEx.Gua.NineStar}
+      description: 返回一个以变卦子类 (<xref href="CompassEx.Gua.NaJiaYGResult" data-throw-if-not-resolved="false"></xref>) 为键、对应风水九星 (<xref href="CompassEx.Gua.NineStar" data-throw-if-not-resolved="false"></xref>) 为值的映射字典。
+    content.vb: Public Shared Function GetFlipGuaNineStarDC(c As CHill, m As FlipGuaMethod) As Dictionary(Of NaJiaYGResult, NineStar)
+  overload: CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: 当传入的山向对象 <code class="paramref">c</code> 为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> 时抛出。
+- uid: CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC(CompassEx.Gua.GuaSubClass,CompassEx.Gua.FlipGuaMethod)
+  commentId: M:CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC(CompassEx.Gua.GuaSubClass,CompassEx.Gua.FlipGuaMethod)
+  id: GetFlipGuaNineStarDC(CompassEx.Gua.GuaSubClass,CompassEx.Gua.FlipGuaMethod)
+  parent: CompassEx.Gua.FlipGua
+  langs:
+  - csharp
+  - vb
+  name: GetFlipGuaNineStarDC(GuaSubClass, FlipGuaMethod)
+  nameWithType: FlipGua.GetFlipGuaNineStarDC(GuaSubClass, FlipGuaMethod)
+  fullName: CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC(CompassEx.Gua.GuaSubClass, CompassEx.Gua.FlipGuaMethod)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/FlipGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetFlipGuaNineStarDC
+    path: CompassEx/Gua/FlipGua.cs
+    startLine: 257
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 根据指定的勘测分类（龙、山、水），获得翻卦后全盘八卦与游年九星的完整对应关系字典。
+  remarks: >-
+    <p><b>吉凶配星数理逻辑对照表：</b></p>
+
+    <table><thead><tr><th class="term">勘测分类 (Method)</th><th class="description">游年星曜演变顺序 (Star Progression Path)</th></tr></thead><tbody><tr><td class="term">龙法 (Dragon) / 山法 (Hill)</td><td class="description">1辅(伏位) → 2贪(生气) → 3巨(天医) → 4禄(祸害) → 5文(六煞) → 6廉(五鬼) → 7武(延年) → 8破(绝命)</td></tr><tr><td class="term">水法 (Water)</td><td class="description">1辅(伏位) → 2武(延年) → 3破(绝命) → 4廉(五鬼) → 5贪(生气) → 6巨(天医) → 7禄(祸害) → 8文(六煞) （辅星水法特殊换算倒序轨迹）</td></tr></tbody></table>
+  example: []
+  syntax:
+    content: public static Dictionary<NaJiaYGResult, NineStar> GetFlipGuaNineStarDC(GuaSubClass gs, FlipGuaMethod m)
+    parameters:
+    - id: gs
+      type: CompassEx.Gua.GuaSubClass
+      description: 要执行翻卦的基础主卦实例 (<xref href="CompassEx.Gua.GuaSubClass" data-throw-if-not-resolved="false"></xref>)。
+    - id: m
+      type: CompassEx.Gua.FlipGuaMethod
+      description: 当前的翻卦九星勘测方法分类(山法与水法) (<xref href="CompassEx.Gua.FlipGuaMethod" data-throw-if-not-resolved="false"></xref>)。
+    return:
+      type: System.Collections.Generic.Dictionary{CompassEx.Gua.NaJiaYGResult,CompassEx.Gua.NineStar}
+      description: 返回以 <xref href="CompassEx.Gua.NaJiaYGResult" data-throw-if-not-resolved="false"></xref> 卦象为键，<xref href="CompassEx.Gua.NineStar" data-throw-if-not-resolved="false"></xref> 游年星曜为值的配星映射字典。
+    content.vb: Public Shared Function GetFlipGuaNineStarDC(gs As GuaSubClass, m As FlipGuaMethod) As Dictionary(Of NaJiaYGResult, NineStar)
+  overload: CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC*
+references:
+- uid: CompassEx.Gua
+  commentId: N:CompassEx.Gua
+  href: CompassEx.html
+  name: CompassEx.Gua
+  nameWithType: CompassEx.Gua
+  fullName: CompassEx.Gua
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CompassEx.Gua.FlipGua.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<FlipGua, TBase>(FlipGua, TBase)
+  nameWithType: Comm.ApplyBaseProperties<FlipGua, TBase>(FlipGua, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.Gua.FlipGua, TBase>(CompassEx.Gua.FlipGua, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of FlipGua, TBase)(FlipGua, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.Gua.FlipGua, TBase)(CompassEx.Gua.FlipGua, TBase)
+  name.vb: ApplyBaseProperties(Of FlipGua, TBase)(FlipGua, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Gua.FlipGua,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.Gua.FlipGua
+    name: FlipGua
+    href: CompassEx.Gua.FlipGua.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.Gua.FlipGua
+    name: FlipGua
+    href: CompassEx.Gua.FlipGua.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Gua.FlipGua,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Gua.FlipGua
+    name: FlipGua
+    href: CompassEx.Gua.FlipGua.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.Gua.FlipGua
+    name: FlipGua
+    href: CompassEx.Gua.FlipGua.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: CompassEx.Gua.FiveGhostWealth
+  commentId: T:CompassEx.Gua.FiveGhostWealth
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.FiveGhostWealth.html
+  name: FiveGhostWealth
+  nameWithType: FiveGhostWealth
+  fullName: CompassEx.Gua.FiveGhostWealth
+- uid: System.Exception
+  commentId: T:System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: CompassEx.Gua.FlipGua.GetFiveGhostWealth*
+  commentId: Overload:CompassEx.Gua.FlipGua.GetFiveGhostWealth
+  href: CompassEx.Gua.FlipGua.html#CompassEx_Gua_FlipGua_GetFiveGhostWealth_CompassEx_CHill_
+  name: GetFiveGhostWealth
+  nameWithType: FlipGua.GetFiveGhostWealth
+  fullName: CompassEx.Gua.FlipGua.GetFiveGhostWealth
+- uid: CompassEx.CHill
+  commentId: T:CompassEx.CHill
+  parent: CompassEx
+  href: CompassEx.CHill.html
+  name: CHill
+  nameWithType: CHill
+  fullName: CompassEx.CHill
+- uid: CompassEx
+  commentId: N:CompassEx
+  href: CompassEx.html
+  name: CompassEx
+  nameWithType: CompassEx
+  fullName: CompassEx
+- uid: CompassEx.Gua.GuaSubClass
+  commentId: T:CompassEx.Gua.GuaSubClass
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.GuaSubClass.html
+  name: GuaSubClass
+  nameWithType: GuaSubClass
+  fullName: CompassEx.Gua.GuaSubClass
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: System.Collections.Generic.KeyNotFoundException
+  commentId: T:System.Collections.Generic.KeyNotFoundException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keynotfoundexception
+  name: KeyNotFoundException
+  nameWithType: KeyNotFoundException
+  fullName: System.Collections.Generic.KeyNotFoundException
+- uid: CompassEx.Gua.FlipGua.GetFlipGuaGuas*
+  commentId: Overload:CompassEx.Gua.FlipGua.GetFlipGuaGuas
+  href: CompassEx.Gua.FlipGua.html#CompassEx_Gua_FlipGua_GetFlipGuaGuas_CompassEx_Gua_GuaSubClass_
+  name: GetFlipGuaGuas
+  nameWithType: FlipGua.GetFlipGuaGuas
+  fullName: CompassEx.Gua.FlipGua.GetFlipGuaGuas
+- uid: System.Collections.Generic.List{CompassEx.Gua.GuaSubClass}
+  commentId: T:System.Collections.Generic.List{CompassEx.Gua.GuaSubClass}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<GuaSubClass>
+  nameWithType: List<GuaSubClass>
+  fullName: System.Collections.Generic.List<CompassEx.Gua.GuaSubClass>
+  nameWithType.vb: List(Of GuaSubClass)
+  fullName.vb: System.Collections.Generic.List(Of CompassEx.Gua.GuaSubClass)
+  name.vb: List(Of GuaSubClass)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: CompassEx.Gua.GuaSubClass
+    name: GuaSubClass
+    href: CompassEx.Gua.GuaSubClass.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Gua.GuaSubClass
+    name: GuaSubClass
+    href: CompassEx.Gua.GuaSubClass.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: CompassEx.Gua.FlipGuaMethod
+  commentId: T:CompassEx.Gua.FlipGuaMethod
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.FlipGuaMethod.html
+  name: FlipGuaMethod
+  nameWithType: FlipGuaMethod
+  fullName: CompassEx.Gua.FlipGuaMethod
+- uid: CompassEx.Gua.NaJiaYGResult
+  commentId: T:CompassEx.Gua.NaJiaYGResult
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.NaJiaYGResult.html
+  name: NaJiaYGResult
+  nameWithType: NaJiaYGResult
+  fullName: CompassEx.Gua.NaJiaYGResult
+- uid: CompassEx.Gua.NineStar
+  commentId: T:CompassEx.Gua.NineStar
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.NineStar.html
+  name: NineStar
+  nameWithType: NineStar
+  fullName: CompassEx.Gua.NineStar
+- uid: CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC*
+  commentId: Overload:CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC
+  href: CompassEx.Gua.FlipGua.html#CompassEx_Gua_FlipGua_GetFlipGuaNineStarDC_CompassEx_CHill_CompassEx_Gua_FlipGuaMethod_
+  name: GetFlipGuaNineStarDC
+  nameWithType: FlipGua.GetFlipGuaNineStarDC
+  fullName: CompassEx.Gua.FlipGua.GetFlipGuaNineStarDC
+- uid: System.Collections.Generic.Dictionary{CompassEx.Gua.NaJiaYGResult,CompassEx.Gua.NineStar}
+  commentId: T:System.Collections.Generic.Dictionary{CompassEx.Gua.NaJiaYGResult,CompassEx.Gua.NineStar}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<NaJiaYGResult, NineStar>
+  nameWithType: Dictionary<NaJiaYGResult, NineStar>
+  fullName: System.Collections.Generic.Dictionary<CompassEx.Gua.NaJiaYGResult, CompassEx.Gua.NineStar>
+  nameWithType.vb: Dictionary(Of NaJiaYGResult, NineStar)
+  fullName.vb: System.Collections.Generic.Dictionary(Of CompassEx.Gua.NaJiaYGResult, CompassEx.Gua.NineStar)
+  name.vb: Dictionary(Of NaJiaYGResult, NineStar)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: CompassEx.Gua.NaJiaYGResult
+    name: NaJiaYGResult
+    href: CompassEx.Gua.NaJiaYGResult.html
+  - name: ','
+  - name: " "
+  - uid: CompassEx.Gua.NineStar
+    name: NineStar
+    href: CompassEx.Gua.NineStar.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Gua.NaJiaYGResult
+    name: NaJiaYGResult
+    href: CompassEx.Gua.NaJiaYGResult.html
+  - name: ','
+  - name: " "
+  - uid: CompassEx.Gua.NineStar
+    name: NineStar
+    href: CompassEx.Gua.NineStar.html
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )

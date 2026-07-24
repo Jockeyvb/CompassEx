@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: CommLib
+  commentId: N:CommLib
+  id: CommLib
+  children:
+  - CommLib.DingLanGrid
+  - CommLib.DingLanSubGrid
+  - CommLib.LuBanGrid
+  - CommLib.LuBanSubGrid
+  langs:
+  - csharp
+  - vb
+  name: CommLib
+  nameWithType: CommLib
+  fullName: CommLib
+  type: Namespace
+  assemblies:
+  - CompassEx
+references:
+- uid: CommLib.DingLanGrid
+  commentId: T:CommLib.DingLanGrid
+  parent: CommLib
+  href: CommLib.DingLanGrid.html
+  name: DingLanGrid
+  nameWithType: DingLanGrid
+  fullName: CommLib.DingLanGrid
+- uid: CommLib.DingLanSubGrid
+  commentId: T:CommLib.DingLanSubGrid
+  parent: CommLib
+  href: CommLib.DingLanSubGrid.html
+  name: DingLanSubGrid
+  nameWithType: DingLanSubGrid
+  fullName: CommLib.DingLanSubGrid
+- uid: CommLib.LuBanGrid
+  commentId: T:CommLib.LuBanGrid
+  parent: CommLib
+  href: CommLib.LuBanGrid.html
+  name: LuBanGrid
+  nameWithType: LuBanGrid
+  fullName: CommLib.LuBanGrid
+- uid: CommLib.LuBanSubGrid
+  commentId: T:CommLib.LuBanSubGrid
+  parent: CommLib
+  href: CommLib.LuBanSubGrid.html
+  name: LuBanSubGrid
+  nameWithType: LuBanSubGrid
+  fullName: CommLib.LuBanSubGrid
+- uid: CommLib
+  commentId: N:CommLib
+  href: CommLib.html
+  name: CommLib
+  nameWithType: CommLib
+  fullName: CommLib

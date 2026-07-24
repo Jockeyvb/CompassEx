@@ -5,9 +5,14 @@ items:
   id: NaJiaJFResult
   parent: CompassEx.Gua
   children:
+  - CompassEx.Gua.NaJiaJFResult.Equals(CompassEx.Gua.NaJiaJFResult)
+  - CompassEx.Gua.NaJiaJFResult.Equals(System.Object)
+  - CompassEx.Gua.NaJiaJFResult.GetHashCode
   - CompassEx.Gua.NaJiaJFResult.Gua
   - CompassEx.Gua.NaJiaJFResult.SkyLocs
   - CompassEx.Gua.NaJiaJFResult.Type
+  - CompassEx.Gua.NaJiaJFResult.op_Equality(CompassEx.Gua.NaJiaJFResult,CompassEx.Gua.NaJiaJFResult)
+  - CompassEx.Gua.NaJiaJFResult.op_Inequality(CompassEx.Gua.NaJiaJFResult,CompassEx.Gua.NaJiaJFResult)
   langs:
   - csharp
   - vb
@@ -30,13 +35,12 @@ items:
   remarks: 本结构体数据常用于六爻预测学的装卦排盘。在天机出卦法中，亦可用于判定人命庚之干支是否得福神、官贵或犯出卦、入卦。
   example: []
   syntax:
-    content: 'public struct NaJiaJFResult : INaJiaResult'
-    content.vb: Public Structure NaJiaJFResult Implements INaJiaResult
+    content: 'public struct NaJiaJFResult : INaJiaResult, IEquatable<NaJiaJFResult>'
+    content.vb: Public Structure NaJiaJFResult Implements INaJiaResult, IEquatable(Of NaJiaJFResult)
   implements:
   - CompassEx.Gua.INaJiaResult
+  - System.IEquatable{CompassEx.Gua.NaJiaJFResult}
   inheritedMembers:
-  - System.ValueType.Equals(System.Object)
-  - System.ValueType.GetHashCode
   - System.ValueType.ToString
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetType
@@ -145,6 +149,184 @@ items:
     return:
       type: System.Collections.Generic.List{CompassEx.Comm.SkyLoc}
     content.vb: Public SkyLocs As List(Of SkyLoc)
+- uid: CompassEx.Gua.NaJiaJFResult.GetHashCode
+  commentId: M:CompassEx.Gua.NaJiaJFResult.GetHashCode
+  id: GetHashCode
+  parent: CompassEx.Gua.NaJiaJFResult
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: NaJiaJFResult.GetHashCode()
+  fullName: CompassEx.Gua.NaJiaJFResult.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/NaJia.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetHashCode
+    path: CompassEx/Gua/NaJia.cs
+    startLine: 91
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 获取当前结构的哈希值，用以支持基于哈希算法的集合检索（如 <xref href="System.Collections.Generic.Dictionary%602" data-throw-if-not-resolved="false"></xref>）。
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: 返回根据内部关键字段生成的哈希整数值。
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.ValueType.GetHashCode
+  overload: CompassEx.Gua.NaJiaJFResult.GetHashCode*
+- uid: CompassEx.Gua.NaJiaJFResult.Equals(CompassEx.Gua.NaJiaJFResult)
+  commentId: M:CompassEx.Gua.NaJiaJFResult.Equals(CompassEx.Gua.NaJiaJFResult)
+  id: Equals(CompassEx.Gua.NaJiaJFResult)
+  parent: CompassEx.Gua.NaJiaJFResult
+  langs:
+  - csharp
+  - vb
+  name: Equals(NaJiaJFResult)
+  nameWithType: NaJiaJFResult.Equals(NaJiaJFResult)
+  fullName: CompassEx.Gua.NaJiaJFResult.Equals(CompassEx.Gua.NaJiaJFResult)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/NaJia.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Equals
+    path: CompassEx/Gua/NaJia.cs
+    startLine: 97
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  example: []
+  syntax:
+    content: public bool Equals(NaJiaJFResult other)
+    parameters:
+    - id: other
+      type: CompassEx.Gua.NaJiaJFResult
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(other As NaJiaJFResult) As Boolean
+  overload: CompassEx.Gua.NaJiaJFResult.Equals*
+  implements:
+  - System.IEquatable{CompassEx.Gua.NaJiaJFResult}.Equals(CompassEx.Gua.NaJiaJFResult)
+- uid: CompassEx.Gua.NaJiaJFResult.Equals(System.Object)
+  commentId: M:CompassEx.Gua.NaJiaJFResult.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: CompassEx.Gua.NaJiaJFResult
+  langs:
+  - csharp
+  - vb
+  name: Equals(object)
+  nameWithType: NaJiaJFResult.Equals(object)
+  fullName: CompassEx.Gua.NaJiaJFResult.Equals(object)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/NaJia.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Equals
+    path: CompassEx/Gua/NaJia.cs
+    startLine: 105
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.ValueType.Equals(System.Object)
+  overload: CompassEx.Gua.NaJiaJFResult.Equals*
+  nameWithType.vb: NaJiaJFResult.Equals(Object)
+  fullName.vb: CompassEx.Gua.NaJiaJFResult.Equals(Object)
+  name.vb: Equals(Object)
+- uid: CompassEx.Gua.NaJiaJFResult.op_Equality(CompassEx.Gua.NaJiaJFResult,CompassEx.Gua.NaJiaJFResult)
+  commentId: M:CompassEx.Gua.NaJiaJFResult.op_Equality(CompassEx.Gua.NaJiaJFResult,CompassEx.Gua.NaJiaJFResult)
+  id: op_Equality(CompassEx.Gua.NaJiaJFResult,CompassEx.Gua.NaJiaJFResult)
+  parent: CompassEx.Gua.NaJiaJFResult
+  langs:
+  - csharp
+  - vb
+  name: operator ==(NaJiaJFResult, NaJiaJFResult)
+  nameWithType: NaJiaJFResult.operator ==(NaJiaJFResult, NaJiaJFResult)
+  fullName: CompassEx.Gua.NaJiaJFResult.operator ==(CompassEx.Gua.NaJiaJFResult, CompassEx.Gua.NaJiaJFResult)
+  type: Operator
+  source:
+    remote:
+      path: CompassEx/Gua/NaJia.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: op_Equality
+    path: CompassEx/Gua/NaJia.cs
+    startLine: 113
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 重载等于运算符 (<code>==</code>)，支持语法级直观对比。
+  example: []
+  syntax:
+    content: public static bool operator ==(NaJiaJFResult left, NaJiaJFResult right)
+    parameters:
+    - id: left
+      type: CompassEx.Gua.NaJiaJFResult
+    - id: right
+      type: CompassEx.Gua.NaJiaJFResult
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As NaJiaJFResult, right As NaJiaJFResult) As Boolean
+  overload: CompassEx.Gua.NaJiaJFResult.op_Equality*
+  nameWithType.vb: NaJiaJFResult.=(NaJiaJFResult, NaJiaJFResult)
+  fullName.vb: CompassEx.Gua.NaJiaJFResult.=(CompassEx.Gua.NaJiaJFResult, CompassEx.Gua.NaJiaJFResult)
+  name.vb: =(NaJiaJFResult, NaJiaJFResult)
+- uid: CompassEx.Gua.NaJiaJFResult.op_Inequality(CompassEx.Gua.NaJiaJFResult,CompassEx.Gua.NaJiaJFResult)
+  commentId: M:CompassEx.Gua.NaJiaJFResult.op_Inequality(CompassEx.Gua.NaJiaJFResult,CompassEx.Gua.NaJiaJFResult)
+  id: op_Inequality(CompassEx.Gua.NaJiaJFResult,CompassEx.Gua.NaJiaJFResult)
+  parent: CompassEx.Gua.NaJiaJFResult
+  langs:
+  - csharp
+  - vb
+  name: operator !=(NaJiaJFResult, NaJiaJFResult)
+  nameWithType: NaJiaJFResult.operator !=(NaJiaJFResult, NaJiaJFResult)
+  fullName: CompassEx.Gua.NaJiaJFResult.operator !=(CompassEx.Gua.NaJiaJFResult, CompassEx.Gua.NaJiaJFResult)
+  type: Operator
+  source:
+    remote:
+      path: CompassEx/Gua/NaJia.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: op_Inequality
+    path: CompassEx/Gua/NaJia.cs
+    startLine: 121
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 重载不等于运算符 (<code>!=</code>)，支持语法级直观对比。
+  example: []
+  syntax:
+    content: public static bool operator !=(NaJiaJFResult left, NaJiaJFResult right)
+    parameters:
+    - id: left
+      type: CompassEx.Gua.NaJiaJFResult
+    - id: right
+      type: CompassEx.Gua.NaJiaJFResult
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As NaJiaJFResult, right As NaJiaJFResult) As Boolean
+  overload: CompassEx.Gua.NaJiaJFResult.op_Inequality*
+  nameWithType.vb: NaJiaJFResult.<>(NaJiaJFResult, NaJiaJFResult)
+  fullName.vb: CompassEx.Gua.NaJiaJFResult.<>(CompassEx.Gua.NaJiaJFResult, CompassEx.Gua.NaJiaJFResult)
+  name.vb: <>(NaJiaJFResult, NaJiaJFResult)
 references:
 - uid: CompassEx.Gua
   commentId: N:CompassEx.Gua
@@ -175,60 +357,38 @@ references:
   name: INaJiaResult
   nameWithType: INaJiaResult
   fullName: CompassEx.Gua.INaJiaResult
-- uid: System.ValueType.Equals(System.Object)
-  commentId: M:System.ValueType.Equals(System.Object)
-  parent: System.ValueType
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
-  name: Equals(object)
-  nameWithType: ValueType.Equals(object)
-  fullName: System.ValueType.Equals(object)
-  nameWithType.vb: ValueType.Equals(Object)
-  fullName.vb: System.ValueType.Equals(Object)
-  name.vb: Equals(Object)
+- uid: System.IEquatable{CompassEx.Gua.NaJiaJFResult}
+  commentId: T:System.IEquatable{CompassEx.Gua.NaJiaJFResult}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<NaJiaJFResult>
+  nameWithType: IEquatable<NaJiaJFResult>
+  fullName: System.IEquatable<CompassEx.Gua.NaJiaJFResult>
+  nameWithType.vb: IEquatable(Of NaJiaJFResult)
+  fullName.vb: System.IEquatable(Of CompassEx.Gua.NaJiaJFResult)
+  name.vb: IEquatable(Of NaJiaJFResult)
   spec.csharp:
-  - uid: System.ValueType.Equals(System.Object)
-    name: Equals
+  - uid: System.IEquatable`1
+    name: IEquatable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: CompassEx.Gua.NaJiaJFResult
+    name: NaJiaJFResult
+    href: CompassEx.Gua.NaJiaJFResult.html
+  - name: '>'
   spec.vb:
-  - uid: System.ValueType.Equals(System.Object)
-    name: Equals
+  - uid: System.IEquatable`1
+    name: IEquatable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
   - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.ValueType.GetHashCode
-  commentId: M:System.ValueType.GetHashCode
-  parent: System.ValueType
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
-  name: GetHashCode()
-  nameWithType: ValueType.GetHashCode()
-  fullName: System.ValueType.GetHashCode()
-  spec.csharp:
-  - uid: System.ValueType.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.ValueType.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
-  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Gua.NaJiaJFResult
+    name: NaJiaJFResult
+    href: CompassEx.Gua.NaJiaJFResult.html
   - name: )
 - uid: System.ValueType.ToString
   commentId: M:System.ValueType.ToString
@@ -419,6 +579,41 @@ references:
   - name: " "
   - name: TBase
   - name: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: System.ValueType
   commentId: T:System.ValueType
   parent: System
@@ -488,13 +683,6 @@ references:
   name: Comm
   nameWithType: Comm
   fullName: CompassEx.Comm.Comm
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: CompassEx.Comm
   commentId: N:CompassEx.Comm
   href: CompassEx.html
@@ -648,3 +836,218 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: CompassEx.Gua.NaJiaJFResult.GetHashCode*
+  commentId: Overload:CompassEx.Gua.NaJiaJFResult.GetHashCode
+  href: CompassEx.Gua.NaJiaJFResult.html#CompassEx_Gua_NaJiaJFResult_GetHashCode
+  name: GetHashCode
+  nameWithType: NaJiaJFResult.GetHashCode
+  fullName: CompassEx.Gua.NaJiaJFResult.GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: CompassEx.Gua.NaJiaJFResult.Equals*
+  commentId: Overload:CompassEx.Gua.NaJiaJFResult.Equals
+  href: CompassEx.Gua.NaJiaJFResult.html#CompassEx_Gua_NaJiaJFResult_Equals_CompassEx_Gua_NaJiaJFResult_
+  name: Equals
+  nameWithType: NaJiaJFResult.Equals
+  fullName: CompassEx.Gua.NaJiaJFResult.Equals
+- uid: System.IEquatable{CompassEx.Gua.NaJiaJFResult}.Equals(CompassEx.Gua.NaJiaJFResult)
+  commentId: M:System.IEquatable{CompassEx.Gua.NaJiaJFResult}.Equals(CompassEx.Gua.NaJiaJFResult)
+  parent: System.IEquatable{CompassEx.Gua.NaJiaJFResult}
+  definition: System.IEquatable`1.Equals(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(NaJiaJFResult)
+  nameWithType: IEquatable<NaJiaJFResult>.Equals(NaJiaJFResult)
+  fullName: System.IEquatable<CompassEx.Gua.NaJiaJFResult>.Equals(CompassEx.Gua.NaJiaJFResult)
+  nameWithType.vb: IEquatable(Of NaJiaJFResult).Equals(NaJiaJFResult)
+  fullName.vb: System.IEquatable(Of CompassEx.Gua.NaJiaJFResult).Equals(CompassEx.Gua.NaJiaJFResult)
+  spec.csharp:
+  - uid: System.IEquatable{CompassEx.Gua.NaJiaJFResult}.Equals(CompassEx.Gua.NaJiaJFResult)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: CompassEx.Gua.NaJiaJFResult
+    name: NaJiaJFResult
+    href: CompassEx.Gua.NaJiaJFResult.html
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable{CompassEx.Gua.NaJiaJFResult}.Equals(CompassEx.Gua.NaJiaJFResult)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: CompassEx.Gua.NaJiaJFResult
+    name: NaJiaJFResult
+    href: CompassEx.Gua.NaJiaJFResult.html
+  - name: )
+- uid: CompassEx.Gua.NaJiaJFResult
+  commentId: T:CompassEx.Gua.NaJiaJFResult
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.NaJiaJFResult.html
+  name: NaJiaJFResult
+  nameWithType: NaJiaJFResult
+  fullName: CompassEx.Gua.NaJiaJFResult
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: CompassEx.Gua.NaJiaJFResult.op_Equality*
+  commentId: Overload:CompassEx.Gua.NaJiaJFResult.op_Equality
+  href: CompassEx.Gua.NaJiaJFResult.html#CompassEx_Gua_NaJiaJFResult_op_Equality_CompassEx_Gua_NaJiaJFResult_CompassEx_Gua_NaJiaJFResult_
+  name: operator ==
+  nameWithType: NaJiaJFResult.operator ==
+  fullName: CompassEx.Gua.NaJiaJFResult.operator ==
+  nameWithType.vb: NaJiaJFResult.=
+  fullName.vb: CompassEx.Gua.NaJiaJFResult.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: CompassEx.Gua.NaJiaJFResult.op_Equality*
+    name: ==
+    href: CompassEx.Gua.NaJiaJFResult.html#CompassEx_Gua_NaJiaJFResult_op_Equality_CompassEx_Gua_NaJiaJFResult_CompassEx_Gua_NaJiaJFResult_
+- uid: CompassEx.Gua.NaJiaJFResult.op_Inequality*
+  commentId: Overload:CompassEx.Gua.NaJiaJFResult.op_Inequality
+  href: CompassEx.Gua.NaJiaJFResult.html#CompassEx_Gua_NaJiaJFResult_op_Inequality_CompassEx_Gua_NaJiaJFResult_CompassEx_Gua_NaJiaJFResult_
+  name: operator !=
+  nameWithType: NaJiaJFResult.operator !=
+  fullName: CompassEx.Gua.NaJiaJFResult.operator !=
+  nameWithType.vb: NaJiaJFResult.<>
+  fullName.vb: CompassEx.Gua.NaJiaJFResult.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: CompassEx.Gua.NaJiaJFResult.op_Inequality*
+    name: '!='
+    href: CompassEx.Gua.NaJiaJFResult.html#CompassEx_Gua_NaJiaJFResult_op_Inequality_CompassEx_Gua_NaJiaJFResult_CompassEx_Gua_NaJiaJFResult_

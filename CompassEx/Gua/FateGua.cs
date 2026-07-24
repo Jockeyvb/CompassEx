@@ -404,12 +404,7 @@ namespace CompassEx.Gua
 
 
             }
-            else
-            {
-                return true;
-            }
-
-            return false;
+            return IsOut;
         }
 
 

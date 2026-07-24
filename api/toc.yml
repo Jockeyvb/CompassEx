@@ -1,5 +1,21 @@
 ### YamlMime:TableOfContent
 items:
+- uid: CommLib
+  name: CommLib
+  type: Namespace
+  items:
+  - uid: CommLib.DingLanGrid
+    name: DingLanGrid
+    type: Class
+  - uid: CommLib.DingLanSubGrid
+    name: DingLanSubGrid
+    type: Class
+  - uid: CommLib.LuBanGrid
+    name: LuBanGrid
+    type: Class
+  - uid: CommLib.LuBanSubGrid
+    name: LuBanSubGrid
+    type: Class
 - uid: CompassEx
   name: CompassEx
   type: Namespace
@@ -78,15 +94,18 @@ items:
   - uid: CompassEx.Gua.FateGua
     name: FateGua
     type: Class
+  - uid: CompassEx.Gua.FiveGhostWealth
+    name: FiveGhostWealth
+    type: Struct
+  - uid: CompassEx.Gua.FlipGua
+    name: FlipGua
+    type: Class
+  - uid: CompassEx.Gua.FlipGuaMethod
+    name: FlipGuaMethod
+    type: Enum
   - uid: CompassEx.Gua.GuaClass
     name: GuaClass
     type: Class
-  - uid: CompassEx.Gua.GuaFlip
-    name: GuaFlip
-    type: Class
-  - uid: CompassEx.Gua.GuaFlipMethod
-    name: GuaFlipMethod
-    type: Enum
   - uid: CompassEx.Gua.GuaQi
     name: GuaQi
     type: Class

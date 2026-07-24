@@ -18,6 +18,7 @@ items:
   - CompassEx.Comm.LocClass.Name
   - CompassEx.Comm.LocClass.TimeValueInRangIndex(System.DateTime)
   - CompassEx.Comm.LocClass.TimeValueInRangIndex(System.String)
+  - CompassEx.Comm.LocClass.ToString
   langs:
   - csharp
   - vb
@@ -50,7 +51,6 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
   extensionMethods:
   - CompassEx.Comm.LocClass.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
 - uid: CompassEx.Comm.LocClass.LocNames
@@ -320,6 +320,36 @@ items:
   nameWithType.vb: LocClass.New(Integer)
   fullName.vb: CompassEx.Comm.LocClass.New(Integer)
   name.vb: New(Integer)
+- uid: CompassEx.Comm.LocClass.ToString
+  commentId: M:CompassEx.Comm.LocClass.ToString
+  id: ToString
+  parent: CompassEx.Comm.LocClass
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: LocClass.ToString()
+  fullName: CompassEx.Comm.LocClass.ToString()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/LocClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToString
+    path: CompassEx/Comm/LocClass.cs
+    startLine: 149
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: CompassEx.Comm.LocClass.ToString*
 - uid: CompassEx.Comm.LocClass.TimeValueInRangIndex(System.DateTime)
   commentId: M:CompassEx.Comm.LocClass.TimeValueInRangIndex(System.DateTime)
   id: TimeValueInRangIndex(System.DateTime)
@@ -338,7 +368,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TimeValueInRangIndex
     path: CompassEx/Comm/LocClass.cs
-    startLine: 158
+    startLine: 161
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -377,7 +407,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TimeValueInRangIndex
     path: CompassEx/Comm/LocClass.cs
-    startLine: 173
+    startLine: 176
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -421,7 +451,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAllLocClass
     path: CompassEx/Comm/LocClass.cs
-    startLine: 196
+    startLine: 199
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -452,7 +482,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetLocClass
     path: CompassEx/Comm/LocClass.cs
-    startLine: 211
+    startLine: 214
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -490,7 +520,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetLocClass
     path: CompassEx/Comm/LocClass.cs
-    startLine: 228
+    startLine: 231
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -740,30 +770,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  name: ToString()
-  nameWithType: object.ToString()
-  fullName: object.ToString()
-  nameWithType.vb: Object.ToString()
-  fullName.vb: Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
 - uid: CompassEx.Comm.LocClass.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
   commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
   parent: CompassEx.Comm.Comm
@@ -984,6 +990,36 @@ references:
   nameWithType.vb: LocClass.New
   fullName.vb: CompassEx.Comm.LocClass.New
   name.vb: New
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CompassEx.Comm.LocClass.ToString*
+  commentId: Overload:CompassEx.Comm.LocClass.ToString
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_ToString
+  name: ToString
+  nameWithType: LocClass.ToString
+  fullName: CompassEx.Comm.LocClass.ToString
 - uid: System.DateTime
   commentId: T:System.DateTime
   parent: System

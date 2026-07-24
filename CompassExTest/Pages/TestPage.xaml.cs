@@ -95,27 +95,36 @@ public partial class TestPage : INotifyPropertyChanged
 
 
 
-        List<(string, string, string)> ls = [("J", "1981-09-16", "男"), ("英", "1981-09-14", "女"), ("韵", "2007-02-13", "女"), ("恒", "2010-09-20", "男"), ("o", "1979-09-20", "男"), ("诗", "2004-06-01", "女"), ("炽", "1958-08-01", "男"), ("兴", "1956-10-25", "女")];
+        // List<(string, string, string)> ls = [("J", "1981-09-16", "男"), ("英", "1981-09-14", "女"), ("韵", "2007-02-13", "女"), ("恒", "2010-09-20", "男"), ("o", "1979-09-20", "男"), ("诗", "2004-06-01", "女"), ("炽", "1958-08-01", "男"), ("兴", "1956-10-25", "女")];
+        List<(string, string, string)> ls = [("繁", "1985-10-30", "男")];
         foreach (var l in ls)
         {
-            FateGua fg = new FateGua(DateTime.Parse(l.Item2), l.Item3, new GuaClass("恒"));
+            FateGua fg = new FateGua(DateTime.Parse(l.Item2), l.Item3, new CGuaClass("乾", 2));
 
             Debug.WriteLine("\n" + l.Item1 + "：" + JsonConvert.SerializeObject(fg.Infos));
-
+            Debug.WriteLine("\nIsOutGua：" + fg.IsOutGua + ",IsFateGuaOut：" + fg.IsFateGuaOut + ",IsNaJiaOut：" + fg.IsNaJiaOut);
         }
 
 
         ////==============================罗盘的天机出卦(带临爻）==============================
-        var g = new CGuaClass("恒", 1, 2);
-        var tj = new TianJiGua(g);
-        Debug.WriteLine("\nGetOutGuas:" + string.Join(",", tj.GetOutGuas().Select(g => g.Value.GuaFullName)));
+        //var g = new CGuaClass("乾", 2);
+        //var tj = new TianJiGua(g);
+        //Debug.WriteLine("\nGetOutGuas:" + string.Join(",", tj.GetOutGuas().Select(g => g.Value.GuaFullName)));
 
-        Debug.WriteLine("\nYaoTypes:" + JsonConvert.SerializeObject(tj.YaoTypes));
-        Debug.WriteLine("\nPlaceYaoTypes:" + JsonConvert.SerializeObject(tj.PlaceYaoTypes));
+        //Debug.WriteLine("\nYaoTypes:" + JsonConvert.SerializeObject(tj.YaoTypes));
+        //Debug.WriteLine("\nPlaceYaoTypes:" + JsonConvert.SerializeObject(tj.PlaceYaoTypes));
 
 
         ////==============================罗盘的天机出卦(带临爻）==============================
+        //var dc = FlipGua.GetFlipGuaNineStarDC(new CHill("壬"), FlipGuaMethod.Dragon);
 
+        //string json = JsonConvert.SerializeObject(dc.Select(kv => "【" + kv.Key.ToString() + "】" + "=》:" + JsonConvert.SerializeObject(kv.Value)));
+        //Debug.WriteLine("\n GetFlipGuaNineStarDC:" + json);
+
+        FiveGhostWealth fgw = FlipGua.GetFiveGhostWealth(new CHill("壬"));
+
+        string json = fgw.ToString();
+        Debug.WriteLine("\n GetFiveGhostWealth:" + json);
 
 
     }

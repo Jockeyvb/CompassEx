@@ -17,7 +17,6 @@ items:
   - CompassEx.Gua.GuaClass.Get7HereYaoGua
   - CompassEx.Gua.GuaClass.GetChangeGua
   - CompassEx.Gua.GuaClass.GetChangeGuaFace
-  - CompassEx.Gua.GuaClass.GetGoodDayList
   - CompassEx.Gua.GuaClass.GetGuaClass(System.Collections.Generic.List{System.Int32})
   - CompassEx.Gua.GuaClass.GetGuaClass(System.Int32)
   - CompassEx.Gua.GuaClass.GetGuaClass(System.Int32[])
@@ -2392,34 +2391,6 @@ items:
   nameWithType.vb: GuaClass.FlowerGuaClass(Integer, Integer)
   fullName.vb: CompassEx.Gua.GuaClass.FlowerGuaClass(Integer, Integer)
   name.vb: FlowerGuaClass(Integer, Integer)
-- uid: CompassEx.Gua.GuaClass.GetGoodDayList
-  commentId: M:CompassEx.Gua.GuaClass.GetGoodDayList
-  id: GetGoodDayList
-  parent: CompassEx.Gua.GuaClass
-  langs:
-  - csharp
-  - vb
-  name: GetGoodDayList()
-  nameWithType: GuaClass.GetGoodDayList()
-  fullName: CompassEx.Gua.GuaClass.GetGoodDayList()
-  type: Method
-  source:
-    remote:
-      path: CompassEx/Gua/GuaClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: GetGoodDayList
-    path: CompassEx/Gua/GuaClass.cs
-    startLine: 1550
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Gua
-  syntax:
-    content: public static List<TblGoodDay> GetGoodDayList()
-    return:
-      type: System.Collections.Generic.List{CompassEx.Data.Models.TblGoodDay}
-    content.vb: Public Shared Function GetGoodDayList() As List(Of TblGoodDay)
-  overload: CompassEx.Gua.GuaClass.GetGoodDayList*
 - uid: CompassEx.Gua.GuaClass.Equals(System.Object)
   commentId: M:CompassEx.Gua.GuaClass.Equals(System.Object)
   id: Equals(System.Object)
@@ -2438,7 +2409,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Equals
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1560
+    startLine: 1552
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2474,7 +2445,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetHashCode
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1569
+    startLine: 1561
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -4094,43 +4065,6 @@ references:
   name: FlowerGuaClass
   nameWithType: GuaClass.FlowerGuaClass
   fullName: CompassEx.Gua.GuaClass.FlowerGuaClass
-- uid: CompassEx.Gua.GuaClass.GetGoodDayList*
-  commentId: Overload:CompassEx.Gua.GuaClass.GetGoodDayList
-  href: CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGoodDayList
-  name: GetGoodDayList
-  nameWithType: GuaClass.GetGoodDayList
-  fullName: CompassEx.Gua.GuaClass.GetGoodDayList
-- uid: System.Collections.Generic.List{CompassEx.Data.Models.TblGoodDay}
-  commentId: T:System.Collections.Generic.List{CompassEx.Data.Models.TblGoodDay}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<TblGoodDay>
-  nameWithType: List<TblGoodDay>
-  fullName: System.Collections.Generic.List<CompassEx.Data.Models.TblGoodDay>
-  nameWithType.vb: List(Of TblGoodDay)
-  fullName.vb: System.Collections.Generic.List(Of CompassEx.Data.Models.TblGoodDay)
-  name.vb: List(Of TblGoodDay)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: CompassEx.Data.Models.TblGoodDay
-    name: TblGoodDay
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: CompassEx.Data.Models.TblGoodDay
-    name: TblGoodDay
-  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object

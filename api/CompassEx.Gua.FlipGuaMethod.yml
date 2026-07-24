@@ -1,0 +1,614 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Gua.FlipGuaMethod
+  commentId: T:CompassEx.Gua.FlipGuaMethod
+  id: FlipGuaMethod
+  parent: CompassEx.Gua
+  children:
+  - CompassEx.Gua.FlipGuaMethod.Dragon
+  - CompassEx.Gua.FlipGuaMethod.Hill
+  - CompassEx.Gua.FlipGuaMethod.Water
+  langs:
+  - csharp
+  - vb
+  name: FlipGuaMethod
+  nameWithType: FlipGuaMethod
+  fullName: CompassEx.Gua.FlipGuaMethod
+  type: Enum
+  source:
+    remote:
+      path: CompassEx/Gua/FlipGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FlipGuaMethod
+    path: CompassEx/Gua/FlipGua.cs
+    startLine: 66
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 翻卦九星法：风水三大核心勘测对象（龙、山、水）的方法分类。
+  remarks: >-
+    <p><b>方法论说明 (Methodology Note)：</b></p>
+
+    <p>在风水理论中，<xref href="CompassEx.Gua.FlipGuaMethod.Dragon" data-throw-if-not-resolved="false"></xref>（龙法）与 <xref href="CompassEx.Gua.FlipGuaMethod.Hill" data-throw-if-not-resolved="false"></xref>（山法）的公式推导与应用方法论本质上是一致的，均采用黄石公翻卦掌之「边起边落、中起中落」变爻轨迹；而 <xref href="CompassEx.Gua.FlipGuaMethod.Water" data-throw-if-not-resolved="false"></xref>（水法）则基于一套完全不同的计算逻辑与原理运作（如辅星翻卦水法，向上起星）。</p>
+  example: []
+  syntax:
+    content: public enum FlipGuaMethod
+    content.vb: Public Enum FlipGuaMethod
+  extensionMethods:
+  - CompassEx.Gua.FlipGuaMethod.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  - System.Enum.CompassEx.Comm.Comm.GetEnumDescription(System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+  - System.Enum.CompassEx.Comm.Comm.GetEnumDict
+  - System.Enum.CompassEx.Comm.Comm.GetEnumValues
+- uid: CompassEx.Gua.FlipGuaMethod.Dragon
+  commentId: F:CompassEx.Gua.FlipGuaMethod.Dragon
+  id: Dragon
+  parent: CompassEx.Gua.FlipGuaMethod
+  langs:
+  - csharp
+  - vb
+  name: Dragon
+  nameWithType: FlipGuaMethod.Dragon
+  fullName: CompassEx.Gua.FlipGuaMethod.Dragon
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Gua/FlipGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Dragon
+    path: CompassEx/Gua/FlipGua.cs
+    startLine: 71
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 龙法 (Dragon Methods) - 通常使用来龙卦。与山法计算逻辑一致。
+  example: []
+  syntax:
+    content: Dragon = 0
+    return:
+      type: CompassEx.Gua.FlipGuaMethod
+- uid: CompassEx.Gua.FlipGuaMethod.Hill
+  commentId: F:CompassEx.Gua.FlipGuaMethod.Hill
+  id: Hill
+  parent: CompassEx.Gua.FlipGuaMethod
+  langs:
+  - csharp
+  - vb
+  name: Hill
+  nameWithType: FlipGuaMethod.Hill
+  fullName: CompassEx.Gua.FlipGuaMethod.Hill
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Gua/FlipGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Hill
+    path: CompassEx/Gua/FlipGua.cs
+    startLine: 76
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 山法 (Hill Methods) - 通常使用坐山卦。与龙法计算逻辑一致。
+  example: []
+  syntax:
+    content: Hill = 1
+    return:
+      type: CompassEx.Gua.FlipGuaMethod
+- uid: CompassEx.Gua.FlipGuaMethod.Water
+  commentId: F:CompassEx.Gua.FlipGuaMethod.Water
+  id: Water
+  parent: CompassEx.Gua.FlipGuaMethod
+  langs:
+  - csharp
+  - vb
+  name: Water
+  nameWithType: FlipGuaMethod.Water
+  fullName: CompassEx.Gua.FlipGuaMethod.Water
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Gua/FlipGua.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Water
+    path: CompassEx/Gua/FlipGua.cs
+    startLine: 81
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 水法 (Water Methods) - 通常使用向卦。拥有独立的计算逻辑（如辅星翻卦）。
+  example: []
+  syntax:
+    content: Water = 2
+    return:
+      type: CompassEx.Gua.FlipGuaMethod
+references:
+- uid: CompassEx.Gua.FlipGuaMethod.Dragon
+  commentId: F:CompassEx.Gua.FlipGuaMethod.Dragon
+  href: CompassEx.Gua.FlipGuaMethod.html#CompassEx_Gua_FlipGuaMethod_Dragon
+  name: Dragon
+  nameWithType: FlipGuaMethod.Dragon
+  fullName: CompassEx.Gua.FlipGuaMethod.Dragon
+- uid: CompassEx.Gua.FlipGuaMethod.Hill
+  commentId: F:CompassEx.Gua.FlipGuaMethod.Hill
+  href: CompassEx.Gua.FlipGuaMethod.html#CompassEx_Gua_FlipGuaMethod_Hill
+  name: Hill
+  nameWithType: FlipGuaMethod.Hill
+  fullName: CompassEx.Gua.FlipGuaMethod.Hill
+- uid: CompassEx.Gua.FlipGuaMethod.Water
+  commentId: F:CompassEx.Gua.FlipGuaMethod.Water
+  href: CompassEx.Gua.FlipGuaMethod.html#CompassEx_Gua_FlipGuaMethod_Water
+  name: Water
+  nameWithType: FlipGuaMethod.Water
+  fullName: CompassEx.Gua.FlipGuaMethod.Water
+- uid: CompassEx.Gua
+  commentId: N:CompassEx.Gua
+  href: CompassEx.html
+  name: CompassEx.Gua
+  nameWithType: CompassEx.Gua
+  fullName: CompassEx.Gua
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+- uid: CompassEx.Gua.FlipGuaMethod.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<FlipGuaMethod, TBase>(FlipGuaMethod, TBase)
+  nameWithType: Comm.ApplyBaseProperties<FlipGuaMethod, TBase>(FlipGuaMethod, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.Gua.FlipGuaMethod, TBase>(CompassEx.Gua.FlipGuaMethod, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of FlipGuaMethod, TBase)(FlipGuaMethod, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.Gua.FlipGuaMethod, TBase)(CompassEx.Gua.FlipGuaMethod, TBase)
+  name.vb: ApplyBaseProperties(Of FlipGuaMethod, TBase)(FlipGuaMethod, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Gua.FlipGuaMethod,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.Gua.FlipGuaMethod
+    name: FlipGuaMethod
+    href: CompassEx.Gua.FlipGuaMethod.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.Gua.FlipGuaMethod
+    name: FlipGuaMethod
+    href: CompassEx.Gua.FlipGuaMethod.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Gua.FlipGuaMethod,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Gua.FlipGuaMethod
+    name: FlipGuaMethod
+    href: CompassEx.Gua.FlipGuaMethod.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.Gua.FlipGuaMethod
+    name: FlipGuaMethod
+    href: CompassEx.Gua.FlipGuaMethod.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: System.Enum.CompassEx.Comm.Comm.GetEnumDescription(System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+  commentId: M:CompassEx.Comm.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDescription_System_Enum_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_
+  name: GetEnumDescription(Enum, string, bool, bool, bool, bool, bool)
+  nameWithType: Comm.GetEnumDescription(Enum, string, bool, bool, bool, bool, bool)
+  fullName: CompassEx.Comm.Comm.GetEnumDescription(System.Enum, string, bool, bool, bool, bool, bool)
+  nameWithType.vb: Comm.GetEnumDescription(Enum, String, Boolean, Boolean, Boolean, Boolean, Boolean)
+  fullName.vb: CompassEx.Comm.Comm.GetEnumDescription(System.Enum, String, Boolean, Boolean, Boolean, Boolean, Boolean)
+  name.vb: GetEnumDescription(Enum, String, Boolean, Boolean, Boolean, Boolean, Boolean)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+    name: GetEnumDescription
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDescription_System_Enum_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+    name: GetEnumDescription
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDescription_System_Enum_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Enum.CompassEx.Comm.Comm.GetEnumDict
+  commentId: M:CompassEx.Comm.Comm.GetEnumDict(System.Enum)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.GetEnumDict(System.Enum)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDict_System_Enum_
+  name: GetEnumDict(Enum)
+  nameWithType: Comm.GetEnumDict(Enum)
+  fullName: CompassEx.Comm.Comm.GetEnumDict(System.Enum)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.GetEnumDict(System.Enum)
+    name: GetEnumDict
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDict_System_Enum_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.GetEnumDict(System.Enum)
+    name: GetEnumDict
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDict_System_Enum_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: )
+- uid: System.Enum.CompassEx.Comm.Comm.GetEnumValues
+  commentId: M:CompassEx.Comm.Comm.GetEnumValues(System.Enum)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.GetEnumValues(System.Enum)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumValues_System_Enum_
+  name: GetEnumValues(Enum)
+  nameWithType: Comm.GetEnumValues(Enum)
+  fullName: CompassEx.Comm.Comm.GetEnumValues(System.Enum)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.GetEnumValues(System.Enum)
+    name: GetEnumValues
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumValues_System_Enum_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.GetEnumValues(System.Enum)
+    name: GetEnumValues
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumValues_System_Enum_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: )
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+  commentId: M:CompassEx.Comm.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+  isExternal: true
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDescription_System_Enum_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_
+  name: GetEnumDescription(Enum, string, bool, bool, bool, bool, bool)
+  nameWithType: Comm.GetEnumDescription(Enum, string, bool, bool, bool, bool, bool)
+  fullName: CompassEx.Comm.Comm.GetEnumDescription(System.Enum, string, bool, bool, bool, bool, bool)
+  nameWithType.vb: Comm.GetEnumDescription(Enum, String, Boolean, Boolean, Boolean, Boolean, Boolean)
+  fullName.vb: CompassEx.Comm.Comm.GetEnumDescription(System.Enum, String, Boolean, Boolean, Boolean, Boolean, Boolean)
+  name.vb: GetEnumDescription(Enum, String, Boolean, Boolean, Boolean, Boolean, Boolean)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+    name: GetEnumDescription
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDescription_System_Enum_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+    name: GetEnumDescription
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDescription_System_Enum_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: CompassEx.Comm.Comm.GetEnumDict(System.Enum)
+  commentId: M:CompassEx.Comm.Comm.GetEnumDict(System.Enum)
+  isExternal: true
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDict_System_Enum_
+  name: GetEnumDict(Enum)
+  nameWithType: Comm.GetEnumDict(Enum)
+  fullName: CompassEx.Comm.Comm.GetEnumDict(System.Enum)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.GetEnumDict(System.Enum)
+    name: GetEnumDict
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDict_System_Enum_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.GetEnumDict(System.Enum)
+    name: GetEnumDict
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDict_System_Enum_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: )
+- uid: CompassEx.Comm.Comm.GetEnumValues(System.Enum)
+  commentId: M:CompassEx.Comm.Comm.GetEnumValues(System.Enum)
+  isExternal: true
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumValues_System_Enum_
+  name: GetEnumValues(Enum)
+  nameWithType: Comm.GetEnumValues(Enum)
+  fullName: CompassEx.Comm.Comm.GetEnumValues(System.Enum)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.GetEnumValues(System.Enum)
+    name: GetEnumValues
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumValues_System_Enum_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.GetEnumValues(System.Enum)
+    name: GetEnumValues
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumValues_System_Enum_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: )
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: CompassEx.Gua.FlipGuaMethod
+  commentId: T:CompassEx.Gua.FlipGuaMethod
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.FlipGuaMethod.html
+  name: FlipGuaMethod
+  nameWithType: FlipGuaMethod
+  fullName: CompassEx.Gua.FlipGuaMethod

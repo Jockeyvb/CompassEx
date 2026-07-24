@@ -110,9 +110,7 @@ namespace CompassEx.Data.Models {
 
 		private static IFreeSql SafeOrm => Orm ?? throw new Exception($"{nameof(View_PersonEightWord)}.Orm 未在程序启动时初始化。");
 
-		// ==========================================
-		// 🚀 【实例方法 (非静态)】：操作对象状态
-		// ==========================================
+	 
 
 
 

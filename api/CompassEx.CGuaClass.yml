@@ -97,7 +97,6 @@ items:
   - CompassEx.Gua.GuaClass.GetGuaClass(System.Int32[])
   - CompassEx.Gua.GuaClass.GetGuaClass(System.Collections.Generic.List{System.Int32})
   - CompassEx.Gua.GuaClass.FlowerGuaClass(System.Int32,System.Int32)
-  - CompassEx.Gua.GuaClass.GetGoodDayList
   - CompassEx.Gua.GuaClass.Equals(System.Object)
   - CompassEx.Gua.GuaClass.GetHashCode
   - System.Object.Equals(System.Object,System.Object)
@@ -1204,25 +1203,6 @@ references:
     name: Integer
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-- uid: CompassEx.Gua.GuaClass.GetGoodDayList
-  commentId: M:CompassEx.Gua.GuaClass.GetGoodDayList
-  parent: CompassEx.Gua.GuaClass
-  href: CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGoodDayList
-  name: GetGoodDayList()
-  nameWithType: GuaClass.GetGoodDayList()
-  fullName: CompassEx.Gua.GuaClass.GetGoodDayList()
-  spec.csharp:
-  - uid: CompassEx.Gua.GuaClass.GetGoodDayList
-    name: GetGoodDayList
-    href: CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGoodDayList
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: CompassEx.Gua.GuaClass.GetGoodDayList
-    name: GetGoodDayList
-    href: CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_GetGoodDayList
-  - name: (
   - name: )
 - uid: CompassEx.Gua.GuaClass.Equals(System.Object)
   commentId: M:CompassEx.Gua.GuaClass.Equals(System.Object)

@@ -1,0 +1,990 @@
+### YamlMime:ManagedReference
+items:
+- uid: CommLib.LuBanSubGrid
+  commentId: T:CommLib.LuBanSubGrid
+  id: LuBanSubGrid
+  parent: CommLib
+  children:
+  - CommLib.LuBanSubGrid.#ctor(System.Double)
+  - CommLib.LuBanSubGrid.#ctor(System.String)
+  - CommLib.LuBanSubGrid.EndValue
+  - CommLib.LuBanSubGrid.GetGroup(System.Double,CommLib.LuBanGrid)
+  - CommLib.LuBanSubGrid.Index
+  - CommLib.LuBanSubGrid.LuBanSubGridInfo
+  - CommLib.LuBanSubGrid.LuBanSubGridName
+  - CommLib.LuBanSubGrid.Parent
+  - CommLib.LuBanSubGrid.StartValue
+  - CommLib.LuBanSubGrid.SubGridFixed
+  - CommLib.LuBanSubGrid.SubGridName
+  - CommLib.LuBanSubGrid.Value
+  langs:
+  - csharp
+  - vb
+  name: LuBanSubGrid
+  nameWithType: LuBanSubGrid
+  fullName: CommLib.LuBanSubGrid
+  type: Class
+  source:
+    remote:
+      path: CompassEx/Assist/LuBanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: LuBanSubGrid
+    path: CompassEx/Assist/LuBanGrid.cs
+    startLine: 259
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 鲁班尺小格（分格）类。
+  remarks: >-
+    该类用于计算和表达传统堪舆学中“鲁班尺”的 32 个小格（如财德、宝库等）。
+
+    每 4 个小格组合为一个大格（由 <xref href="CommLib.LuBanGrid" data-throw-if-not-resolved="false"></xref> 表达）。
+
+    鲁班尺每小格的物理固定尺寸约为 13.40625 毫米。
+  example: []
+  syntax:
+    content: public class LuBanSubGrid
+    content.vb: Public Class LuBanSubGrid
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - CommLib.LuBanSubGrid.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CommLib.LuBanSubGrid.LuBanSubGridName
+  commentId: F:CommLib.LuBanSubGrid.LuBanSubGridName
+  id: LuBanSubGridName
+  parent: CommLib.LuBanSubGrid
+  langs:
+  - csharp
+  - vb
+  name: LuBanSubGridName
+  nameWithType: LuBanSubGrid.LuBanSubGridName
+  fullName: CommLib.LuBanSubGrid.LuBanSubGridName
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/LuBanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: LuBanSubGridName
+    path: CompassEx/Assist/LuBanGrid.cs
+    startLine: 264
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 鲁班尺 32 小格名称的静态只读数组。
+  example: []
+  syntax:
+    content: public static string[] LuBanSubGridName
+    return:
+      type: System.String[]
+    content.vb: Public Shared LuBanSubGridName As String()
+- uid: CommLib.LuBanSubGrid.Parent
+  commentId: F:CommLib.LuBanSubGrid.Parent
+  id: Parent
+  parent: CommLib.LuBanSubGrid
+  langs:
+  - csharp
+  - vb
+  name: Parent
+  nameWithType: LuBanSubGrid.Parent
+  fullName: CommLib.LuBanSubGrid.Parent
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/LuBanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Parent
+    path: CompassEx/Assist/LuBanGrid.cs
+    startLine: 274
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 当前小格所属的父级大格对象。
+  example: []
+  syntax:
+    content: public LuBanGrid Parent
+    return:
+      type: CommLib.LuBanGrid
+    content.vb: Public Parent As LuBanGrid
+- uid: CommLib.LuBanSubGrid.Index
+  commentId: F:CommLib.LuBanSubGrid.Index
+  id: Index
+  parent: CommLib.LuBanSubGrid
+  langs:
+  - csharp
+  - vb
+  name: Index
+  nameWithType: LuBanSubGrid.Index
+  fullName: CommLib.LuBanSubGrid.Index
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/LuBanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Index
+    path: CompassEx/Assist/LuBanGrid.cs
+    startLine: 279
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 当前小格在 32 个循环小格中的绝对索引值（取值范围：0 - 31）。
+  example: []
+  syntax:
+    content: public int Index
+    return:
+      type: System.Int32
+    content.vb: Public Index As Integer
+- uid: CommLib.LuBanSubGrid.StartValue
+  commentId: F:CommLib.LuBanSubGrid.StartValue
+  id: StartValue
+  parent: CommLib.LuBanSubGrid
+  langs:
+  - csharp
+  - vb
+  name: StartValue
+  nameWithType: LuBanSubGrid.StartValue
+  fullName: CommLib.LuBanSubGrid.StartValue
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/LuBanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: StartValue
+    path: CompassEx/Assist/LuBanGrid.cs
+    startLine: 284
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 当前小格在鲁班尺上的理论起始刻度值（单位：毫米）。
+  example: []
+  syntax:
+    content: public double StartValue
+    return:
+      type: System.Double
+    content.vb: Public StartValue As Double
+- uid: CommLib.LuBanSubGrid.EndValue
+  commentId: F:CommLib.LuBanSubGrid.EndValue
+  id: EndValue
+  parent: CommLib.LuBanSubGrid
+  langs:
+  - csharp
+  - vb
+  name: EndValue
+  nameWithType: LuBanSubGrid.EndValue
+  fullName: CommLib.LuBanSubGrid.EndValue
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/LuBanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: EndValue
+    path: CompassEx/Assist/LuBanGrid.cs
+    startLine: 289
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 当前小格在鲁班尺上的理论结束刻度值（单位：毫米）。
+  example: []
+  syntax:
+    content: public double EndValue
+    return:
+      type: System.Double
+    content.vb: Public EndValue As Double
+- uid: CommLib.LuBanSubGrid.Value
+  commentId: F:CommLib.LuBanSubGrid.Value
+  id: Value
+  parent: CommLib.LuBanSubGrid
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: LuBanSubGrid.Value
+  fullName: CommLib.LuBanSubGrid.Value
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/LuBanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Value
+    path: CompassEx/Assist/LuBanGrid.cs
+    startLine: 294
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 触发或传入的实际实现刻度值（若创建时未显式指定有效的刻度，则默认返回 <xref href="CommLib.LuBanSubGrid.StartValue" data-throw-if-not-resolved="false"></xref>）。
+  example: []
+  syntax:
+    content: public double Value
+    return:
+      type: System.Double
+    content.vb: Public Value As Double
+- uid: CommLib.LuBanSubGrid.LuBanSubGridInfo
+  commentId: F:CommLib.LuBanSubGrid.LuBanSubGridInfo
+  id: LuBanSubGridInfo
+  parent: CommLib.LuBanSubGrid
+  langs:
+  - csharp
+  - vb
+  name: LuBanSubGridInfo
+  nameWithType: LuBanSubGrid.LuBanSubGridInfo
+  fullName: CommLib.LuBanSubGrid.LuBanSubGridInfo
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/LuBanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: LuBanSubGridInfo
+    path: CompassEx/Assist/LuBanGrid.cs
+    startLine: 299
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 当前小格的详细吉凶断语及释义说明信息。
+  example: []
+  syntax:
+    content: public string LuBanSubGridInfo
+    return:
+      type: System.String
+    content.vb: Public LuBanSubGridInfo As String
+- uid: CommLib.LuBanSubGrid.SubGridName
+  commentId: F:CommLib.LuBanSubGrid.SubGridName
+  id: SubGridName
+  parent: CommLib.LuBanSubGrid
+  langs:
+  - csharp
+  - vb
+  name: SubGridName
+  nameWithType: LuBanSubGrid.SubGridName
+  fullName: CommLib.LuBanSubGrid.SubGridName
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/LuBanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SubGridName
+    path: CompassEx/Assist/LuBanGrid.cs
+    startLine: 304
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 当前小格的名称（如“财德”、“宝库”等）。
+  example: []
+  syntax:
+    content: public string SubGridName
+    return:
+      type: System.String
+    content.vb: Public SubGridName As String
+- uid: CommLib.LuBanSubGrid.SubGridFixed
+  commentId: F:CommLib.LuBanSubGrid.SubGridFixed
+  id: SubGridFixed
+  parent: CommLib.LuBanSubGrid
+  langs:
+  - csharp
+  - vb
+  name: SubGridFixed
+  nameWithType: LuBanSubGrid.SubGridFixed
+  fullName: CommLib.LuBanSubGrid.SubGridFixed
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Assist/LuBanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SubGridFixed
+    path: CompassEx/Assist/LuBanGrid.cs
+    startLine: 309
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 鲁班尺每小格的固定尺寸常数（这里定义为 13.40625 毫米）。
+  example: []
+  syntax:
+    content: public const double SubGridFixed = 13.40625
+    return:
+      type: System.Double
+    content.vb: Public Const SubGridFixed As Double = 13.40625
+- uid: CommLib.LuBanSubGrid.GetGroup(System.Double,CommLib.LuBanGrid)
+  commentId: M:CommLib.LuBanSubGrid.GetGroup(System.Double,CommLib.LuBanGrid)
+  id: GetGroup(System.Double,CommLib.LuBanGrid)
+  parent: CommLib.LuBanSubGrid
+  langs:
+  - csharp
+  - vb
+  name: GetGroup(double, LuBanGrid)
+  nameWithType: LuBanSubGrid.GetGroup(double, LuBanGrid)
+  fullName: CommLib.LuBanSubGrid.GetGroup(double, CommLib.LuBanGrid)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Assist/LuBanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetGroup
+    path: CompassEx/Assist/LuBanGrid.cs
+    startLine: 342
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 依据指定的刻度值，获取其所在的大格所包含的全部 4 个小格（作为完整的一组返回）。
+  example: []
+  syntax:
+    content: public static List<LuBanSubGrid> GetGroup(double value, LuBanGrid parent)
+    parameters:
+    - id: value
+      type: System.Double
+      description: 输入的物理刻度值。
+    - id: parent
+      type: CommLib.LuBanGrid
+      description: 所属的父级大格对象。
+    return:
+      type: System.Collections.Generic.List{CommLib.LuBanSubGrid}
+      description: 返回包含同组 4 个 <xref href="CommLib.LuBanSubGrid" data-throw-if-not-resolved="false"></xref> 对象的列表集合。
+    content.vb: Public Shared Function GetGroup(value As Double, parent As LuBanGrid) As List(Of LuBanSubGrid)
+  overload: CommLib.LuBanSubGrid.GetGroup*
+  nameWithType.vb: LuBanSubGrid.GetGroup(Double, LuBanGrid)
+  fullName.vb: CommLib.LuBanSubGrid.GetGroup(Double, CommLib.LuBanGrid)
+  name.vb: GetGroup(Double, LuBanGrid)
+- uid: CommLib.LuBanSubGrid.#ctor(System.String)
+  commentId: M:CommLib.LuBanSubGrid.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: CommLib.LuBanSubGrid
+  langs:
+  - csharp
+  - vb
+  name: LuBanSubGrid(string)
+  nameWithType: LuBanSubGrid.LuBanSubGrid(string)
+  fullName: CommLib.LuBanSubGrid.LuBanSubGrid(string)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Assist/LuBanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Assist/LuBanGrid.cs
+    startLine: 375
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 根据小格名称实例化一个鲁班小格对象。
+  example: []
+  syntax:
+    content: public LuBanSubGrid(string SubGridName)
+    parameters:
+    - id: SubGridName
+      type: System.String
+      description: 要匹配的小格名称（例如“大吉”）。
+    content.vb: Public Sub New(SubGridName As String)
+  overload: CommLib.LuBanSubGrid.#ctor*
+  nameWithType.vb: LuBanSubGrid.New(String)
+  fullName.vb: CommLib.LuBanSubGrid.New(String)
+  name.vb: New(String)
+- uid: CommLib.LuBanSubGrid.#ctor(System.Double)
+  commentId: M:CommLib.LuBanSubGrid.#ctor(System.Double)
+  id: '#ctor(System.Double)'
+  parent: CommLib.LuBanSubGrid
+  langs:
+  - csharp
+  - vb
+  name: LuBanSubGrid(double)
+  nameWithType: LuBanSubGrid.LuBanSubGrid(double)
+  fullName: CommLib.LuBanSubGrid.LuBanSubGrid(double)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Assist/LuBanGrid.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Assist/LuBanGrid.cs
+    startLine: 391
+  assemblies:
+  - CompassEx
+  namespace: CommLib
+  summary: 根据指定的鲁班尺物理刻度值实例化一个小格对象。
+  example: []
+  syntax:
+    content: public LuBanSubGrid(double Value)
+    parameters:
+    - id: Value
+      type: System.Double
+      description: 输入的长度刻度值（单位：毫米）。
+    content.vb: Public Sub New(Value As Double)
+  overload: CommLib.LuBanSubGrid.#ctor*
+  nameWithType.vb: LuBanSubGrid.New(Double)
+  fullName.vb: CommLib.LuBanSubGrid.New(Double)
+  name.vb: New(Double)
+references:
+- uid: CommLib.LuBanGrid
+  commentId: T:CommLib.LuBanGrid
+  parent: CommLib
+  href: CommLib.LuBanGrid.html
+  name: LuBanGrid
+  nameWithType: LuBanGrid
+  fullName: CommLib.LuBanGrid
+- uid: CommLib
+  commentId: N:CommLib
+  href: CommLib.html
+  name: CommLib
+  nameWithType: CommLib
+  fullName: CommLib
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CommLib.LuBanSubGrid.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<LuBanSubGrid, TBase>(LuBanSubGrid, TBase)
+  nameWithType: Comm.ApplyBaseProperties<LuBanSubGrid, TBase>(LuBanSubGrid, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CommLib.LuBanSubGrid, TBase>(CommLib.LuBanSubGrid, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of LuBanSubGrid, TBase)(LuBanSubGrid, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CommLib.LuBanSubGrid, TBase)(CommLib.LuBanSubGrid, TBase)
+  name.vb: ApplyBaseProperties(Of LuBanSubGrid, TBase)(LuBanSubGrid, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CommLib.LuBanSubGrid,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CommLib.LuBanSubGrid
+    name: LuBanSubGrid
+    href: CommLib.LuBanSubGrid.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CommLib.LuBanSubGrid
+    name: LuBanSubGrid
+    href: CommLib.LuBanSubGrid.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CommLib.LuBanSubGrid,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CommLib.LuBanSubGrid
+    name: LuBanSubGrid
+    href: CommLib.LuBanSubGrid.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CommLib.LuBanSubGrid
+    name: LuBanSubGrid
+    href: CommLib.LuBanSubGrid.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: CommLib.LuBanSubGrid.StartValue
+  commentId: F:CommLib.LuBanSubGrid.StartValue
+  href: CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid_StartValue
+  name: StartValue
+  nameWithType: LuBanSubGrid.StartValue
+  fullName: CommLib.LuBanSubGrid.StartValue
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CommLib.LuBanSubGrid
+  commentId: T:CommLib.LuBanSubGrid
+  parent: CommLib
+  href: CommLib.LuBanSubGrid.html
+  name: LuBanSubGrid
+  nameWithType: LuBanSubGrid
+  fullName: CommLib.LuBanSubGrid
+- uid: CommLib.LuBanSubGrid.GetGroup*
+  commentId: Overload:CommLib.LuBanSubGrid.GetGroup
+  href: CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid_GetGroup_System_Double_CommLib_LuBanGrid_
+  name: GetGroup
+  nameWithType: LuBanSubGrid.GetGroup
+  fullName: CommLib.LuBanSubGrid.GetGroup
+- uid: System.Collections.Generic.List{CommLib.LuBanSubGrid}
+  commentId: T:System.Collections.Generic.List{CommLib.LuBanSubGrid}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<LuBanSubGrid>
+  nameWithType: List<LuBanSubGrid>
+  fullName: System.Collections.Generic.List<CommLib.LuBanSubGrid>
+  nameWithType.vb: List(Of LuBanSubGrid)
+  fullName.vb: System.Collections.Generic.List(Of CommLib.LuBanSubGrid)
+  name.vb: List(Of LuBanSubGrid)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: CommLib.LuBanSubGrid
+    name: LuBanSubGrid
+    href: CommLib.LuBanSubGrid.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CommLib.LuBanSubGrid
+    name: LuBanSubGrid
+    href: CommLib.LuBanSubGrid.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: CommLib.LuBanSubGrid.#ctor*
+  commentId: Overload:CommLib.LuBanSubGrid.#ctor
+  href: CommLib.LuBanSubGrid.html#CommLib_LuBanSubGrid__ctor_System_String_
+  name: LuBanSubGrid
+  nameWithType: LuBanSubGrid.LuBanSubGrid
+  fullName: CommLib.LuBanSubGrid.LuBanSubGrid
+  nameWithType.vb: LuBanSubGrid.New
+  fullName.vb: CommLib.LuBanSubGrid.New
+  name.vb: New

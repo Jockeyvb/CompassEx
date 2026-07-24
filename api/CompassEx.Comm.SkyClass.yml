@@ -14,6 +14,7 @@ items:
   - CompassEx.Comm.SkyClass.IsSun
   - CompassEx.Comm.SkyClass.Name
   - CompassEx.Comm.SkyClass.SkyNames
+  - CompassEx.Comm.SkyClass.ToString
   langs:
   - csharp
   - vb
@@ -46,7 +47,6 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
   extensionMethods:
   - CompassEx.Comm.SkyClass.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
 - uid: CompassEx.Comm.SkyClass.SkyNames
@@ -293,6 +293,36 @@ items:
   nameWithType.vb: SkyClass.New(Integer)
   fullName.vb: CompassEx.Comm.SkyClass.New(Integer)
   name.vb: New(Integer)
+- uid: CompassEx.Comm.SkyClass.ToString
+  commentId: M:CompassEx.Comm.SkyClass.ToString
+  id: ToString
+  parent: CompassEx.Comm.SkyClass
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: SkyClass.ToString()
+  fullName: CompassEx.Comm.SkyClass.ToString()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/SkyClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToString
+    path: CompassEx/Comm/SkyClass.cs
+    startLine: 138
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: CompassEx.Comm.SkyClass.ToString*
 - uid: CompassEx.Comm.SkyClass.GetSkyClass(System.String)
   commentId: M:CompassEx.Comm.SkyClass.GetSkyClass(System.String)
   id: GetSkyClass(System.String)
@@ -311,7 +341,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSkyClass
     path: CompassEx/Comm/SkyClass.cs
-    startLine: 142
+    startLine: 148
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -349,7 +379,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSkyClass
     path: CompassEx/Comm/SkyClass.cs
-    startLine: 157
+    startLine: 163
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -603,30 +633,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  name: ToString()
-  nameWithType: object.ToString()
-  fullName: object.ToString()
-  nameWithType.vb: Object.ToString()
-  fullName.vb: Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
 - uid: CompassEx.Comm.SkyClass.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
   commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
   parent: CompassEx.Comm.Comm
@@ -859,6 +865,36 @@ references:
   nameWithType.vb: SkyClass.New
   fullName.vb: CompassEx.Comm.SkyClass.New
   name.vb: New
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CompassEx.Comm.SkyClass.ToString*
+  commentId: Overload:CompassEx.Comm.SkyClass.ToString
+  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_ToString
+  name: ToString
+  nameWithType: SkyClass.ToString
+  fullName: CompassEx.Comm.SkyClass.ToString
 - uid: CompassEx.Comm.SkyClass.GetSkyClass*
   commentId: Overload:CompassEx.Comm.SkyClass.GetSkyClass
   href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_GetSkyClass_System_String_

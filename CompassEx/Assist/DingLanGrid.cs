@@ -1,347 +1,422 @@
-﻿
-
-
+﻿// // Copyright (c) 2026 [Jockeyvb]. All rights reserved.
+// // 
+// // This file is part of [CompassEx].
+// // [CompassEx] is free software: you can redistribute it and/or modify
+// // it under the terms of the GNU Affero General Public License as published by
+// // the Free Software Foundation, either version 3 of the License, or
+// // (at your option) any later version.
+// //
+// // For commercial use, you must obtain a commercial license from the author.
+// // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
+//
 
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
-namespace  CommLib
+namespace CommLib
 {
 
 
+    /// <summary>
+    /// 丁兰尺大格（分格）类。
+    /// </summary>
+    /// <remarks>
+    /// 该类用于计算和表达传统堪舆学中“丁兰尺”的 10 个大格（如丁、害、旺、苦等）。
+    /// 丁兰尺主要用于阴宅、祖先神位等尺寸的吉凶量度。
+    /// 每个大格内部包含 4 个小格，大格的物理固定循环尺寸常数定义为 38.78 毫米。
+    /// </remarks>
     public class DingLanGrid
     {
-
         /// <summary>
-        /// 丁兰大格名称
+        /// 丁兰尺 10 大格名称的静态只读数组。
         /// </summary>
         public static string[] DingLanGridName = { "丁", "害", "旺", "苦", "义", "官", "死", "兴", "失", "财" }; //丁兰大格
 
+        /// <summary>
+        /// 丁兰尺 10 大格各自对应的吉凶断语说明文字。
+        /// </summary>
         public static string[] DingLanGridInfos = { "生子,添丁。", "遇小人,伤害,灾害,病灾", "进财,旺盛。", "悲苦,损财,生病", "厚利,而行财运", "升官,进财利", "痼疾,重病,意外伤亡", "蒸蒸日上", "失败致破产", "财源滚滚" };
 
         /// <summary>
-        /// 丁兰大格吉凶种颜色 （红吉，黑凶）
+        /// 丁兰尺 10 大格对应的传统吉凶颜色标记数组（<see cref="Color.Red"/> 代表吉，<see cref="Color.Black"/> 代表凶）。
         /// </summary>
-        public static Color[] DingLanGridColor = { Color.Red, Color.Black,Color.Red , Color.Black, Color.Red, Color.Red, Color.Black,Color.Red , Color.Black, Color.Red };
+        public static Color[] DingLanGridColor = { Color.Red, Color.Black, Color.Red, Color.Black, Color.Red, Color.Red, Color.Black, Color.Red, Color.Black, Color.Red };
 
         /// <summary>
-        /// 所在大格的吉凶种颜色 （红吉，黑凶）
+        /// 当前大格实例对应的吉凶颜色（红吉，黑凶）。
         /// </summary>
         public Color GridColor;
 
         /// <summary>
-        /// 相关索引 
+        /// 当前大格在 10 个循环大格中的绝对索引值（取值范围：0 - 9）。
         /// </summary>
         public int Index;
+
         /// <summary>
-        /// 起始值
+        /// 当前大格在丁兰尺上的理论起始刻度值（单位：毫米）。
         /// </summary>
         public double StartValue;
+
         /// <summary>
-        /// 结束值 
+        /// 当前大格在丁兰尺上的理论结束刻度值（单位：毫米）。
         /// </summary>
         public double EndValue;
 
         /// <summary>
-        /// 大格名称
+        /// 当前大格的名称（如“丁”、“害”等）。
         /// </summary>
         public string GridName;
+
         /// <summary>
-        /// 大格每格距54MM
+        /// 丁兰尺每个大格的固定循环尺寸常数（定义为 38.78 毫米）。
         /// </summary>
         public const double GridFixed = 38.78;
 
         /// <summary>
-        /// 所在值（如果根据名字获得的，则值为起始值 )
+        /// 触发或传入的实际实现刻度值（若创建时未显式指定有效的刻度，则默认返回 <see cref="StartValue"/>）。
         /// </summary>
         public double Value = -1;
 
         /// <summary>
-        /// 所在的小格
+        /// 当前物理刻度值精确落在哪一个具体的丁兰小格对象（<see cref="DingLanSubGrid"/>）上。
         /// </summary>
         public DingLanSubGrid SG;
 
         /// <summary>
-        /// 　大格说明
+        /// 当前大格对应的吉凶断语详细说明。
         /// </summary>
         public string DingLanGridInfo = "";
 
-
-
         /// <summary>
-        /// 在这大格内的所有小格
+        /// 当前大格内部所包含的全部 4 个连续小格的集合列表。
         /// </summary>
         public List<DingLanSubGrid> Child = new List<DingLanSubGrid>();
 
+        /// <summary>
+        /// 内部私有字段：缓存比本值更大的最近一个吉利刻度值。
+        /// </summary>
         private double rightGoodValue;
 
-
-
-
         /// <summary>
-        /// 比本值要大的吉值
+        /// 获取比当前刻度值更大的最近一个吉利（红色）刻度边界值。
         /// </summary>
+        /// <value>
+        /// 如果当前值非法返回 -1；若当前大格本身就是吉（红色），则无需寻找，直接返回 -1；
+        /// 否则向右（向后）遍历尺面大格周期，寻找到第一个吉利大格的起始刻度加 1 毫米。
+        /// </value>
         public double RightGoodValue
         {
             get
             {
+                // 健壮性检查：若刻度值尚未有效设置，直接返回 -1
                 if (this.Value < 0) return -1;
+                // 如果当前大格本身就是吉利的颜色，直接返回 -1
                 if (this.GridColor == Color.Red) return -1;//如果是吉则不需要寻
+
                 double EndValue = this.EndValue;
+                // 从当前大格的下一个大格开始向右递增遍历
                 for (int i = this.Index + 1; i < DingLanGridName.Length; i++)
                 {
+                    // 按步长累加并向下取整，推算右侧大格的边界，再减 1 毫米修正
                     EndValue = Math.Floor(EndValue + GridFixed) - 1;
+                    // 一旦遇到标红的吉利大格，则对其位置进行逆向实例化以获取精确的 StartValue
                     if (DingLanGridColor[i] == Color.Red)
                     {
                         DingLanGrid LBG = new DingLanGrid(EndValue);
-                        rightGoodValue = LBG.StartValue + 1;
+                        rightGoodValue = LBG.StartValue + 1; // 锁定右侧吉利位置
                         break;
-
-
                     }
                 }
                 return rightGoodValue;
             }
-
         }
 
-
-
-
-        private double leftGoodValue;
         /// <summary>
-        /// 比本值要少的吉值
+        /// 内部私有字段：缓存比本值更小的最近一个吉利刻度值。
         /// </summary>
+        private double leftGoodValue;
+
+        /// <summary>
+        /// 获取比当前刻度值更小的最近一个吉利（红色）刻度边界值。
+        /// </summary>
+        /// <value>
+        /// 如果当前值非法返回 -1；若当前大格本身就是吉（红色），则无需寻找，直接返回 -1；
+        /// 否则向左（向前）遍历尺面大格周期，寻找到第一个吉利大格的结束刻度。
+        /// </value>
         public double LeftGoodValue
         {
             get
             {
+                // 健壮性检查：若刻度值尚未有效设置，直接返回 -1
                 if (this.Value < 0) return -1;
+                // 如果当前大格本身就是吉利的颜色，直接返回 -1
                 if (this.GridColor == Color.Red) return -1;//如果是吉则不需要寻
+
                 double EndValue = this.EndValue;
+                // 从当前大格的上一个大格开始向左递减遍历
                 for (int i = this.Index - 1; i >= 0; i--)
                 {
+                    // 按步长递减并向下取整，推算左侧大格的边界位置
                     EndValue = Math.Floor(EndValue - GridFixed);
+                    // 一旦遇到标红的吉利大格，则对其位置进行逆向实例化以获取精确的 EndValue
                     if (DingLanGridColor[i] == Color.Red)
                     {
                         DingLanGrid LBG = new DingLanGrid(EndValue);
-                        leftGoodValue = LBG.EndValue;
+                        leftGoodValue = LBG.EndValue; // 锁定左侧吉利位置
                         break;
-
-
                     }
                 }
                 return leftGoodValue;
             }
-
         }
 
-
         /// <summary>
-        /// 根据索引设置类
+        /// 根据累计的大格总步数（次数）统一计算并配置当前大格实例的所有相关吉凶属性、关联小格。
         /// </summary>
-        /// <param name="index"></param>
+        /// <param name="Times">累计的大格总步数（未取余的原始计数）。</param>
         public void SetGrid(int Times)
         {
-
+            // 1. 根据总步数对 10 取余，计算出当前大格在周期内的标准索引 (0-9)
             int index = Times % DingLanGridName.Length;
             this.Index = index;
+
+            // 2. 映射大格的名称
             this.GridName = DingLanGrid.DingLanGridName[index];
+
+            // 3. 计算当前大格在尺面上的理论起始刻度（毫米）并向下取整
             this.StartValue = Math.Floor(Times * GridFixed);
+
+            // 4. 计算当前大格在尺面上的理论结束刻度（毫米）并向下取整
             this.EndValue = Math.Floor((Times + 1) * GridFixed);
+
+            // 5. 健壮性处理：如果 Value 还没有被赋予有效的正数刻度，则默认将其置为当前格的起始刻度
             this.Value = this.Value < 0 ? StartValue : this.Value;
+
+            // 6. 绑定大格的传统吉凶颜色属性
             this.GridColor = DingLanGridColor[index];
+
+            // 7. 依据当前大格的实现刻度，构建并关联精确位置处的单个小格对象
             this.SG = new DingLanSubGrid(this.Value);
             this.SG.Parent = this;
+
+            // 8. 绑定当前大格的详细吉凶断语文字说明
             this.DingLanGridInfo = DingLanGridInfos[this.Index];
+
+            // 9. 获取并装载当前大格范围内完整的一组（共4个）小格对象到 Child 列表中
             this.Child = DingLanSubGrid.GetGroup(this.Value, this);
-            
+
             //for (int i = index * 4; i < (index + 1) * 4; i++)
             //{
             //    DingLanSubGrid LBSG = new DingLanSubGrid(DingLanSubGrid.DingLanSubGridName [ i] );
             //    LBSG.Parent = this;
             //    this.Child.Add(LBSG);
             //}
-
         }
 
-
         /// <summary>
-        /// 根据大格名称，创建大格
+        /// 根据大格名称（如“丁”）实例化一个丁兰大格对象。
         /// </summary>
-        /// <param name="GridName"></param>
+        /// <param name="GridName">要匹配的大格名称字符串。</param>
         public DingLanGrid(String GridName)
         {
+            // 查找该大格名称在 10 大格数组中第一次出现的索引位置
             int index = Array.IndexOf(DingLanGridName, GridName);
+
+            // 健壮性检查：如果传入了错误的名称，查找结果为 -1，则直接终止构造
             if (index < 0) return;
 
+            // 调用内部核心方法初始化属性
             SetGrid(index);
-
         }
 
         /// <summary>
-        /// 根据刻度值 创建大格类
+        /// 根据指定的丁兰尺物理实际刻度值实例化一个大格对象。
         /// </summary>
-        /// <param name="Value"></param>
+        /// <param name="Value">输入的长度刻度值（单位：毫米）。</param>
         public DingLanGrid(double Value)
         {
+            // 健壮性检查：传入负数刻度属非法输入，直接拦截
             if (Value < 0) return;
+
+            // 1. 将刻度值向下取整
             Value = Math.Floor(Value);
+
+            // 2. 局部变量声明（留存原代码的分析变量 a）
             var a = Value / GridFixed;
+
+            // 3. 计算当前刻度累计属于第几个大格（总步数）
             double d = Math.Floor(Value / GridFixed);
+
             //if (Value % GridFixed == 0 && Value > 0)//如果刚刚好，也算本格
             //{
             //    d -= 1;
             //}
 
-
-
+            // 4. 记录当前的实际实现值
             this.Value = Value;
 
+            // 5. 传入累计的总大格步数，去配置当前大格的各项关键属性
             SetGrid((int)d);
         }
-
-
-
     }
 
-
+    /// <summary>
+    /// 丁兰尺小格（分格）类。
+    /// </summary>
+    /// <remarks>
+    /// 该类用于计算和表达传统堪舆学中“丁兰尺”的 40 个小格（如福星、及第等）。
+    /// 每 4 个小格组合为一个大格（由 <see cref="DingLanGrid"/> 表达）。
+    /// 丁兰尺每小格的物理固定尺寸约为 9.695 毫米。
+    /// </remarks>
     public class DingLanSubGrid
     {
-
         /// <summary>
-        /// 丁兰小格（用","分开)
+        /// 丁兰尺 40 小格名称的静态只读数组。
         /// </summary>
         public static string[] DingLanSubGridName = { "福星", "及第", "财旺", "登科", "口舌", "病临", "死绝", "灾至", "天德", "喜事", "进宝", "纳福", "失脱", "官鬼", "劫财", "无嗣", "大吉", "财旺", "益利", "天库", "富贵", "进宝", "横财", "顺科", "离乡", "死别", "退丁", "失财", "登科", "贵子", "添丁", "兴旺", "孤寡", "牢执", "公事", "退财", "迎福", "六合", "进宝", "财德" }; // 小格
 
-   　
         /// <summary>
-        /// 父类
+        /// 当前小格所属的父级大格对象。
         /// </summary>
         public DingLanGrid Parent;
 
         /// <summary>
-        /// 相关索引 
+        /// 当前小格在 40 个循环小格中的绝对索引值（取值范围：0 - 39）。
         /// </summary>
         public int Index;
+
         /// <summary>
-        /// 起始值
+        /// 当前小格在丁兰尺上的理论起始刻度值（单位：毫米）。
         /// </summary>
         public double StartValue;
+
         /// <summary>
-        /// 结束值 
+        /// 当前小格在丁兰尺上的理论结束刻度值（单位：毫米）。
         /// </summary>
         public double EndValue;
 
         /// <summary>
-        /// 返回实现值 （如果未设置，则返回起始值 )
+        /// 触发或传入的实际实现刻度值（若创建时未显式指定有效的刻度，则默认返回 <see cref="StartValue"/>）。
         /// </summary>
         public double Value = -1;
 
         /// <summary>
-        /// 每小格的说明
+        /// 当前小格的详细吉凶说明或背景注疏信息。
         /// </summary>
         public string DingLanSubGridInfo = "";
 
         /// <summary>
-        /// 小格名称
+        /// 当前小格的名称（如“福星”、“及第”等）。
         /// </summary>
         public string SubGridName;
+
         /// <summary>
-        /// 小格每格距13.5MM
+        /// 丁兰尺每小格的固定尺寸常数（这里定义为 9.695 毫米）。
         /// </summary>
         public const double SubGridFixed = 9.695;
 
-
-
-
         /// <summary>
-        /// 根据索引设置类
+        /// 根据累计的小格总步数（次数）计算并设置当前小格的各项属性。
         /// </summary>
-        /// <param name="index"></param>
+        /// <param name="Times">累计的小格总步数（未取余的原始计数）。</param>
         private void SetSubGrid(int Times)
         {
-
+            // 1. 根据总步数对 40 取余，计算出当前小格在周期内的标准索引 (0-39)
             this.Index = Times % DingLanSubGrid.DingLanSubGridName.Length;
+
+            // 2. 根据索引从静态数组中获取对应的小格吉凶名称
             this.SubGridName = DingLanSubGrid.DingLanSubGridName[this.Index];
+
+            // 3. 计算并向下取整当前小格的起始毫米刻度值
             this.StartValue = Math.Floor(Times * SubGridFixed);
+
+            // 4. 计算并向下取整当前小格的结束毫米刻度值
             this.EndValue = Math.Floor((Times + 1) * SubGridFixed);
+
+            // 5. 健壮性处理：如果 Value 还没有被赋予有效的正数刻度，则默认将其置为当前格的起始刻度
             this.Value = this.Value < 0 ? StartValue : this.Value;
-           
-
-
-
         }
 
-
         /// <summary>
-        /// 获得本大格的4个小格（为一组）
+        /// 依据指定的刻度值，获取其所在的大格所包含的全部 4 个小格（作为完整的一组返回）。
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="parent"></param>
-        /// <returns></returns>
-        public static List<DingLanSubGrid> GetGroup(double value, DingLanGrid parent = null)
+        /// <param name="value">输入的物理刻度值。</param>
+        /// <param name="parent">所属的父级大格对象。</param>
+        /// <returns>返回包含同组 4 个 <see cref="DingLanSubGrid"/> 对象的列表集合。</returns>
+        public static List<DingLanSubGrid> GetGroup(double value, DingLanGrid parent)
         {
             List<DingLanSubGrid> li = new List<DingLanSubGrid>();
 
+            // 1. 先用当前的刻度值临时构建一个锚点小格对象
             DingLanSubGrid LBSG = new DingLanSubGrid(value);
 
-            double t = LBSG.Index - (LBSG.Index % 4) + 1;//取本组的第一个格
+            // 2. 核心算法：推算当前小格所在大格（4个小格一组）的第一小格的绝对次数索引
+            double t = LBSG.Index - (LBSG.Index % 4) + 1; //取本组的第一个格
+
+            // 3. 核心算法：逆向推算当前组第一小格的基础起始刻度位置
             double st = LBSG.EndValue - (((LBSG.Index % 4)) * SubGridFixed);
+
             int j = 0;
+            // 4. 循环 4 次，依次构建出该大格包含的 4 个连续小格
             for (double i = t; i < t + 4; i++)
             {
+                // 依据基准刻度 + 偏移量创建全新的小格对象
                 var sg = new DingLanSubGrid(st + (j * SubGridFixed));
                 sg.Parent = parent;
 
+                // 压入返回列表
                 li.Add(sg);
                 j++;
             }
 
             return li;
-
         }
 
         /// <summary>
-        /// 根据小格名称创建小格类
+        /// 根据小格名称实例化一个丁兰小格对象。
         /// </summary>
-        /// <param name="GridName"></param>
-        /// <param name="Mod">具体index 值（不取余)</param>
+        /// <param name="SubGridName">要匹配的小格名称（例如“大吉”）。</param>
         public DingLanSubGrid(String SubGridName)
         {
+            // 查找该名称在 40 数组中第一次出现的索引位置
             int index = Array.IndexOf(DingLanSubGridName, SubGridName);
+
+            // 健壮性检查：如果传入了错误的名称，查找结果为 -1，则直接终止构造
             if (index < 0) return;
 
+            // 调用内部核心方法初始化属性
             SetSubGrid(index);
-
-
-
-
         }
+
         /// <summary>
-        /// 根据刻度值 创建小格类
+        /// 根据指定的丁兰尺物理刻度值实例化一个小格对象。
         /// </summary>
-        /// <param name="Value"></param>
+        /// <param name="Value">输入的长度刻度值（单位：毫米）。</param>
         public DingLanSubGrid(double Value)
         {
-
+            // 健壮性检查：传入负数刻度属非法输入，直接拦截
             if (Value < 0) return;
+
+            // 1. 将刻度值向下取整
             Value = Math.Floor(Value);
+
+            // 2. 计算当前刻度累计属于第几个小格（总步数）
             double d = Math.Floor(Value / SubGridFixed);
+
             // if (Value % SubGridFixed == 0 && Value > 0) //如果刚刚好，也算本格
             //{
             //    d -= 1;
             //}
+
+            // 3. 记录当前的实际实现值
             this.Value = Value;
             //  d = d % DingLanSubGrid.DingLanSubGridName.Length;
 
-
-
+            // 4. 传入累计的总步数，去配置当前格的各项关键属性
             SetSubGrid((int)d);
         }
-
     }
 
 

@@ -184,16 +184,18 @@ namespace CompassEx.Gua
                 pyt.PlaceYao = i;
                 pyt.SkyLoc = ToGua.SkyLocs.ElementAt(i);
                 pyt.SixRelative = ToGua.SixRelative.ElementAt(i);
-                for (int j = 0; j < ToGua.HideRelativeYaos.Count(); j++)
+                if (ToGua.HideRelativeYaos != null && ToGua.HideRelativeYaos.Any()) //无伏神不用处理
                 {
-                    if (ToGua.HideRelativeYaos[j] == i)
+                    for (int j = 0; j < ToGua.HideRelativeYaos.Count(); j++)
                     {
-                        pyt.HideRelative = ToGua.HideRelative[j];
-                        break;
+                        if (ToGua.HideRelativeYaos[j] == i)
+                        {
+                            pyt.HideRelative = ToGua.HideRelative[j];
+                            break;
+                        }
+
                     }
-
                 }
-
 
                 return pyt;
 

@@ -88,7 +88,7 @@
 
   <h1 id="CompassEx_Gua_NaJiaYGResult" data-uid="CompassEx.Gua.NaJiaYGResult" class="text-break">
 NaJiaYGResult 结构
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L137"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -101,7 +101,7 @@ NaJiaYGResult 结构
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct NaJiaYGResult : INaJiaResult</code></pre>
+    <pre><code class="lang-csharp hljs">public struct NaJiaYGResult : INaJiaResult, IEquatable&lt;NaJiaYGResult&gt;</code></pre>
   </div>
 
 
@@ -112,6 +112,7 @@ NaJiaYGResult 结构
     <dt>实现</dt>
     <dd>
       <div><a class="xref" href="CompassEx.Gua.INaJiaResult.html">INaJiaResult</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="CompassEx.Gua.NaJiaYGResult.html">NaJiaYGResult</a>&gt;</div>
     </dd>
   </dl>
 
@@ -119,15 +120,6 @@ NaJiaYGResult 结构
   <dl class="typelist inheritedMembers">
     <dt>继承成员</dt>
     <dd>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
-    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
     </div>
@@ -161,7 +153,7 @@ NaJiaYGResult 结构
 
   <h3 id="CompassEx_Gua_NaJiaYGResult_Gua" data-uid="CompassEx.Gua.NaJiaYGResult.Gua">
   Gua
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L143"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>当前推演所依附的后天八卦单卦（三爻卦）实例。</p>
@@ -193,7 +185,7 @@ public GuaSubClass Gua</code></pre>
 
   <h3 id="CompassEx_Gua_NaJiaYGResult_Locs" data-uid="CompassEx.Gua.NaJiaYGResult.Locs">
   Locs
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L167"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>当前单卦纳甲数理所包含归化的地支（方位/时辰刻度）实例集合。</p>
@@ -227,7 +219,7 @@ public GuaSubClass Gua</code></pre>
 
   <h3 id="CompassEx_Gua_NaJiaYGResult_Sky" data-uid="CompassEx.Gua.NaJiaYGResult.Sky">
   Sky
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L159"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>当前单卦所纳的专属天干实例。</p>
@@ -266,7 +258,7 @@ public GuaSubClass Gua</code></pre>
 
   <h3 id="CompassEx_Gua_NaJiaYGResult_Type" data-uid="CompassEx.Gua.NaJiaYGResult.Type">
   Type
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L151"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取杨公纳甲体系标记。</p>
@@ -295,11 +287,233 @@ public GuaSubClass Gua</code></pre>
 
 
 
+  <h2 class="section" id="methods">方法
+</h2>
+
+
+  <a id="CompassEx_Gua_NaJiaYGResult_Equals_" data-uid="CompassEx.Gua.NaJiaYGResult.Equals*"></a>
+
+  <h3 id="CompassEx_Gua_NaJiaYGResult_Equals_CompassEx_Gua_NaJiaYGResult_" data-uid="CompassEx.Gua.NaJiaYGResult.Equals(CompassEx.Gua.NaJiaYGResult)">
+  Equals(NaJiaYGResult)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L191"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(NaJiaYGResult other)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="CompassEx.Gua.NaJiaYGResult.html">NaJiaYGResult</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Gua_NaJiaYGResult_Equals_" data-uid="CompassEx.Gua.NaJiaYGResult.Equals*"></a>
+
+  <h3 id="CompassEx_Gua_NaJiaYGResult_Equals_System_Object_" data-uid="CompassEx.Gua.NaJiaYGResult.Equals(System.Object)">
+  Equals(object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L185"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Gua_NaJiaYGResult_GetHashCode_" data-uid="CompassEx.Gua.NaJiaYGResult.GetHashCode*"></a>
+
+  <h3 id="CompassEx_Gua_NaJiaYGResult_GetHashCode" data-uid="CompassEx.Gua.NaJiaYGResult.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L179"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获取当前结构的哈希值，用以支持基于哈希算法的集合检索（如 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;TKey, TValue&gt;</a>）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>返回根据内部关键字段生成的哈希整数值。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Gua_NaJiaYGResult_ToString_" data-uid="CompassEx.Gua.NaJiaYGResult.ToString*"></a>
+
+  <h3 id="CompassEx_Gua_NaJiaYGResult_ToString" data-uid="CompassEx.Gua.NaJiaYGResult.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L169"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">运算符
+</h2>
+
+
+  <a id="CompassEx_Gua_NaJiaYGResult_op_Equality_" data-uid="CompassEx.Gua.NaJiaYGResult.op_Equality*"></a>
+
+  <h3 id="CompassEx_Gua_NaJiaYGResult_op_Equality_CompassEx_Gua_NaJiaYGResult_CompassEx_Gua_NaJiaYGResult_" data-uid="CompassEx.Gua.NaJiaYGResult.op_Equality(CompassEx.Gua.NaJiaYGResult,CompassEx.Gua.NaJiaYGResult)">
+  operator ==(NaJiaYGResult, NaJiaYGResult)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L203"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>重载等于运算符 (<code>==</code>)，支持语法级直观对比。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(NaJiaYGResult left, NaJiaYGResult right)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="CompassEx.Gua.NaJiaYGResult.html">NaJiaYGResult</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="CompassEx.Gua.NaJiaYGResult.html">NaJiaYGResult</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Gua_NaJiaYGResult_op_Inequality_" data-uid="CompassEx.Gua.NaJiaYGResult.op_Inequality*"></a>
+
+  <h3 id="CompassEx_Gua_NaJiaYGResult_op_Inequality_CompassEx_Gua_NaJiaYGResult_CompassEx_Gua_NaJiaYGResult_" data-uid="CompassEx.Gua.NaJiaYGResult.op_Inequality(CompassEx.Gua.NaJiaYGResult,CompassEx.Gua.NaJiaYGResult)">
+  operator !=(NaJiaYGResult, NaJiaYGResult)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L211"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>重载不等于运算符 (<code>!=</code>)，支持语法级直观对比。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(NaJiaYGResult left, NaJiaYGResult right)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="CompassEx.Gua.NaJiaYGResult.html">NaJiaYGResult</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="CompassEx.Gua.NaJiaYGResult.html">NaJiaYGResult</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L96" class="edit-link">编辑本文</a>
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Gua/NaJia.cs/#L137" class="edit-link">编辑本文</a>
         </div>
 
 

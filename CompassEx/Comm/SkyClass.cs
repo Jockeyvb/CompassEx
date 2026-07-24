@@ -135,6 +135,12 @@ namespace CompassEx.Comm
 
         #endregion
         #region 方法
+
+        public override string ToString()
+        {
+            return this.Name.ToString();
+        }
+
         /// <summary>
         /// 根据指定的天干单字字面名称，利用 LINQ 动态检索并实例化对应的天干类实体。
         /// </summary>

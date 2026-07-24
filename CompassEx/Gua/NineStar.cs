@@ -29,7 +29,7 @@ namespace CompassEx.Gua
     ///   </item>
     ///   <item>
     ///     <description>
-    ///       <strong><see cref="GuaFlipNineStar"/> (翻卦九星)：</strong> 依据黄石公翻卦掌或辅星水法变爻推导而出的理气星曜。在底层运算中，将左辅星与右弼星合并为“辅星”进行归化，本质上为八星序列。
+    ///       <strong><see cref="FlipGuaNineStar"/> (翻卦九星)：</strong> 依据黄石公翻卦掌或辅星水法变爻推导而出的理气星曜。在底层运算中，将左辅星与右弼星合并为“辅星”进行归化，本质上为八星序列。
     ///     </description>
     ///   </item>
     /// </list>
@@ -44,7 +44,7 @@ namespace CompassEx.Gua
         /// <summary>
         /// 翻卦九星类型（实质为合辅弼之后的游年八星）。
         /// </summary>
-        GuaFlipNineStar = 1
+        FlipGuaNineStar = 1
     }
     /// <summary>
     /// 周易数理与风水理气核心：九星（游年八星/紫白九星）的数据抽象模型与静态工厂类。
@@ -172,7 +172,7 @@ namespace CompassEx.Gua
         /// <param name="Index">基于翻卦轨迹数组转换后的星曜逻辑索引（有效范围：0 到 7）。</param>
         /// <returns>返回包含完整翻卦配星与八宅游年映射信息的 <see cref="NineStar"/> 独立对象。</returns>
         /// <exception cref="ArgumentOutOfRangeException">当传入的索引超出 0-7 的数组边界时抛出。</exception>
-        public static NineStar GetGuaFlipEightStar(int Index)
+        public static NineStar GetFlipGuaEightStar(int Index)
         {
             if (Index < 0 || Index >= EightStarNames.Length)
             {
@@ -180,7 +180,7 @@ namespace CompassEx.Gua
             }
 
             NineStar ns = new();
-            ns.Type = NineStarType.GuaFlipNineStar;      // 锁定类型为翻卦九星
+            ns.Type = NineStarType.FlipGuaNineStar;      // 锁定类型为翻卦九星
             ns.Name = EightStarNames[Index];           // 精准映射单字简称（如：“辅”）
             ns.FullName = EightStarFullNames[Index];   // 精准映射完整全称（如：“辅弼”）
 

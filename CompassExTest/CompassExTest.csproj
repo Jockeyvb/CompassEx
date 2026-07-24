@@ -123,6 +123,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\CompassEx.Data\CompassEx.Data.csproj" />
 	  <ProjectReference Include="..\CompassEx\CompassEx.csproj" />
 	</ItemGroup>
 
