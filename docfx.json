@@ -49,7 +49,7 @@
     "resource": [
       {
         "files": [
-          "images/**"
+          "Images/**"
         ]
       }
     ],
@@ -65,8 +65,8 @@
       "_appLogoPath": "",
        "_appLang": "zh-CN",
       "pdf": true,
-         "_appLogoPath": "images/logo.png",       // 👈 設置頂部導航欄的 Logo 圖標
-      "_appFaviconPath": "images/logo.png", // 👈 設置瀏覽器標籤頁的 Favicon 圖標
+         "_appLogoPath": "Images/logo.png",       // 👈 設置頂部導航欄的 Logo 圖標
+      "_appFaviconPath": "Images/logo.png", // 👈 設置瀏覽器標籤頁的 Favicon 圖標
     }
   }
 }
