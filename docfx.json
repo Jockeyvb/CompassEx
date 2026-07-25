@@ -1,51 +1,30 @@
 ﻿{
   "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
   "metadata": [
-    {
-      "src": [
-        {
-          "files": [ "CompassEx/CompassEx.csproj" ],
-          "cwd": "CompassEx",
-          "exclude": [ "**/bin/**", "**/obj/**" ]
-        }
-      ],
-      "dest": "api/CompassEx",
-      "properties": {
-        "Configuration": "Release"
-      }
-    },
-    {
-      "src": [
-        {
-          "files": [ "CompassEx/CommLib.csproj" ],
-          "cwd": "CommLib",
-          "exclude": [ "**/bin/**", "**/obj/**" ]
-        }
-      ],
-      "dest": "api/CommLib",
-      "properties": {
-        "Configuration": "Release"
-      }
-    }
-  ],
+  {
+    "src": [{ "files": [ "CompassEx/CompassEx.csproj" ], "cwd": "CompassEx", "exclude": [ "**/bin/**", "**/obj/**" ] }],
+    "dest": "api/CompassEx"  
+  },
+  {
+    "src": [{ "files": [ "CommLib/CommLib.csproj" ], "cwd": "CommLib", "exclude": [ "**/bin/**", "**/obj/**" ] }],
+    "dest": "api/CommLib"  
+  }
+],
   "build": {
     
      "warningsAsErrors": false,
     "content": [
-      {
-        "files": [
-	  
-          "toc.yml",
-          "index.md",
-          "*.md",
-          "api/**/*.yml",
-          "api/toc.yml"
-        ],
-        "exclude": [
-          "_site/**"
-        ]
-      }
+  {
+    "files": [
+      "toc.yml",
+      "index.md",
+      "*.md",
+      "api/**/toc.yml", 
+        "api/**/*.yml"
     ],
+    "exclude": [ "_site/**" ]
+  }
+],
     "resource": [
       {
         "files": [
@@ -59,14 +38,14 @@
       "templates"
     ],
     "globalMetadata": {
-      "_appName": "CompassEx 罗盘算法类库",
-      "_appTitle": "CompassEx API文档",
+      "_appName": "CompassEx",
+      "_appTitle": "罗盘算法类库",
       "_enableSearch": false, 
       "_appLogoPath": "",
        "_appLang": "zh-CN",
       "pdf": true,
-         "_appLogoPath": "Images/logo.png",       // 👈 設置頂部導航欄的 Logo 圖標
-      "_appFaviconPath": "Images/logo.png", // 👈 設置瀏覽器標籤頁的 Favicon 圖標
+         "_appLogoPath": "Images/logo.png",       
+      "_appFaviconPath": "Images/logo.png",  
     }
   }
 }

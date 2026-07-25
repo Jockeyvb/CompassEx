@@ -1,8 +1,9 @@
 ﻿- name: 首页
   href: README.md
-- name: API 参考文档
-  href: api/CompassEx/toc.yml
 - name: 类库算法说明
   href: CompassEx类库算法说明.md
-  name: 公共算法类库 (CommLib)
-  href: api/CommLib/toc.yml
+- name: 罗盘算法核心 (CompassEx)
+  href: api/CompassEx/ 
+
+- name: 公共底层算法 (CommLib)
+  href: api/CommLib/ 
