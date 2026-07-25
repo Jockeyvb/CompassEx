@@ -13,10 +13,14 @@
 using CompassEx.Gua;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CompassEx.Comm
 
 {
+
+
+
 
     /// <summary>
     /// 表示三元64卦中所临卦的卦爻纳甲信息（采用京房纳甲体系）。
@@ -77,6 +81,88 @@ namespace CompassEx.Comm
         /// <seealso cref="SixRelativeClass"/>
         public SixRelativeClass HideRelative { get; set; }
     }
+
+
+    /// <summary>
+    /// 罗盘上的对应类型
+    /// </summary>
+    public enum CompassObjType
+    {
+        /// <summary>
+        /// 默认为无
+        /// </summary>
+        [Description("无")]
+        None = 0,
+
+        /// <summary>
+        /// 先天八卦
+        /// </summary>
+        [Description("先天八卦"), Category("{level: 1, group: '八卦'}")]
+        BeforeGuaSub = 1,
+        /// <summary>
+        /// 后天八卦
+        /// </summary>
+        [Description("后天八卦"), Category("{level:2, group: '八卦'}")]
+        AfterGuaSub = 2,
+
+        /// <summary>
+        /// 天盘六十四卦（圆图）
+        /// </summary>
+        [Description("天盘六十四卦（圆图）"), Category("{level:3, group: '六十四卦'}")]
+        BeforeGua = 4,
+
+        /// <summary>
+        /// 地盘六十四卦（方图）
+        /// </summary>
+        [Description("地盘六十四卦（方图）"), Category("{level:4, group: '六十四卦'}")]
+        AfterGua = 8,
+
+        /// <summary>
+        /// 地盘二十四山
+        /// </summary>
+        [Description("地盘二十四山"), Category("{level:8, group: '二十四山'}")]
+        CHill = 16,
+
+        /// <summary>
+        /// 天盘二十四山
+        /// </summary>
+        [Description("人盘二十四山"), Category("{level:8, group: '二十四山'}")]
+        RHill = 32,
+
+
+        /// <summary>
+        /// 天盘二十四山
+        /// </summary>
+        [Description("天盘二十四山"), Category("{level:8, group: '二十四山'}")]
+        SHill = 64,
+
+
+        /// <summary>
+        /// 二十八星宿
+        /// </summary>
+        [Description("二十八星宿"), Category("{level:8, group: '星宿'}")]
+        Star28 = 128,
+
+        /// <summary>
+        /// 卦气
+        /// </summary>
+        [Description("卦气"), Category("{level:4, group: '六十四卦'}")]
+        GuaQi = 256,
+
+        /// <summary>
+        /// 卦运
+        /// </summary>
+        [Description("卦运"), Category("{level:4, group: '六十四卦'}")]
+        GuaFate = 512,
+
+
+        /// <summary>
+        /// 全部
+        /// </summary>
+        [Description("全部"), Category("{level:1023}")]
+        All = 1023
+    }
+
     /// <summary>
     /// 用于封装和标识罗盘对象的元数据及其实例的结构体。
     /// </summary>
@@ -85,8 +171,13 @@ namespace CompassEx.Comm
     /// 它将罗盘对象的中文名称、运行时类型、实例引用以及所对应的角度范围（<see cref="CompassRangEX"/>）打包在一起，
     /// 并提供安全的类型分发与转换机制。
     /// </remarks>
-    public struct CompassObjType
+    public struct CompassObjStru
     {
+        /// <summary>
+        /// 罗盘上的对应类型
+        /// </summary>
+        public CompassObjType CObjType;
+
         /// <summary>
         /// 罗盘对象的类型中文名称。
         /// </summary>

@@ -175,21 +175,40 @@ namespace CompassEx
         }
 
         /// <summary>
-        /// 根据指定的山名，计算并获取该山在二十四山罗盘中所占据的绝对度数范围。
+        /// 根据指定的山名与盘层类型，计算并获取该山在二十四山罗盘中所占据的绝对度数范围。
         /// </summary>
-        /// <param name="HillName">指定的山名（如“壬”、“子”、“癸”等）。</param>
-        /// <returns>返回表示该山起始与结束角度的 <see cref="CompassRangEX"/> 范围对象。</returns>
+        /// <param name="HillName">指定的二十四山名称（如“壬”、“子”、“癸”等）。</param>
+        /// <param name="ht">指定的罗盘盘层类型。默认值为 <see cref="HillType.CHill"/>（地盘正针）。</param>
+        /// <returns>返回表示该山头起始与结束角度的 <see cref="CompassRangEX"/> 范围对象。</returns>
         /// <remarks>
-        /// <para><b>推演原理：</b></para>
+        /// <para><b>一、 三盘几何错位推演原理：</b></para>
+        /// <para>
+        /// 二十四山基准（地盘正针）以西北方（壬山）为绝对度数起算点，初始角度设为 <c>337.5</c> 度。
+        /// 算法根据盘层类型（<paramref name="ht"/>）自动注入三合派经典的缝针与中针偏移：
+        /// </para>
         /// <list type="bullet">
-        /// <item><description>二十四山以<b>壬山</b>为度数起点，初始绝对方位设为 <c>337.5</c> 度。</description></item>
-        /// <item><description>根据该山名在列表中的索引位置，按每山 <c>15</c> 度顺时针累加。</description></item>
-        /// <item><description>当计算出的起始或结束度数超过 <c>360</c> 度时，系统会自动执行闭环修正（扣除 360 度）以限制在 <c>0 ~ 360</c> 度正常范围内。</description></item>
+        /// <item><description><see cref="HillType.SHill"/>（天盘缝针）：整体顺时针偏转 <c>7.5</c> 度。</description></item>
+        /// <item><description><see cref="HillType.RHill"/>（人盘中针）：整体逆时针偏转 <c>7.5</c> 度。</description></item>
         /// </list>
+        /// <para><b>二、 ⏳ 严谨的一阶圆周扣减验证：</b></para>
+        /// <para>
+        /// 基于罗盘圆周空间的对称性设计，即使在最大索引（23）与天盘正向偏移的极端叠加组合下，计算出的总理论度数上限也绝不会超过 <c>720</c> 度（即严格控制在双圈循环以内）。
+        /// 因此，方法采用的一阶条件扣减逻辑（<c>-= 360</c>）在数学上属于最优解，扣除一次整圈后<b>绝对不会超过 360 度</b>，能以极高执行效能将各盘山头完美收拢在 <c>0 ~ 360</c> 度的法定几何范围内。
+        /// </para>
         /// </remarks>
-        public static CompassRangEX Get24HillDegree(string HillName)
+        public static CompassRangEX Get24HillDegree(string HillName, HillType ht = HillType.CHill)
         {
             double baseDegree = 337.5;
+
+            // 1. 根据盘层计算基准偏移
+            if (ht == HillType.SHill)      // 天盘缝针顺偏7.5度
+            {
+                baseDegree += 7.5;
+            }
+            else if (ht == HillType.RHill) // 人盘中针逆偏7.5度
+            {
+                baseDegree -= 7.5;
+            }
 
             int GIndex = CHill.C24HillNames.IndexOf(HillName);
             double degree = baseDegree + GIndex * CHillDegree;
@@ -201,6 +220,12 @@ namespace CompassEx
             CompassRangEX range = new CompassRangEX(fStart, fEnd);
             return range;
         }
+
+
+
+
+
+
 
         /// <summary>
         /// 根据当前罗盘指向的度数，计算并获取对应的先天八卦单卦对象。

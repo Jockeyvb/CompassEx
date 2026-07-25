@@ -14,9 +14,68 @@ using CompassEx.Comm;
 using CompassEx.Gua;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CompassEx
 {
+
+    /// <summary>
+    /// 表示风水罗盘上的二十四山盘层类型。
+    /// </summary>
+    /// <remarks>
+    /// <para>
+    /// 本枚举采用位标记（Bitwise Flags）设计，支持使用按位或（OR）运算符进行多盘层的组合与判定。
+    /// </para>
+    /// <para>
+    /// 三盘（地盘、天盘、人盘）在罗盘上呈同心圆错位排列，各自对齐不同的磁针方位，并应用于不同的风水堪舆范畴（如立向、消砂、纳水）。
+    /// </para>
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// // 检查是否包含地盘或天盘
+    /// HillType activePlates = HillType.CHill | HillType.SHill;
+    /// if ((activePlates &amp; HillType.CHill) != 0) { /* 执行地盘逻辑 */ }
+    /// </code>
+    /// </example>
+    [Flags]
+    [Description("罗盘二十四山盘层类型")]
+    public enum HillType : byte
+    {
+        /// <summary>
+        /// 未指定或无效的盘层。
+        /// </summary>
+        [Description("无")]
+        None = 0,
+
+        /// <summary>
+        /// 地盘正针二十四山。
+        /// </summary>
+        /// <remarks>
+        /// 以正南北（磁针指向）为方位基准。主要用于测量山脉来龙走向（格龙）以及决定建筑物的坐向（立向），主掌内堂气场与乘气。
+        /// </remarks>
+        [Description("地盘二十四山")]
+        CHill = 1,
+
+        /// <summary>
+        /// 天盘缝针二十四山。
+        /// </summary>
+        /// <remarks>
+        /// 方位较地盘正针顺时针（向右）偏转 7.5 度。主要用于观看与测量水口、河流、道路等动态流水的来去方位（纳水），主掌财禄与富贵。
+        /// </remarks>
+        [Description("天盘二十四山")]
+        SHill = 2,
+
+        /// <summary>
+        /// 人盘中针二十四山。
+        /// </summary>
+        /// <remarks>
+        /// 方位较地盘正针逆时针（向左）偏转 7.5 度。主要用于测量周围静态山峰、高大建筑物（砂）的方位与五行生克（消砂），主掌人丁、健康与贵人。
+        /// </remarks>
+        [Description("人盘二十四山")]
+        RHill = 4
+    }
+
+
     /// <summary>
     /// 表示罗盘的二十四山及其相关属性与推演方法的实体类。
     /// </summary>
@@ -58,8 +117,10 @@ namespace CompassEx
         /// 这里的阴阳判定基于二十四山净阴净阳理论。
         /// </remarks>
         public bool IsSun { get { return C24HillSunNames.IndexOf(this.Name) > -1; } }
-
-
+        /// <summary>
+        /// 24山类型   
+        /// </summary>
+        public HillType hillType { get; private set; } = HillType.CHill;
 
         /// <summary>
         /// 获取或设置当前二十四山对象的具体名称（如“壬”、“子”等）。
@@ -77,10 +138,10 @@ namespace CompassEx
         /// </value>
         /// <remarks>
         /// <para><b>计算依据：</b></para>
-        /// <para>该属性为只读属性，其内部会直接通过调用 <see cref="CompassEx.Get24HillDegree(string)"/> 方法，传入当前实例的 <see cref="Name"/> 实时计算得出。</para>
+        /// <para>该属性为只读属性，其内部会直接通过调用 <see cref="CompassEx.Get24HillDegree(string,HillType)"/> 方法，传入当前实例的 <see cref="Name"/> 实时计算得出。</para>
         /// <para>例如：当 <see cref="Name"/> 为“壬”时，返回的度数区间范围即为 <c>337.5 ~ 352.5</c> 度。</para>
         /// </remarks>
-        public CompassRangEX CRangeDegree { get { return CompassEx.Get24HillDegree(this.Name); } }
+        public CompassRangEX CRangeDegree { get { return CompassEx.Get24HillDegree(this.Name, this.hillType); } }
 
         #endregion
 
@@ -90,11 +151,17 @@ namespace CompassEx
         /// <summary>
         /// 基于指定的山名初始化 <see cref="CHill"/> 类的新实例。
         /// </summary>
-        /// <param name="sName">要创建的二十四山名称（如“壬”、“子”等）。</param>
+        /// <param name="sName">要创建的二十四山名称（如“壬”、“子”、“癸”等）。</param>
+        /// <param name="ht">当前山头所属的盘层类型。默认值为 <see cref="HillType.CHill"/>（地盘）。</param>
         /// <remarks>
+        /// <para>
         /// 内部机制会先通过名称在 <see cref="C24HillNames"/> 数组中检索其对应的整型索引，随后将其隐式链式传递给带索引参数的构造函数。
+        /// </para>
+        /// <para>
+        /// <b>注意：</b>如果传入的 <paramref name="sName"/> 在数组中不存在，检索索引将为 <c>-1</c>，此时会链式触发 <see cref="ArgumentOutOfRangeException"/> 异常。
+        /// </para>
         /// </remarks>
-        public CHill(string sName) : this(C24HillNames.IndexOf(sName))
+        public CHill(string sName, HillType ht = HillType.CHill) : this(C24HillNames.IndexOf(sName), ht)
         {
         }
 
@@ -102,18 +169,46 @@ namespace CompassEx
         /// 基于二十四山序列中的整型索引初始化 <see cref="CHill"/> 类的新实例。
         /// </summary>
         /// <param name="iIndex">二十四山在序列中的索引，有效取值范围为 <c>0 ~ 23</c>。</param>
+        /// <param name="ht">当前山头所属的盘层类型。默认值为 <see cref="HillType.CHill"/>（地盘）。</param>
         /// <exception cref="ArgumentOutOfRangeException">当传入的索引小于 0 或大于等于 24 时抛出此异常。</exception>
-        public CHill(int iIndex)
+        public CHill(int iIndex, HillType ht = HillType.CHill)
         {
             if (iIndex < 0 || iIndex >= C24HillNames.Length)
-                throw new ArgumentOutOfRangeException("iIndex", "索引必须在0到23之间");
+                throw new ArgumentOutOfRangeException(nameof(iIndex), "索引必须在0到23之间");
+
             this.Name = C24HillNames[iIndex];
+            this.hillType = ht;
         }
 
         #endregion
 
 
+
         #region 方法
+
+        /// <summary>
+        /// 获取二十四山方位对应的角度范围。
+        /// </summary>
+        /// <remarks>
+        /// <para>二十四山是风水学与中国传统历法中用于标示方位的重要概念，将圆周 360 度等分为 24 个扇区，每个扇区占 15 度。</para>
+        /// <para>本方法通过传入山名和类型，返回对应的 <see cref="CompassRangEX"/> 角度范围对象。</para>
+        /// </remarks>
+        /// <param name="HillName">二十四山的名称（例如："子"、"午"、"卯"、"酉"、"乾"、"巽"、"艮"、"坤" 等）。</param>
+        /// <param name="ht">山向类型，默认为中国传统二十四山（<see cref="HillType.CHill"/>）。</param>
+        /// <returns>返回包含起始角度、终止角度及中心角度的 <see cref="CompassRangEX"/> 方位范围对象。</returns>
+        /// <exception cref="System.ArgumentNullException">当 <paramref name="HillName"/> 为 null 或空字符串时抛出。</exception>
+        /// <example>
+        /// <code>
+        /// // 示例：获取传统中国二十四山中“子”山的角度范围
+        /// CompassRangEX range = CompassEx.Get24HillDegree("子");
+        /// Console.WriteLine($"子山范围：{range.StartDegree}° 至 {range.EndDegree}°");
+        /// </code>
+        /// </example>
+        public static CompassRangEX Get24HillDegree(string HillName, HillType ht = HillType.CHill)
+        {
+            return CompassEx.Get24HillDegree(HillName, ht);
+        }
+
 
         /// <summary>
         /// 动态计算并获取地盘正针本山所对应的后天八卦单卦对象。
@@ -154,22 +249,55 @@ namespace CompassEx
 
 
 
+        /// <summary>
+        /// 确定指定的对象是否等于当前 <see cref="CHill"/> 实例。
+        /// </summary>
+        /// <param name="obj">要与当前实例进行比较的对象。</param>
+        /// <returns>如果指定的对象等于当前实例，则为 <c>true</c>；否则为 <c>false</c>。</returns>
         public override bool Equals(object obj)
         {
-            if (obj == null) return false;
-            // 强制转换为接口类型去调用，这样就能精准找到你下面写的方法，打破死循环！
-            return ((IEquatable<CHill>)this).Equals(obj as CHill);
-        }
-        // 新增哈希方法，参与相等判断的字段全部组合计算
-        public override int GetHashCode()
-        {
-            return Name != null ? Name.GetHashCode() : 0;
+            // 使用 C# 7.0 模式匹配，同时进行 null 检查和类型转换，更优雅高效
+            if (obj is CHill other)
+            {
+                return ((IEquatable<CHill>)this).Equals(other);
+            }
+            return false;
         }
 
+        /// <summary>
+        /// 返回当前 <see cref="CHill"/> 实例的哈希代码。
+        /// </summary>
+        /// <returns>当前实例的 32 位有符号整数哈希代码。</returns>
+        /// <remarks>
+        /// 算法遵循乘法哈希机制（非对称质数相乘），将参与相等性判定的 <see cref="Name"/> 和 <see cref="hillType"/> 字段进行组合计算，
+        /// 以确保在散列表（如 <see cref="System.Collections.Generic.Dictionary{TKey, TValue}"/>）中具备优秀的分布均匀性。
+        /// </remarks>
+        public override int GetHashCode()
+        {
+            // 分配初始质数（种子值）
+            int hash = 17;
+
+            // 阶梯式引入所有参与 Equals 判定的字段，乘以另一个质数（如 23 或 31）防止哈希碰撞
+            unchecked // 允许整型溢出，不触发异常
+            {
+                hash = (hash * 23) + (Name != null ? Name.GetHashCode() : 0);
+                hash = (hash * 23) + hillType.GetHashCode();
+            }
+
+            return hash;
+        }
+
+        /// <summary>
+        /// 指示当前 <see cref="CHill"/> 实例是否等于同类型的另一个实例。
+        /// </summary>
+        /// <param name="other">要与当前实例进行比较的另一个 <see cref="CHill"/> 实例。</param>
+        /// <returns>如果两个实例的名称和盘层类型完全相同，则为 <c>true</c>；否则为 <c>false</c>。</returns>
         bool IEquatable<CHill>.Equals(CHill other)
         {
             if (other == null) return false;
-            return other.Name == this.Name;
+
+            // 核心判定：只有山头名称且所属盘层类型完全一致，才视为同一个对象
+            return this.Name == other.Name && this.hillType == other.hillType;
         }
         #endregion
     }

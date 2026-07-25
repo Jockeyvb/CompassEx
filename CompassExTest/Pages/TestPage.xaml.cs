@@ -370,9 +370,9 @@ public partial class TestPage : INotifyPropertyChanged
             HeadingText = info;
 
             CompassRangEX cr = new CompassRangEX(panelDegree, panelDegree);
-            List<CompassObjType> ls = cr.GetCompassObjByDegree();
+            List<CompassObjStru> ls = cr.GetCompassObjByDegree();
             string st = "";
-            ls.ForEach(co =>
+            ls.OrderBy(ot => ot.CObjType).ToList().ForEach(co =>
             {
                 st += co.ObjTypeCNName + ",名称：" + co.Name + "，角度范围：" + co.CRDegree.Start.ToString("F1") + "-" + co.CRDegree.End.ToString("F1") + "°\n";
             });
@@ -422,7 +422,7 @@ public partial class TestPage : INotifyPropertyChanged
     protected override void OnParentSet()
     {
 #if WINDOWS
- InnerSquareGrid.WidthRequest = 1000;
+ InnerSquareGrid.WidthRequest = double.NaN;
         SkiaCompassView.HandlerChanged += (sender, e) =>
         {
             if (SkiaCompassView.Handler?.PlatformView is Microsoft.UI.Xaml.FrameworkElement winView)
@@ -529,6 +529,7 @@ private void WinView_PointerWheelChanged(object sender, Microsoft.UI.Xaml.Input.
         HeadingText = $"{tDegree.Text:F1}° {GetDirectionText(dDegree)}";
 
     }
+
 #if WINDOWS
     // 告诉 C# 怎么调用 Windows 系统的窗口管理控制
     [System.Runtime.InteropServices.DllImport("user32.dll")]

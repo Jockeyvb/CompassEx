@@ -126,73 +126,133 @@ namespace CompassEx.Comm
         }
 
 
-        /// <summary>
-        /// 获取完全落入并覆盖当前度数区间内的所有罗盘关联对象集合（包含先天八卦、后天八卦、正针二十四山、天盘先天 64 卦以及地盘后天 64 卦）。
-        /// </summary>
-        /// <returns>
-        /// 返回一个包含 <see cref="CompassObjType"/> 封装对象的 <see cref="List{T}"/> 列表。
-        /// 每个元素代表一个成功匹配的罗盘层级方位实体。
-        /// </returns>
         /// <remarks>
-        /// <para><b>算法原理：</b></para>
-        /// <para>该方法通过遍历基础元数据，检查各方位的几何度数区间是否将当前度数范围（从 <c>Start</c> 到 <c>End</c>）完全包含在内。</para>
-        /// <para><b>⚠️ 浮点数边界容差设计：</b></para>
-        /// <para>由于计算机浮点数运算存在微小误差，且相邻山、卦之间的交界处度数完全重合。为了确保范围判定的精准性，方法在校验结束边界时，对结束度数执行了减去 <c>0.1</c> 度的容差修正（即 <c>this.End - 0.1</c>）。这样可以有效防止因临界值粘连导致误判或多抓取相邻方位对象的问题。</para>
+        /// <para><b>一、 空间反向包含检索原理：</b></para>
+        /// <para>
+        /// 该方法属于反向地理坐标拾取逻辑。它通过遍历各层级的基础元数据（如八卦、二十四山、六十四卦），
+        /// 调用其度数范围对象的 <c>IsInRange</c> 方法，验证当前类所代表的度数范围起点（<c>this.Start</c>）与终点（<c>this.End</c>）
+        /// 是否被该山头、卦位或八卦方位的几何区间<b>完全包裹并包含</b>。
+        /// </para>
+        /// <para><b>二 ==========================================</b></para>
+        /// <para><b>⚠️ 浮点数边界容差设计（扣度原理）：</b></para>
+        /// <para>
+        /// 由于计算机浮点数（<c>double</c>）运算存在微小的精度截断误差，且罗盘上相邻两个方位实体之间的临界度数是完全重合、相互粘连的
+        /// （例如地盘正针子山的结束边界为 <c>7.5</c> 度，而癸山的起始边界同样为 <c>7.5</c> 度）。
+        /// </para>
+        /// <para>
+        /// 为了在进行全区间覆盖判定时，防止临界值因精度溢出而导致系统误判，或错误地多抓取到相邻的下一个方位对象，
+        /// 本算法在校验结束边界时，对传入的结束度数执行了减去 <c>0.1</c> 度的安全容差修正（即 <c>this.End - 0.1</c>）。
+        /// 这样能确保检索结果在空间物理排布上的唯一性与精准度。
+        /// </para>
+        /// <para><b>三 ==========================================</b></para>
+        /// <para><b>三元玄空大卦术语规范备注：</b></para>
+        /// <para>
+        /// 遵循三元玄空大卦派“体用分离”与宋代邵雍《伏羲先天六十四卦方圆图》的排布法则，罗盘大卦圈层其本底均由先天八卦理气数理推演而来。
+        /// 在本方法的映射体系中：
+        /// </para>
+        /// <list type="bullet">
+        /// <item><description><see cref="CompassObjType.BeforeGua"/> 对应并检索的是<b>天盘六十四卦（先天大卦圆图）</b>，在罗盘上主理气纳水与抽爻换象。</description></item>
+        /// <item><description><see cref="CompassObjType.AfterGua"/> 对应并检索的是<b>地盘六十四卦（先天大卦方图）</b>，在罗盘上常用于对照辨析交媾理气。</description></item>
+        /// </list>
         /// </remarks>
-        public List<CompassObjType> GetCompassObjByDegree()
+        public List<CompassObjStru> GetCompassObjByDegree(CompassObjType ot = CompassObjType.All)
         {
-            List<CompassObjType> ls = new List<CompassObjType>();
+            List<CompassObjStru> ls = new List<CompassObjStru>();
 
-            // 1. 推演八卦层级（先天八卦 / 后天八卦）
-            foreach (string sN in GuaSubClass.BeforeGuaSubNames)
+            if (ot.HasFlag(CompassObjType.BeforeGuaSub) || ot.HasFlag(CompassObjType.AfterGuaSub))
             {
-                GuaSubClass gs = new GuaSubClass(sN);
-                if (gs != null)
+
+                // 1. 推演八卦层级（先天八卦 / 后天八卦）
+                foreach (string sN in GuaSubClass.BeforeGuaSubNames)
                 {
-                    // 判定并提取先天八卦
-                    if (gs.CBeforRangeDegree.IsInRange(this.Start) && gs.CBeforRangeDegree.IsInRange(this.End - 0.1))
+                    GuaSubClass gs = new GuaSubClass(sN);
+                    if (gs != null)
                     {
-                        ls.Add(new CompassObjType { ObjTypeCNName = "先天八卦", CRDegree = gs.CBeforRangeDegree, ObjType = gs.GetType(), Obj = gs, Name = gs.Name });
-                    }
-                    // 判定并提取后天八卦
-                    if (gs.CAfterRangeDegree.IsInRange(this.Start) && gs.CAfterRangeDegree.IsInRange(this.End - 0.1))
-                    {
-                        ls.Add(new CompassObjType { ObjTypeCNName = "后天八卦", CRDegree = gs.CAfterRangeDegree, ObjType = gs.GetType(), Obj = gs, Name = gs.Name });
+                        if (ot.HasFlag(CompassObjType.BeforeGuaSub))
+                        {
+                            // 判定并提取先天八卦
+                            if (gs.CBeforRangeDegree.IsInRange(this.Start) && gs.CBeforRangeDegree.IsInRange(this.End - 0.1))
+                            {
+                                ls.Add(new CompassObjStru { ObjTypeCNName = "先天八卦", CRDegree = gs.CBeforRangeDegree, ObjType = gs.GetType(), Obj = gs, Name = gs.Name, CObjType = CompassObjType.BeforeGuaSub });
+                            }
+                        }
+                        if (ot.HasFlag(CompassObjType.AfterGuaSub))
+                        {
+                            // 判定并提取后天八卦
+                            if (gs.CAfterRangeDegree.IsInRange(this.Start) && gs.CAfterRangeDegree.IsInRange(this.End - 0.1))
+                            {
+                                ls.Add(new CompassObjStru { ObjTypeCNName = "后天八卦", CRDegree = gs.CAfterRangeDegree, ObjType = gs.GetType(), Obj = gs, Name = gs.Name, CObjType = CompassObjType.AfterGuaSub });
+                            }
+                        }
                     }
                 }
             }
 
-            // 2. 推演正针二十四山层级
-            foreach (string sN in CHill.C24HillNames)
+            if (ot.HasFlag(CompassObjType.CHill) || ot.HasFlag(CompassObjType.SHill) || ot.HasFlag(CompassObjType.RHill))
             {
-                CHill c = new CHill(sN);
-                if (c != null && c.CRangeDegree.IsInRange(this.Start) && c.CRangeDegree.IsInRange(this.End - 0.1))
+                // 2. 推演二十四山层级
+                foreach (string sN in CHill.C24HillNames)
                 {
-                    ls.Add(new CompassObjType { ObjTypeCNName = "正针24山", CRDegree = c.CRangeDegree, ObjType = c.GetType(), Obj = c, Name = c.Name });
+                    if (ot.HasFlag(CompassObjType.CHill))
+                    {
+                        //地盘二十四山层级
+                        CHill c = new CHill(sN);
+                        if (c != null && c.CRangeDegree.IsInRange(this.Start) && c.CRangeDegree.IsInRange(this.End - 0.1))
+                        {
+                            ls.Add(new CompassObjStru { ObjTypeCNName = "地盘二十四山", CRDegree = c.CRangeDegree, ObjType = c.GetType(), Obj = c, Name = c.Name, CObjType = CompassObjType.CHill });
+                        }
+                    }
+                    if (ot.HasFlag(CompassObjType.RHill))
+                    {
+                        //人盘二十四山层级
+                        CHill c = new CHill(sN, HillType.RHill);
+                        if (c != null && c.CRangeDegree.IsInRange(this.Start) && c.CRangeDegree.IsInRange(this.End - 0.1))
+                        {
+                            ls.Add(new CompassObjStru { ObjTypeCNName = "人盘二十四山", CRDegree = c.CRangeDegree, ObjType = c.GetType(), Obj = c, Name = c.Name, CObjType = CompassObjType.RHill });
+                        }
+                    }
+                    if (ot.HasFlag(CompassObjType.SHill))
+                    {
+                        //天盘二十四山层级
+                        CHill c = new CHill(sN, HillType.SHill);
+                        if (c != null && c.CRangeDegree.IsInRange(this.Start) && c.CRangeDegree.IsInRange(this.End - 0.1))
+                        {
+                            ls.Add(new CompassObjStru { ObjTypeCNName = "天盘二十四山", CRDegree = c.CRangeDegree, ObjType = c.GetType(), Obj = c, Name = c.Name, CObjType = CompassObjType.SHill });
+                        }
+                    }
+
                 }
             }
-
-            // 3. 推演六十四卦层级（天盘先天 64 卦 / 地盘后天 64 卦）
-            foreach (string sN in GuaClass.GuaNames)
+            if (ot.HasFlag(CompassObjType.AfterGua) || ot.HasFlag(CompassObjType.BeforeGua))
             {
-                GuaClass g = new GuaClass(sN);
-                if (g != null)
+                // 3. 推演六十四卦层级（天盘六十四卦（圆图）/地盘六十四卦（方图））
+                foreach (string sN in GuaClass.GuaNames)
                 {
-                    // 判定并提取天盘先天 64 卦
-                    if (g.CBeforeRangeDegree.IsInRange(this.Start) && g.CBeforeRangeDegree.IsInRange(this.End - 0.1))
+                    GuaClass g = new GuaClass(sN);
+                    if (g != null)
                     {
-                        ls.Add(new CompassObjType { ObjTypeCNName = "先天64卦", CRDegree = g.CBeforeRangeDegree, ObjType = g.GetType(), Obj = g, Name = g.Name });
-                    }
-                    // 判定并提取地盘后天 64 卦
-                    if (g.CAfterRangeDegree.IsInRange(this.Start) && g.CAfterRangeDegree.IsInRange(this.End - 0.1))
-                    {
-                        ls.Add(new CompassObjType { ObjTypeCNName = "后天64卦", CRDegree = g.CAfterRangeDegree, ObjType = g.GetType(), Obj = g, Name = g.Name });
+                        if (ot.HasFlag(CompassObjType.BeforeGua))//天盘六十四卦（圆图）
+                        {
+                            // 判定并提取地盘先天 64 卦
+                            if (g.CBeforeRangeDegree.IsInRange(this.Start) && g.CBeforeRangeDegree.IsInRange(this.End - 0.1))
+                            {
+                                ls.Add(new CompassObjStru { ObjTypeCNName = "天盘六十四卦", CRDegree = g.CBeforeRangeDegree, ObjType = g.GetType(), Obj = g, Name = g.Name, CObjType = CompassObjType.BeforeGua });
+                            }
+                        }
+                        if (ot.HasFlag(CompassObjType.AfterGua))//地盘六十四卦（方图）
+                        {
+                            // 判定并提取地盘后天 64 卦
+                            if (g.CAfterRangeDegree.IsInRange(this.Start) && g.CAfterRangeDegree.IsInRange(this.End - 0.1))
+                            {
+                                ls.Add(new CompassObjStru { ObjTypeCNName = "地盘六十四卦", CRDegree = g.CAfterRangeDegree, ObjType = g.GetType(), Obj = g, Name = g.Name, CObjType = CompassObjType.AfterGua });
+                            }
+                        }
                     }
                 }
             }
-
             return ls;
         }
+
 
         public override bool Equals(object obj)
         {

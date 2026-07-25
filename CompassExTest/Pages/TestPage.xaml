@@ -7,64 +7,74 @@
              x:Class="CompassExTest.Pages.TestPage">
 
     <!-- 全屏三行布局，强制中间区域吃满除输入框、提示语之外的所有剩余空间 -->
- 
-        <Grid x:Name="InnerSquareGrid" RowDefinitions="Auto, *, Auto" Padding="20"    HorizontalOptions="Fill" VerticalOptions="Fill">
 
-        <!-- 1. 顶部区域：输入框等 -->
-        <VerticalStackLayout Grid.Row="0" Spacing="10" Margin="0,0,0,15">
+    <Grid x:Name="InnerSquareGrid" ColumnDefinitions="20*,80*" Padding="20" HorizontalOptions="Fill" VerticalOptions="Fill">
+
+        <!-- 左侧区域：占 1/4 空间 (25*) -->
+        <!-- 内部使用 VerticalStackLayout 将原顶部的输入框与原底部的提示信息垂直排布 -->
+        <VerticalStackLayout Grid.Column="0" Spacing="15" Margin="0,0,15,0" VerticalOptions="Center">
+
+            <!-- 1. 顶部区域：输入框等 -->
             <Label Text="{Binding HeadingText}" 
-                   FontSize="26" 
-                   FontAttributes="Bold"
-                   TextColor="DarkSlateGray"
-                   HorizontalOptions="Center"/>
-            <Label Text="" x:Name="lblGetCompassObjByDegree" HorizontalOptions="Center"/>
-            <Entry Placeholder="输入度数" Text="180" TextChanged="Entry_TextChanged" x:Name="tDegree" HorizontalOptions="Center" WidthRequest="300" />
-        </VerticalStackLayout>
-
-        <!-- 2. 中间核心：全自动最大化罗盘区域 -->
-        <!-- 给 Border 起个名字叫做 ContainerBorder，让里面的 Grid 有参照物 -->
-            <Border Grid.Row="1"
-        x:Name="ContainerBorder"
-        StrokeShape="RoundRectangle 20" 
-        Stroke="LightGray" 
-        StrokeThickness="1"
-        Padding="10"
-        BackgroundColor="White"
-        HorizontalOptions="Fill"
-        VerticalOptions="Fill">
-
-                <!-- 
-                核心修改：
-                将 Width 和 Height 同时绑定外层 ContainerBorder 的“实际宽度（Width）”。
-                1. 这样打破了自我绑定的死循环，MAUI 布局引擎能明确计算出尺寸。
-                2. 无论是在手机还是电脑上，宽度有多宽，这个 Grid 就会变成多大的正方形，完美显形！
-            -->
-            <Grid WidthRequest="{Binding Source={x:Reference ContainerBorder}, Path=Width}"
-                  HeightRequest="{Binding Source={x:Reference ContainerBorder}, Path=Width}"
-                  HorizontalOptions="Center" 
-                  VerticalOptions="Center">
-
-                    <skia:SKCanvasView x:Name="SkiaCompassView" 
-                   PaintSurface="OnPaintSurface" 
-                   EnableTouchEvents="True" 
-                                 
-                   Touch="OnCanvasTouch" 
-                   HorizontalOptions="Fill" 
-                   InputTransparent="False"
-                   VerticalOptions="Fill">
-                       
-                    </skia:SKCanvasView>
-                </Grid>
-        </Border>
-
-        <!-- 3. 底部区域 -->
-        <Label Grid.Row="2" 
-               Text="💡 提示：用鼠标在圆圈内任意位置点击，盘面会自动旋转对齐" 
-               FontSize="12" 
-               TextColor="Gray" 
-               Margin="0,15,0,0"
+               FontSize="26" 
+               FontAttributes="Bold"
+               TextColor="DarkSlateGray"
                HorizontalOptions="Center"/>
 
+            <Label Text="" x:Name="lblGetCompassObjByDegree" HorizontalOptions="Center"/>
+
+            <!-- 移除固定的 WidthRequest="300"，改用 Fill 自动适应左侧 1/4 宽度 -->
+            <Entry Placeholder="输入度数" 
+               Text="180" 
+               TextChanged="Entry_TextChanged" 
+               x:Name="tDegree" 
+               HorizontalOptions="Fill" />
+
+            <!-- 2. 原底部区域：合并至左侧下方 -->
+            <Label Text="💡 提示：用鼠标在圆圈内任意位置点击，盘面会自动旋转对齐" 
+               FontSize="12" 
+               TextColor="Gray" 
+               LineBreakMode="WordWrap"
+               HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
+
+        <!-- 右侧核心：全自动最大化罗盘区域，占 3/4 空间 (75*) -->
+        <Border Grid.Column="1"
+            x:Name="ContainerBorder"
+            StrokeShape="RoundRectangle 10" 
+            Stroke="LightGray" 
+            StrokeThickness="1"
+            Padding="10"
+            BackgroundColor="White"
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill"  >
+
+            <!-- 
+            这里保留了你精妙的宽高绑定逻辑：
+            在左右分栏下，ContainerBorder 的 Width 会受到右侧空间的限制。
+            内部 Grid 的宽高依然强制等于 Border 的 Width，从而完美呈现一个由右侧容器决定大小的正方形罗盘。
+            WidthRequest="{Binding Source={x:Reference ContainerBorder}, Path=Width}"
+              HeightRequest="{Binding Source={x:Reference ContainerBorder}, Path=Width}"
+        -->
+
+
+
+            <Grid  x:Name="CompassSquareGrid"
+              HorizontalOptions="Fill"  
+              VerticalOptions="Fill">
+     
+                <skia:SKCanvasView x:Name="SkiaCompassView" 
+                               PaintSurface="OnPaintSurface" 
+                               EnableTouchEvents="True" 
+                               Touch="OnCanvasTouch" 
+                               HorizontalOptions="Fill" 
+                               InputTransparent="False"
+                               VerticalOptions="Fill">
+                </skia:SKCanvasView>
+            </Grid>
+        </Border>
+
     </Grid>
- 
+
 </ContentView>

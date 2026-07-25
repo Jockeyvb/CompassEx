@@ -250,7 +250,7 @@ public class CompassSkiaRenderer
         };
         float minSize = Math.Min(CanvasSize.Width, CanvasSize.Height);
 
-        float RoundH = minSize / 15f;
+        float RoundH = minSize / 20;
 
         float LastR = RoundH;//最后半径
         float ysplace = RoundH;//外圈相距
@@ -300,6 +300,7 @@ public class CompassSkiaRenderer
 
             // 文字
             DrawLabel(canvas, dcs, cbGua.Symbol, true);
+
 
 
         }
@@ -366,8 +367,9 @@ public class CompassSkiaRenderer
             {
                 CR = CR,
                 InnerRadius = LastR,
-                AddTextSize = -10,
+                // AddTextSize = -10,
                 ForceColor = CH.IsSun == true ? SKColors.Red : SKColors.Black
+
             };
             dcs.OuterRadius = dcs.InnerRadius + ysplace;
 
@@ -388,6 +390,100 @@ public class CompassSkiaRenderer
 
         }
         //===============================画正针二十四山===========================
+        LastR = LastR + ysplace;
+        //===============================画人盘二十四山===========================
+        foreach (string sn in CHill.C24HillNames)
+        {
+            var CH = new CHill(sn, HillType.RHill);
+
+            var CR = CH.CRangeDegree;
+            if (CH == null) continue;
+
+            float start = (float)CR.Start;
+            float end = (float)CR.End;
+
+            var dcs = new DrawContextStru
+            {
+                CR = CR,
+                InnerRadius = LastR,
+                // AddTextSize = -10,
+                ForceColor = CH.IsSun == true ? SKColors.Red : SKColors.Black
+                    ,
+                BGColor = SKColors.MistyRose
+            };
+            dcs.OuterRadius = dcs.InnerRadius + ysplace;
+
+            // 生成路径（核心修复）
+            SKPath sectorPath = CreateRingSectorPath(cx, cy, dcs.InnerRadius, dcs.OuterRadius, start, end);
+            dcs.Path = sectorPath;
+            GuaSectorCache.Add((sn, sectorPath, CR));
+
+
+            canvas.DrawPath(sectorPath, PathPaint);//画边
+
+            //PathFillP.Color = SKColors.Red.WithAlpha(10);
+            //canvas.DrawPath(sectorPath, PathFillP);//填充
+            if (dcs.BGColor != SKColors.Transparent)
+            {
+
+                PathFillP.Color = dcs.BGColor;
+                canvas.DrawPath(sectorPath, PathFillP);//填充
+            }
+            // 文字
+            DrawLabel(canvas, dcs, sn, false);
+
+
+        }
+        //===============================画人盘二十四山===========================
+
+        LastR = LastR + ysplace;
+        //===============================画天盘二十四山===========================
+        foreach (string sn in CHill.C24HillNames)
+        {
+            var CH = new CHill(sn, HillType.SHill);
+
+            var CR = CH.CRangeDegree;
+            if (CH == null) continue;
+
+            float start = (float)CR.Start;
+            float end = (float)CR.End;
+
+            var dcs = new DrawContextStru
+            {
+                CR = CR,
+                InnerRadius = LastR,
+                //   AddTextSize = -10,
+                ForceColor = CH.IsSun == true ? SKColors.Red : SKColors.Black,
+                BGColor = SKColors.PowderBlue
+            };
+            dcs.OuterRadius = dcs.InnerRadius + ysplace;
+
+            // 生成路径（核心修复）
+            SKPath sectorPath = CreateRingSectorPath(cx, cy, dcs.InnerRadius, dcs.OuterRadius, start, end);
+            dcs.Path = sectorPath;
+            GuaSectorCache.Add((sn, sectorPath, CR));
+
+
+            canvas.DrawPath(sectorPath, PathPaint);//画边
+
+            //PathFillP.Color = SKColors.Red.WithAlpha(10);
+            //canvas.DrawPath(sectorPath, PathFillP);//填充
+            if (dcs.BGColor != SKColors.Transparent)
+            {
+
+                PathFillP.Color = dcs.BGColor;
+                canvas.DrawPath(sectorPath, PathFillP);//填充
+            }
+            // 文字
+            DrawLabel(canvas, dcs, sn, false);
+
+
+        }
+        //===============================画天盘二十四山===========================
+
+
+
+
 
         LastR = LastR + ysplace;
         //===============================画地盘六十四卦(后天)===========================
@@ -406,7 +502,8 @@ public class CompassSkiaRenderer
             {
                 CR = CR,
                 InnerRadius = LastR,
-                AddTextSize = G.Name.Length > 1 ? -10 : -20,
+
+                AddTextSize = G.Name.Length > 1 ? -5 : -10,
 
             };
             dcs.OuterRadius = dcs.InnerRadius + ysplace;
@@ -463,7 +560,7 @@ public class CompassSkiaRenderer
             {
                 CR = CR,
                 InnerRadius = LastR,
-                AddTextSize = G.Name.Length > 1 ? -10 : -20,
+                AddTextSize = G.Name.Length > 1 ? -5 : -10,
 
             };
             if (G.GuaFate == "一")
