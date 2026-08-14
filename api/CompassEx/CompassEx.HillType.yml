@@ -1,0 +1,318 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.HillType
+  commentId: T:CompassEx.HillType
+  id: HillType
+  parent: CompassEx
+  children:
+  - CompassEx.HillType.CHill
+  - CompassEx.HillType.None
+  - CompassEx.HillType.RHill
+  - CompassEx.HillType.SHill
+  langs:
+  - csharp
+  - vb
+  name: HillType
+  nameWithType: HillType
+  fullName: CompassEx.HillType
+  type: Enum
+  source:
+    remote:
+      path: CompassEx/CHill.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: HillType
+    path: CompassEx/CHill.cs
+    startLine: 39
+  assemblies:
+  - CompassEx
+  namespace: CompassEx
+  summary: 表示风水罗盘上的二十四山盘层类型。
+  remarks: >-
+    <p>
+
+    本枚举采用位标记（Bitwise Flags）设计，支持使用按位或（OR）运算符进行多盘层的组合与判定。
+
+    </p>
+
+    <p>
+
+    三盘（地盘、天盘、人盘）在罗盘上呈同心圆错位排列，各自对齐不同的磁针方位，并应用于不同的风水堪舆范畴（如立向、消砂、纳水）。
+
+    </p>
+  example:
+  - >-
+    <pre><code class="lang-csharp">// 检查是否包含地盘或天盘
+
+    HillType activePlates = HillType.CHill | HillType.SHill;
+
+    if ((activePlates &amp; HillType.CHill) != 0) { /* 执行地盘逻辑 */ }</code></pre>
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum HillType : byte
+    content.vb: >-
+      <Flags>
+
+      Public Enum HillType As Byte
+  extensionMethods:
+  - CompassEx.HillType.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: CompassEx.HillType.None
+  commentId: F:CompassEx.HillType.None
+  id: None
+  parent: CompassEx.HillType
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: HillType.None
+  fullName: CompassEx.HillType.None
+  type: Field
+  source:
+    remote:
+      path: CompassEx/CHill.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: None
+    path: CompassEx/CHill.cs
+    startLine: 46
+  assemblies:
+  - CompassEx
+  namespace: CompassEx
+  summary: 未指定或无效的盘层。
+  example: []
+  syntax:
+    content: None = 0
+    return:
+      type: CompassEx.HillType
+- uid: CompassEx.HillType.CHill
+  commentId: F:CompassEx.HillType.CHill
+  id: CHill
+  parent: CompassEx.HillType
+  langs:
+  - csharp
+  - vb
+  name: CHill
+  nameWithType: HillType.CHill
+  fullName: CompassEx.HillType.CHill
+  type: Field
+  source:
+    remote:
+      path: CompassEx/CHill.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: CHill
+    path: CompassEx/CHill.cs
+    startLine: 55
+  assemblies:
+  - CompassEx
+  namespace: CompassEx
+  summary: 地盘正针二十四山。
+  remarks: 以正南北（磁针指向）为方位基准。主要用于测量山脉来龙走向（格龙）以及决定建筑物的坐向（立向），主掌内堂气场与乘气。
+  example: []
+  syntax:
+    content: CHill = 1
+    return:
+      type: CompassEx.HillType
+- uid: CompassEx.HillType.SHill
+  commentId: F:CompassEx.HillType.SHill
+  id: SHill
+  parent: CompassEx.HillType
+  langs:
+  - csharp
+  - vb
+  name: SHill
+  nameWithType: HillType.SHill
+  fullName: CompassEx.HillType.SHill
+  type: Field
+  source:
+    remote:
+      path: CompassEx/CHill.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SHill
+    path: CompassEx/CHill.cs
+    startLine: 64
+  assemblies:
+  - CompassEx
+  namespace: CompassEx
+  summary: 天盘缝针二十四山。
+  remarks: 方位较地盘正针顺时针（向右）偏转 7.5 度。主要用于观看与测量水口、河流、道路等动态流水的来去方位（纳水），主掌财禄与富贵。
+  example: []
+  syntax:
+    content: SHill = 2
+    return:
+      type: CompassEx.HillType
+- uid: CompassEx.HillType.RHill
+  commentId: F:CompassEx.HillType.RHill
+  id: RHill
+  parent: CompassEx.HillType
+  langs:
+  - csharp
+  - vb
+  name: RHill
+  nameWithType: HillType.RHill
+  fullName: CompassEx.HillType.RHill
+  type: Field
+  source:
+    remote:
+      path: CompassEx/CHill.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: RHill
+    path: CompassEx/CHill.cs
+    startLine: 73
+  assemblies:
+  - CompassEx
+  namespace: CompassEx
+  summary: 人盘中针二十四山。
+  remarks: 方位较地盘正针逆时针（向左）偏转 7.5 度。主要用于测量周围静态山峰、高大建筑物（砂）的方位与五行生克（消砂），主掌人丁、健康与贵人。
+  example: []
+  syntax:
+    content: RHill = 4
+    return:
+      type: CompassEx.HillType
+references:
+- uid: CompassEx
+  commentId: N:CompassEx
+  href: CompassEx.html
+  name: CompassEx
+  nameWithType: CompassEx
+  fullName: CompassEx
+- uid: CompassEx.HillType.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<HillType, TBase>(HillType, TBase)
+  nameWithType: Comm.ApplyBaseProperties<HillType, TBase>(HillType, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.HillType, TBase>(CompassEx.HillType, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of HillType, TBase)(HillType, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.HillType, TBase)(CompassEx.HillType, TBase)
+  name.vb: ApplyBaseProperties(Of HillType, TBase)(HillType, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.HillType,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.HillType
+    name: HillType
+    href: CompassEx.HillType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.HillType
+    name: HillType
+    href: CompassEx.HillType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.HillType,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.HillType
+    name: HillType
+    href: CompassEx.HillType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.HillType
+    name: HillType
+    href: CompassEx.HillType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: CompassEx.HillType
+  commentId: T:CompassEx.HillType
+  parent: CompassEx
+  href: CompassEx.HillType.html
+  name: HillType
+  nameWithType: HillType
+  fullName: CompassEx.HillType

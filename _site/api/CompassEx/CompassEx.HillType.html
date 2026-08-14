@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>HillType 枚举
+ | 罗盘算法类库 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="HillType 枚举
+ | 罗盘算法类库 ">
+      
+      <meta name="description" content="表示风水罗盘上的二十四山盘层类型。">
+      <link rel="icon" href="../../Images/logo.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Jockeyvb/CompassEx/new/master/apiSpec/new?filename=CompassEx_HillType.md&amp;value=---%0Auid%3A%20CompassEx.HillType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="本文内容">
+      <meta name="loc:searchResultsCount" content="找到{count}个“{query}”的搜索结果">
+      <meta name="loc:searchNoResults" content="没有找到“{query}”的搜索结果">
+      <meta name="loc:tocFilter" content="按标题筛选">
+      <meta name="loc:nextArticle" content="下一篇">
+      <meta name="loc:prevArticle" content="上一篇">
+      <meta name="loc:themeLight" content="白天">
+      <meta name="loc:themeDark" content="夜晚">
+      <meta name="loc:themeAuto" content="自动">
+      <meta name="loc:changeTheme" content="切换主题">
+      <meta name="loc:copy" content="复制">
+      <meta name="loc:downloadPdf" content="下载 PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../Images/logo.png" alt="CompassEx">
+            CompassEx
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="CompassEx.HillType">
+
+
+
+
+  <h1 id="CompassEx_HillType" data-uid="CompassEx.HillType" class="text-break">
+HillType 枚举
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>命名空间</dt><dd><a class="xref" href="CompassEx.html">CompassEx</a></dd></dl>
+  <dl><dt>程序集</dt><dd>CompassEx.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>表示风水罗盘上的二十四山盘层类型。</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Flags]
+public enum HillType : byte</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+  <dl class="typelist extensionMethods">
+    <dt>扩展方法</dt>
+    <dd>
+  <div>
+      <a class="xref" href="CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_">Comm.ApplyBaseProperties&lt;TChild, TBase&gt;(TChild, TBase)</a>
+  </div>
+  </dd></dl>
+
+  <h2 id="fields">字段
+</h2>
+  <dl class="parameters">
+    <dt id="CompassEx_HillType_CHill"><code>CHill = 1</code></dt>
+  <dd><p>地盘正针二十四山。</p>
+<p>以正南北（磁针指向）为方位基准。主要用于测量山脉来龙走向（格龙）以及决定建筑物的坐向（立向），主掌内堂气场与乘气。</p>
+</dd>
+  
+    <dt id="CompassEx_HillType_None"><code>None = 0</code></dt>
+  
+  <dd><p>未指定或无效的盘层。</p>
+</dd>
+    <dt id="CompassEx_HillType_RHill"><code>RHill = 4</code></dt>
+  <dd><p>人盘中针二十四山。</p>
+<p>方位较地盘正针逆时针（向左）偏转 7.5 度。主要用于测量周围静态山峰、高大建筑物（砂）的方位与五行生克（消砂），主掌人丁、健康与贵人。</p>
+</dd>
+  
+    <dt id="CompassEx_HillType_SHill"><code>SHill = 2</code></dt>
+  <dd><p>天盘缝针二十四山。</p>
+<p>方位较地盘正针顺时针（向右）偏转 7.5 度。主要用于观看与测量水口、河流、道路等动态流水的来去方位（纳水），主掌财禄与富贵。</p>
+</dd>
+  
+  </dl>
+
+  <h2 id="CompassEx_HillType_examples">示例</h2>
+  <pre><code class="lang-csharp">// 检查是否包含地盘或天盘
+HillType activePlates = HillType.CHill | HillType.SHill;
+if ((activePlates &amp; HillType.CHill) != 0) { /* 执行地盘逻辑 */ }</code></pre>
+
+
+  <h2 id="CompassEx_HillType_remarks">备注</h2>
+  <div class="markdown level0 remarks"><p>
+本枚举采用位标记（Bitwise Flags）设计，支持使用按位或（OR）运算符进行多盘层的组合与判定。
+</p>
+<p>
+三盘（地盘、天盘、人盘）在罗盘上呈同心圆错位排列，各自对齐不同的磁针方位，并应用于不同的风水堪舆范畴（如立向、消砂、纳水）。
+</p>
+</div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L40" class="edit-link">编辑本文</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

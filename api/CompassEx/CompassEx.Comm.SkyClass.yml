@@ -7,7 +7,9 @@ items:
   children:
   - CompassEx.Comm.SkyClass.#ctor(System.Int32)
   - CompassEx.Comm.SkyClass.#ctor(System.String)
+  - CompassEx.Comm.SkyClass.Equals(System.Object)
   - CompassEx.Comm.SkyClass.FiveAttr
+  - CompassEx.Comm.SkyClass.GetHashCode
   - CompassEx.Comm.SkyClass.GetSkyClass(System.Int32)
   - CompassEx.Comm.SkyClass.GetSkyClass(System.String)
   - CompassEx.Comm.SkyClass.Index
@@ -15,6 +17,8 @@ items:
   - CompassEx.Comm.SkyClass.Name
   - CompassEx.Comm.SkyClass.SkyNames
   - CompassEx.Comm.SkyClass.ToString
+  - CompassEx.Comm.SkyClass.op_Equality(CompassEx.Comm.SkyClass,CompassEx.Comm.SkyClass)
+  - CompassEx.Comm.SkyClass.op_Inequality(CompassEx.Comm.SkyClass,CompassEx.Comm.SkyClass)
   langs:
   - csharp
   - vb
@@ -36,14 +40,14 @@ items:
   summary: 天干类
   example: []
   syntax:
-    content: public class SkyClass
-    content.vb: Public Class SkyClass
+    content: 'public class SkyClass : IEquatable<SkyClass>'
+    content.vb: Public Class SkyClass Implements IEquatable(Of SkyClass)
   inheritance:
   - System.Object
+  implements:
+  - System.IEquatable{CompassEx.Comm.SkyClass}
   inheritedMembers:
-  - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
@@ -404,6 +408,144 @@ items:
   nameWithType.vb: SkyClass.GetSkyClass(Integer)
   fullName.vb: CompassEx.Comm.SkyClass.GetSkyClass(Integer)
   name.vb: GetSkyClass(Integer)
+- uid: CompassEx.Comm.SkyClass.Equals(System.Object)
+  commentId: M:CompassEx.Comm.SkyClass.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: CompassEx.Comm.SkyClass
+  langs:
+  - csharp
+  - vb
+  name: Equals(object)
+  nameWithType: SkyClass.Equals(object)
+  fullName: CompassEx.Comm.SkyClass.Equals(object)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/SkyClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Equals
+    path: CompassEx/Comm/SkyClass.cs
+    startLine: 173
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: CompassEx.Comm.SkyClass.Equals*
+  nameWithType.vb: SkyClass.Equals(Object)
+  fullName.vb: CompassEx.Comm.SkyClass.Equals(Object)
+  name.vb: Equals(Object)
+- uid: CompassEx.Comm.SkyClass.GetHashCode
+  commentId: M:CompassEx.Comm.SkyClass.GetHashCode
+  id: GetHashCode
+  parent: CompassEx.Comm.SkyClass
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: SkyClass.GetHashCode()
+  fullName: CompassEx.Comm.SkyClass.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/SkyClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetHashCode
+    path: CompassEx/Comm/SkyClass.cs
+    startLine: 190
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.Object.GetHashCode
+  overload: CompassEx.Comm.SkyClass.GetHashCode*
+- uid: CompassEx.Comm.SkyClass.op_Equality(CompassEx.Comm.SkyClass,CompassEx.Comm.SkyClass)
+  commentId: M:CompassEx.Comm.SkyClass.op_Equality(CompassEx.Comm.SkyClass,CompassEx.Comm.SkyClass)
+  id: op_Equality(CompassEx.Comm.SkyClass,CompassEx.Comm.SkyClass)
+  parent: CompassEx.Comm.SkyClass
+  langs:
+  - csharp
+  - vb
+  name: operator ==(SkyClass, SkyClass)
+  nameWithType: SkyClass.operator ==(SkyClass, SkyClass)
+  fullName: CompassEx.Comm.SkyClass.operator ==(CompassEx.Comm.SkyClass, CompassEx.Comm.SkyClass)
+  type: Operator
+  source:
+    remote:
+      path: CompassEx/Comm/SkyClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: op_Equality
+    path: CompassEx/Comm/SkyClass.cs
+    startLine: 197
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  syntax:
+    content: public static bool operator ==(SkyClass left, SkyClass right)
+    parameters:
+    - id: left
+      type: CompassEx.Comm.SkyClass
+    - id: right
+      type: CompassEx.Comm.SkyClass
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As SkyClass, right As SkyClass) As Boolean
+  overload: CompassEx.Comm.SkyClass.op_Equality*
+  nameWithType.vb: SkyClass.=(SkyClass, SkyClass)
+  fullName.vb: CompassEx.Comm.SkyClass.=(CompassEx.Comm.SkyClass, CompassEx.Comm.SkyClass)
+  name.vb: =(SkyClass, SkyClass)
+- uid: CompassEx.Comm.SkyClass.op_Inequality(CompassEx.Comm.SkyClass,CompassEx.Comm.SkyClass)
+  commentId: M:CompassEx.Comm.SkyClass.op_Inequality(CompassEx.Comm.SkyClass,CompassEx.Comm.SkyClass)
+  id: op_Inequality(CompassEx.Comm.SkyClass,CompassEx.Comm.SkyClass)
+  parent: CompassEx.Comm.SkyClass
+  langs:
+  - csharp
+  - vb
+  name: operator !=(SkyClass, SkyClass)
+  nameWithType: SkyClass.operator !=(SkyClass, SkyClass)
+  fullName: CompassEx.Comm.SkyClass.operator !=(CompassEx.Comm.SkyClass, CompassEx.Comm.SkyClass)
+  type: Operator
+  source:
+    remote:
+      path: CompassEx/Comm/SkyClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: op_Inequality
+    path: CompassEx/Comm/SkyClass.cs
+    startLine: 203
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  syntax:
+    content: public static bool operator !=(SkyClass left, SkyClass right)
+    parameters:
+    - id: left
+      type: CompassEx.Comm.SkyClass
+    - id: right
+      type: CompassEx.Comm.SkyClass
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As SkyClass, right As SkyClass) As Boolean
+  overload: CompassEx.Comm.SkyClass.op_Inequality*
+  nameWithType.vb: SkyClass.<>(SkyClass, SkyClass)
+  fullName.vb: CompassEx.Comm.SkyClass.<>(CompassEx.Comm.SkyClass, CompassEx.Comm.SkyClass)
+  name.vb: <>(SkyClass, SkyClass)
 references:
 - uid: CompassEx.Comm
   commentId: N:CompassEx.Comm
@@ -438,38 +580,38 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  name: Equals(object)
-  nameWithType: object.Equals(object)
-  fullName: object.Equals(object)
-  nameWithType.vb: Object.Equals(Object)
-  fullName.vb: Object.Equals(Object)
-  name.vb: Equals(Object)
+- uid: System.IEquatable{CompassEx.Comm.SkyClass}
+  commentId: T:System.IEquatable{CompassEx.Comm.SkyClass}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<SkyClass>
+  nameWithType: IEquatable<SkyClass>
+  fullName: System.IEquatable<CompassEx.Comm.SkyClass>
+  nameWithType.vb: IEquatable(Of SkyClass)
+  fullName.vb: System.IEquatable(Of CompassEx.Comm.SkyClass)
+  name.vb: IEquatable(Of SkyClass)
   spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
+  - uid: System.IEquatable`1
+    name: IEquatable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: CompassEx.Comm.SkyClass
+    name: SkyClass
+    href: CompassEx.Comm.SkyClass.html
+  - name: '>'
   spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
+  - uid: System.IEquatable`1
+    name: IEquatable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
   - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Comm.SkyClass
+    name: SkyClass
+    href: CompassEx.Comm.SkyClass.html
   - name: )
 - uid: System.Object.Equals(System.Object,System.Object)
   commentId: M:System.Object.Equals(System.Object,System.Object)
@@ -515,30 +657,6 @@ references:
     name: Object
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
   - name: )
 - uid: System.Object.GetType
   commentId: M:System.Object.GetType
@@ -693,6 +811,34 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
   commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
   href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
@@ -929,3 +1075,102 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: CompassEx.Comm.SkyClass.Equals*
+  commentId: Overload:CompassEx.Comm.SkyClass.Equals
+  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_Equals_System_Object_
+  name: Equals
+  nameWithType: SkyClass.Equals
+  fullName: CompassEx.Comm.SkyClass.Equals
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: CompassEx.Comm.SkyClass.GetHashCode*
+  commentId: Overload:CompassEx.Comm.SkyClass.GetHashCode
+  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_GetHashCode
+  name: GetHashCode
+  nameWithType: SkyClass.GetHashCode
+  fullName: CompassEx.Comm.SkyClass.GetHashCode
+- uid: CompassEx.Comm.SkyClass.op_Equality*
+  commentId: Overload:CompassEx.Comm.SkyClass.op_Equality
+  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_op_Equality_CompassEx_Comm_SkyClass_CompassEx_Comm_SkyClass_
+  name: operator ==
+  nameWithType: SkyClass.operator ==
+  fullName: CompassEx.Comm.SkyClass.operator ==
+  nameWithType.vb: SkyClass.=
+  fullName.vb: CompassEx.Comm.SkyClass.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: CompassEx.Comm.SkyClass.op_Equality*
+    name: ==
+    href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_op_Equality_CompassEx_Comm_SkyClass_CompassEx_Comm_SkyClass_
+- uid: CompassEx.Comm.SkyClass.op_Inequality*
+  commentId: Overload:CompassEx.Comm.SkyClass.op_Inequality
+  href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_op_Inequality_CompassEx_Comm_SkyClass_CompassEx_Comm_SkyClass_
+  name: operator !=
+  nameWithType: SkyClass.operator !=
+  fullName: CompassEx.Comm.SkyClass.operator !=
+  nameWithType.vb: SkyClass.<>
+  fullName.vb: CompassEx.Comm.SkyClass.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: CompassEx.Comm.SkyClass.op_Inequality*
+    name: '!='
+    href: CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_op_Inequality_CompassEx_Comm_SkyClass_CompassEx_Comm_SkyClass_

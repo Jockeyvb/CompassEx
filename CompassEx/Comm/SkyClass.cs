@@ -17,7 +17,7 @@ namespace CompassEx.Comm
     /// <summary>
     /// 天干类
     /// </summary>
-    public class SkyClass
+    public class SkyClass : IEquatable<SkyClass>
     {
         #region 字段
 
@@ -165,6 +165,52 @@ namespace CompassEx.Comm
         {
             return new SkyClass(iSkyIndex);
         }
+
+
+
+
+        #region 显式实现对比、运算符和Key 方法
+        // 1. 一般的 Equals(object)，內部可以轉型並利用顯式介面來比對
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as SkyClass);
+        }
+
+        // 2. 顯式實作 IEquatable<LocClass>.Equals
+        bool IEquatable<SkyClass>.Equals(SkyClass other)
+        {
+            // 檢查是否為 null
+            if (other is null) return false;
+            if (ReferenceEquals(this, other)) return true;
+
+            // 使用 string 的比較方式（考慮大小寫或 null 的防禦）
+            return string.Equals(this.Name, other.Name, StringComparison.Ordinal);
+        }
+
+        // 3. 務必配合 Name 計算 HashCode
+        public override int GetHashCode()
+        {
+            // 若 Name 可能為 null，可以用 HashCode.Combine 或字串自身的 GetHashCode
+            return Name != null ? Name.GetHashCode() : 0;
+        }
+
+        // 4. (選用) 重載 == 與 != 運算子，建議透過介面轉型來呼叫
+        public static bool operator ==(SkyClass left, SkyClass right)
+        {
+            if (left is null) return right is null;
+            return ((IEquatable<SkyClass>)left).Equals(right);
+        }
+
+        public static bool operator !=(SkyClass left, SkyClass right)
+        {
+            return !(left == right);
+        }
+
+
+        #endregion
+
+
+
 
         #endregion
 

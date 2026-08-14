@@ -108,7 +108,7 @@ namespace CompassEx
         /// </summary>
         /// <param name="Name">要查询的先天 64 卦的完整卦名。</param>
         /// <returns>返回对应的 <see cref="CompassRangEX"/> 度数范围对象；若在缓存中未匹配到该卦名，则返回 <c>null</c>。</returns>
-        public static CompassRangEX GetCBeforeGuaDegree(string Name)
+        public static CompassRangEX? GetCBeforeGuaDegree(string Name)
         {
             foreach (var kv in C3Y.CBeforeGuas)
             {
@@ -125,7 +125,7 @@ namespace CompassEx
         /// </summary>
         /// <param name="Name">要查询的后天 64 卦的完整卦名。</param>
         /// <returns>返回对应的 <see cref="CompassRangEX"/> 度数范围对象；若在缓存中未匹配到该卦名，则返回 <c>null</c>。</returns>
-        public static CompassRangEX GetCAfterGuaDegree(string Name)
+        public static CompassRangEX? GetCAfterGuaDegree(string Name)
         {
             foreach (var kv in CAfterGuas)
             {
@@ -141,7 +141,7 @@ namespace CompassEx
         /// 根据当前罗盘指向的度数，匹配并获取对应的先天 64 卦对象。
         /// </summary>
         /// <returns>返回当前度数所在的 <see cref="GuaClass"/> 先天 64 卦对象；若未找到匹配的范围则返回 <c>null</c>。</returns>
-        public GuaClass GetCBeforeGua()
+        public GuaClass? GetCBeforeGua()
         {
             foreach (var kv in CBeforeGuas)
             {

@@ -101,7 +101,7 @@ SkyClass 类
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SkyClass</code></pre>
+    <pre><code class="lang-csharp hljs">public class SkyClass : IEquatable&lt;SkyClass&gt;</code></pre>
   </div>
 
 
@@ -115,19 +115,19 @@ SkyClass 类
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>实现</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="CompassEx.Comm.SkyClass.html">SkyClass</a>&gt;</div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
     <dt>继承成员</dt>
     <dd>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -421,6 +421,73 @@ SkyClass 类
 </h2>
 
 
+  <a id="CompassEx_Comm_SkyClass_Equals_" data-uid="CompassEx.Comm.SkyClass.Equals*"></a>
+
+  <h3 id="CompassEx_Comm_SkyClass_Equals_System_Object_" data-uid="CompassEx.Comm.SkyClass.Equals(System.Object)">
+  Equals(object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L174"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_SkyClass_GetHashCode_" data-uid="CompassEx.Comm.SkyClass.GetHashCode*"></a>
+
+  <h3 id="CompassEx_Comm_SkyClass_GetHashCode" data-uid="CompassEx.Comm.SkyClass.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L191"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="CompassEx_Comm_SkyClass_GetSkyClass_" data-uid="CompassEx.Comm.SkyClass.GetSkyClass*"></a>
 
   <h3 id="CompassEx_Comm_SkyClass_GetSkyClass_System_Int32_" data-uid="CompassEx.Comm.SkyClass.GetSkyClass(System.Int32)">
@@ -526,6 +593,86 @@ SkyClass 类
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">运算符
+</h2>
+
+
+  <a id="CompassEx_Comm_SkyClass_op_Equality_" data-uid="CompassEx.Comm.SkyClass.op_Equality*"></a>
+
+  <h3 id="CompassEx_Comm_SkyClass_op_Equality_CompassEx_Comm_SkyClass_CompassEx_Comm_SkyClass_" data-uid="CompassEx.Comm.SkyClass.op_Equality(CompassEx.Comm.SkyClass,CompassEx.Comm.SkyClass)">
+  operator ==(SkyClass, SkyClass)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L198"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(SkyClass left, SkyClass right)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="CompassEx.Comm.SkyClass.html">SkyClass</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="CompassEx.Comm.SkyClass.html">SkyClass</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_SkyClass_op_Inequality_" data-uid="CompassEx.Comm.SkyClass.op_Inequality*"></a>
+
+  <h3 id="CompassEx_Comm_SkyClass_op_Inequality_CompassEx_Comm_SkyClass_CompassEx_Comm_SkyClass_" data-uid="CompassEx.Comm.SkyClass.op_Inequality(CompassEx.Comm.SkyClass,CompassEx.Comm.SkyClass)">
+  operator !=(SkyClass, SkyClass)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyClass.cs/#L204"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(SkyClass left, SkyClass right)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="CompassEx.Comm.SkyClass.html">SkyClass</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="CompassEx.Comm.SkyClass.html">SkyClass</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 

@@ -66,6 +66,8 @@ items:
   - CompassEx.Gua.GuaClass.ThereYao
   - CompassEx.Gua.GuaClass.UpGua
   - CompassEx.Gua.GuaClass.YaoDoing
+  - CompassEx.Gua.GuaClass.op_Equality(CompassEx.Gua.GuaClass,CompassEx.Gua.GuaClass)
+  - CompassEx.Gua.GuaClass.op_Inequality(CompassEx.Gua.GuaClass,CompassEx.Gua.GuaClass)
   langs:
   - csharp
   - vb
@@ -1361,7 +1363,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ExchangeGua
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 587
+    startLine: 585
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1400,7 +1402,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Get7HereYaoGua
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 609
+    startLine: 607
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1442,7 +1444,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetStringYaos
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 673
+    startLine: 671
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1473,7 +1475,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetYaos
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 695
+    startLine: 693
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1488,7 +1490,7 @@ items:
     <code>y[3]</code> 至 <code>y[5]</code> 完全继承自外卦（上卦 <xref href="CompassEx.Gua.GuaClass.UpGua" data-throw-if-not-resolved="false"></xref>）的四、五、上爻。
   example: []
   syntax:
-    content: public int[] GetYaos()
+    content: public int[]? GetYaos()
     return:
       type: System.Int32[]
       description: 返回包含 6 个整型元素的 C# 数组 <code>int[]</code>。如果上下卦尚未装配成功则返回 <code>null</code>。
@@ -1512,7 +1514,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetChangeGua
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 721
+    startLine: 719
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1525,7 +1527,7 @@ items:
     静爻位则保持原卦纳支阴阳。最终通过变动后的爻象序列重组新卦，并将动爻位记录至变卦的 <xref href="CompassEx.Gua.GuaClass.ChangedYao" data-throw-if-not-resolved="false"></xref> 属性中。
   example: []
   syntax:
-    content: public GuaClass GetChangeGua()
+    content: public GuaClass? GetChangeGua()
     return:
       type: CompassEx.Gua.GuaClass
       description: 返回一个全新的变卦对象实例 <xref href="CompassEx.Gua.GuaClass" data-throw-if-not-resolved="false"></xref>；若当前无动爻则返回 <code>null</code>。
@@ -1549,7 +1551,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSykStr
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 763
+    startLine: 761
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1581,7 +1583,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetHereThereStr
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 779
+    startLine: 777
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1618,7 +1620,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetHideRelativeStr
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 802
+    startLine: 800
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1631,7 +1633,7 @@ items:
     自动拼出地支、五行及六亲全称并追加 "(伏)" 字样（例如："子水子孙(伏)"）。非伏神爻位则以换行符占位。
   example: []
   syntax:
-    content: public string GetHideRelativeStr()
+    content: public string? GetHideRelativeStr()
     return:
       type: System.String
       description: 返回由上而下（六爻至初爻）排列的伏神说明字符串；若没有伏神数据则返回 <code>null</code>。
@@ -1655,7 +1657,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetYaosSkyLocStrShort
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 832
+    startLine: 830
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1686,7 +1688,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetYaosSkyLocStr
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 854
+    startLine: 852
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1717,14 +1719,14 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSixGodStr
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 876
+    startLine: 874
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
   summary: 获得本卦六爻排盘配出的“六神”（六兽）文本排盘字符形式。
   example: []
   syntax:
-    content: public string GetSixGodStr()
+    content: public string? GetSixGodStr()
     return:
       type: System.String
       description: 返回由上而下（六爻至初爻）排列的六神名称换行文本；若六神数据未加载则返回 <code>null</code>。
@@ -1748,7 +1750,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSixRelativeStr
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 897
+    startLine: 895
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1790,7 +1792,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetSixRelativeStr
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 928
+    startLine: 926
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1829,7 +1831,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadAll
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 951
+    startLine: 949
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1867,7 +1869,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadNoAvg
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 964
+    startLine: 962
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1896,7 +1898,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaFace
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 986
+    startLine: 984
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1941,7 +1943,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaFace
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1009
+    startLine: 1007
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1978,7 +1980,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetChangeGuaFace
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1056
+    startLine: 1054
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1991,7 +1993,7 @@ items:
     算法执行了经典的 <code>5 - ChangedYao[i]</code> 空间位置逆向映射，确保箭头能够精准定位到对应的物理爻位前。
   example: []
   syntax:
-    content: public string GetChangeGuaFace()
+    content: public string? GetChangeGuaFace()
     return:
       type: System.String
       description: 返回格式化后的长条字符串，发生变动的爻位左侧会有明细的 <code>"-&gt;"</code> 变爻箭头指示。
@@ -2015,7 +2017,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadHideRelative
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1090
+    startLine: 1088
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2047,7 +2049,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadSixRelative
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1138
+    startLine: 1136
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2081,7 +2083,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadGuaAliasName
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1172
+    startLine: 1170
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2116,7 +2118,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetLostLocs
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1290
+    startLine: 1288
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2165,14 +2167,14 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaClassBySkyLoc
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1423
+    startLine: 1421
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
   summary: 静态工厂方法：依据 64 卦对应的 60 甲子干支名称反向检索并创建对应的复卦对象实例。
   example: []
   syntax:
-    content: public static GuaClass GetGuaClassBySkyLoc(string sSkyLocName)
+    content: public static GuaClass? GetGuaClassBySkyLoc(string sSkyLocName)
     parameters:
     - id: sSkyLocName
       type: System.String
@@ -2203,7 +2205,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaClass
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1438
+    startLine: 1436
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2241,7 +2243,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaClass
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1448
+    startLine: 1446
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2279,7 +2281,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaClass
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1458
+    startLine: 1456
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2317,7 +2319,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaClass
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1475
+    startLine: 1473
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2328,7 +2330,7 @@ items:
     <ul><li><b>经卦解耦</b>：取列表前 3 爻模 2 运算生成下卦（内卦），取后 3 爻模 2 运算生成上卦（外卦）。</li><li><b>动爻拦截（老阴老阳判定）</b>：算法循环遍历 6 个爻。若状态码为 <code>3</code>（老阳，阳动变阴）或 <code>4</code>（老阴，阴动变阳），则会被视为动爻，自动抽离并装入本卦的 <xref href="CompassEx.Gua.GuaClass.YaoDoing" data-throw-if-not-resolved="false"></xref> 动爻跟踪清册中，并同步重设对应经卦的运行时爻位状态。</li></ul>
   example: []
   syntax:
-    content: public static GuaClass GetGuaClass(List<int> iYaos)
+    content: public static GuaClass? GetGuaClass(List<int> iYaos)
     parameters:
     - id: iYaos
       type: System.Collections.Generic.List{System.Int32}
@@ -2359,7 +2361,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FlowerGuaClass
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1517
+    startLine: 1515
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2409,7 +2411,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Equals
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1552
+    startLine: 1551
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2445,7 +2447,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetHashCode
     path: CompassEx/Gua/GuaClass.cs
-    startLine: 1561
+    startLine: 1568
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2457,6 +2459,78 @@ items:
     content.vb: Public Overrides Function GetHashCode() As Integer
   overridden: System.Object.GetHashCode
   overload: CompassEx.Gua.GuaClass.GetHashCode*
+- uid: CompassEx.Gua.GuaClass.op_Equality(CompassEx.Gua.GuaClass,CompassEx.Gua.GuaClass)
+  commentId: M:CompassEx.Gua.GuaClass.op_Equality(CompassEx.Gua.GuaClass,CompassEx.Gua.GuaClass)
+  id: op_Equality(CompassEx.Gua.GuaClass,CompassEx.Gua.GuaClass)
+  parent: CompassEx.Gua.GuaClass
+  langs:
+  - csharp
+  - vb
+  name: operator ==(GuaClass, GuaClass)
+  nameWithType: GuaClass.operator ==(GuaClass, GuaClass)
+  fullName: CompassEx.Gua.GuaClass.operator ==(CompassEx.Gua.GuaClass, CompassEx.Gua.GuaClass)
+  type: Operator
+  source:
+    remote:
+      path: CompassEx/Gua/GuaClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: op_Equality
+    path: CompassEx/Gua/GuaClass.cs
+    startLine: 1575
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  syntax:
+    content: public static bool operator ==(GuaClass left, GuaClass right)
+    parameters:
+    - id: left
+      type: CompassEx.Gua.GuaClass
+    - id: right
+      type: CompassEx.Gua.GuaClass
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As GuaClass, right As GuaClass) As Boolean
+  overload: CompassEx.Gua.GuaClass.op_Equality*
+  nameWithType.vb: GuaClass.=(GuaClass, GuaClass)
+  fullName.vb: CompassEx.Gua.GuaClass.=(CompassEx.Gua.GuaClass, CompassEx.Gua.GuaClass)
+  name.vb: =(GuaClass, GuaClass)
+- uid: CompassEx.Gua.GuaClass.op_Inequality(CompassEx.Gua.GuaClass,CompassEx.Gua.GuaClass)
+  commentId: M:CompassEx.Gua.GuaClass.op_Inequality(CompassEx.Gua.GuaClass,CompassEx.Gua.GuaClass)
+  id: op_Inequality(CompassEx.Gua.GuaClass,CompassEx.Gua.GuaClass)
+  parent: CompassEx.Gua.GuaClass
+  langs:
+  - csharp
+  - vb
+  name: operator !=(GuaClass, GuaClass)
+  nameWithType: GuaClass.operator !=(GuaClass, GuaClass)
+  fullName: CompassEx.Gua.GuaClass.operator !=(CompassEx.Gua.GuaClass, CompassEx.Gua.GuaClass)
+  type: Operator
+  source:
+    remote:
+      path: CompassEx/Gua/GuaClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: op_Inequality
+    path: CompassEx/Gua/GuaClass.cs
+    startLine: 1581
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  syntax:
+    content: public static bool operator !=(GuaClass left, GuaClass right)
+    parameters:
+    - id: left
+      type: CompassEx.Gua.GuaClass
+    - id: right
+      type: CompassEx.Gua.GuaClass
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As GuaClass, right As GuaClass) As Boolean
+  overload: CompassEx.Gua.GuaClass.op_Inequality*
+  nameWithType.vb: GuaClass.<>(GuaClass, GuaClass)
+  fullName.vb: CompassEx.Gua.GuaClass.<>(CompassEx.Gua.GuaClass, CompassEx.Gua.GuaClass)
+  name.vb: <>(GuaClass, GuaClass)
 references:
 - uid: CompassEx.Gua
   commentId: N:CompassEx.Gua
@@ -4134,3 +4208,33 @@ references:
   name: GetHashCode
   nameWithType: GuaClass.GetHashCode
   fullName: CompassEx.Gua.GuaClass.GetHashCode
+- uid: CompassEx.Gua.GuaClass.op_Equality*
+  commentId: Overload:CompassEx.Gua.GuaClass.op_Equality
+  href: CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_op_Equality_CompassEx_Gua_GuaClass_CompassEx_Gua_GuaClass_
+  name: operator ==
+  nameWithType: GuaClass.operator ==
+  fullName: CompassEx.Gua.GuaClass.operator ==
+  nameWithType.vb: GuaClass.=
+  fullName.vb: CompassEx.Gua.GuaClass.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: CompassEx.Gua.GuaClass.op_Equality*
+    name: ==
+    href: CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_op_Equality_CompassEx_Gua_GuaClass_CompassEx_Gua_GuaClass_
+- uid: CompassEx.Gua.GuaClass.op_Inequality*
+  commentId: Overload:CompassEx.Gua.GuaClass.op_Inequality
+  href: CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_op_Inequality_CompassEx_Gua_GuaClass_CompassEx_Gua_GuaClass_
+  name: operator !=
+  nameWithType: GuaClass.operator !=
+  fullName: CompassEx.Gua.GuaClass.operator !=
+  nameWithType.vb: GuaClass.<>
+  fullName.vb: CompassEx.Gua.GuaClass.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: CompassEx.Gua.GuaClass.op_Inequality*
+    name: '!='
+    href: CompassEx.Gua.GuaClass.html#CompassEx_Gua_GuaClass_op_Inequality_CompassEx_Gua_GuaClass_CompassEx_Gua_GuaClass_

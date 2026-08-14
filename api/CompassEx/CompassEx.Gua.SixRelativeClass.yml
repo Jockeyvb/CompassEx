@@ -136,7 +136,7 @@ items:
   summary: 获取当前六亲实体的字面名称（如“父母”、“子孙”等）。
   example: []
   syntax:
-    content: public string Name { get; }
+    content: public string? Name { get; }
     parameters: []
     return:
       type: System.String

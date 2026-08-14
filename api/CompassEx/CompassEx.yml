@@ -9,6 +9,7 @@ items:
   - CompassEx.CGuaClass
   - CompassEx.CHill
   - CompassEx.CompassEx
+  - CompassEx.HillType
   - CompassEx.LicenseWatermark
   langs:
   - csharp
@@ -39,6 +40,13 @@ references:
   name: CGuaClass
   nameWithType: CGuaClass
   fullName: CompassEx.CGuaClass
+- uid: CompassEx.HillType
+  commentId: T:CompassEx.HillType
+  parent: CompassEx
+  href: CompassEx.HillType.html
+  name: HillType
+  nameWithType: HillType
+  fullName: CompassEx.HillType
 - uid: CompassEx.CHill
   commentId: T:CompassEx.CHill
   parent: CompassEx

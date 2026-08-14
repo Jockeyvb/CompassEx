@@ -1,0 +1,1566 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Assist.FourSkyLocType
+  commentId: T:CompassEx.Assist.FourSkyLocType
+  id: FourSkyLocType
+  parent: CompassEx.Assist
+  children:
+  - CompassEx.Assist.FourSkyLocType.Date
+  - CompassEx.Assist.FourSkyLocType.DayBuildName
+  - CompassEx.Assist.FourSkyLocType.DayCNName
+  - CompassEx.Assist.FourSkyLocType.DaySL
+  - CompassEx.Assist.FourSkyLocType.DaySLName
+  - CompassEx.Assist.FourSkyLocType.DayWeekIndex
+  - CompassEx.Assist.FourSkyLocType.FullCNName
+  - CompassEx.Assist.FourSkyLocType.FullName
+  - CompassEx.Assist.FourSkyLocType.GetAllGodNames
+  - CompassEx.Assist.FourSkyLocType.HourSL
+  - CompassEx.Assist.FourSkyLocType.HourSLName
+  - CompassEx.Assist.FourSkyLocType.IsFourScrapDay
+  - CompassEx.Assist.FourSkyLocType.IsSkyPardonDay
+  - CompassEx.Assist.FourSkyLocType.IsTenDefeatDay
+  - CompassEx.Assist.FourSkyLocType.IsTenSpiritDay
+  - CompassEx.Assist.FourSkyLocType.Lunar
+  - CompassEx.Assist.FourSkyLocType.MonthCNName
+  - CompassEx.Assist.FourSkyLocType.MonthSL
+  - CompassEx.Assist.FourSkyLocType.MonthSLName
+  - CompassEx.Assist.FourSkyLocType.SeasonName
+  - CompassEx.Assist.FourSkyLocType.YearCNName
+  - CompassEx.Assist.FourSkyLocType.YearSL
+  - CompassEx.Assist.FourSkyLocType.YearSLName
+  langs:
+  - csharp
+  - vb
+  name: FourSkyLocType
+  nameWithType: FourSkyLocType
+  fullName: CompassEx.Assist.FourSkyLocType
+  type: Class
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FourSkyLocType
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 54
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  syntax:
+    content: public class FourSkyLocType
+    content.vb: Public Class FourSkyLocType
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - CompassEx.Assist.FourSkyLocType.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CompassEx.Assist.FourSkyLocType.DayWeekIndex
+  commentId: P:CompassEx.Assist.FourSkyLocType.DayWeekIndex
+  id: DayWeekIndex
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: DayWeekIndex
+  nameWithType: FourSkyLocType.DayWeekIndex
+  fullName: CompassEx.Assist.FourSkyLocType.DayWeekIndex
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: DayWeekIndex
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 59
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 星期1为0，星期日为6
+  example: []
+  syntax:
+    content: public int DayWeekIndex { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property DayWeekIndex As Integer
+  overload: CompassEx.Assist.FourSkyLocType.DayWeekIndex*
+- uid: CompassEx.Assist.FourSkyLocType.Lunar
+  commentId: P:CompassEx.Assist.FourSkyLocType.Lunar
+  id: Lunar
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: Lunar
+  nameWithType: FourSkyLocType.Lunar
+  fullName: CompassEx.Assist.FourSkyLocType.Lunar
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Lunar
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 72
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 返回农历对象
+  example: []
+  syntax:
+    content: public (LunarYear y, LunarMonth m, LunarDay d, LunarHour h) Lunar { get; set; }
+    parameters: []
+    return:
+      type: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}
+    content.vb: Public Property Lunar As (y As LunarYear, m As LunarMonth, d As LunarDay, h As LunarHour)
+  overload: CompassEx.Assist.FourSkyLocType.Lunar*
+- uid: CompassEx.Assist.FourSkyLocType.YearSLName
+  commentId: P:CompassEx.Assist.FourSkyLocType.YearSLName
+  id: YearSLName
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: YearSLName
+  nameWithType: FourSkyLocType.YearSLName
+  fullName: CompassEx.Assist.FourSkyLocType.YearSLName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: YearSLName
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 77
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 年的天干地支
+  example: []
+  syntax:
+    content: public string YearSLName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property YearSLName As String
+  overload: CompassEx.Assist.FourSkyLocType.YearSLName*
+- uid: CompassEx.Assist.FourSkyLocType.YearSL
+  commentId: P:CompassEx.Assist.FourSkyLocType.YearSL
+  id: YearSL
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: YearSL
+  nameWithType: FourSkyLocType.YearSL
+  fullName: CompassEx.Assist.FourSkyLocType.YearSL
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: YearSL
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 79
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  syntax:
+    content: public SkyLoc YearSL { get; }
+    parameters: []
+    return:
+      type: CompassEx.Comm.SkyLoc
+    content.vb: Public ReadOnly Property YearSL As SkyLoc
+  overload: CompassEx.Assist.FourSkyLocType.YearSL*
+- uid: CompassEx.Assist.FourSkyLocType.MonthSLName
+  commentId: P:CompassEx.Assist.FourSkyLocType.MonthSLName
+  id: MonthSLName
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: MonthSLName
+  nameWithType: FourSkyLocType.MonthSLName
+  fullName: CompassEx.Assist.FourSkyLocType.MonthSLName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: MonthSLName
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 85
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 月的天干地支
+  example: []
+  syntax:
+    content: public string MonthSLName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property MonthSLName As String
+  overload: CompassEx.Assist.FourSkyLocType.MonthSLName*
+- uid: CompassEx.Assist.FourSkyLocType.MonthSL
+  commentId: P:CompassEx.Assist.FourSkyLocType.MonthSL
+  id: MonthSL
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: MonthSL
+  nameWithType: FourSkyLocType.MonthSL
+  fullName: CompassEx.Assist.FourSkyLocType.MonthSL
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: MonthSL
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 87
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  syntax:
+    content: public SkyLoc MonthSL { get; }
+    parameters: []
+    return:
+      type: CompassEx.Comm.SkyLoc
+    content.vb: Public ReadOnly Property MonthSL As SkyLoc
+  overload: CompassEx.Assist.FourSkyLocType.MonthSL*
+- uid: CompassEx.Assist.FourSkyLocType.DaySLName
+  commentId: P:CompassEx.Assist.FourSkyLocType.DaySLName
+  id: DaySLName
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: DaySLName
+  nameWithType: FourSkyLocType.DaySLName
+  fullName: CompassEx.Assist.FourSkyLocType.DaySLName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: DaySLName
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 92
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 日的天干地支
+  example: []
+  syntax:
+    content: public string DaySLName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DaySLName As String
+  overload: CompassEx.Assist.FourSkyLocType.DaySLName*
+- uid: CompassEx.Assist.FourSkyLocType.DaySL
+  commentId: P:CompassEx.Assist.FourSkyLocType.DaySL
+  id: DaySL
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: DaySL
+  nameWithType: FourSkyLocType.DaySL
+  fullName: CompassEx.Assist.FourSkyLocType.DaySL
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: DaySL
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 94
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  syntax:
+    content: public SkyLoc DaySL { get; }
+    parameters: []
+    return:
+      type: CompassEx.Comm.SkyLoc
+    content.vb: Public ReadOnly Property DaySL As SkyLoc
+  overload: CompassEx.Assist.FourSkyLocType.DaySL*
+- uid: CompassEx.Assist.FourSkyLocType.HourSLName
+  commentId: P:CompassEx.Assist.FourSkyLocType.HourSLName
+  id: HourSLName
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: HourSLName
+  nameWithType: FourSkyLocType.HourSLName
+  fullName: CompassEx.Assist.FourSkyLocType.HourSLName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: HourSLName
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 99
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 时的天干地支
+  example: []
+  syntax:
+    content: public string HourSLName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property HourSLName As String
+  overload: CompassEx.Assist.FourSkyLocType.HourSLName*
+- uid: CompassEx.Assist.FourSkyLocType.HourSL
+  commentId: P:CompassEx.Assist.FourSkyLocType.HourSL
+  id: HourSL
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: HourSL
+  nameWithType: FourSkyLocType.HourSL
+  fullName: CompassEx.Assist.FourSkyLocType.HourSL
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: HourSL
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 102
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  syntax:
+    content: public SkyLoc HourSL { get; }
+    parameters: []
+    return:
+      type: CompassEx.Comm.SkyLoc
+    content.vb: Public ReadOnly Property HourSL As SkyLoc
+  overload: CompassEx.Assist.FourSkyLocType.HourSL*
+- uid: CompassEx.Assist.FourSkyLocType.FullName
+  commentId: P:CompassEx.Assist.FourSkyLocType.FullName
+  id: FullName
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: FullName
+  nameWithType: FourSkyLocType.FullName
+  fullName: CompassEx.Assist.FourSkyLocType.FullName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FullName
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 107
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 四柱全名
+  example: []
+  syntax:
+    content: public string FullName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property FullName As String
+  overload: CompassEx.Assist.FourSkyLocType.FullName*
+- uid: CompassEx.Assist.FourSkyLocType.MonthCNName
+  commentId: P:CompassEx.Assist.FourSkyLocType.MonthCNName
+  id: MonthCNName
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: MonthCNName
+  nameWithType: FourSkyLocType.MonthCNName
+  fullName: CompassEx.Assist.FourSkyLocType.MonthCNName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: MonthCNName
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 111
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 农历月份名
+  example: []
+  syntax:
+    content: public string MonthCNName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property MonthCNName As String
+  overload: CompassEx.Assist.FourSkyLocType.MonthCNName*
+- uid: CompassEx.Assist.FourSkyLocType.YearCNName
+  commentId: P:CompassEx.Assist.FourSkyLocType.YearCNName
+  id: YearCNName
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: YearCNName
+  nameWithType: FourSkyLocType.YearCNName
+  fullName: CompassEx.Assist.FourSkyLocType.YearCNName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: YearCNName
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 115
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 农历年份名
+  example: []
+  syntax:
+    content: public string YearCNName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property YearCNName As String
+  overload: CompassEx.Assist.FourSkyLocType.YearCNName*
+- uid: CompassEx.Assist.FourSkyLocType.DayCNName
+  commentId: P:CompassEx.Assist.FourSkyLocType.DayCNName
+  id: DayCNName
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: DayCNName
+  nameWithType: FourSkyLocType.DayCNName
+  fullName: CompassEx.Assist.FourSkyLocType.DayCNName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: DayCNName
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 119
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 农历的日名
+  example: []
+  syntax:
+    content: public string DayCNName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DayCNName As String
+  overload: CompassEx.Assist.FourSkyLocType.DayCNName*
+- uid: CompassEx.Assist.FourSkyLocType.FullCNName
+  commentId: P:CompassEx.Assist.FourSkyLocType.FullCNName
+  id: FullCNName
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: FullCNName
+  nameWithType: FourSkyLocType.FullCNName
+  fullName: CompassEx.Assist.FourSkyLocType.FullCNName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FullCNName
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 123
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 农历全称
+  example: []
+  syntax:
+    content: public string FullCNName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property FullCNName As String
+  overload: CompassEx.Assist.FourSkyLocType.FullCNName*
+- uid: CompassEx.Assist.FourSkyLocType.SeasonName
+  commentId: P:CompassEx.Assist.FourSkyLocType.SeasonName
+  id: SeasonName
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: SeasonName
+  nameWithType: FourSkyLocType.SeasonName
+  fullName: CompassEx.Assist.FourSkyLocType.SeasonName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SeasonName
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 128
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 如果当天是交节，那么补上节气名称
+  example: []
+  syntax:
+    content: public string SeasonName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property SeasonName As String
+  overload: CompassEx.Assist.FourSkyLocType.SeasonName*
+- uid: CompassEx.Assist.FourSkyLocType.Date
+  commentId: P:CompassEx.Assist.FourSkyLocType.Date
+  id: Date
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: Date
+  nameWithType: FourSkyLocType.Date
+  fullName: CompassEx.Assist.FourSkyLocType.Date
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Date
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 132
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 公历日期对象
+  example: []
+  syntax:
+    content: public DateTime Date { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property [Date] As Date
+  overload: CompassEx.Assist.FourSkyLocType.Date*
+- uid: CompassEx.Assist.FourSkyLocType.DayBuildName
+  commentId: P:CompassEx.Assist.FourSkyLocType.DayBuildName
+  id: DayBuildName
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: DayBuildName
+  nameWithType: FourSkyLocType.DayBuildName
+  fullName: CompassEx.Assist.FourSkyLocType.DayBuildName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: DayBuildName
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 136
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 十二日建
+  example: []
+  syntax:
+    content: public string DayBuildName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DayBuildName As String
+  overload: CompassEx.Assist.FourSkyLocType.DayBuildName*
+- uid: CompassEx.Assist.FourSkyLocType.IsSkyPardonDay
+  commentId: P:CompassEx.Assist.FourSkyLocType.IsSkyPardonDay
+  id: IsSkyPardonDay
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: IsSkyPardonDay
+  nameWithType: FourSkyLocType.IsSkyPardonDay
+  fullName: CompassEx.Assist.FourSkyLocType.IsSkyPardonDay
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: IsSkyPardonDay
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 140
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 是否为天赦日
+  example: []
+  syntax:
+    content: public bool IsSkyPardonDay { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsSkyPardonDay As Boolean
+  overload: CompassEx.Assist.FourSkyLocType.IsSkyPardonDay*
+- uid: CompassEx.Assist.FourSkyLocType.GetAllGodNames
+  commentId: M:CompassEx.Assist.FourSkyLocType.GetAllGodNames
+  id: GetAllGodNames
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: GetAllGodNames()
+  nameWithType: FourSkyLocType.GetAllGodNames()
+  fullName: CompassEx.Assist.FourSkyLocType.GetAllGodNames()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetAllGodNames
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 148
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 获得把有关神煞的名称都列出来
+  example: []
+  syntax:
+    content: public List<string> GetAllGodNames()
+    return:
+      type: System.Collections.Generic.List{System.String}
+      description: ''
+    content.vb: Public Function GetAllGodNames() As List(Of String)
+  overload: CompassEx.Assist.FourSkyLocType.GetAllGodNames*
+- uid: CompassEx.Assist.FourSkyLocType.IsFourScrapDay
+  commentId: P:CompassEx.Assist.FourSkyLocType.IsFourScrapDay
+  id: IsFourScrapDay
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: IsFourScrapDay
+  nameWithType: FourSkyLocType.IsFourScrapDay
+  fullName: CompassEx.Assist.FourSkyLocType.IsFourScrapDay
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: IsFourScrapDay
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 163
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 是否四废日
+  example: []
+  syntax:
+    content: public bool IsFourScrapDay { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsFourScrapDay As Boolean
+  overload: CompassEx.Assist.FourSkyLocType.IsFourScrapDay*
+- uid: CompassEx.Assist.FourSkyLocType.IsTenDefeatDay
+  commentId: P:CompassEx.Assist.FourSkyLocType.IsTenDefeatDay
+  id: IsTenDefeatDay
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: IsTenDefeatDay
+  nameWithType: FourSkyLocType.IsTenDefeatDay
+  fullName: CompassEx.Assist.FourSkyLocType.IsTenDefeatDay
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: IsTenDefeatDay
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 167
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 十恶大败日
+  example: []
+  syntax:
+    content: public bool IsTenDefeatDay { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsTenDefeatDay As Boolean
+  overload: CompassEx.Assist.FourSkyLocType.IsTenDefeatDay*
+- uid: CompassEx.Assist.FourSkyLocType.IsTenSpiritDay
+  commentId: P:CompassEx.Assist.FourSkyLocType.IsTenSpiritDay
+  id: IsTenSpiritDay
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: IsTenSpiritDay
+  nameWithType: FourSkyLocType.IsTenSpiritDay
+  fullName: CompassEx.Assist.FourSkyLocType.IsTenSpiritDay
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: IsTenSpiritDay
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 171
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 是否为十灵日
+  example: []
+  syntax:
+    content: public bool IsTenSpiritDay { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsTenSpiritDay As Boolean
+  overload: CompassEx.Assist.FourSkyLocType.IsTenSpiritDay*
+references:
+- uid: CompassEx.Assist
+  commentId: N:CompassEx.Assist
+  href: CompassEx.html
+  name: CompassEx.Assist
+  nameWithType: CompassEx.Assist
+  fullName: CompassEx.Assist
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Assist
+    name: Assist
+    href: CompassEx.Assist.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Assist
+    name: Assist
+    href: CompassEx.Assist.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CompassEx.Assist.FourSkyLocType.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<FourSkyLocType, TBase>(FourSkyLocType, TBase)
+  nameWithType: Comm.ApplyBaseProperties<FourSkyLocType, TBase>(FourSkyLocType, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.Assist.FourSkyLocType, TBase>(CompassEx.Assist.FourSkyLocType, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of FourSkyLocType, TBase)(FourSkyLocType, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.Assist.FourSkyLocType, TBase)(CompassEx.Assist.FourSkyLocType, TBase)
+  name.vb: ApplyBaseProperties(Of FourSkyLocType, TBase)(FourSkyLocType, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Assist.FourSkyLocType,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.Assist.FourSkyLocType
+    name: FourSkyLocType
+    href: CompassEx.Assist.FourSkyLocType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.Assist.FourSkyLocType
+    name: FourSkyLocType
+    href: CompassEx.Assist.FourSkyLocType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Assist.FourSkyLocType,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Assist.FourSkyLocType
+    name: FourSkyLocType
+    href: CompassEx.Assist.FourSkyLocType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.Assist.FourSkyLocType
+    name: FourSkyLocType
+    href: CompassEx.Assist.FourSkyLocType.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: CompassEx.Assist.FourSkyLocType.DayWeekIndex*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.DayWeekIndex
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_DayWeekIndex
+  name: DayWeekIndex
+  nameWithType: FourSkyLocType.DayWeekIndex
+  fullName: CompassEx.Assist.FourSkyLocType.DayWeekIndex
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: CompassEx.Assist.FourSkyLocType.Lunar*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.Lunar
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_Lunar
+  name: Lunar
+  nameWithType: FourSkyLocType.Lunar
+  fullName: CompassEx.Assist.FourSkyLocType.Lunar
+- uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}
+  commentId: T:System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}
+  parent: System
+  definition: System.ValueTuple`4
+  href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.y
+  name: (LunarYear y, LunarMonth m, LunarDay d, LunarHour h)
+  nameWithType: (LunarYear y, LunarMonth m, LunarDay d, LunarHour h)
+  fullName: (tyme.lunar.LunarYear y, tyme.lunar.LunarMonth m, tyme.lunar.LunarDay d, tyme.lunar.LunarHour h)
+  nameWithType.vb: (y As LunarYear, m As LunarMonth, d As LunarDay, h As LunarHour)
+  fullName.vb: (y As tyme.lunar.LunarYear, m As tyme.lunar.LunarMonth, d As tyme.lunar.LunarDay, h As tyme.lunar.LunarHour)
+  name.vb: (y As LunarYear, m As LunarMonth, d As LunarDay, h As LunarHour)
+  spec.csharp:
+  - name: (
+  - uid: tyme.lunar.LunarYear
+    name: LunarYear
+    isExternal: true
+  - name: " "
+  - uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}.y
+    name: y
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.y
+  - name: ','
+  - name: " "
+  - uid: tyme.lunar.LunarMonth
+    name: LunarMonth
+    isExternal: true
+  - name: " "
+  - uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}.m
+    name: m
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.m
+  - name: ','
+  - name: " "
+  - uid: tyme.lunar.LunarDay
+    name: LunarDay
+    isExternal: true
+  - name: " "
+  - uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}.d
+    name: d
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.d
+  - name: ','
+  - name: " "
+  - uid: tyme.lunar.LunarHour
+    name: LunarHour
+    isExternal: true
+  - name: " "
+  - uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}.h
+    name: h
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.h
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}.y
+    name: y
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.y
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: tyme.lunar.LunarYear
+    name: LunarYear
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}.m
+    name: m
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.m
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: tyme.lunar.LunarMonth
+    name: LunarMonth
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}.d
+    name: d
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.d
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: tyme.lunar.LunarDay
+    name: LunarDay
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}.h
+    name: h
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.h
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: tyme.lunar.LunarHour
+    name: LunarHour
+    isExternal: true
+  - name: )
+- uid: System.ValueTuple`4
+  commentId: T:System.ValueTuple`4
+  name: (T1, T2, T3, T4)
+  nameWithType: (T1, T2, T3, T4)
+  fullName: (T1, T2, T3, T4)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: )
+- uid: CompassEx.Assist.FourSkyLocType.YearSLName*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.YearSLName
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_YearSLName
+  name: YearSLName
+  nameWithType: FourSkyLocType.YearSLName
+  fullName: CompassEx.Assist.FourSkyLocType.YearSLName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CompassEx.Assist.FourSkyLocType.YearSL*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.YearSL
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_YearSL
+  name: YearSL
+  nameWithType: FourSkyLocType.YearSL
+  fullName: CompassEx.Assist.FourSkyLocType.YearSL
+- uid: CompassEx.Comm.SkyLoc
+  commentId: T:CompassEx.Comm.SkyLoc
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.SkyLoc.html
+  name: SkyLoc
+  nameWithType: SkyLoc
+  fullName: CompassEx.Comm.SkyLoc
+- uid: CompassEx.Assist.FourSkyLocType.MonthSLName*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.MonthSLName
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_MonthSLName
+  name: MonthSLName
+  nameWithType: FourSkyLocType.MonthSLName
+  fullName: CompassEx.Assist.FourSkyLocType.MonthSLName
+- uid: CompassEx.Assist.FourSkyLocType.MonthSL*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.MonthSL
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_MonthSL
+  name: MonthSL
+  nameWithType: FourSkyLocType.MonthSL
+  fullName: CompassEx.Assist.FourSkyLocType.MonthSL
+- uid: CompassEx.Assist.FourSkyLocType.DaySLName*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.DaySLName
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_DaySLName
+  name: DaySLName
+  nameWithType: FourSkyLocType.DaySLName
+  fullName: CompassEx.Assist.FourSkyLocType.DaySLName
+- uid: CompassEx.Assist.FourSkyLocType.DaySL*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.DaySL
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_DaySL
+  name: DaySL
+  nameWithType: FourSkyLocType.DaySL
+  fullName: CompassEx.Assist.FourSkyLocType.DaySL
+- uid: CompassEx.Assist.FourSkyLocType.HourSLName*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.HourSLName
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_HourSLName
+  name: HourSLName
+  nameWithType: FourSkyLocType.HourSLName
+  fullName: CompassEx.Assist.FourSkyLocType.HourSLName
+- uid: CompassEx.Assist.FourSkyLocType.HourSL*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.HourSL
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_HourSL
+  name: HourSL
+  nameWithType: FourSkyLocType.HourSL
+  fullName: CompassEx.Assist.FourSkyLocType.HourSL
+- uid: CompassEx.Assist.FourSkyLocType.FullName*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.FullName
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_FullName
+  name: FullName
+  nameWithType: FourSkyLocType.FullName
+  fullName: CompassEx.Assist.FourSkyLocType.FullName
+- uid: CompassEx.Assist.FourSkyLocType.MonthCNName*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.MonthCNName
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_MonthCNName
+  name: MonthCNName
+  nameWithType: FourSkyLocType.MonthCNName
+  fullName: CompassEx.Assist.FourSkyLocType.MonthCNName
+- uid: CompassEx.Assist.FourSkyLocType.YearCNName*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.YearCNName
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_YearCNName
+  name: YearCNName
+  nameWithType: FourSkyLocType.YearCNName
+  fullName: CompassEx.Assist.FourSkyLocType.YearCNName
+- uid: CompassEx.Assist.FourSkyLocType.DayCNName*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.DayCNName
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_DayCNName
+  name: DayCNName
+  nameWithType: FourSkyLocType.DayCNName
+  fullName: CompassEx.Assist.FourSkyLocType.DayCNName
+- uid: CompassEx.Assist.FourSkyLocType.FullCNName*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.FullCNName
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_FullCNName
+  name: FullCNName
+  nameWithType: FourSkyLocType.FullCNName
+  fullName: CompassEx.Assist.FourSkyLocType.FullCNName
+- uid: CompassEx.Assist.FourSkyLocType.SeasonName*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.SeasonName
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_SeasonName
+  name: SeasonName
+  nameWithType: FourSkyLocType.SeasonName
+  fullName: CompassEx.Assist.FourSkyLocType.SeasonName
+- uid: CompassEx.Assist.FourSkyLocType.Date*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.Date
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_Date
+  name: Date
+  nameWithType: FourSkyLocType.Date
+  fullName: CompassEx.Assist.FourSkyLocType.Date
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: CompassEx.Assist.FourSkyLocType.DayBuildName*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.DayBuildName
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_DayBuildName
+  name: DayBuildName
+  nameWithType: FourSkyLocType.DayBuildName
+  fullName: CompassEx.Assist.FourSkyLocType.DayBuildName
+- uid: CompassEx.Assist.FourSkyLocType.IsSkyPardonDay*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.IsSkyPardonDay
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_IsSkyPardonDay
+  name: IsSkyPardonDay
+  nameWithType: FourSkyLocType.IsSkyPardonDay
+  fullName: CompassEx.Assist.FourSkyLocType.IsSkyPardonDay
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: CompassEx.Assist.FourSkyLocType.GetAllGodNames*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.GetAllGodNames
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_GetAllGodNames
+  name: GetAllGodNames
+  nameWithType: FourSkyLocType.GetAllGodNames
+  fullName: CompassEx.Assist.FourSkyLocType.GetAllGodNames
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: CompassEx.Assist.FourSkyLocType.IsFourScrapDay*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.IsFourScrapDay
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_IsFourScrapDay
+  name: IsFourScrapDay
+  nameWithType: FourSkyLocType.IsFourScrapDay
+  fullName: CompassEx.Assist.FourSkyLocType.IsFourScrapDay
+- uid: CompassEx.Assist.FourSkyLocType.IsTenDefeatDay*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.IsTenDefeatDay
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_IsTenDefeatDay
+  name: IsTenDefeatDay
+  nameWithType: FourSkyLocType.IsTenDefeatDay
+  fullName: CompassEx.Assist.FourSkyLocType.IsTenDefeatDay
+- uid: CompassEx.Assist.FourSkyLocType.IsTenSpiritDay*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.IsTenSpiritDay
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_IsTenSpiritDay
+  name: IsTenSpiritDay
+  nameWithType: FourSkyLocType.IsTenSpiritDay
+  fullName: CompassEx.Assist.FourSkyLocType.IsTenSpiritDay

@@ -7,11 +7,15 @@ items:
   children:
   - CompassEx.Comm.LocClass.#ctor(System.Int32)
   - CompassEx.Comm.LocClass.#ctor(System.String)
+  - CompassEx.Comm.LocClass.Equals(System.Object)
   - CompassEx.Comm.LocClass.FiveAttr
   - CompassEx.Comm.LocClass.GetAllLocClass
+  - CompassEx.Comm.LocClass.GetHashCode
   - CompassEx.Comm.LocClass.GetLocClass(System.Int32)
   - CompassEx.Comm.LocClass.GetLocClass(System.String)
+  - CompassEx.Comm.LocClass.Hour
   - CompassEx.Comm.LocClass.Index
+  - CompassEx.Comm.LocClass.LocMonthIndex
   - CompassEx.Comm.LocClass.LocNames
   - CompassEx.Comm.LocClass.LocTimeValue
   - CompassEx.Comm.LocClass.LocTimeValues
@@ -19,6 +23,8 @@ items:
   - CompassEx.Comm.LocClass.TimeValueInRangIndex(System.DateTime)
   - CompassEx.Comm.LocClass.TimeValueInRangIndex(System.String)
   - CompassEx.Comm.LocClass.ToString
+  - CompassEx.Comm.LocClass.op_Equality(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass)
+  - CompassEx.Comm.LocClass.op_Inequality(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass)
   langs:
   - csharp
   - vb
@@ -40,14 +46,14 @@ items:
   summary: 地支类
   example: []
   syntax:
-    content: public class LocClass
-    content.vb: Public Class LocClass
+    content: 'public class LocClass : IEquatable<LocClass>'
+    content.vb: Public Class LocClass Implements IEquatable(Of LocClass)
   inheritance:
   - System.Object
+  implements:
+  - System.IEquatable{CompassEx.Comm.LocClass}
   inheritedMembers:
-  - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
@@ -176,8 +182,70 @@ items:
     return:
       type: System.Int32
       description: 一个 <xref href="System.Int32" data-throw-if-not-resolved="false"></xref> 整数，有效取值范围为 <code>0 ~ 11</code>，对应 <xref href="CompassEx.Comm.LocClass.LocNames" data-throw-if-not-resolved="false"></xref> 中的位置。
-    content.vb: Public Property Index As Integer
+    content.vb: Public ReadOnly Property Index As Integer
   overload: CompassEx.Comm.LocClass.Index*
+- uid: CompassEx.Comm.LocClass.Hour
+  commentId: P:CompassEx.Comm.LocClass.Hour
+  id: Hour
+  parent: CompassEx.Comm.LocClass
+  langs:
+  - csharp
+  - vb
+  name: Hour
+  nameWithType: LocClass.Hour
+  fullName: CompassEx.Comm.LocClass.Hour
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/LocClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Hour
+    path: CompassEx/Comm/LocClass.cs
+    startLine: 86
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 返回时辰点数值
+  example: []
+  syntax:
+    content: public int Hour { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Hour As Integer
+  overload: CompassEx.Comm.LocClass.Hour*
+- uid: CompassEx.Comm.LocClass.LocMonthIndex
+  commentId: P:CompassEx.Comm.LocClass.LocMonthIndex
+  id: LocMonthIndex
+  parent: CompassEx.Comm.LocClass
+  langs:
+  - csharp
+  - vb
+  name: LocMonthIndex
+  nameWithType: LocClass.LocMonthIndex
+  fullName: CompassEx.Comm.LocClass.LocMonthIndex
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/LocClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: LocMonthIndex
+    path: CompassEx/Comm/LocClass.cs
+    startLine: 91
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 地支月索引
+  example: []
+  syntax:
+    content: public int LocMonthIndex { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property LocMonthIndex As Integer
+  overload: CompassEx.Comm.LocClass.LocMonthIndex*
 - uid: CompassEx.Comm.LocClass.FiveAttr
   commentId: P:CompassEx.Comm.LocClass.FiveAttr
   id: FiveAttr
@@ -196,7 +264,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FiveAttr
     path: CompassEx/Comm/LocClass.cs
-    startLine: 88
+    startLine: 107
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -228,7 +296,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LocTimeValue
     path: CompassEx/Comm/LocClass.cs
-    startLine: 96
+    startLine: 115
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -260,7 +328,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Comm/LocClass.cs
-    startLine: 108
+    startLine: 127
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -299,7 +367,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Comm/LocClass.cs
-    startLine: 118
+    startLine: 137
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -338,7 +406,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToString
     path: CompassEx/Comm/LocClass.cs
-    startLine: 149
+    startLine: 168
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -368,7 +436,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TimeValueInRangIndex
     path: CompassEx/Comm/LocClass.cs
-    startLine: 161
+    startLine: 180
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -407,7 +475,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TimeValueInRangIndex
     path: CompassEx/Comm/LocClass.cs
-    startLine: 176
+    startLine: 195
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -451,7 +519,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAllLocClass
     path: CompassEx/Comm/LocClass.cs
-    startLine: 199
+    startLine: 218
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -482,14 +550,14 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetLocClass
     path: CompassEx/Comm/LocClass.cs
-    startLine: 214
+    startLine: 233
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
   summary: 根据指定的地支单字字面名称，动态检索并实例化对应的地支类实体。
   example: []
   syntax:
-    content: public static LocClass GetLocClass(string LocName)
+    content: public static LocClass? GetLocClass(string LocName)
     parameters:
     - id: LocName
       type: System.String
@@ -520,7 +588,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetLocClass
     path: CompassEx/Comm/LocClass.cs
-    startLine: 231
+    startLine: 250
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -541,6 +609,144 @@ items:
   nameWithType.vb: LocClass.GetLocClass(Integer)
   fullName.vb: CompassEx.Comm.LocClass.GetLocClass(Integer)
   name.vb: GetLocClass(Integer)
+- uid: CompassEx.Comm.LocClass.Equals(System.Object)
+  commentId: M:CompassEx.Comm.LocClass.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: CompassEx.Comm.LocClass
+  langs:
+  - csharp
+  - vb
+  name: Equals(object)
+  nameWithType: LocClass.Equals(object)
+  fullName: CompassEx.Comm.LocClass.Equals(object)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/LocClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Equals
+    path: CompassEx/Comm/LocClass.cs
+    startLine: 266
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: CompassEx.Comm.LocClass.Equals*
+  nameWithType.vb: LocClass.Equals(Object)
+  fullName.vb: CompassEx.Comm.LocClass.Equals(Object)
+  name.vb: Equals(Object)
+- uid: CompassEx.Comm.LocClass.GetHashCode
+  commentId: M:CompassEx.Comm.LocClass.GetHashCode
+  id: GetHashCode
+  parent: CompassEx.Comm.LocClass
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: LocClass.GetHashCode()
+  fullName: CompassEx.Comm.LocClass.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/LocClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetHashCode
+    path: CompassEx/Comm/LocClass.cs
+    startLine: 283
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.Object.GetHashCode
+  overload: CompassEx.Comm.LocClass.GetHashCode*
+- uid: CompassEx.Comm.LocClass.op_Equality(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass)
+  commentId: M:CompassEx.Comm.LocClass.op_Equality(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass)
+  id: op_Equality(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass)
+  parent: CompassEx.Comm.LocClass
+  langs:
+  - csharp
+  - vb
+  name: operator ==(LocClass, LocClass)
+  nameWithType: LocClass.operator ==(LocClass, LocClass)
+  fullName: CompassEx.Comm.LocClass.operator ==(CompassEx.Comm.LocClass, CompassEx.Comm.LocClass)
+  type: Operator
+  source:
+    remote:
+      path: CompassEx/Comm/LocClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: op_Equality
+    path: CompassEx/Comm/LocClass.cs
+    startLine: 290
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  syntax:
+    content: public static bool operator ==(LocClass left, LocClass right)
+    parameters:
+    - id: left
+      type: CompassEx.Comm.LocClass
+    - id: right
+      type: CompassEx.Comm.LocClass
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As LocClass, right As LocClass) As Boolean
+  overload: CompassEx.Comm.LocClass.op_Equality*
+  nameWithType.vb: LocClass.=(LocClass, LocClass)
+  fullName.vb: CompassEx.Comm.LocClass.=(CompassEx.Comm.LocClass, CompassEx.Comm.LocClass)
+  name.vb: =(LocClass, LocClass)
+- uid: CompassEx.Comm.LocClass.op_Inequality(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass)
+  commentId: M:CompassEx.Comm.LocClass.op_Inequality(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass)
+  id: op_Inequality(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass)
+  parent: CompassEx.Comm.LocClass
+  langs:
+  - csharp
+  - vb
+  name: operator !=(LocClass, LocClass)
+  nameWithType: LocClass.operator !=(LocClass, LocClass)
+  fullName: CompassEx.Comm.LocClass.operator !=(CompassEx.Comm.LocClass, CompassEx.Comm.LocClass)
+  type: Operator
+  source:
+    remote:
+      path: CompassEx/Comm/LocClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: op_Inequality
+    path: CompassEx/Comm/LocClass.cs
+    startLine: 296
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  syntax:
+    content: public static bool operator !=(LocClass left, LocClass right)
+    parameters:
+    - id: left
+      type: CompassEx.Comm.LocClass
+    - id: right
+      type: CompassEx.Comm.LocClass
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As LocClass, right As LocClass) As Boolean
+  overload: CompassEx.Comm.LocClass.op_Inequality*
+  nameWithType.vb: LocClass.<>(LocClass, LocClass)
+  fullName.vb: CompassEx.Comm.LocClass.<>(CompassEx.Comm.LocClass, CompassEx.Comm.LocClass)
+  name.vb: <>(LocClass, LocClass)
 references:
 - uid: CompassEx.Comm
   commentId: N:CompassEx.Comm
@@ -575,38 +781,38 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  name: Equals(object)
-  nameWithType: object.Equals(object)
-  fullName: object.Equals(object)
-  nameWithType.vb: Object.Equals(Object)
-  fullName.vb: Object.Equals(Object)
-  name.vb: Equals(Object)
+- uid: System.IEquatable{CompassEx.Comm.LocClass}
+  commentId: T:System.IEquatable{CompassEx.Comm.LocClass}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<LocClass>
+  nameWithType: IEquatable<LocClass>
+  fullName: System.IEquatable<CompassEx.Comm.LocClass>
+  nameWithType.vb: IEquatable(Of LocClass)
+  fullName.vb: System.IEquatable(Of CompassEx.Comm.LocClass)
+  name.vb: IEquatable(Of LocClass)
   spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
+  - uid: System.IEquatable`1
+    name: IEquatable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: CompassEx.Comm.LocClass
+    name: LocClass
+    href: CompassEx.Comm.LocClass.html
+  - name: '>'
   spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
+  - uid: System.IEquatable`1
+    name: IEquatable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
   - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Comm.LocClass
+    name: LocClass
+    href: CompassEx.Comm.LocClass.html
   - name: )
 - uid: System.Object.Equals(System.Object,System.Object)
   commentId: M:System.Object.Equals(System.Object,System.Object)
@@ -652,30 +858,6 @@ references:
     name: Object
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
   - name: )
 - uid: System.Object.GetType
   commentId: M:System.Object.GetType
@@ -830,6 +1012,34 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
   commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
   href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
@@ -943,6 +1153,18 @@ references:
   name: Index
   nameWithType: LocClass.Index
   fullName: CompassEx.Comm.LocClass.Index
+- uid: CompassEx.Comm.LocClass.Hour*
+  commentId: Overload:CompassEx.Comm.LocClass.Hour
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_Hour
+  name: Hour
+  nameWithType: LocClass.Hour
+  fullName: CompassEx.Comm.LocClass.Hour
+- uid: CompassEx.Comm.LocClass.LocMonthIndex*
+  commentId: Overload:CompassEx.Comm.LocClass.LocMonthIndex
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_LocMonthIndex
+  name: LocMonthIndex
+  nameWithType: LocClass.LocMonthIndex
+  fullName: CompassEx.Comm.LocClass.LocMonthIndex
 - uid: CompassEx.Comm.LocClass.FiveAttr
   commentId: P:CompassEx.Comm.LocClass.FiveAttr
   href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_FiveAttr
@@ -1229,3 +1451,102 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: CompassEx.Comm.LocClass.Equals*
+  commentId: Overload:CompassEx.Comm.LocClass.Equals
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_Equals_System_Object_
+  name: Equals
+  nameWithType: LocClass.Equals
+  fullName: CompassEx.Comm.LocClass.Equals
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: CompassEx.Comm.LocClass.GetHashCode*
+  commentId: Overload:CompassEx.Comm.LocClass.GetHashCode
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_GetHashCode
+  name: GetHashCode
+  nameWithType: LocClass.GetHashCode
+  fullName: CompassEx.Comm.LocClass.GetHashCode
+- uid: CompassEx.Comm.LocClass.op_Equality*
+  commentId: Overload:CompassEx.Comm.LocClass.op_Equality
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_op_Equality_CompassEx_Comm_LocClass_CompassEx_Comm_LocClass_
+  name: operator ==
+  nameWithType: LocClass.operator ==
+  fullName: CompassEx.Comm.LocClass.operator ==
+  nameWithType.vb: LocClass.=
+  fullName.vb: CompassEx.Comm.LocClass.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: CompassEx.Comm.LocClass.op_Equality*
+    name: ==
+    href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_op_Equality_CompassEx_Comm_LocClass_CompassEx_Comm_LocClass_
+- uid: CompassEx.Comm.LocClass.op_Inequality*
+  commentId: Overload:CompassEx.Comm.LocClass.op_Inequality
+  href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_op_Inequality_CompassEx_Comm_LocClass_CompassEx_Comm_LocClass_
+  name: operator !=
+  nameWithType: LocClass.operator !=
+  fullName: CompassEx.Comm.LocClass.operator !=
+  nameWithType.vb: LocClass.<>
+  fullName.vb: CompassEx.Comm.LocClass.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: CompassEx.Comm.LocClass.op_Inequality*
+    name: '!='
+    href: CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_op_Inequality_CompassEx_Comm_LocClass_CompassEx_Comm_LocClass_

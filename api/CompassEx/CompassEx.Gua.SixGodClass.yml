@@ -105,7 +105,7 @@ items:
   summary: 获取当前爻位所配六神的字面名称（如“青龙”、“玄武”）。
   example: []
   syntax:
-    content: public string Name { get; }
+    content: public string? Name { get; }
     parameters: []
     return:
       type: System.String
@@ -205,7 +205,7 @@ items:
   summary: 根据传入的日天干字面名称，动态推算并装配当前六爻卦局的六神只读序列。
   example: []
   syntax:
-    content: public static SixGodClass[] GetSixGod(string DaySkyName)
+    content: public static SixGodClass[]? GetSixGod(string DaySkyName)
     parameters:
     - id: DaySkyName
       type: System.String

@@ -1,0 +1,1235 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Comm.AreaDirection
+  commentId: T:CompassEx.Comm.AreaDirection
+  id: AreaDirection
+  parent: CompassEx.Comm
+  children:
+  - CompassEx.Comm.AreaDirection.#ctor(System.Int32)
+  - CompassEx.Comm.AreaDirection.#ctor(System.String)
+  - CompassEx.Comm.AreaDirection.Equals(System.Object)
+  - CompassEx.Comm.AreaDirection.FlyStarAreaNames
+  - CompassEx.Comm.AreaDirection.FlyStarValues
+  - CompassEx.Comm.AreaDirection.GetAreaDirection(CompassEx.Comm.CompassRangEX)
+  - CompassEx.Comm.AreaDirection.GetAreaDirection(System.Double)
+  - CompassEx.Comm.AreaDirection.GetAreaDirectionByFlyStar(System.Int32)
+  - CompassEx.Comm.AreaDirection.GetHashCode
+  - CompassEx.Comm.AreaDirection.Index
+  - CompassEx.Comm.AreaDirection.Name
+  - CompassEx.Comm.AreaDirection.Names
+  - CompassEx.Comm.AreaDirection.Rang
+  - CompassEx.Comm.AreaDirection.Rangs
+  - CompassEx.Comm.AreaDirection.op_Equality(CompassEx.Comm.AreaDirection,CompassEx.Comm.AreaDirection)
+  - CompassEx.Comm.AreaDirection.op_Inequality(CompassEx.Comm.AreaDirection,CompassEx.Comm.AreaDirection)
+  langs:
+  - csharp
+  - vb
+  name: AreaDirection
+  nameWithType: AreaDirection
+  fullName: CompassEx.Comm.AreaDirection
+  type: Class
+  source:
+    remote:
+      path: CompassEx/Comm/AreaDirection.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: AreaDirection
+    path: CompassEx/Comm/AreaDirection.cs
+    startLine: 23
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 表示区域方位类，用于管理罗盘八方及中宫的名称、度数范围以及飞星轨迹映射。
+  example: []
+  syntax:
+    content: 'public class AreaDirection : IEquatable<AreaDirection>'
+    content.vb: Public Class AreaDirection Implements IEquatable(Of AreaDirection)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{CompassEx.Comm.AreaDirection}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - CompassEx.Comm.AreaDirection.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CompassEx.Comm.AreaDirection.Names
+  commentId: F:CompassEx.Comm.AreaDirection.Names
+  id: Names
+  parent: CompassEx.Comm.AreaDirection
+  langs:
+  - csharp
+  - vb
+  name: Names
+  nameWithType: AreaDirection.Names
+  fullName: CompassEx.Comm.AreaDirection.Names
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Comm/AreaDirection.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Names
+    path: CompassEx/Comm/AreaDirection.cs
+    startLine: 28
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 预定义八个方位及中宫的名称数组（按罗盘顺时针定义）。
+  example: []
+  syntax:
+    content: public static readonly string[] Names
+    return:
+      type: System.String[]
+    content.vb: Public Shared ReadOnly Names As String()
+- uid: CompassEx.Comm.AreaDirection.FlyStarAreaNames
+  commentId: F:CompassEx.Comm.AreaDirection.FlyStarAreaNames
+  id: FlyStarAreaNames
+  parent: CompassEx.Comm.AreaDirection
+  langs:
+  - csharp
+  - vb
+  name: FlyStarAreaNames
+  nameWithType: AreaDirection.FlyStarAreaNames
+  fullName: CompassEx.Comm.AreaDirection.FlyStarAreaNames
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Comm/AreaDirection.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FlyStarAreaNames
+    path: CompassEx/Comm/AreaDirection.cs
+    startLine: 33
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 根据飞星轨迹顺序排列的方位名称数组。
+  example: []
+  syntax:
+    content: public static readonly string[] FlyStarAreaNames
+    return:
+      type: System.String[]
+    content.vb: Public Shared ReadOnly FlyStarAreaNames As String()
+- uid: CompassEx.Comm.AreaDirection.FlyStarValues
+  commentId: F:CompassEx.Comm.AreaDirection.FlyStarValues
+  id: FlyStarValues
+  parent: CompassEx.Comm.AreaDirection
+  langs:
+  - csharp
+  - vb
+  name: FlyStarValues
+  nameWithType: AreaDirection.FlyStarValues
+  fullName: CompassEx.Comm.AreaDirection.FlyStarValues
+  type: Field
+  source:
+    remote:
+      path: CompassEx/Comm/AreaDirection.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FlyStarValues
+    path: CompassEx/Comm/AreaDirection.cs
+    startLine: 38
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 根据飞星轨迹顺序排列的飞星数值数组。
+  example: []
+  syntax:
+    content: public static readonly int[] FlyStarValues
+    return:
+      type: System.Int32[]
+    content.vb: Public Shared ReadOnly FlyStarValues As Integer()
+- uid: CompassEx.Comm.AreaDirection.Rangs
+  commentId: P:CompassEx.Comm.AreaDirection.Rangs
+  id: Rangs
+  parent: CompassEx.Comm.AreaDirection
+  langs:
+  - csharp
+  - vb
+  name: Rangs
+  nameWithType: AreaDirection.Rangs
+  fullName: CompassEx.Comm.AreaDirection.Rangs
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/AreaDirection.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Rangs
+    path: CompassEx/Comm/AreaDirection.cs
+    startLine: 43
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取默认的八个方位的度数范围，每个方位以 45 度为范围（中宫设为 -1）。
+  example: []
+  syntax:
+    content: public static CompassRangEX[] Rangs { get; }
+    parameters: []
+    return:
+      type: CompassEx.Comm.CompassRangEX[]
+    content.vb: Public Shared ReadOnly Property Rangs As CompassRangEX()
+  overload: CompassEx.Comm.AreaDirection.Rangs*
+- uid: CompassEx.Comm.AreaDirection.Name
+  commentId: P:CompassEx.Comm.AreaDirection.Name
+  id: Name
+  parent: CompassEx.Comm.AreaDirection
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: AreaDirection.Name
+  fullName: CompassEx.Comm.AreaDirection.Name
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/AreaDirection.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Name
+    path: CompassEx/Comm/AreaDirection.cs
+    startLine: 79
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取当前方位的八方名称。
+  example: []
+  syntax:
+    content: public string? Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: CompassEx.Comm.AreaDirection.Name*
+- uid: CompassEx.Comm.AreaDirection.Index
+  commentId: P:CompassEx.Comm.AreaDirection.Index
+  id: Index
+  parent: CompassEx.Comm.AreaDirection
+  langs:
+  - csharp
+  - vb
+  name: Index
+  nameWithType: AreaDirection.Index
+  fullName: CompassEx.Comm.AreaDirection.Index
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/AreaDirection.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Index
+    path: CompassEx/Comm/AreaDirection.cs
+    startLine: 84
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取当前方位的索引值。
+  example: []
+  syntax:
+    content: public int Index { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Index As Integer
+  overload: CompassEx.Comm.AreaDirection.Index*
+- uid: CompassEx.Comm.AreaDirection.Rang
+  commentId: P:CompassEx.Comm.AreaDirection.Rang
+  id: Rang
+  parent: CompassEx.Comm.AreaDirection
+  langs:
+  - csharp
+  - vb
+  name: Rang
+  nameWithType: AreaDirection.Rang
+  fullName: CompassEx.Comm.AreaDirection.Rang
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/AreaDirection.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Rang
+    path: CompassEx/Comm/AreaDirection.cs
+    startLine: 89
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取当前方位的度数范围对象。
+  example: []
+  syntax:
+    content: public CompassRangEX? Rang { get; }
+    parameters: []
+    return:
+      type: CompassEx.Comm.CompassRangEX
+    content.vb: Public Property Rang As CompassRangEX
+  overload: CompassEx.Comm.AreaDirection.Rang*
+- uid: CompassEx.Comm.AreaDirection.#ctor(System.String)
+  commentId: M:CompassEx.Comm.AreaDirection.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: CompassEx.Comm.AreaDirection
+  langs:
+  - csharp
+  - vb
+  name: AreaDirection(string?)
+  nameWithType: AreaDirection.AreaDirection(string?)
+  fullName: CompassEx.Comm.AreaDirection.AreaDirection(string?)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Comm/AreaDirection.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Comm/AreaDirection.cs
+    startLine: 95
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 初始化 <xref href="CompassEx.Comm.AreaDirection" data-throw-if-not-resolved="false"></xref> 类的新实例，使用指定的方位名称创建。
+  example: []
+  syntax:
+    content: public AreaDirection(string? name)
+    parameters:
+    - id: name
+      type: System.String
+      description: 方位的名称（例如："正北"、"中宫"等）。
+    content.vb: Public Sub New(name As String)
+  overload: CompassEx.Comm.AreaDirection.#ctor*
+  nameWithType.vb: AreaDirection.New(String)
+  fullName.vb: CompassEx.Comm.AreaDirection.New(String)
+  name.vb: New(String)
+- uid: CompassEx.Comm.AreaDirection.#ctor(System.Int32)
+  commentId: M:CompassEx.Comm.AreaDirection.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: CompassEx.Comm.AreaDirection
+  langs:
+  - csharp
+  - vb
+  name: AreaDirection(int)
+  nameWithType: AreaDirection.AreaDirection(int)
+  fullName: CompassEx.Comm.AreaDirection.AreaDirection(int)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Comm/AreaDirection.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Comm/AreaDirection.cs
+    startLine: 105
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 初始化 <xref href="CompassEx.Comm.AreaDirection" data-throw-if-not-resolved="false"></xref> 类的新实例，基于指定的索引创建。
+  example: []
+  syntax:
+    content: public AreaDirection(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: 方位的索引值。
+    content.vb: Public Sub New(index As Integer)
+  overload: CompassEx.Comm.AreaDirection.#ctor*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: 当索引超出有效范围时抛出。
+  nameWithType.vb: AreaDirection.New(Integer)
+  fullName.vb: CompassEx.Comm.AreaDirection.New(Integer)
+  name.vb: New(Integer)
+- uid: CompassEx.Comm.AreaDirection.GetAreaDirectionByFlyStar(System.Int32)
+  commentId: M:CompassEx.Comm.AreaDirection.GetAreaDirectionByFlyStar(System.Int32)
+  id: GetAreaDirectionByFlyStar(System.Int32)
+  parent: CompassEx.Comm.AreaDirection
+  langs:
+  - csharp
+  - vb
+  name: GetAreaDirectionByFlyStar(int)
+  nameWithType: AreaDirection.GetAreaDirectionByFlyStar(int)
+  fullName: CompassEx.Comm.AreaDirection.GetAreaDirectionByFlyStar(int)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/AreaDirection.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetAreaDirectionByFlyStar
+    path: CompassEx/Comm/AreaDirection.cs
+    startLine: 119
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 根据飞星数值获取相关的区域方位类实例。
+  example: []
+  syntax:
+    content: public static AreaDirection? GetAreaDirectionByFlyStar(int flyStarValue)
+    parameters:
+    - id: flyStarValue
+      type: System.Int32
+      description: 飞星的数值。
+    return:
+      type: CompassEx.Comm.AreaDirection
+      description: 返回对应的 <xref href="CompassEx.Comm.AreaDirection" data-throw-if-not-resolved="false"></xref> 实例；若未找到则可能返回 null。
+    content.vb: Public Shared Function GetAreaDirectionByFlyStar(flyStarValue As Integer) As AreaDirection
+  overload: CompassEx.Comm.AreaDirection.GetAreaDirectionByFlyStar*
+  nameWithType.vb: AreaDirection.GetAreaDirectionByFlyStar(Integer)
+  fullName.vb: CompassEx.Comm.AreaDirection.GetAreaDirectionByFlyStar(Integer)
+  name.vb: GetAreaDirectionByFlyStar(Integer)
+- uid: CompassEx.Comm.AreaDirection.GetAreaDirection(CompassEx.Comm.CompassRangEX)
+  commentId: M:CompassEx.Comm.AreaDirection.GetAreaDirection(CompassEx.Comm.CompassRangEX)
+  id: GetAreaDirection(CompassEx.Comm.CompassRangEX)
+  parent: CompassEx.Comm.AreaDirection
+  langs:
+  - csharp
+  - vb
+  name: GetAreaDirection(CompassRangEX)
+  nameWithType: AreaDirection.GetAreaDirection(CompassRangEX)
+  fullName: CompassEx.Comm.AreaDirection.GetAreaDirection(CompassEx.Comm.CompassRangEX)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/AreaDirection.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetAreaDirection
+    path: CompassEx/Comm/AreaDirection.cs
+    startLine: 131
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 根据度数范围返回对应的区域方位类实例。
+  example: []
+  syntax:
+    content: public static AreaDirection? GetAreaDirection(CompassRangEX cr)
+    parameters:
+    - id: cr
+      type: CompassEx.Comm.CompassRangEX
+      description: 罗盘度数范围对象 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref>。
+    return:
+      type: CompassEx.Comm.AreaDirection
+      description: 返回对应的 <xref href="CompassEx.Comm.AreaDirection" data-throw-if-not-resolved="false"></xref> 实例；若未找到匹配范围则返回 null。
+    content.vb: Public Shared Function GetAreaDirection(cr As CompassRangEX) As AreaDirection
+  overload: CompassEx.Comm.AreaDirection.GetAreaDirection*
+- uid: CompassEx.Comm.AreaDirection.GetAreaDirection(System.Double)
+  commentId: M:CompassEx.Comm.AreaDirection.GetAreaDirection(System.Double)
+  id: GetAreaDirection(System.Double)
+  parent: CompassEx.Comm.AreaDirection
+  langs:
+  - csharp
+  - vb
+  name: GetAreaDirection(double)
+  nameWithType: AreaDirection.GetAreaDirection(double)
+  fullName: CompassEx.Comm.AreaDirection.GetAreaDirection(double)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/AreaDirection.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetAreaDirection
+    path: CompassEx/Comm/AreaDirection.cs
+    startLine: 141
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 根据具体的罗盘角度数值返回对应的区域方位类实例。
+  example: []
+  syntax:
+    content: public static AreaDirection? GetAreaDirection(double angle)
+    parameters:
+    - id: angle
+      type: System.Double
+      description: 角度值（0 到 360 度之间）。
+    return:
+      type: CompassEx.Comm.AreaDirection
+      description: 返回对应的 <xref href="CompassEx.Comm.AreaDirection" data-throw-if-not-resolved="false"></xref> 实例；若未找到匹配的区间则返回 null。
+    content.vb: Public Shared Function GetAreaDirection(angle As Double) As AreaDirection
+  overload: CompassEx.Comm.AreaDirection.GetAreaDirection*
+  nameWithType.vb: AreaDirection.GetAreaDirection(Double)
+  fullName.vb: CompassEx.Comm.AreaDirection.GetAreaDirection(Double)
+  name.vb: GetAreaDirection(Double)
+- uid: CompassEx.Comm.AreaDirection.Equals(System.Object)
+  commentId: M:CompassEx.Comm.AreaDirection.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: CompassEx.Comm.AreaDirection
+  langs:
+  - csharp
+  - vb
+  name: Equals(object)
+  nameWithType: AreaDirection.Equals(object)
+  fullName: CompassEx.Comm.AreaDirection.Equals(object)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/AreaDirection.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Equals
+    path: CompassEx/Comm/AreaDirection.cs
+    startLine: 157
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: CompassEx.Comm.AreaDirection.Equals*
+  nameWithType.vb: AreaDirection.Equals(Object)
+  fullName.vb: CompassEx.Comm.AreaDirection.Equals(Object)
+  name.vb: Equals(Object)
+- uid: CompassEx.Comm.AreaDirection.GetHashCode
+  commentId: M:CompassEx.Comm.AreaDirection.GetHashCode
+  id: GetHashCode
+  parent: CompassEx.Comm.AreaDirection
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: AreaDirection.GetHashCode()
+  fullName: CompassEx.Comm.AreaDirection.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/AreaDirection.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetHashCode
+    path: CompassEx/Comm/AreaDirection.cs
+    startLine: 174
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.Object.GetHashCode
+  overload: CompassEx.Comm.AreaDirection.GetHashCode*
+- uid: CompassEx.Comm.AreaDirection.op_Equality(CompassEx.Comm.AreaDirection,CompassEx.Comm.AreaDirection)
+  commentId: M:CompassEx.Comm.AreaDirection.op_Equality(CompassEx.Comm.AreaDirection,CompassEx.Comm.AreaDirection)
+  id: op_Equality(CompassEx.Comm.AreaDirection,CompassEx.Comm.AreaDirection)
+  parent: CompassEx.Comm.AreaDirection
+  langs:
+  - csharp
+  - vb
+  name: operator ==(AreaDirection, AreaDirection)
+  nameWithType: AreaDirection.operator ==(AreaDirection, AreaDirection)
+  fullName: CompassEx.Comm.AreaDirection.operator ==(CompassEx.Comm.AreaDirection, CompassEx.Comm.AreaDirection)
+  type: Operator
+  source:
+    remote:
+      path: CompassEx/Comm/AreaDirection.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: op_Equality
+    path: CompassEx/Comm/AreaDirection.cs
+    startLine: 181
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  syntax:
+    content: public static bool operator ==(AreaDirection left, AreaDirection right)
+    parameters:
+    - id: left
+      type: CompassEx.Comm.AreaDirection
+    - id: right
+      type: CompassEx.Comm.AreaDirection
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As AreaDirection, right As AreaDirection) As Boolean
+  overload: CompassEx.Comm.AreaDirection.op_Equality*
+  nameWithType.vb: AreaDirection.=(AreaDirection, AreaDirection)
+  fullName.vb: CompassEx.Comm.AreaDirection.=(CompassEx.Comm.AreaDirection, CompassEx.Comm.AreaDirection)
+  name.vb: =(AreaDirection, AreaDirection)
+- uid: CompassEx.Comm.AreaDirection.op_Inequality(CompassEx.Comm.AreaDirection,CompassEx.Comm.AreaDirection)
+  commentId: M:CompassEx.Comm.AreaDirection.op_Inequality(CompassEx.Comm.AreaDirection,CompassEx.Comm.AreaDirection)
+  id: op_Inequality(CompassEx.Comm.AreaDirection,CompassEx.Comm.AreaDirection)
+  parent: CompassEx.Comm.AreaDirection
+  langs:
+  - csharp
+  - vb
+  name: operator !=(AreaDirection, AreaDirection)
+  nameWithType: AreaDirection.operator !=(AreaDirection, AreaDirection)
+  fullName: CompassEx.Comm.AreaDirection.operator !=(CompassEx.Comm.AreaDirection, CompassEx.Comm.AreaDirection)
+  type: Operator
+  source:
+    remote:
+      path: CompassEx/Comm/AreaDirection.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: op_Inequality
+    path: CompassEx/Comm/AreaDirection.cs
+    startLine: 187
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  syntax:
+    content: public static bool operator !=(AreaDirection left, AreaDirection right)
+    parameters:
+    - id: left
+      type: CompassEx.Comm.AreaDirection
+    - id: right
+      type: CompassEx.Comm.AreaDirection
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As AreaDirection, right As AreaDirection) As Boolean
+  overload: CompassEx.Comm.AreaDirection.op_Inequality*
+  nameWithType.vb: AreaDirection.<>(AreaDirection, AreaDirection)
+  fullName.vb: CompassEx.Comm.AreaDirection.<>(CompassEx.Comm.AreaDirection, CompassEx.Comm.AreaDirection)
+  name.vb: <>(AreaDirection, AreaDirection)
+references:
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{CompassEx.Comm.AreaDirection}
+  commentId: T:System.IEquatable{CompassEx.Comm.AreaDirection}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<AreaDirection>
+  nameWithType: IEquatable<AreaDirection>
+  fullName: System.IEquatable<CompassEx.Comm.AreaDirection>
+  nameWithType.vb: IEquatable(Of AreaDirection)
+  fullName.vb: System.IEquatable(Of CompassEx.Comm.AreaDirection)
+  name.vb: IEquatable(Of AreaDirection)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: CompassEx.Comm.AreaDirection
+    name: AreaDirection
+    href: CompassEx.Comm.AreaDirection.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Comm.AreaDirection
+    name: AreaDirection
+    href: CompassEx.Comm.AreaDirection.html
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CompassEx.Comm.AreaDirection.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<AreaDirection, TBase>(AreaDirection, TBase)
+  nameWithType: Comm.ApplyBaseProperties<AreaDirection, TBase>(AreaDirection, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.Comm.AreaDirection, TBase>(CompassEx.Comm.AreaDirection, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of AreaDirection, TBase)(AreaDirection, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.Comm.AreaDirection, TBase)(CompassEx.Comm.AreaDirection, TBase)
+  name.vb: ApplyBaseProperties(Of AreaDirection, TBase)(AreaDirection, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Comm.AreaDirection,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.Comm.AreaDirection
+    name: AreaDirection
+    href: CompassEx.Comm.AreaDirection.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.Comm.AreaDirection
+    name: AreaDirection
+    href: CompassEx.Comm.AreaDirection.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Comm.AreaDirection,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Comm.AreaDirection
+    name: AreaDirection
+    href: CompassEx.Comm.AreaDirection.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.Comm.AreaDirection
+    name: AreaDirection
+    href: CompassEx.Comm.AreaDirection.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: System.Int32[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int[]
+  nameWithType: int[]
+  fullName: int[]
+  nameWithType.vb: Integer()
+  fullName.vb: Integer()
+  name.vb: Integer()
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: (
+  - name: )
+- uid: CompassEx.Comm.AreaDirection.Rangs*
+  commentId: Overload:CompassEx.Comm.AreaDirection.Rangs
+  href: CompassEx.Comm.AreaDirection.html#CompassEx_Comm_AreaDirection_Rangs
+  name: Rangs
+  nameWithType: AreaDirection.Rangs
+  fullName: CompassEx.Comm.AreaDirection.Rangs
+- uid: CompassEx.Comm.CompassRangEX[]
+  isExternal: true
+  href: CompassEx.Comm.CompassRangEX.html
+  name: CompassRangEX[]
+  nameWithType: CompassRangEX[]
+  fullName: CompassEx.Comm.CompassRangEX[]
+  nameWithType.vb: CompassRangEX()
+  fullName.vb: CompassEx.Comm.CompassRangEX()
+  name.vb: CompassRangEX()
+  spec.csharp:
+  - uid: CompassEx.Comm.CompassRangEX
+    name: CompassRangEX
+    href: CompassEx.Comm.CompassRangEX.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: CompassEx.Comm.CompassRangEX
+    name: CompassRangEX
+    href: CompassEx.Comm.CompassRangEX.html
+  - name: (
+  - name: )
+- uid: CompassEx.Comm.AreaDirection.Name*
+  commentId: Overload:CompassEx.Comm.AreaDirection.Name
+  href: CompassEx.Comm.AreaDirection.html#CompassEx_Comm_AreaDirection_Name
+  name: Name
+  nameWithType: AreaDirection.Name
+  fullName: CompassEx.Comm.AreaDirection.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CompassEx.Comm.AreaDirection.Index*
+  commentId: Overload:CompassEx.Comm.AreaDirection.Index
+  href: CompassEx.Comm.AreaDirection.html#CompassEx_Comm_AreaDirection_Index
+  name: Index
+  nameWithType: AreaDirection.Index
+  fullName: CompassEx.Comm.AreaDirection.Index
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: CompassEx.Comm.AreaDirection.Rang*
+  commentId: Overload:CompassEx.Comm.AreaDirection.Rang
+  href: CompassEx.Comm.AreaDirection.html#CompassEx_Comm_AreaDirection_Rang
+  name: Rang
+  nameWithType: AreaDirection.Rang
+  fullName: CompassEx.Comm.AreaDirection.Rang
+- uid: CompassEx.Comm.CompassRangEX
+  commentId: T:CompassEx.Comm.CompassRangEX
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.CompassRangEX.html
+  name: CompassRangEX
+  nameWithType: CompassRangEX
+  fullName: CompassEx.Comm.CompassRangEX
+- uid: CompassEx.Comm.AreaDirection
+  commentId: T:CompassEx.Comm.AreaDirection
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.AreaDirection.html
+  name: AreaDirection
+  nameWithType: AreaDirection
+  fullName: CompassEx.Comm.AreaDirection
+- uid: CompassEx.Comm.AreaDirection.#ctor*
+  commentId: Overload:CompassEx.Comm.AreaDirection.#ctor
+  href: CompassEx.Comm.AreaDirection.html#CompassEx_Comm_AreaDirection__ctor_System_String_
+  name: AreaDirection
+  nameWithType: AreaDirection.AreaDirection
+  fullName: CompassEx.Comm.AreaDirection.AreaDirection
+  nameWithType.vb: AreaDirection.New
+  fullName.vb: CompassEx.Comm.AreaDirection.New
+  name.vb: New
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: CompassEx.Comm.AreaDirection.GetAreaDirectionByFlyStar*
+  commentId: Overload:CompassEx.Comm.AreaDirection.GetAreaDirectionByFlyStar
+  href: CompassEx.Comm.AreaDirection.html#CompassEx_Comm_AreaDirection_GetAreaDirectionByFlyStar_System_Int32_
+  name: GetAreaDirectionByFlyStar
+  nameWithType: AreaDirection.GetAreaDirectionByFlyStar
+  fullName: CompassEx.Comm.AreaDirection.GetAreaDirectionByFlyStar
+- uid: CompassEx.Comm.AreaDirection.GetAreaDirection*
+  commentId: Overload:CompassEx.Comm.AreaDirection.GetAreaDirection
+  href: CompassEx.Comm.AreaDirection.html#CompassEx_Comm_AreaDirection_GetAreaDirection_CompassEx_Comm_CompassRangEX_
+  name: GetAreaDirection
+  nameWithType: AreaDirection.GetAreaDirection
+  fullName: CompassEx.Comm.AreaDirection.GetAreaDirection
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: CompassEx.Comm.AreaDirection.Equals*
+  commentId: Overload:CompassEx.Comm.AreaDirection.Equals
+  href: CompassEx.Comm.AreaDirection.html#CompassEx_Comm_AreaDirection_Equals_System_Object_
+  name: Equals
+  nameWithType: AreaDirection.Equals
+  fullName: CompassEx.Comm.AreaDirection.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: CompassEx.Comm.AreaDirection.GetHashCode*
+  commentId: Overload:CompassEx.Comm.AreaDirection.GetHashCode
+  href: CompassEx.Comm.AreaDirection.html#CompassEx_Comm_AreaDirection_GetHashCode
+  name: GetHashCode
+  nameWithType: AreaDirection.GetHashCode
+  fullName: CompassEx.Comm.AreaDirection.GetHashCode
+- uid: CompassEx.Comm.AreaDirection.op_Equality*
+  commentId: Overload:CompassEx.Comm.AreaDirection.op_Equality
+  href: CompassEx.Comm.AreaDirection.html#CompassEx_Comm_AreaDirection_op_Equality_CompassEx_Comm_AreaDirection_CompassEx_Comm_AreaDirection_
+  name: operator ==
+  nameWithType: AreaDirection.operator ==
+  fullName: CompassEx.Comm.AreaDirection.operator ==
+  nameWithType.vb: AreaDirection.=
+  fullName.vb: CompassEx.Comm.AreaDirection.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: CompassEx.Comm.AreaDirection.op_Equality*
+    name: ==
+    href: CompassEx.Comm.AreaDirection.html#CompassEx_Comm_AreaDirection_op_Equality_CompassEx_Comm_AreaDirection_CompassEx_Comm_AreaDirection_
+- uid: CompassEx.Comm.AreaDirection.op_Inequality*
+  commentId: Overload:CompassEx.Comm.AreaDirection.op_Inequality
+  href: CompassEx.Comm.AreaDirection.html#CompassEx_Comm_AreaDirection_op_Inequality_CompassEx_Comm_AreaDirection_CompassEx_Comm_AreaDirection_
+  name: operator !=
+  nameWithType: AreaDirection.operator !=
+  fullName: CompassEx.Comm.AreaDirection.operator !=
+  nameWithType.vb: AreaDirection.<>
+  fullName.vb: CompassEx.Comm.AreaDirection.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: CompassEx.Comm.AreaDirection.op_Inequality*
+    name: '!='
+    href: CompassEx.Comm.AreaDirection.html#CompassEx_Comm_AreaDirection_op_Inequality_CompassEx_Comm_AreaDirection_CompassEx_Comm_AreaDirection_

@@ -535,8 +535,6 @@ namespace CompassEx.Gua
 
 
 
-
-
         /// <summary>
         /// 内部静态辅助方法：安全计算卦名在系统清册中的绝对索引（支持简名与全名）。
         /// </summary>
@@ -693,7 +691,7 @@ namespace CompassEx.Gua
         /// <c>y[0]</c> 至 <c>y[2]</c> 完全继承自内卦（下卦 <see cref="DownGua"/>）的初、二、三爻；<br/>
         /// <c>y[3]</c> 至 <c>y[5]</c> 完全继承自外卦（上卦 <see cref="UpGua"/>）的四、五、上爻。
         /// </remarks>
-        public int[] GetYaos()
+        public int[]? GetYaos()
         {
             if (this.UpGua == null || this.DownGua == null) return null;
             int[] y = { 1, 1, 1, 1, 1, 1 };
@@ -719,7 +717,7 @@ namespace CompassEx.Gua
         /// 算法通过遍历六个爻位，识别匹配的动爻。动爻位进行“阴阳互变”（即利用 <c>Math.Abs(iv - 1)</c> 实施 0 变 1、1 变 0 翻转），
         /// 静爻位则保持原卦纳支阴阳。最终通过变动后的爻象序列重组新卦，并将动爻位记录至变卦的 <see cref="ChangedYao"/> 属性中。
         /// </remarks>
-        public GuaClass GetChangeGua()
+        public GuaClass? GetChangeGua()
         {
             if (this.YaoDoing.Count == 0) return null;
             List<int> al = new List<int>();
@@ -800,7 +798,7 @@ namespace CompassEx.Gua
         /// 方法会逆向提取本宫纯卦（<see cref="GuaSelf"/>）的完整六亲数据，自上而下匹配 <see cref="HideRelativeYaos"/> 标记的伏藏爻位，
         /// 自动拼出地支、五行及六亲全称并追加 "(伏)" 字样（例如："子水子孙(伏)"）。非伏神爻位则以换行符占位。
         /// </remarks>
-        public String GetHideRelativeStr()
+        public String? GetHideRelativeStr()
         {
             String s = ""; bool TorF;
             if (this.HideRelative == null) return null;
@@ -874,7 +872,7 @@ namespace CompassEx.Gua
         /// 获得本卦六爻排盘配出的“六神”（六兽）文本排盘字符形式。
         /// </summary>
         /// <returns>返回由上而下（六爻至初爻）排列的六神名称换行文本；若六神数据未加载则返回 <c>null</c>。</returns>
-        public String GetSixGodStr()
+        public String? GetSixGodStr()
         {
             String s = "";
             if (this.SixGods == null) return null;
@@ -1054,7 +1052,7 @@ namespace CompassEx.Gua
         /// 算法先获取标准的本卦图形，利用换行符拆分为 6 行行数组。由于图形数组由上而下排布（索引 0 是上爻，索引 5 是初爻），
         /// 算法执行了经典的 <c>5 - ChangedYao[i]</c> 空间位置逆向映射，确保箭头能够精准定位到对应的物理爻位前。
         /// </remarks>
-        public String GetChangeGuaFace()
+        public String? GetChangeGuaFace()
         {
             if (this.DownGua == null || this.UpGua == null) return null;
             if (this.ChangedYao == null) return null;
@@ -1338,7 +1336,7 @@ namespace CompassEx.Gua
         /// <item><description>若输入为长多字（包含无效占位符 ? ），会自动剥离噪音，遍历 <see cref="GuaFullNames"/> 进行包含式模糊匹配。</description></item>
         /// </list>
         /// </remarks>
-        private static String GetFullGuaName(String GuaNameOrAttrName)
+        private static String? GetFullGuaName(String GuaNameOrAttrName)
         {
             string sName = GuaNameOrAttrName;
             String sFullName = null, s = null;
@@ -1388,7 +1386,7 @@ namespace CompassEx.Gua
         /// 若在先天八卦名录（<c>BeforeGuaSubNames</c>）中能直接匹配到首字，判定其属于“八纯大卦”（如乾为天、坤为地），此时上下经卦完全相同，直接返回首字。<br/>
         /// 若首字不属于纯卦，则代表属于“异卦相叠的杂卦”（如地水师），算法会自动根据 <paramref name="IsUpGua"/> 分别截取前置字（上卦物象）或后置字（下卦物象）返回。
         /// </remarks>
-        private static String GetGuaSubName(String sGuaName, bool IsUpGua)
+        private static String? GetGuaSubName(String sGuaName, bool IsUpGua)
         {
             char[] sd; String sFullName;
             int iPos = 0;
@@ -1421,7 +1419,7 @@ namespace CompassEx.Gua
         /// </summary>
         /// <param name="sSkyLocName">输入的干支组合名称（如：“甲午”、“甲子”、“戊子”）。</param>
         /// <returns>返回匹配成功的 <see cref="GuaClass"/> 实例；若该干支在内置清册中未绑定大卦则返回 <c>null</c>。</returns>
-        public static GuaClass GetGuaClassBySkyLoc(String sSkyLocName)
+        public static GuaClass? GetGuaClassBySkyLoc(String sSkyLocName)
         {
             int i = Array.IndexOf(GuaSkyLocs, sSkyLocName);
             if (i > -1)
@@ -1473,7 +1471,7 @@ namespace CompassEx.Gua
         /// <item><description><b>动爻拦截（老阴老阳判定）</b>：算法循环遍历 6 个爻。若状态码为 <c>3</c>（老阳，阳动变阴）或 <c>4</c>（老阴，阴动变阳），则会被视为动爻，自动抽离并装入本卦的 <see cref="YaoDoing"/> 动爻跟踪清册中，并同步重设对应经卦的运行时爻位状态。</description></item>
         /// </list>
         /// </remarks>
-        public static GuaClass GetGuaClass(List<int> iYaos)
+        public static GuaClass? GetGuaClass(List<int> iYaos)
         {
             if (iYaos.Count != 6) return null;
 
@@ -1549,26 +1547,45 @@ namespace CompassEx.Gua
 
 
 
-
+        #region 显式实现对比、运算符和Key 方法
+        // 1. 一般的 Equals(object)，內部可以轉型並利用顯式介面來比對
         public override bool Equals(object obj)
         {
-            if (obj == null) return false;
-
-            // 强制转换为接口类型去调用，这样就能精准找到你下面写的方法，打破死循环！
-            return ((IEquatable<GuaClass>)this).Equals(obj as GuaClass);
+            return Equals(obj as GuaClass);
         }
 
-        // 新增哈希方法，参与相等判断的字段全部组合计算
+        // 2. 顯式實作 IEquatable<LocClass>.Equals
+        bool IEquatable<GuaClass>.Equals(GuaClass other)
+        {
+            // 檢查是否為 null
+            if (other is null) return false;
+            if (ReferenceEquals(this, other)) return true;
+
+            // 使用 string 的比較方式（考慮大小寫或 null 的防禦）
+            return string.Equals(this.Name, other.Name, StringComparison.Ordinal);
+        }
+
+        // 3. 務必配合 Name 計算 HashCode
         public override int GetHashCode()
         {
+            // 若 Name 可能為 null，可以用 HashCode.Combine 或字串自身的 GetHashCode
             return Name != null ? Name.GetHashCode() : 0;
         }
 
-        bool IEquatable<GuaClass>.Equals(GuaClass other)
+        // 4. (選用) 重載 == 與 != 運算子，建議透過介面轉型來呼叫
+        public static bool operator ==(GuaClass left, GuaClass right)
         {
-            if (other == null) return false;
-            return other.Name == this.Name;
+            if (left is null) return right is null;
+            return ((IEquatable<GuaClass>)left).Equals(right);
         }
+
+        public static bool operator !=(GuaClass left, GuaClass right)
+        {
+            return !(left == right);
+        }
+
+
+        #endregion
         #endregion
     }
 }

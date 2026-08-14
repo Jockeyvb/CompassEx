@@ -101,7 +101,7 @@ LocClass 类
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class LocClass</code></pre>
+    <pre><code class="lang-csharp hljs">public class LocClass : IEquatable&lt;LocClass&gt;</code></pre>
   </div>
 
 
@@ -115,19 +115,19 @@ LocClass 类
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>实现</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a>&gt;</div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
     <dt>继承成员</dt>
     <dd>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -160,7 +160,7 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass__ctor_System_Int32_" data-uid="CompassEx.Comm.LocClass.#ctor(System.Int32)">
   LocClass(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L138"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>地支构造函数</p>
@@ -198,7 +198,7 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass__ctor_System_String_" data-uid="CompassEx.Comm.LocClass.#ctor(System.String)">
   LocClass(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L128"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>地支构造函数</p>
@@ -311,7 +311,7 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass_FiveAttr" data-uid="CompassEx.Comm.LocClass.FiveAttr">
   FiveAttr
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L108"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前地支所归属的五行属性。</p>
@@ -331,6 +331,38 @@ LocClass 类
     <dt><a class="xref" href="CompassEx.Comm.FiveAttr.html">FiveAttr</a></dt>
     <dd><p>返回一个 <a class="xref" href="CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_FiveAttr">FiveAttr</a> 对象（或枚举），代表该地支的五行特征（如寅卯属木、巳午属火等）。</p>
 </dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_LocClass_Hour_" data-uid="CompassEx.Comm.LocClass.Hour*"></a>
+
+  <h3 id="CompassEx_Comm_LocClass_Hour" data-uid="CompassEx.Comm.LocClass.Hour">
+  Hour
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>返回时辰点数值</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Hour { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
   </dl>
 
 
@@ -373,11 +405,43 @@ LocClass 类
 
 
 
+  <a id="CompassEx_Comm_LocClass_LocMonthIndex_" data-uid="CompassEx.Comm.LocClass.LocMonthIndex*"></a>
+
+  <h3 id="CompassEx_Comm_LocClass_LocMonthIndex" data-uid="CompassEx.Comm.LocClass.LocMonthIndex">
+  LocMonthIndex
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>地支月索引</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int LocMonthIndex { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="CompassEx_Comm_LocClass_LocTimeValue_" data-uid="CompassEx.Comm.LocClass.LocTimeValue*"></a>
 
   <h3 id="CompassEx_Comm_LocClass_LocTimeValue" data-uid="CompassEx.Comm.LocClass.LocTimeValue">
   LocTimeValue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L116"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前地支作为时辰时，对应的二十四小时制具体时间段字符串。</p>
@@ -443,11 +507,47 @@ LocClass 类
 </h2>
 
 
+  <a id="CompassEx_Comm_LocClass_Equals_" data-uid="CompassEx.Comm.LocClass.Equals*"></a>
+
+  <h3 id="CompassEx_Comm_LocClass_Equals_System_Object_" data-uid="CompassEx.Comm.LocClass.Equals(System.Object)">
+  Equals(object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L267"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="CompassEx_Comm_LocClass_GetAllLocClass_" data-uid="CompassEx.Comm.LocClass.GetAllLocClass*"></a>
 
   <h3 id="CompassEx_Comm_LocClass_GetAllLocClass" data-uid="CompassEx.Comm.LocClass.GetAllLocClass">
   GetAllLocClass()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L200"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L219"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>批量获取系统中完整配置的十二地支类实体集合。</p>
@@ -476,11 +576,42 @@ LocClass 类
 
 
 
+  <a id="CompassEx_Comm_LocClass_GetHashCode_" data-uid="CompassEx.Comm.LocClass.GetHashCode*"></a>
+
+  <h3 id="CompassEx_Comm_LocClass_GetHashCode" data-uid="CompassEx.Comm.LocClass.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L284"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="CompassEx_Comm_LocClass_GetLocClass_" data-uid="CompassEx.Comm.LocClass.GetLocClass*"></a>
 
   <h3 id="CompassEx_Comm_LocClass_GetLocClass_System_Int32_" data-uid="CompassEx.Comm.LocClass.GetLocClass(System.Int32)">
   GetLocClass(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L232"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L251"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据指定的全局静态顺位索引，动态检索并实例化对应的地支类实体。</p>
@@ -522,7 +653,7 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass_GetLocClass_System_String_" data-uid="CompassEx.Comm.LocClass.GetLocClass(System.String)">
   GetLocClass(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L215"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L234"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据指定的地支单字字面名称，动态检索并实例化对应的地支类实体。</p>
@@ -530,7 +661,7 @@ LocClass 类
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static LocClass GetLocClass(string LocName)</code></pre>
+    <pre><code class="lang-csharp hljs">public static LocClass? GetLocClass(string LocName)</code></pre>
   </div>
 
   <h4 class="section">参数</h4>
@@ -561,7 +692,7 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass_TimeValueInRangIndex_System_DateTime_" data-uid="CompassEx.Comm.LocClass.TimeValueInRangIndex(System.DateTime)">
   TimeValueInRangIndex(DateTime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L162"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L181"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>判定指定的日期时间对象是否落入当前地支所代表的时辰范围内（仅提取小时进行比对）。</p>
@@ -603,7 +734,7 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass_TimeValueInRangIndex_System_String_" data-uid="CompassEx.Comm.LocClass.TimeValueInRangIndex(System.String)">
   TimeValueInRangIndex(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L177"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L196"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>判定指定的小时数（24小时制字符串）是否落入当前地支所代表的时辰范围内。</p>
@@ -647,7 +778,7 @@ LocClass 类
 
   <h3 id="CompassEx_Comm_LocClass_ToString" data-uid="CompassEx.Comm.LocClass.ToString">
   ToString()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L150"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L169"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -661,6 +792,86 @@ LocClass 类
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">运算符
+</h2>
+
+
+  <a id="CompassEx_Comm_LocClass_op_Equality_" data-uid="CompassEx.Comm.LocClass.op_Equality*"></a>
+
+  <h3 id="CompassEx_Comm_LocClass_op_Equality_CompassEx_Comm_LocClass_CompassEx_Comm_LocClass_" data-uid="CompassEx.Comm.LocClass.op_Equality(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass)">
+  operator ==(LocClass, LocClass)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L291"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(LocClass left, LocClass right)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_LocClass_op_Inequality_" data-uid="CompassEx.Comm.LocClass.op_Inequality*"></a>
+
+  <h3 id="CompassEx_Comm_LocClass_op_Inequality_CompassEx_Comm_LocClass_CompassEx_Comm_LocClass_" data-uid="CompassEx.Comm.LocClass.op_Inequality(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass)">
+  operator !=(LocClass, LocClass)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/LocClass.cs/#L297"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(LocClass left, LocClass right)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 

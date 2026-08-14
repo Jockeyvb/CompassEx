@@ -88,7 +88,7 @@
 
   <h1 id="CompassEx_CHill" data-uid="CompassEx.CHill" class="text-break">
 CHill 类
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -164,9 +164,9 @@ CHill 类
 
   <a id="CompassEx_CHill__ctor_" data-uid="CompassEx.CHill.#ctor*"></a>
 
-  <h3 id="CompassEx_CHill__ctor_System_Int32_" data-uid="CompassEx.CHill.#ctor(System.Int32)">
-  CHill(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  <h3 id="CompassEx_CHill__ctor_System_Int32_CompassEx_HillType_" data-uid="CompassEx.CHill.#ctor(System.Int32,CompassEx.HillType)">
+  CHill(int, HillType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L174"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>基于二十四山序列中的整型索引初始化 <a class="xref" href="CompassEx.CHill.html">CHill</a> 类的新实例。</p>
@@ -174,13 +174,16 @@ CHill 类
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CHill(int iIndex)</code></pre>
+    <pre><code class="lang-csharp hljs">public CHill(int iIndex, HillType ht = HillType.CHill)</code></pre>
   </div>
 
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>iIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd><p>二十四山在序列中的索引，有效取值范围为 <code>0 ~ 23</code>。</p>
+</dd>
+    <dt><code>ht</code> <a class="xref" href="CompassEx.HillType.html">HillType</a></dt>
+    <dd><p>当前山头所属的盘层类型。默认值为 <a class="xref" href="CompassEx.HillType.html#CompassEx_HillType_CHill">CHill</a>（地盘）。</p>
 </dd>
   </dl>
 
@@ -203,9 +206,9 @@ CHill 类
 
   <a id="CompassEx_CHill__ctor_" data-uid="CompassEx.CHill.#ctor*"></a>
 
-  <h3 id="CompassEx_CHill__ctor_System_String_" data-uid="CompassEx.CHill.#ctor(System.String)">
-  CHill(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  <h3 id="CompassEx_CHill__ctor_System_String_CompassEx_HillType_" data-uid="CompassEx.CHill.#ctor(System.String,CompassEx.HillType)">
+  CHill(string, HillType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L164"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>基于指定的山名初始化 <a class="xref" href="CompassEx.CHill.html">CHill</a> 类的新实例。</p>
@@ -213,13 +216,16 @@ CHill 类
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CHill(string sName)</code></pre>
+    <pre><code class="lang-csharp hljs">public CHill(string sName, HillType ht = HillType.CHill)</code></pre>
   </div>
 
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>sName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>要创建的二十四山名称（如“壬”、“子”等）。</p>
+    <dd><p>要创建的二十四山名称（如“壬”、“子”、“癸”等）。</p>
+</dd>
+    <dt><code>ht</code> <a class="xref" href="CompassEx.HillType.html">HillType</a></dt>
+    <dd><p>当前山头所属的盘层类型。默认值为 <a class="xref" href="CompassEx.HillType.html#CompassEx_HillType_CHill">CHill</a>（地盘）。</p>
 </dd>
   </dl>
 
@@ -230,8 +236,13 @@ CHill 类
 
 
 
-  <h4 class="section" id="CompassEx_CHill__ctor_System_String__remarks">备注</h4>
-  <div class="markdown level1 remarks"><p>内部机制会先通过名称在 <a class="xref" href="CompassEx.CHill.html#CompassEx_CHill_C24HillNames">C24HillNames</a> 数组中检索其对应的整型索引，随后将其隐式链式传递给带索引参数的构造函数。</p>
+  <h4 class="section" id="CompassEx_CHill__ctor_System_String_CompassEx_HillType__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>
+内部机制会先通过名称在 <a class="xref" href="CompassEx.CHill.html#CompassEx_CHill_C24HillNames">C24HillNames</a> 数组中检索其对应的整型索引，随后将其隐式链式传递给带索引参数的构造函数。
+</p>
+<p>
+<b>注意：</b>如果传入的 <code class="paramref">sName</code> 在数组中不存在，检索索引将为 <code>-1</code>，此时会链式触发 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a> 异常。
+</p>
 </div>
 
 
@@ -244,7 +255,7 @@ CHill 类
 
   <h3 id="CompassEx_CHill_C24HillNames" data-uid="CompassEx.CHill.C24HillNames">
   C24HillNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L95"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>罗盘地盘正针的二十四山名称序列。</p>
@@ -276,7 +287,7 @@ CHill 类
 
   <h3 id="CompassEx_CHill_C24HillSunNames" data-uid="CompassEx.CHill.C24HillSunNames">
   C24HillSunNames
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L103"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>净阴净阳法则中归属于“阳”的十二山名称序列。</p>
@@ -313,7 +324,7 @@ CHill 类
 
   <h3 id="CompassEx_CHill_CRangeDegree" data-uid="CompassEx.CHill.CRangeDegree">
   CRangeDegree
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L144"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>动态获取当前二十四山在罗盘上对应的绝对度数范围。</p>
@@ -340,7 +351,7 @@ CHill 类
 
   <h4 class="section" id="CompassEx_CHill_CRangeDegree_remarks">备注</h4>
   <div class="markdown level1 remarks"><p><b>计算依据：</b></p>
-<p>该属性为只读属性，其内部会直接通过调用 <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_">Get24HillDegree(string)</a> 方法，传入当前实例的 <a class="xref" href="CompassEx.CHill.html#CompassEx_CHill_Name">Name</a> 实时计算得出。</p>
+<p>该属性为只读属性，其内部会直接通过调用 <a class="xref" href="CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_CompassEx_HillType_">Get24HillDegree(string, HillType)</a> 方法，传入当前实例的 <a class="xref" href="CompassEx.CHill.html#CompassEx_CHill_Name">Name</a> 实时计算得出。</p>
 <p>例如：当 <a class="xref" href="CompassEx.CHill.html#CompassEx_CHill_Name">Name</a> 为“壬”时，返回的度数区间范围即为 <code>337.5 ~ 352.5</code> 度。</p>
 </div>
 
@@ -351,7 +362,7 @@ CHill 类
 
   <h3 id="CompassEx_CHill_IsSun" data-uid="CompassEx.CHill.IsSun">
   IsSun
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L119"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前山名是否在阴阳判定中属于“阳”。</p>
@@ -387,7 +398,7 @@ CHill 类
 
   <h3 id="CompassEx_CHill_Name" data-uid="CompassEx.CHill.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L131"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取或设置当前二十四山对象的具体名称（如“壬”、“子”等）。</p>
@@ -416,6 +427,38 @@ CHill 类
 
 
 
+  <a id="CompassEx_CHill_hillType_" data-uid="CompassEx.CHill.hillType*"></a>
+
+  <h3 id="CompassEx_CHill_hillType" data-uid="CompassEx.CHill.hillType">
+  hillType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L123"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>24山类型</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HillType hillType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.HillType.html">HillType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">方法
 </h2>
 
@@ -424,10 +467,11 @@ CHill 类
 
   <h3 id="CompassEx_CHill_Equals_System_Object_" data-uid="CompassEx.CHill.Equals(System.Object)">
   Equals(object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L257"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>确定指定的对象是否等于当前 <a class="xref" href="CompassEx.CHill.html">CHill</a> 实例。</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -437,13 +481,15 @@ CHill 类
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
-    <dd></dd>
+    <dd><p>要与当前实例进行比较的对象。</p>
+</dd>
   </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>如果指定的对象等于当前实例，则为 <code>true</code>；否则为 <code>false</code>。</p>
+</dd>
   </dl>
 
 
@@ -453,6 +499,63 @@ CHill 类
 
 
 
+
+
+
+  <a id="CompassEx_CHill_Get24HillDegree_" data-uid="CompassEx.CHill.Get24HillDegree*"></a>
+
+  <h3 id="CompassEx_CHill_Get24HillDegree_System_String_CompassEx_HillType_" data-uid="CompassEx.CHill.Get24HillDegree(System.String,CompassEx.HillType)">
+  Get24HillDegree(string, HillType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L207"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获取二十四山方位对应的角度范围。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CompassRangEX Get24HillDegree(string HillName, HillType ht = HillType.CHill)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>HillName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>二十四山的名称（例如：&quot;子&quot;、&quot;午&quot;、&quot;卯&quot;、&quot;酉&quot;、&quot;乾&quot;、&quot;巽&quot;、&quot;艮&quot;、&quot;坤&quot; 等）。</p>
+</dd>
+    <dt><code>ht</code> <a class="xref" href="CompassEx.HillType.html">HillType</a></dt>
+    <dd><p>山向类型，默认为中国传统二十四山（<a class="xref" href="CompassEx.HillType.html#CompassEx_HillType_CHill">CHill</a>）。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a></dt>
+    <dd><p>返回包含起始角度、终止角度及中心角度的 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 方位范围对象。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="CompassEx_CHill_Get24HillDegree_System_String_CompassEx_HillType__examples">示例</h4>
+  <pre><code class="lang-csharp">// 示例：获取传统中国二十四山中“子”山的角度范围
+CompassRangEX range = CompassEx.Get24HillDegree("子");
+Console.WriteLine($"子山范围：{range.StartDegree}° 至 {range.EndDegree}°");</code></pre>
+
+
+  <h4 class="section" id="CompassEx_CHill_Get24HillDegree_System_String_CompassEx_HillType__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>二十四山是风水学与中国传统历法中用于标示方位的重要概念，将圆周 360 度等分为 24 个扇区，每个扇区占 15 度。</p>
+<p>本方法通过传入山名和类型，返回对应的 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 角度范围对象。</p>
+</div>
+
+  <h4 class="section">异常</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>当 <code class="paramref">HillName</code> 为 null 或空字符串时抛出。</p>
+</dd>
+  </dl>
 
 
 
@@ -460,7 +563,7 @@ CHill 类
 
   <h3 id="CompassEx_CHill_GetAfterGua" data-uid="CompassEx.CHill.GetAfterGua">
   GetAfterGua()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L220"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>动态计算并获取地盘正针本山所对应的后天八卦单卦对象。</p>
@@ -496,7 +599,7 @@ CHill 类
 
   <h3 id="CompassEx_CHill_GetCBeforGuas" data-uid="CompassEx.CHill.GetCBeforGuas">
   GetCBeforGuas()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L235"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前正针二十四山度数范围内所包含、跨越的所有天盘先天 64 卦对象集合。</p>
@@ -534,10 +637,11 @@ CHill 类
 
   <h3 id="CompassEx_CHill_GetHashCode" data-uid="CompassEx.CHill.GetHashCode">
   GetHashCode()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L164"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L275"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>返回当前 <a class="xref" href="CompassEx.CHill.html">CHill</a> 实例的哈希代码。</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -548,7 +652,8 @@ CHill 类
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>当前实例的 32 位有符号整数哈希代码。</p>
+</dd>
   </dl>
 
 
@@ -557,6 +662,10 @@ CHill 类
 
 
 
+  <h4 class="section" id="CompassEx_CHill_GetHashCode_remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>算法遵循乘法哈希机制（非对称质数相乘），将参与相等性判定的 <a class="xref" href="CompassEx.CHill.html#CompassEx_CHill_Name">Name</a> 和 <a class="xref" href="CompassEx.CHill.html#CompassEx_CHill_hillType">hillType</a> 字段进行组合计算，
+以确保在散列表（如 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt;TKey, TValue&gt;</a>）中具备优秀的分布均匀性。</p>
+</div>
 
 
 
@@ -565,7 +674,7 @@ CHill 类
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L26" class="edit-link">编辑本文</a>
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CHill.cs/#L85" class="edit-link">编辑本文</a>
         </div>
 
 

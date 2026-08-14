@@ -12,6 +12,9 @@ items:
   - CommLib.DingLanSubGrid
   - CommLib.LuBanGrid
   - CommLib.LuBanSubGrid
+  - CommLib.ReturnResultType
+  - CommLib.ReturnResultTypeEx
+  - CommLib.ReturnResultType`1
   langs:
   - csharp
   - vb
@@ -95,6 +98,45 @@ references:
   name: Comm
   nameWithType: Comm
   fullName: CommLib.Comm
+- uid: CommLib.ReturnResultType
+  commentId: T:CommLib.ReturnResultType
+  parent: CommLib
+  href: CommLib.ReturnResultType.html
+  name: ReturnResultType
+  nameWithType: ReturnResultType
+  fullName: CommLib.ReturnResultType
+- uid: CommLib.ReturnResultType`1
+  commentId: T:CommLib.ReturnResultType`1
+  href: CommLib.ReturnResultType-1.html
+  name: ReturnResultType<T>
+  nameWithType: ReturnResultType<T>
+  fullName: CommLib.ReturnResultType<T>
+  nameWithType.vb: ReturnResultType(Of T)
+  fullName.vb: CommLib.ReturnResultType(Of T)
+  name.vb: ReturnResultType(Of T)
+  spec.csharp:
+  - uid: CommLib.ReturnResultType`1
+    name: ReturnResultType
+    href: CommLib.ReturnResultType-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: CommLib.ReturnResultType`1
+    name: ReturnResultType
+    href: CommLib.ReturnResultType-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CommLib.ReturnResultTypeEx
+  commentId: T:CommLib.ReturnResultTypeEx
+  parent: CommLib
+  href: CommLib.ReturnResultTypeEx.html
+  name: ReturnResultTypeEx
+  nameWithType: ReturnResultTypeEx
+  fullName: CommLib.ReturnResultTypeEx
 - uid: CommLib
   commentId: N:CommLib
   href: CommLib.html

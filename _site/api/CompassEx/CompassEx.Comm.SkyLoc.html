@@ -101,7 +101,7 @@ SkyLoc 类
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SkyLoc</code></pre>
+    <pre><code class="lang-csharp hljs">public class SkyLoc : IEquatable&lt;SkyLoc&gt;</code></pre>
   </div>
 
 
@@ -115,19 +115,19 @@ SkyLoc 类
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>实现</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a>&gt;</div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
     <dt>继承成员</dt>
     <dd>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
@@ -137,9 +137,6 @@ SkyLoc 类
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </dd></dl>
 
@@ -166,7 +163,7 @@ SkyLoc 类
 
   <h3 id="CompassEx_Comm_SkyLoc__ctor_System_Int32_System_Int32_" data-uid="CompassEx.Comm.SkyLoc.#ctor(System.Int32,System.Int32)">
   SkyLoc(int, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L110"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>基于指定的天干序列索引与地支序列索引初始化 <a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a> 类的新实例。</p>
@@ -212,7 +209,7 @@ SkyLoc 类
 
   <h3 id="CompassEx_Comm_SkyLoc__ctor_System_String_" data-uid="CompassEx.Comm.SkyLoc.#ctor(System.String)">
   SkyLoc(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L96"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>基于指定的双字干支组合名称（如“甲子”）初始化 <a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a> 类的新实例。</p>
@@ -260,7 +257,7 @@ SkyLoc 类
 
   <h3 id="CompassEx_Comm_SkyLoc_Loc" data-uid="CompassEx.Comm.SkyLoc.Loc">
   Loc
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L79"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前干支组合中的地支实例对象。</p>
@@ -289,11 +286,44 @@ SkyLoc 类
 
 
 
+  <a id="CompassEx_Comm_SkyLoc_Name_" data-uid="CompassEx.Comm.SkyLoc.Name*"></a>
+
+  <h3 id="CompassEx_Comm_SkyLoc_Name" data-uid="CompassEx.Comm.SkyLoc.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获取当前天干地支组合的完整字面名称（如“甲子”、“丙寅”等）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>一个由两个汉字组成的 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> 字符串，动态拼接自 <a class="xref" href="CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_Name">Name</a> 与 <a class="xref" href="CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_Name">Name</a>。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="CompassEx_Comm_SkyLoc_Sky_" data-uid="CompassEx.Comm.SkyLoc.Sky*"></a>
 
   <h3 id="CompassEx_Comm_SkyLoc_Sky" data-uid="CompassEx.Comm.SkyLoc.Sky">
   Sky
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L71"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当前干支组合中的天干实例对象。</p>
@@ -322,19 +352,19 @@ SkyLoc 类
 
 
 
-  <a id="CompassEx_Comm_SkyLoc_SkyLocName_" data-uid="CompassEx.Comm.SkyLoc.SkyLocName*"></a>
+  <a id="CompassEx_Comm_SkyLoc_SkyLoc60_" data-uid="CompassEx.Comm.SkyLoc.SkyLoc60*"></a>
 
-  <h3 id="CompassEx_Comm_SkyLoc_SkyLocName" data-uid="CompassEx.Comm.SkyLoc.SkyLocName">
-  SkyLocName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <h3 id="CompassEx_Comm_SkyLoc_SkyLoc60" data-uid="CompassEx.Comm.SkyLoc.SkyLoc60">
+  SkyLoc60
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>获取当前天干地支组合的完整字面名称（如“甲子”、“丙寅”等）。</p>
+  <div class="markdown level1 summary"><p>60甲子</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SkyLocName { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static SkyLoc[] SkyLoc60 { get; }</code></pre>
   </div>
 
 
@@ -343,9 +373,39 @@ SkyLoc 类
 
   <h4 class="section">属性值</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>一个由两个汉字组成的 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> 字符串，动态拼接自 <a class="xref" href="CompassEx.Comm.SkyClass.html#CompassEx_Comm_SkyClass_Name">Name</a> 与 <a class="xref" href="CompassEx.Comm.LocClass.html#CompassEx_Comm_LocClass_Name">Name</a>。</p>
-</dd>
+    <dt><a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_SkyLoc_SkyLoc60Name_" data-uid="CompassEx.Comm.SkyLoc.SkyLoc60Name*"></a>
+
+  <h3 id="CompassEx_Comm_SkyLoc_SkyLoc60Name" data-uid="CompassEx.Comm.SkyLoc.SkyLoc60Name">
+  SkyLoc60Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string[] SkyLoc60Name { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
   </dl>
 
 
@@ -359,26 +419,71 @@ SkyLoc 类
 </h2>
 
 
-  <a id="CompassEx_Comm_SkyLoc_Get60SkyLoc_" data-uid="CompassEx.Comm.SkyLoc.Get60SkyLoc*"></a>
+  <a id="CompassEx_Comm_SkyLoc_Equals_" data-uid="CompassEx.Comm.SkyLoc.Equals*"></a>
 
-  <h3 id="CompassEx_Comm_SkyLoc_Get60SkyLoc" data-uid="CompassEx.Comm.SkyLoc.Get60SkyLoc">
-  Get60SkyLoc()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  <h3 id="CompassEx_Comm_SkyLoc_Equals_System_Object_" data-uid="CompassEx.Comm.SkyLoc.Equals(System.Object)">
+  Equals(object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L292"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>获取包含完整天干地支对象绑定的六十甲子实体单元序列（只读原生数组）。</p>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_SkyLoc_FiveMouse_" data-uid="CompassEx.Comm.SkyLoc.FiveMouse*"></a>
+
+  <h3 id="CompassEx_Comm_SkyLoc_FiveMouse_CompassEx_Comm_SkyLoc_System_Int32_" data-uid="CompassEx.Comm.SkyLoc.FiveMouse(CompassEx.Comm.SkyLoc,System.Int32)">
+  FiveMouse(SkyLoc, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>根据日的天干地支与指定的小时数（五鼠遁时法），推算该时辰的天干地支。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static SkyLoc[] Get60SkyLoc()</code></pre>
+    <pre><code class="lang-csharp hljs">public static SkyLoc FiveMouse(SkyLoc DaySL, int Hour)</code></pre>
   </div>
 
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>DaySL</code> <a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a></dt>
+    <dd><p>包含日的天干地支信息的 <a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a> 对象。</p>
+</dd>
+    <dt><code>Hour</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>当前的小时数（0-23之间的整数），用于判断对应的时辰（如：1点为丑时）。</p>
+</dd>
+  </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a>[]</dt>
-    <dd><p>返回一个包含 60 个 <a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a> 复合实体的原生数组，按历法顺序排列。</p>
+    <dt><a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a></dt>
+    <dd><p>返回推算后的时辰完整天干地支对应的 <a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a> 对象。</p>
 </dd>
   </dl>
 
@@ -388,33 +493,43 @@ SkyLoc 类
 
 
 
-  <h4 class="section" id="CompassEx_Comm_SkyLoc_Get60SkyLoc_remarks">备注</h4>
-  <div class="markdown level1 remarks"><p><b>性能优化说明：</b>本方法通过单层取模算法动态实例化 60 个干支单元。由于六十甲子属于体系内的核心只读静态元数据，重构后直接返回原生数组，避免了动态列表（<code>List</code>）扩容带来的二次内存拷贝与垃圾回收（GC）开销。</p>
+  <h4 class="section" id="CompassEx_Comm_SkyLoc_FiveMouse_CompassEx_Comm_SkyLoc_System_Int32__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>五鼠遁口诀：“甲己还加甲，乙庚丙作初，丙辛从戊起，丁壬庚子居，戊癸何方发，壬子是真途。”
+此重载方法直接接收 <a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a> 对象。</p>
 </div>
 
 
 
 
-  <a id="CompassEx_Comm_SkyLoc_Get60SkyLocNames_" data-uid="CompassEx.Comm.SkyLoc.Get60SkyLocNames*"></a>
+  <a id="CompassEx_Comm_SkyLoc_FiveMouse_" data-uid="CompassEx.Comm.SkyLoc.FiveMouse*"></a>
 
-  <h3 id="CompassEx_Comm_SkyLoc_Get60SkyLocNames" data-uid="CompassEx.Comm.SkyLoc.Get60SkyLocNames">
-  Get60SkyLocNames()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  <h3 id="CompassEx_Comm_SkyLoc_FiveMouse_System_String_System_Int32_" data-uid="CompassEx.Comm.SkyLoc.FiveMouse(System.String,System.Int32)">
+  FiveMouse(string, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L186"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>获取经典正统六十甲子干支组合的字符串序列（只读原生数组）。</p>
+  <div class="markdown level1 summary"><p>根据日的天干地支字符串与指定的小时数（五鼠遁时法），推算该时辰的天干地支。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string[] Get60SkyLocNames()</code></pre>
+    <pre><code class="lang-csharp hljs">public static SkyLoc FiveMouse(string DaySkyLocName, int Hour)</code></pre>
   </div>
 
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>DaySkyLocName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>日的天干地支字符串（例如：“甲子”）。</p>
+</dd>
+    <dt><code>Hour</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>当前的小时数（0-23之间的整数），用于判断对应的时辰（如：1点为丑时）。</p>
+</dd>
+  </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
-    <dd><p>返回一个长度为 60 的 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> 原生数组，按历法流转顺序包含“甲子”到“癸亥”。</p>
+    <dt><a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a></dt>
+    <dd><p>返回推算后的时辰完整天干地支对应的 <a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a> 对象。</p>
 </dd>
   </dl>
 
@@ -424,11 +539,198 @@ SkyLoc 类
 
 
 
-  <h4 class="section" id="CompassEx_Comm_SkyLoc_Get60SkyLocNames_remarks">备注</h4>
-  <div class="markdown level1 remarks"><p><b>历法推演原理与算法重构：</b></p>
-<p>本方法已重构为现代高精度的<b>单层模运算算法</b>。消除了历史版本中双重嵌套循环（<code>int j = i</code>）导致的干支横向错配与漏项缺陷。</p>
-<p>由于十天干与十二地支的最小公倍数为 60，本算法通过单层 <code>0 ~ 59</code> 闭环流转，对天干基数 10 和地支基数 12 进行动态取模（<code>%</code>），确保干支双轨道同步顺时针推进，完美符合《黄帝内经》及传统干支历法规范。</p>
+  <h4 class="section" id="CompassEx_Comm_SkyLoc_FiveMouse_System_String_System_Int32__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>五鼠遁口诀：“甲己还加甲，乙庚丙作初，丙辛从戊起，丁壬庚子居，戊癸何方发，壬子是真途。”
+此方法通过解析日干支字符串和小时，计算出时干并与时支组合。</p>
 </div>
+
+
+
+
+  <a id="CompassEx_Comm_SkyLoc_FiveTiger_" data-uid="CompassEx.Comm.SkyLoc.FiveTiger*"></a>
+
+  <h3 id="CompassEx_Comm_SkyLoc_FiveTiger_CompassEx_Comm_SkyClass_CompassEx_Comm_LocClass_" data-uid="CompassEx.Comm.SkyLoc.FiveTiger(CompassEx.Comm.SkyClass,CompassEx.Comm.LocClass)">
+  FiveTiger(SkyClass, LocClass)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>根据给定的年份干支（五虎遁月法），推算该月的天干地支。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SkyLoc FiveTiger(SkyClass YearS, LocClass MonthL)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>YearS</code> <a class="xref" href="CompassEx.Comm.SkyClass.html">SkyClass</a></dt>
+    <dd><p>年份的天干对象（<a class="xref" href="CompassEx.Comm.SkyClass.html">SkyClass</a>），用于获取当前年份的天干名称。</p>
+</dd>
+    <dt><code>MonthL</code> <a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a></dt>
+    <dd><p>月份的地支对象（<a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a>），用于获取当前月份的地支名称。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a></dt>
+    <dd><p>返回推算后的月份完整天干地支对应的 <a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a> 对象。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="CompassEx_Comm_SkyLoc_FiveTiger_CompassEx_Comm_SkyClass_CompassEx_Comm_LocClass__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p>五虎遁口诀：“甲己之年丙作首，乙庚之岁戊为头，丙辛必定寻庚上，丁壬壬位顺行流，戊癸何方发，甲寅上好求。”
+该方法根据年干或月干的对应关系，结合地支位置计算出正确的月干，并组合成完整的干支。</p>
+</div>
+
+
+
+
+  <a id="CompassEx_Comm_SkyLoc_GetHashCode_" data-uid="CompassEx.Comm.SkyLoc.GetHashCode*"></a>
+
+  <h3 id="CompassEx_Comm_SkyLoc_GetHashCode" data-uid="CompassEx.Comm.SkyLoc.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L309"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_SkyLoc_ToString_" data-uid="CompassEx.Comm.SkyLoc.ToString*"></a>
+
+  <h3 id="CompassEx_Comm_SkyLoc_ToString" data-uid="CompassEx.Comm.SkyLoc.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L281"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">运算符
+</h2>
+
+
+  <a id="CompassEx_Comm_SkyLoc_op_Equality_" data-uid="CompassEx.Comm.SkyLoc.op_Equality*"></a>
+
+  <h3 id="CompassEx_Comm_SkyLoc_op_Equality_CompassEx_Comm_SkyLoc_CompassEx_Comm_SkyLoc_" data-uid="CompassEx.Comm.SkyLoc.op_Equality(CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc)">
+  operator ==(SkyLoc, SkyLoc)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L316"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(SkyLoc left, SkyLoc right)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_SkyLoc_op_Inequality_" data-uid="CompassEx.Comm.SkyLoc.op_Inequality*"></a>
+
+  <h3 id="CompassEx_Comm_SkyLoc_op_Inequality_CompassEx_Comm_SkyLoc_CompassEx_Comm_SkyLoc_" data-uid="CompassEx.Comm.SkyLoc.op_Inequality(CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc)">
+  operator !=(SkyLoc, SkyLoc)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/SkyLoc.cs/#L322"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(SkyLoc left, SkyLoc right)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
 
 
 

@@ -532,7 +532,6 @@ references:
   nameWithType: T
   fullName: T
 - uid: T
-  commentId: '!:T'
   name: T
   nameWithType: T
   fullName: T

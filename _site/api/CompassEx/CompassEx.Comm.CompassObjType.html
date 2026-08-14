@@ -2,13 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>CompassObjType 结构
+      <title>CompassObjType 枚举
  | 罗盘算法类库 </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="CompassObjType 结构
+      <meta name="title" content="CompassObjType 枚举
  | 罗盘算法类库 ">
       
-      <meta name="description" content="用于封装和标识罗盘对象的元数据及其实例的结构体。">
+      <meta name="description" content="罗盘上的对应类型">
       <link rel="icon" href="../../Images/logo.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -86,9 +86,10 @@
 
 
 
+
   <h1 id="CompassEx_Comm_CompassObjType" data-uid="CompassEx.Comm.CompassObjType" class="text-break">
-CompassObjType 结构
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Defined.cs/#L88"><i class="bi bi-code-slash"></i></a>
+CompassObjType 枚举
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Defined.cs/#L89"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -96,12 +97,12 @@ CompassObjType 结构
   <dl><dt>程序集</dt><dd>CompassEx.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>用于封装和标识罗盘对象的元数据及其实例的结构体。</p>
+  <div class="markdown summary"><p>罗盘上的对应类型</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct CompassObjType</code></pre>
+    <pre><code class="lang-csharp hljs">public enum CompassObjType</code></pre>
   </div>
 
 
@@ -110,28 +111,6 @@ CompassObjType 结构
 
 
 
-  <dl class="typelist inheritedMembers">
-    <dt>继承成员</dt>
-    <dd>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
-    </div>
-  </dd></dl>
 
   <dl class="typelist extensionMethods">
     <dt>扩展方法</dt>
@@ -141,251 +120,65 @@ CompassObjType 结构
   </div>
   </dd></dl>
 
-
-
-  <h2 id="CompassEx_Comm_CompassObjType_remarks">备注</h2>
-  <div class="markdown level0 remarks"><p>该结构体主要用于多类型罗盘数据块的统一存储（例如存入 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List&lt;T&gt;</a>），
-它将罗盘对象的中文名称、运行时类型、实例引用以及所对应的角度范围（<a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a>）打包在一起，
-并提供安全的类型分发与转换机制。</p>
-</div>
-
-
-  <h2 class="section" id="fields">字段
+  <h2 id="fields">字段
 </h2>
-
-
-
-  <h3 id="CompassEx_Comm_CompassObjType_CRDegree" data-uid="CompassEx.Comm.CompassObjType.CRDegree">
-  CRDegree
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Defined.cs/#L127"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>罗盘对象所涵盖的角度范围。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CompassRangEX CRDegree</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">字段值</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a></dt>
-    <dd><p>一个 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 实例，用于判定特定度数是否属于当前罗盘节点。</p>
+    <dt id="CompassEx_Comm_CompassObjType_AfterGua"><code>AfterGua = 8</code></dt>
+  
+  <dd><p>地盘六十四卦（方图）</p>
+</dd>
+    <dt id="CompassEx_Comm_CompassObjType_AfterGuaSub"><code>AfterGuaSub = 2</code></dt>
+  
+  <dd><p>后天八卦</p>
+</dd>
+    <dt id="CompassEx_Comm_CompassObjType_All"><code>All = 1023</code></dt>
+  
+  <dd><p>全部</p>
+</dd>
+    <dt id="CompassEx_Comm_CompassObjType_BeforeGua"><code>BeforeGua = 4</code></dt>
+  
+  <dd><p>天盘六十四卦（圆图）</p>
+</dd>
+    <dt id="CompassEx_Comm_CompassObjType_BeforeGuaSub"><code>BeforeGuaSub = 1</code></dt>
+  
+  <dd><p>先天八卦</p>
+</dd>
+    <dt id="CompassEx_Comm_CompassObjType_CHill"><code>CHill = 16</code></dt>
+  
+  <dd><p>地盘二十四山</p>
+</dd>
+    <dt id="CompassEx_Comm_CompassObjType_GuaFate"><code>GuaFate = 512</code></dt>
+  
+  <dd><p>卦运</p>
+</dd>
+    <dt id="CompassEx_Comm_CompassObjType_GuaQi"><code>GuaQi = 256</code></dt>
+  
+  <dd><p>卦气</p>
+</dd>
+    <dt id="CompassEx_Comm_CompassObjType_None"><code>None = 0</code></dt>
+  
+  <dd><p>默认为无</p>
+</dd>
+    <dt id="CompassEx_Comm_CompassObjType_RHill"><code>RHill = 32</code></dt>
+  
+  <dd><p>天盘二十四山</p>
+</dd>
+    <dt id="CompassEx_Comm_CompassObjType_SHill"><code>SHill = 64</code></dt>
+  
+  <dd><p>天盘二十四山</p>
+</dd>
+    <dt id="CompassEx_Comm_CompassObjType_Star28"><code>Star28 = 128</code></dt>
+  
+  <dd><p>二十八星宿</p>
 </dd>
   </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="CompassEx_Comm_CompassObjType_Name" data-uid="CompassEx.Comm.CompassObjType.Name">
-  Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Defined.cs/#L104"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>对应罗盘对象名称</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Name</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">字段值</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>例如：“乾”、“姤”、“子”等描述性文本。</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="CompassEx_Comm_CompassObjType_Obj" data-uid="CompassEx.Comm.CompassObjType.Obj">
-  Obj
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Defined.cs/#L119"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>罗盘对象的底层实例引用。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public object Obj</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">字段值</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
-    <dd><p>实际的业务对象（已被装箱为 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>），使用时建议通过 <a class="xref" href="CompassEx.Comm.CompassObjType.html#CompassEx_Comm_CompassObjType_ToObjet__1___0__">ToObjet&lt;T&gt;(out T)</a> 安全转型。</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="CompassEx_Comm_CompassObjType_ObjType" data-uid="CompassEx.Comm.CompassObjType.ObjType">
-  ObjType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Defined.cs/#L111"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>罗盘对象的运行时类型。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Type ObjType</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">字段值</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
-    <dd><p>存储该对象实例对应的真实 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a> 信息。</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="CompassEx_Comm_CompassObjType_ObjTypeCNName" data-uid="CompassEx.Comm.CompassObjType.ObjTypeCNName">
-  ObjTypeCNName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Defined.cs/#L96"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>罗盘对象的类型中文名称。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ObjTypeCNName</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">字段值</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>例如：“先天八卦”、“后天八卦”、“天盘64卦、地盘64卦”等描述性文本。</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-  <h2 class="section" id="methods">方法
-</h2>
-
-
-  <a id="CompassEx_Comm_CompassObjType_ToObjet_" data-uid="CompassEx.Comm.CompassObjType.ToObjet*"></a>
-
-  <h3 id="CompassEx_Comm_CompassObjType_ToObjet__1___0__" data-uid="CompassEx.Comm.CompassObjType.ToObjet``1(``0@)">
-  ToObjet&lt;T&gt;(out T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Defined.cs/#L157"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>将内部的 <a class="xref" href="CompassEx.Comm.CompassObjType.html#CompassEx_Comm_CompassObjType_Obj">Obj</a> 安全转换为指定的泛型类型，支持类型自动推导。</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool ToObjet&lt;T&gt;(out T result)</code></pre>
-  </div>
-
-  <h4 class="section">参数</h4>
-  <dl class="parameters">
-    <dt><code>result</code> <span class="xref">T</span></dt>
-    <dd><p>输出参数。如果转换成功，则返回转型后的 <code class="typeparamref">T</code> 类型实例；如果转换失败，则返回该类型的默认值（<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/default">default</a>）。</p>
-</dd>
-  </dl>
-
-  <h4 class="section">返回</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>如果 <a class="xref" href="CompassEx.Comm.CompassObjType.html#CompassEx_Comm_CompassObjType_Obj">Obj</a> 不为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> 且其类型兼容于 <code class="typeparamref">T</code>，则返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>。</p>
-</dd>
-  </dl>
-
-  <h4 class="section">类型参数</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd><p>期望转换的目标输出类型。</p>
-</dd>
-  </dl>
-
-
-
-
-
-  <h4 class="section" id="CompassEx_Comm_CompassObjType_ToObjet__1___0___examples">示例</h4>
-  <pre><code class="lang-csharp">CompassObjType item = GetCompassData();
-
-// 利用 out var 特性，外部无需显式书写 &lt;GuaSubClass&gt;
-if (item.ToObjet(out GuaSubClass GuaObj))
-{
-    // 转换成功，直接使用强类型变量 GuaObj
-    Console.WriteLine($"成功获取到郭氏对象，名称为: {GuaObj.Name}");
-}
-else
-{
-    Console.WriteLine("类型不匹配或对象为空。");
-}</code></pre>
-
-
-  <h4 class="section" id="CompassEx_Comm_CompassObjType_ToObjet__1___0___remarks">备注</h4>
-  <div class="markdown level1 remarks"><p>此方法内部使用 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type.isassignablefrom">IsAssignableFrom(Type)</a> 进行安全的类型继承链检查。
-采用 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/out">out</a> 关键字设计，使得外部调用时可以通过 <code>out var</code> 语法省略泛型参数的具体书写，提高代码可读性。</p>
-</div>
-
-
 
 
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Defined.cs/#L88" class="edit-link">编辑本文</a>
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/Defined.cs/#L89" class="edit-link">编辑本文</a>
         </div>
 
 

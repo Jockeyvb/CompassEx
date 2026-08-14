@@ -1,0 +1,638 @@
+### YamlMime:ManagedReference
+items:
+- uid: CommLib.ReturnResultType
+  commentId: T:CommLib.ReturnResultType
+  id: ReturnResultType
+  parent: CommLib
+  children:
+  - CommLib.ReturnResultType.Clear
+  - CommLib.ReturnResultType.Failure
+  - CommLib.ReturnResultType.Message
+  - CommLib.ReturnResultType.RESULT
+  - CommLib.ReturnResultType.ReturnObj
+  - CommLib.ReturnResultType.Success
+  - CommLib.ReturnResultType.URL
+  langs:
+  - csharp
+  - vb
+  name: ReturnResultType
+  nameWithType: ReturnResultType
+  fullName: CommLib.ReturnResultType
+  type: Class
+  source:
+    remote:
+      path: CommLib/ReturnResultType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ReturnResultType
+    path: CommLib/ReturnResultType.cs
+    startLine: 5
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  summary: 通用返回类
+  example: []
+  syntax:
+    content: public class ReturnResultType
+    content.vb: Public Class ReturnResultType
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - CommLib.ReturnResultType.CommLib.ReturnResultTypeEx.AsTyped``1
+- uid: CommLib.ReturnResultType.RESULT
+  commentId: P:CommLib.ReturnResultType.RESULT
+  id: RESULT
+  parent: CommLib.ReturnResultType
+  langs:
+  - csharp
+  - vb
+  name: RESULT
+  nameWithType: ReturnResultType.RESULT
+  fullName: CommLib.ReturnResultType.RESULT
+  type: Property
+  source:
+    remote:
+      path: CommLib/ReturnResultType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: RESULT
+    path: CommLib/ReturnResultType.cs
+    startLine: 10
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  syntax:
+    content: public int RESULT { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property RESULT As Integer
+  overload: CommLib.ReturnResultType.RESULT*
+- uid: CommLib.ReturnResultType.Success
+  commentId: P:CommLib.ReturnResultType.Success
+  id: Success
+  parent: CommLib.ReturnResultType
+  langs:
+  - csharp
+  - vb
+  name: Success
+  nameWithType: ReturnResultType.Success
+  fullName: CommLib.ReturnResultType.Success
+  type: Property
+  source:
+    remote:
+      path: CommLib/ReturnResultType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Success
+    path: CommLib/ReturnResultType.cs
+    startLine: 11
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  syntax:
+    content: public int Success { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Success As Integer
+  overload: CommLib.ReturnResultType.Success*
+- uid: CommLib.ReturnResultType.Failure
+  commentId: P:CommLib.ReturnResultType.Failure
+  id: Failure
+  parent: CommLib.ReturnResultType
+  langs:
+  - csharp
+  - vb
+  name: Failure
+  nameWithType: ReturnResultType.Failure
+  fullName: CommLib.ReturnResultType.Failure
+  type: Property
+  source:
+    remote:
+      path: CommLib/ReturnResultType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Failure
+    path: CommLib/ReturnResultType.cs
+    startLine: 12
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  syntax:
+    content: public int Failure { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Failure As Integer
+  overload: CommLib.ReturnResultType.Failure*
+- uid: CommLib.ReturnResultType.Message
+  commentId: P:CommLib.ReturnResultType.Message
+  id: Message
+  parent: CommLib.ReturnResultType
+  langs:
+  - csharp
+  - vb
+  name: Message
+  nameWithType: ReturnResultType.Message
+  fullName: CommLib.ReturnResultType.Message
+  type: Property
+  source:
+    remote:
+      path: CommLib/ReturnResultType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Message
+    path: CommLib/ReturnResultType.cs
+    startLine: 15
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  syntax:
+    content: public string Message { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Message As String
+  overload: CommLib.ReturnResultType.Message*
+- uid: CommLib.ReturnResultType.ReturnObj
+  commentId: P:CommLib.ReturnResultType.ReturnObj
+  id: ReturnObj
+  parent: CommLib.ReturnResultType
+  langs:
+  - csharp
+  - vb
+  name: ReturnObj
+  nameWithType: ReturnResultType.ReturnObj
+  fullName: CommLib.ReturnResultType.ReturnObj
+  type: Property
+  source:
+    remote:
+      path: CommLib/ReturnResultType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ReturnObj
+    path: CommLib/ReturnResultType.cs
+    startLine: 21
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  syntax:
+    content: public object? ReturnObj { get; set; }
+    parameters: []
+    return:
+      type: System.Object
+    content.vb: Public Property ReturnObj As Object
+  overload: CommLib.ReturnResultType.ReturnObj*
+- uid: CommLib.ReturnResultType.URL
+  commentId: P:CommLib.ReturnResultType.URL
+  id: URL
+  parent: CommLib.ReturnResultType
+  langs:
+  - csharp
+  - vb
+  name: URL
+  nameWithType: ReturnResultType.URL
+  fullName: CommLib.ReturnResultType.URL
+  type: Property
+  source:
+    remote:
+      path: CommLib/ReturnResultType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: URL
+    path: CommLib/ReturnResultType.cs
+    startLine: 23
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  syntax:
+    content: public string URL { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property URL As String
+  overload: CommLib.ReturnResultType.URL*
+- uid: CommLib.ReturnResultType.Clear
+  commentId: M:CommLib.ReturnResultType.Clear
+  id: Clear
+  parent: CommLib.ReturnResultType
+  langs:
+  - csharp
+  - vb
+  name: Clear()
+  nameWithType: ReturnResultType.Clear()
+  fullName: CommLib.ReturnResultType.Clear()
+  type: Method
+  source:
+    remote:
+      path: CommLib/ReturnResultType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Clear
+    path: CommLib/ReturnResultType.cs
+    startLine: 34
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  summary: 提供重置方法：當此類別作為 Scoped 服務注入時，方便在頁面初始化時清空舊狀態
+  example: []
+  syntax:
+    content: public void Clear()
+    content.vb: Public Sub Clear()
+  overload: CommLib.ReturnResultType.Clear*
+references:
+- uid: CommLib
+  commentId: N:CommLib
+  href: CommLib.html
+  name: CommLib
+  nameWithType: CommLib
+  fullName: CommLib
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CommLib.ReturnResultType.CommLib.ReturnResultTypeEx.AsTyped``1
+  commentId: M:CommLib.ReturnResultTypeEx.AsTyped``1(CommLib.ReturnResultType)
+  parent: CommLib.ReturnResultTypeEx
+  definition: CommLib.ReturnResultTypeEx.AsTyped``1(CommLib.ReturnResultType)
+  href: CommLib.ReturnResultTypeEx.html#CommLib_ReturnResultTypeEx_AsTyped__1_CommLib_ReturnResultType_
+  name: AsTyped<T>(ReturnResultType)
+  nameWithType: ReturnResultTypeEx.AsTyped<T>(ReturnResultType)
+  fullName: CommLib.ReturnResultTypeEx.AsTyped<T>(CommLib.ReturnResultType)
+  nameWithType.vb: ReturnResultTypeEx.AsTyped(Of T)(ReturnResultType)
+  fullName.vb: CommLib.ReturnResultTypeEx.AsTyped(Of T)(CommLib.ReturnResultType)
+  name.vb: AsTyped(Of T)(ReturnResultType)
+  spec.csharp:
+  - uid: CommLib.ReturnResultTypeEx.AsTyped``1(CommLib.ReturnResultType)
+    name: AsTyped
+    href: CommLib.ReturnResultTypeEx.html#CommLib_ReturnResultTypeEx_AsTyped__1_CommLib_ReturnResultType_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: CommLib.ReturnResultType
+    name: ReturnResultType
+    href: CommLib.ReturnResultType.html
+  - name: )
+  spec.vb:
+  - uid: CommLib.ReturnResultTypeEx.AsTyped``1(CommLib.ReturnResultType)
+    name: AsTyped
+    href: CommLib.ReturnResultTypeEx.html#CommLib_ReturnResultTypeEx_AsTyped__1_CommLib_ReturnResultType_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: CommLib.ReturnResultType
+    name: ReturnResultType
+    href: CommLib.ReturnResultType.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CommLib.ReturnResultTypeEx.AsTyped``1(CommLib.ReturnResultType)
+  commentId: M:CommLib.ReturnResultTypeEx.AsTyped``1(CommLib.ReturnResultType)
+  href: CommLib.ReturnResultTypeEx.html#CommLib_ReturnResultTypeEx_AsTyped__1_CommLib_ReturnResultType_
+  name: AsTyped<T>(ReturnResultType)
+  nameWithType: ReturnResultTypeEx.AsTyped<T>(ReturnResultType)
+  fullName: CommLib.ReturnResultTypeEx.AsTyped<T>(CommLib.ReturnResultType)
+  nameWithType.vb: ReturnResultTypeEx.AsTyped(Of T)(ReturnResultType)
+  fullName.vb: CommLib.ReturnResultTypeEx.AsTyped(Of T)(CommLib.ReturnResultType)
+  name.vb: AsTyped(Of T)(ReturnResultType)
+  spec.csharp:
+  - uid: CommLib.ReturnResultTypeEx.AsTyped``1(CommLib.ReturnResultType)
+    name: AsTyped
+    href: CommLib.ReturnResultTypeEx.html#CommLib_ReturnResultTypeEx_AsTyped__1_CommLib_ReturnResultType_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: CommLib.ReturnResultType
+    name: ReturnResultType
+    href: CommLib.ReturnResultType.html
+  - name: )
+  spec.vb:
+  - uid: CommLib.ReturnResultTypeEx.AsTyped``1(CommLib.ReturnResultType)
+    name: AsTyped
+    href: CommLib.ReturnResultTypeEx.html#CommLib_ReturnResultTypeEx_AsTyped__1_CommLib_ReturnResultType_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: CommLib.ReturnResultType
+    name: ReturnResultType
+    href: CommLib.ReturnResultType.html
+  - name: )
+- uid: CommLib.ReturnResultTypeEx
+  commentId: T:CommLib.ReturnResultTypeEx
+  parent: CommLib
+  href: CommLib.ReturnResultTypeEx.html
+  name: ReturnResultTypeEx
+  nameWithType: ReturnResultTypeEx
+  fullName: CommLib.ReturnResultTypeEx
+- uid: CommLib.ReturnResultType.RESULT*
+  commentId: Overload:CommLib.ReturnResultType.RESULT
+  href: CommLib.ReturnResultType.html#CommLib_ReturnResultType_RESULT
+  name: RESULT
+  nameWithType: ReturnResultType.RESULT
+  fullName: CommLib.ReturnResultType.RESULT
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: CommLib.ReturnResultType.Success*
+  commentId: Overload:CommLib.ReturnResultType.Success
+  href: CommLib.ReturnResultType.html#CommLib_ReturnResultType_Success
+  name: Success
+  nameWithType: ReturnResultType.Success
+  fullName: CommLib.ReturnResultType.Success
+- uid: CommLib.ReturnResultType.Failure*
+  commentId: Overload:CommLib.ReturnResultType.Failure
+  href: CommLib.ReturnResultType.html#CommLib_ReturnResultType_Failure
+  name: Failure
+  nameWithType: ReturnResultType.Failure
+  fullName: CommLib.ReturnResultType.Failure
+- uid: CommLib.ReturnResultType.Message*
+  commentId: Overload:CommLib.ReturnResultType.Message
+  href: CommLib.ReturnResultType.html#CommLib_ReturnResultType_Message
+  name: Message
+  nameWithType: ReturnResultType.Message
+  fullName: CommLib.ReturnResultType.Message
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CommLib.ReturnResultType.ReturnObj*
+  commentId: Overload:CommLib.ReturnResultType.ReturnObj
+  href: CommLib.ReturnResultType.html#CommLib_ReturnResultType_ReturnObj
+  name: ReturnObj
+  nameWithType: ReturnResultType.ReturnObj
+  fullName: CommLib.ReturnResultType.ReturnObj
+- uid: CommLib.ReturnResultType.URL*
+  commentId: Overload:CommLib.ReturnResultType.URL
+  href: CommLib.ReturnResultType.html#CommLib_ReturnResultType_URL
+  name: URL
+  nameWithType: ReturnResultType.URL
+  fullName: CommLib.ReturnResultType.URL
+- uid: CommLib.ReturnResultType.Clear*
+  commentId: Overload:CommLib.ReturnResultType.Clear
+  href: CommLib.ReturnResultType.html#CommLib_ReturnResultType_Clear
+  name: Clear
+  nameWithType: ReturnResultType.Clear
+  fullName: CommLib.ReturnResultType.Clear

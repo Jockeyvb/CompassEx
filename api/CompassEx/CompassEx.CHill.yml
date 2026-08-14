@@ -5,17 +5,19 @@ items:
   id: CHill
   parent: CompassEx
   children:
-  - CompassEx.CHill.#ctor(System.Int32)
-  - CompassEx.CHill.#ctor(System.String)
+  - CompassEx.CHill.#ctor(System.Int32,CompassEx.HillType)
+  - CompassEx.CHill.#ctor(System.String,CompassEx.HillType)
   - CompassEx.CHill.C24HillNames
   - CompassEx.CHill.C24HillSunNames
   - CompassEx.CHill.CRangeDegree
   - CompassEx.CHill.Equals(System.Object)
+  - CompassEx.CHill.Get24HillDegree(System.String,CompassEx.HillType)
   - CompassEx.CHill.GetAfterGua
   - CompassEx.CHill.GetCBeforGuas
   - CompassEx.CHill.GetHashCode
   - CompassEx.CHill.IsSun
   - CompassEx.CHill.Name
+  - CompassEx.CHill.hillType
   langs:
   - csharp
   - vb
@@ -30,7 +32,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CHill
     path: CompassEx/CHill.cs
-    startLine: 25
+    startLine: 84
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -70,7 +72,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: C24HillNames
     path: CompassEx/CHill.cs
-    startLine: 35
+    startLine: 94
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -100,7 +102,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: C24HillSunNames
     path: CompassEx/CHill.cs
-    startLine: 43
+    startLine: 102
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -130,7 +132,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IsSun
     path: CompassEx/CHill.cs
-    startLine: 59
+    startLine: 118
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -145,6 +147,37 @@ items:
       description: 若属于净阳则返回 <code>true</code>；若属于净阴则返回 <code>false</code>。
     content.vb: Public ReadOnly Property IsSun As Boolean
   overload: CompassEx.CHill.IsSun*
+- uid: CompassEx.CHill.hillType
+  commentId: P:CompassEx.CHill.hillType
+  id: hillType
+  parent: CompassEx.CHill
+  langs:
+  - csharp
+  - vb
+  name: hillType
+  nameWithType: CHill.hillType
+  fullName: CompassEx.CHill.hillType
+  type: Property
+  source:
+    remote:
+      path: CompassEx/CHill.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: hillType
+    path: CompassEx/CHill.cs
+    startLine: 122
+  assemblies:
+  - CompassEx
+  namespace: CompassEx
+  summary: 24山类型
+  example: []
+  syntax:
+    content: public HillType hillType { get; }
+    parameters: []
+    return:
+      type: CompassEx.HillType
+    content.vb: Public Property hillType As HillType
+  overload: CompassEx.CHill.hillType*
 - uid: CompassEx.CHill.Name
   commentId: P:CompassEx.CHill.Name
   id: Name
@@ -163,7 +196,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Name
     path: CompassEx/CHill.cs
-    startLine: 69
+    startLine: 130
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -195,7 +228,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CRangeDegree
     path: CompassEx/CHill.cs
-    startLine: 82
+    startLine: 143
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -203,7 +236,7 @@ items:
   remarks: >-
     <p><b>计算依据：</b></p>
 
-    <p>该属性为只读属性，其内部会直接通过调用 <xref href="CompassEx.CompassEx.Get24HillDegree(System.String)" data-throw-if-not-resolved="false"></xref> 方法，传入当前实例的 <xref href="CompassEx.CHill.Name" data-throw-if-not-resolved="false"></xref> 实时计算得出。</p>
+    <p>该属性为只读属性，其内部会直接通过调用 <xref href="CompassEx.CompassEx.Get24HillDegree(System.String%2cCompassEx.HillType)" data-throw-if-not-resolved="false"></xref> 方法，传入当前实例的 <xref href="CompassEx.CHill.Name" data-throw-if-not-resolved="false"></xref> 实时计算得出。</p>
 
     <p>例如：当 <xref href="CompassEx.CHill.Name" data-throw-if-not-resolved="false"></xref> 为“壬”时，返回的度数区间范围即为 <code>337.5 ~ 352.5</code> 度。</p>
   example: []
@@ -215,16 +248,16 @@ items:
       description: 返回一个封装了起始和结束角度的 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref> 对象。
     content.vb: Public ReadOnly Property CRangeDegree As CompassRangEX
   overload: CompassEx.CHill.CRangeDegree*
-- uid: CompassEx.CHill.#ctor(System.String)
-  commentId: M:CompassEx.CHill.#ctor(System.String)
-  id: '#ctor(System.String)'
+- uid: CompassEx.CHill.#ctor(System.String,CompassEx.HillType)
+  commentId: M:CompassEx.CHill.#ctor(System.String,CompassEx.HillType)
+  id: '#ctor(System.String,CompassEx.HillType)'
   parent: CompassEx.CHill
   langs:
   - csharp
   - vb
-  name: CHill(string)
-  nameWithType: CHill.CHill(string)
-  fullName: CompassEx.CHill.CHill(string)
+  name: CHill(string, HillType)
+  nameWithType: CHill.CHill(string, HillType)
+  fullName: CompassEx.CHill.CHill(string, CompassEx.HillType)
   type: Constructor
   source:
     remote:
@@ -233,34 +266,48 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/CHill.cs
-    startLine: 96
+    startLine: 163
   assemblies:
   - CompassEx
   namespace: CompassEx
   summary: 基于指定的山名初始化 <xref href="CompassEx.CHill" data-throw-if-not-resolved="false"></xref> 类的新实例。
-  remarks: 内部机制会先通过名称在 <xref href="CompassEx.CHill.C24HillNames" data-throw-if-not-resolved="false"></xref> 数组中检索其对应的整型索引，随后将其隐式链式传递给带索引参数的构造函数。
+  remarks: >-
+    <p>
+
+    内部机制会先通过名称在 <xref href="CompassEx.CHill.C24HillNames" data-throw-if-not-resolved="false"></xref> 数组中检索其对应的整型索引，随后将其隐式链式传递给带索引参数的构造函数。
+
+    </p>
+
+    <p>
+
+    <b>注意：</b>如果传入的 <code class="paramref">sName</code> 在数组中不存在，检索索引将为 <code>-1</code>，此时会链式触发 <xref href="System.ArgumentOutOfRangeException" data-throw-if-not-resolved="false"></xref> 异常。
+
+    </p>
   example: []
   syntax:
-    content: public CHill(string sName)
+    content: public CHill(string sName, HillType ht = HillType.CHill)
     parameters:
     - id: sName
       type: System.String
-      description: 要创建的二十四山名称（如“壬”、“子”等）。
-    content.vb: Public Sub New(sName As String)
+      description: 要创建的二十四山名称（如“壬”、“子”、“癸”等）。
+    - id: ht
+      type: CompassEx.HillType
+      description: 当前山头所属的盘层类型。默认值为 <xref href="CompassEx.HillType.CHill" data-throw-if-not-resolved="false"></xref>（地盘）。
+    content.vb: Public Sub New(sName As String, ht As HillType = HillType.CHill)
   overload: CompassEx.CHill.#ctor*
-  nameWithType.vb: CHill.New(String)
-  fullName.vb: CompassEx.CHill.New(String)
-  name.vb: New(String)
-- uid: CompassEx.CHill.#ctor(System.Int32)
-  commentId: M:CompassEx.CHill.#ctor(System.Int32)
-  id: '#ctor(System.Int32)'
+  nameWithType.vb: CHill.New(String, HillType)
+  fullName.vb: CompassEx.CHill.New(String, CompassEx.HillType)
+  name.vb: New(String, HillType)
+- uid: CompassEx.CHill.#ctor(System.Int32,CompassEx.HillType)
+  commentId: M:CompassEx.CHill.#ctor(System.Int32,CompassEx.HillType)
+  id: '#ctor(System.Int32,CompassEx.HillType)'
   parent: CompassEx.CHill
   langs:
   - csharp
   - vb
-  name: CHill(int)
-  nameWithType: CHill.CHill(int)
-  fullName: CompassEx.CHill.CHill(int)
+  name: CHill(int, HillType)
+  nameWithType: CHill.CHill(int, HillType)
+  fullName: CompassEx.CHill.CHill(int, CompassEx.HillType)
   type: Constructor
   source:
     remote:
@@ -269,27 +316,85 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/CHill.cs
-    startLine: 105
+    startLine: 173
   assemblies:
   - CompassEx
   namespace: CompassEx
   summary: 基于二十四山序列中的整型索引初始化 <xref href="CompassEx.CHill" data-throw-if-not-resolved="false"></xref> 类的新实例。
   example: []
   syntax:
-    content: public CHill(int iIndex)
+    content: public CHill(int iIndex, HillType ht = HillType.CHill)
     parameters:
     - id: iIndex
       type: System.Int32
       description: 二十四山在序列中的索引，有效取值范围为 <code>0 ~ 23</code>。
-    content.vb: Public Sub New(iIndex As Integer)
+    - id: ht
+      type: CompassEx.HillType
+      description: 当前山头所属的盘层类型。默认值为 <xref href="CompassEx.HillType.CHill" data-throw-if-not-resolved="false"></xref>（地盘）。
+    content.vb: Public Sub New(iIndex As Integer, ht As HillType = HillType.CHill)
   overload: CompassEx.CHill.#ctor*
   exceptions:
   - type: System.ArgumentOutOfRangeException
     commentId: T:System.ArgumentOutOfRangeException
     description: 当传入的索引小于 0 或大于等于 24 时抛出此异常。
-  nameWithType.vb: CHill.New(Integer)
-  fullName.vb: CompassEx.CHill.New(Integer)
-  name.vb: New(Integer)
+  nameWithType.vb: CHill.New(Integer, HillType)
+  fullName.vb: CompassEx.CHill.New(Integer, CompassEx.HillType)
+  name.vb: New(Integer, HillType)
+- uid: CompassEx.CHill.Get24HillDegree(System.String,CompassEx.HillType)
+  commentId: M:CompassEx.CHill.Get24HillDegree(System.String,CompassEx.HillType)
+  id: Get24HillDegree(System.String,CompassEx.HillType)
+  parent: CompassEx.CHill
+  langs:
+  - csharp
+  - vb
+  name: Get24HillDegree(string, HillType)
+  nameWithType: CHill.Get24HillDegree(string, HillType)
+  fullName: CompassEx.CHill.Get24HillDegree(string, CompassEx.HillType)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/CHill.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Get24HillDegree
+    path: CompassEx/CHill.cs
+    startLine: 206
+  assemblies:
+  - CompassEx
+  namespace: CompassEx
+  summary: 获取二十四山方位对应的角度范围。
+  remarks: >-
+    <p>二十四山是风水学与中国传统历法中用于标示方位的重要概念，将圆周 360 度等分为 24 个扇区，每个扇区占 15 度。</p>
+
+    <p>本方法通过传入山名和类型，返回对应的 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref> 角度范围对象。</p>
+  example:
+  - >-
+    <pre><code class="lang-csharp">// 示例：获取传统中国二十四山中“子”山的角度范围
+
+    CompassRangEX range = CompassEx.Get24HillDegree("子");
+
+    Console.WriteLine($"子山范围：{range.StartDegree}° 至 {range.EndDegree}°");</code></pre>
+  syntax:
+    content: public static CompassRangEX Get24HillDegree(string HillName, HillType ht = HillType.CHill)
+    parameters:
+    - id: HillName
+      type: System.String
+      description: 二十四山的名称（例如："子"、"午"、"卯"、"酉"、"乾"、"巽"、"艮"、"坤" 等）。
+    - id: ht
+      type: CompassEx.HillType
+      description: 山向类型，默认为中国传统二十四山（<xref href="CompassEx.HillType.CHill" data-throw-if-not-resolved="false"></xref>）。
+    return:
+      type: CompassEx.Comm.CompassRangEX
+      description: 返回包含起始角度、终止角度及中心角度的 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref> 方位范围对象。
+    content.vb: Public Shared Function Get24HillDegree(HillName As String, ht As HillType = HillType.CHill) As CompassRangEX
+  overload: CompassEx.CHill.Get24HillDegree*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: 当 <code class="paramref">HillName</code> 为 null 或空字符串时抛出。
+  nameWithType.vb: CHill.Get24HillDegree(String, HillType)
+  fullName.vb: CompassEx.CHill.Get24HillDegree(String, CompassEx.HillType)
+  name.vb: Get24HillDegree(String, HillType)
 - uid: CompassEx.CHill.GetAfterGua
   commentId: M:CompassEx.CHill.GetAfterGua
   id: GetAfterGua
@@ -308,7 +413,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAfterGua
     path: CompassEx/CHill.cs
-    startLine: 124
+    startLine: 219
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -340,7 +445,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetCBeforGuas
     path: CompassEx/CHill.cs
-    startLine: 139
+    startLine: 234
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -377,18 +482,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Equals
     path: CompassEx/CHill.cs
-    startLine: 156
+    startLine: 256
   assemblies:
   - CompassEx
   namespace: CompassEx
+  summary: 确定指定的对象是否等于当前 <xref href="CompassEx.CHill" data-throw-if-not-resolved="false"></xref> 实例。
   example: []
   syntax:
     content: public override bool Equals(object obj)
     parameters:
     - id: obj
       type: System.Object
+      description: 要与当前实例进行比较的对象。
     return:
       type: System.Boolean
+      description: 如果指定的对象等于当前实例，则为 <code>true</code>；否则为 <code>false</code>。
     content.vb: Public Overrides Function Equals(obj As Object) As Boolean
   overridden: System.Object.Equals(System.Object)
   overload: CompassEx.CHill.Equals*
@@ -413,15 +521,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetHashCode
     path: CompassEx/CHill.cs
-    startLine: 163
+    startLine: 274
   assemblies:
   - CompassEx
   namespace: CompassEx
+  summary: 返回当前 <xref href="CompassEx.CHill" data-throw-if-not-resolved="false"></xref> 实例的哈希代码。
+  remarks: >-
+    算法遵循乘法哈希机制（非对称质数相乘），将参与相等性判定的 <xref href="CompassEx.CHill.Name" data-throw-if-not-resolved="false"></xref> 和 <xref href="CompassEx.CHill.hillType" data-throw-if-not-resolved="false"></xref> 字段进行组合计算，
+
+    以确保在散列表（如 <xref href="System.Collections.Generic.Dictionary%602" data-throw-if-not-resolved="false"></xref>）中具备优秀的分布均匀性。
   example: []
   syntax:
     content: public override int GetHashCode()
     return:
       type: System.Int32
+      description: 当前实例的 32 位有符号整数哈希代码。
     content.vb: Public Overrides Function GetHashCode() As Integer
   overridden: System.Object.GetHashCode
   overload: CompassEx.CHill.GetHashCode*
@@ -838,6 +952,19 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: CompassEx.CHill.hillType*
+  commentId: Overload:CompassEx.CHill.hillType
+  href: CompassEx.CHill.html#CompassEx_CHill_hillType
+  name: hillType
+  nameWithType: CHill.hillType
+  fullName: CompassEx.CHill.hillType
+- uid: CompassEx.HillType
+  commentId: T:CompassEx.HillType
+  parent: CompassEx
+  href: CompassEx.HillType.html
+  name: HillType
+  nameWithType: HillType
+  fullName: CompassEx.HillType
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -862,36 +989,46 @@ references:
   name: CompassRangEX
   nameWithType: CompassRangEX
   fullName: CompassEx.Comm.CompassRangEX
-- uid: CompassEx.CompassEx.Get24HillDegree(System.String)
-  commentId: M:CompassEx.CompassEx.Get24HillDegree(System.String)
+- uid: CompassEx.CompassEx.Get24HillDegree(System.String,CompassEx.HillType)
+  commentId: M:CompassEx.CompassEx.Get24HillDegree(System.String,CompassEx.HillType)
   parent: CompassEx.CompassEx
   isExternal: true
-  href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_
-  name: Get24HillDegree(string)
-  nameWithType: CompassEx.Get24HillDegree(string)
-  fullName: CompassEx.CompassEx.Get24HillDegree(string)
-  nameWithType.vb: CompassEx.Get24HillDegree(String)
-  fullName.vb: CompassEx.CompassEx.Get24HillDegree(String)
-  name.vb: Get24HillDegree(String)
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_CompassEx_HillType_
+  name: Get24HillDegree(string, HillType)
+  nameWithType: CompassEx.Get24HillDegree(string, HillType)
+  fullName: CompassEx.CompassEx.Get24HillDegree(string, CompassEx.HillType)
+  nameWithType.vb: CompassEx.Get24HillDegree(String, HillType)
+  fullName.vb: CompassEx.CompassEx.Get24HillDegree(String, CompassEx.HillType)
+  name.vb: Get24HillDegree(String, HillType)
   spec.csharp:
-  - uid: CompassEx.CompassEx.Get24HillDegree(System.String)
+  - uid: CompassEx.CompassEx.Get24HillDegree(System.String,CompassEx.HillType)
     name: Get24HillDegree
-    href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_CompassEx_HillType_
   - name: (
   - uid: System.String
     name: string
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: CompassEx.HillType
+    name: HillType
+    href: CompassEx.HillType.html
   - name: )
   spec.vb:
-  - uid: CompassEx.CompassEx.Get24HillDegree(System.String)
+  - uid: CompassEx.CompassEx.Get24HillDegree(System.String,CompassEx.HillType)
     name: Get24HillDegree
-    href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_CompassEx_HillType_
   - name: (
   - uid: System.String
     name: String
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: CompassEx.HillType
+    name: HillType
+    href: CompassEx.HillType.html
   - name: )
 - uid: CompassEx.CHill.Name
   commentId: P:CompassEx.CHill.Name
@@ -919,21 +1056,18 @@ references:
   name: CHill
   nameWithType: CHill
   fullName: CompassEx.CHill
+- uid: CompassEx.HillType.CHill
+  commentId: F:CompassEx.HillType.CHill
+  href: CompassEx.HillType.html#CompassEx_HillType_CHill
+  name: CHill
+  nameWithType: HillType.CHill
+  fullName: CompassEx.HillType.CHill
 - uid: CompassEx.CHill.C24HillNames
   commentId: F:CompassEx.CHill.C24HillNames
   href: CompassEx.CHill.html#CompassEx_CHill_C24HillNames
   name: C24HillNames
   nameWithType: CHill.C24HillNames
   fullName: CompassEx.CHill.C24HillNames
-- uid: CompassEx.CHill.#ctor*
-  commentId: Overload:CompassEx.CHill.#ctor
-  href: CompassEx.CHill.html#CompassEx_CHill__ctor_System_String_
-  name: CHill
-  nameWithType: CHill.CHill
-  fullName: CompassEx.CHill.CHill
-  nameWithType.vb: CHill.New
-  fullName.vb: CompassEx.CHill.New
-  name.vb: New
 - uid: System.ArgumentOutOfRangeException
   commentId: T:System.ArgumentOutOfRangeException
   isExternal: true
@@ -941,6 +1075,15 @@ references:
   name: ArgumentOutOfRangeException
   nameWithType: ArgumentOutOfRangeException
   fullName: System.ArgumentOutOfRangeException
+- uid: CompassEx.CHill.#ctor*
+  commentId: Overload:CompassEx.CHill.#ctor
+  href: CompassEx.CHill.html#CompassEx_CHill__ctor_System_String_CompassEx_HillType_
+  name: CHill
+  nameWithType: CHill.CHill
+  fullName: CompassEx.CHill.CHill
+  nameWithType.vb: CHill.New
+  fullName.vb: CompassEx.CHill.New
+  name.vb: New
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -952,6 +1095,19 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: CompassEx.CHill.Get24HillDegree*
+  commentId: Overload:CompassEx.CHill.Get24HillDegree
+  href: CompassEx.CHill.html#CompassEx_CHill_Get24HillDegree_System_String_CompassEx_HillType_
+  name: Get24HillDegree
+  nameWithType: CHill.Get24HillDegree
+  fullName: CompassEx.CHill.Get24HillDegree
 - uid: CompassEx.Gua.GuaSubClass
   commentId: T:CompassEx.Gua.GuaSubClass
   parent: CompassEx.Gua
@@ -1159,6 +1315,12 @@ references:
   name: Equals
   nameWithType: CHill.Equals
   fullName: CompassEx.CHill.Equals
+- uid: CompassEx.CHill.hillType
+  commentId: P:CompassEx.CHill.hillType
+  href: CompassEx.CHill.html#CompassEx_CHill_hillType
+  name: hillType
+  nameWithType: CHill.hillType
+  fullName: CompassEx.CHill.hillType
 - uid: System.Object.GetHashCode
   commentId: M:System.Object.GetHashCode
   parent: System.Object

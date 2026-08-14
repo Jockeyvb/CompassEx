@@ -94,6 +94,11 @@
 类
 </h3>
     <dl class="jumplist">
+      <dt><a class="xref" href="CompassEx.Comm.AreaDirection.html">AreaDirection</a></dt>
+      <dd><p>表示区域方位类，用于管理罗盘八方及中宫的名称、度数范围以及飞星轨迹映射。</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="CompassEx.Comm.ArrayExtensions.html">ArrayExtensions</a></dt>
       <dd><p>针对一维数组的高性能公共流式扩展方法封装类。</p>
 </dd>
@@ -115,6 +120,17 @@
     <dl class="jumplist">
       <dt><a class="xref" href="CompassEx.Comm.FiveAttr.html">FiveAttr</a></dt>
       <dd><p>五行类</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="CompassEx.Comm.FlyStar.html">FlyStar</a></dt>
+      <dd><p>表示紫白飞星类，用于管理飞星的名称、索引、数值、九宫方位以及对应的后天八卦属性。</p>
+<p>紫白飞星：年、月紫白，入中宫之星逆推，分布九宫位是顺飞。</p>
+<p>为了方便使用，年紫白飞星方法：<a class="xref" href="CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_YearFlyStar_System_Int32_">YearFlyStar(int)</a> 的年值必须是立春后的年值。</p>
+<p>月紫白飞星方法：<a class="xref" href="CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_MonthFlyStars_CompassEx_Comm_LocClass_">MonthFlyStars(LocClass)</a>（注：实际方法为 <a class="xref" href="CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_MonthFlyStars_CompassEx_Comm_LocClass_">MonthFlyStars(LocClass)</a>）需要传入年支类获得布满十二月飞星值，但九宫方位为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>，因为九宫飞布不存在。若要获得所有十二月的九宫方位应该使用 <a class="xref" href="CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_GetFlyStars_System_Int32_System_Boolean_System_Boolean_">GetFlyStars(int, bool, bool)</a> 方法重新获得，每月飞布宫位如：<code>GetFlyStars(MonthFlyStar.First().StarValue, true, true)</code> 获得正月飞布情况。</p>
+<p>日紫白飞星：是按节气冬至后第一个甲子为一白顺飞，乙丑为二黑坤，夏至后第一个甲子为一日逆飞，乙丑为九紫。</p>
+<p>时紫白飞星：是按天干阴阳顺逆飞，阳为顺飞，阴为逆飞。</p>
+<p><span style="font-weight:bold;color:red;">重点是：每一个紫白中宫为 StarValue（星值），年、月、日、时紫白应该有独立的飞布宫位，则可使用九宫方位应使用 <a class="xref" href="CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_GetFlyStars_System_Int32_System_Boolean_System_Boolean_">GetFlyStars(int, bool, bool)</a> 方法重新获得。例如每月飞布宫位：<code>GetFlyStars(MonthFlyStar.First().StarValue, true, true)</code> 读取属性 <a class="xref" href="CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_StarDirection">StarDirection</a> 获得九宫方位信息。</span></p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -151,7 +167,7 @@
 结构
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="CompassEx.Comm.CompassObjType.html">CompassObjType</a></dt>
+      <dt><a class="xref" href="CompassEx.Comm.CompassObjStru.html">CompassObjStru</a></dt>
       <dd><p>用于封装和标识罗盘对象的元数据及其实例的结构体。</p>
 </dd>
     </dl>
@@ -163,6 +179,11 @@
     <h3 id="enums">
 枚举
 </h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="CompassEx.Comm.CompassObjType.html">CompassObjType</a></dt>
+      <dd><p>罗盘上的对应类型</p>
+</dd>
+    </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="CompassEx.Comm.FactYearEnum.html">FactYearEnum</a></dt>
       <dd><p>是否为真实年(龄),0为立春后，1立春前</p>

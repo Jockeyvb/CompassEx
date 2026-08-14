@@ -18,7 +18,7 @@ namespace CompassEx.Comm
     /// <summary>
     /// 地支类
     /// </summary>
-    public class LocClass
+    public class LocClass : IEquatable<LocClass>
     {
 
         #region 字段 
@@ -78,7 +78,26 @@ namespace CompassEx.Comm
         /// <value>
         /// 一个 <see cref="int"/> 整数，有效取值范围为 <c>0 ~ 11</c>，对应 <see cref="LocNames"/> 中的位置。
         /// </value>
-        public int Index { get; private set; }
+        public int Index { get { return LocNames.IndexOf(this.Name); } }
+
+
+        /// <summary>
+        /// 返回时辰点数值
+        /// </summary>
+        public int Hour { get { return int.Parse(LocTimeValues[this.Index].Substring(0, 2)); } }
+
+        /// <summary>
+        /// 地支月索引
+        /// </summary>
+        public int LocMonthIndex
+        {
+            get
+            {
+                int it = this.Index - 2;
+                if (it < 0) it = it + 14;
+                return it;
+            }
+        }
 
         /// <summary>
         /// 获取当前地支所归属的五行属性。
@@ -140,7 +159,7 @@ namespace CompassEx.Comm
                 this.FiveAttr = new FiveAttr("土");
             }
             this.LocTimeValue = LocTimeValues[LocIndex];
-            this.Index = LocIndex;
+
             this.Name = LocNames[LocIndex];
         }
 
@@ -212,7 +231,7 @@ namespace CompassEx.Comm
         /// </summary>
         /// <param name="LocName">要查询的地支名称（如“子”、“丑”等）。</param>
         /// <returns>若在全局元数据中成功匹配到该地支名，则返回填充好业务属性的 <see cref="LocClass"/> 实例；若输入的字符非法或不存在，则返回 <c>null</c>。</returns>
-        public static LocClass GetLocClass(string LocName)
+        public static LocClass? GetLocClass(string LocName)
         {
             int iPos = Array.IndexOf(LocNames, LocName);
             if (iPos == -1) return null;
@@ -234,10 +253,54 @@ namespace CompassEx.Comm
             LocClass lc = new LocClass(iLocIndex);
 
             lc.LocTimeValue = LocTimeValues[iLocIndex];
-            lc.Index = iLocIndex;
+
             lc.Name = LocNames[iLocIndex];
             return lc;
         }
+
+
+
+
+
+        #region 显式实现对比、运算符和Key 方法
+        // 1. 一般的 Equals(object)，內部可以轉型並利用顯式介面來比對
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as LocClass);
+        }
+
+        // 2. 顯式實作 IEquatable<LocClass>.Equals
+        bool IEquatable<LocClass>.Equals(LocClass other)
+        {
+            // 檢查是否為 null
+            if (other is null) return false;
+            if (ReferenceEquals(this, other)) return true;
+
+            // 使用 string 的比較方式（考慮大小寫或 null 的防禦）
+            return string.Equals(this.Name, other.Name, StringComparison.Ordinal);
+        }
+
+        // 3. 務必配合 Name 計算 HashCode
+        public override int GetHashCode()
+        {
+            // 若 Name 可能為 null，可以用 HashCode.Combine 或字串自身的 GetHashCode
+            return Name != null ? Name.GetHashCode() : 0;
+        }
+
+        // 4. (選用) 重載 == 與 != 運算子，建議透過介面轉型來呼叫
+        public static bool operator ==(LocClass left, LocClass right)
+        {
+            if (left is null) return right is null;
+            return ((IEquatable<LocClass>)left).Equals(right);
+        }
+
+        public static bool operator !=(LocClass left, LocClass right)
+        {
+            return !(left == right);
+        }
+
+
+        #endregion
 
         #endregion
 

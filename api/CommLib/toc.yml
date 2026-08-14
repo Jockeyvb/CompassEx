@@ -28,4 +28,13 @@ items:
   - uid: CommLib.LuBanSubGrid
     name: LuBanSubGrid
     type: Class
+  - uid: CommLib.ReturnResultType
+    name: ReturnResultType
+    type: Class
+  - uid: CommLib.ReturnResultTypeEx
+    name: ReturnResultTypeEx
+    type: Class
+  - uid: CommLib.ReturnResultType`1
+    name: ReturnResultType<T>
+    type: Class
 memberLayout: SamePage

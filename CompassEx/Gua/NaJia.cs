@@ -97,8 +97,8 @@ namespace CompassEx.Gua
 
         public bool Equals(NaJiaJFResult other)
         {
-            string thisName = this.Gua?.Name;
-            string otherName = other.Gua?.Name;
+            string? thisName = this.Gua?.Name;
+            string? otherName = other.Gua?.Name;
 
             // 如果两个都是 null（即都没有卦象），在业务上它们也算作相等
             return string.Equals(thisName, otherName, StringComparison.Ordinal);
@@ -190,8 +190,8 @@ namespace CompassEx.Gua
 
         public bool Equals(NaJiaYGResult other)
         {
-            string thisName = this.Gua?.Name;
-            string otherName = other.Gua?.Name;
+            string? thisName = this.Gua?.Name;
+            string? otherName = other.Gua?.Name;
 
             // 如果两个都是 null（即都没有卦象），在业务上它们也算作相等
             return string.Equals(thisName, otherName, StringComparison.Ordinal);

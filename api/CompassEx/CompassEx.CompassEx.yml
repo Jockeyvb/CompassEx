@@ -13,7 +13,7 @@ items:
   - CompassEx.CompassEx.CompassBeforGuaSubNames
   - CompassEx.CompassEx.Degree
   - CompassEx.CompassEx.Get24Hill
-  - CompassEx.CompassEx.Get24HillDegree(System.String)
+  - CompassEx.CompassEx.Get24HillDegree(System.String,CompassEx.HillType)
   - CompassEx.CompassEx.GetAfterGuaSub
   - CompassEx.CompassEx.GetAfterGuaSubDegree(CompassEx.Gua.GuaSubClass)
   - CompassEx.CompassEx.GetAfterGuaSubDegree(System.String)
@@ -375,22 +375,22 @@ items:
   summary: 根据当前罗盘指向的度数，计算并获取对应的二十四山对象。
   example: []
   syntax:
-    content: public CHill Get24Hill()
+    content: public CHill? Get24Hill()
     return:
       type: CompassEx.CHill
       description: 返回包装了当前山名的 <xref href="CompassEx.CHill" data-throw-if-not-resolved="false"></xref> 对象；若均未匹配到对应范围则返回 <code>null</code>。
     content.vb: Public Function Get24Hill() As CHill
   overload: CompassEx.CompassEx.Get24Hill*
-- uid: CompassEx.CompassEx.Get24HillDegree(System.String)
-  commentId: M:CompassEx.CompassEx.Get24HillDegree(System.String)
-  id: Get24HillDegree(System.String)
+- uid: CompassEx.CompassEx.Get24HillDegree(System.String,CompassEx.HillType)
+  commentId: M:CompassEx.CompassEx.Get24HillDegree(System.String,CompassEx.HillType)
+  id: Get24HillDegree(System.String,CompassEx.HillType)
   parent: CompassEx.CompassEx
   langs:
   - csharp
   - vb
-  name: Get24HillDegree(string)
-  nameWithType: CompassEx.Get24HillDegree(string)
-  fullName: CompassEx.CompassEx.Get24HillDegree(string)
+  name: Get24HillDegree(string, HillType)
+  nameWithType: CompassEx.Get24HillDegree(string, HillType)
+  fullName: CompassEx.CompassEx.Get24HillDegree(string, CompassEx.HillType)
   type: Method
   source:
     remote:
@@ -399,30 +399,51 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Get24HillDegree
     path: CompassEx/CompassEx.cs
-    startLine: 189
+    startLine: 198
   assemblies:
   - CompassEx
   namespace: CompassEx
-  summary: 根据指定的山名，计算并获取该山在二十四山罗盘中所占据的绝对度数范围。
+  summary: 根据指定的山名与盘层类型，计算并获取该山在二十四山罗盘中所占据的绝对度数范围。
   remarks: >-
-    <p><b>推演原理：</b></p>
+    <p><b>一、 三盘几何错位推演原理：</b></p>
 
-    <ul><li>二十四山以<b>壬山</b>为度数起点，初始绝对方位设为 <code>337.5</code> 度。</li><li>根据该山名在列表中的索引位置，按每山 <code>15</code> 度顺时针累加。</li><li>当计算出的起始或结束度数超过 <code>360</code> 度时，系统会自动执行闭环修正（扣除 360 度）以限制在 <code>0 ~ 360</code> 度正常范围内。</li></ul>
+    <p>
+
+    二十四山基准（地盘正针）以西北方（壬山）为绝对度数起算点，初始角度设为 <code>337.5</code> 度。
+
+    算法根据盘层类型（<code class="paramref">ht</code>）自动注入三合派经典的缝针与中针偏移：
+
+    </p>
+
+    <ul><li><xref href="CompassEx.HillType.SHill" data-throw-if-not-resolved="false"></xref>（天盘缝针）：整体顺时针偏转 <code>7.5</code> 度。</li><li><xref href="CompassEx.HillType.RHill" data-throw-if-not-resolved="false"></xref>（人盘中针）：整体逆时针偏转 <code>7.5</code> 度。</li></ul>
+
+    <p><b>二、 ⏳ 严谨的一阶圆周扣减验证：</b></p>
+
+    <p>
+
+    基于罗盘圆周空间的对称性设计，即使在最大索引（23）与天盘正向偏移的极端叠加组合下，计算出的总理论度数上限也绝不会超过 <code>720</code> 度（即严格控制在双圈循环以内）。
+
+    因此，方法采用的一阶条件扣减逻辑（<code>-= 360</code>）在数学上属于最优解，扣除一次整圈后<b>绝对不会超过 360 度</b>，能以极高执行效能将各盘山头完美收拢在 <code>0 ~ 360</code> 度的法定几何范围内。
+
+    </p>
   example: []
   syntax:
-    content: public static CompassRangEX Get24HillDegree(string HillName)
+    content: public static CompassRangEX Get24HillDegree(string HillName, HillType ht = HillType.CHill)
     parameters:
     - id: HillName
       type: System.String
-      description: 指定的山名（如“壬”、“子”、“癸”等）。
+      description: 指定的二十四山名称（如“壬”、“子”、“癸”等）。
+    - id: ht
+      type: CompassEx.HillType
+      description: 指定的罗盘盘层类型。默认值为 <xref href="CompassEx.HillType.CHill" data-throw-if-not-resolved="false"></xref>（地盘正针）。
     return:
       type: CompassEx.Comm.CompassRangEX
-      description: 返回表示该山起始与结束角度的 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref> 范围对象。
-    content.vb: Public Shared Function Get24HillDegree(HillName As String) As CompassRangEX
+      description: 返回表示该山头起始与结束角度的 <xref href="CompassEx.Comm.CompassRangEX" data-throw-if-not-resolved="false"></xref> 范围对象。
+    content.vb: Public Shared Function Get24HillDegree(HillName As String, ht As HillType = HillType.CHill) As CompassRangEX
   overload: CompassEx.CompassEx.Get24HillDegree*
-  nameWithType.vb: CompassEx.Get24HillDegree(String)
-  fullName.vb: CompassEx.CompassEx.Get24HillDegree(String)
-  name.vb: Get24HillDegree(String)
+  nameWithType.vb: CompassEx.Get24HillDegree(String, HillType)
+  fullName.vb: CompassEx.CompassEx.Get24HillDegree(String, CompassEx.HillType)
+  name.vb: Get24HillDegree(String, HillType)
 - uid: CompassEx.CompassEx.GetBeforeGuaSub
   commentId: M:CompassEx.CompassEx.GetBeforeGuaSub
   id: GetBeforeGuaSub
@@ -441,14 +462,14 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBeforeGuaSub
     path: CompassEx/CompassEx.cs
-    startLine: 208
+    startLine: 233
   assemblies:
   - CompassEx
   namespace: CompassEx
   summary: 根据当前罗盘指向的度数，计算并获取对应的先天八卦单卦对象。
   example: []
   syntax:
-    content: public GuaSubClass GetBeforeGuaSub()
+    content: public GuaSubClass? GetBeforeGuaSub()
     return:
       type: CompassEx.Gua.GuaSubClass
       description: 返回对应的 <xref href="CompassEx.Gua.GuaSubClass" data-throw-if-not-resolved="false"></xref> 先天八卦对象；若没有落在有效范围内则返回 <code>null</code>。
@@ -472,7 +493,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBeforGuaSubDegree
     path: CompassEx/CompassEx.cs
-    startLine: 227
+    startLine: 252
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -507,7 +528,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBeforGuaSubDegree
     path: CompassEx/CompassEx.cs
-    startLine: 245
+    startLine: 270
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -549,14 +570,14 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAfterGuaSub
     path: CompassEx/CompassEx.cs
-    startLine: 264
+    startLine: 289
   assemblies:
   - CompassEx
   namespace: CompassEx
   summary: 根据当前罗盘指向的度数，计算并获取对应的后天八卦单卦对象。
   example: []
   syntax:
-    content: public GuaSubClass GetAfterGuaSub()
+    content: public GuaSubClass? GetAfterGuaSub()
     return:
       type: CompassEx.Gua.GuaSubClass
       description: 返回对应的 <xref href="CompassEx.Gua.GuaSubClass" data-throw-if-not-resolved="false"></xref> 后天八卦对象；若没有落在有效范围内则返回 <code>null</code>。
@@ -580,7 +601,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAfterGuaSubDegree
     path: CompassEx/CompassEx.cs
-    startLine: 283
+    startLine: 308
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -615,7 +636,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAfterGuaSubDegree
     path: CompassEx/CompassEx.cs
-    startLine: 301
+    startLine: 326
   assemblies:
   - CompassEx
   namespace: CompassEx
@@ -1157,6 +1178,12 @@ references:
   name: Get24Hill
   nameWithType: CompassEx.Get24Hill
   fullName: CompassEx.CompassEx.Get24Hill
+- uid: CompassEx.HillType.CHill
+  commentId: F:CompassEx.HillType.CHill
+  href: CompassEx.HillType.html#CompassEx_HillType_CHill
+  name: CHill
+  nameWithType: HillType.CHill
+  fullName: CompassEx.HillType.CHill
 - uid: CompassEx.Comm.CompassRangEX
   commentId: T:CompassEx.Comm.CompassRangEX
   parent: CompassEx.Comm
@@ -1164,9 +1191,21 @@ references:
   name: CompassRangEX
   nameWithType: CompassRangEX
   fullName: CompassEx.Comm.CompassRangEX
+- uid: CompassEx.HillType.SHill
+  commentId: F:CompassEx.HillType.SHill
+  href: CompassEx.HillType.html#CompassEx_HillType_SHill
+  name: SHill
+  nameWithType: HillType.SHill
+  fullName: CompassEx.HillType.SHill
+- uid: CompassEx.HillType.RHill
+  commentId: F:CompassEx.HillType.RHill
+  href: CompassEx.HillType.html#CompassEx_HillType_RHill
+  name: RHill
+  nameWithType: HillType.RHill
+  fullName: CompassEx.HillType.RHill
 - uid: CompassEx.CompassEx.Get24HillDegree*
   commentId: Overload:CompassEx.CompassEx.Get24HillDegree
-  href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_CompassEx_HillType_
   name: Get24HillDegree
   nameWithType: CompassEx.Get24HillDegree
   fullName: CompassEx.CompassEx.Get24HillDegree
@@ -1181,6 +1220,13 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: CompassEx.HillType
+  commentId: T:CompassEx.HillType
+  parent: CompassEx
+  href: CompassEx.HillType.html
+  name: HillType
+  nameWithType: HillType
+  fullName: CompassEx.HillType
 - uid: CompassEx.CompassEx.GetBeforeGuaSub*
   commentId: Overload:CompassEx.CompassEx.GetBeforeGuaSub
   href: CompassEx.CompassEx.html#CompassEx_CompassEx_GetBeforeGuaSub

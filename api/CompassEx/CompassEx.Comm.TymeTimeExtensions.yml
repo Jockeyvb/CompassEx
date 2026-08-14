@@ -5,9 +5,19 @@ items:
   id: TymeTimeExtensions
   parent: CompassEx.Comm
   children:
+  - CompassEx.Comm.TymeTimeExtensions.GetTermTime(tyme.solar.SolarTerm)
+  - CompassEx.Comm.TymeTimeExtensions.ToColor(tyme.culture.star.nine.NineStar,System.Boolean)
   - CompassEx.Comm.TymeTimeExtensions.ToDateTime(tyme.solar.SolarDay)
   - CompassEx.Comm.TymeTimeExtensions.ToDateTime(tyme.solar.SolarTime)
+  - CompassEx.Comm.TymeTimeExtensions.ToFourColor(tyme.culture.star.twentyeight.TwentyEightStar,System.Boolean)
+  - CompassEx.Comm.TymeTimeExtensions.ToFullCNName(System.DateTime,System.String)
+  - CompassEx.Comm.TymeTimeExtensions.ToFullString(tyme.culture.star.twentyeight.TwentyEightStar)
+  - CompassEx.Comm.TymeTimeExtensions.ToLunar(System.DateTime)
+  - CompassEx.Comm.TymeTimeExtensions.ToLunarDay(System.DateTime)
+  - CompassEx.Comm.TymeTimeExtensions.ToLunarHour(System.DateTime)
+  - CompassEx.Comm.TymeTimeExtensions.ToSolarDay(System.DateTime)
   - CompassEx.Comm.TymeTimeExtensions.ToSolarTime(System.DateTime)
+  - CompassEx.Comm.TymeTimeExtensions.TofourSkyLocString(tyme.lunar.LunarHour,System.String)
   langs:
   - csharp
   - vb
@@ -22,7 +32,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TymeTimeExtensions
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 25
+    startLine: 36
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -42,6 +52,398 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+- uid: CompassEx.Comm.TymeTimeExtensions.GetTermTime(tyme.solar.SolarTerm)
+  commentId: M:CompassEx.Comm.TymeTimeExtensions.GetTermTime(tyme.solar.SolarTerm)
+  id: GetTermTime(tyme.solar.SolarTerm)
+  isExtensionMethod: true
+  parent: CompassEx.Comm.TymeTimeExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetTermTime(SolarTerm)
+  nameWithType: TymeTimeExtensions.GetTermTime(SolarTerm)
+  fullName: CompassEx.Comm.TymeTimeExtensions.GetTermTime(tyme.solar.SolarTerm)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/TymeTimeExtensions.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetTermTime
+    path: CompassEx/Comm/TymeTimeExtensions.cs
+    startLine: 48
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 扩展节气交节时间
+  example: []
+  syntax:
+    content: public static SolarTime GetTermTime(this SolarTerm d)
+    parameters:
+    - id: d
+      type: tyme.solar.SolarTerm
+      description: ''
+    return:
+      type: tyme.solar.SolarTime
+      description: ''
+    content.vb: Public Shared Function GetTermTime(d As SolarTerm) As SolarTime
+  overload: CompassEx.Comm.TymeTimeExtensions.GetTermTime*
+- uid: CompassEx.Comm.TymeTimeExtensions.ToFullString(tyme.culture.star.twentyeight.TwentyEightStar)
+  commentId: M:CompassEx.Comm.TymeTimeExtensions.ToFullString(tyme.culture.star.twentyeight.TwentyEightStar)
+  id: ToFullString(tyme.culture.star.twentyeight.TwentyEightStar)
+  isExtensionMethod: true
+  parent: CompassEx.Comm.TymeTimeExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToFullString(TwentyEightStar)
+  nameWithType: TymeTimeExtensions.ToFullString(TwentyEightStar)
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToFullString(tyme.culture.star.twentyeight.TwentyEightStar)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/TymeTimeExtensions.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToFullString
+    path: CompassEx/Comm/TymeTimeExtensions.cs
+    startLine: 58
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 输出全称，包括：宿 + 七曜 + 动物
+  example: []
+  syntax:
+    content: public static string ToFullString(this TwentyEightStar d)
+    parameters:
+    - id: d
+      type: tyme.culture.star.twentyeight.TwentyEightStar
+      description: ''
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Shared Function ToFullString(d As TwentyEightStar) As String
+  overload: CompassEx.Comm.TymeTimeExtensions.ToFullString*
+- uid: CompassEx.Comm.TymeTimeExtensions.ToFourColor(tyme.culture.star.twentyeight.TwentyEightStar,System.Boolean)
+  commentId: M:CompassEx.Comm.TymeTimeExtensions.ToFourColor(tyme.culture.star.twentyeight.TwentyEightStar,System.Boolean)
+  id: ToFourColor(tyme.culture.star.twentyeight.TwentyEightStar,System.Boolean)
+  isExtensionMethod: true
+  parent: CompassEx.Comm.TymeTimeExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToFourColor(TwentyEightStar, bool)
+  nameWithType: TymeTimeExtensions.ToFourColor(TwentyEightStar, bool)
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToFourColor(tyme.culture.star.twentyeight.TwentyEightStar, bool)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/TymeTimeExtensions.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToFourColor
+    path: CompassEx/Comm/TymeTimeExtensions.cs
+    startLine: 70
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 二十八宿4种颜色
+  example: []
+  syntax:
+    content: public static Color ToFourColor(this TwentyEightStar d, bool IsDrak = false)
+    parameters:
+    - id: d
+      type: tyme.culture.star.twentyeight.TwentyEightStar
+      description: ''
+    - id: IsDrak
+      type: System.Boolean
+      description: ''
+    return:
+      type: System.Drawing.Color
+      description: ''
+    content.vb: Public Shared Function ToFourColor(d As TwentyEightStar, IsDrak As Boolean = False) As Color
+  overload: CompassEx.Comm.TymeTimeExtensions.ToFourColor*
+  nameWithType.vb: TymeTimeExtensions.ToFourColor(TwentyEightStar, Boolean)
+  fullName.vb: CompassEx.Comm.TymeTimeExtensions.ToFourColor(tyme.culture.star.twentyeight.TwentyEightStar, Boolean)
+  name.vb: ToFourColor(TwentyEightStar, Boolean)
+- uid: CompassEx.Comm.TymeTimeExtensions.ToColor(tyme.culture.star.nine.NineStar,System.Boolean)
+  commentId: M:CompassEx.Comm.TymeTimeExtensions.ToColor(tyme.culture.star.nine.NineStar,System.Boolean)
+  id: ToColor(tyme.culture.star.nine.NineStar,System.Boolean)
+  isExtensionMethod: true
+  parent: CompassEx.Comm.TymeTimeExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToColor(NineStar, bool)
+  nameWithType: TymeTimeExtensions.ToColor(NineStar, bool)
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToColor(tyme.culture.star.nine.NineStar, bool)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/TymeTimeExtensions.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToColor
+    path: CompassEx/Comm/TymeTimeExtensions.cs
+    startLine: 100
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 九星颜色
+  example: []
+  syntax:
+    content: public static Color ToColor(this NineStar d, bool IsDrak = false)
+    parameters:
+    - id: d
+      type: tyme.culture.star.nine.NineStar
+      description: ''
+    - id: IsDrak
+      type: System.Boolean
+      description: ''
+    return:
+      type: System.Drawing.Color
+      description: ''
+    content.vb: Public Shared Function ToColor(d As NineStar, IsDrak As Boolean = False) As Color
+  overload: CompassEx.Comm.TymeTimeExtensions.ToColor*
+  nameWithType.vb: TymeTimeExtensions.ToColor(NineStar, Boolean)
+  fullName.vb: CompassEx.Comm.TymeTimeExtensions.ToColor(tyme.culture.star.nine.NineStar, Boolean)
+  name.vb: ToColor(NineStar, Boolean)
+- uid: CompassEx.Comm.TymeTimeExtensions.ToFullCNName(System.DateTime,System.String)
+  commentId: M:CompassEx.Comm.TymeTimeExtensions.ToFullCNName(System.DateTime,System.String)
+  id: ToFullCNName(System.DateTime,System.String)
+  isExtensionMethod: true
+  parent: CompassEx.Comm.TymeTimeExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToFullCNName(DateTime, string)
+  nameWithType: TymeTimeExtensions.ToFullCNName(DateTime, string)
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToFullCNName(System.DateTime, string)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/TymeTimeExtensions.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToFullCNName
+    path: CompassEx/Comm/TymeTimeExtensions.cs
+    startLine: 140
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获得农历全部名称
+  example: []
+  syntax:
+    content: public static string ToFullCNName(this DateTime d, string SplitString = "-")
+    parameters:
+    - id: d
+      type: System.DateTime
+      description: ''
+    - id: SplitString
+      type: System.String
+      description: ''
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Shared Function ToFullCNName(d As Date, SplitString As String = "-") As String
+  overload: CompassEx.Comm.TymeTimeExtensions.ToFullCNName*
+  nameWithType.vb: TymeTimeExtensions.ToFullCNName(Date, String)
+  fullName.vb: CompassEx.Comm.TymeTimeExtensions.ToFullCNName(Date, String)
+  name.vb: ToFullCNName(Date, String)
+- uid: CompassEx.Comm.TymeTimeExtensions.TofourSkyLocString(tyme.lunar.LunarHour,System.String)
+  commentId: M:CompassEx.Comm.TymeTimeExtensions.TofourSkyLocString(tyme.lunar.LunarHour,System.String)
+  id: TofourSkyLocString(tyme.lunar.LunarHour,System.String)
+  isExtensionMethod: true
+  parent: CompassEx.Comm.TymeTimeExtensions
+  langs:
+  - csharp
+  - vb
+  name: TofourSkyLocString(LunarHour, string)
+  nameWithType: TymeTimeExtensions.TofourSkyLocString(LunarHour, string)
+  fullName: CompassEx.Comm.TymeTimeExtensions.TofourSkyLocString(tyme.lunar.LunarHour, string)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/TymeTimeExtensions.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: TofourSkyLocString
+    path: CompassEx/Comm/TymeTimeExtensions.cs
+    startLine: 155
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 农历时输出完整的四柱
+  example: []
+  syntax:
+    content: public static string TofourSkyLocString(this LunarHour d, string SplitString = " ")
+    parameters:
+    - id: d
+      type: tyme.lunar.LunarHour
+      description: ''
+    - id: SplitString
+      type: System.String
+      description: ''
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Shared Function TofourSkyLocString(d As LunarHour, SplitString As String = " ") As String
+  overload: CompassEx.Comm.TymeTimeExtensions.TofourSkyLocString*
+  nameWithType.vb: TymeTimeExtensions.TofourSkyLocString(LunarHour, String)
+  fullName.vb: CompassEx.Comm.TymeTimeExtensions.TofourSkyLocString(tyme.lunar.LunarHour, String)
+  name.vb: TofourSkyLocString(LunarHour, String)
+- uid: CompassEx.Comm.TymeTimeExtensions.ToLunarHour(System.DateTime)
+  commentId: M:CompassEx.Comm.TymeTimeExtensions.ToLunarHour(System.DateTime)
+  id: ToLunarHour(System.DateTime)
+  isExtensionMethod: true
+  parent: CompassEx.Comm.TymeTimeExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToLunarHour(DateTime)
+  nameWithType: TymeTimeExtensions.ToLunarHour(DateTime)
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToLunarHour(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/TymeTimeExtensions.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToLunarHour
+    path: CompassEx/Comm/TymeTimeExtensions.cs
+    startLine: 165
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 【擴充方法】將 DateTime 一鍵轉換為包含农历时
+  example: []
+  syntax:
+    content: public static LunarHour ToLunarHour(this DateTime d)
+    parameters:
+    - id: d
+      type: System.DateTime
+    return:
+      type: tyme.lunar.LunarHour
+    content.vb: Public Shared Function ToLunarHour(d As Date) As LunarHour
+  overload: CompassEx.Comm.TymeTimeExtensions.ToLunarHour*
+  nameWithType.vb: TymeTimeExtensions.ToLunarHour(Date)
+  fullName.vb: CompassEx.Comm.TymeTimeExtensions.ToLunarHour(Date)
+  name.vb: ToLunarHour(Date)
+- uid: CompassEx.Comm.TymeTimeExtensions.ToLunar(System.DateTime)
+  commentId: M:CompassEx.Comm.TymeTimeExtensions.ToLunar(System.DateTime)
+  id: ToLunar(System.DateTime)
+  isExtensionMethod: true
+  parent: CompassEx.Comm.TymeTimeExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToLunar(DateTime)
+  nameWithType: TymeTimeExtensions.ToLunar(DateTime)
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToLunar(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/TymeTimeExtensions.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToLunar
+    path: CompassEx/Comm/TymeTimeExtensions.cs
+    startLine: 183
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 【擴充方法】將 DateTime 一鍵轉換為包含年、月、日、時完整干支歷法對象的具名元組
+  example: []
+  syntax:
+    content: public static (LunarYear ly, LunarMonth lm, LunarDay ld, LunarHour lh) ToLunar(this DateTime d)
+    parameters:
+    - id: d
+      type: System.DateTime
+    return:
+      type: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}
+    content.vb: Public Shared Function ToLunar(d As Date) As (ly As LunarYear, lm As LunarMonth, ld As LunarDay, lh As LunarHour)
+  overload: CompassEx.Comm.TymeTimeExtensions.ToLunar*
+  nameWithType.vb: TymeTimeExtensions.ToLunar(Date)
+  fullName.vb: CompassEx.Comm.TymeTimeExtensions.ToLunar(Date)
+  name.vb: ToLunar(Date)
+- uid: CompassEx.Comm.TymeTimeExtensions.ToLunarDay(System.DateTime)
+  commentId: M:CompassEx.Comm.TymeTimeExtensions.ToLunarDay(System.DateTime)
+  id: ToLunarDay(System.DateTime)
+  isExtensionMethod: true
+  parent: CompassEx.Comm.TymeTimeExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToLunarDay(DateTime)
+  nameWithType: TymeTimeExtensions.ToLunarDay(DateTime)
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToLunarDay(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/TymeTimeExtensions.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToLunarDay
+    path: CompassEx/Comm/TymeTimeExtensions.cs
+    startLine: 203
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 扩展DateTime 转为农历日
+  example: []
+  syntax:
+    content: public static LunarDay ToLunarDay(this DateTime d)
+    parameters:
+    - id: d
+      type: System.DateTime
+      description: ''
+    return:
+      type: tyme.lunar.LunarDay
+      description: ''
+    content.vb: Public Shared Function ToLunarDay(d As Date) As LunarDay
+  overload: CompassEx.Comm.TymeTimeExtensions.ToLunarDay*
+  nameWithType.vb: TymeTimeExtensions.ToLunarDay(Date)
+  fullName.vb: CompassEx.Comm.TymeTimeExtensions.ToLunarDay(Date)
+  name.vb: ToLunarDay(Date)
+- uid: CompassEx.Comm.TymeTimeExtensions.ToSolarDay(System.DateTime)
+  commentId: M:CompassEx.Comm.TymeTimeExtensions.ToSolarDay(System.DateTime)
+  id: ToSolarDay(System.DateTime)
+  isExtensionMethod: true
+  parent: CompassEx.Comm.TymeTimeExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToSolarDay(DateTime)
+  nameWithType: TymeTimeExtensions.ToSolarDay(DateTime)
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToSolarDay(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/TymeTimeExtensions.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToSolarDay
+    path: CompassEx/Comm/TymeTimeExtensions.cs
+    startLine: 218
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 扩展DateTime 转为阳历日
+  example: []
+  syntax:
+    content: public static SolarDay ToSolarDay(this DateTime d)
+    parameters:
+    - id: d
+      type: System.DateTime
+      description: ''
+    return:
+      type: tyme.solar.SolarDay
+      description: ''
+    content.vb: Public Shared Function ToSolarDay(d As Date) As SolarDay
+  overload: CompassEx.Comm.TymeTimeExtensions.ToSolarDay*
+  nameWithType.vb: TymeTimeExtensions.ToSolarDay(Date)
+  fullName.vb: CompassEx.Comm.TymeTimeExtensions.ToSolarDay(Date)
+  name.vb: ToSolarDay(Date)
 - uid: CompassEx.Comm.TymeTimeExtensions.ToSolarTime(System.DateTime)
   commentId: M:CompassEx.Comm.TymeTimeExtensions.ToSolarTime(System.DateTime)
   id: ToSolarTime(System.DateTime)
@@ -61,7 +463,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToSolarTime
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 39
+    startLine: 234
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -104,7 +506,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToDateTime
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 54
+    startLine: 249
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -141,7 +543,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToDateTime
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 64
+    startLine: 259
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -465,6 +867,380 @@ references:
   - uid: tyme.solar
     name: solar
     isExternal: true
+- uid: CompassEx.Comm.TymeTimeExtensions.GetTermTime*
+  commentId: Overload:CompassEx.Comm.TymeTimeExtensions.GetTermTime
+  href: CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_GetTermTime_tyme_solar_SolarTerm_
+  name: GetTermTime
+  nameWithType: TymeTimeExtensions.GetTermTime
+  fullName: CompassEx.Comm.TymeTimeExtensions.GetTermTime
+- uid: tyme.solar.SolarTerm
+  commentId: T:tyme.solar.SolarTerm
+  parent: tyme.solar
+  isExternal: true
+  name: SolarTerm
+  nameWithType: SolarTerm
+  fullName: tyme.solar.SolarTerm
+- uid: CompassEx.Comm.TymeTimeExtensions.ToFullString*
+  commentId: Overload:CompassEx.Comm.TymeTimeExtensions.ToFullString
+  href: CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToFullString_tyme_culture_star_twentyeight_TwentyEightStar_
+  name: ToFullString
+  nameWithType: TymeTimeExtensions.ToFullString
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToFullString
+- uid: tyme.culture.star.twentyeight.TwentyEightStar
+  commentId: T:tyme.culture.star.twentyeight.TwentyEightStar
+  parent: tyme.culture.star.twentyeight
+  isExternal: true
+  name: TwentyEightStar
+  nameWithType: TwentyEightStar
+  fullName: tyme.culture.star.twentyeight.TwentyEightStar
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: tyme.culture.star.twentyeight
+  commentId: N:tyme.culture.star.twentyeight
+  isExternal: true
+  name: tyme.culture.star.twentyeight
+  nameWithType: tyme.culture.star.twentyeight
+  fullName: tyme.culture.star.twentyeight
+  spec.csharp:
+  - uid: tyme
+    name: tyme
+    isExternal: true
+  - name: .
+  - uid: tyme.culture
+    name: culture
+    isExternal: true
+  - name: .
+  - uid: tyme.culture.star
+    name: star
+    isExternal: true
+  - name: .
+  - uid: tyme.culture.star.twentyeight
+    name: twentyeight
+    isExternal: true
+  spec.vb:
+  - uid: tyme
+    name: tyme
+    isExternal: true
+  - name: .
+  - uid: tyme.culture
+    name: culture
+    isExternal: true
+  - name: .
+  - uid: tyme.culture.star
+    name: star
+    isExternal: true
+  - name: .
+  - uid: tyme.culture.star.twentyeight
+    name: twentyeight
+    isExternal: true
+- uid: CompassEx.Comm.TymeTimeExtensions.ToFourColor*
+  commentId: Overload:CompassEx.Comm.TymeTimeExtensions.ToFourColor
+  href: CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToFourColor_tyme_culture_star_twentyeight_TwentyEightStar_System_Boolean_
+  name: ToFourColor
+  nameWithType: TymeTimeExtensions.ToFourColor
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToFourColor
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Drawing.Color
+  commentId: T:System.Drawing.Color
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  name: Color
+  nameWithType: Color
+  fullName: System.Drawing.Color
+- uid: System.Drawing
+  commentId: N:System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Drawing
+  nameWithType: System.Drawing
+  fullName: System.Drawing
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: CompassEx.Comm.TymeTimeExtensions.ToColor*
+  commentId: Overload:CompassEx.Comm.TymeTimeExtensions.ToColor
+  href: CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToColor_tyme_culture_star_nine_NineStar_System_Boolean_
+  name: ToColor
+  nameWithType: TymeTimeExtensions.ToColor
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToColor
+- uid: tyme.culture.star.nine.NineStar
+  commentId: T:tyme.culture.star.nine.NineStar
+  parent: tyme.culture.star.nine
+  isExternal: true
+  name: NineStar
+  nameWithType: NineStar
+  fullName: tyme.culture.star.nine.NineStar
+- uid: tyme.culture.star.nine
+  commentId: N:tyme.culture.star.nine
+  isExternal: true
+  name: tyme.culture.star.nine
+  nameWithType: tyme.culture.star.nine
+  fullName: tyme.culture.star.nine
+  spec.csharp:
+  - uid: tyme
+    name: tyme
+    isExternal: true
+  - name: .
+  - uid: tyme.culture
+    name: culture
+    isExternal: true
+  - name: .
+  - uid: tyme.culture.star
+    name: star
+    isExternal: true
+  - name: .
+  - uid: tyme.culture.star.nine
+    name: nine
+    isExternal: true
+  spec.vb:
+  - uid: tyme
+    name: tyme
+    isExternal: true
+  - name: .
+  - uid: tyme.culture
+    name: culture
+    isExternal: true
+  - name: .
+  - uid: tyme.culture.star
+    name: star
+    isExternal: true
+  - name: .
+  - uid: tyme.culture.star.nine
+    name: nine
+    isExternal: true
+- uid: CompassEx.Comm.TymeTimeExtensions.ToFullCNName*
+  commentId: Overload:CompassEx.Comm.TymeTimeExtensions.ToFullCNName
+  href: CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToFullCNName_System_DateTime_System_String_
+  name: ToFullCNName
+  nameWithType: TymeTimeExtensions.ToFullCNName
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToFullCNName
+- uid: CompassEx.Comm.TymeTimeExtensions.TofourSkyLocString*
+  commentId: Overload:CompassEx.Comm.TymeTimeExtensions.TofourSkyLocString
+  href: CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_TofourSkyLocString_tyme_lunar_LunarHour_System_String_
+  name: TofourSkyLocString
+  nameWithType: TymeTimeExtensions.TofourSkyLocString
+  fullName: CompassEx.Comm.TymeTimeExtensions.TofourSkyLocString
+- uid: tyme.lunar.LunarHour
+  commentId: T:tyme.lunar.LunarHour
+  parent: tyme.lunar
+  isExternal: true
+  name: LunarHour
+  nameWithType: LunarHour
+  fullName: tyme.lunar.LunarHour
+- uid: tyme.lunar
+  commentId: N:tyme.lunar
+  isExternal: true
+  name: tyme.lunar
+  nameWithType: tyme.lunar
+  fullName: tyme.lunar
+  spec.csharp:
+  - uid: tyme
+    name: tyme
+    isExternal: true
+  - name: .
+  - uid: tyme.lunar
+    name: lunar
+    isExternal: true
+  spec.vb:
+  - uid: tyme
+    name: tyme
+    isExternal: true
+  - name: .
+  - uid: tyme.lunar
+    name: lunar
+    isExternal: true
+- uid: CompassEx.Comm.TymeTimeExtensions.ToLunarHour*
+  commentId: Overload:CompassEx.Comm.TymeTimeExtensions.ToLunarHour
+  href: CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToLunarHour_System_DateTime_
+  name: ToLunarHour
+  nameWithType: TymeTimeExtensions.ToLunarHour
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToLunarHour
+- uid: CompassEx.Comm.TymeTimeExtensions.ToLunar*
+  commentId: Overload:CompassEx.Comm.TymeTimeExtensions.ToLunar
+  href: CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToLunar_System_DateTime_
+  name: ToLunar
+  nameWithType: TymeTimeExtensions.ToLunar
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToLunar
+- uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}
+  commentId: T:System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}
+  parent: System
+  definition: System.ValueTuple`4
+  href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.y
+  name: (LunarYear y, LunarMonth m, LunarDay d, LunarHour h)
+  nameWithType: (LunarYear y, LunarMonth m, LunarDay d, LunarHour h)
+  fullName: (tyme.lunar.LunarYear y, tyme.lunar.LunarMonth m, tyme.lunar.LunarDay d, tyme.lunar.LunarHour h)
+  nameWithType.vb: (y As LunarYear, m As LunarMonth, d As LunarDay, h As LunarHour)
+  fullName.vb: (y As tyme.lunar.LunarYear, m As tyme.lunar.LunarMonth, d As tyme.lunar.LunarDay, h As tyme.lunar.LunarHour)
+  name.vb: (y As LunarYear, m As LunarMonth, d As LunarDay, h As LunarHour)
+  spec.csharp:
+  - name: (
+  - uid: tyme.lunar.LunarYear
+    name: LunarYear
+    isExternal: true
+  - name: " "
+  - uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}.y
+    name: y
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.y
+  - name: ','
+  - name: " "
+  - uid: tyme.lunar.LunarMonth
+    name: LunarMonth
+    isExternal: true
+  - name: " "
+  - uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}.m
+    name: m
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.m
+  - name: ','
+  - name: " "
+  - uid: tyme.lunar.LunarDay
+    name: LunarDay
+    isExternal: true
+  - name: " "
+  - uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}.d
+    name: d
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.d
+  - name: ','
+  - name: " "
+  - uid: tyme.lunar.LunarHour
+    name: LunarHour
+    isExternal: true
+  - name: " "
+  - uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}.h
+    name: h
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.h
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}.y
+    name: y
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.y
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: tyme.lunar.LunarYear
+    name: LunarYear
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}.m
+    name: m
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.m
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: tyme.lunar.LunarMonth
+    name: LunarMonth
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}.d
+    name: d
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.d
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: tyme.lunar.LunarDay
+    name: LunarDay
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}.h
+    name: h
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.h
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: tyme.lunar.LunarHour
+    name: LunarHour
+    isExternal: true
+  - name: )
+- uid: System.ValueTuple`4
+  commentId: T:System.ValueTuple`4
+  name: (T1, T2, T3, T4)
+  nameWithType: (T1, T2, T3, T4)
+  fullName: (T1, T2, T3, T4)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: )
+- uid: CompassEx.Comm.TymeTimeExtensions.ToLunarDay*
+  commentId: Overload:CompassEx.Comm.TymeTimeExtensions.ToLunarDay
+  href: CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToLunarDay_System_DateTime_
+  name: ToLunarDay
+  nameWithType: TymeTimeExtensions.ToLunarDay
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToLunarDay
+- uid: tyme.lunar.LunarDay
+  commentId: T:tyme.lunar.LunarDay
+  parent: tyme.lunar
+  isExternal: true
+  name: LunarDay
+  nameWithType: LunarDay
+  fullName: tyme.lunar.LunarDay
+- uid: CompassEx.Comm.TymeTimeExtensions.ToSolarDay*
+  commentId: Overload:CompassEx.Comm.TymeTimeExtensions.ToSolarDay
+  href: CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToSolarDay_System_DateTime_
+  name: ToSolarDay
+  nameWithType: TymeTimeExtensions.ToSolarDay
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToSolarDay
 - uid: System.DateTime.Now
   commentId: P:System.DateTime.Now
   isExternal: true

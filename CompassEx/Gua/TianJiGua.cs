@@ -44,7 +44,7 @@ namespace CompassEx.Gua
         /// <remarks>
         /// 演变机制：由初爻开始往上变，以后一个最卦接着变出，共演变 7 次，包含本宫卦在内共计 8 个卦象。
         /// </remarks>
-        public List<GuaClass> GuaList { get; private set; } = null;
+        public List<GuaClass>? GuaList { get; private set; } = null;
 
         /// <summary>
         /// 获取当前天机卦局所对应的“入卦”后天八卦集合。

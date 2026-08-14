@@ -24,7 +24,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FiveAttrRule
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 20
+    startLine: 21
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -35,9 +35,6 @@ items:
     content.vb: Public Enum FiveAttrRule As UInteger
   extensionMethods:
   - CompassEx.Comm.FiveAttrRule.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
-  - System.Enum.CompassEx.Comm.Comm.GetEnumDescription(System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
-  - System.Enum.CompassEx.Comm.Comm.GetEnumDict
-  - System.Enum.CompassEx.Comm.Comm.GetEnumValues
 - uid: CompassEx.Comm.FiveAttrRule.MeCan
   commentId: F:CompassEx.Comm.FiveAttrRule.MeCan
   id: MeCan
@@ -56,7 +53,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: MeCan
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -84,7 +81,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: MeBirth
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 30
+    startLine: 31
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -112,7 +109,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SameMe
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 35
+    startLine: 36
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -140,7 +137,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CanMe
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 39
+    startLine: 40
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -168,7 +165,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BirthMe
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 43
+    startLine: 44
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -254,165 +251,6 @@ references:
   - name: " "
   - name: TBase
   - name: )
-- uid: System.Enum.CompassEx.Comm.Comm.GetEnumDescription(System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
-  commentId: M:CompassEx.Comm.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
-  parent: CompassEx.Comm.Comm
-  definition: CompassEx.Comm.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
-  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDescription_System_Enum_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_
-  name: GetEnumDescription(Enum, string, bool, bool, bool, bool, bool)
-  nameWithType: Comm.GetEnumDescription(Enum, string, bool, bool, bool, bool, bool)
-  fullName: CompassEx.Comm.Comm.GetEnumDescription(System.Enum, string, bool, bool, bool, bool, bool)
-  nameWithType.vb: Comm.GetEnumDescription(Enum, String, Boolean, Boolean, Boolean, Boolean, Boolean)
-  fullName.vb: CompassEx.Comm.Comm.GetEnumDescription(System.Enum, String, Boolean, Boolean, Boolean, Boolean, Boolean)
-  name.vb: GetEnumDescription(Enum, String, Boolean, Boolean, Boolean, Boolean, Boolean)
-  spec.csharp:
-  - uid: CompassEx.Comm.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
-    name: GetEnumDescription
-    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDescription_System_Enum_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_
-  - name: (
-  - uid: System.Enum
-    name: Enum
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.enum
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
-  spec.vb:
-  - uid: CompassEx.Comm.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
-    name: GetEnumDescription
-    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDescription_System_Enum_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_
-  - name: (
-  - uid: System.Enum
-    name: Enum
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.enum
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
-- uid: System.Enum.CompassEx.Comm.Comm.GetEnumDict
-  commentId: M:CompassEx.Comm.Comm.GetEnumDict(System.Enum)
-  parent: CompassEx.Comm.Comm
-  definition: CompassEx.Comm.Comm.GetEnumDict(System.Enum)
-  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDict_System_Enum_
-  name: GetEnumDict(Enum)
-  nameWithType: Comm.GetEnumDict(Enum)
-  fullName: CompassEx.Comm.Comm.GetEnumDict(System.Enum)
-  spec.csharp:
-  - uid: CompassEx.Comm.Comm.GetEnumDict(System.Enum)
-    name: GetEnumDict
-    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDict_System_Enum_
-  - name: (
-  - uid: System.Enum
-    name: Enum
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.enum
-  - name: )
-  spec.vb:
-  - uid: CompassEx.Comm.Comm.GetEnumDict(System.Enum)
-    name: GetEnumDict
-    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDict_System_Enum_
-  - name: (
-  - uid: System.Enum
-    name: Enum
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.enum
-  - name: )
-- uid: System.Enum.CompassEx.Comm.Comm.GetEnumValues
-  commentId: M:CompassEx.Comm.Comm.GetEnumValues(System.Enum)
-  parent: CompassEx.Comm.Comm
-  definition: CompassEx.Comm.Comm.GetEnumValues(System.Enum)
-  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumValues_System_Enum_
-  name: GetEnumValues(Enum)
-  nameWithType: Comm.GetEnumValues(Enum)
-  fullName: CompassEx.Comm.Comm.GetEnumValues(System.Enum)
-  spec.csharp:
-  - uid: CompassEx.Comm.Comm.GetEnumValues(System.Enum)
-    name: GetEnumValues
-    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumValues_System_Enum_
-  - name: (
-  - uid: System.Enum
-    name: Enum
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.enum
-  - name: )
-  spec.vb:
-  - uid: CompassEx.Comm.Comm.GetEnumValues(System.Enum)
-    name: GetEnumValues
-    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumValues_System_Enum_
-  - name: (
-  - uid: System.Enum
-    name: Enum
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.enum
-  - name: )
 - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
   commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
   href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
@@ -463,162 +301,6 @@ references:
   name: Comm
   nameWithType: Comm
   fullName: CompassEx.Comm.Comm
-- uid: CompassEx.Comm.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
-  commentId: M:CompassEx.Comm.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
-  isExternal: true
-  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDescription_System_Enum_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_
-  name: GetEnumDescription(Enum, string, bool, bool, bool, bool, bool)
-  nameWithType: Comm.GetEnumDescription(Enum, string, bool, bool, bool, bool, bool)
-  fullName: CompassEx.Comm.Comm.GetEnumDescription(System.Enum, string, bool, bool, bool, bool, bool)
-  nameWithType.vb: Comm.GetEnumDescription(Enum, String, Boolean, Boolean, Boolean, Boolean, Boolean)
-  fullName.vb: CompassEx.Comm.Comm.GetEnumDescription(System.Enum, String, Boolean, Boolean, Boolean, Boolean, Boolean)
-  name.vb: GetEnumDescription(Enum, String, Boolean, Boolean, Boolean, Boolean, Boolean)
-  spec.csharp:
-  - uid: CompassEx.Comm.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
-    name: GetEnumDescription
-    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDescription_System_Enum_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_
-  - name: (
-  - uid: System.Enum
-    name: Enum
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.enum
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
-  spec.vb:
-  - uid: CompassEx.Comm.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
-    name: GetEnumDescription
-    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDescription_System_Enum_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_
-  - name: (
-  - uid: System.Enum
-    name: Enum
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.enum
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
-- uid: CompassEx.Comm.Comm.GetEnumDict(System.Enum)
-  commentId: M:CompassEx.Comm.Comm.GetEnumDict(System.Enum)
-  isExternal: true
-  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDict_System_Enum_
-  name: GetEnumDict(Enum)
-  nameWithType: Comm.GetEnumDict(Enum)
-  fullName: CompassEx.Comm.Comm.GetEnumDict(System.Enum)
-  spec.csharp:
-  - uid: CompassEx.Comm.Comm.GetEnumDict(System.Enum)
-    name: GetEnumDict
-    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDict_System_Enum_
-  - name: (
-  - uid: System.Enum
-    name: Enum
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.enum
-  - name: )
-  spec.vb:
-  - uid: CompassEx.Comm.Comm.GetEnumDict(System.Enum)
-    name: GetEnumDict
-    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumDict_System_Enum_
-  - name: (
-  - uid: System.Enum
-    name: Enum
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.enum
-  - name: )
-- uid: CompassEx.Comm.Comm.GetEnumValues(System.Enum)
-  commentId: M:CompassEx.Comm.Comm.GetEnumValues(System.Enum)
-  isExternal: true
-  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumValues_System_Enum_
-  name: GetEnumValues(Enum)
-  nameWithType: Comm.GetEnumValues(Enum)
-  fullName: CompassEx.Comm.Comm.GetEnumValues(System.Enum)
-  spec.csharp:
-  - uid: CompassEx.Comm.Comm.GetEnumValues(System.Enum)
-    name: GetEnumValues
-    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumValues_System_Enum_
-  - name: (
-  - uid: System.Enum
-    name: Enum
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.enum
-  - name: )
-  spec.vb:
-  - uid: CompassEx.Comm.Comm.GetEnumValues(System.Enum)
-    name: GetEnumValues
-    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_GetEnumValues_System_Enum_
-  - name: (
-  - uid: System.Enum
-    name: Enum
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.enum
-  - name: )
 - uid: CompassEx.Comm.FiveAttrRule
   commentId: T:CompassEx.Comm.FiveAttrRule
   parent: CompassEx.Comm

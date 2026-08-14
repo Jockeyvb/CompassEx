@@ -19,22 +19,47 @@ items:
   - uid: CompassEx.CompassEx
     name: CompassEx
     type: Class
+  - uid: CompassEx.HillType
+    name: HillType
+    type: Enum
   - uid: CompassEx.LicenseWatermark
     name: LicenseWatermark
+    type: Class
+- uid: CompassEx.Assist
+  name: CompassEx.Assist
+  type: Namespace
+  items:
+  - uid: CompassEx.Assist.Calender
+    name: Calender
+    type: Class
+  - uid: CompassEx.Assist.FSLTEx
+    name: FSLTEx
+    type: Class
+  - uid: CompassEx.Assist.FourSkyLocType
+    name: FourSkyLocType
+    type: Class
+  - uid: CompassEx.Assist.HourGod
+    name: HourGod
     type: Class
 - uid: CompassEx.Comm
   name: CompassEx.Comm
   type: Namespace
   items:
+  - uid: CompassEx.Comm.AreaDirection
+    name: AreaDirection
+    type: Class
   - uid: CompassEx.Comm.ArrayExtensions
     name: ArrayExtensions
     type: Class
   - uid: CompassEx.Comm.Comm
     name: Comm
     type: Class
+  - uid: CompassEx.Comm.CompassObjStru
+    name: CompassObjStru
+    type: Struct
   - uid: CompassEx.Comm.CompassObjType
     name: CompassObjType
-    type: Struct
+    type: Enum
   - uid: CompassEx.Comm.CompassRangEX
     name: CompassRangEX
     type: Class
@@ -50,6 +75,9 @@ items:
   - uid: CompassEx.Comm.FiveAttrRule
     name: FiveAttrRule
     type: Enum
+  - uid: CompassEx.Comm.FlyStar
+    name: FlyStar
+    type: Class
   - uid: CompassEx.Comm.GoodBadInfos
     name: GoodBadInfos
     type: Class

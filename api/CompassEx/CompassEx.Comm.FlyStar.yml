@@ -1,0 +1,1760 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Comm.FlyStar
+  commentId: T:CompassEx.Comm.FlyStar
+  id: FlyStar
+  parent: CompassEx.Comm
+  children:
+  - CompassEx.Comm.FlyStar.#ctor(System.Int32,System.Int32,System.Boolean)
+  - CompassEx.Comm.FlyStar.#ctor(System.String,System.Int32,System.Boolean)
+  - CompassEx.Comm.FlyStar.AreaGuaSub
+  - CompassEx.Comm.FlyStar.AreaIndex
+  - CompassEx.Comm.FlyStar.CenterStarValue
+  - CompassEx.Comm.FlyStar.DayFlyStar(System.DateTime)
+  - CompassEx.Comm.FlyStar.DayFlyStars(System.DateTime)
+  - CompassEx.Comm.FlyStar.FlyStarGuaSub
+  - CompassEx.Comm.FlyStar.FullName
+  - CompassEx.Comm.FlyStar.GetFlyStars(System.Int32,System.Boolean,System.Boolean)
+  - CompassEx.Comm.FlyStar.HourFlyStar(System.DateTime)
+  - CompassEx.Comm.FlyStar.HourFlyStars(System.DateTime)
+  - CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.LocClass)
+  - CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.SkyLoc)
+  - CompassEx.Comm.FlyStar.Name
+  - CompassEx.Comm.FlyStar.StarDirection
+  - CompassEx.Comm.FlyStar.StarValue
+  - CompassEx.Comm.FlyStar.ToString
+  - CompassEx.Comm.FlyStar.YearFlyStar(System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: FlyStar
+  nameWithType: FlyStar
+  fullName: CompassEx.Comm.FlyStar
+  type: Class
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FlyStar
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 34
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: >-
+    表示紫白飞星类，用于管理飞星的名称、索引、数值、九宫方位以及对应的后天八卦属性。
+
+
+    <p>紫白飞星：年、月紫白，入中宫之星逆推，分布九宫位是顺飞。</p>
+
+    <p>为了方便使用，年紫白飞星方法：<xref href="CompassEx.Comm.FlyStar.YearFlyStar(System.Int32)" data-throw-if-not-resolved="false"></xref> 的年值必须是立春后的年值。</p>
+
+    <p>月紫白飞星方法：<xref href="CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.LocClass)" data-throw-if-not-resolved="false"></xref>（注：实际方法为 <xref href="CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.LocClass)" data-throw-if-not-resolved="false"></xref>）需要传入年支类获得布满十二月飞星值，但九宫方位为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>，因为九宫飞布不存在。若要获得所有十二月的九宫方位应该使用 <xref href="CompassEx.Comm.FlyStar.GetFlyStars(System.Int32%2cSystem.Boolean%2cSystem.Boolean)" data-throw-if-not-resolved="false"></xref> 方法重新获得，每月飞布宫位如：<code>GetFlyStars(MonthFlyStar.First().StarValue, true, true)</code> 获得正月飞布情况。</p>
+
+    <p>日紫白飞星：是按节气冬至后第一个甲子为一白顺飞，乙丑为二黑坤，夏至后第一个甲子为一日逆飞，乙丑为九紫。</p>
+
+    <p>时紫白飞星：是按天干阴阳顺逆飞，阳为顺飞，阴为逆飞。</p>
+
+    <p><span style="font-weight:bold;color:red;">重点是：每一个紫白中宫为 StarValue（星值），年、月、日、时紫白应该有独立的飞布宫位，则可使用九宫方位应使用 <xref href="CompassEx.Comm.FlyStar.GetFlyStars(System.Int32%2cSystem.Boolean%2cSystem.Boolean)" data-throw-if-not-resolved="false"></xref> 方法重新获得。例如每月飞布宫位：<code>GetFlyStars(MonthFlyStar.First().StarValue, true, true)</code> 读取属性 <xref href="CompassEx.Comm.FlyStar.StarDirection" data-throw-if-not-resolved="false"></xref> 获得九宫方位信息。</span></p>
+  example: []
+  syntax:
+    content: public class FlyStar
+    content.vb: Public Class FlyStar
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  extensionMethods:
+  - CompassEx.Comm.FlyStar.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+- uid: CompassEx.Comm.FlyStar.FullName
+  commentId: P:CompassEx.Comm.FlyStar.FullName
+  id: FullName
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: FullName
+  nameWithType: FlyStar.FullName
+  fullName: CompassEx.Comm.FlyStar.FullName
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FullName
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 39
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取飞星信息全名（格式：区域方位名称：飞星名称）。
+  example: []
+  syntax:
+    content: public string FullName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property FullName As String
+  overload: CompassEx.Comm.FlyStar.FullName*
+- uid: CompassEx.Comm.FlyStar.Name
+  commentId: P:CompassEx.Comm.FlyStar.Name
+  id: Name
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: FlyStar.Name
+  fullName: CompassEx.Comm.FlyStar.Name
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Name
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 50
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取飞星名称（包含后天卦数、颜色及五行或中宫标识）。
+  example: []
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Name As String
+  overload: CompassEx.Comm.FlyStar.Name*
+- uid: CompassEx.Comm.FlyStar.AreaIndex
+  commentId: P:CompassEx.Comm.FlyStar.AreaIndex
+  id: AreaIndex
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: AreaIndex
+  nameWithType: FlyStar.AreaIndex
+  fullName: CompassEx.Comm.FlyStar.AreaIndex
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: AreaIndex
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 63
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取飞星的宫位索引（后天宫位，范围通常为 0-8）。
+  example: []
+  syntax:
+    content: public int AreaIndex { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property AreaIndex As Integer
+  overload: CompassEx.Comm.FlyStar.AreaIndex*
+- uid: CompassEx.Comm.FlyStar.CenterStarValue
+  commentId: P:CompassEx.Comm.FlyStar.CenterStarValue
+  id: CenterStarValue
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: CenterStarValue
+  nameWithType: FlyStar.CenterStarValue
+  fullName: CompassEx.Comm.FlyStar.CenterStarValue
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: CenterStarValue
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 68
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取入中数（中宫飞星原始数值）。
+  example: []
+  syntax:
+    content: public int CenterStarValue { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CenterStarValue As Integer
+  overload: CompassEx.Comm.FlyStar.CenterStarValue*
+- uid: CompassEx.Comm.FlyStar.StarValue
+  commentId: P:CompassEx.Comm.FlyStar.StarValue
+  id: StarValue
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: StarValue
+  nameWithType: FlyStar.StarValue
+  fullName: CompassEx.Comm.FlyStar.StarValue
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: StarValue
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 73
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取当前飞星数值（1-9）。
+  example: []
+  syntax:
+    content: public int StarValue { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property StarValue As Integer
+  overload: CompassEx.Comm.FlyStar.StarValue*
+- uid: CompassEx.Comm.FlyStar.FlyStarGuaSub
+  commentId: P:CompassEx.Comm.FlyStar.FlyStarGuaSub
+  id: FlyStarGuaSub
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: FlyStarGuaSub
+  nameWithType: FlyStar.FlyStarGuaSub
+  fullName: CompassEx.Comm.FlyStar.FlyStarGuaSub
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FlyStarGuaSub
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 78
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取飞星对应的后天卦信息。
+  example: []
+  syntax:
+    content: public GuaSubClass FlyStarGuaSub { get; }
+    parameters: []
+    return:
+      type: CompassEx.Gua.GuaSubClass
+    content.vb: Public ReadOnly Property FlyStarGuaSub As GuaSubClass
+  overload: CompassEx.Comm.FlyStar.FlyStarGuaSub*
+- uid: CompassEx.Comm.FlyStar.AreaGuaSub
+  commentId: P:CompassEx.Comm.FlyStar.AreaGuaSub
+  id: AreaGuaSub
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: AreaGuaSub
+  nameWithType: FlyStar.AreaGuaSub
+  fullName: CompassEx.Comm.FlyStar.AreaGuaSub
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: AreaGuaSub
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 83
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取宫位对应的后天卦信息。
+  example: []
+  syntax:
+    content: public GuaSubClass AreaGuaSub { get; }
+    parameters: []
+    return:
+      type: CompassEx.Gua.GuaSubClass
+    content.vb: Public ReadOnly Property AreaGuaSub As GuaSubClass
+  overload: CompassEx.Comm.FlyStar.AreaGuaSub*
+- uid: CompassEx.Comm.FlyStar.StarDirection
+  commentId: P:CompassEx.Comm.FlyStar.StarDirection
+  id: StarDirection
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: StarDirection
+  nameWithType: FlyStar.StarDirection
+  fullName: CompassEx.Comm.FlyStar.StarDirection
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: StarDirection
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 88
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取飞星对应的区域方位类实例。若无方位信息则为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+  example: []
+  syntax:
+    content: public AreaDirection? StarDirection { get; }
+    parameters: []
+    return:
+      type: CompassEx.Comm.AreaDirection
+    content.vb: Public Property StarDirection As AreaDirection
+  overload: CompassEx.Comm.FlyStar.StarDirection*
+- uid: CompassEx.Comm.FlyStar.#ctor(System.String,System.Int32,System.Boolean)
+  commentId: M:CompassEx.Comm.FlyStar.#ctor(System.String,System.Int32,System.Boolean)
+  id: '#ctor(System.String,System.Int32,System.Boolean)'
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: FlyStar(string, int, bool)
+  nameWithType: FlyStar.FlyStar(string, int, bool)
+  fullName: CompassEx.Comm.FlyStar.FlyStar(string, int, bool)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 96
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 初始化 <xref href="CompassEx.Comm.FlyStar" data-throw-if-not-resolved="false"></xref> 类的新实例，使用指定的后天卦名创建。
+  example: []
+  syntax:
+    content: public FlyStar(string afterGuaSubName, int CenterStarValue = 5, bool IsAscending = true)
+    parameters:
+    - id: afterGuaSubName
+      type: System.String
+      description: 后天卦的名称。
+    - id: CenterStarValue
+      type: System.Int32
+      description: 飞星入中数，默认为 5。
+    - id: IsAscending
+      type: System.Boolean
+      description: 是否顺飞（<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> 为顺飞，<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> 为逆飞），默认为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>。
+    content.vb: Public Sub New(afterGuaSubName As String, CenterStarValue As Integer = 5, IsAscending As Boolean = True)
+  overload: CompassEx.Comm.FlyStar.#ctor*
+  nameWithType.vb: FlyStar.New(String, Integer, Boolean)
+  fullName.vb: CompassEx.Comm.FlyStar.New(String, Integer, Boolean)
+  name.vb: New(String, Integer, Boolean)
+- uid: CompassEx.Comm.FlyStar.#ctor(System.Int32,System.Int32,System.Boolean)
+  commentId: M:CompassEx.Comm.FlyStar.#ctor(System.Int32,System.Int32,System.Boolean)
+  id: '#ctor(System.Int32,System.Int32,System.Boolean)'
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: FlyStar(int, int, bool)
+  nameWithType: FlyStar.FlyStar(int, int, bool)
+  fullName: CompassEx.Comm.FlyStar.FlyStar(int, int, bool)
+  type: Constructor
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: .ctor
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 107
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 初始化 <xref href="CompassEx.Comm.FlyStar" data-throw-if-not-resolved="false"></xref> 类的新实例，基于指定的后天卦索引创建。
+  example: []
+  syntax:
+    content: public FlyStar(int afterGuaSubIndex, int CenterStarValue = 5, bool IsAscending = true)
+    parameters:
+    - id: afterGuaSubIndex
+      type: System.Int32
+      description: 后天卦位（宫位）的索引值 (0-8)。
+    - id: CenterStarValue
+      type: System.Int32
+      description: 飞星入中数，默认为 5。
+    - id: IsAscending
+      type: System.Boolean
+      description: 是否顺飞（<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> 为顺飞，<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> 为逆飞），默认为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>。
+    content.vb: Public Sub New(afterGuaSubIndex As Integer, CenterStarValue As Integer = 5, IsAscending As Boolean = True)
+  overload: CompassEx.Comm.FlyStar.#ctor*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: 当索引或入中数超出有效范围时抛出。
+  nameWithType.vb: FlyStar.New(Integer, Integer, Boolean)
+  fullName.vb: CompassEx.Comm.FlyStar.New(Integer, Integer, Boolean)
+  name.vb: New(Integer, Integer, Boolean)
+- uid: CompassEx.Comm.FlyStar.GetFlyStars(System.Int32,System.Boolean,System.Boolean)
+  commentId: M:CompassEx.Comm.FlyStar.GetFlyStars(System.Int32,System.Boolean,System.Boolean)
+  id: GetFlyStars(System.Int32,System.Boolean,System.Boolean)
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: GetFlyStars(int, bool, bool)
+  nameWithType: FlyStar.GetFlyStars(int, bool, bool)
+  fullName: CompassEx.Comm.FlyStar.GetFlyStars(int, bool, bool)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetFlyStars
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 147
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获取所有后天卦位对应的飞星信息集合。
+  example: []
+  syntax:
+    content: public static List<FlyStar> GetFlyStars(int CenterStarValue = 5, bool IsAscending = true, bool SortStar5First = true)
+    parameters:
+    - id: CenterStarValue
+      type: System.Int32
+      description: 入中飞星值，默认为 5。
+    - id: IsAscending
+      type: System.Boolean
+      description: 是否顺飞，默认为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>。
+    - id: SortStar5First
+      type: System.Boolean
+      description: 是否从五黄排序，默认为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>。
+    return:
+      type: System.Collections.Generic.List{CompassEx.Comm.FlyStar}
+      description: 返回包含所有九宫方位飞星实例的列表（<xref href="System.Collections.Generic.List%601" data-throw-if-not-resolved="false"></xref>）。
+    content.vb: Public Shared Function GetFlyStars(CenterStarValue As Integer = 5, IsAscending As Boolean = True, SortStar5First As Boolean = True) As List(Of FlyStar)
+  overload: CompassEx.Comm.FlyStar.GetFlyStars*
+  nameWithType.vb: FlyStar.GetFlyStars(Integer, Boolean, Boolean)
+  fullName.vb: CompassEx.Comm.FlyStar.GetFlyStars(Integer, Boolean, Boolean)
+  name.vb: GetFlyStars(Integer, Boolean, Boolean)
+- uid: CompassEx.Comm.FlyStar.YearFlyStar(System.Int32)
+  commentId: M:CompassEx.Comm.FlyStar.YearFlyStar(System.Int32)
+  id: YearFlyStar(System.Int32)
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: YearFlyStar(int)
+  nameWithType: FlyStar.YearFlyStar(int)
+  fullName: CompassEx.Comm.FlyStar.YearFlyStar(int)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: YearFlyStar
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 173
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 获得年紫白飞星信息（中宫信息）。
+  example: []
+  syntax:
+    content: public static FlyStar YearFlyStar(int Year)
+    parameters:
+    - id: Year
+      type: System.Int32
+      description: 年值（必须是立春后）。
+    return:
+      type: CompassEx.Comm.FlyStar
+      description: 返回对应年份的入中飞星实例（<xref href="CompassEx.Comm.FlyStar" data-throw-if-not-resolved="false"></xref>）。
+    content.vb: Public Shared Function YearFlyStar(Year As Integer) As FlyStar
+  overload: CompassEx.Comm.FlyStar.YearFlyStar*
+  nameWithType.vb: FlyStar.YearFlyStar(Integer)
+  fullName.vb: CompassEx.Comm.FlyStar.YearFlyStar(Integer)
+  name.vb: YearFlyStar(Integer)
+- uid: CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.LocClass)
+  commentId: M:CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.LocClass)
+  id: MonthFlyStars(CompassEx.Comm.LocClass)
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: MonthFlyStars(LocClass)
+  nameWithType: FlyStar.MonthFlyStars(LocClass)
+  fullName: CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.LocClass)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: MonthFlyStars
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 199
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: >-
+    获得十二个月的月紫白飞星信息（中宫信息），返回字典中 Key 为地支类（如寅为正月，卯为二月）。
+
+
+    <p>注：十二月紫白本身不存在方位信息，为防止误解已将 <xref href="CompassEx.Comm.FlyStar.StarDirection" data-throw-if-not-resolved="false"></xref> 设置为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。若需详细获得每月中的方位信息，请使用入参调用 <xref href="CompassEx.Comm.FlyStar.GetFlyStars(System.Int32%2cSystem.Boolean%2cSystem.Boolean)" data-throw-if-not-resolved="false"></xref> 获取月中飞布情况。</p>
+  example: []
+  syntax:
+    content: public static Dictionary<LocClass, FlyStar> MonthFlyStars(LocClass YearLoc)
+    parameters:
+    - id: YearLoc
+      type: CompassEx.Comm.LocClass
+      description: 年支实例（<xref href="CompassEx.Comm.LocClass" data-throw-if-not-resolved="false"></xref>）。
+    return:
+      type: System.Collections.Generic.Dictionary{CompassEx.Comm.LocClass,CompassEx.Comm.FlyStar}
+      description: 返回地支与月飞星中宫信息的字典。
+    content.vb: Public Shared Function MonthFlyStars(YearLoc As LocClass) As Dictionary(Of LocClass, FlyStar)
+  overload: CompassEx.Comm.FlyStar.MonthFlyStars*
+- uid: CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.SkyLoc)
+  commentId: M:CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.SkyLoc)
+  id: MonthFlyStars(CompassEx.Comm.SkyLoc)
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: MonthFlyStars(SkyLoc)
+  nameWithType: FlyStar.MonthFlyStars(SkyLoc)
+  fullName: CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.SkyLoc)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: MonthFlyStars
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 235
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: >-
+    获得十二个月的月紫白飞星信息（中宫信息），返回字典中 Key 为干支类（<xref href="CompassEx.Comm.SkyLoc" data-throw-if-not-resolved="false"></xref>）。
+
+
+    <p>注：十二月紫白本身不存在方位信息，若需详细获得每月中的方位信息，请使用入参调用 <xref href="CompassEx.Comm.FlyStar.GetFlyStars(System.Int32%2cSystem.Boolean%2cSystem.Boolean)" data-throw-if-not-resolved="false"></xref> 获取月中飞布情况。</p>
+  example: []
+  syntax:
+    content: public static Dictionary<SkyLoc, FlyStar> MonthFlyStars(SkyLoc YearSL)
+    parameters:
+    - id: YearSL
+      type: CompassEx.Comm.SkyLoc
+      description: 年干支实例（<xref href="CompassEx.Comm.SkyLoc" data-throw-if-not-resolved="false"></xref>）。
+    return:
+      type: System.Collections.Generic.Dictionary{CompassEx.Comm.SkyLoc,CompassEx.Comm.FlyStar}
+      description: 返回干支和月飞星信息的字典。
+    content.vb: Public Shared Function MonthFlyStars(YearSL As SkyLoc) As Dictionary(Of SkyLoc, FlyStar)
+  overload: CompassEx.Comm.FlyStar.MonthFlyStars*
+- uid: CompassEx.Comm.FlyStar.DayFlyStar(System.DateTime)
+  commentId: M:CompassEx.Comm.FlyStar.DayFlyStar(System.DateTime)
+  id: DayFlyStar(System.DateTime)
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: DayFlyStar(DateTime)
+  nameWithType: FlyStar.DayFlyStar(DateTime)
+  fullName: CompassEx.Comm.FlyStar.DayFlyStar(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: DayFlyStar
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 253
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: >-
+    获取指定日期的日紫白飞星信息（不包括当天的九宫方位信息）。
+
+
+    <p>注：日紫白本身暂无默认方位信息，若需详细获得每日中的方位信息，请使用属性 <xref href="CompassEx.Comm.FlyStar.StarValue" data-throw-if-not-resolved="false"></xref> 作为入参调用 <xref href="CompassEx.Comm.FlyStar.GetFlyStars(System.Int32%2cSystem.Boolean%2cSystem.Boolean)" data-throw-if-not-resolved="false"></xref> 获得飞布情况。</p>
+  example: []
+  syntax:
+    content: public static (SkyLoc DaySL, FlyStar FlyStar) DayFlyStar(DateTime dt)
+    parameters:
+    - id: dt
+      type: System.DateTime
+      description: 公历日期。
+    return:
+      type: System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.FlyStar}
+      description: 返回包含日干支与飞星信息的元组。
+    content.vb: Public Shared Function DayFlyStar(dt As Date) As (DaySL As SkyLoc, FlyStar As FlyStar)
+  overload: CompassEx.Comm.FlyStar.DayFlyStar*
+  nameWithType.vb: FlyStar.DayFlyStar(Date)
+  fullName.vb: CompassEx.Comm.FlyStar.DayFlyStar(Date)
+  name.vb: DayFlyStar(Date)
+- uid: CompassEx.Comm.FlyStar.DayFlyStars(System.DateTime)
+  commentId: M:CompassEx.Comm.FlyStar.DayFlyStars(System.DateTime)
+  id: DayFlyStars(System.DateTime)
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: DayFlyStars(DateTime)
+  nameWithType: FlyStar.DayFlyStars(DateTime)
+  fullName: CompassEx.Comm.FlyStar.DayFlyStars(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: DayFlyStars
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 272
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: >-
+    根据公历年月获取当月所有日期的日紫白飞星信息集合（不包括当天的九宫方位信息）。
+
+
+    <p>注：日紫白本身暂无默认方位信息，若需详细获得每日中的方位信息，请使用属性 <xref href="CompassEx.Comm.FlyStar.StarValue" data-throw-if-not-resolved="false"></xref> 作为入参调用 <xref href="CompassEx.Comm.FlyStar.GetFlyStars(System.Int32%2cSystem.Boolean%2cSystem.Boolean)" data-throw-if-not-resolved="false"></xref> 获得飞布情况。</p>
+  example: []
+  syntax:
+    content: public static Dictionary<SkyLoc, FlyStar>? DayFlyStars(DateTime dt)
+    parameters:
+    - id: dt
+      type: System.DateTime
+      description: 公历日期（指定年月）。
+    return:
+      type: System.Collections.Generic.Dictionary{CompassEx.Comm.SkyLoc,CompassEx.Comm.FlyStar}
+      description: 返回日期干支与飞星信息的字典，若日期无效则返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    content.vb: Public Shared Function DayFlyStars(dt As Date) As Dictionary(Of SkyLoc, FlyStar)
+  overload: CompassEx.Comm.FlyStar.DayFlyStars*
+  nameWithType.vb: FlyStar.DayFlyStars(Date)
+  fullName.vb: CompassEx.Comm.FlyStar.DayFlyStars(Date)
+  name.vb: DayFlyStars(Date)
+- uid: CompassEx.Comm.FlyStar.HourFlyStar(System.DateTime)
+  commentId: M:CompassEx.Comm.FlyStar.HourFlyStar(System.DateTime)
+  id: HourFlyStar(System.DateTime)
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: HourFlyStar(DateTime)
+  nameWithType: FlyStar.HourFlyStar(DateTime)
+  fullName: CompassEx.Comm.FlyStar.HourFlyStar(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: HourFlyStar
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 292
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: >-
+    获取指定时间的时紫白飞星信息（不包含当前时辰的九宫方位信息）。
+
+
+    <p>注：时紫白本身暂无默认方位信息，若需详细获得每日中的方位信息，请使用属性 <xref href="CompassEx.Comm.FlyStar.StarValue" data-throw-if-not-resolved="false"></xref> 作为入参调用 <xref href="CompassEx.Comm.FlyStar.GetFlyStars(System.Int32%2cSystem.Boolean%2cSystem.Boolean)" data-throw-if-not-resolved="false"></xref> 获得飞布情况。</p>
+  example: []
+  syntax:
+    content: public static (SkyLoc HourSL, FlyStar FlyStar) HourFlyStar(DateTime dt)
+    parameters:
+    - id: dt
+      type: System.DateTime
+      description: 要获得的公历时间（<xref href="System.DateTime" data-throw-if-not-resolved="false"></xref>）。
+    return:
+      type: System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.FlyStar}
+      description: 返回包含时辰干支与带方位飞星信息的元组。
+    content.vb: Public Shared Function HourFlyStar(dt As Date) As (HourSL As SkyLoc, FlyStar As FlyStar)
+  overload: CompassEx.Comm.FlyStar.HourFlyStar*
+  nameWithType.vb: FlyStar.HourFlyStar(Date)
+  fullName.vb: CompassEx.Comm.FlyStar.HourFlyStar(Date)
+  name.vb: HourFlyStar(Date)
+- uid: CompassEx.Comm.FlyStar.HourFlyStars(System.DateTime)
+  commentId: M:CompassEx.Comm.FlyStar.HourFlyStars(System.DateTime)
+  id: HourFlyStars(System.DateTime)
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: HourFlyStars(DateTime)
+  nameWithType: FlyStar.HourFlyStars(DateTime)
+  fullName: CompassEx.Comm.FlyStar.HourFlyStars(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: HourFlyStars
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 312
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: >-
+    获取当天所有时辰的时紫白飞星信息（不包含对应时辰的九宫方位信息）。 
+
+
+    <p>注：时紫白本身暂无默认方位信息，若需详细获得每日中的方位信息，请使用属性 <xref href="CompassEx.Comm.FlyStar.StarValue" data-throw-if-not-resolved="false"></xref> 作为入参调用 <xref href="CompassEx.Comm.FlyStar.GetFlyStars(System.Int32%2cSystem.Boolean%2cSystem.Boolean)" data-throw-if-not-resolved="false"></xref> 获得飞布情况。</p>
+  example: []
+  syntax:
+    content: public static Dictionary<SkyLoc, FlyStar>? HourFlyStars(DateTime dt)
+    parameters:
+    - id: dt
+      type: System.DateTime
+      description: 当天的公历日期（<xref href="System.DateTime" data-throw-if-not-resolved="false"></xref>）。
+    return:
+      type: System.Collections.Generic.Dictionary{CompassEx.Comm.SkyLoc,CompassEx.Comm.FlyStar}
+      description: 返回当日所有时辰干支与飞星信息的字典，若日期无效则返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    content.vb: Public Shared Function HourFlyStars(dt As Date) As Dictionary(Of SkyLoc, FlyStar)
+  overload: CompassEx.Comm.FlyStar.HourFlyStars*
+  nameWithType.vb: FlyStar.HourFlyStars(Date)
+  fullName.vb: CompassEx.Comm.FlyStar.HourFlyStars(Date)
+  name.vb: HourFlyStars(Date)
+- uid: CompassEx.Comm.FlyStar.ToString
+  commentId: M:CompassEx.Comm.FlyStar.ToString
+  id: ToString
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: FlyStar.ToString()
+  fullName: CompassEx.Comm.FlyStar.ToString()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToString
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 331
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 返回当前飞星的默认全名字符串表示。
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: 返回 <xref href="CompassEx.Comm.FlyStar.FullName" data-throw-if-not-resolved="false"></xref> 属性的值。
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: CompassEx.Comm.FlyStar.ToString*
+references:
+- uid: CompassEx.Comm.FlyStar.YearFlyStar(System.Int32)
+  commentId: M:CompassEx.Comm.FlyStar.YearFlyStar(System.Int32)
+  isExternal: true
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_YearFlyStar_System_Int32_
+  name: YearFlyStar(int)
+  nameWithType: FlyStar.YearFlyStar(int)
+  fullName: CompassEx.Comm.FlyStar.YearFlyStar(int)
+  nameWithType.vb: FlyStar.YearFlyStar(Integer)
+  fullName.vb: CompassEx.Comm.FlyStar.YearFlyStar(Integer)
+  name.vb: YearFlyStar(Integer)
+  spec.csharp:
+  - uid: CompassEx.Comm.FlyStar.YearFlyStar(System.Int32)
+    name: YearFlyStar
+    href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_YearFlyStar_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.FlyStar.YearFlyStar(System.Int32)
+    name: YearFlyStar
+    href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_YearFlyStar_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.LocClass)
+  commentId: M:CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.LocClass)
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_MonthFlyStars_CompassEx_Comm_LocClass_
+  name: MonthFlyStars(LocClass)
+  nameWithType: FlyStar.MonthFlyStars(LocClass)
+  fullName: CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.LocClass)
+  spec.csharp:
+  - uid: CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.LocClass)
+    name: MonthFlyStars
+    href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_MonthFlyStars_CompassEx_Comm_LocClass_
+  - name: (
+  - uid: CompassEx.Comm.LocClass
+    name: LocClass
+    href: CompassEx.Comm.LocClass.html
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.LocClass)
+    name: MonthFlyStars
+    href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_MonthFlyStars_CompassEx_Comm_LocClass_
+  - name: (
+  - uid: CompassEx.Comm.LocClass
+    name: LocClass
+    href: CompassEx.Comm.LocClass.html
+  - name: )
+- uid: CompassEx.Comm.FlyStar.GetFlyStars(System.Int32,System.Boolean,System.Boolean)
+  commentId: M:CompassEx.Comm.FlyStar.GetFlyStars(System.Int32,System.Boolean,System.Boolean)
+  isExternal: true
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_GetFlyStars_System_Int32_System_Boolean_System_Boolean_
+  name: GetFlyStars(int, bool, bool)
+  nameWithType: FlyStar.GetFlyStars(int, bool, bool)
+  fullName: CompassEx.Comm.FlyStar.GetFlyStars(int, bool, bool)
+  nameWithType.vb: FlyStar.GetFlyStars(Integer, Boolean, Boolean)
+  fullName.vb: CompassEx.Comm.FlyStar.GetFlyStars(Integer, Boolean, Boolean)
+  name.vb: GetFlyStars(Integer, Boolean, Boolean)
+  spec.csharp:
+  - uid: CompassEx.Comm.FlyStar.GetFlyStars(System.Int32,System.Boolean,System.Boolean)
+    name: GetFlyStars
+    href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_GetFlyStars_System_Int32_System_Boolean_System_Boolean_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.FlyStar.GetFlyStars(System.Int32,System.Boolean,System.Boolean)
+    name: GetFlyStars
+    href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_GetFlyStars_System_Int32_System_Boolean_System_Boolean_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: CompassEx.Comm.FlyStar.StarDirection
+  commentId: P:CompassEx.Comm.FlyStar.StarDirection
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_StarDirection
+  name: StarDirection
+  nameWithType: FlyStar.StarDirection
+  fullName: CompassEx.Comm.FlyStar.StarDirection
+- uid: CompassEx.Comm
+  commentId: N:CompassEx.Comm
+  href: CompassEx.html
+  name: CompassEx.Comm
+  nameWithType: CompassEx.Comm
+  fullName: CompassEx.Comm
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Comm
+    name: Comm
+    href: CompassEx.Comm.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: CompassEx.Comm.FlyStar.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<FlyStar, TBase>(FlyStar, TBase)
+  nameWithType: Comm.ApplyBaseProperties<FlyStar, TBase>(FlyStar, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<CompassEx.Comm.FlyStar, TBase>(CompassEx.Comm.FlyStar, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of FlyStar, TBase)(FlyStar, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of CompassEx.Comm.FlyStar, TBase)(CompassEx.Comm.FlyStar, TBase)
+  name.vb: ApplyBaseProperties(Of FlyStar, TBase)(FlyStar, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Comm.FlyStar,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - uid: CompassEx.Comm.FlyStar
+    name: FlyStar
+    href: CompassEx.Comm.FlyStar.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - uid: CompassEx.Comm.FlyStar
+    name: FlyStar
+    href: CompassEx.Comm.FlyStar.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(CompassEx.Comm.FlyStar,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Comm.FlyStar
+    name: FlyStar
+    href: CompassEx.Comm.FlyStar.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - uid: CompassEx.Comm.FlyStar
+    name: FlyStar
+    href: CompassEx.Comm.FlyStar.html
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  name: ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  fullName: CompassEx.Comm.Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
+  nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  name.vb: ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: <
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: '>'
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
+    name: ApplyBaseProperties
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+  - name: (
+  - name: TChild
+  - name: ','
+  - name: " "
+  - name: TBase
+  - name: )
+- uid: CompassEx.Comm.Comm
+  commentId: T:CompassEx.Comm.Comm
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.Comm.html
+  name: Comm
+  nameWithType: Comm
+  fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm.FlyStar.FullName*
+  commentId: Overload:CompassEx.Comm.FlyStar.FullName
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_FullName
+  name: FullName
+  nameWithType: FlyStar.FullName
+  fullName: CompassEx.Comm.FlyStar.FullName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CompassEx.Comm.FlyStar.Name*
+  commentId: Overload:CompassEx.Comm.FlyStar.Name
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_Name
+  name: Name
+  nameWithType: FlyStar.Name
+  fullName: CompassEx.Comm.FlyStar.Name
+- uid: CompassEx.Comm.FlyStar.AreaIndex*
+  commentId: Overload:CompassEx.Comm.FlyStar.AreaIndex
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_AreaIndex
+  name: AreaIndex
+  nameWithType: FlyStar.AreaIndex
+  fullName: CompassEx.Comm.FlyStar.AreaIndex
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: CompassEx.Comm.FlyStar.CenterStarValue*
+  commentId: Overload:CompassEx.Comm.FlyStar.CenterStarValue
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_CenterStarValue
+  name: CenterStarValue
+  nameWithType: FlyStar.CenterStarValue
+  fullName: CompassEx.Comm.FlyStar.CenterStarValue
+- uid: CompassEx.Comm.FlyStar.StarValue*
+  commentId: Overload:CompassEx.Comm.FlyStar.StarValue
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_StarValue
+  name: StarValue
+  nameWithType: FlyStar.StarValue
+  fullName: CompassEx.Comm.FlyStar.StarValue
+- uid: CompassEx.Comm.FlyStar.FlyStarGuaSub*
+  commentId: Overload:CompassEx.Comm.FlyStar.FlyStarGuaSub
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_FlyStarGuaSub
+  name: FlyStarGuaSub
+  nameWithType: FlyStar.FlyStarGuaSub
+  fullName: CompassEx.Comm.FlyStar.FlyStarGuaSub
+- uid: CompassEx.Gua.GuaSubClass
+  commentId: T:CompassEx.Gua.GuaSubClass
+  parent: CompassEx.Gua
+  href: CompassEx.Gua.GuaSubClass.html
+  name: GuaSubClass
+  nameWithType: GuaSubClass
+  fullName: CompassEx.Gua.GuaSubClass
+- uid: CompassEx.Gua
+  commentId: N:CompassEx.Gua
+  href: CompassEx.html
+  name: CompassEx.Gua
+  nameWithType: CompassEx.Gua
+  fullName: CompassEx.Gua
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Gua
+    name: Gua
+    href: CompassEx.Gua.html
+- uid: CompassEx.Comm.FlyStar.AreaGuaSub*
+  commentId: Overload:CompassEx.Comm.FlyStar.AreaGuaSub
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_AreaGuaSub
+  name: AreaGuaSub
+  nameWithType: FlyStar.AreaGuaSub
+  fullName: CompassEx.Comm.FlyStar.AreaGuaSub
+- uid: CompassEx.Comm.FlyStar.StarDirection*
+  commentId: Overload:CompassEx.Comm.FlyStar.StarDirection
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_StarDirection
+  name: StarDirection
+  nameWithType: FlyStar.StarDirection
+  fullName: CompassEx.Comm.FlyStar.StarDirection
+- uid: CompassEx.Comm.AreaDirection
+  commentId: T:CompassEx.Comm.AreaDirection
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.AreaDirection.html
+  name: AreaDirection
+  nameWithType: AreaDirection
+  fullName: CompassEx.Comm.AreaDirection
+- uid: CompassEx.Comm.FlyStar
+  commentId: T:CompassEx.Comm.FlyStar
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.FlyStar.html
+  name: FlyStar
+  nameWithType: FlyStar
+  fullName: CompassEx.Comm.FlyStar
+- uid: CompassEx.Comm.FlyStar.#ctor*
+  commentId: Overload:CompassEx.Comm.FlyStar.#ctor
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar__ctor_System_String_System_Int32_System_Boolean_
+  name: FlyStar
+  nameWithType: FlyStar.FlyStar
+  fullName: CompassEx.Comm.FlyStar.FlyStar
+  nameWithType.vb: FlyStar.New
+  fullName.vb: CompassEx.Comm.FlyStar.New
+  name.vb: New
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CompassEx.Comm.FlyStar.GetFlyStars*
+  commentId: Overload:CompassEx.Comm.FlyStar.GetFlyStars
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_GetFlyStars_System_Int32_System_Boolean_System_Boolean_
+  name: GetFlyStars
+  nameWithType: FlyStar.GetFlyStars
+  fullName: CompassEx.Comm.FlyStar.GetFlyStars
+- uid: System.Collections.Generic.List{CompassEx.Comm.FlyStar}
+  commentId: T:System.Collections.Generic.List{CompassEx.Comm.FlyStar}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<FlyStar>
+  nameWithType: List<FlyStar>
+  fullName: System.Collections.Generic.List<CompassEx.Comm.FlyStar>
+  nameWithType.vb: List(Of FlyStar)
+  fullName.vb: System.Collections.Generic.List(Of CompassEx.Comm.FlyStar)
+  name.vb: List(Of FlyStar)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: CompassEx.Comm.FlyStar
+    name: FlyStar
+    href: CompassEx.Comm.FlyStar.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Comm.FlyStar
+    name: FlyStar
+    href: CompassEx.Comm.FlyStar.html
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: CompassEx.Comm.FlyStar.YearFlyStar*
+  commentId: Overload:CompassEx.Comm.FlyStar.YearFlyStar
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_YearFlyStar_System_Int32_
+  name: YearFlyStar
+  nameWithType: FlyStar.YearFlyStar
+  fullName: CompassEx.Comm.FlyStar.YearFlyStar
+- uid: CompassEx.Comm.LocClass
+  commentId: T:CompassEx.Comm.LocClass
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.LocClass.html
+  name: LocClass
+  nameWithType: LocClass
+  fullName: CompassEx.Comm.LocClass
+- uid: CompassEx.Comm.FlyStar.MonthFlyStars*
+  commentId: Overload:CompassEx.Comm.FlyStar.MonthFlyStars
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_MonthFlyStars_CompassEx_Comm_LocClass_
+  name: MonthFlyStars
+  nameWithType: FlyStar.MonthFlyStars
+  fullName: CompassEx.Comm.FlyStar.MonthFlyStars
+- uid: System.Collections.Generic.Dictionary{CompassEx.Comm.LocClass,CompassEx.Comm.FlyStar}
+  commentId: T:System.Collections.Generic.Dictionary{CompassEx.Comm.LocClass,CompassEx.Comm.FlyStar}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<LocClass, FlyStar>
+  nameWithType: Dictionary<LocClass, FlyStar>
+  fullName: System.Collections.Generic.Dictionary<CompassEx.Comm.LocClass, CompassEx.Comm.FlyStar>
+  nameWithType.vb: Dictionary(Of LocClass, FlyStar)
+  fullName.vb: System.Collections.Generic.Dictionary(Of CompassEx.Comm.LocClass, CompassEx.Comm.FlyStar)
+  name.vb: Dictionary(Of LocClass, FlyStar)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: CompassEx.Comm.LocClass
+    name: LocClass
+    href: CompassEx.Comm.LocClass.html
+  - name: ','
+  - name: " "
+  - uid: CompassEx.Comm.FlyStar
+    name: FlyStar
+    href: CompassEx.Comm.FlyStar.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Comm.LocClass
+    name: LocClass
+    href: CompassEx.Comm.LocClass.html
+  - name: ','
+  - name: " "
+  - uid: CompassEx.Comm.FlyStar
+    name: FlyStar
+    href: CompassEx.Comm.FlyStar.html
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: CompassEx.Comm.SkyLoc
+  commentId: T:CompassEx.Comm.SkyLoc
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.SkyLoc.html
+  name: SkyLoc
+  nameWithType: SkyLoc
+  fullName: CompassEx.Comm.SkyLoc
+- uid: System.Collections.Generic.Dictionary{CompassEx.Comm.SkyLoc,CompassEx.Comm.FlyStar}
+  commentId: T:System.Collections.Generic.Dictionary{CompassEx.Comm.SkyLoc,CompassEx.Comm.FlyStar}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<SkyLoc, FlyStar>
+  nameWithType: Dictionary<SkyLoc, FlyStar>
+  fullName: System.Collections.Generic.Dictionary<CompassEx.Comm.SkyLoc, CompassEx.Comm.FlyStar>
+  nameWithType.vb: Dictionary(Of SkyLoc, FlyStar)
+  fullName.vb: System.Collections.Generic.Dictionary(Of CompassEx.Comm.SkyLoc, CompassEx.Comm.FlyStar)
+  name.vb: Dictionary(Of SkyLoc, FlyStar)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
+  - name: ','
+  - name: " "
+  - uid: CompassEx.Comm.FlyStar
+    name: FlyStar
+    href: CompassEx.Comm.FlyStar.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
+  - name: ','
+  - name: " "
+  - uid: CompassEx.Comm.FlyStar
+    name: FlyStar
+    href: CompassEx.Comm.FlyStar.html
+  - name: )
+- uid: CompassEx.Comm.FlyStar.StarValue
+  commentId: P:CompassEx.Comm.FlyStar.StarValue
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_StarValue
+  name: StarValue
+  nameWithType: FlyStar.StarValue
+  fullName: CompassEx.Comm.FlyStar.StarValue
+- uid: CompassEx.Comm.FlyStar.DayFlyStar*
+  commentId: Overload:CompassEx.Comm.FlyStar.DayFlyStar
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_DayFlyStar_System_DateTime_
+  name: DayFlyStar
+  nameWithType: FlyStar.DayFlyStar
+  fullName: CompassEx.Comm.FlyStar.DayFlyStar
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.FlyStar}
+  commentId: T:System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.FlyStar}
+  parent: System
+  definition: System.ValueTuple`2
+  href: CompassEx.Comm.SkyLoc.html
+  name: (SkyLoc DaySL, FlyStar FlyStar)
+  nameWithType: (SkyLoc DaySL, FlyStar FlyStar)
+  fullName: (CompassEx.Comm.SkyLoc DaySL, CompassEx.Comm.FlyStar FlyStar)
+  nameWithType.vb: (DaySL As SkyLoc, FlyStar As FlyStar)
+  fullName.vb: (DaySL As CompassEx.Comm.SkyLoc, FlyStar As CompassEx.Comm.FlyStar)
+  name.vb: (DaySL As SkyLoc, FlyStar As FlyStar)
+  spec.csharp:
+  - name: (
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
+  - name: " "
+  - uid: System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.FlyStar}.DaySL
+    name: DaySL
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-compassex.comm.skyloc,compassex.comm.flystar-.daysl
+  - name: ','
+  - name: " "
+  - uid: CompassEx.Comm.FlyStar
+    name: FlyStar
+    href: CompassEx.Comm.FlyStar.html
+  - name: " "
+  - uid: System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.FlyStar}.FlyStar
+    name: FlyStar
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-compassex.comm.skyloc,compassex.comm.flystar-.flystar
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.FlyStar}.DaySL
+    name: DaySL
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-compassex.comm.skyloc,compassex.comm.flystar-.daysl
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.FlyStar}.FlyStar
+    name: FlyStar
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-compassex.comm.skyloc,compassex.comm.flystar-.flystar
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: CompassEx.Comm.FlyStar
+    name: FlyStar
+    href: CompassEx.Comm.FlyStar.html
+  - name: )
+- uid: System.ValueTuple`2
+  commentId: T:System.ValueTuple`2
+  name: (T1, T2)
+  nameWithType: (T1, T2)
+  fullName: (T1, T2)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+- uid: CompassEx.Comm.FlyStar.DayFlyStars*
+  commentId: Overload:CompassEx.Comm.FlyStar.DayFlyStars
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_DayFlyStars_System_DateTime_
+  name: DayFlyStars
+  nameWithType: FlyStar.DayFlyStars
+  fullName: CompassEx.Comm.FlyStar.DayFlyStars
+- uid: CompassEx.Comm.FlyStar.HourFlyStar*
+  commentId: Overload:CompassEx.Comm.FlyStar.HourFlyStar
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_HourFlyStar_System_DateTime_
+  name: HourFlyStar
+  nameWithType: FlyStar.HourFlyStar
+  fullName: CompassEx.Comm.FlyStar.HourFlyStar
+- uid: CompassEx.Comm.FlyStar.HourFlyStars*
+  commentId: Overload:CompassEx.Comm.FlyStar.HourFlyStars
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_HourFlyStars_System_DateTime_
+  name: HourFlyStars
+  nameWithType: FlyStar.HourFlyStars
+  fullName: CompassEx.Comm.FlyStar.HourFlyStars
+- uid: CompassEx.Comm.FlyStar.FullName
+  commentId: P:CompassEx.Comm.FlyStar.FullName
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_FullName
+  name: FullName
+  nameWithType: FlyStar.FullName
+  fullName: CompassEx.Comm.FlyStar.FullName
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CompassEx.Comm.FlyStar.ToString*
+  commentId: Overload:CompassEx.Comm.FlyStar.ToString
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_ToString
+  name: ToString
+  nameWithType: FlyStar.ToString
+  fullName: CompassEx.Comm.FlyStar.ToString

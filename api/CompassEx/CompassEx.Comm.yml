@@ -4,14 +4,17 @@ items:
   commentId: N:CompassEx.Comm
   id: CompassEx.Comm
   children:
+  - CompassEx.Comm.AreaDirection
   - CompassEx.Comm.ArrayExtensions
   - CompassEx.Comm.Comm
+  - CompassEx.Comm.CompassObjStru
   - CompassEx.Comm.CompassObjType
   - CompassEx.Comm.CompassRangEX
   - CompassEx.Comm.Defined
   - CompassEx.Comm.FactYearEnum
   - CompassEx.Comm.FiveAttr
   - CompassEx.Comm.FiveAttrRule
+  - CompassEx.Comm.FlyStar
   - CompassEx.Comm.GoodBadInfos
   - CompassEx.Comm.InfoType
   - CompassEx.Comm.LocClass
@@ -29,6 +32,13 @@ items:
   assemblies:
   - CompassEx
 references:
+- uid: CompassEx.Comm.AreaDirection
+  commentId: T:CompassEx.Comm.AreaDirection
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.AreaDirection.html
+  name: AreaDirection
+  nameWithType: AreaDirection
+  fullName: CompassEx.Comm.AreaDirection
 - uid: CompassEx.Comm.Comm
   commentId: T:CompassEx.Comm.Comm
   parent: CompassEx.Comm
@@ -57,10 +67,17 @@ references:
   fullName: CompassEx.Comm.PlaceYaosJFNaJiaType
 - uid: CompassEx.Comm.CompassObjType
   commentId: T:CompassEx.Comm.CompassObjType
+  parent: CompassEx.Comm
   href: CompassEx.Comm.CompassObjType.html
   name: CompassObjType
   nameWithType: CompassObjType
   fullName: CompassEx.Comm.CompassObjType
+- uid: CompassEx.Comm.CompassObjStru
+  commentId: T:CompassEx.Comm.CompassObjStru
+  href: CompassEx.Comm.CompassObjStru.html
+  name: CompassObjStru
+  nameWithType: CompassObjStru
+  fullName: CompassEx.Comm.CompassObjStru
 - uid: CompassEx.Comm.FactYearEnum
   commentId: T:CompassEx.Comm.FactYearEnum
   parent: CompassEx.Comm
@@ -88,6 +105,13 @@ references:
   name: FiveAttr
   nameWithType: FiveAttr
   fullName: CompassEx.Comm.FiveAttr
+- uid: CompassEx.Comm.FlyStar
+  commentId: T:CompassEx.Comm.FlyStar
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.FlyStar.html
+  name: FlyStar
+  nameWithType: FlyStar
+  fullName: CompassEx.Comm.FlyStar
 - uid: CompassEx.Comm.InfoType
   commentId: T:CompassEx.Comm.InfoType
   parent: CompassEx.Comm

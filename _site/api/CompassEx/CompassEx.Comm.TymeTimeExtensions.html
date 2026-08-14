@@ -88,7 +88,7 @@
 
   <h1 id="CompassEx_Comm_TymeTimeExtensions" data-uid="CompassEx.Comm.TymeTimeExtensions" class="text-break">
 TymeTimeExtensions 类
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -155,11 +155,87 @@ TymeTimeExtensions 类
 </h2>
 
 
+  <a id="CompassEx_Comm_TymeTimeExtensions_GetTermTime_" data-uid="CompassEx.Comm.TymeTimeExtensions.GetTermTime*"></a>
+
+  <h3 id="CompassEx_Comm_TymeTimeExtensions_GetTermTime_tyme_solar_SolarTerm_" data-uid="CompassEx.Comm.TymeTimeExtensions.GetTermTime(tyme.solar.SolarTerm)">
+  GetTermTime(SolarTerm)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>扩展节气交节时间</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SolarTime GetTermTime(this SolarTerm d)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>d</code> <span class="xref">SolarTerm</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SolarTime</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_TymeTimeExtensions_ToColor_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToColor*"></a>
+
+  <h3 id="CompassEx_Comm_TymeTimeExtensions_ToColor_tyme_culture_star_nine_NineStar_System_Boolean_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToColor(tyme.culture.star.nine.NineStar,System.Boolean)">
+  ToColor(NineStar, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>九星颜色</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color ToColor(this NineStar d, bool IsDrak = false)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>d</code> <span class="xref">NineStar</span></dt>
+    <dd></dd>
+    <dt><code>IsDrak</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="CompassEx_Comm_TymeTimeExtensions_ToDateTime_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToDateTime*"></a>
 
   <h3 id="CompassEx_Comm_TymeTimeExtensions_ToDateTime_tyme_solar_SolarDay_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToDateTime(tyme.solar.SolarDay)">
   ToDateTime(SolarDay)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L260"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>将 Tyme 历法库的公历日期对象转换为 .NET 标准的 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a> 实例（零点时刻）。</p>
@@ -198,7 +274,7 @@ TymeTimeExtensions 类
 
   <h3 id="CompassEx_Comm_TymeTimeExtensions_ToDateTime_tyme_solar_SolarTime_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToDateTime(tyme.solar.SolarTime)">
   ToDateTime(SolarTime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L250"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>将 Tyme 历法库的公历时间对象转换为 .NET 标准的 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a> 实例。</p>
@@ -236,11 +312,274 @@ TymeTimeExtensions 类
 
 
 
+  <a id="CompassEx_Comm_TymeTimeExtensions_ToFourColor_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToFourColor*"></a>
+
+  <h3 id="CompassEx_Comm_TymeTimeExtensions_ToFourColor_tyme_culture_star_twentyeight_TwentyEightStar_System_Boolean_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToFourColor(tyme.culture.star.twentyeight.TwentyEightStar,System.Boolean)">
+  ToFourColor(TwentyEightStar, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>二十八宿4种颜色</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color ToFourColor(this TwentyEightStar d, bool IsDrak = false)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>d</code> <span class="xref">TwentyEightStar</span></dt>
+    <dd></dd>
+    <dt><code>IsDrak</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_TymeTimeExtensions_ToFullCNName_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToFullCNName*"></a>
+
+  <h3 id="CompassEx_Comm_TymeTimeExtensions_ToFullCNName_System_DateTime_System_String_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToFullCNName(System.DateTime,System.String)">
+  ToFullCNName(DateTime, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L141"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获得农历全部名称</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ToFullCNName(this DateTime d, string SplitString = &quot;-&quot;)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>d</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+    <dt><code>SplitString</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_TymeTimeExtensions_ToFullString_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToFullString*"></a>
+
+  <h3 id="CompassEx_Comm_TymeTimeExtensions_ToFullString_tyme_culture_star_twentyeight_TwentyEightStar_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToFullString(tyme.culture.star.twentyeight.TwentyEightStar)">
+  ToFullString(TwentyEightStar)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>输出全称，包括：宿 + 七曜 + 动物</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ToFullString(this TwentyEightStar d)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>d</code> <span class="xref">TwentyEightStar</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_TymeTimeExtensions_ToLunar_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToLunar*"></a>
+
+  <h3 id="CompassEx_Comm_TymeTimeExtensions_ToLunar_System_DateTime_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToLunar(System.DateTime)">
+  ToLunar(DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L184"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>【擴充方法】將 DateTime 一鍵轉換為包含年、月、日、時完整干支歷法對象的具名元組</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (LunarYear ly, LunarMonth lm, LunarDay ld, LunarHour lh) ToLunar(this DateTime d)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>d</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt>(<span class="xref">LunarYear</span> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.y">y</a>, <span class="xref">LunarMonth</span> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.m">m</a>, <span class="xref">LunarDay</span> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.d">d</a>, <span class="xref">LunarHour</span> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.h">h</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_TymeTimeExtensions_ToLunarDay_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToLunarDay*"></a>
+
+  <h3 id="CompassEx_Comm_TymeTimeExtensions_ToLunarDay_System_DateTime_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToLunarDay(System.DateTime)">
+  ToLunarDay(DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L204"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>扩展DateTime 转为农历日</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static LunarDay ToLunarDay(this DateTime d)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>d</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><span class="xref">LunarDay</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_TymeTimeExtensions_ToLunarHour_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToLunarHour*"></a>
+
+  <h3 id="CompassEx_Comm_TymeTimeExtensions_ToLunarHour_System_DateTime_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToLunarHour(System.DateTime)">
+  ToLunarHour(DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>【擴充方法】將 DateTime 一鍵轉換為包含农历时</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static LunarHour ToLunarHour(this DateTime d)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>d</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><span class="xref">LunarHour</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_TymeTimeExtensions_ToSolarDay_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToSolarDay*"></a>
+
+  <h3 id="CompassEx_Comm_TymeTimeExtensions_ToSolarDay_System_DateTime_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToSolarDay(System.DateTime)">
+  ToSolarDay(DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L219"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>扩展DateTime 转为阳历日</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SolarDay ToSolarDay(this DateTime d)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>d</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SolarDay</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="CompassEx_Comm_TymeTimeExtensions_ToSolarTime_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToSolarTime*"></a>
 
   <h3 id="CompassEx_Comm_TymeTimeExtensions_ToSolarTime_System_DateTime_" data-uid="CompassEx.Comm.TymeTimeExtensions.ToSolarTime(System.DateTime)">
   ToSolarTime(DateTime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L235"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>【扩展方法】将 .NET 原生的 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a> 快速转化为 Tyme 历法库专用的 <span class="xref">tyme.solar.SolarTime</span> 高精度阳历时间对象。</p>
@@ -279,11 +618,50 @@ TymeTimeExtensions 类
 
 
 
+  <a id="CompassEx_Comm_TymeTimeExtensions_TofourSkyLocString_" data-uid="CompassEx.Comm.TymeTimeExtensions.TofourSkyLocString*"></a>
+
+  <h3 id="CompassEx_Comm_TymeTimeExtensions_TofourSkyLocString_tyme_lunar_LunarHour_System_String_" data-uid="CompassEx.Comm.TymeTimeExtensions.TofourSkyLocString(tyme.lunar.LunarHour,System.String)">
+  TofourSkyLocString(LunarHour, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>农历时输出完整的四柱</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string TofourSkyLocString(this LunarHour d, string SplitString = &quot; &quot;)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>d</code> <span class="xref">LunarHour</span></dt>
+    <dd></dd>
+    <dt><code>SplitString</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L26" class="edit-link">编辑本文</a>
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/TymeTimeExtensions.cs/#L37" class="edit-link">编辑本文</a>
         </div>
 
 

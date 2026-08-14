@@ -92,7 +92,7 @@ items:
   summary: 个人本命三元后天三爻命卦
   example: []
   syntax:
-    content: public GuaSubClass FateGuaSub { get; }
+    content: public GuaSubClass? FateGuaSub { get; }
     parameters: []
     return:
       type: CompassEx.Gua.GuaSubClass
@@ -124,7 +124,7 @@ items:
   summary: 天机卦系统 后天入卦集合（共5个入卦三爻卦）
   example: []
   syntax:
-    content: public Dictionary<string, GuaSubClass> InGuaSubs { get; }
+    content: public Dictionary<string, GuaSubClass>? InGuaSubs { get; }
     parameters: []
     return:
       type: System.Collections.Generic.Dictionary{System.String,CompassEx.Gua.GuaSubClass}
@@ -156,7 +156,7 @@ items:
   summary: 天机卦系统 后天出卦集合（共3个出卦三爻卦）
   example: []
   syntax:
-    content: public Dictionary<string, GuaSubClass> OutGuaSubs { get; }
+    content: public Dictionary<string, GuaSubClass>? OutGuaSubs { get; }
     parameters: []
     return:
       type: System.Collections.Generic.Dictionary{System.String,CompassEx.Gua.GuaSubClass}
@@ -188,7 +188,7 @@ items:
   summary: 京房易七世飞爻卦列表
   example: []
   syntax:
-    content: public List<GuaClass> GuaList { get; }
+    content: public List<GuaClass>? GuaList { get; }
     parameters: []
     return:
       type: System.Collections.Generic.List{CompassEx.Gua.GuaClass}

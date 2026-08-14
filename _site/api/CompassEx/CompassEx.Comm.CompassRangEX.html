@@ -364,7 +364,7 @@ double distance = CompassRangEX.AngleRangeValue(10, 350);</code></pre>
 
   <h3 id="CompassEx_Comm_CompassRangEX_Equals_System_Object_" data-uid="CompassEx.Comm.CompassRangEX.Equals(System.Object)">
   Equals(object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L197"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L257"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -398,26 +398,28 @@ double distance = CompassRangEX.AngleRangeValue(10, 350);</code></pre>
 
   <a id="CompassEx_Comm_CompassRangEX_GetCompassObjByDegree_" data-uid="CompassEx.Comm.CompassRangEX.GetCompassObjByDegree*"></a>
 
-  <h3 id="CompassEx_Comm_CompassRangEX_GetCompassObjByDegree" data-uid="CompassEx.Comm.CompassRangEX.GetCompassObjByDegree">
-  GetCompassObjByDegree()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L142"><i class="bi bi-code-slash"></i></a>
+  <h3 id="CompassEx_Comm_CompassRangEX_GetCompassObjByDegree_CompassEx_Comm_CompassObjType_" data-uid="CompassEx.Comm.CompassRangEX.GetCompassObjByDegree(CompassEx.Comm.CompassObjType)">
+  GetCompassObjByDegree(CompassObjType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L158"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>获取完全落入并覆盖当前度数区间内的所有罗盘关联对象集合（包含先天八卦、后天八卦、正针二十四山、天盘先天 64 卦以及地盘后天 64 卦）。</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;CompassObjType&gt; GetCompassObjByDegree()</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;CompassObjStru&gt; GetCompassObjByDegree(CompassObjType ot = CompassObjType.All)</code></pre>
   </div>
 
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>ot</code> <a class="xref" href="CompassEx.Comm.CompassObjType.html">CompassObjType</a></dt>
+    <dd></dd>
+  </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="CompassEx.Comm.CompassObjType.html">CompassObjType</a>&gt;</dt>
-    <dd><p>返回一个包含 <a class="xref" href="CompassEx.Comm.CompassObjType.html">CompassObjType</a> 封装对象的 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List&lt;T&gt;</a> 列表。
-每个元素代表一个成功匹配的罗盘层级方位实体。</p>
-</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="CompassEx.Comm.CompassObjStru.html">CompassObjStru</a>&gt;</dt>
+    <dd></dd>
   </dl>
 
 
@@ -426,11 +428,31 @@ double distance = CompassRangEX.AngleRangeValue(10, 350);</code></pre>
 
 
 
-  <h4 class="section" id="CompassEx_Comm_CompassRangEX_GetCompassObjByDegree_remarks">备注</h4>
-  <div class="markdown level1 remarks"><p><b>算法原理：</b></p>
-<p>该方法通过遍历基础元数据，检查各方位的几何度数区间是否将当前度数范围（从 <code>Start</code> 到 <code>End</code>）完全包含在内。</p>
-<p><b>⚠️ 浮点数边界容差设计：</b></p>
-<p>由于计算机浮点数运算存在微小误差，且相邻山、卦之间的交界处度数完全重合。为了确保范围判定的精准性，方法在校验结束边界时，对结束度数执行了减去 <code>0.1</code> 度的容差修正（即 <code>this.End - 0.1</code>）。这样可以有效防止因临界值粘连导致误判或多抓取相邻方位对象的问题。</p>
+  <h4 class="section" id="CompassEx_Comm_CompassRangEX_GetCompassObjByDegree_CompassEx_Comm_CompassObjType__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p><b>一、 空间反向包含检索原理：</b></p>
+<p>
+该方法属于反向地理坐标拾取逻辑。它通过遍历各层级的基础元数据（如八卦、二十四山、六十四卦），
+调用其度数范围对象的 <code>IsInRange</code> 方法，验证当前类所代表的度数范围起点（<code>this.Start</code>）与终点（<code>this.End</code>）
+是否被该山头、卦位或八卦方位的几何区间<b>完全包裹并包含</b>。
+</p>
+<p><b>二 ==========================================</b></p>
+<p><b>⚠️ 浮点数边界容差设计（扣度原理）：</b></p>
+<p>
+由于计算机浮点数（<code>double</code>）运算存在微小的精度截断误差，且罗盘上相邻两个方位实体之间的临界度数是完全重合、相互粘连的
+（例如地盘正针子山的结束边界为 <code>7.5</code> 度，而癸山的起始边界同样为 <code>7.5</code> 度）。
+</p>
+<p>
+为了在进行全区间覆盖判定时，防止临界值因精度溢出而导致系统误判，或错误地多抓取到相邻的下一个方位对象，
+本算法在校验结束边界时，对传入的结束度数执行了减去 <code>0.1</code> 度的安全容差修正（即 <code>this.End - 0.1</code>）。
+这样能确保检索结果在空间物理排布上的唯一性与精准度。
+</p>
+<p><b>三 ==========================================</b></p>
+<p><b>三元玄空大卦术语规范备注：</b></p>
+<p>
+遵循三元玄空大卦派“体用分离”与宋代邵雍《伏羲先天六十四卦方圆图》的排布法则，罗盘大卦圈层其本底均由先天八卦理气数理推演而来。
+在本方法的映射体系中：
+</p>
+<ul><li><a class="xref" href="CompassEx.Comm.CompassObjType.html#CompassEx_Comm_CompassObjType_BeforeGua">BeforeGua</a> 对应并检索的是<b>天盘六十四卦（先天大卦圆图）</b>，在罗盘上主理气纳水与抽爻换象。</li><li><a class="xref" href="CompassEx.Comm.CompassObjType.html#CompassEx_Comm_CompassObjType_AfterGua">AfterGua</a> 对应并检索的是<b>地盘六十四卦（先天大卦方图）</b>，在罗盘上常用于对照辨析交媾理气。</li></ul>
 </div>
 
 
@@ -440,7 +462,7 @@ double distance = CompassRangEX.AngleRangeValue(10, 350);</code></pre>
 
   <h3 id="CompassEx_Comm_CompassRangEX_GetHashCode" data-uid="CompassEx.Comm.CompassRangEX.GetHashCode">
   GetHashCode()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L203"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/CompassRangEX.cs/#L263"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>

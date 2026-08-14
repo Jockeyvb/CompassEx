@@ -7,11 +7,19 @@ items:
   children:
   - CompassEx.Comm.SkyLoc.#ctor(System.Int32,System.Int32)
   - CompassEx.Comm.SkyLoc.#ctor(System.String)
-  - CompassEx.Comm.SkyLoc.Get60SkyLoc
-  - CompassEx.Comm.SkyLoc.Get60SkyLocNames
+  - CompassEx.Comm.SkyLoc.Equals(System.Object)
+  - CompassEx.Comm.SkyLoc.FiveMouse(CompassEx.Comm.SkyLoc,System.Int32)
+  - CompassEx.Comm.SkyLoc.FiveMouse(System.String,System.Int32)
+  - CompassEx.Comm.SkyLoc.FiveTiger(CompassEx.Comm.SkyClass,CompassEx.Comm.LocClass)
+  - CompassEx.Comm.SkyLoc.GetHashCode
   - CompassEx.Comm.SkyLoc.Loc
+  - CompassEx.Comm.SkyLoc.Name
   - CompassEx.Comm.SkyLoc.Sky
-  - CompassEx.Comm.SkyLoc.SkyLocName
+  - CompassEx.Comm.SkyLoc.SkyLoc60
+  - CompassEx.Comm.SkyLoc.SkyLoc60Name
+  - CompassEx.Comm.SkyLoc.ToString
+  - CompassEx.Comm.SkyLoc.op_Equality(CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc)
+  - CompassEx.Comm.SkyLoc.op_Inequality(CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc)
   langs:
   - csharp
   - vb
@@ -34,52 +42,111 @@ items:
   remarks: 本类作为干支历法推排的核心单元，通过将一个独立的天干实例（<xref href="CompassEx.Comm.SkyClass" data-throw-if-not-resolved="false"></xref>）与一个独立的地支实例（<xref href="CompassEx.Comm.LocClass" data-throw-if-not-resolved="false"></xref>）进行复合封装，提供了干支合称输出、跨类索引校验以及干支对象的动态初始化功能。
   example: []
   syntax:
-    content: public class SkyLoc
-    content.vb: Public Class SkyLoc
+    content: 'public class SkyLoc : IEquatable<SkyLoc>'
+    content.vb: Public Class SkyLoc Implements IEquatable(Of SkyLoc)
   inheritance:
   - System.Object
+  implements:
+  - System.IEquatable{CompassEx.Comm.SkyLoc}
   inheritedMembers:
-  - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
   extensionMethods:
   - CompassEx.Comm.SkyLoc.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
-- uid: CompassEx.Comm.SkyLoc.SkyLocName
-  commentId: P:CompassEx.Comm.SkyLoc.SkyLocName
-  id: SkyLocName
+- uid: CompassEx.Comm.SkyLoc.SkyLoc60
+  commentId: P:CompassEx.Comm.SkyLoc.SkyLoc60
+  id: SkyLoc60
   parent: CompassEx.Comm.SkyLoc
   langs:
   - csharp
   - vb
-  name: SkyLocName
-  nameWithType: SkyLoc.SkyLocName
-  fullName: CompassEx.Comm.SkyLoc.SkyLocName
+  name: SkyLoc60
+  nameWithType: SkyLoc.SkyLoc60
+  fullName: CompassEx.Comm.SkyLoc.SkyLoc60
   type: Property
   source:
     remote:
       path: CompassEx/Comm/SkyLoc.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: SkyLocName
+    id: SkyLoc60
     path: CompassEx/Comm/SkyLoc.cs
-    startLine: 36
+    startLine: 33
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 60甲子
+  example: []
+  syntax:
+    content: public static SkyLoc[] SkyLoc60 { get; }
+    parameters: []
+    return:
+      type: CompassEx.Comm.SkyLoc[]
+    content.vb: Public Shared ReadOnly Property SkyLoc60 As SkyLoc()
+  overload: CompassEx.Comm.SkyLoc.SkyLoc60*
+- uid: CompassEx.Comm.SkyLoc.SkyLoc60Name
+  commentId: P:CompassEx.Comm.SkyLoc.SkyLoc60Name
+  id: SkyLoc60Name
+  parent: CompassEx.Comm.SkyLoc
+  langs:
+  - csharp
+  - vb
+  name: SkyLoc60Name
+  nameWithType: SkyLoc.SkyLoc60Name
+  fullName: CompassEx.Comm.SkyLoc.SkyLoc60Name
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/SkyLoc.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SkyLoc60Name
+    path: CompassEx/Comm/SkyLoc.cs
+    startLine: 45
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  syntax:
+    content: public static string[] SkyLoc60Name { get; }
+    parameters: []
+    return:
+      type: System.String[]
+    content.vb: Public Shared ReadOnly Property SkyLoc60Name As String()
+  overload: CompassEx.Comm.SkyLoc.SkyLoc60Name*
+- uid: CompassEx.Comm.SkyLoc.Name
+  commentId: P:CompassEx.Comm.SkyLoc.Name
+  id: Name
+  parent: CompassEx.Comm.SkyLoc
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: SkyLoc.Name
+  fullName: CompassEx.Comm.SkyLoc.Name
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Comm/SkyLoc.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Name
+    path: CompassEx/Comm/SkyLoc.cs
+    startLine: 62
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
   summary: 获取当前天干地支组合的完整字面名称（如“甲子”、“丙寅”等）。
   example: []
   syntax:
-    content: public string SkyLocName { get; }
+    content: public string Name { get; }
     parameters: []
     return:
       type: System.String
       description: 一个由两个汉字组成的 <xref href="System.String" data-throw-if-not-resolved="false"></xref> 字符串，动态拼接自 <xref href="CompassEx.Comm.SkyClass.Name" data-throw-if-not-resolved="false"></xref> 与 <xref href="CompassEx.Comm.LocClass.Name" data-throw-if-not-resolved="false"></xref>。
-    content.vb: Public ReadOnly Property SkyLocName As String
-  overload: CompassEx.Comm.SkyLoc.SkyLocName*
+    content.vb: Public ReadOnly Property Name As String
+  overload: CompassEx.Comm.SkyLoc.Name*
 - uid: CompassEx.Comm.SkyLoc.Sky
   commentId: P:CompassEx.Comm.SkyLoc.Sky
   id: Sky
@@ -98,7 +165,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Sky
     path: CompassEx/Comm/SkyLoc.cs
-    startLine: 44
+    startLine: 70
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -130,7 +197,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Loc
     path: CompassEx/Comm/SkyLoc.cs
-    startLine: 52
+    startLine: 78
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -162,7 +229,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Comm/SkyLoc.cs
-    startLine: 69
+    startLine: 95
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -207,7 +274,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Comm/SkyLoc.cs
-    startLine: 83
+    startLine: 109
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -235,75 +302,306 @@ items:
   nameWithType.vb: SkyLoc.New(Integer, Integer)
   fullName.vb: CompassEx.Comm.SkyLoc.New(Integer, Integer)
   name.vb: New(Integer, Integer)
-- uid: CompassEx.Comm.SkyLoc.Get60SkyLocNames
-  commentId: M:CompassEx.Comm.SkyLoc.Get60SkyLocNames
-  id: Get60SkyLocNames
+- uid: CompassEx.Comm.SkyLoc.FiveTiger(CompassEx.Comm.SkyClass,CompassEx.Comm.LocClass)
+  commentId: M:CompassEx.Comm.SkyLoc.FiveTiger(CompassEx.Comm.SkyClass,CompassEx.Comm.LocClass)
+  id: FiveTiger(CompassEx.Comm.SkyClass,CompassEx.Comm.LocClass)
   parent: CompassEx.Comm.SkyLoc
   langs:
   - csharp
   - vb
-  name: Get60SkyLocNames()
-  nameWithType: SkyLoc.Get60SkyLocNames()
-  fullName: CompassEx.Comm.SkyLoc.Get60SkyLocNames()
+  name: FiveTiger(SkyClass, LocClass)
+  nameWithType: SkyLoc.FiveTiger(SkyClass, LocClass)
+  fullName: CompassEx.Comm.SkyLoc.FiveTiger(CompassEx.Comm.SkyClass, CompassEx.Comm.LocClass)
   type: Method
   source:
     remote:
       path: CompassEx/Comm/SkyLoc.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: Get60SkyLocNames
+    id: FiveTiger
     path: CompassEx/Comm/SkyLoc.cs
-    startLine: 109
+    startLine: 139
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 获取经典正统六十甲子干支组合的字符串序列（只读原生数组）。
+  summary: 根据给定的年份干支（五虎遁月法），推算该月的天干地支。
   remarks: >-
-    <p><b>历法推演原理与算法重构：</b></p>
+    五虎遁口诀：“甲己之年丙作首，乙庚之岁戊为头，丙辛必定寻庚上，丁壬壬位顺行流，戊癸何方发，甲寅上好求。”
 
-    <p>本方法已重构为现代高精度的<b>单层模运算算法</b>。消除了历史版本中双重嵌套循环（<code>int j = i</code>）导致的干支横向错配与漏项缺陷。</p>
-
-    <p>由于十天干与十二地支的最小公倍数为 60，本算法通过单层 <code>0 ~ 59</code> 闭环流转，对天干基数 10 和地支基数 12 进行动态取模（<code>%</code>），确保干支双轨道同步顺时针推进，完美符合《黄帝内经》及传统干支历法规范。</p>
+    该方法根据年干或月干的对应关系，结合地支位置计算出正确的月干，并组合成完整的干支。
   example: []
   syntax:
-    content: public static string[] Get60SkyLocNames()
+    content: public static SkyLoc FiveTiger(SkyClass YearS, LocClass MonthL)
+    parameters:
+    - id: YearS
+      type: CompassEx.Comm.SkyClass
+      description: 年份的天干对象（<xref href="CompassEx.Comm.SkyClass" data-throw-if-not-resolved="false"></xref>），用于获取当前年份的天干名称。
+    - id: MonthL
+      type: CompassEx.Comm.LocClass
+      description: 月份的地支对象（<xref href="CompassEx.Comm.LocClass" data-throw-if-not-resolved="false"></xref>），用于获取当前月份的地支名称。
     return:
-      type: System.String[]
-      description: 返回一个长度为 60 的 <xref href="System.String" data-throw-if-not-resolved="false"></xref> 原生数组，按历法流转顺序包含“甲子”到“癸亥”。
-    content.vb: Public Shared Function Get60SkyLocNames() As String()
-  overload: CompassEx.Comm.SkyLoc.Get60SkyLocNames*
-- uid: CompassEx.Comm.SkyLoc.Get60SkyLoc
-  commentId: M:CompassEx.Comm.SkyLoc.Get60SkyLoc
-  id: Get60SkyLoc
+      type: CompassEx.Comm.SkyLoc
+      description: 返回推算后的月份完整天干地支对应的 <xref href="CompassEx.Comm.SkyLoc" data-throw-if-not-resolved="false"></xref> 对象。
+    content.vb: Public Shared Function FiveTiger(YearS As SkyClass, MonthL As LocClass) As SkyLoc
+  overload: CompassEx.Comm.SkyLoc.FiveTiger*
+- uid: CompassEx.Comm.SkyLoc.FiveMouse(CompassEx.Comm.SkyLoc,System.Int32)
+  commentId: M:CompassEx.Comm.SkyLoc.FiveMouse(CompassEx.Comm.SkyLoc,System.Int32)
+  id: FiveMouse(CompassEx.Comm.SkyLoc,System.Int32)
   parent: CompassEx.Comm.SkyLoc
   langs:
   - csharp
   - vb
-  name: Get60SkyLoc()
-  nameWithType: SkyLoc.Get60SkyLoc()
-  fullName: CompassEx.Comm.SkyLoc.Get60SkyLoc()
+  name: FiveMouse(SkyLoc, int)
+  nameWithType: SkyLoc.FiveMouse(SkyLoc, int)
+  fullName: CompassEx.Comm.SkyLoc.FiveMouse(CompassEx.Comm.SkyLoc, int)
   type: Method
   source:
     remote:
       path: CompassEx/Comm/SkyLoc.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: Get60SkyLoc
+    id: FiveMouse
     path: CompassEx/Comm/SkyLoc.cs
-    startLine: 131
+    startLine: 170
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
-  summary: 获取包含完整天干地支对象绑定的六十甲子实体单元序列（只读原生数组）。
-  remarks: <b>性能优化说明：</b>本方法通过单层取模算法动态实例化 60 个干支单元。由于六十甲子属于体系内的核心只读静态元数据，重构后直接返回原生数组，避免了动态列表（<code>List</code>）扩容带来的二次内存拷贝与垃圾回收（GC）开销。
+  summary: 根据日的天干地支与指定的小时数（五鼠遁时法），推算该时辰的天干地支。
+  remarks: >-
+    五鼠遁口诀：“甲己还加甲，乙庚丙作初，丙辛从戊起，丁壬庚子居，戊癸何方发，壬子是真途。”
+
+    此重载方法直接接收 <xref href="CompassEx.Comm.SkyLoc" data-throw-if-not-resolved="false"></xref> 对象。
   example: []
   syntax:
-    content: public static SkyLoc[] Get60SkyLoc()
+    content: public static SkyLoc FiveMouse(SkyLoc DaySL, int Hour)
+    parameters:
+    - id: DaySL
+      type: CompassEx.Comm.SkyLoc
+      description: 包含日的天干地支信息的 <xref href="CompassEx.Comm.SkyLoc" data-throw-if-not-resolved="false"></xref> 对象。
+    - id: Hour
+      type: System.Int32
+      description: 当前的小时数（0-23之间的整数），用于判断对应的时辰（如：1点为丑时）。
     return:
-      type: CompassEx.Comm.SkyLoc[]
-      description: 返回一个包含 60 个 <xref href="CompassEx.Comm.SkyLoc" data-throw-if-not-resolved="false"></xref> 复合实体的原生数组，按历法顺序排列。
-    content.vb: Public Shared Function Get60SkyLoc() As SkyLoc()
-  overload: CompassEx.Comm.SkyLoc.Get60SkyLoc*
+      type: CompassEx.Comm.SkyLoc
+      description: 返回推算后的时辰完整天干地支对应的 <xref href="CompassEx.Comm.SkyLoc" data-throw-if-not-resolved="false"></xref> 对象。
+    content.vb: Public Shared Function FiveMouse(DaySL As SkyLoc, Hour As Integer) As SkyLoc
+  overload: CompassEx.Comm.SkyLoc.FiveMouse*
+  nameWithType.vb: SkyLoc.FiveMouse(SkyLoc, Integer)
+  fullName.vb: CompassEx.Comm.SkyLoc.FiveMouse(CompassEx.Comm.SkyLoc, Integer)
+  name.vb: FiveMouse(SkyLoc, Integer)
+- uid: CompassEx.Comm.SkyLoc.FiveMouse(System.String,System.Int32)
+  commentId: M:CompassEx.Comm.SkyLoc.FiveMouse(System.String,System.Int32)
+  id: FiveMouse(System.String,System.Int32)
+  parent: CompassEx.Comm.SkyLoc
+  langs:
+  - csharp
+  - vb
+  name: FiveMouse(string, int)
+  nameWithType: SkyLoc.FiveMouse(string, int)
+  fullName: CompassEx.Comm.SkyLoc.FiveMouse(string, int)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/SkyLoc.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: FiveMouse
+    path: CompassEx/Comm/SkyLoc.cs
+    startLine: 185
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 根据日的天干地支字符串与指定的小时数（五鼠遁时法），推算该时辰的天干地支。
+  remarks: >-
+    五鼠遁口诀：“甲己还加甲，乙庚丙作初，丙辛从戊起，丁壬庚子居，戊癸何方发，壬子是真途。”
+
+    此方法通过解析日干支字符串和小时，计算出时干并与时支组合。
+  example: []
+  syntax:
+    content: public static SkyLoc FiveMouse(string DaySkyLocName, int Hour)
+    parameters:
+    - id: DaySkyLocName
+      type: System.String
+      description: 日的天干地支字符串（例如：“甲子”）。
+    - id: Hour
+      type: System.Int32
+      description: 当前的小时数（0-23之间的整数），用于判断对应的时辰（如：1点为丑时）。
+    return:
+      type: CompassEx.Comm.SkyLoc
+      description: 返回推算后的时辰完整天干地支对应的 <xref href="CompassEx.Comm.SkyLoc" data-throw-if-not-resolved="false"></xref> 对象。
+    content.vb: Public Shared Function FiveMouse(DaySkyLocName As String, Hour As Integer) As SkyLoc
+  overload: CompassEx.Comm.SkyLoc.FiveMouse*
+  nameWithType.vb: SkyLoc.FiveMouse(String, Integer)
+  fullName.vb: CompassEx.Comm.SkyLoc.FiveMouse(String, Integer)
+  name.vb: FiveMouse(String, Integer)
+- uid: CompassEx.Comm.SkyLoc.ToString
+  commentId: M:CompassEx.Comm.SkyLoc.ToString
+  id: ToString
+  parent: CompassEx.Comm.SkyLoc
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: SkyLoc.ToString()
+  fullName: CompassEx.Comm.SkyLoc.ToString()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/SkyLoc.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToString
+    path: CompassEx/Comm/SkyLoc.cs
+    startLine: 280
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: CompassEx.Comm.SkyLoc.ToString*
+- uid: CompassEx.Comm.SkyLoc.Equals(System.Object)
+  commentId: M:CompassEx.Comm.SkyLoc.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: CompassEx.Comm.SkyLoc
+  langs:
+  - csharp
+  - vb
+  name: Equals(object)
+  nameWithType: SkyLoc.Equals(object)
+  fullName: CompassEx.Comm.SkyLoc.Equals(object)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/SkyLoc.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Equals
+    path: CompassEx/Comm/SkyLoc.cs
+    startLine: 291
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: CompassEx.Comm.SkyLoc.Equals*
+  nameWithType.vb: SkyLoc.Equals(Object)
+  fullName.vb: CompassEx.Comm.SkyLoc.Equals(Object)
+  name.vb: Equals(Object)
+- uid: CompassEx.Comm.SkyLoc.GetHashCode
+  commentId: M:CompassEx.Comm.SkyLoc.GetHashCode
+  id: GetHashCode
+  parent: CompassEx.Comm.SkyLoc
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: SkyLoc.GetHashCode()
+  fullName: CompassEx.Comm.SkyLoc.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/SkyLoc.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetHashCode
+    path: CompassEx/Comm/SkyLoc.cs
+    startLine: 308
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.Object.GetHashCode
+  overload: CompassEx.Comm.SkyLoc.GetHashCode*
+- uid: CompassEx.Comm.SkyLoc.op_Equality(CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc)
+  commentId: M:CompassEx.Comm.SkyLoc.op_Equality(CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc)
+  id: op_Equality(CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc)
+  parent: CompassEx.Comm.SkyLoc
+  langs:
+  - csharp
+  - vb
+  name: operator ==(SkyLoc, SkyLoc)
+  nameWithType: SkyLoc.operator ==(SkyLoc, SkyLoc)
+  fullName: CompassEx.Comm.SkyLoc.operator ==(CompassEx.Comm.SkyLoc, CompassEx.Comm.SkyLoc)
+  type: Operator
+  source:
+    remote:
+      path: CompassEx/Comm/SkyLoc.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: op_Equality
+    path: CompassEx/Comm/SkyLoc.cs
+    startLine: 315
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  syntax:
+    content: public static bool operator ==(SkyLoc left, SkyLoc right)
+    parameters:
+    - id: left
+      type: CompassEx.Comm.SkyLoc
+    - id: right
+      type: CompassEx.Comm.SkyLoc
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As SkyLoc, right As SkyLoc) As Boolean
+  overload: CompassEx.Comm.SkyLoc.op_Equality*
+  nameWithType.vb: SkyLoc.=(SkyLoc, SkyLoc)
+  fullName.vb: CompassEx.Comm.SkyLoc.=(CompassEx.Comm.SkyLoc, CompassEx.Comm.SkyLoc)
+  name.vb: =(SkyLoc, SkyLoc)
+- uid: CompassEx.Comm.SkyLoc.op_Inequality(CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc)
+  commentId: M:CompassEx.Comm.SkyLoc.op_Inequality(CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc)
+  id: op_Inequality(CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc)
+  parent: CompassEx.Comm.SkyLoc
+  langs:
+  - csharp
+  - vb
+  name: operator !=(SkyLoc, SkyLoc)
+  nameWithType: SkyLoc.operator !=(SkyLoc, SkyLoc)
+  fullName: CompassEx.Comm.SkyLoc.operator !=(CompassEx.Comm.SkyLoc, CompassEx.Comm.SkyLoc)
+  type: Operator
+  source:
+    remote:
+      path: CompassEx/Comm/SkyLoc.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: op_Inequality
+    path: CompassEx/Comm/SkyLoc.cs
+    startLine: 321
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  syntax:
+    content: public static bool operator !=(SkyLoc left, SkyLoc right)
+    parameters:
+    - id: left
+      type: CompassEx.Comm.SkyLoc
+    - id: right
+      type: CompassEx.Comm.SkyLoc
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As SkyLoc, right As SkyLoc) As Boolean
+  overload: CompassEx.Comm.SkyLoc.op_Inequality*
+  nameWithType.vb: SkyLoc.<>(SkyLoc, SkyLoc)
+  fullName.vb: CompassEx.Comm.SkyLoc.<>(CompassEx.Comm.SkyLoc, CompassEx.Comm.SkyLoc)
+  name.vb: <>(SkyLoc, SkyLoc)
 references:
 - uid: CompassEx.Comm.SkyClass
   commentId: T:CompassEx.Comm.SkyClass
@@ -352,38 +650,38 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  name: Equals(object)
-  nameWithType: object.Equals(object)
-  fullName: object.Equals(object)
-  nameWithType.vb: Object.Equals(Object)
-  fullName.vb: Object.Equals(Object)
-  name.vb: Equals(Object)
+- uid: System.IEquatable{CompassEx.Comm.SkyLoc}
+  commentId: T:System.IEquatable{CompassEx.Comm.SkyLoc}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<SkyLoc>
+  nameWithType: IEquatable<SkyLoc>
+  fullName: System.IEquatable<CompassEx.Comm.SkyLoc>
+  nameWithType.vb: IEquatable(Of SkyLoc)
+  fullName.vb: System.IEquatable(Of CompassEx.Comm.SkyLoc)
+  name.vb: IEquatable(Of SkyLoc)
   spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
+  - uid: System.IEquatable`1
+    name: IEquatable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
+  - name: '>'
   spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
+  - uid: System.IEquatable`1
+    name: IEquatable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
   - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
   - name: )
 - uid: System.Object.Equals(System.Object,System.Object)
   commentId: M:System.Object.Equals(System.Object,System.Object)
@@ -429,30 +727,6 @@ references:
     name: Object
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
   - name: )
 - uid: System.Object.GetType
   commentId: M:System.Object.GetType
@@ -547,30 +821,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  name: ToString()
-  nameWithType: object.ToString()
-  fullName: object.ToString()
-  nameWithType.vb: Object.ToString()
-  fullName.vb: Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
 - uid: CompassEx.Comm.SkyLoc.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
   commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
   parent: CompassEx.Comm.Comm
@@ -631,6 +881,34 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
   commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
   href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
@@ -681,6 +959,62 @@ references:
   name: Comm
   nameWithType: Comm
   fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm.SkyLoc.SkyLoc60*
+  commentId: Overload:CompassEx.Comm.SkyLoc.SkyLoc60
+  href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_SkyLoc60
+  name: SkyLoc60
+  nameWithType: SkyLoc.SkyLoc60
+  fullName: CompassEx.Comm.SkyLoc.SkyLoc60
+- uid: CompassEx.Comm.SkyLoc[]
+  isExternal: true
+  href: CompassEx.Comm.SkyLoc.html
+  name: SkyLoc[]
+  nameWithType: SkyLoc[]
+  fullName: CompassEx.Comm.SkyLoc[]
+  nameWithType.vb: SkyLoc()
+  fullName.vb: CompassEx.Comm.SkyLoc()
+  name.vb: SkyLoc()
+  spec.csharp:
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
+  - name: (
+  - name: )
+- uid: CompassEx.Comm.SkyLoc.SkyLoc60Name*
+  commentId: Overload:CompassEx.Comm.SkyLoc.SkyLoc60Name
+  href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_SkyLoc60Name
+  name: SkyLoc60Name
+  nameWithType: SkyLoc.SkyLoc60Name
+  fullName: CompassEx.Comm.SkyLoc.SkyLoc60Name
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -704,12 +1038,12 @@ references:
   name: Name
   nameWithType: LocClass.Name
   fullName: CompassEx.Comm.LocClass.Name
-- uid: CompassEx.Comm.SkyLoc.SkyLocName*
-  commentId: Overload:CompassEx.Comm.SkyLoc.SkyLocName
-  href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_SkyLocName
-  name: SkyLocName
-  nameWithType: SkyLoc.SkyLocName
-  fullName: CompassEx.Comm.SkyLoc.SkyLocName
+- uid: CompassEx.Comm.SkyLoc.Name*
+  commentId: Overload:CompassEx.Comm.SkyLoc.Name
+  href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_Name
+  name: Name
+  nameWithType: SkyLoc.Name
+  fullName: CompassEx.Comm.SkyLoc.Name
 - uid: CompassEx.Comm.SkyLoc.Sky*
   commentId: Overload:CompassEx.Comm.SkyLoc.Sky
   href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_Sky
@@ -768,59 +1102,155 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: CompassEx.Comm.SkyLoc.Get60SkyLocNames*
-  commentId: Overload:CompassEx.Comm.SkyLoc.Get60SkyLocNames
-  href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_Get60SkyLocNames
-  name: Get60SkyLocNames
-  nameWithType: SkyLoc.Get60SkyLocNames
-  fullName: CompassEx.Comm.SkyLoc.Get60SkyLocNames
-- uid: System.String[]
+- uid: CompassEx.Comm.SkyLoc.FiveTiger*
+  commentId: Overload:CompassEx.Comm.SkyLoc.FiveTiger
+  href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_FiveTiger_CompassEx_Comm_SkyClass_CompassEx_Comm_LocClass_
+  name: FiveTiger
+  nameWithType: SkyLoc.FiveTiger
+  fullName: CompassEx.Comm.SkyLoc.FiveTiger
+- uid: CompassEx.Comm.SkyLoc.FiveMouse*
+  commentId: Overload:CompassEx.Comm.SkyLoc.FiveMouse
+  href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_FiveMouse_CompassEx_Comm_SkyLoc_System_Int32_
+  name: FiveMouse
+  nameWithType: SkyLoc.FiveMouse
+  fullName: CompassEx.Comm.SkyLoc.FiveMouse
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string[]
-  nameWithType: string[]
-  fullName: string[]
-  nameWithType.vb: String()
-  fullName.vb: String()
-  name.vb: String()
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
   spec.csharp:
-  - uid: System.String
-    name: string
+  - uid: System.Object.ToString
+    name: ToString
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: '['
-  - name: ']'
-  spec.vb:
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
-- uid: CompassEx.Comm.SkyLoc.Get60SkyLoc*
-  commentId: Overload:CompassEx.Comm.SkyLoc.Get60SkyLoc
-  href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_Get60SkyLoc
-  name: Get60SkyLoc
-  nameWithType: SkyLoc.Get60SkyLoc
-  fullName: CompassEx.Comm.SkyLoc.Get60SkyLoc
-- uid: CompassEx.Comm.SkyLoc[]
-  isExternal: true
-  href: CompassEx.Comm.SkyLoc.html
-  name: SkyLoc[]
-  nameWithType: SkyLoc[]
-  fullName: CompassEx.Comm.SkyLoc[]
-  nameWithType.vb: SkyLoc()
-  fullName.vb: CompassEx.Comm.SkyLoc()
-  name.vb: SkyLoc()
-  spec.csharp:
-  - uid: CompassEx.Comm.SkyLoc
-    name: SkyLoc
-    href: CompassEx.Comm.SkyLoc.html
-  - name: '['
-  - name: ']'
   spec.vb:
-  - uid: CompassEx.Comm.SkyLoc
-    name: SkyLoc
-    href: CompassEx.Comm.SkyLoc.html
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
+- uid: CompassEx.Comm.SkyLoc.ToString*
+  commentId: Overload:CompassEx.Comm.SkyLoc.ToString
+  href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_ToString
+  name: ToString
+  nameWithType: SkyLoc.ToString
+  fullName: CompassEx.Comm.SkyLoc.ToString
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: CompassEx.Comm.SkyLoc.Equals*
+  commentId: Overload:CompassEx.Comm.SkyLoc.Equals
+  href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_Equals_System_Object_
+  name: Equals
+  nameWithType: SkyLoc.Equals
+  fullName: CompassEx.Comm.SkyLoc.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: CompassEx.Comm.SkyLoc.GetHashCode*
+  commentId: Overload:CompassEx.Comm.SkyLoc.GetHashCode
+  href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_GetHashCode
+  name: GetHashCode
+  nameWithType: SkyLoc.GetHashCode
+  fullName: CompassEx.Comm.SkyLoc.GetHashCode
+- uid: CompassEx.Comm.SkyLoc.op_Equality*
+  commentId: Overload:CompassEx.Comm.SkyLoc.op_Equality
+  href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_op_Equality_CompassEx_Comm_SkyLoc_CompassEx_Comm_SkyLoc_
+  name: operator ==
+  nameWithType: SkyLoc.operator ==
+  fullName: CompassEx.Comm.SkyLoc.operator ==
+  nameWithType.vb: SkyLoc.=
+  fullName.vb: CompassEx.Comm.SkyLoc.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: CompassEx.Comm.SkyLoc.op_Equality*
+    name: ==
+    href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_op_Equality_CompassEx_Comm_SkyLoc_CompassEx_Comm_SkyLoc_
+- uid: CompassEx.Comm.SkyLoc.op_Inequality*
+  commentId: Overload:CompassEx.Comm.SkyLoc.op_Inequality
+  href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_op_Inequality_CompassEx_Comm_SkyLoc_CompassEx_Comm_SkyLoc_
+  name: operator !=
+  nameWithType: SkyLoc.operator !=
+  fullName: CompassEx.Comm.SkyLoc.operator !=
+  nameWithType.vb: SkyLoc.<>
+  fullName.vb: CompassEx.Comm.SkyLoc.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: CompassEx.Comm.SkyLoc.op_Inequality*
+    name: '!='
+    href: CompassEx.Comm.SkyLoc.html#CompassEx_Comm_SkyLoc_op_Inequality_CompassEx_Comm_SkyLoc_CompassEx_Comm_SkyLoc_

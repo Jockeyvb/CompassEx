@@ -160,7 +160,7 @@ namespace CompassEx
         /// 根据当前罗盘指向的度数，计算并获取对应的二十四山对象。
         /// </summary>
         /// <returns>返回包装了当前山名的 <see cref="CHill"/> 对象；若均未匹配到对应范围则返回 <c>null</c>。</returns>
-        public CHill Get24Hill()
+        public CHill? Get24Hill()
         {
             foreach (string sN in CHill.C24HillNames)
             {
@@ -231,7 +231,7 @@ namespace CompassEx
         /// 根据当前罗盘指向的度数，计算并获取对应的先天八卦单卦对象。
         /// </summary>
         /// <returns>返回对应的 <see cref="GuaSubClass"/> 先天八卦对象；若没有落在有效范围内则返回 <c>null</c>。</returns>
-        public GuaSubClass GetBeforeGuaSub()
+        public GuaSubClass? GetBeforeGuaSub()
         {
             foreach (string sN in CompassAfterGuaSubNames)
             {
@@ -287,7 +287,7 @@ namespace CompassEx
         /// 根据当前罗盘指向的度数，计算并获取对应的后天八卦单卦对象。
         /// </summary>
         /// <returns>返回对应的 <see cref="GuaSubClass"/> 后天八卦对象；若没有落在有效范围内则返回 <c>null</c>。</returns>
-        public GuaSubClass GetAfterGuaSub()
+        public GuaSubClass? GetAfterGuaSub()
         {
             foreach (string sN in CompassAfterGuaSubNames)
             {

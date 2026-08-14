@@ -166,6 +166,48 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/CommLib/CommLib.ReturnResultType-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CommLib/CommLib.ReturnResultType-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CommLib.ReturnResultType<T>",
+      "Summary": "<p sourcefile=\"api/CommLib/CommLib.ReturnResultType-1.yml\" sourcestartlinenumber=\"1\">泛型版本返回類型（已修改為 Class）</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CommLib/CommLib.ReturnResultType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CommLib/CommLib.ReturnResultType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CommLib.ReturnResultType",
+      "Summary": "<p sourcefile=\"api/CommLib/CommLib.ReturnResultType.yml\" sourcestartlinenumber=\"1\">通用返回类</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CommLib/CommLib.ReturnResultTypeEx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CommLib/CommLib.ReturnResultTypeEx.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CommLib.ReturnResultTypeEx",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/CommLib/CommLib.yml",
       "output": {
         ".html": {
@@ -190,6 +232,76 @@
         }
       },
       "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx/CompassEx.Assist.Calender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx/CompassEx.Assist.Calender.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Assist.Calender",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx/CompassEx.Assist.FSLTEx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx/CompassEx.Assist.FSLTEx.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Assist.FSLTEx",
+      "Summary": "<p sourcefile=\"api/CompassEx/CompassEx.Assist.FSLTEx.yml\" sourcestartlinenumber=\"1\">扩展</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx/CompassEx.Assist.FourSkyLocType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx/CompassEx.Assist.FourSkyLocType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Assist.FourSkyLocType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx/CompassEx.Assist.HourGod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx/CompassEx.Assist.HourGod.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Assist.HourGod",
+      "Summary": "<p sourcefile=\"api/CompassEx/CompassEx.Assist.HourGod.yml\" sourcestartlinenumber=\"1\">表示时辰神煞（时家神煞）的类，用于处理择吉中时辰的吉凶、名称索引及颜色标识。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx/CompassEx.Assist.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx/CompassEx.Assist.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Assist",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -249,6 +361,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx/CompassEx.Comm.AreaDirection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx/CompassEx.Comm.AreaDirection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Comm.AreaDirection",
+      "Summary": "<p sourcefile=\"api/CompassEx/CompassEx.Comm.AreaDirection.yml\" sourcestartlinenumber=\"1\">表示区域方位类，用于管理罗盘八方及中宫的名称、度数范围以及飞星轨迹映射。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/CompassEx/CompassEx.Comm.ArrayExtensions.yml",
       "output": {
         ".html": {
@@ -277,6 +403,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx/CompassEx.Comm.CompassObjStru.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx/CompassEx.Comm.CompassObjStru.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Comm.CompassObjStru",
+      "Summary": "<p sourcefile=\"api/CompassEx/CompassEx.Comm.CompassObjStru.yml\" sourcestartlinenumber=\"1\">用于封装和标识罗盘对象的元数据及其实例的结构体。</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/CompassEx/CompassEx.Comm.CompassObjType.yml",
       "output": {
         ".html": {
@@ -287,7 +427,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "CompassEx.Comm.CompassObjType",
-      "Summary": "<p sourcefile=\"api/CompassEx/CompassEx.Comm.CompassObjType.yml\" sourcestartlinenumber=\"1\">用于封装和标识罗盘对象的元数据及其实例的结构体。</p>\n"
+      "Summary": "<p sourcefile=\"api/CompassEx/CompassEx.Comm.CompassObjType.yml\" sourcestartlinenumber=\"1\">罗盘上的对应类型</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -358,6 +498,20 @@
       "IsMRef": true,
       "Title": "CompassEx.Comm.FiveAttrRule",
       "Summary": "<p sourcefile=\"api/CompassEx/CompassEx.Comm.FiveAttrRule.yml\" sourcestartlinenumber=\"1\">五行生克关系规则</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx/CompassEx.Comm.FlyStar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx/CompassEx.Comm.FlyStar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.Comm.FlyStar",
+      "Summary": "<p sourcefile=\"api/CompassEx/CompassEx.Comm.FlyStar.yml\" sourcestartlinenumber=\"1\">表示紫白飞星类，用于管理飞星的名称、索引、数值、九宫方位以及对应的后天八卦属性。</p>\n<p>紫白飞星：年、月紫白，入中宫之星逆推，分布九宫位是顺飞。</p>\n<p>为了方便使用，年紫白飞星方法：<xref href=\"CompassEx.Comm.FlyStar.YearFlyStar(System.Int32)\" data-throw-if-not-resolved=\"false\"></xref> 的年值必须是立春后的年值。</p>\n<p>月紫白飞星方法：<xref href=\"CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.LocClass)\" data-throw-if-not-resolved=\"false\"></xref>（注：实际方法为 <xref href=\"CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.LocClass)\" data-throw-if-not-resolved=\"false\"></xref>）需要传入年支类获得布满十二月飞星值，但九宫方位为 <a href=\"https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null\">null</a>，因为九宫飞布不存在。若要获得所有十二月的九宫方位应该使用 <xref href=\"CompassEx.Comm.FlyStar.GetFlyStars(System.Int32%2cSystem.Boolean%2cSystem.Boolean)\" data-throw-if-not-resolved=\"false\"></xref> 方法重新获得，每月飞布宫位如：<code>GetFlyStars(MonthFlyStar.First().StarValue, true, true)</code> 获得正月飞布情况。</p>\n<p>日紫白飞星：是按节气冬至后第一个甲子为一白顺飞，乙丑为二黑坤，夏至后第一个甲子为一日逆飞，乙丑为九紫。</p>\n<p>时紫白飞星：是按天干阴阳顺逆飞，阳为顺飞，阴为逆飞。</p>\n<p><span style=\"font-weight:bold;color:red;\">重点是：每一个紫白中宫为 StarValue（星值），年、月、日、时紫白应该有独立的飞布宫位，则可使用九宫方位应使用 <xref href=\"CompassEx.Comm.FlyStar.GetFlyStars(System.Int32%2cSystem.Boolean%2cSystem.Boolean)\" data-throw-if-not-resolved=\"false\"></xref> 方法重新获得。例如每月飞布宫位：<code>GetFlyStars(MonthFlyStar.First().StarValue, true, true)</code> 读取属性 <xref href=\"CompassEx.Comm.FlyStar.StarDirection\" data-throw-if-not-resolved=\"false\"></xref> 获得九宫方位信息。</span></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -750,6 +904,20 @@
       "IsMRef": true,
       "Title": "CompassEx.Gua",
       "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CompassEx/CompassEx.HillType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CompassEx/CompassEx.HillType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CompassEx.HillType",
+      "Summary": "<p sourcefile=\"api/CompassEx/CompassEx.HillType.yml\" sourcestartlinenumber=\"1\">表示风水罗盘上的二十四山盘层类型。</p>\n"
     },
     {
       "type": "ManagedReference",

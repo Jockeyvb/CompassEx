@@ -20,7 +20,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ArrayExtensions
     path: CompassEx/Comm/Comm.cs
-    startLine: 346
+    startLine: 94
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -58,7 +58,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IndexOf
     path: CompassEx/Comm/Comm.cs
-    startLine: 358
+    startLine: 106
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm

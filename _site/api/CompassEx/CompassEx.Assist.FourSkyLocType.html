@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>FourSkyLocType 类
+ | 罗盘算法类库 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="FourSkyLocType 类
+ | 罗盘算法类库 ">
+      
+      
+      <link rel="icon" href="../../Images/logo.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Jockeyvb/CompassEx/new/master/apiSpec/new?filename=CompassEx_Assist_FourSkyLocType.md&amp;value=---%0Auid%3A%20CompassEx.Assist.FourSkyLocType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="本文内容">
+      <meta name="loc:searchResultsCount" content="找到{count}个“{query}”的搜索结果">
+      <meta name="loc:searchNoResults" content="没有找到“{query}”的搜索结果">
+      <meta name="loc:tocFilter" content="按标题筛选">
+      <meta name="loc:nextArticle" content="下一篇">
+      <meta name="loc:prevArticle" content="上一篇">
+      <meta name="loc:themeLight" content="白天">
+      <meta name="loc:themeDark" content="夜晚">
+      <meta name="loc:themeAuto" content="自动">
+      <meta name="loc:changeTheme" content="切换主题">
+      <meta name="loc:copy" content="复制">
+      <meta name="loc:downloadPdf" content="下载 PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../Images/logo.png" alt="CompassEx">
+            CompassEx
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="CompassEx.Assist.FourSkyLocType">
+
+
+
+  <h1 id="CompassEx_Assist_FourSkyLocType" data-uid="CompassEx.Assist.FourSkyLocType" class="text-break">
+FourSkyLocType 类
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>命名空间</dt><dd><a class="xref" href="CompassEx.html">CompassEx</a>.<a class="xref" href="CompassEx.Assist.html">Assist</a></dd></dl>
+  <dl><dt>程序集</dt><dd>CompassEx.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class FourSkyLocType</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>继承</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">FourSkyLocType</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>继承成员</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>扩展方法</dt>
+    <dd>
+  <div>
+      <a class="xref" href="CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_">Comm.ApplyBaseProperties&lt;TChild, TBase&gt;(TChild, TBase)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="properties">属性
+</h2>
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_Date_" data-uid="CompassEx.Assist.FourSkyLocType.Date*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_Date" data-uid="CompassEx.Assist.FourSkyLocType.Date">
+  Date
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>公历日期对象</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime Date { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_DayBuildName_" data-uid="CompassEx.Assist.FourSkyLocType.DayBuildName*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_DayBuildName" data-uid="CompassEx.Assist.FourSkyLocType.DayBuildName">
+  DayBuildName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>十二日建</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DayBuildName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_DayCNName_" data-uid="CompassEx.Assist.FourSkyLocType.DayCNName*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_DayCNName" data-uid="CompassEx.Assist.FourSkyLocType.DayCNName">
+  DayCNName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>农历的日名</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DayCNName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_DaySL_" data-uid="CompassEx.Assist.FourSkyLocType.DaySL*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_DaySL" data-uid="CompassEx.Assist.FourSkyLocType.DaySL">
+  DaySL
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SkyLoc DaySL { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_DaySLName_" data-uid="CompassEx.Assist.FourSkyLocType.DaySLName*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_DaySLName" data-uid="CompassEx.Assist.FourSkyLocType.DaySLName">
+  DaySLName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>日的天干地支</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DaySLName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_DayWeekIndex_" data-uid="CompassEx.Assist.FourSkyLocType.DayWeekIndex*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_DayWeekIndex" data-uid="CompassEx.Assist.FourSkyLocType.DayWeekIndex">
+  DayWeekIndex
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>星期1为0，星期日为6</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DayWeekIndex { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_FullCNName_" data-uid="CompassEx.Assist.FourSkyLocType.FullCNName*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_FullCNName" data-uid="CompassEx.Assist.FourSkyLocType.FullCNName">
+  FullCNName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L124"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>农历全称</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FullCNName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_FullName_" data-uid="CompassEx.Assist.FourSkyLocType.FullName*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_FullName" data-uid="CompassEx.Assist.FourSkyLocType.FullName">
+  FullName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>四柱全名</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FullName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_HourSL_" data-uid="CompassEx.Assist.FourSkyLocType.HourSL*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_HourSL" data-uid="CompassEx.Assist.FourSkyLocType.HourSL">
+  HourSL
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SkyLoc HourSL { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_HourSLName_" data-uid="CompassEx.Assist.FourSkyLocType.HourSLName*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_HourSLName" data-uid="CompassEx.Assist.FourSkyLocType.HourSLName">
+  HourSLName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>时的天干地支</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string HourSLName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_IsFourScrapDay_" data-uid="CompassEx.Assist.FourSkyLocType.IsFourScrapDay*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_IsFourScrapDay" data-uid="CompassEx.Assist.FourSkyLocType.IsFourScrapDay">
+  IsFourScrapDay
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L164"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>是否四废日</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsFourScrapDay { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_IsSkyPardonDay_" data-uid="CompassEx.Assist.FourSkyLocType.IsSkyPardonDay*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_IsSkyPardonDay" data-uid="CompassEx.Assist.FourSkyLocType.IsSkyPardonDay">
+  IsSkyPardonDay
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L141"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>是否为天赦日</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSkyPardonDay { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_IsTenDefeatDay_" data-uid="CompassEx.Assist.FourSkyLocType.IsTenDefeatDay*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_IsTenDefeatDay" data-uid="CompassEx.Assist.FourSkyLocType.IsTenDefeatDay">
+  IsTenDefeatDay
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L168"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>十恶大败日</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsTenDefeatDay { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_IsTenSpiritDay_" data-uid="CompassEx.Assist.FourSkyLocType.IsTenSpiritDay*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_IsTenSpiritDay" data-uid="CompassEx.Assist.FourSkyLocType.IsTenSpiritDay">
+  IsTenSpiritDay
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L172"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>是否为十灵日</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsTenSpiritDay { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_Lunar_" data-uid="CompassEx.Assist.FourSkyLocType.Lunar*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_Lunar" data-uid="CompassEx.Assist.FourSkyLocType.Lunar">
+  Lunar
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>返回农历对象</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public (LunarYear y, LunarMonth m, LunarDay d, LunarHour h) Lunar { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt>(<span class="xref">LunarYear</span> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.y">y</a>, <span class="xref">LunarMonth</span> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.m">m</a>, <span class="xref">LunarDay</span> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.d">d</a>, <span class="xref">LunarHour</span> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.lunar.lunaryear,tyme.lunar.lunarmonth,tyme.lunar.lunarday,tyme.lunar.lunarhour-.h">h</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_MonthCNName_" data-uid="CompassEx.Assist.FourSkyLocType.MonthCNName*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_MonthCNName" data-uid="CompassEx.Assist.FourSkyLocType.MonthCNName">
+  MonthCNName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>农历月份名</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string MonthCNName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_MonthSL_" data-uid="CompassEx.Assist.FourSkyLocType.MonthSL*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_MonthSL" data-uid="CompassEx.Assist.FourSkyLocType.MonthSL">
+  MonthSL
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SkyLoc MonthSL { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_MonthSLName_" data-uid="CompassEx.Assist.FourSkyLocType.MonthSLName*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_MonthSLName" data-uid="CompassEx.Assist.FourSkyLocType.MonthSLName">
+  MonthSLName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>月的天干地支</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string MonthSLName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_SeasonName_" data-uid="CompassEx.Assist.FourSkyLocType.SeasonName*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_SeasonName" data-uid="CompassEx.Assist.FourSkyLocType.SeasonName">
+  SeasonName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L129"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>如果当天是交节，那么补上节气名称</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SeasonName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_YearCNName_" data-uid="CompassEx.Assist.FourSkyLocType.YearCNName*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_YearCNName" data-uid="CompassEx.Assist.FourSkyLocType.YearCNName">
+  YearCNName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>农历年份名</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string YearCNName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_YearSL_" data-uid="CompassEx.Assist.FourSkyLocType.YearSL*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_YearSL" data-uid="CompassEx.Assist.FourSkyLocType.YearSL">
+  YearSL
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SkyLoc YearSL { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_YearSLName_" data-uid="CompassEx.Assist.FourSkyLocType.YearSLName*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_YearSLName" data-uid="CompassEx.Assist.FourSkyLocType.YearSLName">
+  YearSLName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>年的天干地支</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string YearSLName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">属性值</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">方法
+</h2>
+
+
+  <a id="CompassEx_Assist_FourSkyLocType_GetAllGodNames_" data-uid="CompassEx.Assist.FourSkyLocType.GetAllGodNames*"></a>
+
+  <h3 id="CompassEx_Assist_FourSkyLocType_GetAllGodNames" data-uid="CompassEx.Assist.FourSkyLocType.GetAllGodNames">
+  GetAllGodNames()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L149"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获得把有关神煞的名称都列出来</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; GetAllGodNames()</code></pre>
+  </div>
+
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Assist/FourSkyLocType.cs/#L55" class="edit-link">编辑本文</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -30,6 +30,7 @@ items:
   - CompassEx.Gua.GuaSubClass.Equals(System.Object)
   - CompassEx.Gua.GuaSubClass.FiveAttr
   - CompassEx.Gua.GuaSubClass.GetAfterGuaSub(System.Int32,System.Boolean)
+  - CompassEx.Gua.GuaSubClass.GetAfterGuaSub(System.String,System.Boolean)
   - CompassEx.Gua.GuaSubClass.GetBeforGuaSub(System.Int32,System.Boolean)
   - CompassEx.Gua.GuaSubClass.GetC24Hills
   - CompassEx.Gua.GuaSubClass.GetCBeforGuas
@@ -54,6 +55,8 @@ items:
   - CompassEx.Gua.GuaSubClass.TiJiSymbol
   - CompassEx.Gua.GuaSubClass.ToGuaClass
   - CompassEx.Gua.GuaSubClass.Yaos
+  - CompassEx.Gua.GuaSubClass.op_Equality(CompassEx.Gua.GuaSubClass,CompassEx.Gua.GuaSubClass)
+  - CompassEx.Gua.GuaSubClass.op_Inequality(CompassEx.Gua.GuaSubClass,CompassEx.Gua.GuaSubClass)
   langs:
   - csharp
   - vb
@@ -703,13 +706,23 @@ items:
   remarks: 内部通过当前单卦纳支开始的索引位置（<xref href="CompassEx.Gua.GuaSubClass.LocIndex" data-throw-if-not-resolved="false"></xref>）作为参数，动态反哺出契合数理的纳甲天干。
   example: []
   syntax:
-    content: public SkyClass Sky { get; }
+    content: >-
+      [JsonIgnore]
+
+      public SkyClass Sky { get; }
     parameters: []
     return:
       type: CompassEx.Comm.SkyClass
       description: 一个封装好的 <xref href="CompassEx.Comm.SkyClass" data-throw-if-not-resolved="false"></xref> 天干对象实例。
-    content.vb: Public ReadOnly Property Sky As SkyClass
+    content.vb: >-
+      <JsonIgnore>
+
+      Public ReadOnly Property Sky As SkyClass
   overload: CompassEx.Gua.GuaSubClass.Sky*
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
 - uid: CompassEx.Gua.GuaSubClass.Locs
   commentId: P:CompassEx.Gua.GuaSubClass.Locs
   id: Locs
@@ -728,7 +741,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Locs
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 272
+    startLine: 273
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -760,7 +773,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LocIndex
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 278
+    startLine: 279
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -792,7 +805,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GuaSubReluName
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 284
+    startLine: 285
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -824,7 +837,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubColor
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 290
+    startLine: 291
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -836,7 +849,7 @@ items:
     return:
       type: System.String
       description: 代表九星色彩名录的单字名称。
-    content.vb: Public Property AfterGuaSubColor As String
+    content.vb: Public ReadOnly Property AfterGuaSubColor As String
   overload: CompassEx.Gua.GuaSubClass.AfterGuaSubColor*
 - uid: CompassEx.Gua.GuaSubClass.AfterQuantity
   commentId: P:CompassEx.Gua.GuaSubClass.AfterQuantity
@@ -856,7 +869,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterQuantity
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 296
+    startLine: 297
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -888,20 +901,30 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeQuanity
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 302
+    startLine: 303
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
   summary: 计算并获取当前单卦对应的伏羲先天八卦绝对数（整型：1 至 8）。
   example: []
   syntax:
-    content: public int BeforeQuanity { get; }
+    content: >-
+      [JsonIgnore]
+
+      public int BeforeQuanity { get; }
     parameters: []
     return:
       type: System.Int32
       description: 整型数值。通过在 <xref href="CompassEx.Gua.GuaSubClass.BeforeGuaSubNumerics" data-throw-if-not-resolved="false"></xref> 中反查中文数（如“一”）的索引，动态加 1 转换得出其先天绝对数（乾一至坤八）。
-    content.vb: Public ReadOnly Property BeforeQuanity As Integer
+    content.vb: >-
+      <JsonIgnore>
+
+      Public ReadOnly Property BeforeQuanity As Integer
   overload: CompassEx.Gua.GuaSubClass.BeforeQuanity*
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
 - uid: CompassEx.Gua.GuaSubClass.Name
   commentId: P:CompassEx.Gua.GuaSubClass.Name
   id: Name
@@ -920,7 +943,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Name
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 308
+    startLine: 310
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -952,7 +975,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AttrName
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 314
+    startLine: 316
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -984,7 +1007,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FiveAttr
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 320
+    startLine: 322
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1016,20 +1039,30 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuaSubCNQuantity
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 326
+    startLine: 328
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
   summary: 获取当前单卦在先天卦序中对应的中文数字卦数名称（如：“一”、“二”、“三”）。
   example: []
   syntax:
-    content: public string BeforeGuaSubCNQuantity { get; }
+    content: >-
+      [JsonIgnore]
+
+      public string BeforeGuaSubCNQuantity { get; }
     parameters: []
     return:
       type: System.String
       description: 返回源自静态清册 <xref href="CompassEx.Gua.GuaSubClass.BeforeGuaSubNumerics" data-throw-if-not-resolved="false"></xref> 的一字中文数字。
-    content.vb: Public ReadOnly Property BeforeGuaSubCNQuantity As String
+    content.vb: >-
+      <JsonIgnore>
+
+      Public ReadOnly Property BeforeGuaSubCNQuantity As String
   overload: CompassEx.Gua.GuaSubClass.BeforeGuaSubCNQuantity*
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
 - uid: CompassEx.Gua.GuaSubClass.AfterGuaSubCNQuantity
   commentId: P:CompassEx.Gua.GuaSubClass.AfterGuaSubCNQuantity
   id: AfterGuaSubCNQuantity
@@ -1048,7 +1081,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubCNQuantity
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 332
+    startLine: 335
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1080,7 +1113,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuaSubIndex
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 338
+    startLine: 341
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1112,7 +1145,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubIndex
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 344
+    startLine: 347
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1144,7 +1177,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Symbol
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 353
+    startLine: 356
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1152,13 +1185,23 @@ items:
   remarks: 内部通过 <xref href="CompassEx.Gua.GuaSubClass.BeforeGuaSubIndex" data-throw-if-not-resolved="false"></xref> 先天索引，动态前往静态图形库 <xref href="CompassEx.Gua.GuaSubClass.Symbols" data-throw-if-not-resolved="false"></xref> 中进行高精度内容提取。
   example: []
   syntax:
-    content: public string Symbol { get; }
+    content: >-
+      [JsonIgnore]
+
+      public string Symbol { get; }
     parameters: []
     return:
       type: System.String
       description: 返回单个标准的 Unicode 经卦字符（如：☰、☱、☲ 等）。
-    content.vb: Public ReadOnly Property Symbol As String
+    content.vb: >-
+      <JsonIgnore>
+
+      Public ReadOnly Property Symbol As String
   overload: CompassEx.Gua.GuaSubClass.Symbol*
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
 - uid: CompassEx.Gua.GuaSubClass.CAfterRangeDegree
   commentId: P:CompassEx.Gua.GuaSubClass.CAfterRangeDegree
   id: CAfterRangeDegree
@@ -1177,7 +1220,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CAfterRangeDegree
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 359
+    startLine: 363
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1209,7 +1252,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CBeforRangeDegree
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 365
+    startLine: 369
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1241,7 +1284,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 381
+    startLine: 385
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1286,7 +1329,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 402
+    startLine: 406
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1333,7 +1376,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToGuaClass
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 473
+    startLine: 477
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1364,7 +1407,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetC24Hills
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 483
+    startLine: 487
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1395,7 +1438,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetCBeforGuas
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 508
+    startLine: 512
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1426,7 +1469,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetXorGua
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 526
+    startLine: 530
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1457,7 +1500,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadLocs
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 541
+    startLine: 545
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1485,14 +1528,14 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 567
+    startLine: 571
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
   summary: 根据卦的前三爻(由下而上）,获得三爻卦类（先天)
   example: []
   syntax:
-    content: public static GuaSubClass GetGuaSub(int iYao1, int iYao2, int iYao3, bool IsDownGua)
+    content: public static GuaSubClass? GetGuaSub(int iYao1, int iYao2, int iYao3, bool IsDownGua)
     parameters:
     - id: iYao1
       type: System.Int32
@@ -1514,6 +1557,47 @@ items:
   nameWithType.vb: GuaSubClass.GetGuaSub(Integer, Integer, Integer, Boolean)
   fullName.vb: CompassEx.Gua.GuaSubClass.GetGuaSub(Integer, Integer, Integer, Boolean)
   name.vb: GetGuaSub(Integer, Integer, Integer, Boolean)
+- uid: CompassEx.Gua.GuaSubClass.GetAfterGuaSub(System.String,System.Boolean)
+  commentId: M:CompassEx.Gua.GuaSubClass.GetAfterGuaSub(System.String,System.Boolean)
+  id: GetAfterGuaSub(System.String,System.Boolean)
+  parent: CompassEx.Gua.GuaSubClass
+  langs:
+  - csharp
+  - vb
+  name: GetAfterGuaSub(string, bool)
+  nameWithType: GuaSubClass.GetAfterGuaSub(string, bool)
+  fullName: CompassEx.Gua.GuaSubClass.GetAfterGuaSub(string, bool)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Gua/GuaSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetAfterGuaSub
+    path: CompassEx/Gua/GuaSubClass.cs
+    startLine: 595
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  summary: 根据后天八卦索引获得三爻卦类（兼容五黄无卦）
+  example: []
+  syntax:
+    content: public static GuaSubClass GetAfterGuaSub(string sn, bool IsDownGua = true)
+    parameters:
+    - id: sn
+      type: System.String
+      description: ''
+    - id: IsDownGua
+      type: System.Boolean
+      description: ''
+    return:
+      type: CompassEx.Gua.GuaSubClass
+      description: ''
+    content.vb: Public Shared Function GetAfterGuaSub(sn As String, IsDownGua As Boolean = True) As GuaSubClass
+  overload: CompassEx.Gua.GuaSubClass.GetAfterGuaSub*
+  nameWithType.vb: GuaSubClass.GetAfterGuaSub(String, Boolean)
+  fullName.vb: CompassEx.Gua.GuaSubClass.GetAfterGuaSub(String, Boolean)
+  name.vb: GetAfterGuaSub(String, Boolean)
 - uid: CompassEx.Gua.GuaSubClass.GetAfterGuaSub(System.Int32,System.Boolean)
   commentId: M:CompassEx.Gua.GuaSubClass.GetAfterGuaSub(System.Int32,System.Boolean)
   id: GetAfterGuaSub(System.Int32,System.Boolean)
@@ -1532,11 +1616,11 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAfterGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 592
+    startLine: 620
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
-  summary: 根据后天八卦索引获得三爻卦类
+  summary: 根据后天八卦索引获得三爻卦类（兼容五黄无卦）
   example: []
   syntax:
     content: public static GuaSubClass GetAfterGuaSub(int GuaSubIndex, bool IsDownGua = true)
@@ -1573,7 +1657,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBeforGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 605
+    startLine: 647
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1614,14 +1698,14 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 617
+    startLine: 659
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
   summary: 根据卦的属性或名称,获得三爻卦类
   example: []
   syntax:
-    content: public static GuaSubClass GetGuaSub(string sAttrOrGuaName, bool IsDownGua = true)
+    content: public static GuaSubClass? GetGuaSub(string sAttrOrGuaName, bool IsDownGua = true)
     parameters:
     - id: sAttrOrGuaName
       type: System.String
@@ -1655,7 +1739,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 637
+    startLine: 679
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1696,14 +1780,14 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetFiveAttrName
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 705
+    startLine: 747
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
   summary: 获得卦的五行属性
   example: []
   syntax:
-    content: public static FiveAttr GetFiveAttrName(string sGuaSubName)
+    content: public static FiveAttr? GetFiveAttrName(string sGuaSubName)
     parameters:
     - id: sGuaSubName
       type: System.String
@@ -1734,7 +1818,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Equals
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 717
+    startLine: 760
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1770,7 +1854,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetHashCode
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 724
+    startLine: 777
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1782,6 +1866,78 @@ items:
     content.vb: Public Overrides Function GetHashCode() As Integer
   overridden: System.Object.GetHashCode
   overload: CompassEx.Gua.GuaSubClass.GetHashCode*
+- uid: CompassEx.Gua.GuaSubClass.op_Equality(CompassEx.Gua.GuaSubClass,CompassEx.Gua.GuaSubClass)
+  commentId: M:CompassEx.Gua.GuaSubClass.op_Equality(CompassEx.Gua.GuaSubClass,CompassEx.Gua.GuaSubClass)
+  id: op_Equality(CompassEx.Gua.GuaSubClass,CompassEx.Gua.GuaSubClass)
+  parent: CompassEx.Gua.GuaSubClass
+  langs:
+  - csharp
+  - vb
+  name: operator ==(GuaSubClass, GuaSubClass)
+  nameWithType: GuaSubClass.operator ==(GuaSubClass, GuaSubClass)
+  fullName: CompassEx.Gua.GuaSubClass.operator ==(CompassEx.Gua.GuaSubClass, CompassEx.Gua.GuaSubClass)
+  type: Operator
+  source:
+    remote:
+      path: CompassEx/Gua/GuaSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: op_Equality
+    path: CompassEx/Gua/GuaSubClass.cs
+    startLine: 784
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  syntax:
+    content: public static bool operator ==(GuaSubClass left, GuaSubClass right)
+    parameters:
+    - id: left
+      type: CompassEx.Gua.GuaSubClass
+    - id: right
+      type: CompassEx.Gua.GuaSubClass
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As GuaSubClass, right As GuaSubClass) As Boolean
+  overload: CompassEx.Gua.GuaSubClass.op_Equality*
+  nameWithType.vb: GuaSubClass.=(GuaSubClass, GuaSubClass)
+  fullName.vb: CompassEx.Gua.GuaSubClass.=(CompassEx.Gua.GuaSubClass, CompassEx.Gua.GuaSubClass)
+  name.vb: =(GuaSubClass, GuaSubClass)
+- uid: CompassEx.Gua.GuaSubClass.op_Inequality(CompassEx.Gua.GuaSubClass,CompassEx.Gua.GuaSubClass)
+  commentId: M:CompassEx.Gua.GuaSubClass.op_Inequality(CompassEx.Gua.GuaSubClass,CompassEx.Gua.GuaSubClass)
+  id: op_Inequality(CompassEx.Gua.GuaSubClass,CompassEx.Gua.GuaSubClass)
+  parent: CompassEx.Gua.GuaSubClass
+  langs:
+  - csharp
+  - vb
+  name: operator !=(GuaSubClass, GuaSubClass)
+  nameWithType: GuaSubClass.operator !=(GuaSubClass, GuaSubClass)
+  fullName: CompassEx.Gua.GuaSubClass.operator !=(CompassEx.Gua.GuaSubClass, CompassEx.Gua.GuaSubClass)
+  type: Operator
+  source:
+    remote:
+      path: CompassEx/Gua/GuaSubClass.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: op_Inequality
+    path: CompassEx/Gua/GuaSubClass.cs
+    startLine: 790
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Gua
+  syntax:
+    content: public static bool operator !=(GuaSubClass left, GuaSubClass right)
+    parameters:
+    - id: left
+      type: CompassEx.Gua.GuaSubClass
+    - id: right
+      type: CompassEx.Gua.GuaSubClass
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As GuaSubClass, right As GuaSubClass) As Boolean
+  overload: CompassEx.Gua.GuaSubClass.op_Inequality*
+  nameWithType.vb: GuaSubClass.<>(GuaSubClass, GuaSubClass)
+  fullName.vb: CompassEx.Gua.GuaSubClass.<>(CompassEx.Gua.GuaSubClass, CompassEx.Gua.GuaSubClass)
+  name.vb: <>(GuaSubClass, GuaSubClass)
 references:
 - uid: CompassEx.Gua
   commentId: N:CompassEx.Gua
@@ -3022,7 +3178,7 @@ references:
   fullName: CompassEx.Gua.GuaSubClass.GetGuaSub
 - uid: CompassEx.Gua.GuaSubClass.GetAfterGuaSub*
   commentId: Overload:CompassEx.Gua.GuaSubClass.GetAfterGuaSub
-  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_GetAfterGuaSub_System_Int32_System_Boolean_
+  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_GetAfterGuaSub_System_String_System_Boolean_
   name: GetAfterGuaSub
   nameWithType: GuaSubClass.GetAfterGuaSub
   fullName: CompassEx.Gua.GuaSubClass.GetAfterGuaSub
@@ -3107,3 +3263,33 @@ references:
   name: GetHashCode
   nameWithType: GuaSubClass.GetHashCode
   fullName: CompassEx.Gua.GuaSubClass.GetHashCode
+- uid: CompassEx.Gua.GuaSubClass.op_Equality*
+  commentId: Overload:CompassEx.Gua.GuaSubClass.op_Equality
+  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_op_Equality_CompassEx_Gua_GuaSubClass_CompassEx_Gua_GuaSubClass_
+  name: operator ==
+  nameWithType: GuaSubClass.operator ==
+  fullName: CompassEx.Gua.GuaSubClass.operator ==
+  nameWithType.vb: GuaSubClass.=
+  fullName.vb: CompassEx.Gua.GuaSubClass.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: CompassEx.Gua.GuaSubClass.op_Equality*
+    name: ==
+    href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_op_Equality_CompassEx_Gua_GuaSubClass_CompassEx_Gua_GuaSubClass_
+- uid: CompassEx.Gua.GuaSubClass.op_Inequality*
+  commentId: Overload:CompassEx.Gua.GuaSubClass.op_Inequality
+  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_op_Inequality_CompassEx_Gua_GuaSubClass_CompassEx_Gua_GuaSubClass_
+  name: operator !=
+  nameWithType: GuaSubClass.operator !=
+  fullName: CompassEx.Gua.GuaSubClass.operator !=
+  nameWithType.vb: GuaSubClass.<>
+  fullName.vb: CompassEx.Gua.GuaSubClass.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: CompassEx.Gua.GuaSubClass.op_Inequality*
+    name: '!='
+    href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_op_Inequality_CompassEx_Gua_GuaSubClass_CompassEx_Gua_GuaSubClass_

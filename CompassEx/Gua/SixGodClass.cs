@@ -42,7 +42,7 @@ namespace CompassEx.Gua
         /// 获取当前爻位所配六神的字面名称（如“青龙”、“玄武”）。
         /// </summary>
         /// <value>一个 <see cref="string"/> 字符串，代表当前爻的神煞名称。</value>
-        public string Name { get; private set; }
+        public string? Name { get; private set; }
 
         /// <summary>
         /// 获取当前卦局中，六神发动的源头起首索引。
@@ -73,7 +73,7 @@ namespace CompassEx.Gua
         /// </summary>
         /// <param name="DaySkyName">输入的日天干单字名称（如“甲”、“戊”等）。</param>
         /// <returns>若成功匹配到合法的十天干，则返回包含 6 个爻位六神实体的原生数组；若名称非法则返回 <c>null</c>。</returns>
-        public static SixGodClass[] GetSixGod(string DaySkyName)
+        public static SixGodClass[]? GetSixGod(string DaySkyName)
         {
             int iPos = Array.IndexOf(SkyClass.SkyNames, DaySkyName);
             if (iPos == -1) return null;

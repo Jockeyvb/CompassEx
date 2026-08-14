@@ -264,6 +264,7 @@ namespace CompassEx.Gua
         /// <remarks>
         /// 内部通过当前单卦纳支开始的索引位置（<see cref="LocIndex"/>）作为参数，动态反哺出契合数理的纳甲天干。
         /// </remarks>
+        [JsonIgnore]
         public SkyClass Sky { get { return new SkyClass(this.SkyName); } }
 
         /// <summary>
@@ -288,7 +289,7 @@ namespace CompassEx.Gua
         /// 获取当前经卦在文王后天八卦及洛书紫白九星体例中所映射的标准颜色文字属性（如：“白”、“黑”、“紫”）。
         /// </summary>
         /// <value>代表九星色彩名录的单字名称。</value>
-        public String AfterGuaSubColor { get; private set; } //后天八卦的颜色属性
+        public String AfterGuaSubColor { get { return AfterGuaSubColors[this.AfterGuaSubIndex]; } } //后天八卦的颜色属性
 
         /// <summary>
         /// 计算并获取当前单卦对应的文王后天八卦洛书九宫绝对数（整型：1 至 9）。
@@ -300,6 +301,7 @@ namespace CompassEx.Gua
         /// 计算并获取当前单卦对应的伏羲先天八卦绝对数（整型：1 至 8）。
         /// </summary>
         /// <value>整型数值。通过在 <see cref="BeforeGuaSubNumerics"/> 中反查中文数（如“一”）的索引，动态加 1 转换得出其先天绝对数（乾一至坤八）。</value>
+        [JsonIgnore]
         public int BeforeQuanity { get { return BeforeGuaSubNumerics.IndexOf(this.BeforeGuaSubCNQuantity); } }//先天八卦数
 
         /// <summary>
@@ -324,6 +326,7 @@ namespace CompassEx.Gua
         /// 获取当前单卦在先天卦序中对应的中文数字卦数名称（如：“一”、“二”、“三”）。
         /// </summary>
         /// <value>返回源自静态清册 <see cref="BeforeGuaSubNumerics"/> 的一字中文数字。</value>
+        [JsonIgnore]
         public string BeforeGuaSubCNQuantity { get { return BeforeGuaSubNumerics[this.BeforeGuaSubIndex]; } }
 
         /// <summary>
@@ -351,6 +354,7 @@ namespace CompassEx.Gua
         /// <remarks>
         /// 内部通过 <see cref="BeforeGuaSubIndex"/> 先天索引，动态前往静态图形库 <see cref="Symbols"/> 中进行高精度内容提取。
         /// </remarks>
+        [JsonIgnore]
         public string Symbol { get { return Symbols[this.BeforeGuaSubIndex]; } }
 
         /// <summary>
@@ -452,7 +456,7 @@ namespace CompassEx.Gua
             this.Name = BeforeGuaSubNames[iBeforGuaIndex];//卦名
 
             int iPos = Array.IndexOf(AfterGuaSubNames, this.Name);//找到后天位置
-            this.AfterGuaSubColor = AfterGuaSubColors[iPos];//获得后天颜色
+                                                                  // this.AfterGuaSubColor = AfterGuaSubColors[iPos];//获得后天颜色
 
             this.FiveAttr = GetFiveAttrName(this.Name);
             //this.LoadLocs();
@@ -565,7 +569,7 @@ namespace CompassEx.Gua
         /// <param name="iYao3"></param>
         /// <param name="IsDownGua">是否为下卦</param>
         /// <returns></returns>
-        public static GuaSubClass GetGuaSub(int iYao1, int iYao2, int iYao3, bool IsDownGua)
+        public static GuaSubClass? GetGuaSub(int iYao1, int iYao2, int iYao3, bool IsDownGua)
         {
             GuaSubClass gsc;
             for (int i = 0; i < 8; i++)
@@ -583,16 +587,54 @@ namespace CompassEx.Gua
             return null;//找不到
         }
 
+        /// <summary>
+        /// 根据后天八卦索引获得三爻卦类（兼容五黄无卦）
+        /// </summary>
+        /// <param name="sn"></param>
+        /// <param name="IsDownGua"></param>
+        /// <returns></returns>
+        public static GuaSubClass GetAfterGuaSub(string sn, bool IsDownGua = true)
+        {
+
+            GuaSubClass? gsc = null;
+            if (sn == "黄")
+            {//五黄（无卦）
+                gsc = new GuaSubClass("乾");
+                gsc.Name = "黄";
+
+            }
+            else
+            {
+                gsc = GetGuaSub(sn, IsDownGua);
+            }
+
+            return gsc;
+        }
+
 
         /// <summary>
-        /// 根据后天八卦索引获得三爻卦类
+        /// 根据后天八卦索引获得三爻卦类（兼容五黄无卦）
         /// </summary>
         /// <param name="GuaSubIndex"></param>
         /// <param name="IsDownGua">是否为下卦</param>
         /// <returns></returns>
         public static GuaSubClass GetAfterGuaSub(int GuaSubIndex, bool IsDownGua = true)
         {
-            return GuaSubClass.GetGuaSub(AfterGuaSubNames[GuaSubIndex], IsDownGua);
+            //  return GuaSubClass.GetGuaSub(AfterGuaSubNames[GuaSubIndex], IsDownGua);
+            string sn = AfterGuaSubNames[GuaSubIndex];
+            GuaSubClass? gsc = null;
+            if (sn == "黄")
+            {//五黄（无卦）
+                gsc = new GuaSubClass("乾");
+                gsc.Name = "黄";
+
+            }
+            else
+            {
+                gsc = GetGuaSub(sn, IsDownGua);
+            }
+
+            return gsc;
         }
 
 
@@ -615,7 +657,7 @@ namespace CompassEx.Gua
         /// <param name="sAttrOrGuaName">属性名或卦名</param>
         /// <param name="IsDownGua">是否为下卦(内卦)</param>
         /// <returns></returns> 
-        public static GuaSubClass GetGuaSub(string sAttrOrGuaName, bool IsDownGua = true)
+        public static GuaSubClass? GetGuaSub(string sAttrOrGuaName, bool IsDownGua = true)
         {
             int iPos = Array.IndexOf(BeforeGuaSubAttrNames, sAttrOrGuaName);
 
@@ -688,7 +730,7 @@ namespace CompassEx.Gua
             gsc.Name = BeforeGuaSubNames[iAttrIndex];//卦名
 
             int iPos = Array.IndexOf(AfterGuaSubNames, gsc.Name);//找到后天位置
-            gsc.AfterGuaSubColor = AfterGuaSubColors[iPos];//获得后天颜色
+                                                                 //  gsc.AfterGuaSubColor = AfterGuaSubColors[iPos];//获得后天颜色
 
             gsc.FiveAttr = GetFiveAttrName(gsc.Name);
             gsc.LoadLocs();
@@ -703,7 +745,7 @@ namespace CompassEx.Gua
         /// </summary>
         /// <param name="sGuaSubName"></param>
         /// <returns></returns>
-        public static FiveAttr GetFiveAttrName(String sGuaSubName)
+        public static FiveAttr? GetFiveAttrName(String sGuaSubName)
         {
             if (sGuaSubName.Equals("乾") || sGuaSubName.Equals("兑")) return new FiveAttr("金");
             if (sGuaSubName.Equals("坤") || sGuaSubName.Equals("艮")) return new FiveAttr("土");
@@ -714,24 +756,45 @@ namespace CompassEx.Gua
             return null;
         }
 
-
+        #region 显式实现对比、运算符和Key 方法
+        // 1. 一般的 Equals(object)，內部可以轉型並利用顯式介面來比對
         public override bool Equals(object obj)
         {
-            if (obj == null) return false;
-            // 强制转换为接口类型去调用，这样就能精准找到你下面写的方法，打破死循环！
-            return ((IEquatable<GuaSubClass>)this).Equals(obj as GuaSubClass);
+            return Equals(obj as GuaSubClass);
         }
-        // 新增哈希方法，参与相等判断的字段全部组合计算
+
+        // 2. 顯式實作 IEquatable<LocClass>.Equals
+        bool IEquatable<GuaSubClass>.Equals(GuaSubClass other)
+        {
+            // 檢查是否為 null
+            if (other is null) return false;
+            if (ReferenceEquals(this, other)) return true;
+
+            // 使用 string 的比較方式（考慮大小寫或 null 的防禦）
+            return string.Equals(this.Name, other.Name, StringComparison.Ordinal);
+        }
+
+        // 3. 務必配合 Name 計算 HashCode
         public override int GetHashCode()
         {
+            // 若 Name 可能為 null，可以用 HashCode.Combine 或字串自身的 GetHashCode
             return Name != null ? Name.GetHashCode() : 0;
         }
 
-        bool IEquatable<GuaSubClass>.Equals(GuaSubClass other)
+        // 4. (選用) 重載 == 與 != 運算子，建議透過介面轉型來呼叫
+        public static bool operator ==(GuaSubClass left, GuaSubClass right)
         {
-            if (other == null) return false;
-            return other.Name == this.Name;
+            if (left is null) return right is null;
+            return ((IEquatable<GuaSubClass>)left).Equals(right);
         }
+
+        public static bool operator !=(GuaSubClass left, GuaSubClass right)
+        {
+            return !(left == right);
+        }
+
+
+        #endregion
         #endregion 
     }
 }

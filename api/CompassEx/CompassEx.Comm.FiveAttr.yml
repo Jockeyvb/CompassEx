@@ -10,16 +10,20 @@ items:
   - CompassEx.Comm.FiveAttr.BothConflict(System.String,System.String)
   - CompassEx.Comm.FiveAttr.BothHarm(System.String,System.String)
   - CompassEx.Comm.FiveAttr.BothTorture(System.String,System.String)
+  - CompassEx.Comm.FiveAttr.Equals(System.Object)
   - CompassEx.Comm.FiveAttr.FiveAttrNames
   - CompassEx.Comm.FiveAttr.GetBothAttrRule(System.Int32,System.Int32)
   - CompassEx.Comm.FiveAttr.GetBothAttrRule(System.String,System.String)
   - CompassEx.Comm.FiveAttr.GetBothLocRule(System.Int32,System.Int32)
   - CompassEx.Comm.FiveAttr.GetBothLocRule(System.String,System.String)
+  - CompassEx.Comm.FiveAttr.GetHashCode
   - CompassEx.Comm.FiveAttr.Index
   - CompassEx.Comm.FiveAttr.LocCombine(System.String,System.String)
   - CompassEx.Comm.FiveAttr.Name
   - CompassEx.Comm.FiveAttr.SkyCombine(System.String,System.String)
   - CompassEx.Comm.FiveAttr.ToString
+  - CompassEx.Comm.FiveAttr.op_Equality(CompassEx.Comm.FiveAttr,CompassEx.Comm.FiveAttr)
+  - CompassEx.Comm.FiveAttr.op_Inequality(CompassEx.Comm.FiveAttr,CompassEx.Comm.FiveAttr)
   langs:
   - csharp
   - vb
@@ -34,21 +38,21 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FiveAttr
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 51
+    startLine: 52
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
   summary: 五行类
   example: []
   syntax:
-    content: public class FiveAttr
-    content.vb: Public Class FiveAttr
+    content: 'public class FiveAttr : IEquatable<FiveAttr>'
+    content.vb: Public Class FiveAttr Implements IEquatable(Of FiveAttr)
   inheritance:
   - System.Object
+  implements:
+  - System.IEquatable{CompassEx.Comm.FiveAttr}
   inheritedMembers:
-  - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
@@ -72,7 +76,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FiveAttrNames
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 59
+    startLine: 60
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -101,7 +105,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Name
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 64
+    startLine: 65
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -132,7 +136,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Index
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 69
+    startLine: 70
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -163,7 +167,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 76
+    startLine: 77
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -202,7 +206,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 87
+    startLine: 88
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -241,7 +245,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBothLocRule
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 100
+    startLine: 101
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -282,7 +286,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToString
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 116
+    startLine: 117
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -314,7 +318,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBothLocRule
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 132
+    startLine: 133
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -355,7 +359,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBothAttrRule
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 202
+    startLine: 203
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -399,7 +403,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBothAttrRule
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 218
+    startLine: 219
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -443,7 +447,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BothHarm
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 311
+    startLine: 312
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -490,7 +494,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BothTorture
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 370
+    startLine: 371
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -537,7 +541,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BothConflict
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 435
+    startLine: 436
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -578,7 +582,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LocCombine
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 456
+    startLine: 457
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -625,7 +629,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SkyCombine
     path: CompassEx/Comm/FiveAttr.cs
-    startLine: 513
+    startLine: 514
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -654,6 +658,144 @@ items:
   nameWithType.vb: FiveAttr.SkyCombine(String, String)
   fullName.vb: CompassEx.Comm.FiveAttr.SkyCombine(String, String)
   name.vb: SkyCombine(String, String)
+- uid: CompassEx.Comm.FiveAttr.Equals(System.Object)
+  commentId: M:CompassEx.Comm.FiveAttr.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: Equals(object)
+  nameWithType: FiveAttr.Equals(object)
+  fullName: CompassEx.Comm.FiveAttr.Equals(object)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: Equals
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 557
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: CompassEx.Comm.FiveAttr.Equals*
+  nameWithType.vb: FiveAttr.Equals(Object)
+  fullName.vb: CompassEx.Comm.FiveAttr.Equals(Object)
+  name.vb: Equals(Object)
+- uid: CompassEx.Comm.FiveAttr.GetHashCode
+  commentId: M:CompassEx.Comm.FiveAttr.GetHashCode
+  id: GetHashCode
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: FiveAttr.GetHashCode()
+  fullName: CompassEx.Comm.FiveAttr.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: GetHashCode
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 574
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.Object.GetHashCode
+  overload: CompassEx.Comm.FiveAttr.GetHashCode*
+- uid: CompassEx.Comm.FiveAttr.op_Equality(CompassEx.Comm.FiveAttr,CompassEx.Comm.FiveAttr)
+  commentId: M:CompassEx.Comm.FiveAttr.op_Equality(CompassEx.Comm.FiveAttr,CompassEx.Comm.FiveAttr)
+  id: op_Equality(CompassEx.Comm.FiveAttr,CompassEx.Comm.FiveAttr)
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: operator ==(FiveAttr, FiveAttr)
+  nameWithType: FiveAttr.operator ==(FiveAttr, FiveAttr)
+  fullName: CompassEx.Comm.FiveAttr.operator ==(CompassEx.Comm.FiveAttr, CompassEx.Comm.FiveAttr)
+  type: Operator
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: op_Equality
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 581
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  syntax:
+    content: public static bool operator ==(FiveAttr left, FiveAttr right)
+    parameters:
+    - id: left
+      type: CompassEx.Comm.FiveAttr
+    - id: right
+      type: CompassEx.Comm.FiveAttr
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As FiveAttr, right As FiveAttr) As Boolean
+  overload: CompassEx.Comm.FiveAttr.op_Equality*
+  nameWithType.vb: FiveAttr.=(FiveAttr, FiveAttr)
+  fullName.vb: CompassEx.Comm.FiveAttr.=(CompassEx.Comm.FiveAttr, CompassEx.Comm.FiveAttr)
+  name.vb: =(FiveAttr, FiveAttr)
+- uid: CompassEx.Comm.FiveAttr.op_Inequality(CompassEx.Comm.FiveAttr,CompassEx.Comm.FiveAttr)
+  commentId: M:CompassEx.Comm.FiveAttr.op_Inequality(CompassEx.Comm.FiveAttr,CompassEx.Comm.FiveAttr)
+  id: op_Inequality(CompassEx.Comm.FiveAttr,CompassEx.Comm.FiveAttr)
+  parent: CompassEx.Comm.FiveAttr
+  langs:
+  - csharp
+  - vb
+  name: operator !=(FiveAttr, FiveAttr)
+  nameWithType: FiveAttr.operator !=(FiveAttr, FiveAttr)
+  fullName: CompassEx.Comm.FiveAttr.operator !=(CompassEx.Comm.FiveAttr, CompassEx.Comm.FiveAttr)
+  type: Operator
+  source:
+    remote:
+      path: CompassEx/Comm/FiveAttr.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: op_Inequality
+    path: CompassEx/Comm/FiveAttr.cs
+    startLine: 587
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  syntax:
+    content: public static bool operator !=(FiveAttr left, FiveAttr right)
+    parameters:
+    - id: left
+      type: CompassEx.Comm.FiveAttr
+    - id: right
+      type: CompassEx.Comm.FiveAttr
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As FiveAttr, right As FiveAttr) As Boolean
+  overload: CompassEx.Comm.FiveAttr.op_Inequality*
+  nameWithType.vb: FiveAttr.<>(FiveAttr, FiveAttr)
+  fullName.vb: CompassEx.Comm.FiveAttr.<>(CompassEx.Comm.FiveAttr, CompassEx.Comm.FiveAttr)
+  name.vb: <>(FiveAttr, FiveAttr)
 references:
 - uid: CompassEx.Comm
   commentId: N:CompassEx.Comm
@@ -688,38 +830,38 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  name: Equals(object)
-  nameWithType: object.Equals(object)
-  fullName: object.Equals(object)
-  nameWithType.vb: Object.Equals(Object)
-  fullName.vb: Object.Equals(Object)
-  name.vb: Equals(Object)
+- uid: System.IEquatable{CompassEx.Comm.FiveAttr}
+  commentId: T:System.IEquatable{CompassEx.Comm.FiveAttr}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<FiveAttr>
+  nameWithType: IEquatable<FiveAttr>
+  fullName: System.IEquatable<CompassEx.Comm.FiveAttr>
+  nameWithType.vb: IEquatable(Of FiveAttr)
+  fullName.vb: System.IEquatable(Of CompassEx.Comm.FiveAttr)
+  name.vb: IEquatable(Of FiveAttr)
   spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
+  - uid: System.IEquatable`1
+    name: IEquatable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: CompassEx.Comm.FiveAttr
+    name: FiveAttr
+    href: CompassEx.Comm.FiveAttr.html
+  - name: '>'
   spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
+  - uid: System.IEquatable`1
+    name: IEquatable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
   - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: Of
+  - name: " "
+  - uid: CompassEx.Comm.FiveAttr
+    name: FiveAttr
+    href: CompassEx.Comm.FiveAttr.html
   - name: )
 - uid: System.Object.Equals(System.Object,System.Object)
   commentId: M:System.Object.Equals(System.Object,System.Object)
@@ -765,30 +907,6 @@ references:
     name: Object
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
   - name: )
 - uid: System.Object.GetType
   commentId: M:System.Object.GetType
@@ -943,6 +1061,34 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
   commentId: M:CompassEx.Comm.Comm.ApplyBaseProperties``2(``0,``1)
   href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ApplyBaseProperties__2___0___1_
@@ -1151,3 +1297,120 @@ references:
   name: SkyCombine
   nameWithType: FiveAttr.SkyCombine
   fullName: CompassEx.Comm.FiveAttr.SkyCombine
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: CompassEx.Comm.FiveAttr.Equals*
+  commentId: Overload:CompassEx.Comm.FiveAttr.Equals
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_Equals_System_Object_
+  name: Equals
+  nameWithType: FiveAttr.Equals
+  fullName: CompassEx.Comm.FiveAttr.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: CompassEx.Comm.FiveAttr.GetHashCode*
+  commentId: Overload:CompassEx.Comm.FiveAttr.GetHashCode
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_GetHashCode
+  name: GetHashCode
+  nameWithType: FiveAttr.GetHashCode
+  fullName: CompassEx.Comm.FiveAttr.GetHashCode
+- uid: CompassEx.Comm.FiveAttr.op_Equality*
+  commentId: Overload:CompassEx.Comm.FiveAttr.op_Equality
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_op_Equality_CompassEx_Comm_FiveAttr_CompassEx_Comm_FiveAttr_
+  name: operator ==
+  nameWithType: FiveAttr.operator ==
+  fullName: CompassEx.Comm.FiveAttr.operator ==
+  nameWithType.vb: FiveAttr.=
+  fullName.vb: CompassEx.Comm.FiveAttr.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: CompassEx.Comm.FiveAttr.op_Equality*
+    name: ==
+    href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_op_Equality_CompassEx_Comm_FiveAttr_CompassEx_Comm_FiveAttr_
+- uid: CompassEx.Comm.FiveAttr
+  commentId: T:CompassEx.Comm.FiveAttr
+  parent: CompassEx.Comm
+  href: CompassEx.Comm.FiveAttr.html
+  name: FiveAttr
+  nameWithType: FiveAttr
+  fullName: CompassEx.Comm.FiveAttr
+- uid: CompassEx.Comm.FiveAttr.op_Inequality*
+  commentId: Overload:CompassEx.Comm.FiveAttr.op_Inequality
+  href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_op_Inequality_CompassEx_Comm_FiveAttr_CompassEx_Comm_FiveAttr_
+  name: operator !=
+  nameWithType: FiveAttr.operator !=
+  fullName: CompassEx.Comm.FiveAttr.operator !=
+  nameWithType.vb: FiveAttr.<>
+  fullName.vb: CompassEx.Comm.FiveAttr.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: CompassEx.Comm.FiveAttr.op_Inequality*
+    name: '!='
+    href: CompassEx.Comm.FiveAttr.html#CompassEx_Comm_FiveAttr_op_Inequality_CompassEx_Comm_FiveAttr_CompassEx_Comm_FiveAttr_

@@ -492,7 +492,7 @@ CompassEx 类
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CHill Get24Hill()</code></pre>
+    <pre><code class="lang-csharp hljs">public CHill? Get24Hill()</code></pre>
   </div>
 
 
@@ -515,30 +515,33 @@ CompassEx 类
 
   <a id="CompassEx_CompassEx_Get24HillDegree_" data-uid="CompassEx.CompassEx.Get24HillDegree*"></a>
 
-  <h3 id="CompassEx_CompassEx_Get24HillDegree_System_String_" data-uid="CompassEx.CompassEx.Get24HillDegree(System.String)">
-  Get24HillDegree(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L190"><i class="bi bi-code-slash"></i></a>
+  <h3 id="CompassEx_CompassEx_Get24HillDegree_System_String_CompassEx_HillType_" data-uid="CompassEx.CompassEx.Get24HillDegree(System.String,CompassEx.HillType)">
+  Get24HillDegree(string, HillType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L199"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>根据指定的山名，计算并获取该山在二十四山罗盘中所占据的绝对度数范围。</p>
+  <div class="markdown level1 summary"><p>根据指定的山名与盘层类型，计算并获取该山在二十四山罗盘中所占据的绝对度数范围。</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static CompassRangEX Get24HillDegree(string HillName)</code></pre>
+    <pre><code class="lang-csharp hljs">public static CompassRangEX Get24HillDegree(string HillName, HillType ht = HillType.CHill)</code></pre>
   </div>
 
   <h4 class="section">参数</h4>
   <dl class="parameters">
     <dt><code>HillName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>指定的山名（如“壬”、“子”、“癸”等）。</p>
+    <dd><p>指定的二十四山名称（如“壬”、“子”、“癸”等）。</p>
+</dd>
+    <dt><code>ht</code> <a class="xref" href="CompassEx.HillType.html">HillType</a></dt>
+    <dd><p>指定的罗盘盘层类型。默认值为 <a class="xref" href="CompassEx.HillType.html#CompassEx_HillType_CHill">CHill</a>（地盘正针）。</p>
 </dd>
   </dl>
 
   <h4 class="section">返回</h4>
   <dl class="parameters">
     <dt><a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a></dt>
-    <dd><p>返回表示该山起始与结束角度的 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 范围对象。</p>
+    <dd><p>返回表示该山头起始与结束角度的 <a class="xref" href="CompassEx.Comm.CompassRangEX.html">CompassRangEX</a> 范围对象。</p>
 </dd>
   </dl>
 
@@ -548,9 +551,18 @@ CompassEx 类
 
 
 
-  <h4 class="section" id="CompassEx_CompassEx_Get24HillDegree_System_String__remarks">备注</h4>
-  <div class="markdown level1 remarks"><p><b>推演原理：</b></p>
-<ul><li>二十四山以<b>壬山</b>为度数起点，初始绝对方位设为 <code>337.5</code> 度。</li><li>根据该山名在列表中的索引位置，按每山 <code>15</code> 度顺时针累加。</li><li>当计算出的起始或结束度数超过 <code>360</code> 度时，系统会自动执行闭环修正（扣除 360 度）以限制在 <code>0 ~ 360</code> 度正常范围内。</li></ul>
+  <h4 class="section" id="CompassEx_CompassEx_Get24HillDegree_System_String_CompassEx_HillType__remarks">备注</h4>
+  <div class="markdown level1 remarks"><p><b>一、 三盘几何错位推演原理：</b></p>
+<p>
+二十四山基准（地盘正针）以西北方（壬山）为绝对度数起算点，初始角度设为 <code>337.5</code> 度。
+算法根据盘层类型（<code class="paramref">ht</code>）自动注入三合派经典的缝针与中针偏移：
+</p>
+<ul><li><a class="xref" href="CompassEx.HillType.html#CompassEx_HillType_SHill">SHill</a>（天盘缝针）：整体顺时针偏转 <code>7.5</code> 度。</li><li><a class="xref" href="CompassEx.HillType.html#CompassEx_HillType_RHill">RHill</a>（人盘中针）：整体逆时针偏转 <code>7.5</code> 度。</li></ul>
+<p><b>二、 ⏳ 严谨的一阶圆周扣减验证：</b></p>
+<p>
+基于罗盘圆周空间的对称性设计，即使在最大索引（23）与天盘正向偏移的极端叠加组合下，计算出的总理论度数上限也绝不会超过 <code>720</code> 度（即严格控制在双圈循环以内）。
+因此，方法采用的一阶条件扣减逻辑（<code>-= 360</code>）在数学上属于最优解，扣除一次整圈后<b>绝对不会超过 360 度</b>，能以极高执行效能将各盘山头完美收拢在 <code>0 ~ 360</code> 度的法定几何范围内。
+</p>
 </div>
 
 
@@ -560,7 +572,7 @@ CompassEx 类
 
   <h3 id="CompassEx_CompassEx_GetAfterGuaSub" data-uid="CompassEx.CompassEx.GetAfterGuaSub">
   GetAfterGuaSub()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L265"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L290"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据当前罗盘指向的度数，计算并获取对应的后天八卦单卦对象。</p>
@@ -568,7 +580,7 @@ CompassEx 类
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GuaSubClass GetAfterGuaSub()</code></pre>
+    <pre><code class="lang-csharp hljs">public GuaSubClass? GetAfterGuaSub()</code></pre>
   </div>
 
 
@@ -593,7 +605,7 @@ CompassEx 类
 
   <h3 id="CompassEx_CompassEx_GetAfterGuaSubDegree_CompassEx_Gua_GuaSubClass_" data-uid="CompassEx.CompassEx.GetAfterGuaSubDegree(CompassEx.Gua.GuaSubClass)">
   GetAfterGuaSubDegree(GuaSubClass)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L284"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L309"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取指定后天八卦对象在罗盘上对应的度数范围对象。</p>
@@ -632,7 +644,7 @@ CompassEx 类
 
   <h3 id="CompassEx_CompassEx_GetAfterGuaSubDegree_System_String_" data-uid="CompassEx.CompassEx.GetAfterGuaSubDegree(System.String)">
   GetAfterGuaSubDegree(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L302"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L327"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据指定的后天八卦卦名，计算并获取其在罗盘上所占据的绝对度数范围。</p>
@@ -675,7 +687,7 @@ CompassEx 类
 
   <h3 id="CompassEx_CompassEx_GetBeforGuaSubDegree_CompassEx_Gua_GuaSubClass_" data-uid="CompassEx.CompassEx.GetBeforGuaSubDegree(CompassEx.Gua.GuaSubClass)">
   GetBeforGuaSubDegree(GuaSubClass)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L228"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L253"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取指定先天八卦对象在罗盘上对应的度数范围对象。</p>
@@ -714,7 +726,7 @@ CompassEx 类
 
   <h3 id="CompassEx_CompassEx_GetBeforGuaSubDegree_System_String_" data-uid="CompassEx.CompassEx.GetBeforGuaSubDegree(System.String)">
   GetBeforGuaSubDegree(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L246"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L271"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据指定的先天八卦卦名，计算并获取其在罗盘上所占据的绝对度数范围。</p>
@@ -757,7 +769,7 @@ CompassEx 类
 
   <h3 id="CompassEx_CompassEx_GetBeforeGuaSub" data-uid="CompassEx.CompassEx.GetBeforeGuaSub">
   GetBeforeGuaSub()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L209"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/CompassEx.cs/#L234"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据当前罗盘指向的度数，计算并获取对应的先天八卦单卦对象。</p>
@@ -765,7 +777,7 @@ CompassEx 类
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GuaSubClass GetBeforeGuaSub()</code></pre>
+    <pre><code class="lang-csharp hljs">public GuaSubClass? GetBeforeGuaSub()</code></pre>
   </div>
 
 

@@ -23,7 +23,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: PlaceYaosJFNaJiaType
     path: CompassEx/Comm/Defined.cs
-    startLine: 27
+    startLine: 31
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -63,7 +63,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: PlaceYao
     path: CompassEx/Comm/Defined.cs
-    startLine: 43
+    startLine: 47
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -99,7 +99,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SixRelative
     path: CompassEx/Comm/Defined.cs
-    startLine: 52
+    startLine: 56
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -134,7 +134,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SkyLoc
     path: CompassEx/Comm/Defined.cs
-    startLine: 61
+    startLine: 65
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -169,7 +169,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: HideRelative
     path: CompassEx/Comm/Defined.cs
-    startLine: 77
+    startLine: 81
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm

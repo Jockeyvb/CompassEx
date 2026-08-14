@@ -43,7 +43,7 @@ items:
   - CompassEx.CompassEx.Degree
   - CompassEx.CompassEx.AfterGuaSub
   - CompassEx.CompassEx.Get24Hill
-  - CompassEx.CompassEx.Get24HillDegree(System.String)
+  - CompassEx.CompassEx.Get24HillDegree(System.String,CompassEx.HillType)
   - CompassEx.CompassEx.GetBeforeGuaSub
   - CompassEx.CompassEx.GetBeforGuaSubDegree(CompassEx.Gua.GuaSubClass)
   - CompassEx.CompassEx.GetBeforGuaSubDegree(System.String)
@@ -195,36 +195,46 @@ references:
     href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24Hill
   - name: (
   - name: )
-- uid: CompassEx.CompassEx.Get24HillDegree(System.String)
-  commentId: M:CompassEx.CompassEx.Get24HillDegree(System.String)
+- uid: CompassEx.CompassEx.Get24HillDegree(System.String,CompassEx.HillType)
+  commentId: M:CompassEx.CompassEx.Get24HillDegree(System.String,CompassEx.HillType)
   parent: CompassEx.CompassEx
   isExternal: true
-  href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_
-  name: Get24HillDegree(string)
-  nameWithType: CompassEx.Get24HillDegree(string)
-  fullName: CompassEx.CompassEx.Get24HillDegree(string)
-  nameWithType.vb: CompassEx.Get24HillDegree(String)
-  fullName.vb: CompassEx.CompassEx.Get24HillDegree(String)
-  name.vb: Get24HillDegree(String)
+  href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_CompassEx_HillType_
+  name: Get24HillDegree(string, HillType)
+  nameWithType: CompassEx.Get24HillDegree(string, HillType)
+  fullName: CompassEx.CompassEx.Get24HillDegree(string, CompassEx.HillType)
+  nameWithType.vb: CompassEx.Get24HillDegree(String, HillType)
+  fullName.vb: CompassEx.CompassEx.Get24HillDegree(String, CompassEx.HillType)
+  name.vb: Get24HillDegree(String, HillType)
   spec.csharp:
-  - uid: CompassEx.CompassEx.Get24HillDegree(System.String)
+  - uid: CompassEx.CompassEx.Get24HillDegree(System.String,CompassEx.HillType)
     name: Get24HillDegree
-    href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_CompassEx_HillType_
   - name: (
   - uid: System.String
     name: string
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: CompassEx.HillType
+    name: HillType
+    href: CompassEx.HillType.html
   - name: )
   spec.vb:
-  - uid: CompassEx.CompassEx.Get24HillDegree(System.String)
+  - uid: CompassEx.CompassEx.Get24HillDegree(System.String,CompassEx.HillType)
     name: Get24HillDegree
-    href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_
+    href: CompassEx.CompassEx.html#CompassEx_CompassEx_Get24HillDegree_System_String_CompassEx_HillType_
   - name: (
   - uid: System.String
     name: String
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: CompassEx.HillType
+    name: HillType
+    href: CompassEx.HillType.html
   - name: )
 - uid: CompassEx.CompassEx.GetBeforeGuaSub
   commentId: M:CompassEx.CompassEx.GetBeforeGuaSub

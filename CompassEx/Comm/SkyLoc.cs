@@ -24,9 +24,35 @@ namespace CompassEx.Comm
     /// <remarks>
     /// 本类作为干支历法推排的核心单元，通过将一个独立的天干实例（<see cref="SkyClass"/>）与一个独立的地支实例（<see cref="LocClass"/>）进行复合封装，提供了干支合称输出、跨类索引校验以及干支对象的动态初始化功能。
     /// </remarks>
-    public class SkyLoc
+    public class SkyLoc : IEquatable<SkyLoc>
     {
         #region 属性
+
+        /// <summary>
+        /// 60甲子
+        /// </summary>
+        public static SkyLoc[] SkyLoc60
+        {
+            get
+            {
+                if (field == null) field = Get60SkyLocs();
+
+                return field;
+
+            }
+        } = default!;
+
+
+        public static string[] SkyLoc60Name
+        {
+            get
+            {
+                if (field == null) field = Get60SkyLocNames();
+
+                return field;
+
+            }
+        } = default!;
 
         /// <summary>
         /// 获取当前天干地支组合的完整字面名称（如“甲子”、“丙寅”等）。
@@ -34,7 +60,7 @@ namespace CompassEx.Comm
         /// <value>
         /// 一个由两个汉字组成的 <see cref="string"/> 字符串，动态拼接自 <see cref="SkyClass.Name"/> 与 <see cref="LocClass.Name"/>。
         /// </value>
-        public string SkyLocName { get { return Sky.Name + Loc.Name; } }
+        public string Name { get { return Sky.Name + Loc.Name; } }
 
         /// <summary>
         /// 获取当前干支组合中的天干实例对象。
@@ -97,6 +123,114 @@ namespace CompassEx.Comm
         #endregion
 
         #region 方法
+        /// <summary>
+        /// 根据给定的年份干支（五虎遁月法），推算该月的天干地支。
+        /// </summary>
+        /// <remarks>
+        /// 五虎遁口诀：“甲己之年丙作首，乙庚之岁戊为头，丙辛必定寻庚上，丁壬壬位顺行流，戊癸何方发，甲寅上好求。”
+        /// 该方法根据年干或月干的对应关系，结合地支位置计算出正确的月干，并组合成完整的干支。
+        /// </remarks>
+        /// <returns>返回推算后的月份完整天干地支对应的 <see cref="SkyLoc"/> 对象。</returns>
+        /// <summary>
+        /// 根据给定的年份干支（五虎遁月法），推算该月的天干地支。
+        /// </summary>
+        /// <param name="YearS">年份的天干对象（<see cref="SkyClass"/>），用于获取当前年份的天干名称。</param>
+        /// <param name="MonthL">月份的地支对象（<see cref="LocClass"/>），用于获取当前月份的地支名称。</param>
+        /// <returns>返回推算后的月份完整天干地支对应的 <see cref="SkyLoc"/> 对象。</returns>
+        public static SkyLoc FiveTiger(SkyClass YearS, LocClass MonthL)
+        {
+            int ilIndex = 0, isIndex = 0;
+            string sName = "";
+            string sSkyName = YearS.Name;
+            string sMonthLocName = MonthL.Name;
+            ilIndex = Array.IndexOf(LocClass.LocNames, sMonthLocName);//获得地支所在的位置
+
+            isIndex = Array.IndexOf(SkyClass.SkyNames, sSkyName);//获得第一个月的天干位置
+            ilIndex -= 2;//因为一月从寅起所以要减回2就索引位置
+            if (ilIndex == -1) ilIndex = +11; else if (ilIndex == -2) ilIndex = +10;//这里分别为丑和子的索引指定
+            string sSky = "";
+            int iIndex = isIndex;
+            if (isIndex > 4) iIndex = isIndex - 5; //根据规则如果日天干大于4，则减回5，甲和己都起甲，己的排第5（从0开始)则以甲为标准
+            iIndex = iIndex * 2 + 2 + ilIndex;
+            iIndex = iIndex % 10;
+
+            sSky = SkyClass.SkyNames[iIndex];
+            sName = sSky + sMonthLocName;
+            return new SkyLoc(sName);
+        }
+        /// <summary>
+        /// 根据日的天干地支与指定的小时数（五鼠遁时法），推算该时辰的天干地支。
+        /// </summary>
+        /// <remarks>
+        /// 五鼠遁口诀：“甲己还加甲，乙庚丙作初，丙辛从戊起，丁壬庚子居，戊癸何方发，壬子是真途。”
+        /// 此重载方法直接接收 <see cref="SkyLoc"/> 对象。
+        /// </remarks>
+        /// <param name="DaySL">包含日的天干地支信息的 <see cref="SkyLoc"/> 对象。</param>
+        /// <param name="Hour">当前的小时数（0-23之间的整数），用于判断对应的时辰（如：1点为丑时）。</param>
+        /// <returns>返回推算后的时辰完整天干地支对应的 <see cref="SkyLoc"/> 对象。</returns>
+        public static SkyLoc FiveMouse(SkyLoc DaySL, int Hour)
+        {
+            return FiveMouse(DaySL.Name, Hour);
+        }
+
+        /// <summary>
+        /// 根据日的天干地支字符串与指定的小时数（五鼠遁时法），推算该时辰的天干地支。
+        /// </summary>
+        /// <remarks>
+        /// 五鼠遁口诀：“甲己还加甲，乙庚丙作初，丙辛从戊起，丁壬庚子居，戊癸何方发，壬子是真途。”
+        /// 此方法通过解析日干支字符串和小时，计算出时干并与时支组合。
+        /// </remarks>
+        /// <param name="DaySkyLocName">日的天干地支字符串（例如：“甲子”）。</param>
+        /// <param name="Hour">当前的小时数（0-23之间的整数），用于判断对应的时辰（如：1点为丑时）。</param>
+        /// <returns>返回推算后的时辰完整天干地支对应的 <see cref="SkyLoc"/> 对象。</returns>
+        public static SkyLoc FiveMouse(string DaySkyLocName, int Hour)
+        {
+            int ilIndex = 0, isIndex = 0;
+            int iTime = Hour;
+
+            if (iTime >= 23 || iTime < 1)//子
+                ilIndex = 0;
+            else if (iTime >= 1 && iTime < 3)//丑
+                ilIndex = 1;
+            else if (iTime >= 3 && iTime < 5)//寅
+                ilIndex = 2;
+            else if (iTime >= 5 && iTime < 7)//卯
+                ilIndex = 3;
+            else if (iTime >= 7 && iTime < 9)//辰
+                ilIndex = 4;
+            else if (iTime >= 9 && iTime < 11)//巳
+                ilIndex = 5;
+            else if (iTime >= 11 && iTime < 13)//午
+                ilIndex = 6;
+            else if (iTime >= 13 && iTime < 15)//未
+                ilIndex = 7;
+            else if (iTime >= 15 && iTime < 17)//申
+                ilIndex = 8;
+            else if (iTime >= 17 && iTime < 19)//酉
+                ilIndex = 9;
+            else if (iTime >= 19 && iTime < 21)//戌
+                ilIndex = 10;
+            else if (iTime >= 21 && iTime < 23)//亥
+                ilIndex = 11;
+
+            string sLocName = LocClass.LocNames[ilIndex]; //取出地支
+            string sSkyName = DaySkyLocName.Substring(0, 1);//取日之天干
+
+            isIndex = Array.IndexOf(SkyClass.SkyNames, sSkyName);//获得日的天干位置
+
+            string sSky = "";
+            int iIndex = isIndex;
+            if (isIndex > 4) iIndex = isIndex - 5; //根据规则如果日天干大于4，则减回5，甲和己都起甲，己的排第5（从0开始)则以甲为标准
+
+            iIndex = iIndex * 2;//根据五鼠遁的规则＊2就可以
+
+            iIndex += ilIndex;//加上地支所在的位置
+            if (iIndex > 9) iIndex -= 10;
+            sSky = SkyClass.SkyNames[iIndex];
+
+            return new SkyLoc(sSky + sLocName);
+        }
+
 
         /// <summary>
         /// 获取经典正统六十甲子干支组合的字符串序列（只读原生数组）。
@@ -107,7 +241,7 @@ namespace CompassEx.Comm
         /// <para>本方法已重构为现代高精度的<b>单层模运算算法</b>。消除了历史版本中双重嵌套循环（<c>int j = i</c>）导致的干支横向错配与漏项缺陷。</para>
         /// <para>由于十天干与十二地支的最小公倍数为 60，本算法通过单层 <c>0 ~ 59</c> 闭环流转，对天干基数 10 和地支基数 12 进行动态取模（<c>%</c>），确保干支双轨道同步顺时针推进，完美符合《黄帝内经》及传统干支历法规范。</para>
         /// </remarks>
-        public static string[] Get60SkyLocNames()
+        private static string[] Get60SkyLocNames()
         {
             string[] ls = new string[60];
 
@@ -129,7 +263,7 @@ namespace CompassEx.Comm
         /// <remarks>
         /// <b>性能优化说明：</b>本方法通过单层取模算法动态实例化 60 个干支单元。由于六十甲子属于体系内的核心只读静态元数据，重构后直接返回原生数组，避免了动态列表（<c>List</c>）扩容带来的二次内存拷贝与垃圾回收（GC）开销。
         /// </remarks>
-        public static SkyLoc[] Get60SkyLoc()
+        private static SkyLoc[] Get60SkyLocs()
         {
             SkyLoc[] ls = new SkyLoc[60];
 
@@ -143,6 +277,57 @@ namespace CompassEx.Comm
 
             return ls;
         }
+
+        public override string ToString()
+        {
+            return this.Name;
+        }
+
+
+
+
+
+        #region 显式实现对比、运算符和Key 方法
+        // 1. 一般的 Equals(object)，內部可以轉型並利用顯式介面來比對
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as SkyLoc);
+        }
+
+        // 2. 顯式實作 IEquatable<LocClass>.Equals
+        bool IEquatable<SkyLoc>.Equals(SkyLoc other)
+        {
+            // 檢查是否為 null
+            if (other is null) return false;
+            if (ReferenceEquals(this, other)) return true;
+
+            // 使用 string 的比較方式（考慮大小寫或 null 的防禦）
+            return string.Equals(this.Name, other.Name, StringComparison.Ordinal);
+        }
+
+        // 3. 務必配合 Name 計算 HashCode
+        public override int GetHashCode()
+        {
+            // 若 Name 可能為 null，可以用 HashCode.Combine 或字串自身的 GetHashCode
+            return Name != null ? Name.GetHashCode() : 0;
+        }
+
+        // 4. (選用) 重載 == 與 != 運算子，建議透過介面轉型來呼叫
+        public static bool operator ==(SkyLoc left, SkyLoc right)
+        {
+            if (left is null) return right is null;
+            return ((IEquatable<SkyLoc>)left).Equals(right);
+        }
+
+        public static bool operator !=(SkyLoc left, SkyLoc right)
+        {
+            return !(left == right);
+        }
+
+
+        #endregion
+
+
 
         #endregion
 

@@ -34,25 +34,25 @@ namespace CompassEx.Gua
         /// 个人本命三元后天三爻命卦
         /// </summary>
         /// <value>存储由出生年月日、性别推演得出的本命三爻卦实例，外部只读</value>
-        public GuaSubClass FateGuaSub { get; private set; } = null;
+        public GuaSubClass? FateGuaSub { get; private set; } = null;
 
         /// <summary>
         /// 天机卦系统 后天入卦集合（共5个入卦三爻卦）
         /// </summary>
         /// <value>Key：卦标识，Value：对应后天三爻卦实例，用于入卦得福判定</value>
-        public Dictionary<string, GuaSubClass> InGuaSubs { get; private set; } = null;
+        public Dictionary<string, GuaSubClass>? InGuaSubs { get; private set; } = null;
 
         /// <summary>
         /// 天机卦系统 后天出卦集合（共3个出卦三爻卦）
         /// </summary>
         /// <value>Key：卦标识，Value：对应后天三爻卦实例，用于出卦凶性判定</value>
-        public Dictionary<string, GuaSubClass> OutGuaSubs { get; private set; } = null;
+        public Dictionary<string, GuaSubClass>? OutGuaSubs { get; private set; } = null;
 
         /// <summary>
         /// 京房易七世飞爻卦列表
         /// </summary>
         /// <value>由初爻依次变爻生成，共8卦（本卦+七世变卦），用于定位卦位、游魂/归魂判定、得福流年取值</value>
-        public List<GuaClass> GuaList { get; private set; } = null;
+        public List<GuaClass>? GuaList { get; private set; } = null;
 
         /// <summary>
         /// 是否命卦出卦
@@ -387,7 +387,7 @@ namespace CompassEx.Gua
                                 this.Infos.GoodInfos.Add(new InfoType(true) { Info = "命庚是【" + string.Join(",", this.InGuaGoodSL) + "】得福" });
                                 //=============判断得福人===============================
 
-                                this.InGuaGoodYear = [gselfNJ.SkyLocs.ElementAt(iYao).SkyLocName];
+                                this.InGuaGoodYear = [gselfNJ.SkyLocs.ElementAt(iYao).Name];
                                 this.Infos.GoodInfos.Add(new InfoType(true)
                                 {
                                     Info = "【" + string.Join(",", InGuaGoodYear) + "】年得福"

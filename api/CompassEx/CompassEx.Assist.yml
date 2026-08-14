@@ -1,0 +1,67 @@
+### YamlMime:ManagedReference
+items:
+- uid: CompassEx.Assist
+  commentId: N:CompassEx.Assist
+  id: CompassEx.Assist
+  children:
+  - CompassEx.Assist.Calender
+  - CompassEx.Assist.FSLTEx
+  - CompassEx.Assist.FourSkyLocType
+  - CompassEx.Assist.HourGod
+  langs:
+  - csharp
+  - vb
+  name: CompassEx.Assist
+  nameWithType: CompassEx.Assist
+  fullName: CompassEx.Assist
+  type: Namespace
+  assemblies:
+  - CompassEx
+references:
+- uid: CompassEx.Assist.Calender
+  commentId: T:CompassEx.Assist.Calender
+  href: CompassEx.Assist.Calender.html
+  name: Calender
+  nameWithType: Calender
+  fullName: CompassEx.Assist.Calender
+- uid: CompassEx.Assist.FSLTEx
+  commentId: T:CompassEx.Assist.FSLTEx
+  href: CompassEx.Assist.FSLTEx.html
+  name: FSLTEx
+  nameWithType: FSLTEx
+  fullName: CompassEx.Assist.FSLTEx
+- uid: CompassEx.Assist.FourSkyLocType
+  commentId: T:CompassEx.Assist.FourSkyLocType
+  parent: CompassEx.Assist
+  href: CompassEx.Assist.FourSkyLocType.html
+  name: FourSkyLocType
+  nameWithType: FourSkyLocType
+  fullName: CompassEx.Assist.FourSkyLocType
+- uid: CompassEx.Assist.HourGod
+  commentId: T:CompassEx.Assist.HourGod
+  href: CompassEx.Assist.HourGod.html
+  name: HourGod
+  nameWithType: HourGod
+  fullName: CompassEx.Assist.HourGod
+- uid: CompassEx.Assist
+  commentId: N:CompassEx.Assist
+  href: CompassEx.html
+  name: CompassEx.Assist
+  nameWithType: CompassEx.Assist
+  fullName: CompassEx.Assist
+  spec.csharp:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Assist
+    name: Assist
+    href: CompassEx.Assist.html
+  spec.vb:
+  - uid: CompassEx
+    name: CompassEx
+    href: CompassEx.html
+  - name: .
+  - uid: CompassEx.Assist
+    name: Assist
+    href: CompassEx.Assist.html

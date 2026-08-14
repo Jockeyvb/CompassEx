@@ -88,7 +88,7 @@
 
   <h1 id="CommLib_Comm" data-uid="CommLib.Comm" class="text-break">
 Comm 类
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Comm.cs/#L5"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Comm.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -100,7 +100,7 @@ Comm 类
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Comm</code></pre>
+    <pre><code class="lang-csharp hljs">public static class Comm</code></pre>
   </div>
 
 
@@ -155,7 +155,7 @@ Comm 类
 
   <h3 id="CommLib_Comm_ConvertGUID_System_String_" data-uid="CommLib.Comm.ConvertGUID(System.String)">
   ConvertGUID(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Comm.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Comm.cs/#L306"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>如果转换失败将会返回Guid.Empty</p>
@@ -189,11 +189,232 @@ Comm 类
 
 
 
+  <a id="CommLib_Comm_EnumToDict_" data-uid="CommLib.Comm.EnumToDict*"></a>
+
+  <h3 id="CommLib_Comm_EnumToDict_System_Type_System_Boolean_System_Boolean_" data-uid="CommLib.Comm.EnumToDict(System.Type,System.Boolean,System.Boolean)">
+  EnumToDict(Type, bool, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Comm.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>返回枚举类型的说明和对应数值的字典集合。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Dictionary&lt;string, int&gt; EnumToDict(Type enumType, bool isGetUserHide = false, bool isRemoveHtml = false)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>enumType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>枚举的运行时类型，可用 <code>typeof(EnumType)</code> 获取。</p>
+</dd>
+    <dt><code>isGetUserHide</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>是否获取用户隐藏的枚举项，默认为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>。</p>
+</dd>
+    <dt><code>isRemoveHtml</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Ref 开关：是否移除说明中的 HTML 标签，默认为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>返回以枚举描述为键、枚举整型数值为值的字典集合。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CommLib_Comm_GetEnumDescription_" data-uid="CommLib.Comm.GetEnumDescription*"></a>
+
+  <h3 id="CommLib_Comm_GetEnumDescription_System_Enum_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="CommLib.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+  GetEnumDescription(Enum, string, bool, bool, bool, bool, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Comm.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获得枚举的说明，可分权重（Level）进行排序或过滤显示。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetEnumDescription(this Enum enumConstant, string splitChar = &quot;,&quot;, bool isReturnMaxLevelOnly = false, bool includeZero = false, bool hasValue = false, bool opEQ = false, bool orderbyLevelDesc = false)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>enumConstant</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.enum">Enum</a></dt>
+    <dd><p>枚举实例常量。</p>
+</dd>
+    <dt><code>splitChar</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>分隔符，默认项为逗号。</p>
+</dd>
+    <dt><code>isReturnMaxLevelOnly</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>是否仅返回最大权重值。可在枚举项上使用 <code>[Category(&quot;{'level':2}&quot;)]</code> 确定权重。若为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> 则返回全部有效说明。</p>
+</dd>
+    <dt><code>includeZero</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>是否附加包含零（0）的说明。若为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>，则只有在枚举值本身为 0 时才显示默认说明。</p>
+</dd>
+    <dt><code>hasValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>显示内容是否包含数据值前缀（例如：1.说明）。</p>
+</dd>
+    <dt><code>opEQ</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>是否使用相等操作符判定。若为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> 则使用等于判定，默认为 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>（即使用位运算）。</p>
+</dd>
+    <dt><code>orderbyLevelDesc</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>是否按照 JSON 配置中的 LEVEL 属性进行降序排序。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>返回组合后的枚举描述字符串。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CommLib_Comm_GetEnumDict_" data-uid="CommLib.Comm.GetEnumDict*"></a>
+
+  <h3 id="CommLib_Comm_GetEnumDict_System_Enum_" data-uid="CommLib.Comm.GetEnumDict(System.Enum)">
+  GetEnumDict(Enum)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Comm.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>返回当前标志枚举实例中所包含的有效枚举项的说明和数值字典。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Dictionary&lt;string, int&gt; GetEnumDict(this Enum enumConstant)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>enumConstant</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.enum">Enum</a></dt>
+    <dd><p>枚举实例常量。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>返回符合位运算匹配的枚举描述与数值字典。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CommLib_Comm_GetEnumValues_" data-uid="CommLib.Comm.GetEnumValues*"></a>
+
+  <h3 id="CommLib_Comm_GetEnumValues_System_Enum_" data-uid="CommLib.Comm.GetEnumValues(System.Enum)">
+  GetEnumValues(Enum)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Comm.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>获得标志（Flags）枚举实例中包含多少个具体的枚举值集合。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;int&gt; GetEnumValues(this Enum enumConstant)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>enumConstant</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.enum">Enum</a></dt>
+    <dd><p>枚举实例常量。</p>
+</dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>返回包含的枚举整型数值集合。</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CommLib_Comm_ToHex_" data-uid="CommLib.Comm.ToHex*"></a>
+
+  <h3 id="CommLib_Comm_ToHex_System_Drawing_Color_System_Boolean_" data-uid="CommLib.Comm.ToHex(System.Drawing.Color,System.Boolean)">
+  ToHex(Color, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Comm.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>【擴充方法】將 System.Drawing.Color 完美轉換為網頁標準的 HEX 字串（如 #1BD1A5）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ToHex(this Color color, bool includeAlpha = false)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>color</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a></dt>
+    <dd><p>System.Drawing.Color 實例</p>
+</dd>
+    <dt><code>includeAlpha</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>是否包含透明度通道（預設不包含，返回 6 碼 #RRGGBB）</p>
+</dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Comm.cs/#L5" class="edit-link">编辑本文</a>
+          <a href="https://github.com/Jockeyvb/CompassEx/blob/master/CommLib/Comm.cs/#L13" class="edit-link">编辑本文</a>
         </div>
 
 

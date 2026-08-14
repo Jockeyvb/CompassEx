@@ -87,7 +87,7 @@ items:
   remarks: 演变机制：由初爻开始往上变，以后一个最卦接着变出，共演变 7 次，包含本宫卦在内共计 8 个卦象。
   example: []
   syntax:
-    content: public List<GuaClass> GuaList { get; }
+    content: public List<GuaClass>? GuaList { get; }
     parameters: []
     return:
       type: System.Collections.Generic.List{CompassEx.Gua.GuaClass}

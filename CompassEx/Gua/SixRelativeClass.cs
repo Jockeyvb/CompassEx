@@ -43,7 +43,7 @@ namespace CompassEx.Gua
         /// 获取当前六亲实体的字面名称（如“父母”、“子孙”等）。
         /// </summary>
         /// <value>一个 <see cref="string"/> 字符串，表示当前爻位对应的六亲称谓。</value>
-        public string Name { get; private set; }
+        public string? Name { get; private set; }
 
         /// <summary>
         /// 获取当前六亲在全局六亲序列中的绝对顺位索引位置。
