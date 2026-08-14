@@ -3328,6 +3328,15 @@ references:
   isSpec: "True"
   fullName: CompassEx.Comm.FlyStar.GetFlyStars
   nameWithType: FlyStar.GetFlyStars
+- uid: CompassEx.Comm.FlyStar.HourFlyStar(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)
+  name: HourFlyStar(LocClass, LocClass, LocClass, bool, out bool)
+  href: api/CompassEx/CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_HourFlyStar_CompassEx_Comm_LocClass_CompassEx_Comm_LocClass_CompassEx_Comm_LocClass_System_Boolean_System_Boolean__
+  commentId: M:CompassEx.Comm.FlyStar.HourFlyStar(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)
+  name.vb: HourFlyStar(LocClass, LocClass, LocClass, Boolean, Boolean)
+  fullName: CompassEx.Comm.FlyStar.HourFlyStar(CompassEx.Comm.LocClass, CompassEx.Comm.LocClass, CompassEx.Comm.LocClass, bool, out bool)
+  fullName.vb: CompassEx.Comm.FlyStar.HourFlyStar(CompassEx.Comm.LocClass, CompassEx.Comm.LocClass, CompassEx.Comm.LocClass, Boolean, Boolean)
+  nameWithType: FlyStar.HourFlyStar(LocClass, LocClass, LocClass, bool, out bool)
+  nameWithType.vb: FlyStar.HourFlyStar(LocClass, LocClass, LocClass, Boolean, Boolean)
 - uid: CompassEx.Comm.FlyStar.HourFlyStar(System.DateTime)
   name: HourFlyStar(DateTime)
   href: api/CompassEx/CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_HourFlyStar_System_DateTime_
@@ -3344,6 +3353,15 @@ references:
   isSpec: "True"
   fullName: CompassEx.Comm.FlyStar.HourFlyStar
   nameWithType: FlyStar.HourFlyStar
+- uid: CompassEx.Comm.FlyStar.HourFlyStars(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)
+  name: HourFlyStars(LocClass, LocClass, bool, out bool)
+  href: api/CompassEx/CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_HourFlyStars_CompassEx_Comm_LocClass_CompassEx_Comm_LocClass_System_Boolean_System_Boolean__
+  commentId: M:CompassEx.Comm.FlyStar.HourFlyStars(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)
+  name.vb: HourFlyStars(LocClass, LocClass, Boolean, Boolean)
+  fullName: CompassEx.Comm.FlyStar.HourFlyStars(CompassEx.Comm.LocClass, CompassEx.Comm.LocClass, bool, out bool)
+  fullName.vb: CompassEx.Comm.FlyStar.HourFlyStars(CompassEx.Comm.LocClass, CompassEx.Comm.LocClass, Boolean, Boolean)
+  nameWithType: FlyStar.HourFlyStars(LocClass, LocClass, bool, out bool)
+  nameWithType.vb: FlyStar.HourFlyStars(LocClass, LocClass, Boolean, Boolean)
 - uid: CompassEx.Comm.FlyStar.HourFlyStars(System.DateTime)
   name: HourFlyStars(DateTime)
   href: api/CompassEx/CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_HourFlyStars_System_DateTime_

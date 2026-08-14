@@ -15,7 +15,9 @@ items:
   - CompassEx.Comm.FlyStar.FlyStarGuaSub
   - CompassEx.Comm.FlyStar.FullName
   - CompassEx.Comm.FlyStar.GetFlyStars(System.Int32,System.Boolean,System.Boolean)
+  - CompassEx.Comm.FlyStar.HourFlyStar(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)
   - CompassEx.Comm.FlyStar.HourFlyStar(System.DateTime)
+  - CompassEx.Comm.FlyStar.HourFlyStars(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)
   - CompassEx.Comm.FlyStar.HourFlyStars(System.DateTime)
   - CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.LocClass)
   - CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.SkyLoc)
@@ -38,7 +40,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FlyStar
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 34
+    startLine: 35
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -90,7 +92,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FullName
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 39
+    startLine: 40
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -121,7 +123,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Name
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 50
+    startLine: 51
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -152,7 +154,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AreaIndex
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 63
+    startLine: 64
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -183,7 +185,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CenterStarValue
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 68
+    startLine: 69
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -214,7 +216,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: StarValue
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 73
+    startLine: 74
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -245,7 +247,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FlyStarGuaSub
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 78
+    startLine: 79
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -276,7 +278,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AreaGuaSub
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 83
+    startLine: 84
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -307,7 +309,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: StarDirection
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 88
+    startLine: 89
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -338,7 +340,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 96
+    startLine: 97
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -379,7 +381,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 107
+    startLine: 108
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -424,7 +426,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetFlyStars
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 147
+    startLine: 148
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -468,7 +470,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: YearFlyStar
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 173
+    startLine: 174
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -506,7 +508,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: MonthFlyStars
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 199
+    startLine: 200
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -545,7 +547,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: MonthFlyStars
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 235
+    startLine: 236
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -584,7 +586,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: DayFlyStar
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 253
+    startLine: 254
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -626,7 +628,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: DayFlyStars
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 272
+    startLine: 273
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -650,6 +652,111 @@ items:
   nameWithType.vb: FlyStar.DayFlyStars(Date)
   fullName.vb: CompassEx.Comm.FlyStar.DayFlyStars(Date)
   name.vb: DayFlyStars(Date)
+- uid: CompassEx.Comm.FlyStar.HourFlyStar(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)
+  commentId: M:CompassEx.Comm.FlyStar.HourFlyStar(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)
+  id: HourFlyStar(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: HourFlyStar(LocClass, LocClass, LocClass, bool, out bool)
+  nameWithType: FlyStar.HourFlyStar(LocClass, LocClass, LocClass, bool, out bool)
+  fullName: CompassEx.Comm.FlyStar.HourFlyStar(CompassEx.Comm.LocClass, CompassEx.Comm.LocClass, CompassEx.Comm.LocClass, bool, out bool)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: HourFlyStar
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 298
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: >-
+    根据月令（阳顺阴逆）获得时紫白飞星信息（不包含当前时辰的九宫方位信息）。
+
+
+    <p>注：时紫白本身暂无默认方位信息，若需详细获得每日中的方位信息，请使用属性 <xref href="CompassEx.Comm.FlyStar.StarValue" data-throw-if-not-resolved="false"></xref> 作为入参调用 <xref href="CompassEx.Comm.FlyStar.GetFlyStars(System.Int32%2cSystem.Boolean%2cSystem.Boolean)" data-throw-if-not-resolved="false"></xref> 获得飞布情况。</p>
+  example: []
+  syntax:
+    content: public static FlyStar? HourFlyStar(LocClass MonthLoc, LocClass DayLoc, LocClass HourLoc, bool IsAsc, out bool IsAutoSort)
+    parameters:
+    - id: MonthLoc
+      type: CompassEx.Comm.LocClass
+      description: 月支。用于辅助判断阴阳顺逆，只有午月（通常夏至前后）和亥月（通常冬至前后）由于跨节气需要手动指定顺逆。
+    - id: DayLoc
+      type: CompassEx.Comm.LocClass
+      description: 日支。用于根据顺逆规则推出子时入中宫之数。
+    - id: HourLoc
+      type: CompassEx.Comm.LocClass
+      description: 要获取的目标时支（如子、丑、寅等）。
+    - id: IsAsc
+      type: System.Boolean
+      description: 顺逆标志（<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> 为顺飞，<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> 为逆飞）。在无法自动识别的特殊月份时作为手动传入的依据。
+    - id: IsAutoSort
+      type: System.Boolean
+      description: 输出参数（<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/out">out</a>）。指示是否为非午月、子月（代码中判断逻辑对应“午子”），若是则强制自动识别阳顺阴逆；否则使用传入的 <code class="paramref">IsAsc</code>。
+    return:
+      type: CompassEx.Comm.FlyStar
+      description: 返回对应 <code class="paramref">HourLoc</code> 时辰的时紫白飞星实例（<xref href="CompassEx.Comm.FlyStar" data-throw-if-not-resolved="false"></xref>），若无效则可能返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。
+    content.vb: Public Shared Function HourFlyStar(MonthLoc As LocClass, DayLoc As LocClass, HourLoc As LocClass, IsAsc As Boolean, IsAutoSort As Boolean) As FlyStar
+  overload: CompassEx.Comm.FlyStar.HourFlyStar*
+  nameWithType.vb: FlyStar.HourFlyStar(LocClass, LocClass, LocClass, Boolean, Boolean)
+  fullName.vb: CompassEx.Comm.FlyStar.HourFlyStar(CompassEx.Comm.LocClass, CompassEx.Comm.LocClass, CompassEx.Comm.LocClass, Boolean, Boolean)
+  name.vb: HourFlyStar(LocClass, LocClass, LocClass, Boolean, Boolean)
+- uid: CompassEx.Comm.FlyStar.HourFlyStars(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)
+  commentId: M:CompassEx.Comm.FlyStar.HourFlyStars(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)
+  id: HourFlyStars(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: HourFlyStars(LocClass, LocClass, bool, out bool)
+  nameWithType: FlyStar.HourFlyStars(LocClass, LocClass, bool, out bool)
+  fullName: CompassEx.Comm.FlyStar.HourFlyStars(CompassEx.Comm.LocClass, CompassEx.Comm.LocClass, bool, out bool)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: HourFlyStars
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 358
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: >-
+    根据月令（阳顺阴逆），获得当天所有的时紫白飞星信息（不包含当前时辰的九宫方位信息）。
+
+
+    <p>注：时紫白本身暂无默认方位信息，若需详细获得每日中的方位信息，请使用属性 <xref href="CompassEx.Comm.FlyStar.StarValue" data-throw-if-not-resolved="false"></xref> 作为入参调用 <xref href="CompassEx.Comm.FlyStar.GetFlyStars(System.Int32%2cSystem.Boolean%2cSystem.Boolean)" data-throw-if-not-resolved="false"></xref> 获得飞布情况。</p>
+  example: []
+  syntax:
+    content: public static Dictionary<LocClass, FlyStar> HourFlyStars(LocClass MonthLoc, LocClass DayLoc, bool IsAsc, out bool IsAutoSort)
+    parameters:
+    - id: MonthLoc
+      type: CompassEx.Comm.LocClass
+      description: 月支。用于辅助判断阴阳顺逆，只有午月（通常夏至前后）和亥月（通常冬至前后）由于跨节气需要手动指定顺逆。
+    - id: DayLoc
+      type: CompassEx.Comm.LocClass
+      description: 日支。用于根据顺逆规则推出子时入中宫之数。
+    - id: IsAsc
+      type: System.Boolean
+      description: 顺逆标志（<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> 为顺飞，<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> 为逆飞）。在无法自动识别的特殊月份时作为手动传入的依据。
+    - id: IsAutoSort
+      type: System.Boolean
+      description: 输出参数（<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/out">out</a>）。指示是否自动识别了顺逆关系。
+    return:
+      type: System.Collections.Generic.Dictionary{CompassEx.Comm.LocClass,CompassEx.Comm.FlyStar}
+      description: 返回包含全天十二个时辰地支与对应时紫白飞星信息的字典（<xref href="System.Collections.Generic.Dictionary%602" data-throw-if-not-resolved="false"></xref>）。
+    content.vb: Public Shared Function HourFlyStars(MonthLoc As LocClass, DayLoc As LocClass, IsAsc As Boolean, IsAutoSort As Boolean) As Dictionary(Of LocClass, FlyStar)
+  overload: CompassEx.Comm.FlyStar.HourFlyStars*
+  nameWithType.vb: FlyStar.HourFlyStars(LocClass, LocClass, Boolean, Boolean)
+  fullName.vb: CompassEx.Comm.FlyStar.HourFlyStars(CompassEx.Comm.LocClass, CompassEx.Comm.LocClass, Boolean, Boolean)
+  name.vb: HourFlyStars(LocClass, LocClass, Boolean, Boolean)
 - uid: CompassEx.Comm.FlyStar.HourFlyStar(System.DateTime)
   commentId: M:CompassEx.Comm.FlyStar.HourFlyStar(System.DateTime)
   id: HourFlyStar(System.DateTime)
@@ -668,7 +775,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: HourFlyStar
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 292
+    startLine: 381
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -710,7 +817,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: HourFlyStars
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 312
+    startLine: 402
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -752,7 +859,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToString
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 331
+    startLine: 421
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -1712,13 +1819,13 @@ references:
   fullName: CompassEx.Comm.FlyStar.DayFlyStars
 - uid: CompassEx.Comm.FlyStar.HourFlyStar*
   commentId: Overload:CompassEx.Comm.FlyStar.HourFlyStar
-  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_HourFlyStar_System_DateTime_
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_HourFlyStar_CompassEx_Comm_LocClass_CompassEx_Comm_LocClass_CompassEx_Comm_LocClass_System_Boolean_System_Boolean__
   name: HourFlyStar
   nameWithType: FlyStar.HourFlyStar
   fullName: CompassEx.Comm.FlyStar.HourFlyStar
 - uid: CompassEx.Comm.FlyStar.HourFlyStars*
   commentId: Overload:CompassEx.Comm.FlyStar.HourFlyStars
-  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_HourFlyStars_System_DateTime_
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_HourFlyStars_CompassEx_Comm_LocClass_CompassEx_Comm_LocClass_System_Boolean_System_Boolean__
   name: HourFlyStars
   nameWithType: FlyStar.HourFlyStars
   fullName: CompassEx.Comm.FlyStar.HourFlyStars
