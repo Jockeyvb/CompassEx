@@ -19,6 +19,7 @@ using System.Data.Common;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace CompassEx.Comm
@@ -284,6 +285,94 @@ namespace CompassEx.Comm
             return dc;
         }
 
+
+        /// <summary>
+        /// 根据月令（阳顺阴逆）获得时紫白飞星信息（不包含当前时辰的九宫方位信息）。
+        /// <para>注：时紫白本身暂无默认方位信息，若需详细获得每日中的方位信息，请使用属性 <see cref="FlyStar.StarValue"/> 作为入参调用 <see cref="FlyStar.GetFlyStars(int, bool, bool)"/> 获得飞布情况。</para>
+        /// </summary>
+        /// <param name="MonthLoc">月支。用于辅助判断阴阳顺逆，只有午月（通常夏至前后）和亥月（通常冬至前后）由于跨节气需要手动指定顺逆。</param>
+        /// <param name="DayLoc">日支。用于根据顺逆规则推出子时入中宫之数。</param>
+        /// <param name="HourLoc">要获取的目标时支（如子、丑、寅等）。</param>
+        /// <param name="IsAsc">顺逆标志（<see langword="true"/> 为顺飞，<see langword="false"/> 为逆飞）。在无法自动识别的特殊月份时作为手动传入的依据。</param>
+        /// <param name="IsAutoSort">输出参数（<see langword="out"/>）。指示是否为非午月、子月（代码中判断逻辑对应“午子”），若是则强制自动识别阳顺阴逆；否则使用传入的 <paramref name="IsAsc"/>。</param>
+        /// <returns>返回对应 <paramref name="HourLoc"/> 时辰的时紫白飞星实例（<see cref="FlyStar"/>），若无效则可能返回 <see langword="null"/>。</returns>
+        public static FlyStar? HourFlyStar(LocClass MonthLoc, LocClass DayLoc, LocClass HourLoc, bool IsAsc, out bool IsAutoSort)
+        {
+            //1、冬至以后到夏至以前（阳遁）顺飞，夏至后冬至前（阴遁）逆飞
+
+            //2、日支
+            //冬至后：  子午卯酉日：子时起 一白（1）  辰戌丑未日：子时起 四绿（4）  寅申巳亥日：子时起 七赤（7）  
+            //夏至后：  子午卯酉日：子时起 九紫（9）  辰戌丑未日：子时起 六白（6）  寅申巳亥日：子时起 三碧（3）
+
+            //======月支辅助判断顺逆，只有午月（夏至）和亥月（冬至）需要手动指定顺逆,因午月亥月无法确定节气=========
+            IsAutoSort = "午子".IndexOf(MonthLoc.Name) == -1; //非午月子月则是强制自动识别阳顺阴逆，否则按手动传入(out  出参)
+            if (MonthLoc.Index > 0 && MonthLoc.Index < 6)//冬至后 丑月至巳月(5个月） 为阳遁顺
+            {
+                IsAsc = true;
+            }
+            else if (MonthLoc.Index > 6 && MonthLoc.Index <= 11)//夏至后 未月至亥月 为阴遁逆
+            {
+                IsAsc = false;
+
+            }//剩下的是午月或亥月按手动传入顺序
+             //======月支辅助判断顺逆，只有午月（夏至）和亥月（冬至）需要手动指定顺逆,因午月亥月无法确定节气=========
+
+            //============日支按顺逆推出入中宫之数=================================
+            string dl = DayLoc.Name;
+            int HourStarValue = 0;
+            if ("子午卯酉".IndexOf(dl) > -1) // 阳遁顺1, 阴遁逆9
+            {
+                HourStarValue = IsAsc ? 1 : 9;
+            }
+            else if ("辰戌丑未".IndexOf(dl) > -1) // 阳遁顺4, 阴遁逆6
+            {
+                HourStarValue = IsAsc ? 4 : 6;
+            }
+            else  // 阳遁顺4, 阴遁逆6
+            {
+                HourStarValue = IsAsc ? 7 : 3;
+            }
+            //============日支按顺逆推出入中宫之数=================================
+
+            int hlIndex = LocClass.LocNames.IndexOf(HourLoc.Name);//取出读取时支位置
+
+            hlIndex = hlIndex % 9; //共12个地支，超出的用余数处理
+            hlIndex += 4; //五黄为中宫(子为0）
+            hlIndex = hlIndex % 9;
+            var fs = new FlyStar(hlIndex, HourStarValue, IsAsc);//按时星去取相关宫位
+            fs.StarDirection = null;// 因为紫白不含独立方位，设为 null 避免误解
+
+
+            return fs;
+
+        }
+
+        /// <summary>
+        /// 根据月令（阳顺阴逆），获得当天所有的时紫白飞星信息（不包含当前时辰的九宫方位信息）。
+        /// <para>注：时紫白本身暂无默认方位信息，若需详细获得每日中的方位信息，请使用属性 <see cref="FlyStar.StarValue"/> 作为入参调用 <see cref="FlyStar.GetFlyStars(int, bool, bool)"/> 获得飞布情况。</para>
+        /// </summary>
+        /// <param name="MonthLoc">月支。用于辅助判断阴阳顺逆，只有午月（通常夏至前后）和亥月（通常冬至前后）由于跨节气需要手动指定顺逆。</param>
+        /// <param name="DayLoc">日支。用于根据顺逆规则推出子时入中宫之数。</param>
+        /// <param name="IsAsc">顺逆标志（<see langword="true"/> 为顺飞，<see langword="false"/> 为逆飞）。在无法自动识别的特殊月份时作为手动传入的依据。</param>
+        /// <param name="IsAutoSort">输出参数（<see langword="out"/>）。指示是否自动识别了顺逆关系。</param>
+        /// <returns>返回包含全天十二个时辰地支与对应时紫白飞星信息的字典（<see cref="Dictionary{LocClass, FlyStar}"/>）。</returns>
+        public static Dictionary<LocClass, FlyStar> HourFlyStars(LocClass MonthLoc, LocClass DayLoc, bool IsAsc, out bool IsAutoSort)
+        {
+
+            Dictionary<LocClass, FlyStar> dc = new();
+            bool b = false;
+            for (int i = 0; i < LocClass.LocNames.Length; i++)
+            {
+                var hlc = new LocClass(i);
+
+                var fs = HourFlyStar(MonthLoc, DayLoc, hlc, IsAsc, out b);
+                dc[hlc] = fs;
+
+            }
+            IsAutoSort = b;
+            return dc;
+        }
+
         /// <summary>
         /// 获取指定时间的时紫白飞星信息（不包含当前时辰的九宫方位信息）。
         /// <para>注：时紫白本身暂无默认方位信息，若需详细获得每日中的方位信息，请使用属性 <see cref="StarValue"/> 作为入参调用 <see cref="GetFlyStars(int, bool, bool)"/> 获得飞布情况。</para>
@@ -297,7 +386,8 @@ namespace CompassEx.Comm
             var sd = dt.ToSolarTime();
             var sld = sd.GetSixtyCycleHour();
             var ns = sld.NineStar;
-            int AfterGuaSubIndex = ns.Index; // 后天八卦位置（飞星位置）
+            string nn = ns.GetName();
+            int AfterGuaSubIndex = GuaSubClass.AfterGuaSubNumerics.IndexOf(nn); // 后天八卦位置（飞星位置）
             var fs = new FlyStar(4, AfterGuaSubIndex + 1); // 固定为卦位入中宫位，读取5五黄位置
             fs.StarDirection = null; // 因为紫白不含独立方位，设为 null 避免误解
             return (new SkyLoc(sld.GetName()), fs);
