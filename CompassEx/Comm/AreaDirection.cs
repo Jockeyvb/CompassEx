@@ -38,12 +38,12 @@ namespace CompassEx.Comm
         /// </summary>
         public static readonly int[] FlyStarValues = { 6, 7, 8, 9, 1, 2, 3, 4, 5 };
 
-
-
         private static CompassRangEX[]? _Rangs;
+
         /// <summary>
         /// 获取默认的八个方位的度数范围，每个方位以 45 度为范围（中宫设为 -1）。
         /// </summary>
+        /// <value>包含各个方位度数范围的 <see cref="CompassRangEX"/> 数组。</value>
         public static CompassRangEX[] Rangs
         {
             get
@@ -63,33 +63,34 @@ namespace CompassEx.Comm
                             ls.Add(new CompassRangEX(last, last + 45));
                             last += 45;
                         }
-                        else// 五黄设置为-1
+                        else // 五黄设置为-1
                         {
                             ls.Add(new CompassRangEX(-1, -1));
                         }
-
                     }
                     _Rangs = ls.ToArray();
                 }
 
                 return _Rangs;
-
             }
         }
 
         /// <summary>
         /// 获取当前方位的八方名称。
         /// </summary>
+        /// <value>方位的字符串名称，例如 "正北"、"中宫" 等。</value>
         public string? Name { get; private set; }
 
         /// <summary>
         /// 获取当前方位的索引值。
         /// </summary>
+        /// <value>对应 <see cref="Names"/> 数组中的索引整型值。</value>
         public int Index { get; private set; }
 
         /// <summary>
         /// 获取当前方位的度数范围对象。
         /// </summary>
+        /// <value>表示该方位角度区间的 <see cref="CompassRangEX"/> 实例。</value>
         public CompassRangEX? Rang { get; private set; }
 
         /// <summary>
@@ -98,7 +99,6 @@ namespace CompassEx.Comm
         /// <param name="name">方位的名称（例如："正北"、"中宫"等）。</param>
         public AreaDirection(string? name) : this(Names.IndexOf(name))
         {
-
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace CompassEx.Comm
         /// <exception cref="ArgumentOutOfRangeException">当索引超出有效范围时抛出。</exception>
         public AreaDirection(int index)
         {
-            if (index < 0 && index >= 0) throw new ArgumentOutOfRangeException(nameof(index));
+            if (index < 0 || index >= Names.Length) throw new ArgumentOutOfRangeException(nameof(index));
 
             this.Index = index;
             this.Name = Names[index];
@@ -118,8 +118,8 @@ namespace CompassEx.Comm
         /// <summary>
         /// 根据飞星数值获取相关的区域方位类实例。
         /// </summary>
-        /// <param name="flyStarValue">飞星的数值。</param>
-        /// <returns>返回对应的 <see cref="AreaDirection"/> 实例；若未找到则可能返回 null。</returns>
+        /// <param name="flyStarValue">飞星的数值（如 1 到 9 之间的整数）。</param>
+        /// <returns>返回对应的 <see cref="AreaDirection"/> 实例；若未找到则可能返回 <c>null</c>。</returns>
         public static AreaDirection? GetAreaDirectionByFlyStar(int flyStarValue)
         {
             int index = Names.IndexOf(FlyStarAreaNames[FlyStarValues.IndexOf(flyStarValue)]);
@@ -131,7 +131,7 @@ namespace CompassEx.Comm
         /// 根据度数范围返回对应的区域方位类实例。
         /// </summary>
         /// <param name="cr">罗盘度数范围对象 <see cref="CompassRangEX"/>。</param>
-        /// <returns>返回对应的 <see cref="AreaDirection"/> 实例；若未找到匹配范围则返回 null。</returns>
+        /// <returns>返回对应的 <see cref="AreaDirection"/> 实例；若未找到匹配范围则返回 <c>null</c>。</returns>
         public static AreaDirection? GetAreaDirection(CompassRangEX cr)
         {
             return GetAreaDirection(cr.Start);
@@ -141,7 +141,7 @@ namespace CompassEx.Comm
         /// 根据具体的罗盘角度数值返回对应的区域方位类实例。
         /// </summary>
         /// <param name="angle">角度值（0 到 360 度之间）。</param>
-        /// <returns>返回对应的 <see cref="AreaDirection"/> 实例；若未找到匹配的区间则返回 null。</returns>
+        /// <returns>返回对应的 <see cref="AreaDirection"/> 实例；若未找到匹配的区间则返回 <c>null</c>。</returns>
         public static AreaDirection? GetAreaDirection(double angle)
         {
             var rs = Rangs;
@@ -155,15 +155,23 @@ namespace CompassEx.Comm
             return null;
         }
 
+        #region 显式实现对比、运算符和 Key 方法
 
-        #region 显式实现对比、运算符和Key 方法
-        // 1. 一般的 Equals(object)，內部可以轉型並利用顯式介面來比對
+        /// <summary>
+        /// 确定指定的对象是否等于当前对象。
+        /// </summary>
+        /// <param name="obj">要与当前对象进行比较的对象。</param>
+        /// <returns>如果指定的对象与当前对象相等，则为 <c>true</c>；否则为 <c>false</c>。</returns>
         public override bool Equals(object obj)
         {
             return Equals(obj as AreaDirection);
         }
 
-        // 2. 顯式實作 IEquatable<LocClass>.Equals
+        /// <summary>
+        /// 指示当前对象是否等于同一类型的另一个对象。
+        /// </summary>
+        /// <param name="other">与此对象进行比较的对象。</param>
+        /// <returns>如果当前对象等于 <paramref name="other"/> 参数，则为 <c>true</c>；否则为 <c>false</c>。</returns>
         bool IEquatable<AreaDirection>.Equals(AreaDirection other)
         {
             // 檢查是否為 null
@@ -174,27 +182,39 @@ namespace CompassEx.Comm
             return string.Equals(this.Name, other.Name, StringComparison.Ordinal);
         }
 
-        // 3. 務必配合 Name 計算 HashCode
+        /// <summary>
+        /// 用作特定类型的哈希函数。
+        /// </summary>
+        /// <returns>当前对象的哈希代码。</returns>
         public override int GetHashCode()
         {
             // 若 Name 可能為 null，可以用 HashCode.Combine 或字串自身的 GetHashCode
             return Name != null ? Name.GetHashCode() : 0;
         }
 
-        // 4. (選用) 重載 == 與 != 運算子，建議透過介面轉型來呼叫
+        /// <summary>
+        /// 判断两个 <see cref="AreaDirection"/> 实例是否相等。
+        /// </summary>
+        /// <param name="left">左侧的实例。</param>
+        /// <param name="right">右侧的实例。</param>
+        /// <returns>如果两个实例相等，则为 <c>true</c>；否则为 <c>false</c>。</returns>
         public static bool operator ==(AreaDirection left, AreaDirection right)
         {
             if (left is null) return right is null;
             return ((IEquatable<AreaDirection>)left).Equals(right);
         }
 
+        /// <summary>
+        /// 判断两个 <see cref="AreaDirection"/> 实例是否不相等。
+        /// </summary>
+        /// <param name="left">左侧的实例。</param>
+        /// <param name="right">右侧的实例。</param>
+        /// <returns>如果两个实例不相等，则为 <c>true</c>；否则为 <c>false</c>。</returns>
         public static bool operator !=(AreaDirection left, AreaDirection right)
         {
             return !(left == right);
         }
 
-
         #endregion
-
     }
 }
