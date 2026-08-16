@@ -28,6 +28,9 @@ namespace CompassEx.Comm
     {
         #region 属性
 
+
+        private static SkyLoc[]? _SkyLoc60;
+
         /// <summary>
         /// 60甲子
         /// </summary>
@@ -35,21 +38,21 @@ namespace CompassEx.Comm
         {
             get
             {
-                if (field == null) field = Get60SkyLocs();
+                if (_SkyLoc60 == null) _SkyLoc60 = Get60SkyLocs();
 
-                return field;
+                return _SkyLoc60;
 
             }
         }
 
-
+        private static string[]? _SkyLoc60Name;
         public static string[] SkyLoc60Name
         {
             get
             {
-                if (field == null) field = Get60SkyLocNames();
+                if (_SkyLoc60Name == null) _SkyLoc60Name = Get60SkyLocNames();
 
-                return field;
+                return _SkyLoc60Name;
 
             }
         }

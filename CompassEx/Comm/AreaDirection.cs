@@ -38,6 +38,9 @@ namespace CompassEx.Comm
         /// </summary>
         public static readonly int[] FlyStarValues = { 6, 7, 8, 9, 1, 2, 3, 4, 5 };
 
+
+
+        private static CompassRangEX[]? _Rangs;
         /// <summary>
         /// 获取默认的八个方位的度数范围，每个方位以 45 度为范围（中宫设为 -1）。
         /// </summary>
@@ -45,7 +48,7 @@ namespace CompassEx.Comm
         {
             get
             {
-                if (field == null)
+                if (_Rangs == null)
                 {
                     List<CompassRangEX> ls = new List<CompassRangEX>();
                     double last = 22.5;
@@ -66,10 +69,10 @@ namespace CompassEx.Comm
                         }
 
                     }
-                    field = ls.ToArray();
+                    _Rangs = ls.ToArray();
                 }
 
-                return field;
+                return _Rangs;
 
             }
         }
