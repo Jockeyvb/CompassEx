@@ -182,7 +182,7 @@ namespace CompassEx.Gua
         /// <remarks>
         /// 完美收录大成风水玄空紫白九星理气体系，包含了堪舆学极其重视的“九星三白（一白、六白、八白）”核心断卦参数。
         /// </remarks>
-        public readonly static String[] AfterGuaSubColors = { "白", "黑", "碧", "绿", "黄", "白", "赤", "白", "紫" };//后天八卦的颜色
+        public readonly static String[] Colors = { "白", "黑", "碧", "绿", "黄", "白", "赤", "白", "紫" };//后天八卦的颜色
 
         /// <summary>
         /// 获取三元紫白九星颜色对应映射的 C# 原生高级色彩实例（<see cref="Color"/>）数组列表。
@@ -198,7 +198,7 @@ namespace CompassEx.Gua
         /// 该数组旨在跨平台、跨桌面的 UI 渲染与排盘界面（如 WPF、WinForms 或是带有自定义画板的图形输出）中，
         /// 能够全自动、将抽象的术数九星颜色直接翻译反灌为系统底层的标准色彩，避免在前端进行大块的硬编码或繁琐的 Switch 转换。
         /// </remarks>
-        public readonly static Color[] AfterGuaSubColorClasses = { Color.White, Color.Black, Color.DarkGreen, Color.Green, Color.BurlyWood, Color.White, Color.Red, Color.White, Color.Purple };//后天八卦的颜色
+        //public readonly static Color[] Colors = { Color.Blue, Color.Black, Color.DarkGreen, Color.Green, Color.BurlyWood, Color.Blue, Color.Red, Color.Blue, Color.Purple };//后天八卦的颜色
 
 
 
@@ -283,13 +283,16 @@ namespace CompassEx.Gua
         /// 获取当前经卦在家族代际中所对应的传统易学伦理名称（如：“父”、“母”、“长男”、“少女”）。
         /// </summary>
         /// <value>符合《说卦传》经典人伦隐喻的中文分类字符串。</value>
-        public String GuaSubReluName { get; private set; } //卦的伦理关系
+        public string GuaSubReluName { get; private set; } //卦的伦理关系
 
         /// <summary>
         /// 获取当前经卦在文王后天八卦及洛书紫白九星体例中所映射的标准颜色文字属性（如：“白”、“黑”、“紫”）。
         /// </summary>
         /// <value>代表九星色彩名录的单字名称。</value>
-        public String AfterGuaSubColor { get { return AfterGuaSubColors[this.AfterGuaSubIndex]; } } //后天八卦的颜色属性
+        public string Color { get { return Colors[this.AfterGuaSubIndex]; } } //后天八卦的颜色属性
+
+
+
 
         /// <summary>
         /// 计算并获取当前单卦对应的文王后天八卦洛书九宫绝对数（整型：1 至 9）。

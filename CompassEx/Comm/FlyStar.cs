@@ -42,7 +42,7 @@ namespace CompassEx.Comm
         {
             get
             {
-                return this.StarDirection?.Name + "：" + this.Name;
+                return StarDirection != null ? this.StarDirection?.Name + "：" + this.Name : this.Name;
             }
         }
 
@@ -55,7 +55,7 @@ namespace CompassEx.Comm
             {
                 string sn = this.FlyStarGuaSub.Name;
                 if (sn == "黄") sn = "中";
-                return this.FlyStarGuaSub.AfterGuaSubCNQuantity + this.FlyStarGuaSub.AfterGuaSubColor + sn;
+                return this.FlyStarGuaSub.AfterGuaSubCNQuantity + this.FlyStarGuaSub.Color + sn;
             }
         }
 
@@ -285,6 +285,17 @@ namespace CompassEx.Comm
             return dc;
         }
 
+
+
+        /// <summary>
+        /// 根据月支判断是否自动获得时飞星的顺逆（非午月子月则是强制自动识别阳顺阴逆为ture，否则为false）
+        /// </summary>
+        /// <param name="MonthLoc">月支</param>
+        /// <returns></returns>
+        public static bool HuorFlyStarIsAutoSort(LocClass MonthLoc)
+        {
+            return "午子".IndexOf(MonthLoc.Name) == -1; //非午月子月则是强制自动识别阳顺阴逆，否则按手动传入(out  出参)
+        }
 
         /// <summary>
         /// 根据月令（阳顺阴逆）获得时紫白飞星信息（不包含当前时辰的九宫方位信息）。

@@ -36,13 +36,15 @@ public static class FSLTEx
 
         var ls = d.ToLunar();
         var sh = d.ToSolarTime();
-        var slh = sh.GetSixtyCycleHour(); //干支时才能获得真正的所在气令的干支slh.SixtyCycleDay.SixtyCycleMonth.SixtyCycleYear
-        FourSkyLocType fslt = new FourSkyLocType() { Lunar = ls, YearSLName = slh.SixtyCycleDay.SixtyCycleMonth.SixtyCycleYear.GetName(), Date = d, MonthSLName = slh.SixtyCycleDay.SixtyCycleMonth.GetName(), DaySLName = slh.SixtyCycleDay.GetName(), HourSLName = slh.GetName(), FullName = ls.lh.TofourSkyLocString(), YearCNName = ls.ly.GetName(), MonthCNName = ls.lm.GetName(), DayCNName = ls.ld.GetName(), FullCNName = d.ToFullCNName() };
+        var sls = d.ToSkyLocs();
+
+        FourSkyLocType fslt = new FourSkyLocType() { Lunar = ls, YearSLName = sls.Year.Name, Date = d, MonthSLName = sls.Month.Name, DaySLName = sls.Day.Name, HourSLName = sls.Hour.Name, FullName = ls.Hour.TofourSkyLocString(), YearCNName = ls.Year.Year.ToCNName(), MonthCNName = ls.Month.GetName(), DayCNName = ls.Day.GetName(), FullCNName = d.ToFullCNName() };
         SolarDay sod = d.ToSolarDay();
         var terms = SolarTerm.Names.Where(x => sod.Term.GetName() == x && sod == sod.Term.GetSolarDay()); //当天才附值 
 
         fslt.SeasonName = terms.FirstOrDefault(); //节气
-        fslt.DayBuildName = ls.ld.Duty.GetName();//十二日建
+        if (fslt.SeasonName != null && string.IsNullOrWhiteSpace(fslt.SeasonName) == false) fslt.SeasonTime = sh.SolarDay.TermDay.SolarTerm.GetTermTime().ToDateTime();//节气时间
+        fslt.DayBuildName = ls.Day.Duty.GetName();//十二日建
 
 
         return fslt;
@@ -54,6 +56,10 @@ public static class FSLTEx
 
 public class FourSkyLocType
 {
+
+
+
+
     /// <summary>
     /// 星期1为0，星期日为6
     /// </summary>
@@ -75,7 +81,7 @@ public class FourSkyLocType
     /// <summary>
     /// 年的天干地支
     /// </summary>
-    public String YearSLName { get; set; } = "";//年的天干地支
+    public string YearSLName { get; set; } = "";//年的天干地支
 
     public SkyLoc YearSL { get => new SkyLoc(this.YearSLName); }
 
@@ -83,21 +89,21 @@ public class FourSkyLocType
     /// <summary>
     /// 月的天干地支
     /// </summary>
-    public String MonthSLName { get; set; } = "";//月的天干地支
+    public string MonthSLName { get; set; } = "";//月的天干地支
 
     public SkyLoc MonthSL { get => new SkyLoc(this.MonthSLName); }
 
     /// <summary>
     /// 日的天干地支
     /// </summary>
-    public String DaySLName { get; set; } = "";//日的天干地支
+    public string DaySLName { get; set; } = "";//日的天干地支
 
     public SkyLoc DaySL { get => new SkyLoc(this.DaySLName); }
 
     /// <summary>
     /// 时的天干地支
     /// </summary>
-    public String HourSLName { get; set; } = "";//时的天干地支
+    public string HourSLName { get; set; } = "";//时的天干地支
 
 
     public SkyLoc HourSL { get => new SkyLoc(this.HourSLName); }
@@ -105,28 +111,33 @@ public class FourSkyLocType
     /// <summary>
     /// 四柱全名
     /// </summary>
-    public String FullName { get; set; } = "";//四柱全名
+    public string FullName { get; set; } = "";//四柱全名
     /// <summary>
     /// 农历月份名
     /// </summary>
-    public String MonthCNName { get; set; } = "";//农历月份名
+    public string MonthCNName { get; set; } = "";//农历月份名
     /// <summary>
     /// 农历年份名
     /// </summary>
-    public String YearCNName { get; set; } = "";//农历年份名
+    public string YearCNName { get; set; } = "";//农历年份名
     /// <summary>
     /// 农历的日名
     /// </summary>
-    public String DayCNName { get; set; } = "";//农历的日名
+    public string DayCNName { get; set; } = "";//农历的日名
     /// <summary>
     /// 农历全称
     /// </summary>
-    public String FullCNName { get; set; } = "";//农历全称
+    public string FullCNName { get; set; } = "";//农历全称
+
+    /// <summary>
+    /// 如果当天是交节，那么补上节气DateTime
+    /// </summary>
+    public DateTime SeasonTime { get; set; } = DateTime.MinValue;
 
     /// <summary>
     /// 如果当天是交节，那么补上节气名称
     /// </summary>
-    public String SeasonName { get; set; } = "";//如果当天是交节，那么补上节气名称
+    public string SeasonName { get; set; } = "";//如果当天是交节，那么补上节气名称
     /// <summary>
     /// 公历日期对象
     /// </summary>

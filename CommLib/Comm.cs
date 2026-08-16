@@ -15,6 +15,28 @@ namespace CommLib
 
 
         /// <summary>
+        /// 数字转在中文数字
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
+        public static string ToCNName(this int d)
+        {
+            if (d < 0) return "";
+            char[] n = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+            char[] s = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+            string str = d.ToString();
+            string sv = "";
+            foreach (char c in str)
+            {
+                sv += s[Array.IndexOf(n, c)];
+            }
+            return sv;
+        }
+
+
+
+
+        /// <summary>
         /// 【擴充方法】將 System.Drawing.Color 完美轉換為網頁標準的 HEX 字串（如 #1BD1A5）
         /// </summary>
         /// <param name="color">System.Drawing.Color 實例</param>

@@ -10,6 +10,7 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
+using CompassEx.Gua;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -31,6 +32,45 @@ namespace CompassEx.Comm
 
 
 
+        /// <summary>
+        /// 九星颜色
+        /// </summary>
+        /// <param name="d"></param>
+        /// <param name="IsDrak"></param>
+        /// <returns></returns>
+        public static Color ToColor(this GuaSubClass d, bool IsDrak = false)
+        {
+            if (d.Color.IndexOf("白") > -1)
+            {
+                return IsDrak ? Color.White : Color.DimGray;
+            }
+            else if (d.Color.IndexOf("黑") > -1)
+            {
+                return Color.Black;
+            }
+            else if (d.Color.IndexOf("碧") > -1)
+            {
+                return IsDrak ? Color.FromArgb(255, 27, 209, 165) : Color.LightSeaGreen;
+            }
+            else if (d.Color.IndexOf("绿") > -1)
+            {
+                return Color.Green;
+            }
+            else if (d.Color.IndexOf("黄") > -1)
+            {
+                return IsDrak ? Color.Yellow : Color.Goldenrod;
+            }
+            else if (d.Color.IndexOf("赤") > -1)
+            {
+                return Color.Red;
+            }
+            else if (d.Color.IndexOf("紫") > -1)
+            {
+                return Color.FromArgb(255, 141, 62, 137);
+            }
+
+            return Color.Black;
+        }
 
 
 

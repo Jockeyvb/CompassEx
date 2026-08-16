@@ -11,6 +11,7 @@
 //
 
 
+using CommLib;
 using CompassEx.Assist;
 using CompassEx.Gua;
 using System;
@@ -92,6 +93,9 @@ namespace CompassEx.Comm
 
 
 
+
+
+
         /// <summary>
         /// 九星颜色
         /// </summary>
@@ -142,7 +146,7 @@ namespace CompassEx.Comm
         {
             var vp = d.ToLunar();
 
-            string st = vp.ly.GetName() + SplitString + vp.lm.GetName() + SplitString + vp.ld.GetName() + SplitString + vp.lh.GetName();
+            string st = vp.Year.Year.ToCNName() + SplitString + vp.Month.GetName() + SplitString + vp.Day.GetName() + SplitString + vp.Hour.GetName();
 
             return st;
         }
@@ -177,11 +181,59 @@ namespace CompassEx.Comm
         }
 
 
+
+
+
+
+        /// <summary>
+        /// DateTime 转成SkyLoc 四柱类
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
+        public static (SkyLoc Year, SkyLoc Month, SkyLoc Day, SkyLoc Hour) ToSkyLocs(this DateTime d)
+        {
+            // 1. 降維拆解原生時間
+            SolarTime sd = d.ToSolarTime();
+            var lh = sd.GetSixtyCycleHour();
+            var ld = lh.SixtyCycleDay;
+            var lm = ld.SixtyCycleMonth;
+            var ly = lm.SixtyCycleYear;
+
+            var slh = new SkyLoc(lh.GetName());
+            var sld = new SkyLoc(ld.GetName());
+            var slm = new SkyLoc(lm.GetName());
+            var sly = new SkyLoc(ly.GetName());
+
+            // 3. 【核心修正】直接回傳字面量元組，變數順序與型別必須與頭部宣告完全一致
+            return (sly, slm, sld, slh);
+        }
+
+        /// <summary>
+        /// DateTime 转成tyme SixtyCycle类
+        /// </summary>
+        /// <param name="d">公历时间</param>
+        /// <returns></returns>
+        public static (SixtyCycleYear Year, SixtyCycleMonth Month, SixtyCycleDay Day, SixtyCycleHour Hour) ToSixtyCycles(this DateTime d)
+        {
+            // 1. 降維拆解原生時間
+            SolarTime sd = d.ToSolarTime();
+
+            // 2. 獲取時、日、月、年各層級歷法對象
+            var lh = sd.GetSixtyCycleHour();
+            var ld = lh.SixtyCycleDay;
+            var lm = ld.SixtyCycleMonth;
+
+            // 3. 【核心修正】直接回傳字面量元組，變數順序與型別必須與頭部宣告完全一致
+            return (lm.SixtyCycleYear, lm, ld, lh);
+        }
+
+
+
         /// <summary>
         /// 【擴充方法】將 DateTime 一鍵轉換為包含年、月、日、時完整干支歷法對象的具名元組
         /// </summary>
         // 💡 優化：直接定義具名元組傳回型別，不再寫 ValueTuple 關鍵字
-        public static (LunarYear ly, LunarMonth lm, LunarDay ld, LunarHour lh) ToLunar(this DateTime d)
+        public static (LunarYear Year, LunarMonth Month, LunarDay Day, LunarHour Hour) ToLunar(this DateTime d)
         {
             // 1. 降維拆解原生時間
             SolarTime sd = d.ToSolarTime();

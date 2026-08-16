@@ -176,7 +176,7 @@ namespace CompassEx.Gua
                 // 5. 组装输出文本信息
                 // -----------------------------------------------------------------
                 // 格式化输出完整的理气盘口结论。注：在风水玄学择日（选时辰）时，应当结合本命对应的“命庚卦”联合使用
-                Infos.Info.Info = $"向卦：【{this.ToGua.Name}】，卦宫：【{this.ToGua.GuaSelf.Name}】,三元命卦：【{this.FateGuaSub.AfterQuantity + this.FateGuaSub.AfterGuaSubColor + this.FateGuaSub.Name}】，三元命卦辅助参考，择日应该与命庚卦为用";
+                Infos.Info.Info = $"向卦：【{this.ToGua.Name}】，卦宫：【{this.ToGua.GuaSelf.Name}】,三元命卦：【{this.FateGuaSub.AfterQuantity + this.FateGuaSub.Color + this.FateGuaSub.Name}】，三元命卦辅助参考，择日应该与命庚卦为用";
 
             }
             catch (Exception ex)
