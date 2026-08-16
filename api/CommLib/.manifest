@@ -22,6 +22,7 @@
   "CommLib.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)": "CommLib.Comm.yml",
   "CommLib.Comm.GetEnumDict(System.Enum)": "CommLib.Comm.yml",
   "CommLib.Comm.GetEnumValues(System.Enum)": "CommLib.Comm.yml",
+  "CommLib.Comm.ToCNName(System.Int32)": "CommLib.Comm.yml",
   "CommLib.Comm.ToHex(System.Drawing.Color,System.Boolean)": "CommLib.Comm.yml",
   "CommLib.DingLanGrid": "CommLib.DingLanGrid.yml",
   "CommLib.DingLanGrid.#ctor(System.Double)": "CommLib.DingLanGrid.yml",

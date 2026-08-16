@@ -15,6 +15,8 @@ items:
   - CompassEx.Comm.TymeTimeExtensions.ToLunar(System.DateTime)
   - CompassEx.Comm.TymeTimeExtensions.ToLunarDay(System.DateTime)
   - CompassEx.Comm.TymeTimeExtensions.ToLunarHour(System.DateTime)
+  - CompassEx.Comm.TymeTimeExtensions.ToSixtyCycles(System.DateTime)
+  - CompassEx.Comm.TymeTimeExtensions.ToSkyLocs(System.DateTime)
   - CompassEx.Comm.TymeTimeExtensions.ToSolarDay(System.DateTime)
   - CompassEx.Comm.TymeTimeExtensions.ToSolarTime(System.DateTime)
   - CompassEx.Comm.TymeTimeExtensions.TofourSkyLocString(tyme.lunar.LunarHour,System.String)
@@ -32,7 +34,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TymeTimeExtensions
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 36
+    startLine: 37
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -71,7 +73,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetTermTime
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 48
+    startLine: 49
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -107,7 +109,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToFullString
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 58
+    startLine: 59
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -143,7 +145,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToFourColor
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 70
+    startLine: 71
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -185,7 +187,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToColor
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 100
+    startLine: 104
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -227,7 +229,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToFullCNName
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 140
+    startLine: 144
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -269,7 +271,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: TofourSkyLocString
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 155
+    startLine: 159
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -311,7 +313,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToLunarHour
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 165
+    startLine: 169
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -329,6 +331,84 @@ items:
   nameWithType.vb: TymeTimeExtensions.ToLunarHour(Date)
   fullName.vb: CompassEx.Comm.TymeTimeExtensions.ToLunarHour(Date)
   name.vb: ToLunarHour(Date)
+- uid: CompassEx.Comm.TymeTimeExtensions.ToSkyLocs(System.DateTime)
+  commentId: M:CompassEx.Comm.TymeTimeExtensions.ToSkyLocs(System.DateTime)
+  id: ToSkyLocs(System.DateTime)
+  isExtensionMethod: true
+  parent: CompassEx.Comm.TymeTimeExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToSkyLocs(DateTime)
+  nameWithType: TymeTimeExtensions.ToSkyLocs(DateTime)
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToSkyLocs(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/TymeTimeExtensions.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToSkyLocs
+    path: CompassEx/Comm/TymeTimeExtensions.cs
+    startLine: 192
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: DateTime 转成SkyLoc 四柱类
+  example: []
+  syntax:
+    content: public static (SkyLoc Year, SkyLoc Month, SkyLoc Day, SkyLoc Hour) ToSkyLocs(this DateTime d)
+    parameters:
+    - id: d
+      type: System.DateTime
+      description: ''
+    return:
+      type: System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc}
+      description: ''
+    content.vb: Public Shared Function ToSkyLocs(d As Date) As (Year As SkyLoc, Month As SkyLoc, Day As SkyLoc, Hour As SkyLoc)
+  overload: CompassEx.Comm.TymeTimeExtensions.ToSkyLocs*
+  nameWithType.vb: TymeTimeExtensions.ToSkyLocs(Date)
+  fullName.vb: CompassEx.Comm.TymeTimeExtensions.ToSkyLocs(Date)
+  name.vb: ToSkyLocs(Date)
+- uid: CompassEx.Comm.TymeTimeExtensions.ToSixtyCycles(System.DateTime)
+  commentId: M:CompassEx.Comm.TymeTimeExtensions.ToSixtyCycles(System.DateTime)
+  id: ToSixtyCycles(System.DateTime)
+  isExtensionMethod: true
+  parent: CompassEx.Comm.TymeTimeExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToSixtyCycles(DateTime)
+  nameWithType: TymeTimeExtensions.ToSixtyCycles(DateTime)
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToSixtyCycles(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/TymeTimeExtensions.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToSixtyCycles
+    path: CompassEx/Comm/TymeTimeExtensions.cs
+    startLine: 215
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: DateTime 转成tyme SixtyCycle类
+  example: []
+  syntax:
+    content: public static (SixtyCycleYear Year, SixtyCycleMonth Month, SixtyCycleDay Day, SixtyCycleHour Hour) ToSixtyCycles(this DateTime d)
+    parameters:
+    - id: d
+      type: System.DateTime
+      description: 公历时间
+    return:
+      type: System.ValueTuple{tyme.sixtycycle.SixtyCycleYear,tyme.sixtycycle.SixtyCycleMonth,tyme.sixtycycle.SixtyCycleDay,tyme.sixtycycle.SixtyCycleHour}
+      description: ''
+    content.vb: Public Shared Function ToSixtyCycles(d As Date) As (Year As SixtyCycleYear, Month As SixtyCycleMonth, Day As SixtyCycleDay, Hour As SixtyCycleHour)
+  overload: CompassEx.Comm.TymeTimeExtensions.ToSixtyCycles*
+  nameWithType.vb: TymeTimeExtensions.ToSixtyCycles(Date)
+  fullName.vb: CompassEx.Comm.TymeTimeExtensions.ToSixtyCycles(Date)
+  name.vb: ToSixtyCycles(Date)
 - uid: CompassEx.Comm.TymeTimeExtensions.ToLunar(System.DateTime)
   commentId: M:CompassEx.Comm.TymeTimeExtensions.ToLunar(System.DateTime)
   id: ToLunar(System.DateTime)
@@ -348,20 +428,20 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToLunar
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 183
+    startLine: 235
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
   summary: 【擴充方法】將 DateTime 一鍵轉換為包含年、月、日、時完整干支歷法對象的具名元組
   example: []
   syntax:
-    content: public static (LunarYear ly, LunarMonth lm, LunarDay ld, LunarHour lh) ToLunar(this DateTime d)
+    content: public static (LunarYear Year, LunarMonth Month, LunarDay Day, LunarHour Hour) ToLunar(this DateTime d)
     parameters:
     - id: d
       type: System.DateTime
     return:
       type: System.ValueTuple{tyme.lunar.LunarYear,tyme.lunar.LunarMonth,tyme.lunar.LunarDay,tyme.lunar.LunarHour}
-    content.vb: Public Shared Function ToLunar(d As Date) As (ly As LunarYear, lm As LunarMonth, ld As LunarDay, lh As LunarHour)
+    content.vb: Public Shared Function ToLunar(d As Date) As (Year As LunarYear, Month As LunarMonth, Day As LunarDay, Hour As LunarHour)
   overload: CompassEx.Comm.TymeTimeExtensions.ToLunar*
   nameWithType.vb: TymeTimeExtensions.ToLunar(Date)
   fullName.vb: CompassEx.Comm.TymeTimeExtensions.ToLunar(Date)
@@ -385,7 +465,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToLunarDay
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 203
+    startLine: 255
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -424,7 +504,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToSolarDay
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 218
+    startLine: 270
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -463,7 +543,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToSolarTime
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 234
+    startLine: 286
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -506,7 +586,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToDateTime
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 249
+    startLine: 301
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -543,7 +623,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToDateTime
     path: CompassEx/Comm/TymeTimeExtensions.cs
-    startLine: 259
+    startLine: 311
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -1092,6 +1172,235 @@ references:
   name: ToLunarHour
   nameWithType: TymeTimeExtensions.ToLunarHour
   fullName: CompassEx.Comm.TymeTimeExtensions.ToLunarHour
+- uid: CompassEx.Comm.TymeTimeExtensions.ToSkyLocs*
+  commentId: Overload:CompassEx.Comm.TymeTimeExtensions.ToSkyLocs
+  href: CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToSkyLocs_System_DateTime_
+  name: ToSkyLocs
+  nameWithType: TymeTimeExtensions.ToSkyLocs
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToSkyLocs
+- uid: System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc}
+  commentId: T:System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc}
+  parent: System
+  definition: System.ValueTuple`4
+  href: CompassEx.Comm.SkyLoc.html
+  name: (SkyLoc Year, SkyLoc Month, SkyLoc Day, SkyLoc Hour)
+  nameWithType: (SkyLoc Year, SkyLoc Month, SkyLoc Day, SkyLoc Hour)
+  fullName: (CompassEx.Comm.SkyLoc Year, CompassEx.Comm.SkyLoc Month, CompassEx.Comm.SkyLoc Day, CompassEx.Comm.SkyLoc Hour)
+  nameWithType.vb: (Year As SkyLoc, Month As SkyLoc, Day As SkyLoc, Hour As SkyLoc)
+  fullName.vb: (Year As CompassEx.Comm.SkyLoc, Month As CompassEx.Comm.SkyLoc, Day As CompassEx.Comm.SkyLoc, Hour As CompassEx.Comm.SkyLoc)
+  name.vb: (Year As SkyLoc, Month As SkyLoc, Day As SkyLoc, Hour As SkyLoc)
+  spec.csharp:
+  - name: (
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
+  - name: " "
+  - uid: System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc}.Year
+    name: Year
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-compassex.comm.skyloc,compassex.comm.skyloc,compassex.comm.skyloc,compassex.comm.skyloc-.year
+  - name: ','
+  - name: " "
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
+  - name: " "
+  - uid: System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc}.Month
+    name: Month
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-compassex.comm.skyloc,compassex.comm.skyloc,compassex.comm.skyloc,compassex.comm.skyloc-.month
+  - name: ','
+  - name: " "
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
+  - name: " "
+  - uid: System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc}.Day
+    name: Day
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-compassex.comm.skyloc,compassex.comm.skyloc,compassex.comm.skyloc,compassex.comm.skyloc-.day
+  - name: ','
+  - name: " "
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
+  - name: " "
+  - uid: System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc}.Hour
+    name: Hour
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-compassex.comm.skyloc,compassex.comm.skyloc,compassex.comm.skyloc,compassex.comm.skyloc-.hour
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc}.Year
+    name: Year
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-compassex.comm.skyloc,compassex.comm.skyloc,compassex.comm.skyloc,compassex.comm.skyloc-.year
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc}.Month
+    name: Month
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-compassex.comm.skyloc,compassex.comm.skyloc,compassex.comm.skyloc,compassex.comm.skyloc-.month
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc}.Day
+    name: Day
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-compassex.comm.skyloc,compassex.comm.skyloc,compassex.comm.skyloc,compassex.comm.skyloc-.day
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc,CompassEx.Comm.SkyLoc}.Hour
+    name: Hour
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-compassex.comm.skyloc,compassex.comm.skyloc,compassex.comm.skyloc,compassex.comm.skyloc-.hour
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: CompassEx.Comm.SkyLoc
+    name: SkyLoc
+    href: CompassEx.Comm.SkyLoc.html
+  - name: )
+- uid: System.ValueTuple`4
+  commentId: T:System.ValueTuple`4
+  name: (T1, T2, T3, T4)
+  nameWithType: (T1, T2, T3, T4)
+  fullName: (T1, T2, T3, T4)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: )
+- uid: CompassEx.Comm.TymeTimeExtensions.ToSixtyCycles*
+  commentId: Overload:CompassEx.Comm.TymeTimeExtensions.ToSixtyCycles
+  href: CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToSixtyCycles_System_DateTime_
+  name: ToSixtyCycles
+  nameWithType: TymeTimeExtensions.ToSixtyCycles
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToSixtyCycles
+- uid: System.ValueTuple{tyme.sixtycycle.SixtyCycleYear,tyme.sixtycycle.SixtyCycleMonth,tyme.sixtycycle.SixtyCycleDay,tyme.sixtycycle.SixtyCycleHour}
+  commentId: T:System.ValueTuple{tyme.sixtycycle.SixtyCycleYear,tyme.sixtycycle.SixtyCycleMonth,tyme.sixtycycle.SixtyCycleDay,tyme.sixtycycle.SixtyCycleHour}
+  parent: System
+  definition: System.ValueTuple`4
+  href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.sixtycycle.sixtycycleyear,tyme.sixtycycle.sixtycyclemonth,tyme.sixtycycle.sixtycycleday,tyme.sixtycycle.sixtycyclehour-.year
+  name: (SixtyCycleYear Year, SixtyCycleMonth Month, SixtyCycleDay Day, SixtyCycleHour Hour)
+  nameWithType: (SixtyCycleYear Year, SixtyCycleMonth Month, SixtyCycleDay Day, SixtyCycleHour Hour)
+  fullName: (tyme.sixtycycle.SixtyCycleYear Year, tyme.sixtycycle.SixtyCycleMonth Month, tyme.sixtycycle.SixtyCycleDay Day, tyme.sixtycycle.SixtyCycleHour Hour)
+  nameWithType.vb: (Year As SixtyCycleYear, Month As SixtyCycleMonth, Day As SixtyCycleDay, Hour As SixtyCycleHour)
+  fullName.vb: (Year As tyme.sixtycycle.SixtyCycleYear, Month As tyme.sixtycycle.SixtyCycleMonth, Day As tyme.sixtycycle.SixtyCycleDay, Hour As tyme.sixtycycle.SixtyCycleHour)
+  name.vb: (Year As SixtyCycleYear, Month As SixtyCycleMonth, Day As SixtyCycleDay, Hour As SixtyCycleHour)
+  spec.csharp:
+  - name: (
+  - uid: tyme.sixtycycle.SixtyCycleYear
+    name: SixtyCycleYear
+    isExternal: true
+  - name: " "
+  - uid: System.ValueTuple{tyme.sixtycycle.SixtyCycleYear,tyme.sixtycycle.SixtyCycleMonth,tyme.sixtycycle.SixtyCycleDay,tyme.sixtycycle.SixtyCycleHour}.Year
+    name: Year
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.sixtycycle.sixtycycleyear,tyme.sixtycycle.sixtycyclemonth,tyme.sixtycycle.sixtycycleday,tyme.sixtycycle.sixtycyclehour-.year
+  - name: ','
+  - name: " "
+  - uid: tyme.sixtycycle.SixtyCycleMonth
+    name: SixtyCycleMonth
+    isExternal: true
+  - name: " "
+  - uid: System.ValueTuple{tyme.sixtycycle.SixtyCycleYear,tyme.sixtycycle.SixtyCycleMonth,tyme.sixtycycle.SixtyCycleDay,tyme.sixtycycle.SixtyCycleHour}.Month
+    name: Month
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.sixtycycle.sixtycycleyear,tyme.sixtycycle.sixtycyclemonth,tyme.sixtycycle.sixtycycleday,tyme.sixtycycle.sixtycyclehour-.month
+  - name: ','
+  - name: " "
+  - uid: tyme.sixtycycle.SixtyCycleDay
+    name: SixtyCycleDay
+    isExternal: true
+  - name: " "
+  - uid: System.ValueTuple{tyme.sixtycycle.SixtyCycleYear,tyme.sixtycycle.SixtyCycleMonth,tyme.sixtycycle.SixtyCycleDay,tyme.sixtycycle.SixtyCycleHour}.Day
+    name: Day
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.sixtycycle.sixtycycleyear,tyme.sixtycycle.sixtycyclemonth,tyme.sixtycycle.sixtycycleday,tyme.sixtycycle.sixtycyclehour-.day
+  - name: ','
+  - name: " "
+  - uid: tyme.sixtycycle.SixtyCycleHour
+    name: SixtyCycleHour
+    isExternal: true
+  - name: " "
+  - uid: System.ValueTuple{tyme.sixtycycle.SixtyCycleYear,tyme.sixtycycle.SixtyCycleMonth,tyme.sixtycycle.SixtyCycleDay,tyme.sixtycycle.SixtyCycleHour}.Hour
+    name: Hour
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.sixtycycle.sixtycycleyear,tyme.sixtycycle.sixtycyclemonth,tyme.sixtycycle.sixtycycleday,tyme.sixtycycle.sixtycyclehour-.hour
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{tyme.sixtycycle.SixtyCycleYear,tyme.sixtycycle.SixtyCycleMonth,tyme.sixtycycle.SixtyCycleDay,tyme.sixtycycle.SixtyCycleHour}.Year
+    name: Year
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.sixtycycle.sixtycycleyear,tyme.sixtycycle.sixtycyclemonth,tyme.sixtycycle.sixtycycleday,tyme.sixtycycle.sixtycyclehour-.year
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: tyme.sixtycycle.SixtyCycleYear
+    name: SixtyCycleYear
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{tyme.sixtycycle.SixtyCycleYear,tyme.sixtycycle.SixtyCycleMonth,tyme.sixtycycle.SixtyCycleDay,tyme.sixtycycle.SixtyCycleHour}.Month
+    name: Month
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.sixtycycle.sixtycycleyear,tyme.sixtycycle.sixtycyclemonth,tyme.sixtycycle.sixtycycleday,tyme.sixtycycle.sixtycyclehour-.month
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: tyme.sixtycycle.SixtyCycleMonth
+    name: SixtyCycleMonth
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{tyme.sixtycycle.SixtyCycleYear,tyme.sixtycycle.SixtyCycleMonth,tyme.sixtycycle.SixtyCycleDay,tyme.sixtycycle.SixtyCycleHour}.Day
+    name: Day
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.sixtycycle.sixtycycleyear,tyme.sixtycycle.sixtycyclemonth,tyme.sixtycycle.sixtycycleday,tyme.sixtycycle.sixtycyclehour-.day
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: tyme.sixtycycle.SixtyCycleDay
+    name: SixtyCycleDay
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{tyme.sixtycycle.SixtyCycleYear,tyme.sixtycycle.SixtyCycleMonth,tyme.sixtycycle.SixtyCycleDay,tyme.sixtycycle.SixtyCycleHour}.Hour
+    name: Hour
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-tyme.sixtycycle.sixtycycleyear,tyme.sixtycycle.sixtycyclemonth,tyme.sixtycycle.sixtycycleday,tyme.sixtycycle.sixtycyclehour-.hour
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: tyme.sixtycycle.SixtyCycleHour
+    name: SixtyCycleHour
+    isExternal: true
+  - name: )
 - uid: CompassEx.Comm.TymeTimeExtensions.ToLunar*
   commentId: Overload:CompassEx.Comm.TymeTimeExtensions.ToLunar
   href: CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToLunar_System_DateTime_
@@ -1190,37 +1499,6 @@ references:
   - uid: tyme.lunar.LunarHour
     name: LunarHour
     isExternal: true
-  - name: )
-- uid: System.ValueTuple`4
-  commentId: T:System.ValueTuple`4
-  name: (T1, T2, T3, T4)
-  nameWithType: (T1, T2, T3, T4)
-  fullName: (T1, T2, T3, T4)
-  spec.csharp:
-  - name: (
-  - name: T1
-  - name: ','
-  - name: " "
-  - name: T2
-  - name: ','
-  - name: " "
-  - name: T3
-  - name: ','
-  - name: " "
-  - name: T4
-  - name: )
-  spec.vb:
-  - name: (
-  - name: T1
-  - name: ','
-  - name: " "
-  - name: T2
-  - name: ','
-  - name: " "
-  - name: T3
-  - name: ','
-  - name: " "
-  - name: T4
   - name: )
 - uid: CompassEx.Comm.TymeTimeExtensions.ToLunarDay*
   commentId: Overload:CompassEx.Comm.TymeTimeExtensions.ToLunarDay

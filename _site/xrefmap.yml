@@ -304,6 +304,22 @@ references:
   isSpec: "True"
   fullName: CommLib.Comm.GetEnumValues
   nameWithType: Comm.GetEnumValues
+- uid: CommLib.Comm.ToCNName(System.Int32)
+  name: ToCNName(int)
+  href: api/CommLib/CommLib.Comm.html#CommLib_Comm_ToCNName_System_Int32_
+  commentId: M:CommLib.Comm.ToCNName(System.Int32)
+  name.vb: ToCNName(Integer)
+  fullName: CommLib.Comm.ToCNName(int)
+  fullName.vb: CommLib.Comm.ToCNName(Integer)
+  nameWithType: Comm.ToCNName(int)
+  nameWithType.vb: Comm.ToCNName(Integer)
+- uid: CommLib.Comm.ToCNName*
+  name: ToCNName
+  href: api/CommLib/CommLib.Comm.html#CommLib_Comm_ToCNName_
+  commentId: Overload:CommLib.Comm.ToCNName
+  isSpec: "True"
+  fullName: CommLib.Comm.ToCNName
+  nameWithType: Comm.ToCNName
 - uid: CommLib.Comm.ToHex(System.Drawing.Color,System.Boolean)
   name: ToHex(Color, bool)
   href: api/CommLib/CommLib.Comm.html#CommLib_Comm_ToHex_System_Drawing_Color_System_Boolean_
@@ -1680,6 +1696,19 @@ references:
   isSpec: "True"
   fullName: CompassEx.Assist.FourSkyLocType.SeasonName
   nameWithType: FourSkyLocType.SeasonName
+- uid: CompassEx.Assist.FourSkyLocType.SeasonTime
+  name: SeasonTime
+  href: api/CompassEx/CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_SeasonTime
+  commentId: P:CompassEx.Assist.FourSkyLocType.SeasonTime
+  fullName: CompassEx.Assist.FourSkyLocType.SeasonTime
+  nameWithType: FourSkyLocType.SeasonTime
+- uid: CompassEx.Assist.FourSkyLocType.SeasonTime*
+  name: SeasonTime
+  href: api/CompassEx/CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_SeasonTime_
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.SeasonTime
+  isSpec: "True"
+  fullName: CompassEx.Assist.FourSkyLocType.SeasonTime
+  nameWithType: FourSkyLocType.SeasonTime
 - uid: CompassEx.Assist.FourSkyLocType.YearCNName
   name: YearCNName
   href: api/CompassEx/CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_YearCNName
@@ -2500,6 +2529,22 @@ references:
   fullName.vb: CompassEx.Comm.Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
   nameWithType: Comm.ApplyBaseProperties<TChild, TBase>(TChild, TBase)
   nameWithType.vb: Comm.ApplyBaseProperties(Of TChild, TBase)(TChild, TBase)
+- uid: CompassEx.Comm.Comm.ToColor(CompassEx.Gua.GuaSubClass,System.Boolean)
+  name: ToColor(GuaSubClass, bool)
+  href: api/CompassEx/CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ToColor_CompassEx_Gua_GuaSubClass_System_Boolean_
+  commentId: M:CompassEx.Comm.Comm.ToColor(CompassEx.Gua.GuaSubClass,System.Boolean)
+  name.vb: ToColor(GuaSubClass, Boolean)
+  fullName: CompassEx.Comm.Comm.ToColor(CompassEx.Gua.GuaSubClass, bool)
+  fullName.vb: CompassEx.Comm.Comm.ToColor(CompassEx.Gua.GuaSubClass, Boolean)
+  nameWithType: Comm.ToColor(GuaSubClass, bool)
+  nameWithType.vb: Comm.ToColor(GuaSubClass, Boolean)
+- uid: CompassEx.Comm.Comm.ToColor*
+  name: ToColor
+  href: api/CompassEx/CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ToColor_
+  commentId: Overload:CompassEx.Comm.Comm.ToColor
+  isSpec: "True"
+  fullName: CompassEx.Comm.Comm.ToColor
+  nameWithType: Comm.ToColor
 - uid: CompassEx.Comm.CompassObjStru
   name: CompassObjStru
   href: api/CompassEx/CompassEx.Comm.CompassObjStru.html
@@ -3378,6 +3423,19 @@ references:
   isSpec: "True"
   fullName: CompassEx.Comm.FlyStar.HourFlyStars
   nameWithType: FlyStar.HourFlyStars
+- uid: CompassEx.Comm.FlyStar.HuorFlyStarIsAutoSort(CompassEx.Comm.LocClass)
+  name: HuorFlyStarIsAutoSort(LocClass)
+  href: api/CompassEx/CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_HuorFlyStarIsAutoSort_CompassEx_Comm_LocClass_
+  commentId: M:CompassEx.Comm.FlyStar.HuorFlyStarIsAutoSort(CompassEx.Comm.LocClass)
+  fullName: CompassEx.Comm.FlyStar.HuorFlyStarIsAutoSort(CompassEx.Comm.LocClass)
+  nameWithType: FlyStar.HuorFlyStarIsAutoSort(LocClass)
+- uid: CompassEx.Comm.FlyStar.HuorFlyStarIsAutoSort*
+  name: HuorFlyStarIsAutoSort
+  href: api/CompassEx/CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_HuorFlyStarIsAutoSort_
+  commentId: Overload:CompassEx.Comm.FlyStar.HuorFlyStarIsAutoSort
+  isSpec: "True"
+  fullName: CompassEx.Comm.FlyStar.HuorFlyStarIsAutoSort
+  nameWithType: FlyStar.HuorFlyStarIsAutoSort
 - uid: CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.LocClass)
   name: MonthFlyStars(LocClass)
   href: api/CompassEx/CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_MonthFlyStars_CompassEx_Comm_LocClass_
@@ -4585,6 +4643,38 @@ references:
   isSpec: "True"
   fullName: CompassEx.Comm.TymeTimeExtensions.ToLunarHour
   nameWithType: TymeTimeExtensions.ToLunarHour
+- uid: CompassEx.Comm.TymeTimeExtensions.ToSixtyCycles(System.DateTime)
+  name: ToSixtyCycles(DateTime)
+  href: api/CompassEx/CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToSixtyCycles_System_DateTime_
+  commentId: M:CompassEx.Comm.TymeTimeExtensions.ToSixtyCycles(System.DateTime)
+  name.vb: ToSixtyCycles(Date)
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToSixtyCycles(System.DateTime)
+  fullName.vb: CompassEx.Comm.TymeTimeExtensions.ToSixtyCycles(Date)
+  nameWithType: TymeTimeExtensions.ToSixtyCycles(DateTime)
+  nameWithType.vb: TymeTimeExtensions.ToSixtyCycles(Date)
+- uid: CompassEx.Comm.TymeTimeExtensions.ToSixtyCycles*
+  name: ToSixtyCycles
+  href: api/CompassEx/CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToSixtyCycles_
+  commentId: Overload:CompassEx.Comm.TymeTimeExtensions.ToSixtyCycles
+  isSpec: "True"
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToSixtyCycles
+  nameWithType: TymeTimeExtensions.ToSixtyCycles
+- uid: CompassEx.Comm.TymeTimeExtensions.ToSkyLocs(System.DateTime)
+  name: ToSkyLocs(DateTime)
+  href: api/CompassEx/CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToSkyLocs_System_DateTime_
+  commentId: M:CompassEx.Comm.TymeTimeExtensions.ToSkyLocs(System.DateTime)
+  name.vb: ToSkyLocs(Date)
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToSkyLocs(System.DateTime)
+  fullName.vb: CompassEx.Comm.TymeTimeExtensions.ToSkyLocs(Date)
+  nameWithType: TymeTimeExtensions.ToSkyLocs(DateTime)
+  nameWithType.vb: TymeTimeExtensions.ToSkyLocs(Date)
+- uid: CompassEx.Comm.TymeTimeExtensions.ToSkyLocs*
+  name: ToSkyLocs
+  href: api/CompassEx/CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToSkyLocs_
+  commentId: Overload:CompassEx.Comm.TymeTimeExtensions.ToSkyLocs
+  isSpec: "True"
+  fullName: CompassEx.Comm.TymeTimeExtensions.ToSkyLocs
+  nameWithType: TymeTimeExtensions.ToSkyLocs
 - uid: CompassEx.Comm.TymeTimeExtensions.ToSolarDay(System.DateTime)
   name: ToSolarDay(DateTime)
   href: api/CompassEx/CompassEx.Comm.TymeTimeExtensions.html#CompassEx_Comm_TymeTimeExtensions_ToSolarDay_System_DateTime_
@@ -6119,31 +6209,6 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.GuaSubClass.AfterGuaSubCNQuantity
   nameWithType: GuaSubClass.AfterGuaSubCNQuantity
-- uid: CompassEx.Gua.GuaSubClass.AfterGuaSubColor
-  name: AfterGuaSubColor
-  href: api/CompassEx/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_AfterGuaSubColor
-  commentId: P:CompassEx.Gua.GuaSubClass.AfterGuaSubColor
-  fullName: CompassEx.Gua.GuaSubClass.AfterGuaSubColor
-  nameWithType: GuaSubClass.AfterGuaSubColor
-- uid: CompassEx.Gua.GuaSubClass.AfterGuaSubColor*
-  name: AfterGuaSubColor
-  href: api/CompassEx/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_AfterGuaSubColor_
-  commentId: Overload:CompassEx.Gua.GuaSubClass.AfterGuaSubColor
-  isSpec: "True"
-  fullName: CompassEx.Gua.GuaSubClass.AfterGuaSubColor
-  nameWithType: GuaSubClass.AfterGuaSubColor
-- uid: CompassEx.Gua.GuaSubClass.AfterGuaSubColorClasses
-  name: AfterGuaSubColorClasses
-  href: api/CompassEx/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_AfterGuaSubColorClasses
-  commentId: F:CompassEx.Gua.GuaSubClass.AfterGuaSubColorClasses
-  fullName: CompassEx.Gua.GuaSubClass.AfterGuaSubColorClasses
-  nameWithType: GuaSubClass.AfterGuaSubColorClasses
-- uid: CompassEx.Gua.GuaSubClass.AfterGuaSubColors
-  name: AfterGuaSubColors
-  href: api/CompassEx/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_AfterGuaSubColors
-  commentId: F:CompassEx.Gua.GuaSubClass.AfterGuaSubColors
-  fullName: CompassEx.Gua.GuaSubClass.AfterGuaSubColors
-  nameWithType: GuaSubClass.AfterGuaSubColors
 - uid: CompassEx.Gua.GuaSubClass.AfterGuaSubIndex
   name: AfterGuaSubIndex
   href: api/CompassEx/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_AfterGuaSubIndex
@@ -6290,6 +6355,25 @@ references:
   isSpec: "True"
   fullName: CompassEx.Gua.GuaSubClass.CBeforRangeDegree
   nameWithType: GuaSubClass.CBeforRangeDegree
+- uid: CompassEx.Gua.GuaSubClass.Color
+  name: Color
+  href: api/CompassEx/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_Color
+  commentId: P:CompassEx.Gua.GuaSubClass.Color
+  fullName: CompassEx.Gua.GuaSubClass.Color
+  nameWithType: GuaSubClass.Color
+- uid: CompassEx.Gua.GuaSubClass.Color*
+  name: Color
+  href: api/CompassEx/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_Color_
+  commentId: Overload:CompassEx.Gua.GuaSubClass.Color
+  isSpec: "True"
+  fullName: CompassEx.Gua.GuaSubClass.Color
+  nameWithType: GuaSubClass.Color
+- uid: CompassEx.Gua.GuaSubClass.Colors
+  name: Colors
+  href: api/CompassEx/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_Colors
+  commentId: F:CompassEx.Gua.GuaSubClass.Colors
+  fullName: CompassEx.Gua.GuaSubClass.Colors
+  nameWithType: GuaSubClass.Colors
 - uid: CompassEx.Gua.GuaSubClass.Equals(System.Object)
   name: Equals(object)
   href: api/CompassEx/CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_Equals_System_Object_

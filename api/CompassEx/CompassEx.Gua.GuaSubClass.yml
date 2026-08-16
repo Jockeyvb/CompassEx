@@ -9,9 +9,6 @@ items:
   - CompassEx.Gua.GuaSubClass.#ctor(System.String)
   - CompassEx.Gua.GuaSubClass.AfterGuaSubAttrNames
   - CompassEx.Gua.GuaSubClass.AfterGuaSubCNQuantity
-  - CompassEx.Gua.GuaSubClass.AfterGuaSubColor
-  - CompassEx.Gua.GuaSubClass.AfterGuaSubColorClasses
-  - CompassEx.Gua.GuaSubClass.AfterGuaSubColors
   - CompassEx.Gua.GuaSubClass.AfterGuaSubIndex
   - CompassEx.Gua.GuaSubClass.AfterGuaSubNames
   - CompassEx.Gua.GuaSubClass.AfterGuaSubNumerics
@@ -27,6 +24,8 @@ items:
   - CompassEx.Gua.GuaSubClass.BeforeQuanity
   - CompassEx.Gua.GuaSubClass.CAfterRangeDegree
   - CompassEx.Gua.GuaSubClass.CBeforRangeDegree
+  - CompassEx.Gua.GuaSubClass.Color
+  - CompassEx.Gua.GuaSubClass.Colors
   - CompassEx.Gua.GuaSubClass.Equals(System.Object)
   - CompassEx.Gua.GuaSubClass.FiveAttr
   - CompassEx.Gua.GuaSubClass.GetAfterGuaSub(System.Int32,System.Boolean)
@@ -92,6 +91,7 @@ items:
   - System.Object.ToString
   extensionMethods:
   - CompassEx.Gua.GuaSubClass.CompassEx.Comm.Comm.ApplyBaseProperties``2({TBase})
+  - CompassEx.Gua.GuaSubClass.CompassEx.Comm.Comm.ToColor(System.Boolean)
 - uid: CompassEx.Gua.GuaSubClass.BeforeGuaSubAttrNames
   commentId: F:CompassEx.Gua.GuaSubClass.BeforeGuaSubAttrNames
   id: BeforeGuaSubAttrNames
@@ -427,23 +427,23 @@ items:
 
         1宫:中男, 2宫:母, 3宫:长男, 4宫:长女, 5宫:黄中(中宫), 6宫:父, 7宫:少女, 8宫:少男, 9宫:中女</code></pre>
     content.vb: Public Shared ReadOnly AfterGuaSubReluNames As String()
-- uid: CompassEx.Gua.GuaSubClass.AfterGuaSubColors
-  commentId: F:CompassEx.Gua.GuaSubClass.AfterGuaSubColors
-  id: AfterGuaSubColors
+- uid: CompassEx.Gua.GuaSubClass.Colors
+  commentId: F:CompassEx.Gua.GuaSubClass.Colors
+  id: Colors
   parent: CompassEx.Gua.GuaSubClass
   langs:
   - csharp
   - vb
-  name: AfterGuaSubColors
-  nameWithType: GuaSubClass.AfterGuaSubColors
-  fullName: CompassEx.Gua.GuaSubClass.AfterGuaSubColors
+  name: Colors
+  nameWithType: GuaSubClass.Colors
+  fullName: CompassEx.Gua.GuaSubClass.Colors
   type: Field
   source:
     remote:
       path: CompassEx/Gua/GuaSubClass.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: AfterGuaSubColors
+    id: Colors
     path: CompassEx/Gua/GuaSubClass.cs
     startLine: 184
   assemblies:
@@ -453,53 +453,14 @@ items:
   remarks: 完美收录大成风水玄空紫白九星理气体系，包含了堪舆学极其重视的“九星三白（一白、六白、八白）”核心断卦参数。
   example: []
   syntax:
-    content: public static readonly string[] AfterGuaSubColors
+    content: public static readonly string[] Colors
     return:
       type: System.String[]
       description: >-
         <pre><code class="lang-csharp">数组索引 0-8 严格对应九星色彩名：
 
         一白, 二黑, 三碧, 四绿, 五黄, 六白, 七赤, 八白, 九紫</code></pre>
-    content.vb: Public Shared ReadOnly AfterGuaSubColors As String()
-- uid: CompassEx.Gua.GuaSubClass.AfterGuaSubColorClasses
-  commentId: F:CompassEx.Gua.GuaSubClass.AfterGuaSubColorClasses
-  id: AfterGuaSubColorClasses
-  parent: CompassEx.Gua.GuaSubClass
-  langs:
-  - csharp
-  - vb
-  name: AfterGuaSubColorClasses
-  nameWithType: GuaSubClass.AfterGuaSubColorClasses
-  fullName: CompassEx.Gua.GuaSubClass.AfterGuaSubColorClasses
-  type: Field
-  source:
-    remote:
-      path: CompassEx/Gua/GuaSubClass.cs
-      branch: master
-      repo: https://github.com/Jockeyvb/CompassEx.git
-    id: AfterGuaSubColorClasses
-    path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 200
-  assemblies:
-  - CompassEx
-  namespace: CompassEx.Gua
-  summary: 获取三元紫白九星颜色对应映射的 C# 原生高级色彩实例（<xref href="System.Drawing.Color" data-throw-if-not-resolved="false"></xref>）数组列表。
-  remarks: >-
-    该数组旨在跨平台、跨桌面的 UI 渲染与排盘界面（如 WPF、WinForms 或是带有自定义画板的图形输出）中，
-
-    能够全自动、将抽象的术数九星颜色直接翻译反灌为系统底层的标准色彩，避免在前端进行大块的硬编码或繁琐的 Switch 转换。
-  example: []
-  syntax:
-    content: public static readonly Color[] AfterGuaSubColorClasses
-    return:
-      type: System.Drawing.Color[]
-      description: >-
-        <pre><code class="lang-csharp">数组索引 0-8 映射的 System.Drawing.Color 成员：
-
-        1宫(白)-&gt;White, 2宫(黑)-&gt;Black, 3宫(碧)-&gt;DarkGreen, 4宫(绿)-&gt;Green, 
-
-        5宫(黄)-&gt;BurlyWood, 6宫(白)-&gt;White, 7宫(赤)-&gt;Red, 8宫(白)-&gt;White, 9宫(紫)-&gt;Purple</code></pre>
-    content.vb: Public Shared ReadOnly AfterGuaSubColorClasses As Color()
+    content.vb: Public Shared ReadOnly Colors As String()
 - uid: CompassEx.Gua.GuaSubClass.IsSun
   commentId: P:CompassEx.Gua.GuaSubClass.IsSun
   id: IsSun
@@ -819,23 +780,23 @@ items:
       description: 符合《说卦传》经典人伦隐喻的中文分类字符串。
     content.vb: Public Property GuaSubReluName As String
   overload: CompassEx.Gua.GuaSubClass.GuaSubReluName*
-- uid: CompassEx.Gua.GuaSubClass.AfterGuaSubColor
-  commentId: P:CompassEx.Gua.GuaSubClass.AfterGuaSubColor
-  id: AfterGuaSubColor
+- uid: CompassEx.Gua.GuaSubClass.Color
+  commentId: P:CompassEx.Gua.GuaSubClass.Color
+  id: Color
   parent: CompassEx.Gua.GuaSubClass
   langs:
   - csharp
   - vb
-  name: AfterGuaSubColor
-  nameWithType: GuaSubClass.AfterGuaSubColor
-  fullName: CompassEx.Gua.GuaSubClass.AfterGuaSubColor
+  name: Color
+  nameWithType: GuaSubClass.Color
+  fullName: CompassEx.Gua.GuaSubClass.Color
   type: Property
   source:
     remote:
       path: CompassEx/Gua/GuaSubClass.cs
       branch: master
       repo: https://github.com/Jockeyvb/CompassEx.git
-    id: AfterGuaSubColor
+    id: Color
     path: CompassEx/Gua/GuaSubClass.cs
     startLine: 291
   assemblies:
@@ -844,13 +805,13 @@ items:
   summary: 获取当前经卦在文王后天八卦及洛书紫白九星体例中所映射的标准颜色文字属性（如：“白”、“黑”、“紫”）。
   example: []
   syntax:
-    content: public string AfterGuaSubColor { get; }
+    content: public string Color { get; }
     parameters: []
     return:
       type: System.String
       description: 代表九星色彩名录的单字名称。
-    content.vb: Public ReadOnly Property AfterGuaSubColor As String
-  overload: CompassEx.Gua.GuaSubClass.AfterGuaSubColor*
+    content.vb: Public ReadOnly Property Color As String
+  overload: CompassEx.Gua.GuaSubClass.Color*
 - uid: CompassEx.Gua.GuaSubClass.AfterQuantity
   commentId: P:CompassEx.Gua.GuaSubClass.AfterQuantity
   id: AfterQuantity
@@ -869,7 +830,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterQuantity
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 297
+    startLine: 300
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -901,7 +862,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeQuanity
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 303
+    startLine: 306
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -943,7 +904,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Name
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 310
+    startLine: 313
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -975,7 +936,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AttrName
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 316
+    startLine: 319
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1007,7 +968,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FiveAttr
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 322
+    startLine: 325
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1039,7 +1000,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuaSubCNQuantity
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 328
+    startLine: 331
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1081,7 +1042,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubCNQuantity
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 335
+    startLine: 338
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1113,7 +1074,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: BeforeGuaSubIndex
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 341
+    startLine: 344
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1145,7 +1106,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: AfterGuaSubIndex
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 347
+    startLine: 350
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1177,7 +1138,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Symbol
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 356
+    startLine: 359
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1220,7 +1181,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CAfterRangeDegree
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 363
+    startLine: 366
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1252,7 +1213,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: CBeforRangeDegree
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 369
+    startLine: 372
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1284,7 +1245,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 385
+    startLine: 388
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1329,7 +1290,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: .ctor
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 406
+    startLine: 409
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1341,7 +1302,7 @@ items:
 
     <b>经卦底层数理装配流程：</b>
 
-    <ol><li><b>安全边界校验</b>：校验输入索引。若执行不合法则瞬间熔断并抛出越界异常。</li><li><b>爻象阴阳重组（Switch 分布）</b>：依据先天八卦符号编码（0代表阴爻，1代表阳爻），由下而上对长为 3 的 <xref href="CompassEx.Gua.GuaSubClass.Yaos" data-throw-if-not-resolved="false"></xref> 数组进行赋值（如 case 1 兑卦：初爻为阳(1)、二爻为阳(1)、三爻为阴(0)）。</li><li><b>基础术数属性反哺</b>：通过索引同步锁定并充填物象（<xref href="CompassEx.Gua.GuaSubClass.AttrName" data-throw-if-not-resolved="false"></xref>）、六亲伦理（<xref href="CompassEx.Gua.GuaSubClass.GuaSubReluName" data-throw-if-not-resolved="false"></xref>）和基本单字卦名。</li><li><b>跨体系方位映射</b>：通过后天八卦清册反查其在文王后天九宫中的绝对物理位置（<code>iPos</code>），进而将对应方位的紫白九星颜色（<xref href="CompassEx.Gua.GuaSubClass.AfterGuaSubColor" data-throw-if-not-resolved="false"></xref>）以及最终的生克五行属性（<xref href="CompassEx.Gua.GuaSubClass.FiveAttr" data-throw-if-not-resolved="false"></xref>）彻底装载完毕。</li></ol>
+    <ol><li><b>安全边界校验</b>：校验输入索引。若执行不合法则瞬间熔断并抛出越界异常。</li><li><b>爻象阴阳重组（Switch 分布）</b>：依据先天八卦符号编码（0代表阴爻，1代表阳爻），由下而上对长为 3 的 <xref href="CompassEx.Gua.GuaSubClass.Yaos" data-throw-if-not-resolved="false"></xref> 数组进行赋值（如 case 1 兑卦：初爻为阳(1)、二爻为阳(1)、三爻为阴(0)）。</li><li><b>基础术数属性反哺</b>：通过索引同步锁定并充填物象（<xref href="CompassEx.Gua.GuaSubClass.AttrName" data-throw-if-not-resolved="false"></xref>）、六亲伦理（<xref href="CompassEx.Gua.GuaSubClass.GuaSubReluName" data-throw-if-not-resolved="false"></xref>）和基本单字卦名。</li><li><b>跨体系方位映射</b>：通过后天八卦清册反查其在文王后天九宫中的绝对物理位置（<code>iPos</code>），进而将对应方位的紫白九星颜色（AfterGuaSubColor）以及最终的生克五行属性（<xref href="CompassEx.Gua.GuaSubClass.FiveAttr" data-throw-if-not-resolved="false"></xref>）彻底装载完毕。</li></ol>
   example: []
   syntax:
     content: public GuaSubClass(int iBeforGuaIndex)
@@ -1376,7 +1337,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToGuaClass
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 477
+    startLine: 480
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1407,7 +1368,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetC24Hills
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 487
+    startLine: 490
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1438,7 +1399,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetCBeforGuas
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 512
+    startLine: 515
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1469,7 +1430,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetXorGua
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 530
+    startLine: 533
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1500,7 +1461,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: LoadLocs
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 545
+    startLine: 548
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1528,7 +1489,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 571
+    startLine: 574
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1575,7 +1536,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAfterGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 595
+    startLine: 598
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1616,7 +1577,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAfterGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 620
+    startLine: 623
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1657,7 +1618,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetBeforGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 647
+    startLine: 650
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1698,7 +1659,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 659
+    startLine: 662
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1739,7 +1700,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetGuaSub
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 679
+    startLine: 682
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1780,7 +1741,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetFiveAttrName
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 747
+    startLine: 750
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1818,7 +1779,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Equals
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 760
+    startLine: 763
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1854,7 +1815,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetHashCode
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 777
+    startLine: 780
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1884,7 +1845,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: op_Equality
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 784
+    startLine: 787
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -1920,7 +1881,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: op_Inequality
     path: CompassEx/Gua/GuaSubClass.cs
-    startLine: 790
+    startLine: 793
   assemblies:
   - CompassEx
   namespace: CompassEx.Gua
@@ -2220,6 +2181,47 @@ references:
   - name: " "
   - name: TBase
   - name: )
+- uid: CompassEx.Gua.GuaSubClass.CompassEx.Comm.Comm.ToColor(System.Boolean)
+  commentId: M:CompassEx.Comm.Comm.ToColor(CompassEx.Gua.GuaSubClass,System.Boolean)
+  parent: CompassEx.Comm.Comm
+  definition: CompassEx.Comm.Comm.ToColor(CompassEx.Gua.GuaSubClass,System.Boolean)
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ToColor_CompassEx_Gua_GuaSubClass_System_Boolean_
+  name: ToColor(GuaSubClass, bool)
+  nameWithType: Comm.ToColor(GuaSubClass, bool)
+  fullName: CompassEx.Comm.Comm.ToColor(CompassEx.Gua.GuaSubClass, bool)
+  nameWithType.vb: Comm.ToColor(GuaSubClass, Boolean)
+  fullName.vb: CompassEx.Comm.Comm.ToColor(CompassEx.Gua.GuaSubClass, Boolean)
+  name.vb: ToColor(GuaSubClass, Boolean)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ToColor(CompassEx.Gua.GuaSubClass,System.Boolean)
+    name: ToColor
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ToColor_CompassEx_Gua_GuaSubClass_System_Boolean_
+  - name: (
+  - uid: CompassEx.Gua.GuaSubClass
+    name: GuaSubClass
+    href: CompassEx.Gua.GuaSubClass.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ToColor(CompassEx.Gua.GuaSubClass,System.Boolean)
+    name: ToColor
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ToColor_CompassEx_Gua_GuaSubClass_System_Boolean_
+  - name: (
+  - uid: CompassEx.Gua.GuaSubClass
+    name: GuaSubClass
+    href: CompassEx.Gua.GuaSubClass.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -2305,6 +2307,46 @@ references:
   name: Comm
   nameWithType: Comm
   fullName: CompassEx.Comm.Comm
+- uid: CompassEx.Comm.Comm.ToColor(CompassEx.Gua.GuaSubClass,System.Boolean)
+  commentId: M:CompassEx.Comm.Comm.ToColor(CompassEx.Gua.GuaSubClass,System.Boolean)
+  isExternal: true
+  href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ToColor_CompassEx_Gua_GuaSubClass_System_Boolean_
+  name: ToColor(GuaSubClass, bool)
+  nameWithType: Comm.ToColor(GuaSubClass, bool)
+  fullName: CompassEx.Comm.Comm.ToColor(CompassEx.Gua.GuaSubClass, bool)
+  nameWithType.vb: Comm.ToColor(GuaSubClass, Boolean)
+  fullName.vb: CompassEx.Comm.Comm.ToColor(CompassEx.Gua.GuaSubClass, Boolean)
+  name.vb: ToColor(GuaSubClass, Boolean)
+  spec.csharp:
+  - uid: CompassEx.Comm.Comm.ToColor(CompassEx.Gua.GuaSubClass,System.Boolean)
+    name: ToColor
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ToColor_CompassEx_Gua_GuaSubClass_System_Boolean_
+  - name: (
+  - uid: CompassEx.Gua.GuaSubClass
+    name: GuaSubClass
+    href: CompassEx.Gua.GuaSubClass.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: CompassEx.Comm.Comm.ToColor(CompassEx.Gua.GuaSubClass,System.Boolean)
+    name: ToColor
+    href: CompassEx.Comm.Comm.html#CompassEx_Comm_Comm_ToColor_CompassEx_Gua_GuaSubClass_System_Boolean_
+  - name: (
+  - uid: CompassEx.Gua.GuaSubClass
+    name: GuaSubClass
+    href: CompassEx.Gua.GuaSubClass.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
 - uid: CompassEx.Comm
   commentId: N:CompassEx.Comm
   href: CompassEx.html
@@ -2361,64 +2403,6 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: System.Drawing.Color
-  commentId: T:System.Drawing.Color
-  parent: System.Drawing
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.drawing.color
-  name: Color
-  nameWithType: Color
-  fullName: System.Drawing.Color
-- uid: System.Drawing.Color[]
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.drawing.color
-  name: Color[]
-  nameWithType: Color[]
-  fullName: System.Drawing.Color[]
-  nameWithType.vb: Color()
-  fullName.vb: System.Drawing.Color()
-  name.vb: Color()
-  spec.csharp:
-  - uid: System.Drawing.Color
-    name: Color
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
-  - name: '['
-  - name: ']'
-  spec.vb:
-  - uid: System.Drawing.Color
-    name: Color
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
-  - name: (
-  - name: )
-- uid: System.Drawing
-  commentId: N:System.Drawing
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Drawing
-  nameWithType: System.Drawing
-  fullName: System.Drawing
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Drawing
-    name: Drawing
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.drawing
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Drawing
-    name: Drawing
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.drawing
 - uid: CompassEx.Gua.GuaSubClass.Name
   commentId: P:CompassEx.Gua.GuaSubClass.Name
   href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_Name
@@ -2655,12 +2639,12 @@ references:
   name: GuaSubReluName
   nameWithType: GuaSubClass.GuaSubReluName
   fullName: CompassEx.Gua.GuaSubClass.GuaSubReluName
-- uid: CompassEx.Gua.GuaSubClass.AfterGuaSubColor*
-  commentId: Overload:CompassEx.Gua.GuaSubClass.AfterGuaSubColor
-  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_AfterGuaSubColor
-  name: AfterGuaSubColor
-  nameWithType: GuaSubClass.AfterGuaSubColor
-  fullName: CompassEx.Gua.GuaSubClass.AfterGuaSubColor
+- uid: CompassEx.Gua.GuaSubClass.Color*
+  commentId: Overload:CompassEx.Gua.GuaSubClass.Color
+  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_Color
+  name: Color
+  nameWithType: GuaSubClass.Color
+  fullName: CompassEx.Gua.GuaSubClass.Color
 - uid: CompassEx.Gua.GuaSubClass.AfterGuaSubNumerics
   commentId: F:CompassEx.Gua.GuaSubClass.AfterGuaSubNumerics
   href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_AfterGuaSubNumerics
@@ -3000,12 +2984,6 @@ references:
   name: GuaSubReluName
   nameWithType: GuaSubClass.GuaSubReluName
   fullName: CompassEx.Gua.GuaSubClass.GuaSubReluName
-- uid: CompassEx.Gua.GuaSubClass.AfterGuaSubColor
-  commentId: P:CompassEx.Gua.GuaSubClass.AfterGuaSubColor
-  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_AfterGuaSubColor
-  name: AfterGuaSubColor
-  nameWithType: GuaSubClass.AfterGuaSubColor
-  fullName: CompassEx.Gua.GuaSubClass.AfterGuaSubColor
 - uid: CompassEx.Gua.GuaSubClass.ToGuaClass*
   commentId: Overload:CompassEx.Gua.GuaSubClass.ToGuaClass
   href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_ToGuaClass

@@ -639,7 +639,7 @@ FlyStar 类
 
   <h3 id="CompassEx_Comm_FlyStar_HourFlyStar_CompassEx_Comm_LocClass_CompassEx_Comm_LocClass_CompassEx_Comm_LocClass_System_Boolean_System_Boolean__" data-uid="CompassEx.Comm.FlyStar.HourFlyStar(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)">
   HourFlyStar(LocClass, LocClass, LocClass, bool, out bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/FlyStar.cs/#L299"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/FlyStar.cs/#L310"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据月令（阳顺阴逆）获得时紫白飞星信息（不包含当前时辰的九宫方位信息）。</p>
@@ -691,7 +691,7 @@ FlyStar 类
 
   <h3 id="CompassEx_Comm_FlyStar_HourFlyStar_System_DateTime_" data-uid="CompassEx.Comm.FlyStar.HourFlyStar(System.DateTime)">
   HourFlyStar(DateTime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/FlyStar.cs/#L382"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/FlyStar.cs/#L393"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取指定时间的时紫白飞星信息（不包含当前时辰的九宫方位信息）。</p>
@@ -731,7 +731,7 @@ FlyStar 类
 
   <h3 id="CompassEx_Comm_FlyStar_HourFlyStars_CompassEx_Comm_LocClass_CompassEx_Comm_LocClass_System_Boolean_System_Boolean__" data-uid="CompassEx.Comm.FlyStar.HourFlyStars(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)">
   HourFlyStars(LocClass, LocClass, bool, out bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/FlyStar.cs/#L359"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/FlyStar.cs/#L370"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>根据月令（阳顺阴逆），获得当天所有的时紫白飞星信息（不包含当前时辰的九宫方位信息）。</p>
@@ -780,7 +780,7 @@ FlyStar 类
 
   <h3 id="CompassEx_Comm_FlyStar_HourFlyStars_System_DateTime_" data-uid="CompassEx.Comm.FlyStar.HourFlyStars(System.DateTime)">
   HourFlyStars(DateTime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/FlyStar.cs/#L403"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/FlyStar.cs/#L414"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>获取当天所有时辰的时紫白飞星信息（不包含对应时辰的九宫方位信息）。</p>
@@ -804,6 +804,44 @@ FlyStar 类
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="CompassEx.Comm.SkyLoc.html">SkyLoc</a>, <a class="xref" href="CompassEx.Comm.FlyStar.html">FlyStar</a>&gt;</dt>
     <dd><p>返回当日所有时辰干支与飞星信息的字典，若日期无效则返回 <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>。</p>
 </dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CompassEx_Comm_FlyStar_HuorFlyStarIsAutoSort_" data-uid="CompassEx.Comm.FlyStar.HuorFlyStarIsAutoSort*"></a>
+
+  <h3 id="CompassEx_Comm_FlyStar_HuorFlyStarIsAutoSort_CompassEx_Comm_LocClass_" data-uid="CompassEx.Comm.FlyStar.HuorFlyStarIsAutoSort(CompassEx.Comm.LocClass)">
+  HuorFlyStarIsAutoSort(LocClass)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/FlyStar.cs/#L295"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>根据月支判断是否自动获得时飞星的顺逆（非午月子月则是强制自动识别阳顺阴逆为ture，否则为false）</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool HuorFlyStarIsAutoSort(LocClass MonthLoc)</code></pre>
+  </div>
+
+  <h4 class="section">参数</h4>
+  <dl class="parameters">
+    <dt><code>MonthLoc</code> <a class="xref" href="CompassEx.Comm.LocClass.html">LocClass</a></dt>
+    <dd><p>月支</p>
+</dd>
+  </dl>
+
+  <h4 class="section">返回</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
   </dl>
 
 
@@ -900,7 +938,7 @@ FlyStar 类
 
   <h3 id="CompassEx_Comm_FlyStar_ToString" data-uid="CompassEx.Comm.FlyStar.ToString">
   ToString()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/FlyStar.cs/#L422"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Jockeyvb/CompassEx/blob/master/CompassEx/Comm/FlyStar.cs/#L433"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>返回当前飞星的默认全名字符串表示。</p>

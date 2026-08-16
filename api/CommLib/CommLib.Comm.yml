@@ -10,6 +10,7 @@ items:
   - CommLib.Comm.GetEnumDescription(System.Enum,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
   - CommLib.Comm.GetEnumDict(System.Enum)
   - CommLib.Comm.GetEnumValues(System.Enum)
+  - CommLib.Comm.ToCNName(System.Int32)
   - CommLib.Comm.ToHex(System.Drawing.Color,System.Boolean)
   langs:
   - csharp
@@ -42,6 +43,45 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+- uid: CommLib.Comm.ToCNName(System.Int32)
+  commentId: M:CommLib.Comm.ToCNName(System.Int32)
+  id: ToCNName(System.Int32)
+  isExtensionMethod: true
+  parent: CommLib.Comm
+  langs:
+  - csharp
+  - vb
+  name: ToCNName(int)
+  nameWithType: Comm.ToCNName(int)
+  fullName: CommLib.Comm.ToCNName(int)
+  type: Method
+  source:
+    remote:
+      path: CommLib/Comm.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: ToCNName
+    path: CommLib/Comm.cs
+    startLine: 21
+  assemblies:
+  - CommLib
+  namespace: CommLib
+  summary: 数字转在中文数字
+  example: []
+  syntax:
+    content: public static string ToCNName(this int d)
+    parameters:
+    - id: d
+      type: System.Int32
+      description: ''
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Shared Function ToCNName(d As Integer) As String
+  overload: CommLib.Comm.ToCNName*
+  nameWithType.vb: Comm.ToCNName(Integer)
+  fullName.vb: CommLib.Comm.ToCNName(Integer)
+  name.vb: ToCNName(Integer)
 - uid: CommLib.Comm.ToHex(System.Drawing.Color,System.Boolean)
   commentId: M:CommLib.Comm.ToHex(System.Drawing.Color,System.Boolean)
   id: ToHex(System.Drawing.Color,System.Boolean)
@@ -61,7 +101,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToHex
     path: CommLib/Comm.cs
-    startLine: 21
+    startLine: 43
   assemblies:
   - CommLib
   namespace: CommLib
@@ -102,7 +142,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetEnumValues
     path: CommLib/Comm.cs
-    startLine: 40
+    startLine: 62
   assemblies:
   - CommLib
   namespace: CommLib
@@ -137,7 +177,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: EnumToDict
     path: CommLib/Comm.cs
-    startLine: 65
+    startLine: 87
   assemblies:
   - CommLib
   namespace: CommLib
@@ -182,7 +222,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetEnumDict
     path: CommLib/Comm.cs
-    startLine: 117
+    startLine: 139
   assemblies:
   - CommLib
   namespace: CommLib
@@ -218,7 +258,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetEnumDescription
     path: CommLib/Comm.cs
-    startLine: 144
+    startLine: 166
   assemblies:
   - CommLib
   namespace: CommLib
@@ -274,7 +314,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ConvertGUID
     path: CommLib/Comm.cs
-    startLine: 305
+    startLine: 327
   assemblies:
   - CommLib
   namespace: CommLib
@@ -538,6 +578,34 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: CommLib.Comm.ToCNName*
+  commentId: Overload:CommLib.Comm.ToCNName
+  href: CommLib.Comm.html#CommLib_Comm_ToCNName_System_Int32_
+  name: ToCNName
+  nameWithType: Comm.ToCNName
+  fullName: CommLib.Comm.ToCNName
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: CommLib.Comm.ToHex*
   commentId: Overload:CommLib.Comm.ToHex
   href: CommLib.Comm.html#CommLib_Comm_ToHex_System_Drawing_Color_System_Boolean_
@@ -563,17 +631,6 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
 - uid: System.Drawing
   commentId: N:System.Drawing
   isExternal: true

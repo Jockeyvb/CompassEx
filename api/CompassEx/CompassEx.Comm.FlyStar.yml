@@ -19,6 +19,7 @@ items:
   - CompassEx.Comm.FlyStar.HourFlyStar(System.DateTime)
   - CompassEx.Comm.FlyStar.HourFlyStars(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)
   - CompassEx.Comm.FlyStar.HourFlyStars(System.DateTime)
+  - CompassEx.Comm.FlyStar.HuorFlyStarIsAutoSort(CompassEx.Comm.LocClass)
   - CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.LocClass)
   - CompassEx.Comm.FlyStar.MonthFlyStars(CompassEx.Comm.SkyLoc)
   - CompassEx.Comm.FlyStar.Name
@@ -652,6 +653,41 @@ items:
   nameWithType.vb: FlyStar.DayFlyStars(Date)
   fullName.vb: CompassEx.Comm.FlyStar.DayFlyStars(Date)
   name.vb: DayFlyStars(Date)
+- uid: CompassEx.Comm.FlyStar.HuorFlyStarIsAutoSort(CompassEx.Comm.LocClass)
+  commentId: M:CompassEx.Comm.FlyStar.HuorFlyStarIsAutoSort(CompassEx.Comm.LocClass)
+  id: HuorFlyStarIsAutoSort(CompassEx.Comm.LocClass)
+  parent: CompassEx.Comm.FlyStar
+  langs:
+  - csharp
+  - vb
+  name: HuorFlyStarIsAutoSort(LocClass)
+  nameWithType: FlyStar.HuorFlyStarIsAutoSort(LocClass)
+  fullName: CompassEx.Comm.FlyStar.HuorFlyStarIsAutoSort(CompassEx.Comm.LocClass)
+  type: Method
+  source:
+    remote:
+      path: CompassEx/Comm/FlyStar.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: HuorFlyStarIsAutoSort
+    path: CompassEx/Comm/FlyStar.cs
+    startLine: 294
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Comm
+  summary: 根据月支判断是否自动获得时飞星的顺逆（非午月子月则是强制自动识别阳顺阴逆为ture，否则为false）
+  example: []
+  syntax:
+    content: public static bool HuorFlyStarIsAutoSort(LocClass MonthLoc)
+    parameters:
+    - id: MonthLoc
+      type: CompassEx.Comm.LocClass
+      description: 月支
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public Shared Function HuorFlyStarIsAutoSort(MonthLoc As LocClass) As Boolean
+  overload: CompassEx.Comm.FlyStar.HuorFlyStarIsAutoSort*
 - uid: CompassEx.Comm.FlyStar.HourFlyStar(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)
   commentId: M:CompassEx.Comm.FlyStar.HourFlyStar(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)
   id: HourFlyStar(CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,CompassEx.Comm.LocClass,System.Boolean,System.Boolean@)
@@ -670,7 +706,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: HourFlyStar
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 298
+    startLine: 309
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -724,7 +760,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: HourFlyStars
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 358
+    startLine: 369
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -775,7 +811,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: HourFlyStar
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 381
+    startLine: 392
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -817,7 +853,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: HourFlyStars
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 402
+    startLine: 413
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -859,7 +895,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: ToString
     path: CompassEx/Comm/FlyStar.cs
-    startLine: 421
+    startLine: 432
   assemblies:
   - CompassEx
   namespace: CompassEx.Comm
@@ -1817,6 +1853,12 @@ references:
   name: DayFlyStars
   nameWithType: FlyStar.DayFlyStars
   fullName: CompassEx.Comm.FlyStar.DayFlyStars
+- uid: CompassEx.Comm.FlyStar.HuorFlyStarIsAutoSort*
+  commentId: Overload:CompassEx.Comm.FlyStar.HuorFlyStarIsAutoSort
+  href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_HuorFlyStarIsAutoSort_CompassEx_Comm_LocClass_
+  name: HuorFlyStarIsAutoSort
+  nameWithType: FlyStar.HuorFlyStarIsAutoSort
+  fullName: CompassEx.Comm.FlyStar.HuorFlyStarIsAutoSort
 - uid: CompassEx.Comm.FlyStar.HourFlyStar*
   commentId: Overload:CompassEx.Comm.FlyStar.HourFlyStar
   href: CompassEx.Comm.FlyStar.html#CompassEx_Comm_FlyStar_HourFlyStar_CompassEx_Comm_LocClass_CompassEx_Comm_LocClass_CompassEx_Comm_LocClass_System_Boolean_System_Boolean__

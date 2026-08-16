@@ -25,6 +25,7 @@ items:
   - CompassEx.Assist.FourSkyLocType.MonthSL
   - CompassEx.Assist.FourSkyLocType.MonthSLName
   - CompassEx.Assist.FourSkyLocType.SeasonName
+  - CompassEx.Assist.FourSkyLocType.SeasonTime
   - CompassEx.Assist.FourSkyLocType.YearCNName
   - CompassEx.Assist.FourSkyLocType.YearSL
   - CompassEx.Assist.FourSkyLocType.YearSLName
@@ -42,7 +43,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FourSkyLocType
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 54
+    startLine: 56
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -79,7 +80,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: DayWeekIndex
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 59
+    startLine: 65
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -110,7 +111,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Lunar
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 72
+    startLine: 78
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -141,7 +142,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: YearSLName
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 77
+    startLine: 83
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -172,7 +173,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: YearSL
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 79
+    startLine: 85
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -201,7 +202,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: MonthSLName
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 85
+    startLine: 91
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -232,7 +233,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: MonthSL
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 87
+    startLine: 93
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -261,7 +262,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: DaySLName
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 92
+    startLine: 98
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -292,7 +293,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: DaySL
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 94
+    startLine: 100
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -321,7 +322,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: HourSLName
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 99
+    startLine: 105
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -352,7 +353,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: HourSL
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 102
+    startLine: 108
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -381,7 +382,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FullName
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 107
+    startLine: 113
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -412,7 +413,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: MonthCNName
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 111
+    startLine: 117
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -443,7 +444,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: YearCNName
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 115
+    startLine: 121
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -474,7 +475,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: DayCNName
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 119
+    startLine: 125
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -505,7 +506,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: FullCNName
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 123
+    startLine: 129
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -518,6 +519,37 @@ items:
       type: System.String
     content.vb: Public Property FullCNName As String
   overload: CompassEx.Assist.FourSkyLocType.FullCNName*
+- uid: CompassEx.Assist.FourSkyLocType.SeasonTime
+  commentId: P:CompassEx.Assist.FourSkyLocType.SeasonTime
+  id: SeasonTime
+  parent: CompassEx.Assist.FourSkyLocType
+  langs:
+  - csharp
+  - vb
+  name: SeasonTime
+  nameWithType: FourSkyLocType.SeasonTime
+  fullName: CompassEx.Assist.FourSkyLocType.SeasonTime
+  type: Property
+  source:
+    remote:
+      path: CompassEx/Assist/FourSkyLocType.cs
+      branch: master
+      repo: https://github.com/Jockeyvb/CompassEx.git
+    id: SeasonTime
+    path: CompassEx/Assist/FourSkyLocType.cs
+    startLine: 134
+  assemblies:
+  - CompassEx
+  namespace: CompassEx.Assist
+  summary: 如果当天是交节，那么补上节气DateTime
+  example: []
+  syntax:
+    content: public DateTime SeasonTime { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property SeasonTime As Date
+  overload: CompassEx.Assist.FourSkyLocType.SeasonTime*
 - uid: CompassEx.Assist.FourSkyLocType.SeasonName
   commentId: P:CompassEx.Assist.FourSkyLocType.SeasonName
   id: SeasonName
@@ -536,7 +568,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: SeasonName
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 128
+    startLine: 139
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -567,7 +599,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: Date
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 132
+    startLine: 143
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -598,7 +630,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: DayBuildName
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 136
+    startLine: 147
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -629,7 +661,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IsSkyPardonDay
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 140
+    startLine: 151
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -660,7 +692,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: GetAllGodNames
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 148
+    startLine: 159
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -691,7 +723,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IsFourScrapDay
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 163
+    startLine: 174
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -722,7 +754,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IsTenDefeatDay
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 167
+    startLine: 178
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -753,7 +785,7 @@ items:
       repo: https://github.com/Jockeyvb/CompassEx.git
     id: IsTenSpiritDay
     path: CompassEx/Assist/FourSkyLocType.cs
-    startLine: 171
+    startLine: 182
   assemblies:
   - CompassEx
   namespace: CompassEx.Assist
@@ -1394,6 +1426,23 @@ references:
   name: FullCNName
   nameWithType: FourSkyLocType.FullCNName
   fullName: CompassEx.Assist.FourSkyLocType.FullCNName
+- uid: CompassEx.Assist.FourSkyLocType.SeasonTime*
+  commentId: Overload:CompassEx.Assist.FourSkyLocType.SeasonTime
+  href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_SeasonTime
+  name: SeasonTime
+  nameWithType: FourSkyLocType.SeasonTime
+  fullName: CompassEx.Assist.FourSkyLocType.SeasonTime
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
 - uid: CompassEx.Assist.FourSkyLocType.SeasonName*
   commentId: Overload:CompassEx.Assist.FourSkyLocType.SeasonName
   href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_SeasonName
@@ -1406,17 +1455,6 @@ references:
   name: Date
   nameWithType: FourSkyLocType.Date
   fullName: CompassEx.Assist.FourSkyLocType.Date
-- uid: System.DateTime
-  commentId: T:System.DateTime
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.datetime
-  name: DateTime
-  nameWithType: DateTime
-  fullName: System.DateTime
-  nameWithType.vb: Date
-  fullName.vb: Date
-  name.vb: Date
 - uid: CompassEx.Assist.FourSkyLocType.DayBuildName*
   commentId: Overload:CompassEx.Assist.FourSkyLocType.DayBuildName
   href: CompassEx.Assist.FourSkyLocType.html#CompassEx_Assist_FourSkyLocType_DayBuildName
