@@ -40,7 +40,7 @@ namespace CompassEx.Comm
                 return field;
 
             }
-        } = default!;
+        }
 
 
         public static string[] SkyLoc60Name
@@ -52,7 +52,7 @@ namespace CompassEx.Comm
                 return field;
 
             }
-        } = default!;
+        }
 
         /// <summary>
         /// 获取当前天干地支组合的完整字面名称（如“甲子”、“丙寅”等）。
