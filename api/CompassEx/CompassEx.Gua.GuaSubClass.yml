@@ -1302,7 +1302,7 @@ items:
 
     <b>经卦底层数理装配流程：</b>
 
-    <ol><li><b>安全边界校验</b>：校验输入索引。若执行不合法则瞬间熔断并抛出越界异常。</li><li><b>爻象阴阳重组（Switch 分布）</b>：依据先天八卦符号编码（0代表阴爻，1代表阳爻），由下而上对长为 3 的 <xref href="CompassEx.Gua.GuaSubClass.Yaos" data-throw-if-not-resolved="false"></xref> 数组进行赋值（如 case 1 兑卦：初爻为阳(1)、二爻为阳(1)、三爻为阴(0)）。</li><li><b>基础术数属性反哺</b>：通过索引同步锁定并充填物象（<xref href="CompassEx.Gua.GuaSubClass.AttrName" data-throw-if-not-resolved="false"></xref>）、六亲伦理（<xref href="CompassEx.Gua.GuaSubClass.GuaSubReluName" data-throw-if-not-resolved="false"></xref>）和基本单字卦名。</li><li><b>跨体系方位映射</b>：通过后天八卦清册反查其在文王后天九宫中的绝对物理位置（<code>iPos</code>），进而将对应方位的紫白九星颜色（AfterGuaSubColor）以及最终的生克五行属性（<xref href="CompassEx.Gua.GuaSubClass.FiveAttr" data-throw-if-not-resolved="false"></xref>）彻底装载完毕。</li></ol>
+    <ol><li><b>安全边界校验</b>：校验输入索引。若执行不合法则瞬间熔断并抛出越界异常。</li><li><b>爻象阴阳重组（Switch 分布）</b>：依据先天八卦符号编码（0代表阴爻，1代表阳爻），由下而上对长为 3 的 <xref href="CompassEx.Gua.GuaSubClass.Yaos" data-throw-if-not-resolved="false"></xref> 数组进行赋值（如 case 1 兑卦：初爻为阳(1)、二爻为阳(1)、三爻为阴(0)）。</li><li><b>基础术数属性反哺</b>：通过索引同步锁定并充填物象（<xref href="CompassEx.Gua.GuaSubClass.AttrName" data-throw-if-not-resolved="false"></xref>）、六亲伦理（<xref href="CompassEx.Gua.GuaSubClass.GuaSubReluName" data-throw-if-not-resolved="false"></xref>）和基本单字卦名。</li><li><b>跨体系方位映射</b>：通过后天八卦清册反查其在文王后天九宫中的绝对物理位置（<code>iPos</code>），进而将对应方位的紫白九星颜色（<xref href="CompassEx.Gua.GuaSubClass.Color" data-throw-if-not-resolved="false"></xref>）以及最终的生克五行属性（<xref href="CompassEx.Gua.GuaSubClass.FiveAttr" data-throw-if-not-resolved="false"></xref>）彻底装载完毕。</li></ol>
   example: []
   syntax:
     content: public GuaSubClass(int iBeforGuaIndex)
@@ -2984,6 +2984,12 @@ references:
   name: GuaSubReluName
   nameWithType: GuaSubClass.GuaSubReluName
   fullName: CompassEx.Gua.GuaSubClass.GuaSubReluName
+- uid: CompassEx.Gua.GuaSubClass.Color
+  commentId: P:CompassEx.Gua.GuaSubClass.Color
+  href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_Color
+  name: Color
+  nameWithType: GuaSubClass.Color
+  fullName: CompassEx.Gua.GuaSubClass.Color
 - uid: CompassEx.Gua.GuaSubClass.ToGuaClass*
   commentId: Overload:CompassEx.Gua.GuaSubClass.ToGuaClass
   href: CompassEx.Gua.GuaSubClass.html#CompassEx_Gua_GuaSubClass_ToGuaClass

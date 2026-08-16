@@ -404,7 +404,7 @@ namespace CompassEx.Gua
         /// <item><description><b>安全边界校验</b>：校验输入索引。若执行不合法则瞬间熔断并抛出越界异常。</description></item>
         /// <item><description><b>爻象阴阳重组（Switch 分布）</b>：依据先天八卦符号编码（0代表阴爻，1代表阳爻），由下而上对长为 3 的 <see cref="Yaos"/> 数组进行赋值（如 case 1 兑卦：初爻为阳(1)、二爻为阳(1)、三爻为阴(0)）。</description></item>
         /// <item><description><b>基础术数属性反哺</b>：通过索引同步锁定并充填物象（<see cref="AttrName"/>）、六亲伦理（<see cref="GuaSubReluName"/>）和基本单字卦名。</description></item>
-        /// <item><description><b>跨体系方位映射</b>：通过后天八卦清册反查其在文王后天九宫中的绝对物理位置（<c>iPos</c>），进而将对应方位的紫白九星颜色（<see cref="AfterGuaSubColor"/>）以及最终的生克五行属性（<see cref="FiveAttr"/>）彻底装载完毕。</description></item>
+        /// <item><description><b>跨体系方位映射</b>：通过后天八卦清册反查其在文王后天九宫中的绝对物理位置（<c>iPos</c>），进而将对应方位的紫白九星颜色（<see cref="Color"/>）以及最终的生克五行属性（<see cref="FiveAttr"/>）彻底装载完毕。</description></item>
         /// </list>
         /// </remarks>
         public GuaSubClass(int iBeforGuaIndex)
