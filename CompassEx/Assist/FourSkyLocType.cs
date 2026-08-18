@@ -31,9 +31,9 @@ public static class FSLTEx
     /// </summary>
     /// <param name="d"></param>
     /// <returns></returns>
-    public static FourSkyLocType ToFourSkyLocType(this DateTime d)
+    public static FourSkyLocType? ToFourSkyLocType(this DateTime d)
     {
-
+        if (d.Equals(DateTime.MinValue)) return null;
         var ls = d.ToLunar();
         var sh = d.ToSolarTime();
         var sls = d.ToSkyLocs();
@@ -146,40 +146,14 @@ public class FourSkyLocType
     /// 十二日建
     /// </summary>
     public string DayBuildName { get; set; } = "";
-    /// <summary>
-    /// 是否为天赦日
-    /// </summary>
-    public bool IsSkyPardonDay { get { return Calender.IsSkyPardonDay(this); } }
-
-
 
     /// <summary>
-    /// 获得把有关神煞的名称都列出来
+    /// 所有择日神煞
     /// </summary>
-    /// <returns></returns>
-    public List<string> GetAllGodNames()
-    {
-        var ls = new List<string>();
-        if (IsSkyPardonDay) ls.Add("天赦日");
-        if (IsFourScrapDay) ls.Add("四废日");
-        if (IsTenDefeatDay) ls.Add("十恶大败日");
-        if (IsTenSpiritDay) ls.Add("十灵日");
-        return ls;
-
-    }
+    public List<GoodDayGod> Gods { get { return GoodDayGod.GetAllGods(this); } }
 
 
-    /// <summary>
-    /// 是否四废日
-    /// </summary>
-    public bool IsFourScrapDay { get { return Calender.IsFourScrapDay(this); } }
-    /// <summary>
-    /// 十恶大败日
-    /// </summary>
-    public bool IsTenDefeatDay { get { return Calender.IsTenDefeatDay(this); } }
-    /// <summary>
-    /// 是否为十灵日
-    /// </summary>
-    public bool IsTenSpiritDay { get { return Calender.IsTenSpiritDay(this); } }
+
+
 }
 
