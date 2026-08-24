@@ -52,10 +52,17 @@ namespace CompassEx.Assist
         Good = 4,
 
         /// <summary>
-        /// 特别重点，可与吉凶属性搭配使用以在前端展示时突出显示。
+        /// 重度，可与吉凶属性搭配使用以在前端展示时突出显示。
         /// </summary>
-        [Description("特别重点")]
-        Important = 1024
+        [Description("重度")]
+        Important = 1024,
+        /// <summary>
+        /// 特重，可与吉凶属性搭配使用以在前端展示时突出显示。
+        /// </summary>
+        [Description("特重")]
+        Special = 2048
+
+
     }
 
     /// <summary>
@@ -63,6 +70,18 @@ namespace CompassEx.Assist
     /// </summary>
     public class GoodDayGod : IEquatable<GoodDayGod>
     {
+        public static readonly string GuChenDaysInfo = "【孤辰】“三命会通：男命犯之，疏离六亲，他乡之客”：主男人漂泊、性格孤僻、难以得到家族或周围人的强力照拂，人际关系较冷清。";
+        public static readonly Dictionary<string, string> GuChenDays = new Dictionary<string, string> { { "亥子丑", "寅" }, { "‌寅卯辰", "巳" }, { "‌巳午未", "申" }, { "‌‌申酉戌", "亥" } };
+
+
+        public static readonly string GuaSuDaysInfo = "【寡宿】“三命会通：女命犯之，独房眠，夫缘薄”：主女性内心情感孤独、夫妻沟通有隔阂，或聚少离多、晚婚、独自操持。";
+        public static readonly Dictionary<string, string> GuaSuDays = new Dictionary<string, string> { { "亥子丑", "戌" }, { "‌寅卯辰", "丑" }, { "‌巳午未", "辰" }, { "‌‌申酉戌", "未" } };
+
+
+        public static readonly string FourLeaveDaysInfo = "【四离】古人认为，在节气正式交替的前夕（即四离日），旧的季节之气尚未完全退去，新的季节之气已经蓄势待发，阴阳之气处于一种极其紊乱、剧烈交替的“混乱过渡期”。因此，天地磁场不稳定，人体的气血也容易受影响。";
+
+        public static readonly string FourEndDaysInfo = "【四绝】是指立春、立夏、立秋、立冬这四个“四立”（四季之首）节气的前一天。“绝”指的是“气候穷尽、五行绝气”。在五行生克中，当一个季节即将结束、另一个季节即将诞生时，前一个季节的五行之气在这一天衰减到了绝对的零界点（气绝）。古人认为“天地气绝”之时，万物生机受阻，因此诸事不宜。";
+
         /// <summary>
         /// 天医神煞的科普与说明文本。
         /// </summary>
@@ -258,7 +277,7 @@ namespace CompassEx.Assist
 
             if (IsDoubleLoseDay(fslt))
             {
-                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "重丧", GoodType = GoodDayGodGoodType.Bad | GoodDayGodGoodType.Important, Info = DoubleLoseDaysInfo };
+                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "重丧", GoodType = GoodDayGodGoodType.Bad | GoodDayGodGoodType.Important | GoodDayGodGoodType.Special, Info = DoubleLoseDaysInfo };
                 ls.Add(gdg);
             }
 
@@ -268,9 +287,82 @@ namespace CompassEx.Assist
                 ls.Add(gdg);
             }
 
+            if (IsFourLeaveDay(fslt))
+            {
+                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "四离", GoodType = GoodDayGodGoodType.Bad | GoodDayGodGoodType.Important | GoodDayGodGoodType.Special, Info = FourLeaveDaysInfo };
+                ls.Add(gdg);
+            }
+            if (IsFourEndDay(fslt))
+            {
+                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "四绝", GoodType = GoodDayGodGoodType.Bad | GoodDayGodGoodType.Important | GoodDayGodGoodType.Special, Info = FourEndDaysInfo };
+                ls.Add(gdg);
+            }
+            if (IsGuChenDay(fslt))
+            {
+                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "孤辰", GoodType = GoodDayGodGoodType.Bad, Info = GuChenDaysInfo };
+                ls.Add(gdg);
+            }
+            if (IsGuaSuDay(fslt))
+            {
+                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "寡宿", GoodType = GoodDayGodGoodType.Bad, Info = GuaSuDaysInfo };
+                ls.Add(gdg);
+            }
+
+
             ls = ls.OrderByDescending(x => x.GoodType).ToList(); // 按吉凶比重来排序
 
             return ls;
+        }
+
+        /// <summary>
+        /// 孤辰日
+        /// </summary>
+        /// <param name="FSLT"></param>
+        /// <returns></returns>
+        public static bool IsGuChenDay(FourSkyLocType FSLT)
+        {
+            int iCount = GuChenDays.Count(x => x.Key.IndexOf(FSLT.YearSL.Loc.Name) > -1 && x.Value.Equals(FSLT.DaySL.Loc.Name));
+            return iCount > 0;
+        }
+        /// <summary>
+        /// 寡宿
+        /// </summary>
+        /// <param name="FSLT"></param>
+        /// <returns></returns>
+        public static bool IsGuaSuDay(FourSkyLocType FSLT)
+        {
+            int iCount = GuaSuDays.Count(x => x.Key.IndexOf(FSLT.YearSL.Loc.Name) > -1 && x.Value.Equals(FSLT.DaySL.Loc.Name));
+            return iCount > 0;
+        }
+
+
+        /// <summary>
+        /// 是否为四绝日
+        /// </summary>
+        /// <param name="FSLT"></param>
+        /// <returns></returns>
+        public static bool IsFourEndDay(FourSkyLocType FSLT)
+        {
+            var sd = FSLT.Date.AddDays(1).ToSolarTime();//向前加一日
+            string sn = sd.SolarDay.Term.GetName();
+            return sd.SolarDay.TermDay.DayIndex == 0 && (sn.IndexOf("立") > -1);//在索引0时表示当日是节气，两立两至则是四绝日
+
+
+        }
+
+
+        /// <summary>
+        /// 是否为四离日
+        /// </summary>
+        /// <param name="FSLT"></param>
+        /// <returns></returns>
+        public static bool IsFourLeaveDay(FourSkyLocType FSLT)
+        {
+            var sd = FSLT.Date.AddDays(1).ToSolarTime();//向前加一日
+            string sn = sd.SolarDay.Term.GetName();
+            return sd.SolarDay.TermDay.DayIndex == 0 && (sn.IndexOf("至") > -1 || sn.IndexOf("分") > -1);//在索引0时表示当日是节气，两至两分则是四离日
+
+
         }
 
         /// <summary>
@@ -309,7 +401,7 @@ namespace CompassEx.Assist
         /// <returns>如果是魁罡日则返回 <c>true</c>；否则为 <c>false</c>。</returns>
         public static bool IsKuiGangDay(FourSkyLocType FSLT)
         {
-            return KuiGangDays.IndexOf(FSLT.DaySLName) > -1;
+            return KuiGangDays.IndexOf(FSLT.DaySL.Name) > -1;
         }
 
         /// <summary>
@@ -319,7 +411,7 @@ namespace CompassEx.Assist
         /// <returns>如果是十灵日则返回 <c>true</c>；否则为 <c>false</c>。</returns>
         public static bool IsTenSpiritDay(FourSkyLocType FSLT)
         {
-            return TenSpiritDays.IndexOf(FSLT.DaySLName) > -1;
+            return TenSpiritDays.IndexOf(FSLT.DaySL.Name) > -1;
         }
 
         /// <summary>
@@ -343,9 +435,9 @@ namespace CompassEx.Assist
             foreach (string s in TenDefeatDays)
             {
                 string[] sd = s.Split('=');
-                if (FSLT.YearSLName.Equals(sd[0])) // 年
+                if (FSLT.YearSL.Name.Equals(sd[0])) // 年
                 {
-                    return FSLT.DaySLName.Equals(sd[1]);
+                    return FSLT.DaySL.Name.Equals(sd[1]);
                 }
             }
 
@@ -370,22 +462,22 @@ namespace CompassEx.Assist
         /// <returns>如果是四废日则返回 <c>true</c>；否则为 <c>false</c>。</returns>
         public static bool IsFourScrapDay(FourSkyLocType FSLT)
         {
-            int iPos = LocClass.LocNames.IndexOf(FSLT.MonthSLName.Substring(1));
+            int iPos = LocClass.LocNames.IndexOf(FSLT.MonthSL.Loc.Name);
             if (iPos >= 2 && iPos <= 4) // 春
             {
-                return FourScrapDays[0].IndexOf(FSLT.DaySLName) > -1;
+                return FourScrapDays[0].IndexOf(FSLT.DaySL.Name) > -1;
             }
             else if (iPos >= 5 && iPos <= 7) // 夏
             {
-                return FourScrapDays[1].IndexOf(FSLT.DaySLName) > -1;
+                return FourScrapDays[1].IndexOf(FSLT.DaySL.Name) > -1;
             }
             else if (iPos >= 8 && iPos <= 10) // 秋
             {
-                return FourScrapDays[2].IndexOf(FSLT.DaySLName) > -1;
+                return FourScrapDays[2].IndexOf(FSLT.DaySL.Name) > -1;
             }
             else // 冬
             {
-                return FourScrapDays[3].IndexOf(FSLT.DaySLName) > -1;
+                return FourScrapDays[3].IndexOf(FSLT.DaySL.Name) > -1;
             }
         }
 
@@ -396,22 +488,22 @@ namespace CompassEx.Assist
         /// <returns>如果是天赦日则返回 <c>true</c>；否则为 <c>false</c>。</returns>
         public static bool IsSkyPardonDay(FourSkyLocType FSLT)
         {
-            int iPos = LocClass.LocNames.IndexOf(FSLT.MonthSLName.Substring(1));
+            int iPos = LocClass.LocNames.IndexOf(FSLT.MonthSL.Loc.Name);
             if (iPos >= 2 && iPos <= 4) // 春
             {
-                return FSLT.DaySLName == SkyPardonDays[0];
+                return FSLT.DaySL.Name == SkyPardonDays[0];
             }
             else if (iPos >= 5 && iPos <= 7) // 夏
             {
-                return FSLT.DaySLName == SkyPardonDays[1];
+                return FSLT.DaySL.Name == SkyPardonDays[1];
             }
             else if (iPos >= 8 && iPos <= 10) // 秋
             {
-                return FSLT.DaySLName == SkyPardonDays[2];
+                return FSLT.DaySL.Name == SkyPardonDays[2];
             }
             else // 冬
             {
-                return FSLT.DaySLName == SkyPardonDays[3];
+                return FSLT.DaySL.Name == SkyPardonDays[3];
             }
         }
 

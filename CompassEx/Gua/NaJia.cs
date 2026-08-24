@@ -344,7 +344,7 @@ namespace CompassEx.Gua
                 GuaClass g = (GuaClass)_GuaData;
 
                 result.Gua = g;
-                result.SkyLocs = g.SkyLocs; // 完美对接复卦原本自带的干支集合
+                result.SkyLocs = g.Yaos.Select(x => x.SkyLoc).ToList(); // 完美对接复卦原本自带的干支集合
 
                 // TODO: 编写具体的京房 64 卦纳甲配世应、纳干支核心算法逻辑...
 

@@ -22,7 +22,7 @@
 需要在加载时首先调用全局静态方法：
 ```csharp
 
-	CompassEx.Comm.Comm.AllInit();//初始化数据 
+	CompassEx.CommCls.AllInit();//初始化数据 
 	
 ```
 

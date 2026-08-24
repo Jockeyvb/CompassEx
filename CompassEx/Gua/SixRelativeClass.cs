@@ -30,46 +30,59 @@ namespace CompassEx.Gua
         /// <value>
         /// 包含 5 个标准六亲名称：妻财(0)、子孙(1)、兄弟(2)、官鬼(3)、父母(4)。
         /// </value>
-        public static readonly string[] SixRelatives = { "妻财", "子孙", "兄弟", "官鬼", "父母" };
+        public static readonly string[] SixRelativeNames = { "妻财", "子孙", "兄弟", "官鬼", "父母" };
 
         #region 属性
 
-        /// <summary>
-        /// 表示在卦中第几爻
-        /// </summary>
-        public int YaoPosIndex { get; set; }
+
 
         /// <summary>
         /// 获取当前六亲实体的字面名称（如“父母”、“子孙”等）。
         /// </summary>
         /// <value>一个 <see cref="string"/> 字符串，表示当前爻位对应的六亲称谓。</value>
-        public string? Name { get; private set; }
+        public string? Name { get { return SixRelativeNames[this.Index]; } }
 
         /// <summary>
-        /// 获取当前六亲在全局六亲序列中的绝对顺位索引位置。
+        /// 六亲索引
         /// </summary>
-        /// <value>一个 <see cref="int"/> 整数，有效取值范围为 <c>0 ~ 4</c>，对应 <see cref="SixRelatives"/> 中的下标。</value>
-        public int StartIndex { get; private set; }
+        public int Index { get; private set; }
+
+        /// <summary>
+        /// 六新属性
+        /// </summary>
+        public FiveAttrRule FiveAttrRule { get { return (FiveAttrRule)Index; } }
+
+
+        /// <summary>
+        /// 六神干支
+        /// </summary>
+        public SkyLoc SkyLoc { get; internal set; }
+
 
         #endregion
 
 
         #region 方法
 
-        /// <summary>
-        /// 根据指定的六亲字面名称，动态检索并实例化对应的六亲类实体。
-        /// </summary>
-        /// <param name="SixRelativeName">输入的六亲名称（如“父母”、“妻财”等）。</param>
-        /// <returns>若在全局元数据中成功匹配到该六亲名，则返回对应的 <see cref="SixRelativeClass"/> 实例；若名称非法或不存在，则其 <see cref="StartIndex"/> 将被记录为 <c>-1</c>。</returns>
-        public static SixRelativeClass GetSixRelative(string SixRelativeName)
-        {
-            SixRelativeClass src = new SixRelativeClass();
-            int iPos = Array.IndexOf(SixRelatives, SixRelativeName);
 
-            src.StartIndex = iPos;
-            src.Name = SixRelativeName;
-            return src;
+        public SixRelativeClass(string SixRelativeName) : this((FiveAttrRule)SixRelativeNames.IndexOf(SixRelativeName))
+        { }
+
+
+        public SixRelativeClass(FiveAttrRule far)
+        {
+            int index = (int)far;
+            if (index < 0 || index >= SixRelativeNames.Length)
+                throw new IndexOutOfRangeException($"生克规则转换值【{index}】超出了六亲元数据数组的合法边界。");
+
+
+            this.Index = index;
+
+
         }
+
+
+
 
         /// <summary>
         /// 根据标准的五行生克规则对象，动态推演并实例化对应的六亲类实体。
@@ -85,12 +98,11 @@ namespace CompassEx.Gua
         public static SixRelativeClass GetSixRelative(FiveAttrRule far)
         {
             int index = (int)far;
-            if (index < 0 || index >= SixRelatives.Length)
+            if (index < 0 || index >= SixRelativeNames.Length)
                 throw new IndexOutOfRangeException($"生克规则转换值【{index}】超出了六亲元数据数组的合法边界。");
 
-            SixRelativeClass src = new SixRelativeClass();
-            src.Name = SixRelatives[index];
-            src.StartIndex = index;
+            SixRelativeClass src = new SixRelativeClass(far);
+
             return src;
         }
 

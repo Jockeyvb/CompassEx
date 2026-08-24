@@ -21,12 +21,12 @@ using System.Linq;
 using System.Reflection;
 using System.Xml.Linq;
 
-namespace CompassEx.Comm
+namespace CompassEx
 {
     /// <summary>
     /// 类库核心公共辅助工具类，提供全局初始化入口及基于反射的对象属性浅拷贝扩展。
     /// </summary>
-    public static class Comm
+    public static class CommCls
     {
 
 

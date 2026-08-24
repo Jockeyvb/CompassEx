@@ -11,6 +11,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 
 namespace CompassEx.Comm
 {
@@ -81,6 +82,13 @@ namespace CompassEx.Comm
         /// </value>
         public LocClass Loc { get; private set; }
 
+
+        /// <summary>
+        /// 空亡地支类(两个)
+        /// </summary>
+        public IReadOnlyList<LocClass> LostLocs { get => GetLostLocs(this); }
+
+
         #endregion
 
 
@@ -126,6 +134,42 @@ namespace CompassEx.Comm
         #endregion
 
         #region 方法
+
+
+
+        /// <summary>
+        /// 静态公共方法：依据输入的日柱天干与地支，动态推导并获取该旬中处于“空亡”状态的两个地支对象。
+        /// </summary>
+        /// <param name="sl"></param>
+        /// <returns>返回包含两个截路空亡地支实体对象的集合 <c>List&lt;LocClass&gt;</c>。</returns>
+        /// <remarks>
+        /// <b>旬空运算法则：</b><br/>
+        /// 六十甲子以十天为一旬。算法首先锁定天干与地支在标准排布中的索引位置，
+        /// 计算出该旬距离终点（第十个天干“癸”）的地支富余偏移量 <c>iPos = 9 - iSPos</c>，
+        /// 顺推求得紧随其后的两个孤虚地支索引，若超出 11（亥位）则执行天干地支五行圆周取模（<c>-12</c>）完成闭环定位。
+        /// </remarks>
+        public static List<LocClass> GetLostLocs(SkyLoc sl)
+        {
+            string sSkyName = sl.Sky.Name, sLocName = sl.Loc.Name;
+            List<LocClass> lcs = new List<LocClass>();
+            int iSPos = Array.IndexOf(SkyClass.SkyNames, sSkyName);
+
+            int iLPos = Array.IndexOf(LocClass.LocNames, sLocName);
+            int iPos = 9 - iSPos;
+            iLPos += iPos + 1;//空亡位置
+            if (iLPos > 11) iLPos -= 12;
+            LocClass lc = LocClass.GetLocClass(iLPos);
+            lcs.Add(lc);
+            iLPos++;
+            if (iLPos > 11) iLPos -= 12;
+            lc = LocClass.GetLocClass(iLPos);
+            lcs.Add(lc);
+            return lcs;
+        }
+
+
+
+
         /// <summary>
         /// 根据给定的年份干支（五虎遁月法），推算该月的天干地支。
         /// </summary>

@@ -48,7 +48,7 @@ namespace CompassExTest
             builder.Services.AddTransientWithShellRoute<ProjectDetailPage, ProjectDetailPageModel>("project");
             builder.Services.AddTransientWithShellRoute<TaskDetailPage, TaskDetailPageModel>("task");
 
-            CompassEx.Comm.Comm.AllInit();//初始化数据
+            CompassEx.CommCls.AllInit();//初始化数据
 
 
             return builder.Build();

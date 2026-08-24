@@ -24,21 +24,21 @@ namespace CompassEx.Comm
         /// <summary>
         /// 我克为妻财
         /// </summary>
-        MeCan = (0),
+        MeCan = 0,
 
         /// <summary>
         /// 我生为子孙
         /// </summary>
-        MeBirth = (1)
+        MeBirth = 1
             ,
         /// <summary>
         /// 同我为兄弟
         /// </summary>
-        SameMe = (2),
+        SameMe = 2,
         /// <summary>
         /// 克我为官鬼
         /// </summary>
-        CanMe = (3),
+        CanMe = 3,
         /// <summary>
         /// 生我为父母
         /// </summary>
@@ -229,10 +229,10 @@ namespace CompassEx.Comm
             {
 
                 //----------------------我克和克我---------------------------
-                String sFiveAttrBothCan = FiveAttrBothCan();
+                string sFiveAttrBothCan = FiveAttrBothCan();
                 sFiveAttrBothCan += sFiveAttrBothCan;//增加一次，看作连续数做对比
 
-                String s = iMeAttr.ToString() + iOtherAttr.ToString();//加起来看看能不能找到旁边的
+                string s = iMeAttr.ToString() + iOtherAttr.ToString();//加起来看看能不能找到旁边的
                 int i = sFiveAttrBothCan.IndexOf(s);
                 if (i > -1)
                 {
@@ -283,7 +283,7 @@ namespace CompassEx.Comm
         /// </remarks>
         private static String FiveAttrBothCan()
         {
-            String s = "42301";
+            string s = "42301";
             return s;
         }
 

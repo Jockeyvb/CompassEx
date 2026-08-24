@@ -226,7 +226,7 @@ namespace CompassEx.Comm
             if (ot.HasFlag(CompassObjType.AfterGua) || ot.HasFlag(CompassObjType.BeforeGua))
             {
                 // 3. 推演六十四卦层级（天盘六十四卦（圆图）/地盘六十四卦（方图））
-                foreach (string sN in GuaClass.GuaNames)
+                foreach (string sN in GuaClass.Names)
                 {
                     GuaClass g = new GuaClass(sN);
                     if (g != null)
@@ -256,7 +256,7 @@ namespace CompassEx.Comm
 
         public override bool Equals(object obj)
         {
-            // 一行代码搞定：类型相同且 Name 相同
+
             return obj is CompassRangEX other && this.Start == other.Start && this.End == other.End;
         }
 

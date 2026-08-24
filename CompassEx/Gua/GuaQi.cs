@@ -44,6 +44,15 @@ namespace CompassEx.Gua
         { 5, new FiveAttr("土") }, { 10, new FiveAttr("土") }, { 15, new FiveAttr("土") }
     };
 
+        /// <summary>
+        /// 定义先天卦数对应后天洛数
+        /// </summary>
+        public static readonly Dictionary<int, int> GuaQiDC = new Dictionary<int, int>
+        {
+            {1,9},{2,4},{3,3},{4,8},{5,2},{6,7},{7,6},{8,1}
+
+        };
+
         #region 属性
 
         /// <summary>
@@ -81,14 +90,8 @@ namespace CompassEx.Gua
             get
             {
                 // 利用 LINQ 优雅检索完全覆盖目标先天卦位起点的后天八卦对象
-                var matchNumber = GuaSubClass.BeforeGuaSubNames
-                    .Select(sn => GuaSubClass.GetGuaSub(sn))
-                    .Where(gs => gs != null && this.GuaSub.CBeforRangeDegree.IsInRange(gs.CAfterRangeDegree.Start)) //找出先天卦
-                    .Select(gs => (int?)(gs.AfterQuantity))
-                    .FirstOrDefault();
 
-                if (matchNumber.HasValue)
-                    return matchNumber.Value;
+                return GuaQiDC[this.GuaSub.BeforeGuaIndex + 1];
 
                 throw new Exception("未找到当前卦的合法空间对齐方位，无法推导玄空卦气洛数。");
             }

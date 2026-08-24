@@ -159,9 +159,9 @@ namespace CompassEx.Gua
 
             NineStar ns = new();
             ns.Type = NineStarType.AfterGuaNineStar;
-            ns.Name = NineStarNames[gs.AfterGuaSubIndex];
+            ns.Name = NineStarNames[gs.AfterGuaIndex];
             // 🚀 顺手帮您微调对齐了之前的拷贝手误：FullName 应当精准映射到九星 FullNames 数组中
-            ns.FullName = NineStarFullNames[gs.AfterGuaSubIndex];
+            ns.FullName = NineStarFullNames[gs.AfterGuaIndex];
 
             return ns;
         }

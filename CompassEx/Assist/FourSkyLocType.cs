@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using tyme.lunar;
+using tyme.sixtycycle;
 using tyme.solar;
 namespace CompassEx.Assist;
 
@@ -38,7 +39,7 @@ public static class FSLTEx
         var sh = d.ToSolarTime();
         var sls = d.ToSkyLocs();
 
-        FourSkyLocType fslt = new FourSkyLocType() { Lunar = ls, YearSLName = sls.Year.Name, Date = d, MonthSLName = sls.Month.Name, DaySLName = sls.Day.Name, HourSLName = sls.Hour.Name, FullName = ls.Hour.TofourSkyLocString(), YearCNName = ls.Year.Year.ToCNName(), MonthCNName = ls.Month.GetName(), DayCNName = ls.Day.GetName(), FullCNName = d.ToFullCNName() };
+        FourSkyLocType fslt = new FourSkyLocType() { Lunar = ls, YearSL = new SkyLoc(sls.Year.Name), Date = d, MonthSL = new SkyLoc(sls.Month.Name), DaySL = new SkyLoc(sls.Day.Name), HourSL = new SkyLoc(sls.Hour.Name), FullName = ls.Hour.TofourSkyLocString(), YearCNName = ls.Year.Year.ToCNName(), MonthCNName = ls.Month.GetName(), DayCNName = ls.Day.GetName(), FullCNName = d.ToFullCNName() };
         SolarDay sod = d.ToSolarDay();
         var terms = SolarTerm.Names.Where(x => sod.Term.GetName() == x && sod == sod.Term.GetSolarDay()); //当天才附值 
 
@@ -46,6 +47,7 @@ public static class FSLTEx
         if (fslt.SeasonName != null && string.IsNullOrWhiteSpace(fslt.SeasonName) == false) fslt.SeasonTime = sh.SolarDay.TermDay.SolarTerm.GetTermTime().ToDateTime();//节气时间
         fslt.DayBuildName = ls.Day.Duty.GetName();//十二日建
 
+        fslt.SixtyCycle = (sh.GetSixtyCycleHour().SixtyCycleDay.SixtyCycleMonth.SixtyCycleYear, sh.GetSixtyCycleHour().SixtyCycleDay.SixtyCycleMonth, sh.GetSixtyCycleHour().SixtyCycleDay, sh.GetSixtyCycleHour());
 
         return fslt;
     }
@@ -56,8 +58,13 @@ public static class FSLTEx
 
 public class FourSkyLocType
 {
+    /// <summary>
+    /// 不外部调用
+    /// </summary>
+    internal FourSkyLocType()
+    {
 
-
+    }
 
 
     /// <summary>
@@ -76,37 +83,37 @@ public class FourSkyLocType
     /// <summary>
     /// 返回农历对象
     /// </summary>
-    public (LunarYear y, LunarMonth m, LunarDay d, LunarHour h) Lunar { get; set; } = default!;
+    public (LunarYear y, LunarMonth m, LunarDay d, LunarHour h) Lunar { get; internal set; } = default!;
 
     /// <summary>
-    /// 年的天干地支
+    /// tyme 库的干支类对象
     /// </summary>
-    public string YearSLName { get; set; } = "";//年的天干地支
-
-    public SkyLoc YearSL { get => new SkyLoc(this.YearSLName); }
+    public (SixtyCycleYear y, SixtyCycleMonth m, SixtyCycleDay d, SixtyCycleHour h) SixtyCycle { get; internal set; } = default!;
 
 
     /// <summary>
-    /// 月的天干地支
+    /// 年干支
     /// </summary>
-    public string MonthSLName { get; set; } = "";//月的天干地支
+    public SkyLoc YearSL { get; set; }
 
-    public SkyLoc MonthSL { get => new SkyLoc(this.MonthSLName); }
+
 
     /// <summary>
-    /// 日的天干地支
+    /// 月干支
     /// </summary>
-    public string DaySLName { get; set; } = "";//日的天干地支
-
-    public SkyLoc DaySL { get => new SkyLoc(this.DaySLName); }
+    public SkyLoc MonthSL { get; set; }
 
     /// <summary>
-    /// 时的天干地支
+    /// 日干支
     /// </summary>
-    public string HourSLName { get; set; } = "";//时的天干地支
+    public SkyLoc DaySL { get; set; }
 
 
-    public SkyLoc HourSL { get => new SkyLoc(this.HourSLName); }
+
+    /// <summary>
+    /// 时干支
+    /// </summary>
+    public SkyLoc HourSL { get; set; }
 
     /// <summary>
     /// 四柱全名
@@ -150,8 +157,8 @@ public class FourSkyLocType
     /// <summary>
     /// 所有择日神煞
     /// </summary>
-    public List<GoodDayGod> Gods { get { return GoodDayGod.GetAllGods(this); } }
-
+    public List<GoodDayGod> Gods { get { if (_Gods == null) _Gods = GoodDayGod.GetAllGods(this); return _Gods; } }
+    private List<GoodDayGod> _Gods;
 
 
 

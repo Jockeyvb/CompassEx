@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Xml.Linq;
 
@@ -12,6 +13,32 @@ namespace CommLib
 {
     public static class Comm
     {
+
+        /// <summary>
+        /// 文字转义HTML
+        /// </summary>
+        /// <param name="sText"></param>
+        /// <returns></returns>
+        public static string HTMLEncode(this string sText)
+        {
+            string htmlEncoded = WebUtility.HtmlEncode(sText);
+            htmlEncoded = htmlEncoded.Replace(" ", "&nbsp;");
+            return htmlEncoded;
+
+        }
+
+        /// <summary>
+        /// HTML转义文字
+        /// </summary>
+        /// <param name="sHTML"></param>
+        /// <returns></returns>
+        public static string HTMLDeCode(this string sHTML)
+        {
+            string st = WebUtility.HtmlDecode(sHTML);
+            st = st.Replace("&nbsp;", " ");
+            return st;
+
+        }
 
 
         /// <summary>

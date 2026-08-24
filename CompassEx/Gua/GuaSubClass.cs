@@ -20,14 +20,11 @@ using System.Drawing;
 namespace CompassEx.Gua
 {
     /// <summary>
-    /// 三爻卦
+    /// 表示三爻卦（经卦/单卦）的类，集成了伏羲先天八卦、文王后天八卦、洛书九宫、爻象状态及罗盘度数等核心理气算法。
     /// </summary>
     public class GuaSubClass : IEquatable<GuaSubClass>
     {
-        #region 字段 
-
-
-
+        #region 字段
 
         /// <summary>
         /// 获取伏羲先天八卦在自然界中所对应构成的八种核心物象/属性名称列表。
@@ -41,7 +38,7 @@ namespace CompassEx.Gua
         /// <remarks>
         /// 严格遵循先天卦序的自然模拟：“乾为天，兑为泽，离为火，震为雷，巽为风，坎为水，艮为山，坤为地”。
         /// </remarks>
-        public readonly static String[] BeforeGuaSubAttrNames = { "天", "泽", "火", "雷", "风", "水", "山", "地" };//先天八卦的属性
+        public readonly static String[] BeforeGuaSubAttrNames = { "天", "泽", "火", "雷", "风", "水", "山", "地" };
 
         /// <summary>
         /// 获取伏羲先天八卦在家族代际中所对应的传统易学伦理与家庭六亲关系名称列表。
@@ -55,7 +52,7 @@ namespace CompassEx.Gua
         /// <remarks>
         /// 描述易经阴阳消长对家庭成员的隐喻：乾坤为父母，其余六卦依阴阳爻生发顺序各分长、中、少男女。
         /// </remarks>
-        public readonly static String[] BeforeGuaSubReluNames = { "父", "少女", "中女", "长男", "长女", "中男", "少男", "母" };//先天八卦的伦理关系
+        public readonly static string[] BeforeGuaSubReluNames = { "父", "少女", "中女", "长男", "长女", "中男", "少男", "母" };
 
         /// <summary>
         /// 获取伏羲先天经八卦（三爻单卦）的标准单字卦名列表。
@@ -69,7 +66,15 @@ namespace CompassEx.Gua
         /// <remarks>
         /// 该数组是类库处理所有单卦（三爻）和复卦（六爻）切割还原时的基础卦名比对底座。
         /// </remarks>
-        public readonly static String[] BeforeGuaSubNames = { "乾", "兑", "离", "震", "巽", "坎", "艮", "坤" };//先天八卦的卦名
+        public readonly static string[] BeforeGuaSubNames = { "乾", "兑", "离", "震", "巽", "坎", "艮", "坤" };
+
+        /// <summary>
+        /// 获取八卦相对卦爻状态映射的字典集合。
+        /// </summary>
+        /// <value>
+        /// 键为单字卦名，值为由下至上长度为 3 的整型爻象数组（1代表阳爻，0代表阴爻，-1代表无爻）。
+        /// </value>
+        public readonly static Dictionary<string, int[]> GuaSubYaoValues = new Dictionary<string, int[]> { { "乾", [1, 1, 1] }, { "兑", [1, 1, 0] }, { "离", [1, 0, 1] }, { "震", [1, 0, 0] }, { "巽", [0, 1, 1] }, { "坎", [0, 1, 0] }, { "艮", [0, 0, 1] }, { "坤", [0, 0, 0] }, { "黄", [-1, -1, -1] } };
 
         /// <summary>
         /// 获取伏羲先天八卦的标准先天卦数（即“乾一”至“坤八”的数理数组）。
@@ -83,7 +88,7 @@ namespace CompassEx.Gua
         /// <remarks>
         /// 对应梅花易数数理起卦的核心计算基础，即“乾一、兑二、离三、震四、巽五、坎六、艮七、坤八”。
         /// </remarks>
-        public readonly static String[] BeforeGuaSubNumerics = { "一", "二", "三", "四", "五", "六", "七", "八" };//先天八卦的卦数
+        public readonly static String[] BeforeGuaSubNumerics = { "一", "二", "三", "四", "五", "六", "七", "八" };
 
         /// <summary>
         /// 获取文王后天八卦在洛书九宫中所对应的五行属性及中央土分布名称列表。
@@ -97,7 +102,7 @@ namespace CompassEx.Gua
         /// <remarks>
         /// 严格绑定后天八卦方位五行（如坎水、震木、离火），其中索引 4 处的“黄”代表中央五黄廉贞土。
         /// </remarks>
-        public readonly static string[] AfterGuaSubAttrNames = { "水", "地", "雷", "风", "黄", "天", "泽", "山", "火" };//后天八卦的属性
+        public readonly static string[] AfterGuaSubAttrNames = { "水", "地", "雷", "风", "黄", "天", "泽", "山", "火" };
 
         /// <summary>
         /// 获取文王后天八卦依据洛书九宫次序（坎一宫至离九宫）排列的标准单字卦名列表。
@@ -111,7 +116,7 @@ namespace CompassEx.Gua
         /// <remarks>
         /// 主要用于风水理气（如玄空飞星、大管局九宫飞布）中进行方位与单卦对象的动态重组映射。
         /// </remarks>
-        public readonly static string[] AfterGuaSubNames = { "坎", "坤", "震", "巽", "黄", "乾", "兑", "艮", "离" };//后天八卦的卦名
+        public readonly static string[] AfterGuaSubNames = { "坎", "坤", "震", "巽", "黄", "乾", "兑", "艮", "离" };
 
         /// <summary>
         /// 全局通用太极阴阳双鱼图符号常数。
@@ -131,7 +136,7 @@ namespace CompassEx.Gua
         /// 该数组存储的标准三爻 Unicode 编码范围在 \u2630 至 \u2637 之间，用于直接在终端或网页排盘结果中渲染单卦的基本卦象。
         /// </remarks>
         public readonly static String[] Symbols = {
-            "\u2630" ,	//乾 (天)
+            "\u2630" ,  //乾 (天)
             "\u2631"    ,//兑 (泽)
             "\u2632"    ,//离 (火)
             "\u2633"    ,//震 (雷)
@@ -140,7 +145,6 @@ namespace CompassEx.Gua
             "\u2636"    ,//艮 (山)
             "\u2637"    ,//坤 (地)
         };
-
 
         /// <summary>
         /// 获取文王后天八卦在洛书九宫中的标准配数列表（即洛书九宫运数：一至九数）。
@@ -154,21 +158,7 @@ namespace CompassEx.Gua
         /// <remarks>
         /// 严格遵循后天洛书轨迹：“坎一、坤二、震三、巽四、中五、乾六、兑七、艮八、离九”，是玄空风水飞星盘运算的核心数学骨架。
         /// </remarks>
-        public readonly static String[] AfterGuaSubNumerics = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };//后天八卦的卦数
-
-        /// <summary>
-        /// 获取文王后天八卦依洛书九宫顺次排列所对应的家族代际与传统易学伦理家庭成员名称列表。
-        /// </summary>
-        /// <value>
-        /// <code>
-        /// 数组索引 0-8 顺次对应九宫伦理：
-        /// 1宫:中男, 2宫:母, 3宫:长男, 4宫:长女, 5宫:黄中(中宫), 6宫:父, 7宫:少女, 8宫:少男, 9宫:中女
-        /// </code>
-        /// </value>
-        /// <remarks>
-        /// 展现文王后天八卦方位所映射的家庭人伦体系。其中索引 4 处的“黄中”代表中五宫无固定卦位，处于天心正运的太极中央状态。
-        /// </remarks>
-        public readonly static String[] AfterGuaSubReluNames = { "中男", "母", "长男", "长女", "黄中", "父", "少女", "少男", "中女" };//
+        public readonly static String[] AfterGuaSubNumerics = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
 
         /// <summary>
         /// 获取文王后天八卦所派生出的堪舆学“三元紫白九星”的标准汉字颜色文字名称列表。
@@ -182,33 +172,11 @@ namespace CompassEx.Gua
         /// <remarks>
         /// 完美收录大成风水玄空紫白九星理气体系，包含了堪舆学极其重视的“九星三白（一白、六白、八白）”核心断卦参数。
         /// </remarks>
-        public readonly static String[] Colors = { "白", "黑", "碧", "绿", "黄", "白", "赤", "白", "紫" };//后天八卦的颜色
-
-        /// <summary>
-        /// 获取三元紫白九星颜色对应映射的 C# 原生高级色彩实例（<see cref="Color"/>）数组列表。
-        /// </summary>
-        /// <value>
-        /// <code>
-        /// 数组索引 0-8 映射的 System.Drawing.Color 成员：
-        /// 1宫(白)->White, 2宫(黑)->Black, 3宫(碧)->DarkGreen, 4宫(绿)->Green, 
-        /// 5宫(黄)->BurlyWood, 6宫(白)->White, 7宫(赤)->Red, 8宫(白)->White, 9宫(紫)->Purple
-        /// </code>
-        /// </value>
-        /// <remarks>
-        /// 该数组旨在跨平台、跨桌面的 UI 渲染与排盘界面（如 WPF、WinForms 或是带有自定义画板的图形输出）中，
-        /// 能够全自动、将抽象的术数九星颜色直接翻译反灌为系统底层的标准色彩，避免在前端进行大块的硬编码或繁琐的 Switch 转换。
-        /// </remarks>
-        //public readonly static Color[] Colors = { Color.Blue, Color.Black, Color.DarkGreen, Color.Green, Color.BurlyWood, Color.Blue, Color.Red, Color.Blue, Color.Purple };//后天八卦的颜色
-
-
+        public readonly static string[] Colors = { "白", "黑", "碧", "绿", "黄", "白", "赤", "白", "紫" };
 
         #endregion
 
-
         #region 属性
-
-
-
 
         /// <summary>
         /// 获取一个布尔值，指示当前三爻经卦在后天八卦体系中是否属于“阳卦”。
@@ -222,13 +190,16 @@ namespace CompassEx.Gua
         public bool IsSun { get { return "乾坎艮震".IndexOf(this.Name) > -1; } }
 
         /// <summary>
-        /// 获取或设置一个布尔值，指示当前三爻单卦在组合为六爻复卦时，是否担当“下卦”（即内卦、贞卦）。
+        /// 获取或设置一个布尔值，指示当前三爻单卦在组合为六爻复卦时，是否担当“下卦”（即内卦、贞卦），否则为上卦。
         /// </summary>
-        /// <value>预设值为 <c>false</c>。若在初始化时被标记为复卦的下半部分，则为 <c>true</c>。</value>
-        public bool IsDownGua { get; private set; } = false;
+        /// <value>预设值为 <c>true</c>。若在初始化时被标记为复卦的下卦，则为 <c>true</c>，上卦则为 <c>false</c>。</value>
+        /// <remarks>
+        /// 上、下卦的主要区别用于六爻卦的卦爻封装，包括六神、干支配算等。
+        /// </remarks>
+        public bool IsDownGua { get; private set; } = true;
 
         /// <summary>
-        /// 获取当前三爻单卦所蕴含的卦气（即洛书九宫数及与其绑定的先天五行参数）。
+        /// 获取当前三爻单卦所蕴含的卦气（即洛书九宫数及与其绑定的先天五行参数），又名先天洛数。
         /// </summary>
         /// <value>返回一个全新初始化的卦气实体对象 <see cref="GuaQi"/>。</value>
         /// <remarks>
@@ -244,130 +215,107 @@ namespace CompassEx.Gua
             }
         }
 
+        /// <summary>
+        /// 获取当前单卦在先天八卦序列中的索引位置（0-7）。
+        /// </summary>
+        /// <value>整型索引值，通过在 <see cref="BeforeGuaSubNames"/> 中检索当前卦名计算得出。</value>
+        public int BeforeGuaIndex { get { return BeforeGuaSubNames.IndexOf(this.Name); } }
 
         /// <summary>
-        /// 获取或设置当前三爻经卦的爻象阴阳状态码数组（由下而上）。
+        /// 获取当前单卦在后天八卦序列中的索引位置（0-8）。
         /// </summary>
-        /// <value>整型数组，默认长度为 3，初值设为 <c>{ 0, 0, 0 }</c>（代表坤卦全阴）。取值规范中：0代表阴爻，1代表阳爻。</value>
-        public int[] Yaos { get; set; } = { 0, 0, 0 }; //爻数组
+        /// <value>整型索引值，通过在 <see cref="AfterGuaSubNames"/> 中检索当前卦名计算得出。</value>
+        public int AfterGuaIndex { get { return AfterGuaSubNames.IndexOf(this.Name); } }
+
+        private IReadOnlyList<GuaYao> _yaos;
 
         /// <summary>
-        /// 获取当前经卦依京房易纳甲体例所配出的纳甲天干字符名称（如：“甲”、“乙”、“壬”）。
+        /// 获取当前三爻经卦的爻象阴阳状态码数组（由下而上）。
         /// </summary>
-        /// <value>天干单字名称。常用于配合地支纳音执行宏观的干支推演。</value>
-        public String SkyName { get; private set; } //爻的纳甲天干
-
-        /// <summary>
-        /// 获取当当前经卦地支起始位置所关联的天干类实体对象。
-        /// </summary>
-        /// <value>一个封装好的 <see cref="SkyClass"/> 天干对象实例。</value>
-        /// <remarks>
-        /// 内部通过当前单卦纳支开始的索引位置（<see cref="LocIndex"/>）作为参数，动态反哺出契合数理的纳甲天干。
-        /// </remarks>
-        [JsonIgnore]
-        public SkyClass Sky { get { return new SkyClass(this.SkyName); } }
-
-        /// <summary>
-        /// 获取当前经卦从初爻、二爻至上爻顺次装配出的地支爻位实体对象列表。
-        /// </summary>
-        /// <value>包含 3 个爻位对应纳支的 <see cref="LocClass"/> 集合（循环排盘方向严格遵循由下而上）。</value>
-        public List<LocClass> Locs { get; private set; } //地支地爻位列表，由下而上
-
-        /// <summary>
-        /// 获取当前单卦地支在十二地支清册中开始的原始数组索引位置（即纳支起算点）。
-        /// </summary>
-        /// <value>整型数值。例如乾卦内卦起于子（索引 0）、坎卦起于寅（索引 2）等。</value>
-        public int LocIndex { get; private set; } //地支开始的位置
+        /// <value>只读爻对象列表，默认长度为 3。取值规范中：0代表阴爻，1代表阳爻。</value>
+        public IReadOnlyList<GuaYao> Yaos
+        {
+            get
+            {
+                if (_yaos == null) _yaos = GuaYao.GetGuaSubYaos(this);
+                return _yaos;
+            }
+        }
 
         /// <summary>
         /// 获取当前经卦在家族代际中所对应的传统易学伦理名称（如：“父”、“母”、“长男”、“少女”）。
         /// </summary>
         /// <value>符合《说卦传》经典人伦隐喻的中文分类字符串。</value>
-        public string GuaSubReluName { get; private set; } //卦的伦理关系
+        public string GuaSubReluName { get { return BeforeGuaSubReluNames[this.BeforeGuaIndex]; } }
 
         /// <summary>
         /// 获取当前经卦在文王后天八卦及洛书紫白九星体例中所映射的标准颜色文字属性（如：“白”、“黑”、“紫”）。
         /// </summary>
         /// <value>代表九星色彩名录的单字名称。</value>
-        public string Color { get { return Colors[this.AfterGuaSubIndex]; } } //后天八卦的颜色属性
-
-
-
+        public string Color { get { return Colors[this.AfterGuaIndex]; } }
 
         /// <summary>
         /// 计算并获取当前单卦对应的文王后天八卦洛书九宫绝对数（整型：1 至 9）。
         /// </summary>
         /// <value>整型数值。通过在 <see cref="AfterGuaSubNumerics"/> 中反查中文数（如“八”）的索引，动态加 1 转换得出其九宫绝对物理运数。</value>
-        public int AfterQuantity { get { return AfterGuaSubNumerics.IndexOf(this.AfterGuaSubCNQuantity) + 1; } }//后天八卦数
+        public int AfterQuantity { get { return AfterGuaSubNumerics.IndexOf(this.AfterGuaSubCNQuantity) + 1; } }
 
         /// <summary>
         /// 计算并获取当前单卦对应的伏羲先天八卦绝对数（整型：1 至 8）。
         /// </summary>
-        /// <value>整型数值。通过在 <see cref="BeforeGuaSubNumerics"/> 中反查中文数（如“一”）的索引，动态加 1 转换得出其先天绝对数（乾一至坤八）。</value>
+        /// <value>整型数值。通过先天索引加 1 计算得出（乾一至坤八）。</value>
         [JsonIgnore]
-        public int BeforeQuanity { get { return BeforeGuaSubNumerics.IndexOf(this.BeforeGuaSubCNQuantity); } }//先天八卦数
+        public int BeforeQuanity { get { return this.BeforeGuaIndex + 1; } }
 
         /// <summary>
         /// 获取当前经卦的标准单字名称（如：“乾”、“坤”、“震”、“巽”）。
         /// </summary>
         /// <value>代表三爻单卦的核心基础单字卦名。</value>
-        public String Name { get; private set; } //卦名，例如：乾
+        public string Name { get; private set; }
 
         /// <summary>
         /// 获取当前经卦在自然界中模拟构成的核心物象/属性名称（如：“天”、“地”、“雷”、“风”）。
         /// </summary>
         /// <value>代表经八卦自然物象的单字名称。</value>
-        public String AttrName { get; private set; } //卦的属性名,例如：天
+        public string AttrName { get { return BeforeGuaSubAttrNames[this.BeforeGuaIndex]; } }
 
         /// <summary>
         /// 获取当前单卦所属的易学核心五行实体对象。
         /// </summary>
         /// <value>包含生克属性的 <see cref="FiveAttr"/> 五行实体对象。</value>
-        public FiveAttr FiveAttr { get; private set; } //卦的属性
+        public FiveAttr FiveAttr { get { return GetFiveAttrName(this.Name); } }
 
         /// <summary>
         /// 获取当前单卦在先天卦序中对应的中文数字卦数名称（如：“一”、“二”、“三”）。
         /// </summary>
         /// <value>返回源自静态清册 <see cref="BeforeGuaSubNumerics"/> 的一字中文数字。</value>
         [JsonIgnore]
-        public string BeforeGuaSubCNQuantity { get { return BeforeGuaSubNumerics[this.BeforeGuaSubIndex]; } }
+        public string BeforeGuaSubCNQuantity { get { return BeforeGuaSubNumerics[this.BeforeGuaIndex]; } }
 
         /// <summary>
         /// 获取当前单卦在后天洛书九宫中对应的中文数字运数名称（如：“一”、“二”、“九”）。
         /// </summary>
         /// <value>返回源自静态清册 <see cref="AfterGuaSubNumerics"/> 的一字中文数字。</value>
-        public string AfterGuaSubCNQuantity { get { return AfterGuaSubNumerics[this.AfterGuaSubIndex]; } }
-
-        /// <summary>
-        /// 计算当前单卦名在先天八卦清册（<see cref="BeforeGuaSubNames"/>）中的原始数组零基索引。
-        /// </summary>
-        /// <value>整型位置索引，范围在 0（乾）至 7（坤）之间。</value>
-        public int BeforeGuaSubIndex { get { return BeforeGuaSubNames.IndexOf(this.Name); } }
-
-        /// <summary>
-        /// 计算当前单卦名在后天八卦洛书清册（<see cref="AfterGuaSubNames"/>）中的原始数组零基索引。
-        /// </summary>
-        /// <value>整型位置索引，范围在 0（坎一宫）至 8（离九宫）之间。</value>
-        public int AfterGuaSubIndex { get { return AfterGuaSubNames.IndexOf(this.Name); } }
+        public string AfterGuaSubCNQuantity { get { return AfterGuaSubNumerics[this.AfterGuaIndex]; } }
 
         /// <summary>
         /// 获取当前三爻单卦所对应的 Unicode 三爻经卦图形符号。
         /// </summary>
         /// <value>返回单个标准的 Unicode 经卦字符（如：☰、☱、☲ 等）。</value>
         /// <remarks>
-        /// 内部通过 <see cref="BeforeGuaSubIndex"/> 先天索引，动态前往静态图形库 <see cref="Symbols"/> 中进行高精度内容提取。
+        /// 内部通过 <see cref="BeforeGuaIndex"/> 先天索引，动态前往静态图形库 <see cref="Symbols"/> 中进行高精度内容提取。
         /// </remarks>
         [JsonIgnore]
-        public string Symbol { get { return Symbols[this.BeforeGuaSubIndex]; } }
+        public string Symbol { get { return Symbols[this.BeforeGuaIndex]; } }
 
         /// <summary>
-        /// 依据当前单卦名称，在三元地理后天罗盘圈层中动态匹配并返回其所管辖的周天度数范围对象。
+        /// 依据当前单卦名称，在三元地理（天盘）后天罗盘圈层中动态匹配并返回其所管辖的周天度数范围对象。
         /// </summary>
-        /// <value>动态调用 <see cref="CompassEx.GetAfterGuaSubDegree(GuaSubClass )"/>，返回其专属的 <see cref="CompassRangEX"/> 后天周天空间物理边界。</value>
+        /// <value>动态调用 <see cref="CompassEx.GetAfterGuaSubDegree(GuaSubClass)"/>，返回其专属的 <see cref="CompassRangEX"/> 后天周天空间物理边界。</value>
         public CompassRangEX CAfterRangeDegree { get { return CompassEx.GetAfterGuaSubDegree(this.Name); } }
 
         /// <summary>
-        /// 依据当前单卦名称，在三元地理伏羲先天罗盘方圆图圈层中动态匹配并返回其所管辖的周天度数范围对象。
+        /// 依据当前单卦名称，在三元地理（地盘）伏羲先天罗盘方圆图圈层中动态匹配并返回其所管辖的周天度数范围对象。
         /// </summary>
         /// <value>动态调用 <see cref="CompassEx.GetBeforGuaSubDegree(GuaSubClass)"/>，返回其专属的 <see cref="CompassRangEX"/> 先天周天空间物理边界。</value>
         public CompassRangEX CBeforRangeDegree { get { return CompassEx.GetBeforGuaSubDegree(this.Name); } }
@@ -379,115 +327,56 @@ namespace CompassEx.Gua
         /// <summary>
         /// 依据单字简名初始化三爻经卦（单卦）对象实例。
         /// </summary>
-        /// <param name="GuaName">输入的单字经卦名（例如：“乾”、“坤”、“坎”、“离”）。</param>    
-        /// <exception cref="IndexOutOfRangeException">当输入的卦名在内置的先天经卦清册中不存在时抛出该异常。</exception>
+        /// <param name="GuaName">输入的单字经卦名（例如：“乾”、“坤”、“坎”、“离”）。</param>     
+        /// <exception cref="IndexOutOfRangeException">当输入的卦名在内置的经卦清册中不存在时抛出该异常。</exception>
         /// <remarks>
         /// <b>⚠️ 警告与调用规范：</b><br/>
-        /// 使用此构造函数创建的经卦实例，其位置属性（<see cref="IsDownGua"/>）默认会被赋予 <c>false</c>（即默认作为下卦）。<br/>
-        /// 如果您是在组合组装完整的六爻复卦，请强烈改用工厂方法 <see cref="GuaSubClass.GetGuaSub(string, bool)"/>，以便明确指定该单卦是担当“上卦（外卦）”还是“下卦（内卦）”。
+        /// 使用此构造函数创建的经卦实例，其位置属性（<see cref="IsDownGua"/>）默认会被赋予 <c>true</c>（即默认作为下卦）。<br/>
+        /// 如果您是在组合组装完整的六爻复卦，请优先改用工厂方法 <see cref="GuaSubClass.GetGuaSub(string, bool)"/>，以便明确指定该单卦是担当“上卦（外卦）”还是“下卦（内卦）”。
         /// </remarks>
-        public GuaSubClass(string GuaName) : this(BeforeGuaSubNames.IndexOf(GuaName))
+        public GuaSubClass(string GuaName) : this(AfterGuaSubNames.IndexOf(GuaName))
         {
-
         }
 
         /// <summary>
-        /// 依据先天经卦序列索引初始化三爻经卦对象实例（核心构造函数）。
+        /// 依据后天卦序索引初始化三爻经卦对象实例（核心构造函数）。
         /// </summary>
-        /// <param name="iBeforGuaIndex">先天单卦的原始数组位置索引（取值范围：<c>0</c> 至 <c>7</c>，对应乾一至坤八）。</param>    
+        /// <param name="iAfterGuaIndex">后天八卦索引值（兼容五黄中宫，索引为 4，注意五黄无卦无爻）。</param>
         /// <exception cref="IndexOutOfRangeException">当传入的索引超出合法安全边界（小于 0 或大于等于数组总长度）时抛出。</exception>
         /// <remarks>
         /// <b>⚠️ 调用规范：</b><br/>
-        /// 使用此构造函数创建的单卦类默认为下卦。在进行宏观六爻复卦装配时，建议使用具备显式方位标识的工厂方法 <see cref="GuaSubClass.GetGuaSub(int, int, int, bool)"/>。<br/><br/>
+        /// 使用此构造函数创建的单卦类默认为下卦。在进行宏观六爻复卦装配时，建议使用具备显式方位标识的工厂方法 <see cref="GuaSubClass.GetGuaSub(int, bool)"/>。<br/><br/>
         /// <b>经卦底层数理装配流程：</b>
         /// <list type="number">
         /// <item><description><b>安全边界校验</b>：校验输入索引。若执行不合法则瞬间熔断并抛出越界异常。</description></item>
-        /// <item><description><b>爻象阴阳重组（Switch 分布）</b>：依据先天八卦符号编码（0代表阴爻，1代表阳爻），由下而上对长为 3 的 <see cref="Yaos"/> 数组进行赋值（如 case 1 兑卦：初爻为阳(1)、二爻为阳(1)、三爻为阴(0)）。</description></item>
+        /// <item><description><b>爻象阴阳重组（Switch 分布）</b>：依据先天八卦符号编码（0代表阴爻，1代表阳爻），由下而上对长为 3 的 <see cref="Yaos"/> 数组进行赋值。</description></item>
         /// <item><description><b>基础术数属性反哺</b>：通过索引同步锁定并充填物象（<see cref="AttrName"/>）、六亲伦理（<see cref="GuaSubReluName"/>）和基本单字卦名。</description></item>
-        /// <item><description><b>跨体系方位映射</b>：通过后天八卦清册反查其在文王后天九宫中的绝对物理位置（<c>iPos</c>），进而将对应方位的紫白九星颜色（<see cref="Color"/>）以及最终的生克五行属性（<see cref="FiveAttr"/>）彻底装载完毕。</description></item>
+        /// <item><description><b>跨体系方位映射</b>：通过后天八卦清册反查其在文王后天九宫中的绝对物理位置，进而将对应方位的紫白九星颜色（<see cref="Color"/>）以及最终的生克五行属性（<see cref="FiveAttr"/>）彻底装载完毕。</description></item>
         /// </list>
         /// </remarks>
-        public GuaSubClass(int iBeforGuaIndex)
+        public GuaSubClass(int iAfterGuaIndex)
         {
-            // 💡 修复潜在的越界隐患：数组上限应为 >= BeforeGuaSubNames.Length，已在文档校验中明确说明
-            if (iBeforGuaIndex < 0 || iBeforGuaIndex >= BeforeGuaSubNames.Length) throw new IndexOutOfRangeException();
-            switch (iBeforGuaIndex)
-            {
-                case 0: //乾卦
-                    this.Yaos[0] = 1;
-                    this.Yaos[1] = 1;
-                    this.Yaos[2] = 1;
-                    break;
-                case 1: //兑卦
-                    this.Yaos[0] = 1;
-                    this.Yaos[1] = 1;
-                    this.Yaos[2] = 0;
-                    break;
-                case 2: //离卦
-                    this.Yaos[0] = 1;
-                    this.Yaos[1] = 0;
-                    this.Yaos[2] = 1;
-                    break;
-                case 3: //震卦
-                    this.Yaos[0] = 1;
-                    this.Yaos[1] = 0;
-                    this.Yaos[2] = 0;
-                    break;
-                case 4: //巽卦
-                    this.Yaos[0] = 0;
-                    this.Yaos[1] = 1;
-                    this.Yaos[2] = 1;
-                    break;
-                case 5: //坎卦
-                    this.Yaos[0] = 0;
-                    this.Yaos[1] = 1;
-                    this.Yaos[2] = 0;
-                    break;
-                case 6: //艮卦
-                    this.Yaos[0] = 0;
-                    this.Yaos[1] = 0;
-                    this.Yaos[2] = 1;
-                    break;
-                case 7: //坤卦
-                    this.Yaos[0] = 0;
-                    this.Yaos[1] = 0;
-                    this.Yaos[2] = 0;
-                    break;
-            }
-            this.AttrName = BeforeGuaSubAttrNames[iBeforGuaIndex];//卦的属性名称
-            this.GuaSubReluName = BeforeGuaSubReluNames[iBeforGuaIndex];//伦理关系
-            this.Name = BeforeGuaSubNames[iBeforGuaIndex];//卦名
-
-            int iPos = Array.IndexOf(AfterGuaSubNames, this.Name);//找到后天位置
-                                                                  // this.AfterGuaSubColor = AfterGuaSubColors[iPos];//获得后天颜色
-
-            this.FiveAttr = GetFiveAttrName(this.Name);
-            //this.LoadLocs();
-            //this.SkyName = SkyClass.SkyNames[iSkyIndex];
+            if (iAfterGuaIndex < 0 || iAfterGuaIndex >= AfterGuaSubNames.Length) throw new IndexOutOfRangeException();
+            this.Name = AfterGuaSubNames[iAfterGuaIndex]; //以名称为主
         }
 
         #endregion
 
-
-
-
         #region 方法
 
-
         /// <summary>
-        /// 转成六爻卦(上、下三爻卦相同）
+        /// 将当前单卦转换为六爻复卦（上下三爻卦完全相同，即八纯卦）。
         /// </summary>
-        /// <returns></returns>
+        /// <returns>返回新生成的六爻重卦实例 <see cref="GuaClass"/>。</returns>
         public GuaClass ToGuaClass()
         {
             return new GuaClass(this.Name);
         }
 
-
         /// <summary>
-        /// 获得后天八卦的中包含所有的正针24山
+        /// 获取后天八卦中包含的所有正针 24 山罗盘度数映射集合。
         /// </summary>
-        /// <returns></returns>       
+        /// <returns>返回一个字典，键为经卦管辖的度数范围 <see cref="CompassRangEX"/>，值为对应的 24 山山向对象 <see cref="CHill"/>。</returns>        
         public Dictionary<CompassRangEX, CHill> GetC24Hills()
         {
             Dictionary<CompassRangEX, CHill> dc = new Dictionary<CompassRangEX, CHill>();
@@ -499,20 +388,15 @@ namespace CompassEx.Gua
                 {
                     CHill hill = new CHill(sN);
                     dc.Add(range, hill);
-
                 }
-
             }
             return dc;
         }
 
-
-
-
         /// <summary>
-        /// 获得后天八卦的中包含所有的先天64卦
+        /// 获取后天八卦中所包含的所有先天 64 卦度数映射集合。
         /// </summary>
-        /// <returns></returns>       
+        /// <returns>返回一个字典，键为先天 64 卦的周天度数区间 <see cref="CompassRangEX"/>，值为对应的六爻卦实例 <see cref="GuaClass"/>。</returns>        
         public Dictionary<CompassRangEX, GuaClass> GetCBeforGuas()
         {
             Dictionary<CompassRangEX, GuaClass> dc = new Dictionary<CompassRangEX, GuaClass>();
@@ -528,227 +412,107 @@ namespace CompassEx.Gua
         }
 
         /// <summary>
-        /// 取反卦
+        /// 获取当前单卦的反卦（即各爻阴阳属性全部取反后的对立经卦）。
         /// </summary>
-        /// <returns></returns>
+        /// <returns>返回取反后生成的全新 <see cref="GuaSubClass"/> 经卦实例。</returns>
         public GuaSubClass GetXorGua()
         {
             int[] iYaos = { 0, 0, 0 };
 
             for (int i = 0; i < 3; i++)
             {
-                //iYaos[i]=this.Yaos[i]==0?1:0; 
-                iYaos[i] = this.Yaos[i] % 2 == 0 ? 1 : 0; //1.4修复,当数值大于1时判断错
+                iYaos[i] = this.Yaos[i].Value % 2 == 0 ? 1 : 0; // 1.4版本修复：当数值大于1时的求模判断容错
             }
-            return GetGuaSub(iYaos[0], iYaos[1], iYaos[2], true);
+            return GetGuaSub(iYaos[0], iYaos[1], iYaos[2], this.IsDownGua);
         }
 
         /// <summary>
-        /// 加载地支列表，由下而上
+        /// 根据卦的前三爻状态（由下而上），获取对应的先天三爻卦类实例。
         /// </summary>
-        public void LoadLocs()
-        {
-            List<LocClass> lcs = new List<LocClass>();
-            int iPos = this.LocIndex;
-            for (int i = 0; i < 3; i++)
-            {
-                if (iPos > 11) iPos = 12 - iPos;
-                if (iPos < 0) iPos += 12;
-                LocClass lc = LocClass.GetLocClass(iPos);
-                lcs.Add(lc);
-                iPos += iPos % 2 == 0 ? 2 : -2;//如果是双数为阴迹行，单为顺行
-            }
-            this.Locs = lcs;//加载到本类中
-        }
-
-
-
-
-        /// <summary>
-        /// 根据卦的前三爻(由下而上）,获得三爻卦类（先天)
-        /// </summary>
-        /// <param name="iYao1"></param>
-        /// <param name="iYao2"></param>
-        /// <param name="iYao3"></param>
-        /// <param name="IsDownGua">是否为下卦</param>
-        /// <returns></returns>
+        /// <param name="iYao1">初爻状态（0代表阴，1代表阳）。</param>
+        /// <param name="iYao2">二爻状态（0代表阴，1代表阳）。</param>
+        /// <param name="iYao3">三爻状态（0代表阴，1代表阳）。</param>
+        /// <param name="IsDownGua">指示当前经卦是否为复卦的下卦（内卦）。</param>
+        /// <returns>若匹配成功则返回对应的 <see cref="GuaSubClass"/> 实例；若无匹配项则返回 <c>null</c>。</returns>
         public static GuaSubClass? GetGuaSub(int iYao1, int iYao2, int iYao3, bool IsDownGua)
         {
             GuaSubClass gsc;
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < AfterGuaSubNames.Length; i++)
             {
                 gsc = GetGuaSub(i, IsDownGua);
-                if (gsc.Yaos[0] == iYao1 % 2 && gsc.Yaos[1] == iYao2 % 2 && gsc.Yaos[2] == iYao3 % 2)
+                if (i != 4) // 五黄无卦无爻
                 {
-                    gsc.Yaos[0] = iYao1;//这样也可以保留动爻
-                    gsc.Yaos[1] = iYao2;
-                    gsc.Yaos[2] = iYao3;
-                    return gsc;//找到
+                    if (gsc.Yaos[0].Value == iYao1 % 2 && gsc.Yaos[1].Value == iYao2 % 2 && gsc.Yaos[2].Value == iYao3 % 2)
+                    {
+                        return gsc; // 找到匹配项
+                    }
                 }
             }
-
-            return null;//找不到
+            return null; // 未找到
         }
 
         /// <summary>
-        /// 根据后天八卦索引获得三爻卦类（兼容五黄无卦）
+        /// 根据后天八卦名称获取三爻卦类实例（内部自动处理兼容五黄无卦的情况）。
         /// </summary>
-        /// <param name="sn"></param>
-        /// <param name="IsDownGua"></param>
-        /// <returns></returns>
-        public static GuaSubClass GetAfterGuaSub(string sn, bool IsDownGua = true)
+        /// <param name="GuaName">后天单字卦名（如：“坎”、“离”等）。</param>
+        /// <param name="IsDownGua">指示当前经卦是否为下卦，默认为 <c>true</c>。</param>
+        /// <returns>返回对应的 <see cref="GuaSubClass"/> 实例。</returns>
+        public static GuaSubClass GetAfterGuaSub(string GuaName, bool IsDownGua = true)
         {
-
-            GuaSubClass? gsc = null;
-            if (sn == "黄")
-            {//五黄（无卦）
-                gsc = new GuaSubClass("乾");
-                gsc.Name = "黄";
-
-            }
-            else
-            {
-                gsc = GetGuaSub(sn, IsDownGua);
-            }
-
-            return gsc;
+            return GetAfterGuaSub(AfterGuaSubNames.IndexOf(GuaName), IsDownGua);
         }
 
-
         /// <summary>
-        /// 根据后天八卦索引获得三爻卦类（兼容五黄无卦）
+        /// 根据后天八卦索引获取三爻卦类实例（内部自动处理兼容五黄无卦的情况）。
         /// </summary>
-        /// <param name="GuaSubIndex"></param>
-        /// <param name="IsDownGua">是否为下卦</param>
-        /// <returns></returns>
+        /// <param name="GuaSubIndex">后天卦序索引值。</param>
+        /// <param name="IsDownGua">指示当前经卦是否为下卦，默认为 <c>true</c>。</param>
+        /// <returns>返回对应的 <see cref="GuaSubClass"/> 实例。</returns>
         public static GuaSubClass GetAfterGuaSub(int GuaSubIndex, bool IsDownGua = true)
         {
-            //  return GuaSubClass.GetGuaSub(AfterGuaSubNames[GuaSubIndex], IsDownGua);
-            string sn = AfterGuaSubNames[GuaSubIndex];
-            GuaSubClass? gsc = null;
-            if (sn == "黄")
-            {//五黄（无卦）
-                gsc = new GuaSubClass("乾");
-                gsc.Name = "黄";
-
-            }
-            else
-            {
-                gsc = GetGuaSub(sn, IsDownGua);
-            }
-
-            return gsc;
+            return GetGuaSub(GuaSubIndex, IsDownGua);
         }
 
-
-
         /// <summary>
-        /// 根据先天八卦索引获得三爻卦类
+        /// 根据卦的自然物象属性或单字卦名，获取对应的三爻卦类实例。
         /// </summary>
-        /// <param name="GuaSubIndex">先天卦的索引</param>
-        /// <param name="IsDownGua">是否为下卦</param>
-        /// <returns></returns>
-        public static GuaSubClass GetBeforGuaSub(int GuaSubIndex, bool IsDownGua = true)
-        {
-            return GuaSubClass.GetGuaSub(BeforeGuaSubNames[GuaSubIndex], IsDownGua);
-        }
-
-
-        /// <summary>
-        /// 根据卦的属性或名称,获得三爻卦类  
-        /// </summary>
-        /// <param name="sAttrOrGuaName">属性名或卦名</param>
-        /// <param name="IsDownGua">是否为下卦(内卦)</param>
-        /// <returns></returns> 
+        /// <param name="sAttrOrGuaName">属性名或卦名（例如：“天”或“乾”）。</param>
+        /// <param name="IsDownGua">指示当前经卦是否为下卦（内卦），默认为 <c>true</c>。</param>
+        /// <returns>若匹配成功返回 <see cref="GuaSubClass"/> 实例；否则返回 <c>null</c>。</returns> 
         public static GuaSubClass? GetGuaSub(string sAttrOrGuaName, bool IsDownGua = true)
         {
-            int iPos = Array.IndexOf(BeforeGuaSubAttrNames, sAttrOrGuaName);
+            int iPos = Array.IndexOf(AfterGuaSubAttrNames, sAttrOrGuaName);
 
             if (iPos == -1)
             {
-                iPos = Array.IndexOf(BeforeGuaSubNames, sAttrOrGuaName);
-                if (iPos == -1) return null;//找不到
+                iPos = Array.IndexOf(AfterGuaSubNames, sAttrOrGuaName);
+                if (iPos == -1) return null; // 无法匹配
             }
 
             GuaSubClass gsc = GetGuaSub(iPos, IsDownGua);
-
             return gsc;
         }
+
         /// <summary>
-        /// 根据卦的属性索引,获得三爻卦类(先天)
+        /// 根据后天卦序索引及上下卦标记，获得对应的三爻卦类实例。
         /// </summary>
-        /// <param name="iAttrIndex">卦索引</param>
-        /// <param name="IsDownGua">是否为下卦</param>
-        /// <returns></returns>
-        public static GuaSubClass GetGuaSub(int iAttrIndex, bool IsDownGua)
+        /// <param name="AfterGuaIndex">后天卦序索引。</param>
+        /// <param name="IsDownGua">指示当前经卦是否为下卦。</param>
+        /// <returns>返回新初始化的 <see cref="GuaSubClass"/> 实例。</returns>
+        public static GuaSubClass GetGuaSub(int AfterGuaIndex, bool IsDownGua)
         {
-            GuaSubClass gsc = new GuaSubClass(iAttrIndex);
-            int iSkyIndex = 0;
-            switch (iAttrIndex)
-            {
-                case 0: //乾卦
-
-                    iSkyIndex = IsDownGua ? 0 : 8;//内甲外壬
-                    gsc.LocIndex = IsDownGua ? 0 : 6;//内子外午
-                    break;
-                case 1: //兑卦
-
-                    iSkyIndex = 3;//丁
-                    gsc.LocIndex = IsDownGua ? 5 : 11;//内巳外亥
-                    break;
-                case 2: //离卦
-
-                    iSkyIndex = 5;//内己
-                    gsc.LocIndex = IsDownGua ? 3 : 9;//内卯外酉
-                    break;
-                case 3: //震卦
-
-                    iSkyIndex = 6;//庚
-                    gsc.LocIndex = IsDownGua ? 0 : 6;//内子外午
-                    break;
-                case 4: //巽卦
-
-                    iSkyIndex = 7;//辛
-                    gsc.LocIndex = IsDownGua ? 1 : 7;//内丑外未
-                    break;
-                case 5: //坎卦
-
-                    iSkyIndex = 4;//戊
-                    gsc.LocIndex = IsDownGua ? 2 : 8;//内寅外申
-                    break;
-                case 6: //艮卦
-
-                    iSkyIndex = 2;//丙
-                    gsc.LocIndex = IsDownGua ? 4 : 10;//内辰外戌
-                    break;
-                case 7: //坤卦
-
-                    iSkyIndex = IsDownGua ? 1 : 9;//内乙外癸
-                    gsc.LocIndex = IsDownGua ? 7 : 1;//内子外午
-                    break;
-
-            }
-            gsc.AttrName = BeforeGuaSubAttrNames[iAttrIndex];//卦的属性名称
-            gsc.GuaSubReluName = BeforeGuaSubReluNames[iAttrIndex];//伦理关系
-            gsc.Name = BeforeGuaSubNames[iAttrIndex];//卦名
-
-            int iPos = Array.IndexOf(AfterGuaSubNames, gsc.Name);//找到后天位置
-                                                                 //  gsc.AfterGuaSubColor = AfterGuaSubColors[iPos];//获得后天颜色
-
-            gsc.FiveAttr = GetFiveAttrName(gsc.Name);
-            gsc.LoadLocs();
-            gsc.SkyName = SkyClass.SkyNames[iSkyIndex];
+            GuaSubClass gsc = new GuaSubClass(AfterGuaIndex);
             gsc.IsDownGua = IsDownGua;
-            iSkyIndex = 0;
+            gsc.Name = AfterGuaSubNames[AfterGuaIndex]; // 赋予卦名
             return gsc;
         }
 
         /// <summary>
-        /// 获得卦的五行属性
+        /// 根据经卦名称获取对应的五行属性。
         /// </summary>
-        /// <param name="sGuaSubName"></param>
-        /// <returns></returns>
-        public static FiveAttr? GetFiveAttrName(String sGuaSubName)
+        /// <param name="sGuaSubName">单字经卦名称。</param>
+        /// <returns>若匹配成功返回对应的 <see cref="FiveAttr"/> 五行实体；若无法匹配则返回 <c>null</c>。</returns>
+        private static FiveAttr? GetFiveAttrName(String sGuaSubName)
         {
             if (sGuaSubName.Equals("乾") || sGuaSubName.Equals("兑")) return new FiveAttr("金");
             if (sGuaSubName.Equals("坤") || sGuaSubName.Equals("艮")) return new FiveAttr("土");
@@ -759,45 +523,65 @@ namespace CompassEx.Gua
             return null;
         }
 
-        #region 显式实现对比、运算符和Key 方法
-        // 1. 一般的 Equals(object)，內部可以轉型並利用顯式介面來比對
+        #region 显式实现对比、运算符和 Key 方法
+
+        /// <summary>
+        /// 判断当前对象是否与指定的对象相等。
+        /// </summary>
+        /// <param name="obj">要与当前对象进行比较的另一个对象。</param>
+        /// <returns>如果对象相等则返回 <c>true</c>；否则返回 <c>false</c>。</returns>
         public override bool Equals(object obj)
         {
             return Equals(obj as GuaSubClass);
         }
 
-        // 2. 顯式實作 IEquatable<LocClass>.Equals
+        /// <summary>
+        /// 判断当前三爻卦实例是否与另一个指定的 <see cref="GuaSubClass"/> 实例相等。
+        /// </summary>
+        /// <param name="other">要比较的另一个三爻卦实例。</param>
+        /// <returns>如果两者的卦名完全一致则返回 <c>true</c>；否则返回 <c>false</c>。</returns>
         bool IEquatable<GuaSubClass>.Equals(GuaSubClass other)
         {
-            // 檢查是否為 null
             if (other is null) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            // 使用 string 的比較方式（考慮大小寫或 null 的防禦）
             return string.Equals(this.Name, other.Name, StringComparison.Ordinal);
         }
 
-        // 3. 務必配合 Name 計算 HashCode
+        /// <summary>
+        /// 获取当前经卦实例的哈希代码。
+        /// </summary>
+        /// <returns>返回基于卦名字段计算得到的整型哈希值。</returns>
         public override int GetHashCode()
         {
-            // 若 Name 可能為 null，可以用 HashCode.Combine 或字串自身的 GetHashCode
             return Name != null ? Name.GetHashCode() : 0;
         }
 
-        // 4. (選用) 重載 == 與 != 運算子，建議透過介面轉型來呼叫
+        /// <summary>
+        /// 检查两个三爻卦实例是否相等。
+        /// </summary>
+        /// <param name="left">左侧三爻卦实例。</param>
+        /// <param name="right">右侧三爻卦实例。</param>
+        /// <returns>相等返回 <c>true</c>；否则返回 <c>false</c>。</returns>
         public static bool operator ==(GuaSubClass left, GuaSubClass right)
         {
             if (left is null) return right is null;
             return ((IEquatable<GuaSubClass>)left).Equals(right);
         }
 
+        /// <summary>
+        /// 检查两个三爻卦实例是否不相等。
+        /// </summary>
+        /// <param name="left">左侧三爻卦实例。</param>
+        /// <param name="right">右侧三爻卦实例。</param>
+        /// <returns>不相等返回 <c>true</c>；否则返回 <c>false</c>。</returns>
         public static bool operator !=(GuaSubClass left, GuaSubClass right)
         {
             return !(left == right);
         }
 
-
         #endregion
+
         #endregion 
     }
 }

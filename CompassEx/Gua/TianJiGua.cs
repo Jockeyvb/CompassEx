@@ -170,9 +170,9 @@ namespace CompassEx.Gua
             if (ToGua == null)
                 throw new ArgumentNullException(nameof(ToGua), "入参向卦不能为null");
 
+            ToGua.LoadAllYaos();
 
-            ToGua.LoadSixRelative(); //加载六亲
-            ToGua.LoadHideRelative();//加载伏神
+
 
 
             //=====================设置六亲、干枝、伏神===================
@@ -182,15 +182,16 @@ namespace CompassEx.Gua
 
                 PlaceYaosJFNaJiaType pyt = new PlaceYaosJFNaJiaType();
                 pyt.PlaceYao = i;
-                pyt.SkyLoc = ToGua.SkyLocs.ElementAt(i);
-                pyt.SixRelative = ToGua.SixRelative.ElementAt(i);
-                if (ToGua.HideRelativeYaos != null && ToGua.HideRelativeYaos.Any()) //无伏神不用处理
+                pyt.SkyLoc = ToGua.Yaos[i].SkyLoc;
+                pyt.SixRelative = ToGua.Yaos[i].SixRelative;
+                var lsHRY = ToGua.Yaos.Where(x => x.HideRelative != null).ToList();
+                if (lsHRY.Any())//无伏神不用处理
                 {
-                    for (int j = 0; j < ToGua.HideRelativeYaos.Count(); j++)
+                    for (int j = 0; j < ToGua.Yaos.Count(); j++)
                     {
-                        if (ToGua.HideRelativeYaos[j] == i)
+                        if (lsHRY[j].HideRelative != null)
                         {
-                            pyt.HideRelative = ToGua.HideRelative[j];
+                            pyt.HideRelative = lsHRY[j].HideRelative;
                             break;
                         }
 
@@ -207,7 +208,7 @@ namespace CompassEx.Gua
             // 2. 提取后天八卦卦宫基准
             // -----------------------------------------------------------------
             // 根据当前向卦所归属的卦宫名称（如乾宫、坎宫等），获取该卦宫的完整元旦盘/基准卦实例
-            GuaClass GuaSelf = GuaClass.GetGuaClass(ToGua.GuaSelf.Name); // 取卦宫
+            GuaClass GuaSelf = new GuaClass(ToGua.GuaSelf.Name); // 取卦宫
 
             // 以当前大卦宫为本位，通过特定的飞爻规律（如一世卦至归魂卦），演化并列出与其同气连枝的 7 个六爻飞爻卦
             GuaList = GuaSelf.Get7HereYaoGua(); // 以卦宫来列出飞爻卦
