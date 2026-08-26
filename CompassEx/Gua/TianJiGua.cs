@@ -337,7 +337,7 @@ namespace CompassEx.Gua
         /// </example>
         public Dictionary<CompassRangEX, GuaClass> GetOutGuas()
         {
-            return C3Y.CBeforeGuas
+            return C3YEx.CBeforeGuas
                 .Where(kv => IsOutGua(kv.Value))
                 .ToDictionary(kv => kv.Key, kv => kv.Value);
         }

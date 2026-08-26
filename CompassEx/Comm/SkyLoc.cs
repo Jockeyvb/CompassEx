@@ -134,8 +134,14 @@ namespace CompassEx.Comm
         #endregion
 
         #region 方法
-
-
+        /// <summary>
+        /// 获得旬中处于“空亡”
+        /// </summary>
+        /// <returns></returns>
+        public List<LocClass> GetLostLocs()
+        {
+            return GetLostLocs(this);
+        }
 
         /// <summary>
         /// 静态公共方法：依据输入的日柱天干与地支，动态推导并获取该旬中处于“空亡”状态的两个地支对象。

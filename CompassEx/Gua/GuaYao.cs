@@ -40,7 +40,7 @@ namespace CompassEx.Gua
         /// <summary>
         /// 爻对应的图形
         /// </summary>
-        public static readonly string[] Faces = ["─ ─ ", "─── ", "─ ─x", "───o"];
+        public static readonly string[] Faces = ["━ ━ ", "━━━ ", "━ ━x", "━━━o"];
 
         /// <summary>
         /// 爻所在的位置0为初爻
@@ -130,6 +130,20 @@ namespace CompassEx.Gua
         }
 
         /// <summary>
+        /// 获得本爻的HTML
+        /// </summary>
+        /// <param name="Heightpx"></param>
+        /// <param name="Style"></param>
+        /// <param name="markStyle"></param>
+        /// <returns></returns>
+        public string GetFaceToHTML(int Heightpx = 24, string Style = "", string markStyle = "")
+        {
+            return GetYaoFaceToHTML(this.Value, Heightpx, Style, markStyle);
+
+        }
+
+
+        /// <summary>
         /// 加载六爻卦的卦爻其它属性
         /// </summary>
         /// <returns></returns>
@@ -213,17 +227,33 @@ namespace CompassEx.Gua
 
             }
 
-
-            for (int i = 0; i < GuaYaoValues.Length; i++)
+            if (gs.IsSun)//阳卦顺行
             {
-                GuaYao gy = new GuaYao(GuaYaoValues[i]);
-                gy.Index = gs.IsDownGua ? i % 3 : i % 3 + 3; //上下卦的爻位
-                gy.SkyLoc = new SkyLoc(SkyIndex, LocIndex);
+                for (int i = 0; i < 3; i++)
+                {
+                    GuaYao gy = new GuaYao(GuaYaoValues[i]);
+                    gy.Index = gs.IsDownGua ? i % 3 : i % 3 + 3; //上下卦的爻位
+                    gy.SkyLoc = new SkyLoc(SkyIndex, LocIndex);
 
-                LocIndex = LocIndex + 2 > 11 ? 0 : LocIndex + 2;
+                    LocIndex = LocIndex + 2 > 11 ? 0 : LocIndex + 2;
 
-                ls.Add(gy);
+                    ls.Add(gy);
 
+                }
+            }
+            else//阴卦逆行
+            {
+                for (int i = 0; i < GuaYaoValues.Length; i++)
+                {
+                    GuaYao gy = new GuaYao(GuaYaoValues[i]);
+                    gy.Index = gs.IsDownGua ? i % 3 : i % 3 + 3; //上下卦的爻位
+                    gy.SkyLoc = new SkyLoc(SkyIndex, LocIndex);
+
+                    LocIndex = LocIndex - 2 < 0 ? 11 : LocIndex - 2;//逆
+
+                    ls.Add(gy);
+
+                }
             }
             return ls;
 
@@ -355,7 +385,7 @@ namespace CompassEx.Gua
             Yaos[2] = (g.DownGua.Yaos[2].Value % 2) + (g.UpGua.Yaos[2].Value % 2);//上爻
             for (int i = 0; i < 3; i++)
             {
-                if (Yaos[i] > 1) Yaos[i] = 0;
+                Yaos[i] = Yaos[i] % 2;
             }
 
             string sn = GuaSubClass.GuaSubYaoValues.Where(x => x.Key != "黄" && x.Value.SequenceEqual(Yaos)).Select(x => x.Key).FirstOrDefault();
@@ -476,6 +506,37 @@ namespace CompassEx.Gua
             return s;
         }
 
+        /// <summary>
+        /// 把爻显示转成HTML
+        /// </summary>
+        /// <param name="GuaYaoValue"></param>
+        /// <param name="Heightpx"></param>
+        /// <param name="Style"></param>
+        /// <param name="markStyle"></param>
+        /// <returns></returns>
+        public static string GetYaoFaceToHTML(int GuaYaoValue, int Heightpx = 24, string Style = "", string markStyle = "")
+        {
+
+            string sYin = @$"
+                        <div class=""yin"" style='height:{Heightpx}px;{Style}'>
+        <span></span>
+        <span></span>
+
+    </div>
+
+";
+            string sYang = $"<div class=\"yang\" style='height:{Heightpx}px;{Style}'></div>";
+            string st = GuaYaoValue % 2 == 0 ? sYin : sYang;
+            string sm = $"<span class=\"mark empty \" style='{markStyle}'></span>"; ;
+            if (GuaYaoValue == 3) sm = $"<span class=\"mark\" style='font-size:{Heightpx}px;{markStyle}' >o</span>";
+            if (GuaYaoValue == 2) sm = $"<span class=\"mark\" style='font-size:{Heightpx}px;{markStyle}'>x</span>";
+
+            st += sm;
+
+            return st;
+        }
+
+
 
 
         public static implicit operator int(GuaYao a)
@@ -488,4 +549,6 @@ namespace CompassEx.Gua
         }
 
     }
+
+
 }

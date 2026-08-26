@@ -124,7 +124,7 @@ namespace CompassEx
         /// <param name="Degreen">当前罗盘指向的度数（通常为 0 至 360 度）。</param>
         /// <remarks>
         /// <para>实例化该对象时，传入的度数会直接赋值给 <see cref="Degree"/> 属性。</para>
-        /// <para>由此会隐式触发内部的初始化流程，自动计算并填充对应的后天八卦（<see cref="AfterGuaSub"/>）、二十四山（<see cref="C24Hill"/>）以及先天 64 卦（<see cref="C3Y.BeforGua"/>）等关联对象。</para>
+        /// <para>由此会隐式触发内部的初始化流程，自动计算并填充对应的后天八卦（<see cref="AfterGuaSub"/>）、二十四山（<see cref="C24Hill"/>）以及先天 64 卦（<see cref="C3YEx.BeforGua"/>）等关联对象。</para>
         /// </remarks>
         public CompassEx(double Degreen)
         {
@@ -144,7 +144,7 @@ namespace CompassEx
         /// <list type="bullet">
         /// <item><description>后天八卦对象：<see cref="AfterGuaSub"/></description></item>
         /// <item><description>二十四山对象：<see cref="c24Hill"/></description></item>
-        /// <item><description>先天 64 卦对象：<see cref="C3Y.BeforGua"/></description></item>
+        /// <item><description>先天 64 卦对象：<see cref="C3YEx.BeforGua"/></description></item>
         /// </list>
         /// </remarks>
         private void Init()

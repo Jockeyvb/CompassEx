@@ -10,6 +10,7 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
+using CommLib;
 using CompassEx.Gua;
 using System;
 
@@ -58,7 +59,7 @@ namespace CompassEx.Comm
         /// <summary>
         /// 五行名称数组
         /// </summary>
-        public readonly static String[] FiveAttrNames = { "金", "木", "水", "火", "土" };
+        public readonly static string[] FiveAttrNames = { "金", "木", "水", "火", "土" };
 
         /// <summary>
         /// 五行名称
@@ -552,6 +553,18 @@ namespace CompassEx.Comm
 
             return "";
         }
+
+        /// <summary>
+        /// 转成HTML
+        /// </summary>
+        /// <returns></returns>
+        public string ToHTML()
+        {
+            string st = $"<span style='color:{this.ToColor().ToHex()}'>{this.Name}</span>";
+            return st;
+        }
+
+
 
         #region 显式实现对比、运算符和Key 方法
         // 1. 一般的 Equals(object)，內部可以轉型並利用顯式介面來比對

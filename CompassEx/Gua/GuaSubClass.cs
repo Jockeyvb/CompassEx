@@ -401,7 +401,7 @@ namespace CompassEx.Gua
         {
             Dictionary<CompassRangEX, GuaClass> dc = new Dictionary<CompassRangEX, GuaClass>();
             CompassRangEX CRE = this.CAfterRangeDegree;
-            foreach (var kv in C3Y.CBeforeGuas)
+            foreach (var kv in C3YEx.CBeforeGuas)
             {
                 if (CRE.IsInRange(kv.Key.Start))
                 {

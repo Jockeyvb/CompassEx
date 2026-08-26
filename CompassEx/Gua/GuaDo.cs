@@ -15,10 +15,43 @@ using CompassEx.Comm;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CompassEx.Gua
 {
+
+
+    /// <summary>
+    /// 占卦类型
+    /// </summary>
+    public enum GuaDoType
+    {
+        /// <summary>
+        /// 默认为无
+        /// </summary>
+        [Description("无")]
+        None = 0,
+
+        /// <summary>
+        /// 先天八卦
+        /// </summary>
+        [Description("六爻铜钱占卦"), Category("{level: 1 }")]
+        SixYaos = 1,
+        /// <summary>
+        /// 后天八卦
+        /// </summary>
+        [Description("先天梅花数字占卦"), Category("{level:2 }")]
+        FlowerGuaBefore = 2,
+
+        /// <summary>
+        /// 后天八卦
+        /// </summary>
+        [Description("手动排盘"), Category("{level:3 }")]
+        ManualSixYaos = 4,
+
+    }
+
     /// <summary>
     /// 表示占卦主控制类，用于整合起卦、四柱参数配置以及六爻卦的动态推演与加载。
     /// </summary>
@@ -36,6 +69,29 @@ namespace CompassEx.Gua
         /// <value>一个 <see cref="GuaClass"/> 实例，若未加载则为 <c>null</c>。</value>
         public GuaClass? Gua { get; private set; }
 
+
+        public GuaClass? ChangedGua
+        {
+            get
+            {
+                var g = Gua?.GetChangeGua();
+                g?.LoadAllYaos(this.FSLT.DaySL);
+                return g;
+            }
+        }
+
+
+        /// <summary>
+        /// 占卦类型
+        /// </summary>
+        public GuaDoType GuaDoType { get; private set; }
+
+
+        /// <summary>
+        /// 梅花数字卦的两个数字(只有数字梅花占卦才有值)
+        /// </summary>
+        public int[] FlowerGuaNumber { get; private set; }
+
         /// <summary>
         /// 获取或设置当前占卦所对应的四柱干支信息类型。
         /// </summary>
@@ -47,6 +103,7 @@ namespace CompassEx.Gua
         /// </summary>
         /// <param name="dt">用于起卦的目标阳历时间（<see cref="DateTime"/>）。</param>
         public GuaDo(DateTime dt) : this(dt.ToFourSkyLocType()!) { }
+
 
         /// <summary>
         /// 初始化 <see cref="GuaDo"/> 类的新实例，通过指定的四柱干支对象加载占卦信息。
@@ -62,13 +119,16 @@ namespace CompassEx.Gua
         /// 依据输入的 6 个爻值加载并初始化六爻主卦。
         /// </summary>
         /// <param name="YaoValues">包含 6 个爻值的整型数组（通常按初爻至上爻顺序排列）。（0为阴爻、1为阳爻，2为老阴（动爻），3为老阳（动爻）)</param>
+        /// <param name="IsManual">是否手动排盘</param>
         /// <exception cref="ArgumentOutOfRangeException">当传入的 <paramref name="YaoValues"/> 数组长度不等于 6 时抛出此异常。</exception>
-        public void LoadSixYaosGua(int[] YaoValues)
+        public void LoadSixYaosGua(int[] YaoValues, bool IsManual = false)
         {
             if (YaoValues.Length != 6) throw new ArgumentOutOfRangeException(nameof(YaoValues));
             var gc = GuaClass.GetGuaClass(YaoValues);
             gc.LoadAllYaos(this.FSLT.DaySL); // 加载所有爻和所有干支类
             this.Gua = gc;
+            this.GuaDoType = IsManual ? GuaDoType.ManualSixYaos : GuaDoType.SixYaos;
+
         }
 
 
@@ -100,6 +160,7 @@ namespace CompassEx.Gua
         /// </remarks>
         public void LoadFlowerGuaByBefore(int iv1, int iv2)
         {
+            this.FlowerGuaNumber = [iv1, iv2];
             int iMod = (iv1 % 8) - 1; // 先天卦乾一，兑二...要减去1，因为卦位置从0开始
             if (iMod < 0) iMod = 7;   // 为负1，则是坤八数
             String sName = GuaSubClass.BeforeGuaSubAttrNames[iMod]; // 上卦名
@@ -118,6 +179,7 @@ namespace CompassEx.Gua
             gc.Yaos[iYaoDoing].IsDoing = true;
             gc.LoadAllYaos(this.FSLT.DaySL); // 加载所有爻和所有干支类
             this.Gua = gc;
+            this.GuaDoType = GuaDoType.FlowerGuaBefore;
         }
     }
 }

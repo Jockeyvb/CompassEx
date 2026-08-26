@@ -24,7 +24,7 @@ namespace CompassEx
     /// <remarks>
     /// 本类继承自 <see cref="CompassEx"/>，主要用于处理三元罗盘体系下的先天六十四卦（天盘）与后天六十四卦（地盘）的度数映射与卦象计算。
     /// </remarks>
-    public class C3Y : CompassEx
+    public class C3YEx : CompassEx
     {
 
         /// <summary>
@@ -91,13 +91,13 @@ namespace CompassEx
         public static Dictionary<CompassRangEX, GuaClass> CAfterGuas;
 
         /// <summary>
-        /// 初始化 <see cref="C3Y"/> 类的新实例。
+        /// 初始化 <see cref="C3YEx"/> 类的新实例。
         /// </summary>
         /// <param name="Degreen">当前罗盘的初始度数（角度值值）。</param>
         /// <remarks>
         /// 构造函数在初始化时，会自动计算并填充当前度数对应的地盘后天卦（通过调用 <c>GetAfterGuaSub()</c>）以及天盘先天卦（通过调用 <c>GetCBeforeGua()</c>）。
         /// </remarks>
-        public C3Y(double Degreen) : base(Degreen)
+        public C3YEx(double Degreen) : base(Degreen)
         {
             this.AfterGuaSub = GetAfterGuaSub();
             this.BeforGua = GetCBeforeGua();
@@ -111,7 +111,7 @@ namespace CompassEx
         /// <returns>返回对应的 <see cref="CompassRangEX"/> 度数范围对象；若在缓存中未匹配到该卦名，则返回 <c>null</c>。</returns>
         public static CompassRangEX? GetCBeforeGuaDegree(string Name)
         {
-            foreach (var kv in C3Y.CBeforeGuas)
+            foreach (var kv in C3YEx.CBeforeGuas)
             {
                 if (kv.Value.Name == Name)
                 {
@@ -164,7 +164,7 @@ namespace CompassEx
         /// </remarks>
         public static void LoadAllCAfterGuas()
         {
-            CAfterGuas = C3Y.GetAllCAfterGuas();
+            CAfterGuas = C3YEx.GetAllCAfterGuas();
         }
 
 

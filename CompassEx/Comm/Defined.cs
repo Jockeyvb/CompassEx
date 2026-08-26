@@ -205,7 +205,7 @@ namespace CompassEx.Comm
         /// 罗盘对象的底层实例引用。
         /// </summary>
         /// <value>
-        /// 实际的业务对象（已被装箱为 <see cref="object"/>），使用时建议通过 <see cref="ToObjet{T}(out T)"/> 安全转型。
+        /// 实际的业务对象（已被装箱为 <see cref="object"/>），使用时建议通过 <see cref="ToObject{T}(out T)"/> 安全转型。
         /// </value>
         public object Obj;
 
@@ -234,7 +234,7 @@ namespace CompassEx.Comm
         /// CompassObjType item = GetCompassData();
         /// 
         /// // 利用 out var 特性，外部无需显式书写 &lt;GuaSubClass&gt;
-        /// if (item.ToObjet(out GuaSubClass GuaObj))
+        /// if (item.ToObject(out GuaSubClass GuaObj))
         /// {
         ///     // 转换成功，直接使用强类型变量 GuaObj
         ///     Console.WriteLine($"成功获取到郭氏对象，名称为: {GuaObj.Name}");
@@ -245,7 +245,7 @@ namespace CompassEx.Comm
         /// }
         /// </code>
         /// </example>
-        public bool ToObjet<T>(out T result)
+        public bool ToObject<T>(out T result)
         {
             // 检查实例是否不为空，且外部的目标类型 T 是否可以由当前的 ObjType 赋值（支持父类/接口兼容）
             if (this.Obj != null && typeof(T).IsAssignableFrom(this.ObjType))

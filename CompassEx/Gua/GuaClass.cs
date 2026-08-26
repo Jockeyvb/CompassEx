@@ -192,7 +192,7 @@ namespace CompassEx.Gua
         /// 术数中大成卦纳甲与大管局算法中，64 卦与 60 甲子的映射链条完全采用经典的周易本经卦序（从乾坤至既济未济）进行顺次对齐和绑定。
         /// </remarks>
         [JsonIgnore]
-        public SkyLoc GuaSkyLocs
+        public SkyLoc GuaSkyLoc
         {
             get
             {
@@ -326,14 +326,14 @@ namespace CompassEx.Gua
         /// </summary>
         /// <value>动态调用 <see cref="C3Y.GetCBeforeGuaDegree(string)"/> 方法，返回其专属的 <see cref="C3Y"/> 周天度数范围。</value>
         [JsonIgnore]
-        public CompassRangEX? CBeforeRangeDegree { get { return C3Y.GetCBeforeGuaDegree(this.Name); } }
+        public CompassRangEX? CBeforeRangeDegree { get { return C3YEx.GetCBeforeGuaDegree(this.Name); } }
 
         /// <summary>
         /// 获取该卦在三元地理罗盘中对应的后天（地盘）度数范围对象，用于判定当前卦在罗盘圆周上的物理空间边界。
         /// </summary>
         /// <value>动态调用 <see cref="C3Y.GetCAfterGuaDegree(string)"/> 方法，返回其专属的 <see cref="C3Y"/> 周天度数范围。</value>
         [JsonIgnore]
-        public CompassRangEX? CAfterRangeDegree { get { return C3Y.GetCAfterGuaDegree(this.Name); } }
+        public CompassRangEX? CAfterRangeDegree { get { return C3YEx.GetCAfterGuaDegree(this.Name); } }
 
         #endregion
 
@@ -481,7 +481,16 @@ namespace CompassEx.Gua
             string UpGuaName = GuaSubClass.GuaSubYaoValues.Where(x => x.Value.SequenceEqual(ar)).Select(x => x.Key).FirstOrDefault();
             if (string.IsNullOrWhiteSpace(UpGuaName)) throw new Exception("不能找到相关卦象");
 
-            string sGuaAttrName = GuaSubClass.BeforeGuaSubAttrNames[GuaSubClass.BeforeGuaSubNames.IndexOf(UpGuaName)] + GuaSubClass.BeforeGuaSubAttrNames[GuaSubClass.BeforeGuaSubNames.IndexOf(DownGuaName)];
+            string sGuaAttrName = "";
+
+            if (UpGuaName.Equals(DownGuaName))//如果上下卦一样，则取单字即可
+            {
+                sGuaAttrName = UpGuaName;
+            }
+            else
+            {
+                sGuaAttrName = GuaSubClass.BeforeGuaSubAttrNames[GuaSubClass.BeforeGuaSubNames.IndexOf(UpGuaName)] + GuaSubClass.BeforeGuaSubAttrNames[GuaSubClass.BeforeGuaSubNames.IndexOf(DownGuaName)];
+            }
 
             GuaClass gc = new GuaClass(sGuaAttrName);
             gc.RawGua = this;

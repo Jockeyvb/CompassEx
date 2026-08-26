@@ -47,10 +47,10 @@ winUI:<br/>
 
 本項目在開發過程中引用或依賴了以下優秀的開源組件，特此向原作者致謝：
 
-*   **[tyme4net](https://github.com)** (v1.5.0) · [MIT License](https://github.com)
+*   **[tyme4net](https://github.com/6tail/tyme4net)** (v1.5.0) · [MIT License](https://github.com/6tail/tyme4j/blob/master/LICENSE)
     *   **用途**：用於處理國學、陰陽歷、幹支紀年等傳統曆法與時間計算。
-*   **[FreeSql](https://github.com)** (v3.2.855) · [MIT License](https://github.com)
+*   **[FreeSql](https://github.com/dotnetcore/FreeSql)** (v3.2.855) · [MIT License](https://github.com/dotnetcore/FreeSql/blob/master/LICENSE)
     *   **用途**：功能強大的對象關係映射（O/RM）框架，支持全自動化功能、動態表達式解析，用於高效的多資料庫訪問、監控與交互。
-*   **[Newtonsoft.Json](https://github.com)** (v13.0.4) · [MIT License](https://github.com)
+*   **[Newtonsoft.Json](https://github.com)** (v13.0.4) · [MIT License](https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md)
     *   **用途**：高性能的 JSON 序列化與反序列化處理庫。
 

@@ -10,6 +10,7 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
+using CompassEx.Comm;
 using CompassEx.Gua;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -29,7 +30,39 @@ namespace CompassEx
     public static class CommCls
     {
 
+        /// <summary>
+        /// 五行颜色扩展
+        /// </summary>
+        /// <param name="d"></param>
+        /// <param name="IsDrak"></param>
+        /// <returns></returns>
+        public static Color ToColor(this FiveAttr d, bool IsDrak = false)
+        {
+            if (d.Name.IndexOf("金") > -1)
+            {
+                return IsDrak ? Color.Gold : Color.DarkGoldenrod;
+            }
+            else if (d.Name.IndexOf("水") > -1)
+            {
+                return Color.Black;
+            }
 
+            else if (d.Name.IndexOf("木") > -1)
+            {
+                return Color.Green;
+            }
+            else if (d.Name.IndexOf("土") > -1)
+            {
+                return IsDrak ? Color.Yellow : Color.Goldenrod;
+            }
+            else if (d.Name.IndexOf("火") > -1)
+            {
+                return Color.Purple;
+            }
+
+
+            return Color.Black;
+        }
 
 
         /// <summary>
@@ -66,7 +99,7 @@ namespace CompassEx
             }
             else if (d.Color.IndexOf("紫") > -1)
             {
-                return Color.FromArgb(255, 141, 62, 137);
+                return Color.Purple;
             }
 
             return Color.Black;
@@ -88,8 +121,8 @@ namespace CompassEx
         /// </remarks>
         public static void AllInit()
         {
-            C3Y.LoadAllCAfterGuas();
-            C3Y.LoadAllCBeforeGuas();
+            C3YEx.LoadAllCAfterGuas();
+            C3YEx.LoadAllCBeforeGuas();
 
 
         }

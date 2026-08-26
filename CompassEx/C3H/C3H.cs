@@ -19,16 +19,16 @@ namespace CompassEx
     /// <remarks>
     /// 本类继承自 <see cref="CompassEx"/>，主要用于处理三合罗盘体系（地盘正针、人盘中针、天盘缝针等三盘派系）的度数映射与罗盘层级计算。
     /// </remarks>
-    public class C3H : CompassEx
+    public class C3HEx : CompassEx
     {
         /// <summary>
-        /// 初始化 <see cref="C3H"/> 类的新实例。
+        /// 初始化 <see cref="C3HEx"/> 类的新实例。
         /// </summary>
         /// <param name="Degreen">当前罗盘的初始度数（角度值）。</param>
         /// <remarks>
         /// 构造函数通过调用基类 <see cref="CompassEx"/> 的构造函数来完成基本度数的初始化。
         /// </remarks>
-        public C3H(double Degreen) : base(Degreen)
+        public C3HEx(double Degreen) : base(Degreen)
         {
         }
     }
