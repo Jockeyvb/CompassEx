@@ -39,6 +39,11 @@ namespace CompassEx.Gua
         #region 属性
 
         /// <summary>
+        /// 简称
+        /// </summary>
+        public string? ShortName { get => Name?.Substring(0, 1); }
+
+        /// <summary>
         /// 获取当前爻位所配六神的字面名称（如“青龙”、“玄武”）。
         /// </summary>
         /// <value>一个 <see cref="string"/> 字符串，代表当前爻的神煞名称。</value>

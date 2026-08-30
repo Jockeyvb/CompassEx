@@ -141,6 +141,14 @@ namespace CompassEx.Gua
         /// </summary>
         public GuaClass RawGua { get; private set; }
 
+
+
+
+        /// <summary>
+        /// 本卦是否有伏神
+        /// </summary>
+        public bool IsHadHideRelative { get { return this.Yaos.Count(x => x.HideRelative != null) > 0; } }
+
         private IReadOnlyList<GuaYao> _Yaos;
 
         /// <summary>

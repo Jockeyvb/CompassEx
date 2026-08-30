@@ -40,7 +40,7 @@ namespace CompassEx
         {
             if (d.Name.IndexOf("金") > -1)
             {
-                return IsDrak ? Color.Gold : Color.DarkGoldenrod;
+                return IsDrak ? Color.Gold : Color.Goldenrod;
             }
             else if (d.Name.IndexOf("水") > -1)
             {
@@ -53,7 +53,7 @@ namespace CompassEx
             }
             else if (d.Name.IndexOf("土") > -1)
             {
-                return IsDrak ? Color.Yellow : Color.Goldenrod;
+                return IsDrak ? Color.Yellow : Color.DarkGoldenrod;
             }
             else if (d.Name.IndexOf("火") > -1)
             {

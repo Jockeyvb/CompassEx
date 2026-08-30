@@ -100,7 +100,7 @@ namespace CompassEx.Comm
         /// <param name="MeLocName">地支1</param>
         /// <param name="LocName">地支2</param>
         /// <returns></returns>
-        public static FiveAttrRule GetBothLocRule(String MeLocName, String LocName)
+        public static FiveAttrRule GetBothLocRule(string MeLocName, string LocName)
         {
             int iMe = Array.IndexOf(LocClass.LocNames, MeLocName);
             int il = Array.IndexOf(LocClass.LocNames, LocName);
@@ -202,7 +202,7 @@ namespace CompassEx.Comm
         /// <param name="MeAttrName">五行名称1</param>
         /// <param name="OtherAttrName">五行名称2</param>
         /// <returns></returns>
-        public static FiveAttrRule GetBothAttrRule(String MeAttrName, String OtherAttrName)
+        public static FiveAttrRule GetBothAttrRule(string MeAttrName, string OtherAttrName)
         {
             int iMe = Array.IndexOf(FiveAttrNames, MeAttrName);
             int il = Array.IndexOf(FiveAttrNames, OtherAttrName);
@@ -311,7 +311,7 @@ namespace CompassEx.Comm
         /// <para>本方法已重构为<b>无序判定算法</b>。地支相害（又称六害）是由六合受冲推演而来。</para>
         /// <para>系统在获取到两地支在 <c>LocClass.LocNames</c> 中的索引后会执行升序排序。由此消除了参数传入先后顺序的严格限制，无论调用者传入 <c>("子", "未")</c> 还是 <c>("未", "子")</c> 均能精准识别，大幅提升了接口的健壮性。</para>
         /// </remarks>
-        public static String BothHarm(String sLoc1, String sLoc2)
+        public static String BothHarm(string sLoc1, string sLoc2)
         {
             String[] S = { sLoc1, sLoc2 };
             int[] r = { -1, -1 };
@@ -370,7 +370,7 @@ namespace CompassEx.Comm
         /// <para>本方法已重构为<b>无序判定算法</b>。包含三刑（寅巳申、丑戌未）、两刑（子卯）以及特殊地支（辰、午、酉、亥）的同支“自刑”判定。</para>
         /// <para>系统在获取到两地支在 <c>LocClass.LocNames</c> 中的索引后会执行升序排序，同时内部的比对矩阵也已同步调整为升序特征值。由此消除了参数传入先后顺序的严格限制，提升了系统的健壮性。</para>
         /// </remarks>
-        public static String BothTorture(String sLoc1, String sLoc2)
+        public static String BothTorture(string sLoc1, string sLoc2)
         {
             String[] S = { sLoc1, sLoc2 };
             int[] r = { -1, -1 };
@@ -435,7 +435,7 @@ namespace CompassEx.Comm
         /// <param name="sLoc1">参与比对的第一项地支名称。</param>
         /// <param name="sLoc2">参与比对的第二项地支名称。</param>
         /// <returns>若两地支在十二地支顺位中绝对间隔为 6（即对冲），则返回字符串 <c>"相冲"</c>；否则返回空字符串（<c>""</c>）。</returns>
-        public static String BothConflict(String sLoc1, String sLoc2)
+        public static String BothConflict(string sLoc1, string sLoc2)
         {
             int iLoc1 = Array.IndexOf(LocClass.LocNames, sLoc1);
             int iLoc2 = Array.IndexOf(LocClass.LocNames, sLoc2);
@@ -456,7 +456,7 @@ namespace CompassEx.Comm
         /// <para>本方法已重构为<b>无序判定算法</b>。系统在获取到两个地支在 <c>LocClass.LocNames</c> 中的整型索引后，会自动对其进行从小到大的升序排列。</para>
         /// <para>通过该机制，消除了历史版本中对地支先后传入顺序的严格依赖，无论传入 <c>("子", "丑")</c> 还是 <c>("丑", "子")</c> 均能精准识别，大幅提升了接口的健壮性。</para>
         /// </remarks>
-        public static String LocCombine(String sLoc1, String sLoc2)
+        public static String LocCombine(string sLoc1, string sLoc2)
         {
             String[] S = { sLoc1, sLoc2 };
             int[] r = { -1, -1 };
@@ -513,7 +513,7 @@ namespace CompassEx.Comm
         /// <para>本方法已重构为<b>无序判定算法</b>。系统在获取到两个天干在 <c>LocClass.LocNames</c> 中的整型索引后，会自动对其进行从小到大的升序排列。</para>
         /// <para>通过该机制，消除了历史版本中对天干先后传入顺序的严格依赖，大幅提升了外部接口调用的安全性和健壮性。</para>
         /// </remarks>
-        public static String SkyCombine(String sSky1, String sSky2)
+        public static String SkyCombine(string sSky1, string sSky2)
         {
             String[] S = { sSky1, sSky2 };
             int[] r = { -1, -1 };

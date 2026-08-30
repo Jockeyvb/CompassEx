@@ -173,6 +173,11 @@ namespace CompassEx.Assist
         }
 
         /// <summary>
+        /// 简名
+        /// </summary>
+        public string ShortName { get; private set; }
+
+        /// <summary>
         /// 获取神煞的名称（例如："天赦"、"十灵"等）。
         /// </summary>
         /// <value>神煞名称字符串，可能为 <c>null</c>。</value>
@@ -207,10 +212,10 @@ namespace CompassEx.Assist
         /// <returns>返回格式化后的字符串。</returns>
         public string ToString(bool IsShortName = false, bool HTMLStyle = false, string AddNameStr = "")
         {
-            string st = this.Name + AddNameStr;
+            string st = this.Name;
             if (IsShortName && !string.IsNullOrEmpty(st) && st.Length >= 2)
-                st = st.Substring(1, 1); // 取第二个字
-
+                st = this.ShortName; // 取第二个字
+            st += AddNameStr;
             if (HTMLStyle)
             {
                 st = $"<span style='{"color:" + this.Color.ToHex()}; {(this.GoodType.HasFlag(GoodDayGodGoodType.Important) ? "font-weight:bold;" : "")} ' >{st}</span>";
@@ -247,64 +252,82 @@ namespace CompassEx.Assist
             List<GoodDayGod> ls = new List<GoodDayGod>();
             if (IsSkyPardonDay(fslt))
             {
-                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "天赦", GoodType = GoodDayGodGoodType.Good | GoodDayGodGoodType.Important, Info = SkyPardonDaysInfo };
+                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "天赦", GoodType = GoodDayGodGoodType.Good | GoodDayGodGoodType.Important, Info = SkyPardonDaysInfo, ShortName = "赦" };
                 ls.Add(gdg);
             }
 
             if (IsTenSpiritDay(fslt))
             {
-                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "十灵", GoodType = GoodDayGodGoodType.Good, Info = TenSpiritDaysInfo };
+                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "十灵", GoodType = GoodDayGodGoodType.Good, Info = TenSpiritDaysInfo, ShortName = "灵" };
                 ls.Add(gdg);
             }
 
             if (IsKuiGangDay(fslt))
             {
-                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "魁罡", GoodType = GoodDayGodGoodType.Neutral | GoodDayGodGoodType.Important, Info = KuiGangDaysInfo };
+                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "魁罡", GoodType = GoodDayGodGoodType.Neutral | GoodDayGodGoodType.Important, Info = KuiGangDaysInfo, ShortName = "魁" };
                 ls.Add(gdg);
             }
 
             if (IsTenDefeatDay(fslt))
             {
-                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "十恶大败", GoodType = GoodDayGodGoodType.Bad | GoodDayGodGoodType.Important, Info = TenDefeatDaysInfo };
+                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "十恶大败", GoodType = GoodDayGodGoodType.Bad | GoodDayGodGoodType.Important, Info = TenDefeatDaysInfo, ShortName = "恶" };
                 ls.Add(gdg);
             }
 
             if (IsFourScrapDay(fslt))
             {
-                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "四废", GoodType = GoodDayGodGoodType.Bad, Info = FourScrapDaysInfo };
+                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "四废", GoodType = GoodDayGodGoodType.Bad, Info = FourScrapDaysInfo, ShortName = "废" };
                 ls.Add(gdg);
             }
 
             if (IsDoubleLoseDay(fslt))
             {
-                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "重丧", GoodType = GoodDayGodGoodType.Bad | GoodDayGodGoodType.Important | GoodDayGodGoodType.Special, Info = DoubleLoseDaysInfo };
+                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "重丧", GoodType = GoodDayGodGoodType.Bad | GoodDayGodGoodType.Important | GoodDayGodGoodType.Special, Info = DoubleLoseDaysInfo, ShortName = "丧" };
                 ls.Add(gdg);
             }
 
             if (IsTianyiDay(fslt))
             {
-                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "天医", GoodType = GoodDayGodGoodType.Good, Info = TianyiDaysInfo };
+                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "天医", GoodType = GoodDayGodGoodType.Good, Info = TianyiDaysInfo, ShortName = "医" };
                 ls.Add(gdg);
             }
 
             if (IsFourLeaveDay(fslt))
             {
-                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "四离", GoodType = GoodDayGodGoodType.Bad | GoodDayGodGoodType.Important | GoodDayGodGoodType.Special, Info = FourLeaveDaysInfo };
+                GoodDayGod gdg = new GoodDayGod(fslt)
+                {
+                    Name = "四离",
+                    GoodType = GoodDayGodGoodType.Bad | GoodDayGodGoodType.Important | GoodDayGodGoodType.Special,
+                    Info = FourLeaveDaysInfo,
+                    ShortName = "离"
+                };
                 ls.Add(gdg);
             }
             if (IsFourEndDay(fslt))
             {
-                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "四绝", GoodType = GoodDayGodGoodType.Bad | GoodDayGodGoodType.Important | GoodDayGodGoodType.Special, Info = FourEndDaysInfo };
+                GoodDayGod gdg = new GoodDayGod(fslt)
+                {
+                    Name = "四绝",
+                    GoodType = GoodDayGodGoodType.Bad | GoodDayGodGoodType.Important | GoodDayGodGoodType.Special,
+                    Info = FourEndDaysInfo,
+                    ShortName = "绝"
+                };
                 ls.Add(gdg);
             }
             if (IsGuChenDay(fslt))
             {
-                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "孤辰", GoodType = GoodDayGodGoodType.Bad, Info = GuChenDaysInfo };
+                GoodDayGod gdg = new GoodDayGod(fslt)
+                {
+                    Name = "孤辰",
+                    GoodType = GoodDayGodGoodType.Bad,
+                    Info = GuChenDaysInfo,
+                    ShortName = "孤"
+                };
                 ls.Add(gdg);
             }
             if (IsGuaSuDay(fslt))
             {
-                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "寡宿", GoodType = GoodDayGodGoodType.Bad, Info = GuaSuDaysInfo };
+                GoodDayGod gdg = new GoodDayGod(fslt) { Name = "寡宿", GoodType = GoodDayGodGoodType.Bad, Info = GuaSuDaysInfo, ShortName = "寡" };
                 ls.Add(gdg);
             }
 

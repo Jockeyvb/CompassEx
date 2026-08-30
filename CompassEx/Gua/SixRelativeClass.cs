@@ -33,8 +33,10 @@ namespace CompassEx.Gua
         public static readonly string[] SixRelativeNames = { "妻财", "子孙", "兄弟", "官鬼", "父母" };
 
         #region 属性
-
-
+        /// <summary>
+        /// 简称
+        /// </summary>
+        public string? ShortName { get => Name?.Substring(0, 1); }
 
         /// <summary>
         /// 获取当前六亲实体的字面名称（如“父母”、“子孙”等）。

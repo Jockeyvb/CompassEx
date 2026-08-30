@@ -71,12 +71,12 @@ namespace CompassEx.Gua
         /// <summary>
         /// 爻中的六亲
         /// </summary>
-        public SixRelativeClass SixRelative { get; private set; } = default!;
+        public SixRelativeClass? SixRelative { get; private set; } = default!;
 
         /// <summary>
         /// 伏神(六亲)(无伏神时为null)
         /// </summary>
-        public SixRelativeClass HideRelative { get; private set; } = default!;
+        public SixRelativeClass? HideRelative { get; private set; } = default!;
 
         /// <summary>
         /// 是否为世爻
@@ -282,6 +282,34 @@ namespace CompassEx.Gua
             //==============加载六神============================
         }
 
+        /// <summary>
+        /// 因为变卦需要按主卦的卦宫来生成正确的伏神六亲，所以需要使用此方法来加载
+        /// </summary>
+        /// <returns></returns>
+        public SixRelativeClass? GetHideRelativeByGuaSelf(GuaSubClass GuaSelf)
+        {
+            if (this.HideRelative == null) return null;
+            FiveAttrRule far = FiveAttr.GetBothAttrRule(GuaSelf.FiveAttr.Name, this.HideRelative.SkyLoc.Loc.FiveAttr.Name);
+
+            SixRelativeClass src = SixRelativeClass.GetSixRelative(far);
+            src.SkyLoc = this.HideRelative.SkyLoc;
+            return src;
+        }
+
+
+
+        /// <summary>
+        /// 因为变卦需要按主卦的卦宫来生成正确的六亲，所以需要使用此方法来加载
+        /// </summary>
+        /// <returns></returns>
+        public SixRelativeClass GetSixRelativeByGuaSelf(GuaSubClass GuaSelf)
+        {
+
+            FiveAttrRule far = FiveAttr.GetBothAttrRule(GuaSelf.FiveAttr.Name, this.SkyLoc.Loc.FiveAttr.Name);
+            SixRelativeClass src = SixRelativeClass.GetSixRelative(far);
+            return src;
+
+        }
 
 
         /// <summary>
@@ -527,9 +555,9 @@ namespace CompassEx.Gua
 ";
             string sYang = $"<div class=\"yang\" style='height:{Heightpx}px;{Style}'></div>";
             string st = GuaYaoValue % 2 == 0 ? sYin : sYang;
-            string sm = $"<span class=\"mark empty \" style='{markStyle}'></span>"; ;
-            if (GuaYaoValue == 3) sm = $"<span class=\"mark\" style='font-size:{Heightpx}px;{markStyle}' >o</span>";
-            if (GuaYaoValue == 2) sm = $"<span class=\"mark\" style='font-size:{Heightpx}px;{markStyle}'>x</span>";
+            string sm = $"<span class=\"mark fw-bold \" style='font-size:{Heightpx * 1.5f}px; {markStyle}'>&nbsp;</span>"; ;
+            if (GuaYaoValue == 3) sm = $"<span class=\"mark fw-bold\" style='font-size:{Heightpx * 1.5f}px;{markStyle}' >o</span>";
+            if (GuaYaoValue == 2) sm = $"<span class=\"mark fw-bold\" style='font-size:{Heightpx * 1.5f}px;{markStyle}'>x</span>";
 
             st += sm;
 
