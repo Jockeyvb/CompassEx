@@ -12,6 +12,7 @@
 
 using CommLib;
 using CompassEx.Gua;
+using Newtonsoft.Json;
 using System;
 
 namespace CompassEx.Comm
@@ -87,7 +88,8 @@ namespace CompassEx.Comm
         /// </summary>
         /// <param name="iFiveAttrIndex">五行所在的索引,参考：【<see cref="FiveAttrNames"/>】</param>
         /// <exception cref="IndexOutOfRangeException">若传入的小于0 或大于5，则抛出异常</exception>
-        public FiveAttr(int iFiveAttrIndex)
+        [JsonConstructor]
+        public FiveAttr([JsonProperty(nameof(Index))] int iFiveAttrIndex)
         {
             if (iFiveAttrIndex < 0 || iFiveAttrIndex >= FiveAttrNames.Length) throw new IndexOutOfRangeException();
             this.Name = FiveAttrNames[iFiveAttrIndex];
@@ -570,7 +572,11 @@ namespace CompassEx.Comm
         // 1. 一般的 Equals(object)，內部可以轉型並利用顯式介面來比對
         public override bool Equals(object obj)
         {
-            return Equals(obj as FiveAttr);
+            if (obj is FiveAttr other)
+            {
+                return ((IEquatable<FiveAttr>)this).Equals(other);
+            }
+            return false;
         }
 
         // 2. 顯式實作 IEquatable<LocClass>.Equals

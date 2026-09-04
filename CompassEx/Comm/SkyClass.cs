@@ -10,6 +10,7 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
+using Newtonsoft.Json;
 using System;
 
 namespace CompassEx.Comm
@@ -102,7 +103,8 @@ namespace CompassEx.Comm
         /// <item><description>索引 <c>8, 9</c>（壬、癸） <c> ==&gt; </c> 自动实例化为 <b>水</b> 属性（★已修复历史版本误指为土的隐患）</description></item>
         /// </list>
         /// </remarks>
-        public SkyClass(int iSkyIndex)
+        [JsonConstructor]
+        public SkyClass([JsonProperty(nameof(Index))] int iSkyIndex)
         {
             if (iSkyIndex < 0 || iSkyIndex >= SkyNames.Length)
                 throw new IndexOutOfRangeException();
@@ -173,7 +175,12 @@ namespace CompassEx.Comm
         // 1. 一般的 Equals(object)，內部可以轉型並利用顯式介面來比對
         public override bool Equals(object obj)
         {
-            return Equals(obj as SkyClass);
+            if (obj is not SkyClass other)
+            {
+                return false;
+            }
+
+            return string.Equals(this.Name, other.Name, StringComparison.Ordinal);
         }
 
         // 2. 顯式實作 IEquatable<LocClass>.Equals

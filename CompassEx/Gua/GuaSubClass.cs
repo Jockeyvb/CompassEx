@@ -354,7 +354,8 @@ namespace CompassEx.Gua
         /// <item><description><b>跨体系方位映射</b>：通过后天八卦清册反查其在文王后天九宫中的绝对物理位置，进而将对应方位的紫白九星颜色（<see cref="Color"/>）以及最终的生克五行属性（<see cref="FiveAttr"/>）彻底装载完毕。</description></item>
         /// </list>
         /// </remarks>
-        public GuaSubClass(int iAfterGuaIndex)
+        [JsonConstructor]
+        public GuaSubClass([JsonProperty(nameof(AfterGuaIndex))] int iAfterGuaIndex)
         {
             if (iAfterGuaIndex < 0 || iAfterGuaIndex >= AfterGuaSubNames.Length) throw new IndexOutOfRangeException();
             this.Name = AfterGuaSubNames[iAfterGuaIndex]; //以名称为主

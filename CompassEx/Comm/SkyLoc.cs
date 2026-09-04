@@ -10,6 +10,8 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
+using CompassEx.Gua;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -59,6 +61,11 @@ namespace CompassEx.Comm
         }
 
         /// <summary>
+        /// 60甲子索引
+        /// </summary>
+        public int Index { get => SkyLoc60Name.IndexOf(this.Name); }
+
+        /// <summary>
         /// 获取当前天干地支组合的完整字面名称（如“甲子”、“丙寅”等）。
         /// </summary>
         /// <value>
@@ -104,7 +111,8 @@ namespace CompassEx.Comm
         /// <para>方法内部会自动提取 <paramref name="SkyLocName"/> 的第 1 个字符（索引 0）作为天干字面量，提取第 2 个字符（索引 1）作为地支字面量。</para>
         /// <para>随后，通过分别检索它们在 <see cref="SkyClass.SkyNames"/> 和 <see cref="LocClass.LocNames"/> 中的位置，隐式链式传递给核心的双索引构造函数完成装配。</para>
         /// </remarks>
-        public SkyLoc(string SkyLocName) : this(SkyClass.SkyNames.IndexOf(SkyLocName[0].ToString()), LocClass.LocNames.IndexOf(SkyLocName[1].ToString()))
+        [JsonConstructor]
+        public SkyLoc([JsonProperty(nameof(Name))] string SkyLocName) : this(SkyClass.SkyNames.IndexOf(SkyLocName[0].ToString()), LocClass.LocNames.IndexOf(SkyLocName[1].ToString()))
         {
         }
 
@@ -344,7 +352,12 @@ namespace CompassEx.Comm
         // 1. 一般的 Equals(object)，內部可以轉型並利用顯式介面來比對
         public override bool Equals(object obj)
         {
-            return Equals(obj as SkyLoc);
+            if (obj is not SkyLoc other)
+            {
+                return false;
+            }
+
+            return string.Equals(this.Name, other.Name, StringComparison.Ordinal);
         }
 
         // 2. 顯式實作 IEquatable<LocClass>.Equals

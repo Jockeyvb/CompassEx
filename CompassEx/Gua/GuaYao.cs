@@ -12,10 +12,13 @@
 
 using CompassEx.Assist;
 using CompassEx.Comm;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -50,7 +53,11 @@ namespace CompassEx.Gua
         /// <summary>
         /// 爻值
         /// </summary>
-        public int Value { get; private set; }
+        public int Value
+        {
+            get; private set;
+
+        }
 
         /// <summary>
         /// 爻名称
@@ -122,11 +129,15 @@ namespace CompassEx.Gua
         /// 构造函数
         /// </summary>
         /// <param name="GuaYaoValue">卦爻值</param>
-        private GuaYao(int GuaYaoValue)
+        [JsonConstructor]
+        private GuaYao([JsonProperty(nameof(Value))] int GuaYaoValue)
         {
-            if (GuaYaoValue < 0 || GuaYaoValue >= Values.Max()) throw new ArgumentException($"卦爻值异常：{GuaYaoValue}");
+
+            if (GuaYaoValue < 0 || GuaYaoValue > Values.Max()) throw new ArgumentException($"卦爻值异常：{GuaYaoValue}");
 
             this.Value = GuaYaoValue;
+            this.IsDoing = GuaYaoValue > 1;//有动爻
+
         }
 
         /// <summary>

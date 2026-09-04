@@ -41,6 +41,16 @@ namespace CompassEx.Comm
 
 
 
+        /// <summary>
+        /// 扩展节气交节时间
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
+        public static SkyLoc ToSkyLoc(this SixtyCycle d)
+        {
+            return new SkyLoc(d.GetName());
+        }
+
 
         /// <summary>
         /// 扩展节气交节时间

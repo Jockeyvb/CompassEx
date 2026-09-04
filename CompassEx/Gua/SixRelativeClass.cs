@@ -11,6 +11,7 @@
 //
 
 using CompassEx.Comm;
+using Newtonsoft.Json;
 using System;
 
 namespace CompassEx.Gua
@@ -70,8 +71,8 @@ namespace CompassEx.Gua
         public SixRelativeClass(string SixRelativeName) : this((FiveAttrRule)SixRelativeNames.IndexOf(SixRelativeName))
         { }
 
-
-        public SixRelativeClass(FiveAttrRule far)
+        [JsonConstructor]
+        public SixRelativeClass([JsonProperty(nameof(FiveAttrRule))] FiveAttrRule far)
         {
             int index = (int)far;
             if (index < 0 || index >= SixRelativeNames.Length)

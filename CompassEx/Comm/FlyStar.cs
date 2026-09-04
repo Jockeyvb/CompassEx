@@ -12,6 +12,7 @@
 
 
 using CompassEx.Gua;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -68,6 +69,10 @@ namespace CompassEx.Comm
         /// 获取入中数（中宫飞星原始数值）。
         /// </summary>
         public int CenterStarValue { get; private set; }
+        /// <summary>
+        /// 是否顺飞
+        /// </summary>
+        public bool IsAscending { get; private set; }
 
         /// <summary>
         /// 获取当前飞星数值（1-9）。
@@ -106,7 +111,8 @@ namespace CompassEx.Comm
         /// <param name="CenterStarValue">飞星入中数，默认为 5。</param>
         /// <param name="IsAscending">是否顺飞（<see langword="true"/> 为顺飞，<see langword="false"/> 为逆飞），默认为 <see langword="true"/>。</param>
         /// <exception cref="ArgumentOutOfRangeException">当索引或入中数超出有效范围时抛出。</exception>
-        public FlyStar(int afterGuaSubIndex, int CenterStarValue = 5, bool IsAscending = true)
+        [JsonConstructor]
+        public FlyStar([JsonProperty(nameof(AreaIndex))] int afterGuaSubIndex, [JsonProperty(nameof(CenterStarValue))] int CenterStarValue = 5, [JsonProperty(nameof(IsAscending))] bool IsAscending = true)
         {
             if (afterGuaSubIndex < 0 || afterGuaSubIndex >= GuaSubClass.AfterGuaSubNames.Length)
                 throw new ArgumentOutOfRangeException(nameof(afterGuaSubIndex));
@@ -115,7 +121,7 @@ namespace CompassEx.Comm
 
             this.CenterStarValue = CenterStarValue;
             this.AreaIndex = afterGuaSubIndex;
-
+            this.IsAscending = IsAscending;
             int baseValue = this.AreaIndex + 1; // 0=坎->1, 1=坤->2 ...
             int ipos;
 

@@ -6,13 +6,172 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Reflection;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Xml.Linq;
+using static System.Net.WebRequestMethods;
 
 namespace CommLib
 {
     public static class Comm
     {
+
+
+        /// <summary>
+        /// 自动把Json字串转换为泛型，如果转换失败则为 null 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static T? ConvertJSON<T>(string s)
+        {
+            if (String.IsNullOrWhiteSpace(s)) return default;
+
+            if (s.IndexOf("{") == -1 && s.IndexOf("[") == -1) return default;
+            try
+            {
+                var p = JToken.Parse(s);
+                if (p.Type == JTokenType.String)
+                {
+                    p = JToken.Parse(p.ToString());
+                }
+                if (p.Type == JTokenType.Array)
+                {
+                    return p.ToObject<T>();
+
+                }
+                else if (p.Type == JTokenType.Object)
+                {
+                    return p.ToObject<T>();
+                }
+                else
+                {
+                    return default;
+
+                }
+            }
+            catch (Exception)
+            {
+
+                return default;
+            }
+
+
+        }
+
+
+        /// <summary>
+        /// 自动转换为JToken，如果转换失败则为 null 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static JToken? ConvertJSON(string s)
+        {
+            if (String.IsNullOrWhiteSpace(s)) return null;
+
+            if (s.IndexOf("{") == -1 && s.IndexOf("[") == -1) return null;
+            try
+            {
+                var p = JToken.Parse(s);
+                if (p.Type == JTokenType.String)
+                {
+                    p = JToken.Parse(p.ToString());
+                }
+                return p;
+
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+
+
+        }
+
+
+
+
+        /// <summary>
+        /// WebApi动态调用方法
+        /// </summary>
+        /// <param name="hc">已初始化基uri的httpclient，并初化Auth验证</param>
+        /// <param name="RouterPath">路由路径</param>
+        /// <param name="Dto">入参类</param>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public static async Task<ReturnResultType> CallWebApiMethodAsync(HttpClient hc, string RouterPath, object? Dto = null, ApiMethod am = ApiMethod.Get)
+        {
+            if (hc == null || hc.BaseAddress == null) throw new NullReferenceException(nameof(hc));
+            ReturnResultType rrt = new();
+            try
+            {
+                HttpResponseMessage rp;
+                if (am == ApiMethod.Post)
+                {
+                    rp = await hc.PostAsJsonAsync(RouterPath, Dto);
+                }
+                else if (am == ApiMethod.Get)
+                {
+                    rp = await hc.GetAsync(RouterPath);
+                }
+                else if (am == ApiMethod.Put)
+                {
+                    if (Dto == null)
+                    {
+                        rp = await hc.PutAsync(RouterPath, null);
+
+                    }
+                    else
+                    {
+                        rp = await hc.PutAsJsonAsync(RouterPath, Dto);
+                    }
+
+                }
+                else
+                {
+                    rp = await hc.DeleteAsync(RouterPath);
+                }
+
+
+                if (rp.IsSuccessStatusCode)
+                {
+                    var jsonString = await rp.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<ApiDynamicResult>(jsonString);
+                    if (result == null || !result.Succeeded)
+                    {
+                        throw new Exception(result?.Errors?.ToString(), new Exception(JsonConvert.SerializeObject(result)));
+
+                    }
+                    rrt.RESULT = 1;
+                    rrt.Message = "ok";
+                    rrt.ReturnObj = result.Data;
+
+                    // TODO: 保存 Token 并跳转
+                }
+                else
+                {
+                    if (rp.StatusCode == HttpStatusCode.Unauthorized)
+                    {
+                        throw new Exception("登录失败或凭证已过期，请重新登录", new Exception(JsonConvert.SerializeObject(rp)));
+                    }
+
+                    throw new Exception("登录失败，请检查账号密码或服务器地址", new Exception(JsonConvert.SerializeObject(rp)));
+                }
+            }
+            catch (Exception ex)
+            {
+                rrt.RESULT = 0;
+                rrt.Message = ex.Message;
+                rrt.ReturnObj = JsonConvert.SerializeObject(ex);
+            }
+
+            return rrt;
+
+        }
 
         /// <summary>
         /// 文字转义HTML

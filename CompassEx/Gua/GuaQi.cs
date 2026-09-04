@@ -11,6 +11,7 @@
 //
 
 using CompassEx.Comm;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -132,7 +133,8 @@ namespace CompassEx.Gua
         /// </summary>
         /// <param name="gs">传入的纯三爻基础单卦实体对象。</param>
         /// <exception cref="NullReferenceException">当传入的单卦对象 <paramref name="gs"/> 实例为空（<c>null</c>）时抛出此异常。</exception>
-        public GuaQi(GuaSubClass gs)
+        [JsonConstructor]
+        public GuaQi([JsonProperty(nameof(GuaSub))] GuaSubClass gs)
         {
             if (gs == null)
                 throw new NullReferenceException(nameof(gs));

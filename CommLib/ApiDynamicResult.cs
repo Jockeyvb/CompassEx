@@ -5,6 +5,15 @@ using System.Text;
 
 namespace CommLib
 {
+
+    public enum ApiMethod
+    {
+        Get,
+        Post,
+        Put,
+        Delete
+    }
+
     /// <summary>
     /// 通用动态类型 API 返回结果实体类。
     /// </summary>
@@ -13,6 +22,9 @@ namespace CommLib
     /// </remarks>
     public class ApiDynamicResult
     {
+
+
+
         /// <summary>
         /// 获取或设置 HTTP 或业务自定义状态码。
         /// </summary>
@@ -23,7 +35,7 @@ namespace CommLib
         /// 获取或设置动态 JSON 令牌内容。
         /// </summary>
         /// <value>声明为万能的 <see cref="JToken"/>，可完美兼容并解析一切 {}（对象）和 []（数组）等复杂的 JSON 拓扑结构。</value>
-        public JToken Data { get; set; }
+        public JToken? Data { get; set; }
 
         /// <summary>
         /// 获取或设置一个值，该值指示本次 API 请求业务层是否成功执行。
@@ -35,13 +47,13 @@ namespace CommLib
         /// 获取或设置接口发生错误时的异常或错误详情描述对象。
         /// </summary>
         /// <value>通常表现为标准字典、字符串数组或自定义错误对象结构。</value>
-        public object Errors { get; set; }
+        public object? Errors { get; set; }
 
         /// <summary>
         /// 获取或设置接口返回的附加扩展信息对象。
         /// </summary>
         /// <value>用于传递分页元数据、性能耗时等不需要合并入核心 Data 节点的附加指标。</value>
-        public object Extras { get; set; }
+        public object? Extras { get; set; }
 
         /// <summary>
         /// 获取或设置服务器响应时的 Unix 时间戳（毫秒级）。
@@ -66,7 +78,7 @@ namespace CommLib
         /// 获取或设置强类型的业务核心结果数据。
         /// </summary>
         /// <value>由泛型 <typeparamref name="T"/> 约束的强类型口袋，在客户端或下游消费时可免去手动转型的烦恼。</value>
-        public T Data { get; set; }
+        public T? Data { get; set; }
 
         /// <summary>
         /// 获取或设置一个值，该值指示本次 API 请求业务层是否成功执行。
@@ -78,13 +90,13 @@ namespace CommLib
         /// 获取或设置接口发生错误时的异常或错误详情描述对象。
         /// </summary>
         /// <value>通常表现为标准字典、字符串数组或自定义错误对象结构。</value>
-        public object Errors { get; set; }
+        public object? Errors { get; set; }
 
         /// <summary>
         /// 获取或设置接口返回的附加扩展信息对象。
         /// </summary>
         /// <value>保持与动态包装结构中的扩展段完全相同的透传数据。</value>
-        public object Extras { get; set; }
+        public object? Extras { get; set; }
 
         /// <summary>
         /// 获取或设置服务器响应时的 Unix 时间戳（毫秒级）。
@@ -109,7 +121,7 @@ namespace CommLib
         /// 2. 方法会自动校验业务状态标识 <see cref="ApiDynamicResult.Succeeded"/>；若接口判定失败、或者核心数据节点无有效内容，则直接截断后续的反射开销，安全赋予泛型默认值（<see langword="default"/>）。<br/>
         /// 3. 反序列化底层采用 Newtonsoft 的元数据逆向对账机制（<see cref="JToken.ToObject{T}()"/>），支持自动抹平因大小写差异或非对等结构导致的微小错配。
         /// </remarks>
-        public static ApiResult<T> ToResult<T>(this ApiDynamicResult dynamicResult)
+        public static ApiResult<T>? ToResult<T>(this ApiDynamicResult dynamicResult)
         {
             if (dynamicResult == null) return null;
 

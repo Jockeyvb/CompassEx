@@ -12,10 +12,13 @@
 
 using CommLib;
 using CompassEx.Comm;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
+using System.Xml.Schema;
 using tyme.lunar;
 using tyme.sixtycycle;
 using tyme.solar;
@@ -46,8 +49,12 @@ public static class FSLTEx
         fslt.SeasonName = terms.FirstOrDefault(); //节气
         if (fslt.SeasonName != null && string.IsNullOrWhiteSpace(fslt.SeasonName) == false) fslt.SeasonTime = sh.SolarDay.TermDay.SolarTerm.GetTermTime().ToDateTime();//节气时间
         fslt.DayBuildName = ls.Day.Duty.GetName();//十二日建
+        var sch = sh.GetSixtyCycleHour();
+        var scd = sch.SixtyCycleDay;
+        var scm = scd.SixtyCycleMonth;
+        var scy = scm.SixtyCycleYear;
 
-        fslt.SixtyCycle = (sh.GetSixtyCycleHour().SixtyCycleDay.SixtyCycleMonth.SixtyCycleYear, sh.GetSixtyCycleHour().SixtyCycleDay.SixtyCycleMonth, sh.GetSixtyCycleHour().SixtyCycleDay, sh.GetSixtyCycleHour());
+        fslt.SixtyCycle = (scy, scm, scd, sch);
 
         return fslt;
     }
@@ -67,6 +74,26 @@ public class FourSkyLocType
     }
 
 
+    // 反序列化“后”执行的方法
+    [OnDeserialized]
+    internal void OnDeserializedMethod(StreamingContext context)
+    {
+
+        try
+        {
+            var a = this.Date.ToFourSkyLocType();
+            this.ApplyBaseProperties(a);
+        }
+        catch (Exception ex)
+        {
+
+            Console.WriteLine(ex.ToString());
+        }
+
+        // 可以在此初始化默认值，此时 JSON 数据尚未赋值给属性
+    }
+
+
     /// <summary>
     /// 星期1为0，星期日为6
     /// </summary>
@@ -83,11 +110,13 @@ public class FourSkyLocType
     /// <summary>
     /// 返回农历对象
     /// </summary>
+    [JsonIgnore]
     public (LunarYear y, LunarMonth m, LunarDay d, LunarHour h) Lunar { get; internal set; } = default!;
 
     /// <summary>
     /// tyme 库的干支类对象
     /// </summary>
+    [JsonIgnore]
     public (SixtyCycleYear y, SixtyCycleMonth m, SixtyCycleDay d, SixtyCycleHour h) SixtyCycle { get; internal set; } = default!;
 
 

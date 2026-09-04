@@ -157,6 +157,10 @@ namespace CompassEx
 
             foreach (var f in typeof(TBase).GetFields())
             {
+                if (f.IsInitOnly || f.IsLiteral)
+                {
+                    continue;
+                }
                 f.SetValue(child, f.GetValue(baseTemplate));
             }
         }

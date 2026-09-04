@@ -10,6 +10,7 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -135,7 +136,8 @@ namespace CompassEx.Comm
         /// </summary>
         /// <param name="LocIndex">地支所在的索引，参考：【<see cref="LocNames"/>】</param>
         /// <exception cref="IndexOutOfRangeException"></exception>
-        public LocClass(int LocIndex)
+        [JsonConstructor]
+        public LocClass([JsonProperty(nameof(Index))] int LocIndex)
         {
             if (LocIndex < 0 || LocIndex > LocNames.Length - 1) throw new IndexOutOfRangeException();
             if (LocIndex == 0 || LocIndex == 11)//子亥
@@ -266,7 +268,11 @@ namespace CompassEx.Comm
         // 1. 一般的 Equals(object)，內部可以轉型並利用顯式介面來比對
         public override bool Equals(object obj)
         {
-            return Equals(obj as LocClass);
+            if (obj is LocClass other)
+            {
+                return ((IEquatable<LocClass>)this).Equals(other);
+            }
+            return false;
         }
 
         // 2. 顯式實作 IEquatable<LocClass>.Equals

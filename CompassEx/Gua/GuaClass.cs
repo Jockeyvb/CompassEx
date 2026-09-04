@@ -159,7 +159,7 @@ namespace CompassEx.Gua
         {
             get
             {
-                if (_Yaos == null) _Yaos = this.DownGua.Yaos.Union(this.UpGua.Yaos).ToList();
+                if (_Yaos == null) _Yaos = this.DownGua?.Yaos.Union(this.UpGua.Yaos).ToList();
                 return _Yaos;
             }
         }
@@ -347,6 +347,31 @@ namespace CompassEx.Gua
 
         #region 构造函数
 
+        [System.Runtime.Serialization.OnDeserialized]
+        internal void OnDeserializedMethod(StreamingContext context)
+        {
+
+            this.LoadAllYaos();
+
+        }
+
+
+        /// <summary>
+        /// JSON反序列化构造函数，用于在反序列化过程中正确加载六爻卦对象及其爻动状态。
+        /// </summary>
+        /// <param name="GuaYaos"></param>
+        /// <param name="Name"></param>
+        [JsonConstructor]
+        private GuaClass([JsonProperty(nameof(Yaos))] IList<GuaYao> GuaYaos, [JsonProperty(nameof(Name))] string Name)
+        {
+            GuaClass g = GuaClass.GetGuaClass(GuaYaos.Select(x => x.Value).ToArray());
+
+            this.ApplyBaseProperties(g);
+
+        }
+
+
+
         /// <summary>
         /// 依据简名初始化复卦（六爻卦）对象实例。
         /// </summary>
@@ -361,6 +386,7 @@ namespace CompassEx.Gua
         /// </summary>
         /// <param name="GuaIndex">64 卦的原始数组索引（取值范围：<c>0</c> 至 <c>63</c>）。</param>
         /// <exception cref="IndexOutOfRangeException">当传入的索引值超出正常边界时抛出。</exception>
+
         public GuaClass(int GuaIndex)
         {
             if (GuaIndex < 0 || GuaIndex >= Names.Length) throw new IndexOutOfRangeException(nameof(GuaIndex));
@@ -455,23 +481,7 @@ namespace CompassEx.Gua
             return GuaIns;
         }
 
-        /// <summary>
-        /// 内部反序列化拦截器。当 JSON/二进制数据反序列化读取完毕后，自动触发该方法以修复依赖链。
-        /// </summary>
-        /// <param name="context">反序列化流的安全上下文状态 <see cref="StreamingContext"/>。</param>
-        [OnDeserialized]
-        internal void OnDeserializedMethod(StreamingContext context)
-        {
-            try
-            {
-                var a = new GuaClass(this.Index);
-                this.ApplyBaseProperties(a);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-        }
+
 
         /// <summary>
         /// 根据当前本卦设定的动爻状态推演并取得变卦。
@@ -591,7 +601,11 @@ namespace CompassEx.Gua
         /// <returns>若相等则返回 <c>true</c>，否则返回 <c>false</c>。</returns>
         public override bool Equals(object obj)
         {
-            return Equals(obj as GuaClass);
+            if (obj is not GuaClass other)
+            {
+                return false;
+            }
+            return this.Name == other.Name;
         }
 
         /// <summary>

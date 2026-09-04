@@ -16,7 +16,10 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+
 
 namespace CompassEx.Gua
 {
@@ -57,24 +60,34 @@ namespace CompassEx.Gua
     /// </summary>
     public class GuaDo
     {
+
+
+
         /// <summary>
         /// 获取当前六爻卦依据日干支及预设旬空规则推导出的处于“日空亡”状态的地支对象列表。
         /// </summary>
         /// <value>一个包含空亡地支的集合（类型为 <see cref="LocClass"/> 列表）。</value>     
-        public List<LocClass> DayLostLocs { get => (List<LocClass>)FSLT.DaySL.LostLocs; }
+        public List<LocClass> DayLostLocs { get => (List<LocClass>)FSLT?.DaySL.LostLocs; }
 
         /// <summary>
         /// 获取或设置当前占出的主卦对象（本卦）。
         /// </summary>
         /// <value>一个 <see cref="GuaClass"/> 实例，若未加载则为 <c>null</c>。</value>
-        public GuaClass? Gua { get; private set; }
+        [JsonProperty]
+        public GuaClass? Gua
+        {
+            get; private set;
 
+        }
 
+        [JsonIgnore]
         public GuaClass? ChangedGua
         {
             get
             {
+
                 var g = Gua?.GetChangeGua();
+
                 g?.LoadAllYaos(this.FSLT.DaySL);
                 return g;
             }
@@ -84,19 +97,49 @@ namespace CompassEx.Gua
         /// <summary>
         /// 占卦类型
         /// </summary>
+        [JsonProperty]
         public GuaDoType GuaDoType { get; private set; }
 
 
         /// <summary>
         /// 梅花数字卦的两个数字(只有数字梅花占卦才有值)
         /// </summary>
+        [JsonProperty]
         public int[] FlowerGuaNumber { get; private set; }
 
         /// <summary>
         /// 获取或设置当前占卦所对应的四柱干支信息类型。
         /// </summary>
         /// <value>一个 <see cref="FourSkyLocType"/> 实例，封装了年月日时的干支数据。</value>
+        [JsonProperty]
         public FourSkyLocType FSLT { get; private set; }
+
+
+
+        /// <summary>
+        /// 反序列化后，需要加载方法
+        /// </summary>
+        /// <param name="context"></param>
+        [System.Runtime.Serialization.OnDeserialized]
+        internal void OnDeserializedMethod(StreamingContext context)
+        {
+            if (this.GuaDoType.HasFlag(GuaDoType.FlowerGuaBefore))
+            {
+                LoadFlowerGuaByBefore(this.FlowerGuaNumber);
+            }
+            else
+            {
+                LoadSixYaosGua(this.Gua.Yaos.Select(x => x.Value).ToArray(), this.GuaDoType.HasFlag(GuaDoType.ManualSixYaos));
+            }
+
+
+
+        }
+        [JsonConstructor]
+        private GuaDo()
+        {
+
+        }
 
         /// <summary>
         /// 初始化 <see cref="GuaDo"/> 类的新实例，通过指定的阳历时间自动转换为四柱参数来加载占卦信息。
@@ -108,10 +151,10 @@ namespace CompassEx.Gua
         /// <summary>
         /// 初始化 <see cref="GuaDo"/> 类的新实例，通过指定的四柱干支对象加载占卦信息。
         /// </summary>
-        /// <param name="fslt">预先计算好的四柱干支信息对象（<see cref="FourSkyLocType"/>）。</param>
-        public GuaDo(FourSkyLocType fslt)
+
+        public GuaDo([JsonProperty(nameof(FSLT))] FourSkyLocType FSLT)
         {
-            this.FSLT = fslt;
+            this.FSLT = FSLT;
         }
 
 
