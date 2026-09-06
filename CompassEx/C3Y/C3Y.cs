@@ -71,7 +71,11 @@ namespace CompassEx
         /// <para>罗盘上子坤（360度）至午乾（180度）。从坤 0 度至天风姤 180 度，乾左为顺 180 度至地雷复 360 度。内卦为卦宫，外卦相荡而成。</para>
         /// </remarks>
         [JsonIgnore]
-        public static Dictionary<CompassRangEX, GuaClass> CBeforeGuas;
+        public static Dictionary<CompassRangEX, GuaClass> _CBeforeGuas = default!;
+        public static Dictionary<CompassRangEX, GuaClass> CBeforeGuas
+        {
+            get { if (_CBeforeGuas == null) _CBeforeGuas = GetAllBeforGuas(); return _CBeforeGuas; }
+        }
 
         /// <summary>
         /// 后天 64 卦对象字典缓存（地盘）。
@@ -88,7 +92,9 @@ namespace CompassEx
         /// <para>罗盘上子乾（360度）至午坤（180度）。从乾 0 度至雷地豫 180 度，坤左为顺 180 度至地雷复 360 度。外卦为卦宫，内卦相荡而成。</para>
         /// </remarks>
         [JsonIgnore]
-        public static Dictionary<CompassRangEX, GuaClass> CAfterGuas;
+
+        private static Dictionary<CompassRangEX, GuaClass> _CAfterGuas = default!;
+        public static Dictionary<CompassRangEX, GuaClass> CAfterGuas { get { if (_CAfterGuas == null) _CAfterGuas = GetAllCAfterGuas(); return _CAfterGuas; } }
 
         /// <summary>
         /// 初始化 <see cref="C3YEx"/> 类的新实例。
@@ -156,29 +162,9 @@ namespace CompassEx
 
 
 
-        /// <summary>
-        /// 从数据源加载并初始化罗盘上的所有后天 64 卦（地盘）全局静态缓存字典。
-        /// </summary>
-        /// <remarks> 
-        /// <para>该方法应在程序启动或系统初始化阶段优先执行。</para>
-        /// </remarks>
-        public static void LoadAllCAfterGuas()
-        {
-            CAfterGuas = C3YEx.GetAllCAfterGuas();
-        }
 
 
-        /// <summary>
-        /// 从数据源加载并初始化罗盘上的所有先天 64 卦（天盘）全局静态缓存字典。
-        /// </summary>
-        /// <remarks>
-        /// <para><b>排列规则：</b>卦象按照顺时针方向在罗盘上排布，从坤卦开始，每个卦位占据 5.625 度（逆时针荡卦推演），共计 64 个卦象。</para>
-        /// <para>该方法应在程序启动或系统初始化阶段优先执行。</para>
-        /// </remarks>
-        public static void LoadAllCBeforeGuas()
-        {
-            CBeforeGuas = GetAllBeforGuas();
-        }
+
 
 
         /// <summary>

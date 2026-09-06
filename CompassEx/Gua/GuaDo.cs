@@ -44,7 +44,7 @@ namespace CompassEx.Gua
         /// <summary>
         /// 后天八卦
         /// </summary>
-        [Description("先天梅花数字占卦"), Category("{level:2 }")]
+        [Description("梅花先天数占卦"), Category("{level:2 }")]
         FlowerGuaBefore = 2,
 
         /// <summary>

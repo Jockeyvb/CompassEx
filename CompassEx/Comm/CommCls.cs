@@ -21,6 +21,9 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Xml.Linq;
+using tyme.lunar;
+using tyme.sixtycycle;
+using tyme.solar;
 
 namespace CompassEx
 {
@@ -29,6 +32,79 @@ namespace CompassEx
     /// </summary>
     public static class CommCls
     {
+        /// <summary>
+        /// 根据四柱获得时间(反推)
+        /// </summary>
+        /// <param name="st">四柱数据</param>
+        /// <param name="iEndYear">从推年份起（逆向），默认为0时，则会默认当前年份</param>
+        /// <returns></returns>
+
+        public static DateTime FindTimeByFSLT(string[] st, int iEndYear = 0)
+        {
+
+            DateTime dt = DateTime.MinValue;
+
+            if (iEndYear == 0) iEndYear = DateTime.Now.Year;
+
+            if (st.Length == 0) return DateTime.MinValue;
+
+            if (st.Length == 2) st = ["", st[0], st[1], ""]; //只有月柱和日柱时，补充空年柱和空时柱
+
+            SixtyCycleYear cy = null;
+            SixtyCycleMonth cm = null;
+            SixtyCycleDay cd = null;
+            SixtyCycleHour ch = null;
+            if (st.Length == 4) //四柱完整或月柱和日柱
+            {
+                while (iEndYear > 1900)
+                {
+                    cy = new SixtyCycleYear(iEndYear);//年柱
+                    if (cy.SixtyCycle.GetName() == st[0] || string.IsNullOrWhiteSpace(st[0]))
+                    {
+                        foreach (SixtyCycleMonth m in cy.Months)
+                        {
+                            if (m.GetName() == st[1])
+                            {
+                                cm = m;
+                                break;
+                            }
+                        }
+                        if (cm != null)//月柱找到则找日柱
+                        {
+                            foreach (SixtyCycleDay d in cm.Days)
+                            {
+                                if (d.GetName() == st[2])
+                                {
+                                    cd = d;
+                                    break;
+                                }
+                            }
+                        }
+                        if (cd != null)
+                        {
+                            foreach (var h in cd.Hours)
+                            {
+                                if (h.GetName() == st[3] || string.IsNullOrWhiteSpace(st[3]))
+                                {
+                                    ch = h;
+                                    return h.SolarTime.ToDateTime();
+
+                                }
+                            }
+                        }
+
+                    }
+
+                    iEndYear--;//如果月柱不匹配，则继续往前推年份
+                }
+
+            }
+
+
+            return dt;
+        }
+
+
 
         /// <summary>
         /// 五行颜色扩展
@@ -108,24 +184,6 @@ namespace CompassEx
 
 
 
-        /// <summary>
-        /// 全自动初始化罗盘引擎中赖以运行的所有底层基本数据。
-        /// </summary>
-        /// <remarks>
-        /// <b>初始化加载名堂：</b><br/>
-        /// 该方法在系统启动或反序列化时应被优先调用。它会通过内部流水线依次唤醒并充填两套最核心的周天度数数据：
-        /// <list type="bullet">
-        /// <item><description>调用 <see cref="C3Y.LoadAllCAfterGuas"/>：全量装载后天六十四卦罗盘圈层分度范围数据。</description></item>
-        /// <item><description>调用 <see cref="C3Y.LoadAllCBeforeGuas"/>：全量装载伏羲先天六十四卦方圆图周天物理刻度数据。</description></item>
-        /// </list>
-        /// </remarks>
-        public static void AllInit()
-        {
-            C3YEx.LoadAllCAfterGuas();
-            C3YEx.LoadAllCBeforeGuas();
-
-
-        }
 
         /// <summary>
         /// 扩展方法：利用运行时反射（Reflection）机制，强行从父级基类模板中将所有属性与字段的值“浅拷贝”反灌给当前继承类实例。

@@ -487,7 +487,7 @@ public class CompassSkiaRenderer
 
         LastR = LastR + ysplace;
         //===============================画地盘六十四卦(后天)===========================
-        foreach (var dc in C3Y.CAfterGuas)
+        foreach (var dc in C3YEx.CAfterGuas)
         {
             var CR = dc.Key;
             var G = dc.Value;
@@ -545,7 +545,7 @@ public class CompassSkiaRenderer
         LastR = LastR + ysplace;
 
         //===============================画天盘六十四卦(先天)===========================
-        foreach (var dc in C3Y.CBeforeGuas)
+        foreach (var dc in C3YEx.CBeforeGuas)
         {
             var CR = dc.Key;
             var G = dc.Value;
@@ -600,7 +600,7 @@ public class CompassSkiaRenderer
 
         ysplace = RoundH / 2f;
         //===============================画卦气===========================
-        foreach (var dc in C3Y.CBeforeGuas)
+        foreach (var dc in C3YEx.CBeforeGuas)
         {
             var CR = dc.Key;
             var G = dc.Value;

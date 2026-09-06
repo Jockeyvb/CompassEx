@@ -18,13 +18,8 @@
 * **Email**: `Jockeyvb@gmail.com`
 * **WeChat / 微信**: `Jockeyvb1` *(Please specify "CompassEx" when adding / 添加请备注罗盘库)*
 
-# 调用范例
-需要在加载时首先调用全局静态方法：
-```csharp
-
-	CompassEx.CommCls.AllInit();//初始化数据 
-	
-```
+# 暂未发布至
+ 
 
 # 算法说明
 [点击查看在线 API 文档](https://jockeyvb.github.io/CompassEx/)
