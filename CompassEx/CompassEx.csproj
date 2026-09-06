@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-      <Version>1.0.2</Version>
+      <Version>1.0.6</Version>
     <LangVersion>latest</LangVersion>
-    <UseMaui>true</UseMaui>
+ 
     <Nullable>enable</Nullable>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
@@ -28,20 +28,8 @@
 <AssemblyTitle>太乙玄空罗盘类库</AssemblyTitle>
 
   </PropertyGroup>
-<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
-  <DebugSymbols>true</DebugSymbols>
-  <AndroidIncludeDebugSymbols>true</AndroidIncludeDebugSymbols>
-  <DebugType>full</DebugType>
-  <Nullable>enable</Nullable>
-</PropertyGroup>
-  <!-- T4模板仅标记为None，禁止加入Compile编译项 -->
-  <ItemGroup>
-    <None Include="Properties\AssemblyInfo.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <TransformOnBuild>true</TransformOnBuild>
-      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
+ 
+   
 
   <!-- 自动生成的AssemblyInfo.cs 依赖tt，仅更新标记，不要Include -->
 
@@ -51,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="2.1.79" />
+  
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="tyme4net" Version="1.5.0" />
   </ItemGroup>
