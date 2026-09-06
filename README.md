@@ -18,7 +18,7 @@
 * **Email**: `Jockeyvb@gmail.com`
 * **WeChat / 微信**: `Jockeyvb1` *(Please specify "CompassEx" when adding / 添加请备注罗盘库)*
 
-# 暂未发布至
+#  NuGet 引用
  
 
 # 算法说明
