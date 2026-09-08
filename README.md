@@ -25,6 +25,9 @@
 [点击查看在线 API 文档](https://jockeyvb.github.io/CompassEx/)
 
 # 示例
+`  var gs = new GuaClass("雷天");//创建雷天大壮卦
+    var r = gs.CBeforeRangeDegree; //获得地盘64卦中的度数 ，请细请参阅在线文档
+`
 <div align="center">
 winUI:<br/>
   <img src="Images/Image1.png" width="800"> 

@@ -186,6 +186,7 @@ public class FourSkyLocType
     /// <summary>
     /// 所有择日神煞
     /// </summary>
+    [JsonIgnore]
     public List<GoodDayGod> Gods { get { if (_Gods == null) _Gods = GoodDayGod.GetAllGods(this); return _Gods; } }
     private List<GoodDayGod> _Gods;
 

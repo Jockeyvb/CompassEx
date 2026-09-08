@@ -13,12 +13,12 @@
 using CommLib;
 using CompassEx.Comm;
 using CompassEx.Gua;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 
 namespace CompassEx.Assist
 {
@@ -151,6 +151,7 @@ namespace CompassEx.Assist
         /// 获取与当前神煞吉凶相对应的颜色（吉为绿色，凶为红色，中性及其他为蓝色）。
         /// </summary>
         /// <value>返回一个 <see cref="Color"/> 对象。</value>
+        [JsonIgnore]
         public Color Color
         {
             get

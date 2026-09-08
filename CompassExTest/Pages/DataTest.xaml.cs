@@ -1,5 +1,6 @@
 using CommunityToolkit.Maui.Core.Extensions;
 using CompassEx.Data.Models;
+using CompassEx.Gua;
 using Mopups.Services;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -35,6 +36,9 @@ public partial class DataTest : ContentPage, INotifyPropertyChanged
 
     private async void Button_Clicked_1(object sender, EventArgs e)
     {
+
+
+
 
         // 1. 获取原始数据
         TblGoodDayList = tbl_GoodDay.List(l => l.Month == "五" || l.Month == "六", 1, 30).Select(x => x.ToViewModel()).ToObservableCollection();
