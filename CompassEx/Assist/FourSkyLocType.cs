@@ -42,7 +42,7 @@ public static class FSLTEx
         var sh = d.ToSolarTime();
         var sls = d.ToSkyLocs();
 
-        FourSkyLocType fslt = new FourSkyLocType() { Lunar = ls, YearSL = new SkyLoc(sls.Year.Name), Date = d, MonthSL = new SkyLoc(sls.Month.Name), DaySL = new SkyLoc(sls.Day.Name), HourSL = new SkyLoc(sls.Hour.Name), FullName = ls.Hour.TofourSkyLocString(), YearCNName = ls.Year.Year.ToCNName(), MonthCNName = ls.Month.GetName(), DayCNName = ls.Day.GetName(), FullCNName = d.ToFullCNName() };
+        FourSkyLocType fslt = new FourSkyLocType() { Lunar = ls, YearSL = new SkyLoc(sls.Year.Name), Date = d, MonthSL = new SkyLoc(sls.Month.Name), DaySL = new SkyLoc(sls.Day.Name), HourSL = new SkyLoc(sls.Hour.Name), FullName = ls.Hour.TofourSkyLocString(), YearCNName = ls.Year.Year.ToCNName(), MonthCNName = ls.Month.GetName().Replace("月", ""), DayCNName = ls.Day.GetName(), FullCNName = d.ToFullCNName() };
         SolarDay sod = d.ToSolarDay();
         var terms = SolarTerm.Names.Where(x => sod.Term.GetName() == x && sod == sod.Term.GetSolarDay()); //当天才附值 
 
@@ -164,6 +164,11 @@ public class FourSkyLocType
     /// 农历全称
     /// </summary>
     public string FullCNName { get; set; } = "";//农历全称
+
+    /// <summary>
+    /// 获得农历格式【1981-九-二】
+    /// </summary>
+    public string YMDCNName { get { return $"{this.YearCNName}-{this.MonthCNName}-{this.DayCNName}"; } }
 
     /// <summary>
     /// 如果当天是交节，那么补上节气DateTime
