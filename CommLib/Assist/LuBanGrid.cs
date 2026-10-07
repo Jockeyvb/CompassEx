@@ -22,6 +22,10 @@ namespace CommLib
         /// <value>固定8个基础格位名称，循环遍历计算格位索引</value>
         public static readonly string[] LuBanGridNames = { "财", "病", "离", "义", "官", "劫", "害", "吉" };
 
+
+        public static string[] DingLanGridInfos = { "生子,添丁。", "遇小人,伤害,灾害,病灾", "进财,旺盛。", "悲苦,损财,生病", "厚利,而行财运", "升官,进财利", "痼疾,重病,意外伤亡", "蒸蒸日上", "失败致破产", "财源滚滚" };
+
+
         /// <summary>
         /// 鲁班尺八大格对应吉凶颜色数组
         /// </summary>
@@ -73,6 +77,12 @@ namespace CommLib
         /// </summary>
         /// <value>基于当前 Value 解析对应的子格，绑定父级大格对象</value>
         public LuBanSubGrid SG { get; private set; }
+
+
+        /// <summary>
+        /// 　大格说明
+        /// </summary>
+        public string DingLanGridInfo { get; private set; }
 
         /// <summary>
         /// 当前大格下包含的所有鲁班尺细分小格集合
@@ -169,6 +179,7 @@ namespace CommLib
             int index = Times % LuBanGridNames.Length;
             this.Index = index;
             this.GridName = LuBanGrid.LuBanGridNames[index];
+            this.DingLanGridInfo = DingLanGridInfos[this.Index];
             // 计算当前格起止刻度（向下取整，贴合鲁班尺刻度规则）
             this.StartValue = Math.Floor(Times * GridFixed);
             this.EndValue = Math.Floor((Times + 1) * GridFixed);

@@ -17,8 +17,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Xml.Schema;
 using tyme.lunar;
 using tyme.sixtycycle;
 using tyme.solar;
@@ -30,6 +28,88 @@ namespace CompassEx.Assist;
 /// </summary>
 public static class FSLTEx
 {
+
+
+
+
+    /// <summary>
+    /// 根据四柱获得时间(反推)
+    /// </summary>
+    /// <param name="SkyLocs">四柱数据</param>
+    /// <param name="iEndYear">从推年份起（逆向），默认为0时，则会默认当前年份</param>
+    /// <returns></returns>
+
+    public static DateTime FindTimeByFSLT(string[] SkyLocs, int iEndYear = 0)
+    {
+        var st = SkyLocs;
+
+
+
+        DateTime dt = DateTime.MinValue;
+
+        if (iEndYear == 0) iEndYear = DateTime.Now.Year;
+
+        if (st.Length == 0) return DateTime.MinValue;
+
+        if (st.Length == 2) st = ["", st[0], st[1], ""]; //只有月柱和日柱时，补充空年柱和空时柱
+
+        SixtyCycleYear cy = null;
+        SixtyCycleMonth cm = null;
+        SixtyCycleDay cd = null;
+        SixtyCycleHour ch = null;
+        if (st.Length == 4) //四柱完整或月柱和日柱
+        {
+            while (iEndYear > 1900)
+            {
+                cy = new SixtyCycleYear(iEndYear);//年柱
+                if (cy.SixtyCycle.GetName() == st[0] || string.IsNullOrWhiteSpace(st[0]))
+                {
+                    foreach (SixtyCycleMonth m in cy.Months)
+                    {
+                        string mName = m.GetName().Replace("月", "");
+
+                        if (mName == st[1])
+                        {
+                            cm = m;
+                            break;
+                        }
+                    }
+                    if (cm != null)//月柱找到则找日柱
+                    {
+                        foreach (SixtyCycleDay d in cm.Days)
+                        {
+                            string sN = d.GetName().Replace("日", "");
+                            if (sN == st[2])
+                            {
+                                cd = d;
+                                break;
+                            }
+                        }
+                    }
+                    if (cd != null)
+                    {
+                        foreach (var h in cd.Hours)
+                        {
+                            string sN = h.GetName().Replace("时", "");
+                            if (sN == st[3] || string.IsNullOrWhiteSpace(st[3]))
+                            {
+                                ch = h;
+                                return h.SolarTime.ToDateTime();
+
+                            }
+                        }
+                    }
+
+                }
+
+                iEndYear--;//如果月柱不匹配，则继续往前推年份
+            }
+
+        }
+
+
+        return dt;
+    }
     /// <summary>
     /// 转换成FourSkyLocType类
     /// </summary>
@@ -65,6 +145,34 @@ public static class FSLTEx
 
 public class FourSkyLocType
 {
+
+
+    /// <summary>
+    /// 寻找下个农历日
+    /// </summary>
+    /// <returns></returns>
+    public DateTime GetNextCNDay(int? AddYears = default, int LessDays = 0, TimeSpan TriggerTime = default)
+    {
+        int iy = AddYears == default ? DateTime.Now.Year - this.Lunar.y.Year : AddYears.Value;
+
+        var h = new tyme.lunar.LunarHour(this.Lunar.y.Year + iy, Lunar.m.Month, Lunar.d.Day, Lunar.h.Hour, 0, 0);
+
+        var WillSetTime = h.GetSolarTime().ToDateTime();
+
+        WillSetTime = WillSetTime.AddDays(-LessDays);//提前
+        WillSetTime = WillSetTime.Date.AddHours(TriggerTime.Hours).AddMinutes(TriggerTime.Minutes);
+
+
+        if (WillSetTime < DateTime.Now) //如果本年时间已过自动设置为明年
+        {
+
+            WillSetTime = GetNextCNDay(iy + 1, -LessDays, TriggerTime);//增加一年
+        }
+
+
+        return WillSetTime;
+    }
+
     /// <summary>
     /// 不外部调用
     /// </summary>
@@ -92,6 +200,12 @@ public class FourSkyLocType
 
         // 可以在此初始化默认值，此时 JSON 数据尚未赋值给属性
     }
+
+
+    /// <summary>
+    /// 年、月、日、时干支数组
+    /// </summary>
+    public SkyLoc[] SkyLocs { get => [this.YearSL, this.MonthSL, this.DaySL, this.HourSL]; }
 
 
     /// <summary>
@@ -161,14 +275,14 @@ public class FourSkyLocType
     /// </summary>
     public string DayCNName { get; set; } = "";//农历的日名
     /// <summary>
-    /// 农历全称
+    /// 农历全称【一九八一年九月初二】
     /// </summary>
     public string FullCNName { get; set; } = "";//农历全称
 
     /// <summary>
     /// 获得农历格式【1981-九-二】
     /// </summary>
-    public string YMDCNName { get { return $"{this.YearCNName}-{this.MonthCNName}-{this.DayCNName}"; } }
+    public string YMDCNName { get { return $"{this.Lunar.y.Year}-{this.MonthCNName}-{this.DayCNName}"; } }
 
     /// <summary>
     /// 如果当天是交节，那么补上节气DateTime
@@ -187,6 +301,11 @@ public class FourSkyLocType
     /// 十二日建
     /// </summary>
     public string DayBuildName { get; set; } = "";
+
+    /// <summary>
+    /// 获得当前日期年份在立春前或后，如果是立春前，则用前一年计算命卦
+    /// </summary>
+    public FactYearEnum FactYear { get => CommCls.GetFactYear(this.Date); }
 
     /// <summary>
     /// 所有择日神煞

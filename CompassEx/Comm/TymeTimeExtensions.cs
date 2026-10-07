@@ -150,13 +150,12 @@ namespace CompassEx.Comm
         /// 获得农历全部名称
         /// </summary>
         /// <param name="d"></param>
-        /// <param name="SplitString"></param>
         /// <returns></returns>
-        public static string ToFullCNName(this DateTime d, string SplitString = "-")
+        public static string ToFullCNName(this DateTime d)
         {
             var vp = d.ToLunar();
 
-            string st = vp.Year.Year.ToCNName() + SplitString + vp.Month.GetName() + SplitString + vp.Day.GetName() + SplitString + vp.Hour.GetName();
+            string st = vp.Year.Year.ToCNName() + "年" + vp.Month.GetName() + vp.Day.GetName() + vp.Hour.GetName();
 
             return st;
         }
@@ -170,7 +169,7 @@ namespace CompassEx.Comm
         public static string TofourSkyLocString(this LunarHour d, string SplitString = " ")
         {
             var h = d.GetSixtyCycleHour();
-            return h.Year.GetName() + SplitString + h.Month.GetName() + SplitString + h.Day.GetName() + SplitString + h.GetName();
+            return h.Year.GetName() + SplitString + h.Month.GetName() + SplitString + h.Day.GetName() + SplitString + h.SixtyCycle.GetName();
         }
 
         /// <summary>

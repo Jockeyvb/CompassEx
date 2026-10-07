@@ -13,6 +13,7 @@
 using CompassEx.Comm;
 using CompassEx.Gua;
 using Newtonsoft.Json;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -26,6 +27,10 @@ namespace CompassEx
     /// </remarks>
     public class C3YEx : CompassEx
     {
+
+
+
+
 
         /// <summary>
         /// 罗盘六十四卦的单卦度数常量。
@@ -70,12 +75,10 @@ namespace CompassEx
         /// <para><b>度数映射：</b></para>
         /// <para>罗盘上子坤（360度）至午乾（180度）。从坤 0 度至天风姤 180 度，乾左为顺 180 度至地雷复 360 度。内卦为卦宫，外卦相荡而成。</para>
         /// </remarks>
-        [JsonIgnore]
-        public static Dictionary<CompassRangEX, GuaClass> _CBeforeGuas = default!;
-        public static Dictionary<CompassRangEX, GuaClass> CBeforeGuas
-        {
-            get { if (_CBeforeGuas == null) _CBeforeGuas = GetAllBeforGuas(); return _CBeforeGuas; }
-        }
+        public static readonly IReadOnlyDictionary<CompassRangEX, GuaClass> CBeforeGuas = GetAllBeforeGuas();
+
+
+
 
         /// <summary>
         /// 后天 64 卦对象字典缓存（地盘）。
@@ -91,10 +94,11 @@ namespace CompassEx
         /// <para><b>度数映射：</b></para>
         /// <para>罗盘上子乾（360度）至午坤（180度）。从乾 0 度至雷地豫 180 度，坤左为顺 180 度至地雷复 360 度。外卦为卦宫，内卦相荡而成。</para>
         /// </remarks>
-        [JsonIgnore]
 
-        private static Dictionary<CompassRangEX, GuaClass> _CAfterGuas = default!;
-        public static Dictionary<CompassRangEX, GuaClass> CAfterGuas { get { if (_CAfterGuas == null) _CAfterGuas = GetAllCAfterGuas(); return _CAfterGuas; } }
+        public static IReadOnlyDictionary<CompassRangEX, GuaClass> CAfterGuas = GetAllCAfterGuas();
+
+
+
 
         /// <summary>
         /// 初始化 <see cref="C3YEx"/> 类的新实例。
@@ -205,7 +209,7 @@ namespace CompassEx
 
                     GuaClass g = GuaClass.GetGuaClass(iYao.ToArray()); //根据六爻数获得64卦对象
 
-                    CompassRangEX rang = new CompassRangEX(dEnd - CompassGuaDegree, dEnd); //范围
+                    CompassRangEX rang = new CompassRangEX(dEnd - CompassGuaDegree, dEnd, CompassObjType.AfterGua); //范围
                     dEnd = dEnd - CompassGuaDegree;
                     dc.Add(rang, g);  //范围对象作为key，卦对象作为value添加到字典中
                 }
@@ -233,7 +237,7 @@ namespace CompassEx
                     iYao.AddRange((IEnumerable<int>)gd.Yaos.Select(x => x.Value));
                     iYao.AddRange((IEnumerable<int>)gu.Yaos.Select(x => x.Value));
                     GuaClass g = GuaClass.GetGuaClass(iYao.ToArray()); //根据六爻数获得64卦对象
-                    CompassRangEX rang = new CompassRangEX(dEnd - CompassGuaDegree, dEnd); //范围
+                    CompassRangEX rang = new CompassRangEX(dEnd - CompassGuaDegree, dEnd, CompassObjType.AfterGua); //范围
                     dEnd = dEnd - CompassGuaDegree;
                     dc.Add(rang, g);  //范围对象作为key，卦对象作为value添加到字典中
                 }
@@ -251,10 +255,10 @@ namespace CompassEx
 
 
         /// <summary>
-        ///加载罗盘上的所有先天64卦（天盘）对象，按照顺时针方向排列，从坤卦开始，每5.625度一个卦逆时针，共64个卦
+        ///加载罗盘上的所有先天64卦（地盘）对象，按照顺时针方向排列，从坤卦开始，每5.625度一个卦逆时针，共64个卦
         /// </summary>
         /// <returns></returns>
-        public static Dictionary<CompassRangEX, GuaClass> GetAllBeforGuas()
+        public static Dictionary<CompassRangEX, GuaClass> GetAllBeforeGuas()
         {
             double baseDegree = 360;//罗盘360-5.625=354.375，则354.375至360度为坤卦
             double dEnd = baseDegree;
@@ -281,7 +285,7 @@ namespace CompassEx
                     iYao.AddRange((IEnumerable<int>)gu.Yaos.Select(x => x.Value));
                     GuaClass g = GuaClass.GetGuaClass(iYao.ToArray()); //根据六爻数获得64卦对象
 
-                    CompassRangEX rang = new CompassRangEX(dEnd - CompassGuaDegree, dEnd); //范围
+                    CompassRangEX rang = new CompassRangEX(dEnd - CompassGuaDegree, dEnd, CompassObjType.BeforeGua); //范围
                     dEnd = dEnd - CompassGuaDegree;
                     dc.Add(rang, g);  //范围对象作为key，卦对象作为value添加到字典中
                 }
@@ -309,7 +313,7 @@ namespace CompassEx
                     iYao.AddRange((IEnumerable<int>)gd.Yaos.Select(x => x.Value));
                     iYao.AddRange((IEnumerable<int>)gu.Yaos.Select(x => x.Value));
                     GuaClass g = GuaClass.GetGuaClass(iYao.ToArray()); //根据六爻数获得64卦对象
-                    CompassRangEX rang = new CompassRangEX(dEnd - CompassGuaDegree, dEnd); //范围
+                    CompassRangEX rang = new CompassRangEX(dEnd - CompassGuaDegree, dEnd, CompassObjType.BeforeGua); //范围
                     dEnd = dEnd - CompassGuaDegree;
                     dc.Add(rang, g);  //范围对象作为key，卦对象作为value添加到字典中
                 }

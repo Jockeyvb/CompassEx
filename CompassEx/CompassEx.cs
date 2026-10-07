@@ -17,6 +17,8 @@ using CompassEx.Gua;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 
 namespace CompassEx
 {
@@ -32,6 +34,18 @@ namespace CompassEx
     {
         #region 字段
 
+
+
+
+
+
+        /// <summary>
+        /// 罗盘先天八卦的卦名序列。
+        /// </summary>
+        /// <value>包含 8 个先天卦名："坤", "震", "离", "兑", "乾", "巽", "坎", "艮"。</value>
+        public static readonly string[] CompassBeforGuaSubNames = { "坤", "震", "离", "兑", "乾", "巽", "坎", "艮" };
+
+
         /// <summary>
         /// 先后天八卦的单卦度数。
         /// </summary>
@@ -44,11 +58,7 @@ namespace CompassEx
         /// <value>包含 8 个后天卦名："坎", "艮", "震", "巽", "离", "坤", "兑", "乾"。</value>
         public static readonly String[] CompassAfterGuaSubNames = { "坎", "艮", "震", "巽", "离", "坤", "兑", "乾" };
 
-        /// <summary>
-        /// 罗盘先天八卦的卦名序列。
-        /// </summary>
-        /// <value>包含 8 个先天卦名："坤", "震", "离", "兑", "乾", "巽", "坎", "艮"。</value>
-        public static readonly string[] CompassBeforGuaSubNames = { "坤", "震", "离", "兑", "乾", "巽", "坎", "艮" };
+
 
 
 
@@ -58,6 +68,58 @@ namespace CompassEx
         /// </summary>
         /// <value>默认值为 15 度（360度 / 24山）。</value>
         public const double CHillDegree = 15;
+
+
+
+
+
+        /// <summary>
+        /// 地盘中针二十四山缓存
+        /// </summary>
+        public static readonly Dictionary<CompassRangEX, CHill> CHills = CHill.C24HillNames.Select(x => new CHill(x)).ToDictionary(x => x.CRangeDegree, c => c);
+
+
+
+
+
+        /// <summary>
+        /// 人盘中针二十四山缓存
+        /// </summary>
+        public static readonly Dictionary<CompassRangEX, CHill> RCHills = CHill.C24HillNames.Select(x => new CHill(x, HillType.RHill)).ToDictionary(x => x.CRangeDegree, c => c);
+
+
+
+
+        /// <summary>
+        /// 天盘缝针二十四山缓存
+        /// </summary>
+        public static readonly Dictionary<CompassRangEX, CHill> SCHills = CHill.C24HillNames.Select(x => new CHill(x, HillType.SHill)).ToDictionary(x => x.CRangeDegree, c => c);
+
+
+
+
+        /// <summary>
+        /// 先八卦缓存
+        /// </summary>
+        public static readonly Dictionary<CompassRangEX, GuaSubClass> BeforeGuaSubs = GuaSubClass.BeforeGuaSubNames.Select(
+                x => new GuaSubClass(x)).ToDictionary(x => x.CBeforRangeDegree, g => g);
+
+
+
+
+
+
+        /// <summary>
+        /// 后天八卦缓存
+        /// </summary>
+        public static readonly Dictionary<CompassRangEX, GuaSubClass> AfterGuaSubs = GuaSubClass.AfterGuaSubNames.Select(
+                x => new GuaSubClass(x)).Where(x => x.Name != "黄").ToDictionary(x => x.CAfterRangeDegree, g => g);
+
+
+
+
+        private static Dictionary<CompassObjType, Dictionary<CompassRangEX, object>> _CompassObjsDC = default!;
+
 
         #endregion
 
@@ -199,7 +261,7 @@ namespace CompassEx
         public static CompassRangEX Get24HillDegree(string HillName, HillType ht = HillType.CHill)
         {
             double baseDegree = 337.5;
-
+            Console.WriteLine($"Get24HillDegree called: CHillDegree={CHillDegree}, Name={HillName}, ht={ht}");
             // 1. 根据盘层计算基准偏移
             if (ht == HillType.SHill)      // 天盘缝针顺偏7.5度
             {
@@ -210,6 +272,14 @@ namespace CompassEx
                 baseDegree -= 7.5;
             }
 
+            CompassObjType cot = ht switch
+            {
+                HillType.CHill => CompassObjType.CHill,
+                HillType.RHill => CompassObjType.RHill,
+                HillType.SHill => CompassObjType.SHill,
+                _ => throw new ArgumentOutOfRangeException(nameof(ht), "无效的盘层类型。")
+            };
+
             int GIndex = CHill.C24HillNames.IndexOf(HillName);
             double degree = baseDegree + GIndex * CHillDegree;
             double fStart = degree;
@@ -217,7 +287,7 @@ namespace CompassEx
             double fEnd = degree + CHillDegree;
             if (fEnd > 360) fEnd -= 360;
 
-            CompassRangEX range = new CompassRangEX(fStart, fEnd);
+            CompassRangEX range = new CompassRangEX(fStart, fEnd, cot);
             return range;
         }
 
@@ -268,18 +338,21 @@ namespace CompassEx
         /// <item><description>计算结果若超过 <c>360</c> 度，系统会自动执行闭环修正以保持在 <c>0 ~ 360</c> 度范围内。</description></item>
         /// </list>
         /// </remarks>
+        /// 
+
         public static CompassRangEX GetBeforGuaSubDegree(string Name)
         {
             double baseDegree = 337.5;
 
-            int GIndex = CompassBeforGuaSubNames.IndexOf(Name);
+            int GIndex = Array.IndexOf(CompassBeforGuaSubNames, Name);
+            if (GIndex == -1) throw new ArgumentException($"无效的先天八卦名称: {Name}", nameof(Name));
             double degree = baseDegree + GIndex * GuaSubDegree;
             double fStart = degree;
             if (fStart > 360) fStart -= 360;
             double fEnd = degree + GuaSubDegree;
             if (fEnd > 360) fEnd -= 360;
 
-            CompassRangEX range = new CompassRangEX(fStart, fEnd);
+            CompassRangEX range = new CompassRangEX(fStart, fEnd, CompassObjType.BeforeGuaSub);
             return range;
         }
 
@@ -329,13 +402,14 @@ namespace CompassEx
             double baseDegree = 337.5;
 
             int GIndex = CompassAfterGuaSubNames.IndexOf(Name);
+            if (GIndex == -1) throw new ArgumentException($"无效的后天八卦名称: {Name}", nameof(Name));
             double degree = baseDegree + GIndex * GuaSubDegree;
             double fStart = degree;
             if (fStart > 360) fStart -= 360;
             double fEnd = degree + GuaSubDegree;
             if (fEnd > 360) fEnd -= 360;
 
-            CompassRangEX range = new CompassRangEX(fStart, fEnd);
+            CompassRangEX range = new CompassRangEX(fStart, fEnd, CompassObjType.AfterGuaSub);
             return range;
         }
 

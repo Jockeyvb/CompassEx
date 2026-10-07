@@ -86,7 +86,7 @@ namespace CompassEx.Comm
     /// <summary>
     /// 罗盘上的对应类型
     /// </summary>
-    public enum CompassObjType
+    public enum CompassObjType : ulong
     {
         /// <summary>
         /// 默认为无
@@ -155,12 +155,19 @@ namespace CompassEx.Comm
         [Description("卦运"), Category("{level:4, group: '六十四卦'}")]
         GuaFate = 512,
 
+        /// <summary>
+        /// 八方宫位（正北、东北、正东、东南、正南、西南、正西、西北、中宫）
+        /// </summary>
+        [Description("宫位"), Category("{level:4, group: '八方宫位'}")]
+        AreaDirection = 1024,
 
         /// <summary>
         /// 全部
         /// </summary>
-        [Description("全部"), Category("{level:1023}")]
-        All = 1023
+        [Description("全部"), Category("{level:999}")]
+        All = AreaDirection - 1
+
+
     }
 
     /// <summary>

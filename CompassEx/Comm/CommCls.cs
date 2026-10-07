@@ -32,6 +32,23 @@ namespace CompassEx
     /// </summary>
     public static class CommCls
     {
+
+        /// <summary>
+        /// 获得当前日期年份在立春前或后，如果是立春前，则用前一年计算命卦
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
+        public static FactYearEnum GetFactYear(DateTime d)
+        {
+            int iy = d.Year;
+            // 获取当前公历年份的“立春”节气精确交节时刻（包含具体时分秒）
+            SolarTerm term = SolarTerm.FromName(d.Year, "立春");
+
+            FactYearEnum IsFact = d >= term.GetSolarDay().ToDateTime() ? FactYearEnum.SpringAfter : FactYearEnum.SpringBefore;//先判断是否为当年的立春后，如果是立春前，则用前一年计算命卦
+            return IsFact;
+        }
+
+
         /// <summary>
         /// 根据四柱获得时间(反推)
         /// </summary>
@@ -183,52 +200,6 @@ namespace CompassEx
 
 
 
-
-
-        /// <summary>
-        /// 扩展方法：利用运行时反射（Reflection）机制，强行从父级基类模板中将所有属性与字段的值“浅拷贝”反灌给当前继承类实例。
-        /// </summary>
-        /// <typeparam name="TChild">继承类（派生类）的具体类型，必须隐式继承自 <typeparamref name="TBase"/>。</typeparam>
-        /// <typeparam name="TBase">基类（模板类）的具体类型。</typeparam>
-        /// <param name="child">正在接受赋值的当前继承类（子类）目标对象实例。</param>
-        /// <param name="baseTemplate">作为数据源的基类（父类）实体模板对象。</param>
-        /// <remarks>
-        /// <b>🛠️ 内部反射拷贝门道与避坑提示：</b>
-        /// <list type="number">
-        /// <item><description><b>属性遍历</b>：方法首先通过 <c>typeof(TBase).GetProperties()</c> 捕获父类公开属性，并通过 <c>prop.CanWrite</c> 安全拦截，防止对只读属性或受保护的 Get 块执行非法注入。</description></item>
-        /// <item><description><b>字段反灌</b>：随后通过 <c>typeof(TBase).GetFields()</c> 递归提取底层物理字段并完成原子值覆写。</description></item>
-        /// <item><description><b>⚠️ 性能与安全警告</b>：由于使用了运行时动态反射，该操作会带来较大的 CPU 耗能，<b>在高频循环或深层装卦排盘时应克制使用</b>。另外，它仅支持第一层浅拷贝，若字段中含有 <c>List&lt;T&gt;</c> 等引用类型，两端实例会共享同一份内存地址，修改时存在联动篡改的隐患，在跨变卦深度计算时需高度注意。</description></item>
-        /// </list>
-        /// 该方法常用于在 JSON 反序列化后期生命周期中，快速将多字段的静态基类参数直接克隆给派生实体类。
-        /// </remarks>
-        public static void ApplyBaseProperties<TChild, TBase>(this TChild child, TBase baseTemplate)
-            where TChild : TBase
-        {
-            // 用反射复制（慎用，性能差且容易出错）
-            foreach (var prop in typeof(TBase).GetProperties())
-            {
-                if (prop.CanWrite)
-                {
-                    prop.SetValue(child, prop.GetValue(baseTemplate));
-                }
-            }
-
-            foreach (var f in typeof(TBase).GetFields())
-            {
-                if (f.IsInitOnly || f.IsLiteral)
-                {
-                    continue;
-                }
-                f.SetValue(child, f.GetValue(baseTemplate));
-            }
-        }
-    }
-
-    /// <summary>
-    /// 针对一维数组的高性能公共流式扩展方法封装类。
-    /// </summary>
-    public static class ArrayExtensions
-    {
         /// <summary>
         /// 扩展方法：在给定的强类型一维数组中，高效正向检索特定元素并返回其首次出现的零基（Zero-based）索引。
         /// </summary>
@@ -241,8 +212,13 @@ namespace CompassEx
         /// </remarks>
         public static int IndexOf<T>(this T[] array, T value)
         {
+            if (array == null) return -1; // <--- 加上这一句，瞬间免疫 NullReferenceExceptio
             return Array.IndexOf(array, value);
         }
+
+
     }
+
+
 }
 

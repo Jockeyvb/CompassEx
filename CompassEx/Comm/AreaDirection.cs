@@ -56,16 +56,16 @@ namespace CompassEx.Comm
                     {
                         if (i == 0)
                         {
-                            ls.Add(new CompassRangEX(337.5, 22.5));
+                            ls.Add(new CompassRangEX(337.5, 22.5, CompassObjType.AreaDirection));
                         }
                         else if (i < Names.Length - 1)
                         {
-                            ls.Add(new CompassRangEX(last, last + 45));
+                            ls.Add(new CompassRangEX(last, last + 45, CompassObjType.AreaDirection));
                             last += 45;
                         }
                         else // 五黄设置为-1
                         {
-                            ls.Add(new CompassRangEX(-1, -1));
+                            ls.Add(new CompassRangEX(-1, -1, CompassObjType.AreaDirection));
                         }
                     }
                     _Rangs = ls.ToArray();

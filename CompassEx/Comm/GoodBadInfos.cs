@@ -10,6 +10,7 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
+using CommLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -31,7 +32,7 @@ namespace CompassEx.Comm
         public Color TextColor { get; set; } = Color.Black;
 
         /// <summary>背景填充颜色</summary>
-        public Color BGcolor { get; set; } = Color.White;
+        public Color BGcolor { get; set; } = Color.Transparent;
 
         /// <summary>字体大小，单位px</summary>
         public float FontSize { get; set; } = 12f;
@@ -73,10 +74,10 @@ namespace CompassEx.Comm
             sb.Append($"font-size:{FontSize}px;");
 
             // 文字颜色
-            sb.Append($"color:{ColorToRgba(TextColor)};");
+            sb.Append($"color:{TextColor.ToHex()};");
 
             // 背景色
-            sb.Append($"background:{ColorToRgba(BGcolor)};");
+            sb.Append($"background-color:{BGcolor.ToHex()};");
 
             return sb.ToString();
         }
@@ -142,12 +143,12 @@ namespace CompassEx.Comm
 
         public override string ToString()
         {
-            return Info.ToString() + "\n" + GoodInfos.Select(gi => gi.ToString()) + "\n" + BadInfos.Select(bi => bi.ToString()) + "\n";
+            return Info.ToString() + "\n" + string.Join("", GoodInfos.Select(gi => gi.ToString())) + "\n" + string.Join("", BadInfos.Select(bi => bi.ToString())) + "\n";
         }
 
-        public string ToHTML(bool IsDiv = true)
+        public string ToHTML(bool IsDiv = false)
         {
-            return Info.ToFullHtml(IsDiv) + "\n" + GoodInfos.Select(gi => gi.ToFullHtml(IsDiv)) + "\n" + BadInfos.Select(bi => bi.ToFullHtml(IsDiv)) + "\n";
+            return Info.ToFullHtml(IsDiv) + "\n" + string.Join("", GoodInfos?.Select(gi => gi.ToFullHtml(IsDiv))) + "\n" + string.Join("", BadInfos?.Select(bi => bi.ToFullHtml(IsDiv))) + "\n";
         }
 
     }

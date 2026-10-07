@@ -4,12 +4,15 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Reflection;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -19,6 +22,371 @@ namespace CommLib
 {
     public static class Comm
     {
+
+
+        /// <summary>
+        /// 把一个base64字符转成字节数组
+        /// </summary>
+        /// <param name="base64str"></param>
+        /// <returns></returns>
+        public static async Task<ReturnResultType<byte[]>> Base64ToBytes(string base64str)
+        {
+            ReturnResultType<byte[]> rrt = new ReturnResultType<byte[]>();
+
+            try
+            {
+                // 1. 去除 Base64 前缀
+                if (base64str.Contains(","))
+                {
+                    base64str = base64str.Split(',')[1];
+                }
+
+                // 2. 转为字节数组
+                byte[] imageBytes = Convert.FromBase64String(base64str);
+
+                rrt.RESULT = 1;
+                rrt.ReturnObj = imageBytes;
+
+
+            }
+            catch (Exception ex)
+            {
+                rrt.RESULT = 0;
+                rrt.Message = ex.ToString();
+                Console.WriteLine($"内存流处理分享出错: {ex.Message}");
+            }
+            return rrt;
+        }
+
+
+
+
+        /// <summary>
+        /// 扩展方法：利用运行时反射（Reflection）机制，强行从父级基类模板中将所有属性与字段的值“浅拷贝”反灌给当前继承类实例。
+        /// </summary>
+        /// <typeparam name="TChild">继承类（派生类）的具体类型，必须隐式继承自 <typeparamref name="TBase"/>。</typeparam>
+        /// <typeparam name="TBase">基类（模板类）的具体类型。</typeparam>
+        /// <param name="child">正在接受赋值的当前继承类（子类）目标对象实例。</param>
+        /// <param name="baseTemplate">作为数据源的基类（父类）实体模板对象。</param>
+        /// <remarks>
+        /// <b>🛠️ 内部反射拷贝门道与避坑提示：</b>
+        /// <list type="number">
+        /// <item><description><b>属性遍历</b>：方法首先通过 <c>typeof(TBase).GetProperties()</c> 捕获父类公开属性，并通过 <c>prop.CanWrite</c> 安全拦截，防止对只读属性或受保护的 Get 块执行非法注入。</description></item>
+        /// <item><description><b>字段反灌</b>：随后通过 <c>typeof(TBase).GetFields()</c> 递归提取底层物理字段并完成原子值覆写。</description></item>
+        /// <item><description><b>⚠️ 性能与安全警告</b>：由于使用了运行时动态反射，该操作会带来较大的 CPU 耗能，<b>在高频循环或深层装卦排盘时应克制使用</b>。另外，它仅支持第一层浅拷贝，若字段中含有 <c>List&lt;T&gt;</c> 等引用类型，两端实例会共享同一份内存地址，修改时存在联动篡改的隐患，在跨变卦深度计算时需高度注意。</description></item>
+        /// </list>
+        /// 该方法常用于在 JSON 反序列化后期生命周期中，快速将多字段的静态基类参数直接克隆给派生实体类。
+        /// </remarks>
+        public static void ApplyBaseProperties<TChild, TBase>(this TChild child, TBase baseTemplate)
+            where TChild : TBase
+        {
+            // 用反射复制（慎用，性能差且容易出错）
+            foreach (var prop in typeof(TBase).GetProperties())
+            {
+                if (prop.CanWrite)
+                {
+                    prop.SetValue(child, prop.GetValue(baseTemplate));
+                }
+            }
+
+            foreach (var f in typeof(TBase).GetFields())
+            {
+                if (f.IsInitOnly || f.IsLiteral)
+                {
+                    continue;
+                }
+                f.SetValue(child, f.GetValue(baseTemplate));
+            }
+        }
+
+
+
+        /// <summary>
+        /// 从十六进制字符串解析 System.Drawing.Color
+        /// 支持格式: "#RGB", "#RRGGBB", "#AARRGGBB" (也可以不带 # 号)
+        /// </summary>
+        public static Color ColorFromHex(string hex, bool IsFromWeb = true)
+        {
+            if (string.IsNullOrWhiteSpace(hex))
+            {
+                return Color.Transparent;
+            }
+
+            // 去除空格和前缀 '#'
+            hex = hex.Trim().TrimStart('#');
+
+            try
+            {
+                if (hex.Length == 3) // 例如: "F00" -> "#FF0000"
+                {
+                    string r = new string(hex[0], 2);
+                    string g = new string(hex[1], 2);
+                    string b = new string(hex[2], 2);
+                    return Color.FromArgb(
+                        255,
+                        int.Parse(r, NumberStyles.HexNumber),
+                        int.Parse(g, NumberStyles.HexNumber),
+                        int.Parse(b, NumberStyles.HexNumber)
+                    );
+                }
+                else if (hex.Length == 6) // 例如: "FF0000"
+                {
+                    int r = int.Parse(hex.Substring(0, 2), NumberStyles.HexNumber);
+                    int g = int.Parse(hex.Substring(2, 2), NumberStyles.HexNumber);
+                    int b = int.Parse(hex.Substring(4, 2), NumberStyles.HexNumber);
+                    return Color.FromArgb(255, r, g, b);
+                }
+                else if (hex.Length == 8) // 例如: "80FF0000" (带 Alpha 通道)
+                {
+                    if (IsFromWeb == false)
+                    {
+                        int a = int.Parse(hex.Substring(0, 2), NumberStyles.HexNumber);
+                        int r = int.Parse(hex.Substring(2, 2), NumberStyles.HexNumber);
+                        int g = int.Parse(hex.Substring(4, 2), NumberStyles.HexNumber);
+                        int b = int.Parse(hex.Substring(6, 2), NumberStyles.HexNumber);
+                        return Color.FromArgb(a, r, g, b);
+                    }
+                    else
+                    {
+                        int r = int.Parse(hex.Substring(0, 2), NumberStyles.HexNumber);
+                        int g = int.Parse(hex.Substring(2, 2), NumberStyles.HexNumber);
+                        int b = int.Parse(hex.Substring(4, 2), NumberStyles.HexNumber);
+                        int a = int.Parse(hex.Substring(6, 2), NumberStyles.HexNumber);
+                        return Color.FromArgb(a, r, g, b);
+                    }
+
+                }
+            }
+            catch
+            {
+                // 解析失败时返回透明色或默认色
+            }
+
+            return Color.Transparent;
+        }
+
+
+
+        /// <summary>
+        /// 写入调用日志
+        /// </summary>
+        /// <param name="sFile">日志文件</param>
+        /// <param name="sLog">内容</param>
+        public static void WriteFileLog(string sLog, string sFile = "/Log.log")
+        {
+            if (!Path.IsPathRooted(sFile) || sFile.StartsWith("/"))
+            {
+                sFile = sFile.TrimStart('/', '\\');
+
+                // 使用标准 .NET 的本地应用数据目录（Windows下对应 AppData\Local，Android下对应应用私有目录）
+                string baseDir = AppContext.BaseDirectory;
+
+                // 为了避免日志文件散落在根目录，建议加一层你的应用专属文件夹名
+                sFile = Path.Combine(baseDir, sFile);
+            }
+
+            string sPath = Path.GetDirectoryName(sFile);
+            if (!string.IsNullOrEmpty(sPath) && !Directory.Exists(sPath))
+            {
+                Directory.CreateDirectory(sPath);
+            }
+
+
+
+            if (System.IO.File.Exists(sFile))
+            {
+                FileInfo fi = new FileInfo(sFile);
+                if (fi.Length > 1024 * 10000) // 大于 10MB, 重命名备份
+                {
+                    string backupPath = Path.Combine(sPath, $"{DateTime.Now:yyyyMMddHHmmss}.log");
+                    System.IO.File.Move(sFile, backupPath);
+                }
+            }
+
+            string st = $"[{DateTime.Now}]:\r\n";
+            st += sLog + "\r\n";
+            System.IO.File.AppendAllText(sFile, st, Encoding.UTF8);
+        }
+
+
+        /// <summary>
+        /// base64加解密
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="IsEnCode"></param>
+        /// <returns></returns>
+        public static string Base64(string str, bool IsEnCode = true)
+        {
+
+            if (IsEnCode)
+            {
+                return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(str));
+            }
+            else
+            {
+                byte[] bytes = Convert.FromBase64String(str);
+                string json = Encoding.UTF8.GetString(bytes);
+                return json;
+            }
+
+
+        }
+
+
+        /// <summary>
+        /// 调用类中的泛型方法
+        /// </summary>
+        /// <param name="ClsOrType">这个方法所在的类或类型(如果是非静态方法必传入实例类)</param>
+        /// <param name="sTargetTypeName">泛型的类型名称（带完整的命名空间）</param>
+        /// <param name="MethodName">方法名称</param>
+        /// <param name="args">入参</param>
+        /// <returns></returns>
+        public static async Task<ReturnResultType> CallTMethod(object ClsOrType, string sTargetTypeName, string MethodName, params object[] args)
+        {
+            ReturnResultType rrt = new ReturnResultType();
+            try
+            {
+                if (string.IsNullOrWhiteSpace(sTargetTypeName)) throw new Exception("类名不能为空");
+                Type TargetType = AppDomain.CurrentDomain.GetAssemblies()
+    .Select(assembly => assembly.GetType(sTargetTypeName))
+    .FirstOrDefault(t => t != null);
+
+                rrt = await CallTMethod(ClsOrType, TargetType, MethodName, args);
+
+            }
+            catch (Exception ex)
+            {
+                rrt.RESULT = 0;
+                rrt.Message = $"调用泛型方法【{sTargetTypeName}.{MethodName}】时出错：" + ex.ToString();
+            }
+            return rrt;
+
+        }
+
+
+        /// <summary>
+        /// 调用类中的静态泛型方法
+        /// </summary>
+        /// <param name="ClsOrType">这个方法所在的类或类型(如果是非静态方法必传入实例类)</param>
+        /// <param name="TargetType">泛型的类型</param>
+        /// <param name="MethodName">方法名称</param>
+        /// <param name="args">入参</param>
+        /// <returns></returns>
+        public static async Task<ReturnResultType> CallTMethod(object ClsOrType, Type TargetType, string MethodName, params object[] args)
+        {
+            ReturnResultType rrt = new();
+            try
+            {
+                // 0. 基础判空
+                if (ClsOrType == null)
+                    throw new ArgumentNullException(nameof(ClsOrType));
+
+                // 1. 获取目标类型
+                Type sourceClassType = ClsOrType is Type t ? t : ClsOrType.GetType();
+
+                // 2. 查找静态方法
+                MethodInfo method = sourceClassType.GetMethod(MethodName, BindingFlags.Public | BindingFlags.Instance);
+                if (method == null)
+                {
+                    throw new Exception($"未能在类 {sourceClassType.Name} 中找到方法 {MethodName}");
+                }
+
+                // 3. 校验并具现化泛型方法（必须在 MakeGenericMethod 之前校验 Definition）
+                if (!method.IsGenericMethodDefinition)
+                {
+                    throw new Exception($"方法 {MethodName} 不是泛型方法定义");
+                }
+                MethodInfo genericMethod = method.MakeGenericMethod(TargetType);
+                //==========================补齐参数==============================
+                List<object> lsArgs = args != null ? args.ToList() : new List<object>();
+                var mParas = genericMethod.GetParameters();
+                for (int i = lsArgs.Count; i < mParas.Length; i++)
+                {
+
+                    lsArgs.Add(mParas[i].HasDefaultValue ? mParas[i].DefaultValue : default!);
+
+                }
+                //==========================补齐参数==============================
+
+                // 4. 动态调用并利用 dynamic 优雅 Await 异步任务（彻底避开 Task 强转报错）
+                var taskObj = genericMethod.Invoke(ClsOrType, lsArgs.ToArray());
+                if (taskObj is Task task)
+                {
+                    await task; // 等待泛型任务执行完成
+
+                    // 利用反射或 dynamic 捞出 Task 里的 Result 结果
+                    var resultProperty = task.GetType().GetProperty("Result");
+                    if (resultProperty != null)
+                    {
+                        object actualResult = resultProperty.GetValue(task);
+
+                        Type actualType = actualResult.GetType();
+
+                        // 判断是否是 ReturnResultType<> 的某个泛型实例
+                        if (actualType.IsGenericType && actualType.GetGenericTypeDefinition() == typeof(ReturnResultType<>))
+                        {
+
+
+                            // 直接反射获取属性值
+                            rrt.Success = (int)actualType.GetProperty("Success")?.GetValue(actualResult)!;
+                            rrt.Failure = (int)actualType.GetProperty("Failure")?.GetValue(actualResult)!;
+                            rrt.URL = (string)actualType.GetProperty("URL")?.GetValue(actualResult)!;
+                            rrt.RESULT = (int)actualType.GetProperty("RESULT")?.GetValue(actualResult)!;
+                            rrt.Message = (string)actualType.GetProperty("Message")?.GetValue(actualResult)!;
+                            rrt.ReturnObj = actualType.GetProperty("ReturnObj")?.GetValue(actualResult);
+
+                        }
+                        else //
+                        {
+
+
+                            rrt.RESULT = 1;
+                            rrt.Message = "OK";
+                            rrt.ReturnObj = actualResult;
+                        }
+
+
+                    }
+                    else
+                    {
+                        rrt.RESULT = 1;
+                        rrt.ReturnObj = null;
+                        rrt.Message = "OK";
+                    }
+                }
+                else
+                {
+                    Type actualType = taskObj.GetType();
+
+                    if (taskObj is ReturnResultType && actualType.GetGenericTypeDefinition() == typeof(ReturnResultType<>))
+                    {
+
+
+                        // 直接反射获取属性值
+                        rrt.Success = (int)actualType.GetProperty("Success")?.GetValue(taskObj)!;
+                        rrt.Failure = (int)actualType.GetProperty("Failure")?.GetValue(taskObj)!;
+                        rrt.URL = (string)actualType.GetProperty("URL")?.GetValue(taskObj)!;
+                        rrt.RESULT = (int)actualType.GetProperty("RESULT")?.GetValue(taskObj)!;
+                        rrt.Message = (string)actualType.GetProperty("Message")?.GetValue(taskObj)!;
+                        rrt.ReturnObj = actualType.GetProperty("ReturnObj")?.GetValue(taskObj);
+                    }
+                    else
+                    {
+                        rrt.RESULT = 1;
+                        rrt.Message = "OK";
+                        rrt.ReturnObj = taskObj;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                rrt.RESULT = 0;
+                rrt.Message = ex.InnerException?.ToString() ?? ex.ToString();
+            }
+
+            return rrt;
+        }
 
 
         /// <summary>
@@ -91,28 +459,128 @@ namespace CommLib
 
 
         }
+        // 辅助方法：将你的 ApiMethod 枚举转为标准的 HttpMethod
+        private static HttpMethod GetHttpMethod(ApiMethod am)
+        {
+            return am switch
+            {
+                ApiMethod.Post => HttpMethod.Post,
+                ApiMethod.Get => HttpMethod.Get,
+                ApiMethod.Put => HttpMethod.Put,
+                ApiMethod.Delete => HttpMethod.Delete,
+                _ => HttpMethod.Get
+            };
+        }
 
+        /// <summary>
+        /// 不需要令牌请求方法
+        /// </summary>
+        /// <param name="hc"></param>
+        /// <param name="RouterPath"></param>
+        /// <param name="Dto"></param>
+        /// <param name="am"></param>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public static async Task<ReturnResultType<T>> CallWebApiMethodWithoutTokenAsync<T>(HttpClient hc, string RouterPath, object? Dto = null, ApiMethod am = ApiMethod.Get)
+        {
+            if (hc == null || hc.BaseAddress == null) throw new NullReferenceException(nameof(hc));
+
+            ReturnResultType<T> rrt = new();
+            try
+            {
+                HttpResponseMessage rp;
+
+                if (RouterPath.IndexOf("__jt=") == -1 && (am == ApiMethod.Get || am == ApiMethod.Post))
+                {
+                    RouterPath += RouterPath.IndexOf("?") == -1 ? "?" : "&";
+                    RouterPath += $"__jt={DateTime.Now.Ticks}";
+                }
+                // 核心：使用 HttpRequestMessage 确保绝对不带任何全局的 Authorization 默认头
+                var request = new HttpRequestMessage(GetHttpMethod(am), RouterPath);
+
+                if (Dto != null && (am == ApiMethod.Post || am == ApiMethod.Put))
+                {
+                    request.Content = JsonContent.Create(Dto);
+                }
+
+                rp = await hc.SendAsync(request);
+
+                if (rp.IsSuccessStatusCode)
+                {
+                    var jsonString = await rp.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<ApiDynamicResult>(jsonString);
+                    if (result == null || !result.Succeeded)
+                    {
+                    cx: throw new Exception(result?.Errors?.ToString(), new Exception(JsonConvert.SerializeObject(result)));
+                    }
+                    var tmprrt = result?.Data?.ToObject<ReturnResultType<T>>();
+                    if (tmprrt == null) throw new Exception("非ReturnResultType类型");
+
+                    rrt = tmprrt;
+                }
+                else
+                {
+                    throw new Exception($"请求失败，状态码: {(int)rp.StatusCode}", new Exception(JsonConvert.SerializeObject(rp)));
+                }
+            }
+            catch (Exception ex)
+            {
+                rrt.RESULT = 0;
+                rrt.Message = ex.Message;
+                rrt.ReturnObj = default!;
+            }
+
+            return rrt;
+        }
 
 
 
         /// <summary>
-        /// WebApi动态调用方法
+        /// WebApi动态调用方法，【注意】：对于Dto入参的类将使用Newtonsoft 库进行序列化
         /// </summary>
         /// <param name="hc">已初始化基uri的httpclient，并初化Auth验证</param>
         /// <param name="RouterPath">路由路径</param>
         /// <param name="Dto">入参类</param>
+        /// <param name="am">访问方法</param>
+        /// <param name="IsNotUseToken">不使用访问令牌（兼容）</param>
         /// <returns></returns>
         /// <exception cref="NullReferenceException"></exception>
-        public static async Task<ReturnResultType> CallWebApiMethodAsync(HttpClient hc, string RouterPath, object? Dto = null, ApiMethod am = ApiMethod.Get)
+        public static async Task<ReturnResultType<T>> CallWebApiMethodAsync<T>(HttpClient hc, string RouterPath, object? Dto = null, ApiMethod am = ApiMethod.Get, bool IsNotUseToken = false)
         {
+
+            if (IsNotUseToken)
+            {
+                return await CallWebApiMethodWithoutTokenAsync<T>(hc, RouterPath, Dto, am);
+            }
+
+
+            if (RouterPath.IndexOf("__jt=") == -1 && (am == ApiMethod.Get || am == ApiMethod.Post))
+            {
+                RouterPath += RouterPath.IndexOf("?") == -1 ? "?" : "&";
+                RouterPath += $"__jt={DateTime.Now.Ticks}";
+            }
+
             if (hc == null || hc.BaseAddress == null) throw new NullReferenceException(nameof(hc));
-            ReturnResultType rrt = new();
+            HttpResponseMessage rp = default!;
+
+            HttpContent content = null!;
+            if (Dto != null)
+            {
+                string jsonStr = Newtonsoft.Json.JsonConvert.SerializeObject(Dto);
+                content = new StringContent(jsonStr, System.Text.Encoding.UTF8, "application/json");
+            }
+
+
+            ReturnResultType<T> rrt = new();
             try
             {
-                HttpResponseMessage rp;
+
                 if (am == ApiMethod.Post)
                 {
-                    rp = await hc.PostAsJsonAsync(RouterPath, Dto);
+
+
+
+                    rp = await hc.PostAsync(RouterPath, content);
                 }
                 else if (am == ApiMethod.Get)
                 {
@@ -127,7 +595,7 @@ namespace CommLib
                     }
                     else
                     {
-                        rp = await hc.PutAsJsonAsync(RouterPath, Dto);
+                        rp = await hc.PutAsync(RouterPath, content);
                     }
 
                 }
@@ -146,28 +614,34 @@ namespace CommLib
                         throw new Exception(result?.Errors?.ToString(), new Exception(JsonConvert.SerializeObject(result)));
 
                     }
-                    rrt.RESULT = 1;
-                    rrt.Message = "ok";
-                    rrt.ReturnObj = result.Data;
 
-                    // TODO: 保存 Token 并跳转
+                    var tmprrt = result?.Data?.ToObject<ReturnResultType<T>>();
+                    if (tmprrt == null) throw new Exception("非ReturnResultType类型");
+
+                    rrt = tmprrt;
+
+
+
+
                 }
                 else
                 {
                     if (rp.StatusCode == HttpStatusCode.Unauthorized)
                     {
-                        throw new Exception("登录失败或凭证已过期，请重新登录", new Exception(JsonConvert.SerializeObject(rp)));
+                        throw new Exception($"登录失败或凭证已过期，请重新登录，code：{(int)rp.StatusCode}", new Exception(JsonConvert.SerializeObject(rp)));
                     }
 
-                    throw new Exception("登录失败，请检查账号密码或服务器地址", new Exception(JsonConvert.SerializeObject(rp)));
+                    throw new Exception($"登录失败，请检查账号密码或服务器地址，code：{(int)rp.StatusCode}", new Exception(JsonConvert.SerializeObject(rp)));
                 }
             }
             catch (Exception ex)
             {
+                rrt.Failure = (int)rp?.StatusCode;
                 rrt.RESULT = 0;
-                rrt.Message = ex.Message;
-                rrt.ReturnObj = JsonConvert.SerializeObject(ex);
+                rrt.Message = ex.ToString();
+                rrt.ReturnObj = default!;
             }
+
 
             return rrt;
 
@@ -227,18 +701,35 @@ namespace CommLib
         /// </summary>
         /// <param name="color">System.Drawing.Color 實例</param>
         /// <param name="includeAlpha">是否包含透明度通道（預設不包含，返回 6 碼 #RRGGBB）</param>
-        public static string ToHex(this Color color, bool includeAlpha = false)
+        public static string ToHex(this Color color, bool ForceNotAlpha = false, bool IsToWeb = true)
         {
-            if (includeAlpha)
+            if (IsToWeb)
             {
-                // 返回 8 碼（包含透明度）：#AARRGGBB
-                return $"#{color.A:X2}{color.R:X2}{color.G:X2}{color.B:X2}";
+
+                if (color.A < 255 && ForceNotAlpha == false)
+                {
+                    // CSS 标准：#RRGGBBAA
+                    return $"#{color.R:X2}{color.G:X2}{color.B:X2}{color.A:X2}";
+                }
+                else
+                {
+                    return $"#{color.R:X2}{color.G:X2}{color.B:X2}";
+                }
             }
             else
             {
-                // 返回常規網頁 6 碼：#RRGGBB
-                return $"#{color.R:X2}{color.G:X2}{color.B:X2}";
+                if (color.A < 255 && ForceNotAlpha == false)
+                {
+                    // CSS 标准：#RRGGBBAA
+                    return $"#{color.A:X2}{color.R:X2}{color.G:X2}{color.B:X2}";
+                }
+                else
+                {
+                    return $"#{color.R:X2}{color.G:X2}{color.B:X2}";
+                }
             }
+
+
         }
 
         /// <summary>

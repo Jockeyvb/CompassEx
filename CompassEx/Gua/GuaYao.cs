@@ -78,12 +78,12 @@ namespace CompassEx.Gua
         /// <summary>
         /// 爻中的六亲
         /// </summary>
-        public SixRelativeClass? SixRelative { get; private set; } = default!;
+        [JsonIgnore] public SixRelativeClass? SixRelative { get; private set; } = default!;
 
         /// <summary>
         /// 伏神(六亲)(无伏神时为null)
         /// </summary>
-        public SixRelativeClass? HideRelative { get; private set; } = default!;
+        [JsonIgnore] public SixRelativeClass? HideRelative { get; private set; } = default!;
 
         /// <summary>
         /// 是否为世爻
@@ -120,7 +120,7 @@ namespace CompassEx.Gua
         /// <summary>
         /// 六神
         /// </summary>
-        public SixGodClass SixGod { get; private set; } = default!;
+        [JsonIgnore] public SixGodClass SixGod { get; private set; } = default!;
 
 
 

@@ -10,6 +10,7 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
+using CommLib;
 using CompassEx.Comm;
 using Newtonsoft.Json;
 using System;
@@ -398,7 +399,7 @@ namespace CompassEx.Gua
         /// 获取后天八卦中所包含的所有先天 64 卦度数映射集合。
         /// </summary>
         /// <returns>返回一个字典，键为先天 64 卦的周天度数区间 <see cref="CompassRangEX"/>，值为对应的六爻卦实例 <see cref="GuaClass"/>。</returns>        
-        public Dictionary<CompassRangEX, GuaClass> GetCBeforGuas()
+        public Dictionary<CompassRangEX, GuaClass> AleftGuaGetCBeforGuas()
         {
             Dictionary<CompassRangEX, GuaClass> dc = new Dictionary<CompassRangEX, GuaClass>();
             CompassRangEX CRE = this.CAfterRangeDegree;
@@ -533,7 +534,7 @@ namespace CompassEx.Gua
         /// <returns>如果对象相等则返回 <c>true</c>；否则返回 <c>false</c>。</returns>
         public override bool Equals(object obj)
         {
-            return Equals(obj as GuaSubClass);
+            return obj == null ? false : Equals(obj as GuaSubClass);
         }
 
         /// <summary>

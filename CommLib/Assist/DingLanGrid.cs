@@ -290,6 +290,7 @@ namespace CommLib
             this.StartValue = Math.Floor(Times * SubGridFixed);
             this.EndValue = Math.Floor((Times + 1) * SubGridFixed);
             this.Value = this.Value < 0 ? StartValue : this.Value;
+
         }
 
         /// <summary>
