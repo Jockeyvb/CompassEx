@@ -34,6 +34,28 @@ namespace CompassEx
     {
 
         /// <summary>
+        ///全部符号集合
+        /// </summary>
+        public static List<string> AllSymbols => GuaSubClass.Symbols.ToList().Union(GuaClass.Symbols.ToList()).ToList().Union([GuaSubClass.TiJiSymbol]).ToList();
+        /// <summary>
+        /// 判断值是否为符合或包含符合
+        /// </summary>
+        /// <param name="sV">要查的值</param>
+        /// <param name="IsIndexOf">是否查询包含</param>
+        /// <returns></returns>
+        public static bool IsSymbol(this string sV, bool IsIndexOf = false)
+        {
+            bool b = AllSymbols.Contains(sV);
+            if (b) return true;
+            if (IsIndexOf)
+            {
+                b = AllSymbols.Any(x => sV.IndexOf(x) > -1);
+            }
+            return b;
+        }
+
+
+        /// <summary>
         /// 获得当前日期年份在立春前或后，如果是立春前，则用前一年计算命卦
         /// </summary>
         /// <param name="d"></param>

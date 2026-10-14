@@ -108,13 +108,13 @@ namespace CompassEx.Comm
         /// <summary>
         /// 天盘六十四卦（圆图）
         /// </summary>
-        [Description("天盘六十四卦（圆图）"), Category("{level:3, group: '六十四卦'}")]
+        [Description("天盘六十四卦"), Category("{level:3, group: '六十四卦'}")]
         BeforeGua = 4,
 
         /// <summary>
         /// 地盘六十四卦（方图）
         /// </summary>
-        [Description("地盘六十四卦（方图）"), Category("{level:4, group: '六十四卦'}")]
+        [Description("地盘六十四卦"), Category("{level:4, group: '六十四卦'}")]
         AfterGua = 8,
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace CompassEx.Comm
         /// 全部
         /// </summary>
         [Description("全部"), Category("{level:999}")]
-        All = AreaDirection - 1
+        All = ulong.MaxValue
 
 
     }
@@ -265,6 +265,9 @@ namespace CompassEx.Comm
             result = default;
             return false;
         }
+
+
+
     }
 
 

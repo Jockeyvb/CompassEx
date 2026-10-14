@@ -189,6 +189,13 @@ public class CompassRangEX : IEquatable
     }
 
 
+    public static double MidAngle(double start, double end)
+    {
+        if (end <= start) end += 360;
+        return ((start + end) / 2.0) % 360;
+    }
+
+
     private const double Epsilon = 1e-9;
 
     private static bool DoubleEquals(double a, double b)

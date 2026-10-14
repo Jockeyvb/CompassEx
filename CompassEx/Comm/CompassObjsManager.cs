@@ -24,7 +24,7 @@ namespace CompassEx.Comm;
 public interface ICompassObjsRegistry
 {
     CompassObjType ObjType { get; }
-    string LayerCNName { get; }
+    string CNName { get; }
     // 统一的查询接口，返回标准的结构体列表
     IEnumerable<CompassObjStru> Query(double start, double end);
     IEnumerable<CompassObjStru> GetAll();  // ← 新增
@@ -34,7 +34,7 @@ public interface ICompassObjsRegistry
 public class CompassObjsProvider<T> : ICompassObjsRegistry where T : class
 {
     public CompassObjType ObjType { get; set; }
-    public string LayerCNName { get; set; }
+    public string CNName { get; set; }
     public IReadOnlyDictionary<CompassRangEX, T> Dictionary { get; set; }
 
     public IEnumerable<CompassObjStru> GetAll()
@@ -44,7 +44,7 @@ public class CompassObjsProvider<T> : ICompassObjsRegistry where T : class
             string? sn = kv.Value.GetType().GetProperty("Name")?.GetValue(kv.Value).ToString();
             yield return new CompassObjStru
             {
-                ObjTypeCNName = LayerCNName,
+                ObjTypeCNName = CNName,
                 CRDegree = kv.Key,
                 ObjType = typeof(T),
                 Obj = kv.Value,
@@ -66,7 +66,7 @@ public class CompassObjsProvider<T> : ICompassObjsRegistry where T : class
                 // 通过统一的逻辑组装结构体
                 yield return new CompassObjStru
                 {
-                    ObjTypeCNName = LayerCNName,
+                    ObjTypeCNName = CNName,
                     CRDegree = kv.Key,
                     ObjType = typeof(T),
                     Obj = kv.Value,
@@ -84,13 +84,13 @@ public static class CompassObjsManager
     // 统一注册所有的图层
     private static readonly List<ICompassObjsRegistry> _layers = new()
     {
-        new CompassObjsProvider<GuaSubClass> { ObjType = CompassObjType.BeforeGuaSub, LayerCNName = "先天八卦", Dictionary = CompassEx.BeforeGuaSubs },
-        new CompassObjsProvider<GuaSubClass> { ObjType = CompassObjType.AfterGuaSub, LayerCNName = "后天八卦", Dictionary = CompassEx.AfterGuaSubs },
-        new CompassObjsProvider<CHill>  { ObjType = CompassObjType.CHill, LayerCNName = "地盘二十四山", Dictionary = CompassEx.CHills },
-        new CompassObjsProvider<CHill>  { ObjType = CompassObjType.RHill, LayerCNName = "人盘二十四山", Dictionary = CompassEx.RCHills },
-        new CompassObjsProvider<CHill>  { ObjType = CompassObjType.SHill, LayerCNName = "天盘二十四山", Dictionary = CompassEx.SCHills },
-        new CompassObjsProvider<GuaClass>  { ObjType = CompassObjType.BeforeGua, LayerCNName = "地盘64卦（方图）", Dictionary = C3YEx.CBeforeGuas },
-        new CompassObjsProvider<GuaClass>  { ObjType = CompassObjType.AfterGua , LayerCNName = "天盘64卦（圆图）", Dictionary = C3YEx.CAfterGuas },
+        new CompassObjsProvider<GuaSubClass> { ObjType = CompassObjType.BeforeGuaSub, CNName = "先天八卦", Dictionary = CompassEx.BeforeGuaSubs },
+        new CompassObjsProvider<GuaSubClass> { ObjType = CompassObjType.AfterGuaSub, CNName = "后天八卦", Dictionary = CompassEx.AfterGuaSubs },
+        new CompassObjsProvider<CHill>  { ObjType = CompassObjType.CHill, CNName = "地盘二十四山", Dictionary = CompassEx.CHills },
+        new CompassObjsProvider<CHill>  { ObjType = CompassObjType.RHill, CNName = "人盘二十四山", Dictionary = CompassEx.RCHills },
+        new CompassObjsProvider<CHill>  { ObjType = CompassObjType.SHill, CNName = "天盘二十四山", Dictionary = CompassEx.SCHills },
+        new CompassObjsProvider<GuaClass>  { ObjType = CompassObjType.BeforeGua, CNName = "天盘六十四卦", Dictionary = C3YEx.CBeforeGuas },
+        new CompassObjsProvider<GuaClass>  { ObjType = CompassObjType.AfterGua , CNName = "地盘六十四卦", Dictionary = C3YEx.CAfterGuas },
 
     };
 
