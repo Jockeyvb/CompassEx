@@ -159,7 +159,7 @@ namespace CompassEx
             }
             else if (d.Name.IndexOf("水") > -1)
             {
-                return Color.Black;
+                return IsDrak ? Color.LightGray : Color.Black;
             }
 
             else if (d.Name.IndexOf("木") > -1)
@@ -172,7 +172,7 @@ namespace CompassEx
             }
             else if (d.Name.IndexOf("火") > -1)
             {
-                return Color.Purple;
+                return IsDrak ? Color.Red : Color.Purple;
             }
 
 

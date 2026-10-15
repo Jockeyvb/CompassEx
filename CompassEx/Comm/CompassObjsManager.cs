@@ -10,13 +10,16 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
+using CommLib;
 using CompassEx.Gua;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
+using System.Xml.Linq;
 
 namespace CompassEx.Comm;
 
@@ -34,7 +37,7 @@ public interface ICompassObjsRegistry
 public class CompassObjsProvider<T> : ICompassObjsRegistry where T : class
 {
     public CompassObjType ObjType { get; set; }
-    public string CNName { get; set; }
+    public string CNName { get => ObjType.GetEnumDescription(); }
     public IReadOnlyDictionary<CompassRangEX, T> Dictionary { get; set; }
 
     public IEnumerable<CompassObjStru> GetAll()
@@ -84,13 +87,19 @@ public static class CompassObjsManager
     // 统一注册所有的图层
     private static readonly List<ICompassObjsRegistry> _layers = new()
     {
-        new CompassObjsProvider<GuaSubClass> { ObjType = CompassObjType.BeforeGuaSub, CNName = "先天八卦", Dictionary = CompassEx.BeforeGuaSubs },
-        new CompassObjsProvider<GuaSubClass> { ObjType = CompassObjType.AfterGuaSub, CNName = "后天八卦", Dictionary = CompassEx.AfterGuaSubs },
-        new CompassObjsProvider<CHill>  { ObjType = CompassObjType.CHill, CNName = "地盘二十四山", Dictionary = CompassEx.CHills },
-        new CompassObjsProvider<CHill>  { ObjType = CompassObjType.RHill, CNName = "人盘二十四山", Dictionary = CompassEx.RCHills },
-        new CompassObjsProvider<CHill>  { ObjType = CompassObjType.SHill, CNName = "天盘二十四山", Dictionary = CompassEx.SCHills },
-        new CompassObjsProvider<GuaClass>  { ObjType = CompassObjType.BeforeGua, CNName = "天盘六十四卦", Dictionary = C3YEx.CBeforeGuas },
-        new CompassObjsProvider<GuaClass>  { ObjType = CompassObjType.AfterGua , CNName = "地盘六十四卦", Dictionary = C3YEx.CAfterGuas },
+        new CompassObjsProvider<GuaSubClass> { ObjType = CompassObjType.BeforeGuaSub, Dictionary = CompassEx.BeforeGuaSubs },
+        new CompassObjsProvider<GuaSubClass> { ObjType = CompassObjType.AfterGuaSub, Dictionary = CompassEx.AfterGuaSubs },
+        new CompassObjsProvider<CHill>  { ObjType = CompassObjType.CHill , Dictionary = CompassEx.CHills },
+        new CompassObjsProvider<CHill>  { ObjType = CompassObjType.RHill , Dictionary = CompassEx.RCHills },
+        new CompassObjsProvider<CHill>  { ObjType = CompassObjType.SHill , Dictionary = CompassEx.SCHills },
+        new CompassObjsProvider<GuaClass>  { ObjType = CompassObjType.BeforeGua , Dictionary = C3YEx.CBeforeGuas },
+        new CompassObjsProvider<GuaClass>  { ObjType = CompassObjType.AfterGua  , Dictionary = C3YEx.CAfterGuas },
+        new CompassObjsProvider<GuaClass>  { ObjType = CompassObjType.BeforeGuaQi  , Dictionary = C3YEx.CBeforeGuas },
+         new CompassObjsProvider<GuaClass>  { ObjType = CompassObjType.BeforeGuaFate   , Dictionary = C3YEx.CBeforeGuas },
+
+           new CompassObjsProvider<GuaClass>  { ObjType = CompassObjType.AfterGuaQi    , Dictionary = C3YEx.CAfterGuas },
+           new CompassObjsProvider<GuaClass>  { ObjType = CompassObjType.AfterGuaFate     , Dictionary = C3YEx.CAfterGuas },
+
 
     };
 

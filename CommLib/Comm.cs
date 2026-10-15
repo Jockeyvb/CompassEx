@@ -732,19 +732,64 @@ namespace CommLib
 
         }
 
+
+        /// <summary>
+        /// 获得枚举类型的Categor（要求是JSON)格式
+        /// </summary>
+        /// <param name="en"></param>
+        /// <param name="IsDebarMixedValue">排除附加值的混合值</param>
+        /// <returns>返回带个JObject 的字典</returns>
+        public static Dictionary<Enum, JObject> GetEnumCategoryDC(this Enum en, bool IsDebarMixedValue = true)
+        {
+            Dictionary<Enum, JObject> dc = new();
+            Type et = en.GetType();
+            foreach (Enum testEnum in Enum.GetValues(et))
+            {
+
+
+                UInt64 ev = Convert.ToUInt64(testEnum);
+                bool b = ev != 0 && (ev & (ev - 1)) != 0;//是否为混合值 
+                if (en.HasFlag(testEnum) && ev != 0) //只取符合整除的则排除混合值 
+                {
+                    if (b && IsDebarMixedValue) continue;
+                    // 获取枚举字段信息
+                    FieldInfo field = et.GetField(testEnum.ToString());
+
+                    // 获取 CategoryAttribute 特性
+                    var categoryAttr = field?.GetCustomAttribute<CategoryAttribute>();
+
+                    if (categoryAttr != null)
+                    {
+                        string categoryRaw = categoryAttr.Category;
+                        var jt = ConvertJSON(categoryRaw);
+                        if (jt != null && jt.Type == JTokenType.Object)
+                        {
+                            dc.Add(testEnum, (JObject)jt);
+                        }
+
+
+                    }
+
+                }
+            }
+
+            return dc;
+
+        }
+
         /// <summary>
         /// 获得标志（Flags）枚举实例中包含多少个具体的枚举值集合。
         /// </summary>
         /// <param name="enumConstant">枚举实例常量。</param>
         /// <returns>返回包含的枚举整型数值集合。</returns>
-        public static List<int> GetEnumValues(this Enum enumConstant)
+        public static List<UInt64> GetEnumValues(this Enum enumConstant)
         {
-            var iL = new List<int>();
-            int constantValue = Convert.ToInt32(enumConstant);
+            var iL = new List<UInt64>();
+            UInt64 constantValue = Convert.ToUInt64(enumConstant);
 
             foreach (var testEnum in Enum.GetValues(enumConstant.GetType()))
             {
-                int testValue = Convert.ToInt32(testEnum);
+                var testValue = Convert.ToUInt64(testEnum);
                 // 模拟 VB.NET 的位与运算 (EnumConstant And testEnum)
                 if ((constantValue & testValue) == testValue && testValue != 0)
                 {
@@ -762,9 +807,9 @@ namespace CommLib
         /// <param name="isGetUserHide">是否获取用户隐藏的枚举项，默认为 <see langword="false"/>。</param>
         /// <param name="isRemoveHtml">Ref 开关：是否移除说明中的 HTML 标签，默认为 <see langword="false"/>。</param>
         /// <returns>返回以枚举描述为键、枚举整型数值为值的字典集合。</returns>
-        public static Dictionary<string, int> EnumToDict(Type enumType, bool isGetUserHide = false, bool isRemoveHtml = false)
+        public static Dictionary<string, UInt64> EnumToDict(Type enumType, bool isGetUserHide = false, bool isRemoveHtml = false)
         {
-            var dc = new Dictionary<string, int>();
+            var dc = new Dictionary<string, UInt64>();
 
             foreach (Enum testEnum in Enum.GetValues(enumType))
             {
@@ -778,7 +823,7 @@ namespace CommLib
                 FieldInfo field = enumType.GetField(testEnum.ToString());
                 var cd = (CategoryAttribute[])field.GetCustomAttributes(typeof(CategoryAttribute), false);
                 string sJSON = cd.Length > 0 ? cd[0].Category : "";
-                int iv = Convert.ToInt32(testEnum);
+                var iv = Convert.ToUInt64(testEnum);
 
 
                 if (!string.IsNullOrWhiteSpace(sJSON))
@@ -814,16 +859,16 @@ namespace CommLib
         /// </summary>
         /// <param name="enumConstant">枚举实例常量。</param>
         /// <returns>返回符合位运算匹配的枚举描述与数值字典。</returns>
-        public static Dictionary<string, int> GetEnumDict(this Enum enumConstant)
+        public static Dictionary<string, UInt64> GetEnumDict(this Enum enumConstant)
         {
-            var dc = new Dictionary<string, int>();
+            var dc = new Dictionary<string, UInt64>();
 
             foreach (Enum testEnum in Enum.GetValues(enumConstant.GetType()))
             {
                 if (enumConstant.HasFlag(testEnum) && Convert.ToInt32(testEnum) != 0)
                 {
                     string sN = testEnum.GetEnumDescription(opEQ: true);
-                    dc.Add(sN, Convert.ToInt32(testEnum));
+                    dc.Add(sN, Convert.ToUInt64(testEnum));
                 }
             }
 
@@ -851,14 +896,14 @@ namespace CommLib
             bool orderbyLevelDesc = false)
         {
             var iL = new List<Enum>();
-            int constantValue = Convert.ToInt32(enumConstant);
+            var constantValue = Convert.ToUInt64(enumConstant);
             Type enumType = enumConstant.GetType();
 
             if (constantValue != 0)
             {
                 foreach (Enum testEnum in Enum.GetValues(enumType))
                 {
-                    int testValue = Convert.ToInt32(testEnum);
+                    var testValue = Convert.ToUInt64(testEnum);
                     if (opEQ)
                     {
                         if (Equals(enumConstant, testEnum)) iL.Add(testEnum);

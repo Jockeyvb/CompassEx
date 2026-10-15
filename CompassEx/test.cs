@@ -16,7 +16,7 @@ using System.Text;
 
 namespace CompassEx
 {
-    internal class test
-    {
-    }
+
+
+
 }

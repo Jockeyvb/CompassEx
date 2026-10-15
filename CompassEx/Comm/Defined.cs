@@ -10,10 +10,13 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
+using CommLib;
 using CompassEx.Gua;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 
 namespace CompassEx.Comm
 
@@ -80,7 +83,13 @@ namespace CompassEx.Comm
         /// </remarks>
         /// <seealso cref="SixRelativeClass"/>
         public SixRelativeClass HideRelative { get; set; }
+
+
+
     }
+
+
+
 
 
     /// <summary>
@@ -97,74 +106,102 @@ namespace CompassEx.Comm
         /// <summary>
         /// 先天八卦
         /// </summary>
-        [Description("先天八卦"), Category("{level: 1, group: '八卦'}")]
+        [Description("先天八卦"), Category("{level: 100, group: '八卦',LayerHeight:80,FontSize:50,TextPropRef:'$this.Symbol;',Bold:true}")]
         BeforeGuaSub = 1,
         /// <summary>
         /// 后天八卦
         /// </summary>
-        [Description("后天八卦"), Category("{level:2, group: '八卦'}")]
+        [Description("后天八卦"), Category("{level:200, group: '八卦',LayerHeight:80,FontSize:50}")]
         AfterGuaSub = 2,
 
-        /// <summary>
-        /// 天盘六十四卦（圆图）
-        /// </summary>
-        [Description("天盘六十四卦"), Category("{level:3, group: '六十四卦'}")]
-        BeforeGua = 4,
+
 
         /// <summary>
-        /// 地盘六十四卦（方图）
+        /// 地盘六十四卦
         /// </summary>
-        [Description("地盘六十四卦"), Category("{level:4, group: '六十四卦'}")]
-        AfterGua = 8,
+        [Description("地盘六十四卦"), Category("{level:700, group: '六十四卦',AutoEnter:true,FontSize:50,FontSize1:40 }")]
+        AfterGua = 4,
+
+
+
+        /// <summary>
+        /// 天盘六十四卦
+        /// </summary>
+        [Description("天盘六十四卦"), Category("{level:600, group: '六十四卦',AutoEnter:true,FontSize:50,FontSize1:40 }")]
+        BeforeGua = 8,
+
 
         /// <summary>
         /// 地盘二十四山
         /// </summary>
-        [Description("地盘二十四山"), Category("{level:8, group: '二十四山'}")]
+        [Description("地盘二十四山"), Category("{level:300,FontSize:50, group: '二十四山'}")]
         CHill = 16,
 
         /// <summary>
-        /// 天盘二十四山
+        /// 人盘二十四山
         /// </summary>
-        [Description("人盘二十四山"), Category("{level:8, group: '二十四山'}")]
+        [Description("人盘二十四山"), Category("{level:400,FontSize:50, group: '二十四山'}")]
         RHill = 32,
 
 
         /// <summary>
         /// 天盘二十四山
         /// </summary>
-        [Description("天盘二十四山"), Category("{level:8, group: '二十四山'}")]
+        [Description("天盘二十四山"), Category("{level:500,FontSize:50, group: '二十四山'}")]
         SHill = 64,
 
 
         /// <summary>
         /// 二十八星宿
         /// </summary>
-        [Description("二十八星宿"), Category("{level:8, group: '星宿'}")]
+        [Description("二十八星宿"), Category("{level:800, group: '星宿'}")]
         Star28 = 128,
 
-        /// <summary>
-        /// 卦气
-        /// </summary>
-        [Description("卦气"), Category("{level:4, group: '六十四卦'}")]
-        GuaQi = 256,
+
 
         /// <summary>
-        /// 卦运
+        /// 天盘六十四卦卦运
         /// </summary>
-        [Description("卦运"), Category("{level:4, group: '六十四卦'}")]
-        GuaFate = 512,
+        [Description("天盘六十四卦卦运"), Category("{level:620, group: '六十四卦',LayerHeight:30,FontSize:25,TextPropRef:'$this.GuaFate;'}")]
+        BeforeGuaFate = 256,
+
+
+        /// <summary>
+        /// 天盘六十四卦卦气
+        /// </summary>
+        [Description("天盘六十四卦卦气"), Category("{level:580, group: '六十四卦' ,LayerHeight:30,FontSize:20,TextPropRef:'$this.GuaQi.GuaQiNumber.toString() + $this.GuaQi.FiveAttr.Name;' }")]
+        BeforeGuaQi = 512,
+
+
+
+        /// <summary>
+        /// 地盘六十四卦卦运
+        /// </summary>
+        [Description("地盘六十四卦卦运"), Category("{level:720, group: '六十四卦',LayerHeight:30,FontSize:25,TextPropRef:'$this.GuaFate;'}")]
+        AfterGuaFate = BeforeGuaQi * 2,
+
+
+        /// <summary>
+        /// 地盘六十四卦卦气
+        /// </summary>
+        [Description("地盘六十四卦卦气"), Category("{level:680, group:'六十四卦' ,LayerHeight:30,FontSize:20,TextPropRef:'$this.GuaQi.GuaQiNumber.toString() + $this.GuaQi.FiveAttr.Name;' }")]
+        AfterGuaQi = AfterGuaFate * 2,
+
+
+
+
+
 
         /// <summary>
         /// 八方宫位（正北、东北、正东、东南、正南、西南、正西、西北、中宫）
         /// </summary>
-        [Description("宫位"), Category("{level:4, group: '八方宫位'}")]
-        AreaDirection = 1024,
+        [Description("宫位"), Category("{level:900, group: '八方宫位'}")]
+        AreaDirection = AfterGuaQi * 2,
 
         /// <summary>
         /// 全部
         /// </summary>
-        [Description("全部"), Category("{level:999}")]
+        [Description("全部"), Category("{level:9999}")]
         All = ulong.MaxValue
 
 
