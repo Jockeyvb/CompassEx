@@ -12,6 +12,7 @@
 
 
 
+using CompassEx.C3H;
 using CompassEx.Comm;
 using CompassEx.Gua;
 using Newtonsoft.Json;
@@ -33,8 +34,6 @@ namespace CompassEx
     public class CompassEx
     {
         #region 字段
-
-
 
 
 
@@ -74,11 +73,16 @@ namespace CompassEx
 
 
         /// <summary>
+        /// 三元地盘中针二十四山缓存与三合的阴阳不同
+        /// </summary>
+        public static readonly Dictionary<CompassRangEX, CHill> C3YCHills = CHill.C24HillNames.Select(x => new CHill(x, HillType.CHill, HillYinYangType.C3Y)).ToDictionary(x => x.CRangeDegree, c => c);
+
+
+
+        /// <summary>
         /// 地盘中针二十四山缓存
         /// </summary>
         public static readonly Dictionary<CompassRangEX, CHill> CHills = CHill.C24HillNames.Select(x => new CHill(x)).ToDictionary(x => x.CRangeDegree, c => c);
-
-
 
 
 

@@ -11,6 +11,7 @@
 //
 
 using CommLib;
+using CompassEx.C3H;
 using CompassEx.Gua;
 using System;
 using System.Collections;
@@ -18,6 +19,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Xml.Linq;
 
@@ -36,6 +38,8 @@ public interface ICompassObjsRegistry
 
 public class CompassObjsProvider<T> : ICompassObjsRegistry where T : class
 {
+
+
     public CompassObjType ObjType { get; set; }
     public string CNName { get => ObjType.GetEnumDescription(); }
     public IReadOnlyDictionary<CompassRangEX, T> Dictionary { get; set; }
@@ -85,10 +89,20 @@ public class CompassObjsProvider<T> : ICompassObjsRegistry where T : class
 public static class CompassObjsManager
 {
     // 统一注册所有的图层
-    private static readonly List<ICompassObjsRegistry> _layers = new()
+
+
+    private static readonly List<ICompassObjsRegistry> _layers =
+
+        new()
     {
+
+
+
+
         new CompassObjsProvider<GuaSubClass> { ObjType = CompassObjType.BeforeGuaSub, Dictionary = CompassEx.BeforeGuaSubs },
         new CompassObjsProvider<GuaSubClass> { ObjType = CompassObjType.AfterGuaSub, Dictionary = CompassEx.AfterGuaSubs },
+         new CompassObjsProvider<CHill>  { ObjType = CompassObjType.C3YCHill , Dictionary = CompassEx.C3YCHills },
+
         new CompassObjsProvider<CHill>  { ObjType = CompassObjType.CHill , Dictionary = CompassEx.CHills },
         new CompassObjsProvider<CHill>  { ObjType = CompassObjType.RHill , Dictionary = CompassEx.RCHills },
         new CompassObjsProvider<CHill>  { ObjType = CompassObjType.SHill , Dictionary = CompassEx.SCHills },
@@ -99,6 +113,30 @@ public static class CompassObjsManager
 
            new CompassObjsProvider<GuaClass>  { ObjType = CompassObjType.AfterGuaQi    , Dictionary = C3YEx.CAfterGuas },
            new CompassObjsProvider<GuaClass>  { ObjType = CompassObjType.AfterGuaFate     , Dictionary = C3YEx.CAfterGuas },
+              new CompassObjsProvider<RepeatedlyYellowWater>  { ObjType = CompassObjType.RepeatedlyYellowWater      , Dictionary = C3HEx.RepeatedlyYellowWaters },
+
+              new CompassObjsProvider<EightShaYellowWater>  { ObjType = CompassObjType.EightShaYellowWater       , Dictionary = C3HEx.EightShaYellowWaters },
+
+                   new CompassObjsProvider<NineStarFourWall>  { ObjType = CompassObjType.NineStarFourWall       , Dictionary = C3HEx.NineStarFourWalls },
+               new CompassObjsProvider<JieSha3H>  { ObjType = CompassObjType.JieSha3H       , Dictionary = C3HEx.JieSha3Hs },
+                 new CompassObjsProvider<ChuanShan72>  { ObjType = CompassObjType.ChuanShan72       , Dictionary = C3HEx.ChuanShan72s },
+                    new CompassObjsProvider<AverageTouDi60>  { ObjType = CompassObjType.AverageTouDi60       , Dictionary = C3HEx.AverageTouDi60s },
+
+                       new CompassObjsProvider<EightRouterYellowWater>  { ObjType = CompassObjType.EightRouterYellowWater       , Dictionary = C3HEx.EightRouterYellowWaters },
+                        new CompassObjsProvider<Term24>  { ObjType = CompassObjType.SunTerm24       , Dictionary = C3HEx.SunTerm24s },
+                          new CompassObjsProvider<Term24>  { ObjType = CompassObjType.MoonTerm24       , Dictionary = C3HEx.MoonTerm24s },
+
+
+                 new CompassObjsProvider<SkyLocStar28>  { ObjType = CompassObjType.SkyLocStar28        , Dictionary = C3HEx.SkyLocStar28s },
+                 new CompassObjsProvider<SkyLocNaYin>  { ObjType = CompassObjType.AverageTouDi60SkyLocNaYin        , Dictionary = C3HEx.AverageTouDi60SkyLocNaYins },
+
+                  new CompassObjsProvider<FenJin120>  { ObjType = CompassObjType.CFenJin120        , Dictionary = C3HEx.CFenJin120s },
+                 new CompassObjsProvider<FenJin120>  { ObjType = CompassObjType.RFenJin120        , Dictionary = C3HEx.RFenJin120s },
+                 new CompassObjsProvider<FenJin120>  { ObjType = CompassObjType.SFenJin120        , Dictionary = C3HEx.SFenJin120s },
+                 new CompassObjsProvider<SkyStar24>  { ObjType = CompassObjType.SkyStar24        , Dictionary = C3HEx.SkyStar24s },
+
+                  new CompassObjsProvider<SkyStar24>  { ObjType = CompassObjType.RSkyStar24        , Dictionary = C3HEx.RSkyStar24s },
+
 
 
     };

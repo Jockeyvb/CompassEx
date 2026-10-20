@@ -12,11 +12,15 @@
 
 using CommLib;
 using CompassEx.Gua;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
+
+using tyme.culture.nine;
 
 namespace CompassEx.Comm
 
@@ -106,88 +110,106 @@ namespace CompassEx.Comm
         /// <summary>
         /// 先天八卦
         /// </summary>
-        [Description("先天八卦"), Category("{level: 100, group: '八卦',LayerHeight:80,FontSize:50,TextPropRef:'$this.Symbol;',Bold:true}")]
+        [Description("先天八卦"), Category("{ TargetTypeName:'GuaSubClass', level: 100, group: '八卦,三合，三元',LayerHeight:80,FontSize:50,TextPropRef:'$this.Symbol;',Bold:true,RadiusOffset:12}")]
         BeforeGuaSub = 1,
         /// <summary>
         /// 后天八卦
         /// </summary>
-        [Description("后天八卦"), Category("{level:200, group: '八卦',LayerHeight:80,FontSize:50}")]
-        AfterGuaSub = 2,
+        [Description("后天八卦"), Category("{TargetTypeName:'GuaSubClass' ,level:200, group: '八卦,三合，三元',LayerHeight:80,FontSize:50}")]
+        AfterGuaSub = BeforeGuaSub * 2,
 
 
 
         /// <summary>
         /// 地盘六十四卦
         /// </summary>
-        [Description("地盘六十四卦"), Category("{level:700, group: '六十四卦',AutoEnter:true,FontSize:50,FontSize1:40 }")]
-        AfterGua = 4,
+        [Description("地盘六十四卦"), Category("{ TargetTypeName:'GuaClass', level:700, group: '六十四卦,三元',AutoEnter:true,FontSize:50,FontSize1:40 }")]
+        AfterGua = AfterGuaSub * 2,
 
 
 
         /// <summary>
         /// 天盘六十四卦
         /// </summary>
-        [Description("天盘六十四卦"), Category("{level:600, group: '六十四卦',AutoEnter:true,FontSize:50,FontSize1:40 }")]
-        BeforeGua = 8,
+        [Description("天盘六十四卦"), Category("{TargetTypeName:'GuaClass',level:600, group: '六十四卦,三元',AutoEnter:true,FontSize:50,FontSize1:40 }")]
+        BeforeGua = AfterGua * 2,
+
+        [Description("三元地盘二十四山"), Category("{TargetTypeName:'CHill',level:300,FontSize:50, group: '二十四山,三元'}")]
+        C3YCHill = BeforeGua * 2,
 
 
         /// <summary>
         /// 地盘二十四山
         /// </summary>
-        [Description("地盘二十四山"), Category("{level:300,FontSize:50, group: '二十四山'}")]
-        CHill = 16,
+        [Description("地盘二十四山"), Category("{TargetTypeName:'CHill',level:300,FontSize:50, group: '二十四山,三合'}")]
+        CHill = C3YCHill * 2,
+
+        /// <summary>
+        /// 二十四天星
+        /// </summary>
+
+        [Description("二十四天星(地盘)"), Category("{TargetTypeName:'SkyStar24',LayerHeight:30,level:305,FontSize:30, group: '二十四山,三合,三元'}")]
+        SkyStar24 = CHill * 2,
+
+
 
         /// <summary>
         /// 人盘二十四山
         /// </summary>
-        [Description("人盘二十四山"), Category("{level:400,FontSize:50, group: '二十四山'}")]
-        RHill = 32,
+        [Description("人盘二十四山"), Category("{TargetTypeName:'CHill',level:400,FontSize:50, group: '二十四山,三合,三元'}")]
+        RHill = SkyStar24 * 2,
+
+
+        /// <summary>
+        /// 人盘二十四山
+        /// </summary>
+        [Description("二十四天星(人盘)"), Category("{TargetTypeName:'SkyStar24',level:405,LayerHeight:30,FontSize:30, group: '二十四山,三合'}")]
+        RSkyStar24 = RHill * 2,
+
 
 
         /// <summary>
         /// 天盘二十四山
         /// </summary>
-        [Description("天盘二十四山"), Category("{level:500,FontSize:50, group: '二十四山'}")]
-        SHill = 64,
+        [Description("天盘二十四山"), Category("{TargetTypeName:'CHill',level:500,FontSize:50, group: '二十四山,三合'}")]
+        SHill = RSkyStar24 * 2,
 
 
         /// <summary>
         /// 二十八星宿
         /// </summary>
-        [Description("二十八星宿"), Category("{level:800, group: '星宿'}")]
-        Star28 = 128,
+        [Description("二十八星宿"), Category("{level:800, group: '星宿,三合,三元'}")]
+        Star28 = SHill * 2,
 
 
 
         /// <summary>
         /// 天盘六十四卦卦运
         /// </summary>
-        [Description("天盘六十四卦卦运"), Category("{level:620, group: '六十四卦',LayerHeight:30,FontSize:25,TextPropRef:'$this.GuaFate;'}")]
-        BeforeGuaFate = 256,
+        [Description("天盘六十四卦卦运"), Category("{TargetTypeName:'GuaClass',level:620, group: '六十四卦,三元',LayerHeight:30,FontSize:25,TextPropRef:'$this.GuaFate;'}")]
+        BeforeGuaFate = Star28 * 2,
 
 
         /// <summary>
         /// 天盘六十四卦卦气
         /// </summary>
-        [Description("天盘六十四卦卦气"), Category("{level:580, group: '六十四卦' ,LayerHeight:30,FontSize:20,TextPropRef:'$this.GuaQi.GuaQiNumber.toString() + $this.GuaQi.FiveAttr.Name;' }")]
-        BeforeGuaQi = 512,
+        [Description("天盘六十四卦卦气"), Category("{TargetTypeName:'GuaClass',level:580, group: '六十四卦,三元' ,LayerHeight:30,FontSize:20,TextPropRef:'$this.GuaQi.GuaQiNumber.toString() + $this.GuaQi.FiveAttr.Name;' }")]
+        BeforeGuaQi = BeforeGuaFate * 2,
 
 
 
         /// <summary>
         /// 地盘六十四卦卦运
         /// </summary>
-        [Description("地盘六十四卦卦运"), Category("{level:720, group: '六十四卦',LayerHeight:30,FontSize:25,TextPropRef:'$this.GuaFate;'}")]
+        [Description("地盘六十四卦卦运"), Category("{TargetTypeName:'GuaClass',level:720, group: '六十四卦,三元',LayerHeight:30,FontSize:25,TextPropRef:'$this.GuaFate;'}")]
         AfterGuaFate = BeforeGuaQi * 2,
 
 
         /// <summary>
         /// 地盘六十四卦卦气
         /// </summary>
-        [Description("地盘六十四卦卦气"), Category("{level:680, group:'六十四卦' ,LayerHeight:30,FontSize:20,TextPropRef:'$this.GuaQi.GuaQiNumber.toString() + $this.GuaQi.FiveAttr.Name;' }")]
+        [Description("地盘六十四卦卦气"), Category("{TargetTypeName:'GuaClass',level:680, group:'六十四卦,三元' ,LayerHeight:30,FontSize:20,TextPropRef:'$this.GuaQi.GuaQiNumber.toString() + $this.GuaQi.FiveAttr.Name;' }")]
         AfterGuaQi = AfterGuaFate * 2,
-
-
 
 
 
@@ -197,6 +219,84 @@ namespace CompassEx.Comm
         /// </summary>
         [Description("宫位"), Category("{level:900, group: '八方宫位'}")]
         AreaDirection = AfterGuaQi * 2,
+
+
+
+        /// <summary>
+        /// 天干反复黄泉
+        /// </summary>
+        [Description("天干反复黄泉"), Category("{TargetTypeName:'RepeatedlyYellowWater' ,level:220, group:'三合' ,LayerHeight:30,FontSize:20}")]
+        RepeatedlyYellowWater = AreaDirection * 2,
+
+        /// <summary>
+        /// 八煞黄泉
+        /// </summary>
+        [Description("八煞黄泉"), Category("{TargetTypeName:'EightShaYellowWater',level:210, group:'三合' ,LayerHeight:30,FontSize:25,Bold:true}")]
+        EightShaYellowWater = RepeatedlyYellowWater * 2,
+
+
+        [Description("八路黄泉(白虎煞)"), Category("{TargetTypeName:'EightRouterYellowWater',level:220, group:'三合' ,LayerHeight:30,FontSize:25}")]
+        EightRouterYellowWater = EightShaYellowWater * 2,
+
+
+
+        /// <summary>
+        /// 九星
+        /// </summary>
+        [Description("九星"), Category("{TargetTypeName:'NineStarFourWall',level:230, group:'三合' ,LayerHeight:30,FontSize:25,Bold:true}")]
+        NineStarFourWall = EightRouterYellowWater * 2,
+
+        /// <summary>
+        /// 劫煞取用
+        /// </summary>
+        [Description("劫煞取用"), Category("{TargetTypeName:'JieSha3H',level:310, group:'三合' ,LayerHeight:40,FontSize:30 }")]
+        JieSha3H = NineStarFourWall * 2,
+
+        /// <summary>
+        /// 穿山七十二龙
+        /// </summary>
+        [Description("穿山七十二龙"), Category("{TargetTypeName:'ChuanShan72',level:320, group:'三合' ,LayerHeight:60,FontSize1:25,AutoEnter:true }")]
+        ChuanShan72 = JieSha3H * 2,
+
+
+
+        [Description("平分透地六十龙"), Category("{TargetTypeName:'AverageTouDi60',level:330, group:'三合' ,LayerHeight:30,FontSize:25 }")]
+        AverageTouDi60 = ChuanShan72 * 2,
+
+
+        [Description("平分透地六十龙纳音五行"), Category("{TargetTypeName:'SkyLocNaYin',level:333, group:'三合' ,LayerHeight:30,FontSize:25,TextPropRef:'$this.FiveAttr.Name' }")]
+        AverageTouDi60SkyLocNaYin = AverageTouDi60 * 2,
+
+
+
+
+
+        [Description("管山禽持世宿"), Category("{TargetTypeName:'SkyLocStar28',level:335, group:'三合' ,LayerHeight:30,FontSize:28,TextScaleX:1.3 }")]
+        SkyLocStar28 = AverageTouDi60SkyLocNaYin * 2,
+
+        [Description("二十四节气（太阳到山盘）"), Category("{TargetTypeName:'Term24',level:340, group:'三合,三元' ,LayerHeight:30,FontSize:25,BGColor:'#80FAEBD7'}")]
+        SunTerm24 = SkyLocStar28 * 2,
+
+
+        [Description("二十四节气（太阴到山盘）"), Category("{TargetTypeName:'Term24',level:350, group:'三合' ,LayerHeight:30,FontSize:25,BGColor:'#80DCDCDC'}")]
+        MoonTerm24 = SunTerm24 * 2,
+
+
+
+        [Description("地盘120分金"), Category("{TargetTypeName:'FenJin120',level:338, group:'三合' ,LayerHeight:60,FontSize1:25,AutoEnter:true,TextPropRef:'$this.IsGood?$this.Name:\"\";' }")]
+        CFenJin120 = MoonTerm24 * 2,
+
+
+        [Description("人盘120分金"), Category("{TargetTypeName:'FenJin120',level:410, group:'三合' ,LayerHeight:60,FontSize1:25,AutoEnter:true,TextPropRef:'$this.IsGood?$this.Name:\"\";' }")]
+        RFenJin120 = CFenJin120 * 2,
+
+        [Description("天盘120分金"), Category("{TargetTypeName:'FenJin120',level:510, group:'三合' ,LayerHeight:60,FontSize1:25,AutoEnter:true,TextPropRef:'$this.IsGood?$this.Name:\"\";' }")]
+        SFenJin120 = RFenJin120 * 2,
+
+
+
+
+
 
         /// <summary>
         /// 全部
@@ -324,8 +424,16 @@ namespace CompassEx.Comm
         SpringBefore = 1,
 
     }
+
+
     public static class Defined
     {
+
+        /// <summary>
+        /// 全局缓存罗盘对象模板类字典
+        /// </summary>
+        public static readonly Dictionary<CompassObjType, JObject> CompassObjTypeJSONDC = CompassObjType.All.GetEnumCategoryDC().ToDictionary(x => (CompassObjType)x.Key, y => y.Value);
+
 
         /// <summary>
         /// 太极符号

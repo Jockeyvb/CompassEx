@@ -32,6 +32,9 @@ namespace CompassEx.Comm
         #region 属性
 
 
+
+
+
         private static SkyLoc[]? _SkyLoc60;
 
         /// <summary>
@@ -59,6 +62,12 @@ namespace CompassEx.Comm
 
             }
         }
+
+        /// <summary>
+        /// 干支纳音
+        /// </summary>
+
+        public SkyLocNaYin NaYin { get => new SkyLocNaYin(this); }
 
         /// <summary>
         /// 60甲子索引

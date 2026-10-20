@@ -12,6 +12,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -23,6 +24,18 @@ namespace CommLib
     public static class Comm
     {
 
+        /// <summary>
+        /// 利用JSON尝试复制对象
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static T? DeepJSONClone<T>(this T obj)
+        {
+            if (obj == null) return default!;
+            return JsonConvert.DeserializeObject<T>(JsonConvert.SerializeObject(obj));
+        }
+
 
         /// <summary>
         /// 把一个base64字符转成字节数组
@@ -31,6 +44,9 @@ namespace CommLib
         /// <returns></returns>
         public static async Task<ReturnResultType<byte[]>> Base64ToBytes(string base64str)
         {
+
+
+
             ReturnResultType<byte[]> rrt = new ReturnResultType<byte[]>();
 
             try

@@ -10,6 +10,7 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
+using CommLib;
 using CompassEx.Comm;
 using CompassEx.Gua;
 using Newtonsoft.Json;
@@ -32,6 +33,42 @@ namespace CompassEx
     /// </summary>
     public static class CommCls
     {
+
+        /// <summary>
+        /// 实例化一个泛型类
+        /// </summary>
+        /// <param name="TClass">这个泛型的类，类型</param>
+        /// <param name="TType">这个泛型类型</param>
+        /// <param name="args">实例化参数</param>
+        /// <returns></returns>
+        public static ReturnResultType NewTClass(Type TClass, Type TType, object[]? args = null)
+        {
+
+            ReturnResultType rrt = new();
+            try
+            {
+
+                // 1. 获取【开放式泛型】类型
+                Type genericOpenType = TClass;
+
+                // 2. 指定泛型参数T，构造闭合类型，例如 T = string
+                Type closedType = genericOpenType.MakeGenericType(TType);
+
+                // 3. 实例化，传入构造函数参数
+                object instance = Activator.CreateInstance(closedType, args);
+                rrt.ReturnObj = instance;
+                rrt.RESULT = 1;
+            }
+            catch (Exception ex)
+            {
+                rrt.RESULT = 0;
+                rrt.Message = ex.ToString();
+            }
+
+            return rrt;
+
+        }
+
 
         /// <summary>
         ///全部符号集合

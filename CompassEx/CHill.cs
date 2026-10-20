@@ -20,6 +20,26 @@ namespace CompassEx
 {
 
     /// <summary>
+    /// 二十四山阴阳类型
+    /// </summary>
+    public enum HillYinYangType
+    {
+        none = 0,
+
+        /// <summary>
+        /// 三元盘类型
+        /// </summary>
+        C3Y = 1,
+        /// <summary>
+        /// 三合盘类型
+        /// </summary>
+        C3H = 2
+
+    }
+
+
+
+    /// <summary>
     /// 表示风水罗盘上的二十四山盘层类型。
     /// </summary>
     /// <remarks>
@@ -94,13 +114,16 @@ namespace CompassEx
         /// </value>
         public static readonly String[] C24HillNames = { "壬", "子", "癸", "丑", "艮", "寅", "甲", "卯", "乙", "辰", "巽", "巳", "丙", "午", "丁", "未", "坤", "申", "庚", "酉", "辛", "戌", "乾", "亥" };
 
+
+
+
+
         /// <summary>
-        /// 净阴净阳法则中归属于“阳”的十二山名称序列。
+        /// 静态缓存保存三合和三元的12个阳山
         /// </summary>
-        /// <value>
-        /// 包含 12 个属阳的山名：天干（壬、丙、甲、庚）、地支（寅、申、巳、亥）以及四维（艮、坤、巽、乾）。
-        /// </value>
-        public static readonly string[] C24HillSunNames = { "壬", "丙", "甲", "庚", "巽", "巳", "亥", "乾", "坤", "申", "艮", "寅" };
+        public static readonly Dictionary<HillYinYangType, string[]> C24HillSunNamesDC = new() { { HillYinYangType.C3Y, ["壬", "丙", "甲", "庚", "巽", "巳", "亥", "乾", "坤", "申", "艮", "寅"] }, { HillYinYangType.C3H, ["乾", "坤", "甲", "乙", "壬", "癸", "寅", "午", "辰", "戌", "申", "子"] } };
+
+
 
         #endregion
 
@@ -116,11 +139,24 @@ namespace CompassEx
         /// <remarks>        
         /// 这里的阴阳判定基于二十四山净阴净阳理论。
         /// </remarks>
-        public bool IsSun { get { return C24HillSunNames.IndexOf(this.Name) > -1; } }
+        public bool IsSun { get { return C24HillSunNamesDC[this.YinYangType].IndexOf(this.Name) > -1; } }
         /// <summary>
         /// 24山类型   
         /// </summary>
         public HillType hillType { get; private set; } = HillType.CHill;
+
+
+
+        /// <summary>
+        /// 罗盘二十四山阴阳类型
+        /// </summary>
+        public HillYinYangType YinYangType { get; init; }
+
+        /// <summary>
+        /// 二十四索引（按壬为0索引)
+        /// </summary>
+        public int Index { get => C24HillNames.IndexOf(this.Name); }
+
 
         /// <summary>
         /// 获取或设置当前二十四山对象的具体名称（如“壬”、“子”等）。
@@ -153,6 +189,7 @@ namespace CompassEx
         /// </summary>
         /// <param name="sName">要创建的二十四山名称（如“壬”、“子”、“癸”等）。</param>
         /// <param name="ht">当前山头所属的盘层类型。默认值为 <see cref="HillType.CHill"/>（地盘）。</param>
+        /// <param name="HillYinYangType">二十四山阴阳类型，默认为三元类型</param>
         /// <remarks>
         /// <para>
         /// 内部机制会先通过名称在 <see cref="C24HillNames"/> 数组中检索其对应的整型索引，随后将其隐式链式传递给带索引参数的构造函数。
@@ -161,7 +198,7 @@ namespace CompassEx
         /// <b>注意：</b>如果传入的 <paramref name="sName"/> 在数组中不存在，检索索引将为 <c>-1</c>，此时会链式触发 <see cref="ArgumentOutOfRangeException"/> 异常。
         /// </para>
         /// </remarks>
-        public CHill(string sName, HillType ht = HillType.CHill) : this(C24HillNames.IndexOf(sName), ht)
+        public CHill(string sName, HillType ht = HillType.CHill, HillYinYangType HillYinYangType = HillYinYangType.C3H) : this(C24HillNames.IndexOf(sName), ht, HillYinYangType)
         {
         }
 
@@ -170,14 +207,16 @@ namespace CompassEx
         /// </summary>
         /// <param name="iIndex">二十四山在序列中的索引，有效取值范围为 <c>0 ~ 23</c>。</param>
         /// <param name="ht">当前山头所属的盘层类型。默认值为 <see cref="HillType.CHill"/>（地盘）。</param>
+        /// <param name="HillYinYangType">二十四山阴阳类型，默认为三元类型</param>
         /// <exception cref="ArgumentOutOfRangeException">当传入的索引小于 0 或大于等于 24 时抛出此异常。</exception>
-        public CHill(int iIndex, HillType ht = HillType.CHill)
+        public CHill(int iIndex, HillType ht = HillType.CHill, HillYinYangType HillYinYangType = HillYinYangType.C3H)
         {
             if (iIndex < 0 || iIndex >= C24HillNames.Length)
                 throw new ArgumentOutOfRangeException(nameof(iIndex), "索引必须在0到23之间");
 
             this.Name = C24HillNames[iIndex];
             this.hillType = ht;
+            this.YinYangType = HillYinYangType;
         }
 
         #endregion
