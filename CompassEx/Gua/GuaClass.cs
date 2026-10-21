@@ -181,6 +181,10 @@ public class GuaClass : IEquatable<GuaClass>
         }
     }
 
+
+
+
+
     /// <summary>
     /// 爻值
     /// </summary>

@@ -24,6 +24,9 @@ using System.Text;
 
 namespace CompassEx.Gua
 {
+
+
+
     public class GuaYao
     {
 
@@ -58,6 +61,10 @@ namespace CompassEx.Gua
             get; private set;
 
         }
+
+
+
+
 
         /// <summary>
         /// 爻名称

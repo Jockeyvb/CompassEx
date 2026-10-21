@@ -12,6 +12,7 @@
 
 using CommLib;
 using CompassEx.C3H;
+using CompassEx.C3Y;
 using CompassEx.Gua;
 using System;
 using System.Collections;
@@ -137,6 +138,8 @@ public static class CompassObjsManager
 
                   new CompassObjsProvider<SkyStar24>  { ObjType = CompassObjType.RSkyStar24        , Dictionary = C3HEx.RSkyStar24s },
 
+                   new CompassObjsProvider<CGuaYao>  { ObjType = CompassObjType.CGuaBeforeYao        , Dictionary = C3YEx.CGuaBeforeYaos },
+                  new CompassObjsProvider<CGuaYao>  { ObjType = CompassObjType.CGuaAfterYao        , Dictionary = C3YEx.CGuaAfterYaos },
 
 
     };

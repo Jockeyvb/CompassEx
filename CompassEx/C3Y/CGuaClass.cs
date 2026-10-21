@@ -10,12 +10,34 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
+using CompassEx.C3Y;
+using CompassEx.Comm;
 using CompassEx.Gua;
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace CompassEx
 {
+
+
+    /// <summary>
+    /// 罗盘中的六十四卦类型
+    /// </summary>
+    public enum CGuaType
+    {
+        None = 0,
+        [Description("天盘六十四卦(先天卦序)")]
+        BeforeGau = 1,
+
+        [Description("地盘六十四卦(后天卦序)")]
+        AfterGau = 2
+    }
+
+
     /// <summary>
     /// 三元罗盘专用六爻卦实体类，继承基础卦类 <see cref="GuaClass"/>
     /// </summary>
@@ -25,6 +47,47 @@ namespace CompassEx
     /// </remarks>
     public class CGuaClass : GuaClass
     {
+
+
+
+        /// <summary>
+        /// 罗盘卦的卦序索引(与易经卦序不一样）
+        /// </summary>
+        public int CGuaIndex { get; init; }
+
+        /// <summary>
+        /// 罗盘中的六十四卦类型
+        /// </summary>
+        public CGuaType CGuaType { get; init; }
+
+        private CompassRangEX? _CRangeDegree;
+        /// <summary>
+        /// 罗盘卦角度范围
+        /// </summary>       
+        [JsonIgnore]
+        public CompassRangEX? CRangeDegree
+        {
+            get
+            {
+                if (_CRangeDegree == null)
+                {
+
+                    CompassRangEX CR = default!;
+                    if (this.CGuaType == CGuaType.BeforeGau)//天盘六十四卦(先天卦序)
+                    {
+                        CR = this.CBeforeRangeDegree;
+
+                    }
+                    else if (this.CGuaType == CGuaType.AfterGau)//地盘六十四卦(后天卦序)
+                    {
+                        CR = this.CAfterRangeDegree;
+                    }
+                    _CRangeDegree = CR;
+                }
+                return _CRangeDegree;
+            }
+        }
+
         /// <summary>
         /// 获取当前卦在三元盘中所临的爻位编号数组
         /// </summary>
@@ -93,6 +156,47 @@ namespace CompassEx
             }
 
             this.PlaceYaos = PlaceYaos;
+        }
+
+        /// <summary>
+        /// 天盘六十四卦缓存
+        /// </summary>
+        public static readonly List<GuaClass> CBeforeGuas = C3YEx.CBeforeGuas.Values.ToList();
+
+        /// <summary>
+        /// 地盘六十四卦缓存
+        /// </summary>
+        public static readonly List<GuaClass> CAfterGuas = C3YEx.CAfterGuas.Values.ToList();
+
+        public CGuaClass(string GuaNameOrAttrName, CGuaType gt) : base(GuaNameOrAttrName)
+        {
+            if (gt == CGuaType.None) throw new ArgumentException("卦象类型参数不能为None");
+            this.CGuaType = gt;
+            this.CGuaIndex = gt == CGuaType.BeforeGau ? CBeforeGuas.FindIndex(x => x.FullName == this.FullName) : CAfterGuas.FindIndex(x => x.FullName == this.FullName);
+
+
+        }
+
+
+
+        /// <summary>
+        /// 反序列化入口(兼容两类入口)
+        /// </summary>
+        /// <param name="GuaNameOrAttrName"></param>
+        /// <param name="gt"></param>
+        /// <param name="PlaceYaos"></param>
+        [JsonConstructor]
+        private CGuaClass([JsonProperty(nameof(FullName))] string GuaNameOrAttrName, [JsonProperty(nameof(CGuaType))] CGuaType gt, [JsonProperty(nameof(PlaceYaos))] int[]? PlaceYaos) : base(GuaNameOrAttrName)
+        {
+            if (gt != CGuaType.None)
+            {
+                this.CGuaType = gt;
+                this.CGuaIndex = gt == CGuaType.BeforeGau ? CBeforeGuas.FindIndex(x => x.FullName == this.FullName) : CAfterGuas.FindIndex(x => x.FullName == this.FullName);
+            }
+            else
+            {
+                this.PlaceYaos = PlaceYaos;
+            }
         }
 
     }
