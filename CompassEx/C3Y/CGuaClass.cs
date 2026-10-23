@@ -47,8 +47,23 @@ namespace CompassEx
     /// </remarks>
     public class CGuaClass : GuaClass
     {
+        private CGuaYao[] _CGuaYaos;
+        /// <summary>
+        /// 获得罗盘上的卦爻类共6爻
+        /// </summary>
+        [JsonIgnore]
+        public CGuaYao[] CGuaYaos
+        {
+            get
+            {
 
-
+                if (_CGuaYaos == null)
+                {
+                    _CGuaYaos = Enumerable.Range(0, 6).Select(index => new CGuaYao(this, index)).ToArray();
+                }
+                return _CGuaYaos;
+            }
+        }
 
         /// <summary>
         /// 罗盘卦的卦序索引(与易经卦序不一样）
@@ -158,15 +173,44 @@ namespace CompassEx
             this.PlaceYaos = PlaceYaos;
         }
 
+
+        private static List<GuaClass> _CBeforeGuas;
+
         /// <summary>
         /// 天盘六十四卦缓存
         /// </summary>
-        public static readonly List<GuaClass> CBeforeGuas = C3YEx.CBeforeGuas.Values.ToList();
+        public static List<GuaClass> CBeforeGuas
+        {
+            get
+            {
+                if (_CBeforeGuas == null)
+                {
+                    _CBeforeGuas = C3YEx.CBeforeGuas.Values.ToList();
+                }
+
+                return _CBeforeGuas;
+
+            }
+        }
+
+
+        private static List<GuaClass> _CAfterGuas;
 
         /// <summary>
         /// 地盘六十四卦缓存
         /// </summary>
-        public static readonly List<GuaClass> CAfterGuas = C3YEx.CAfterGuas.Values.ToList();
+        public static List<GuaClass> CAfterGuas
+        {
+            get
+            {
+
+                if (_CAfterGuas == null)
+                {
+                    _CAfterGuas = C3YEx.CAfterGuas.Values.ToList();
+                }
+                return _CAfterGuas;
+            }
+        }
 
         public CGuaClass(string GuaNameOrAttrName, CGuaType gt) : base(GuaNameOrAttrName)
         {

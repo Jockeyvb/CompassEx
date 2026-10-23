@@ -16,6 +16,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -24,8 +25,45 @@ using static CommLib.Assist.JsonEx;
 
 namespace CompassEx.Gua;
 
+/// <summary>
+/// 卦数合类型
+/// </summary>
+public enum GuaFitType
+{
+    None = 0,
+    //===========================卦数合==========================
+    /// <summary>
+    /// 一六共宗水
+    /// </summary>
+    [Description("一六共宗水")]
+    GongZong = 1,
+    /// <summary>
+    /// 二七同道火
+    /// </summary>
+    [Description("二七同道火")]
+    TongDao = 2,
+    /// <summary>
+    /// 三八为朋木
+    /// </summary>
+    [Description("三八为朋木")] WeiPeng = 4,
+    /// <summary>
+    /// 四九为友金
+    /// </summary>
+    [Description("四九为友金")] WeiYou = 8,
 
-
+    /// <summary>
+    /// 五十同途土(合五、十、十五）
+    /// </summary>
+    [Description("五十同途土")] TongTu = 16,
+    //===========================卦数合==========================
+    //===========================卦理合==========================
+    /// <summary>
+    /// 则乾坤、震巽、坎离、艮兑
+    /// </summary>
+    [Description("雌雄正配")]
+    CiXiong = TongTu * 2,
+    //===========================卦理合==========================
+}
 
 /// <summary>
 /// 表示一个六爻复卦（64卦）的数据结构与核心数理推演类。
@@ -138,6 +176,28 @@ public class GuaClass : IEquatable<GuaClass>
 
     #region 属性
 
+
+
+
+    /// <summary>
+    /// 本六爻卦的上卦与下卦的卦气合类型(在玄空大卦中能判断抽爻换象的吉凶）
+    /// 于《玄空大卦透析》下册中，爻神篇中提到,经典《竹节赋》也提到相关卦理
+    /// </summary>
+    public GuaFitType GuaQiFit
+    {
+        get
+        {
+            return GetGuaFit(this.UpGua, this.DownGua);
+
+        }
+    }
+
+    /// <summary>
+    /// 上卦与下卦之间的关系
+    /// </summary>
+    public FiveAttrRule UpWithDownGuaRule { get => this.UpGua.FiveAttr.WhatRule(this.DownGua.FiveAttr); }
+
+
     /// <summary>
     /// 获取或设置原卦对象（若当前实例为变卦则指向原本卦，若无变动则为 <c>null</c>）。
     /// </summary>
@@ -176,7 +236,7 @@ public class GuaClass : IEquatable<GuaClass>
     {
         get
         {
-            if (_Yaos == null) _Yaos = this.DownGua?.Yaos.Union(this.UpGua.Yaos).ToList();
+            if (_Yaos == null) _Yaos = this.DownGua?.Yaos.Concat(this.UpGua.Yaos).ToList();
             return _Yaos;
         }
     }
@@ -199,6 +259,22 @@ public class GuaClass : IEquatable<GuaClass>
     /// </remarks>
     [JsonIgnore]
     public string Symbol { get { return Symbols[this.Index]; } }
+
+    /// <summary>
+    /// 玄空大卦中上下卦先天洛数同时为阳或阴则为阳路顺行，否则阴阳相见为阴路逆（卦爻可按阳顺（左），阴逆（右）排）
+    /// </summary>
+    public bool IsSunRouter
+    {
+        get
+        {
+
+
+            return (this.DownGua.GuaQi.GuaQiNumber % 2 == 1 && this.UpGua.GuaQi.GuaQiNumber % 2 == 1 || this.DownGua.GuaQi.GuaQiNumber % 2 == 0 && this.UpGua.GuaQi.GuaQiNumber % 2 == 0);
+
+        }
+
+    }
+
 
     /// <summary>
     /// 获取当前六爻卦对应的 64 卦卦气（即洛书数，用作先天五行数计算）。
@@ -657,6 +733,104 @@ public class GuaClass : IEquatable<GuaClass>
 
         return gc;
     }
+
+    /// <summary>
+    /// 获得本卦与其他卦的卦气相合类型
+    /// </summary>
+    /// <param name="WithGua">要计算的卦</param>
+    /// <returns></returns>
+    public GuaFitType GetGuaQiFit(GuaClass WithGua)
+    {
+        return GetGuaNumFit(this.GuaQi.GuaQiNumber, WithGua.GuaQi.GuaQiNumber);
+    }
+
+
+
+
+    /// <summary>
+    /// 获得本卦与其他卦的卦运相合类型
+    /// </summary>
+    /// <param name="WithGua">要计算的卦象</param>
+    /// <returns></returns>
+    public GuaFitType GetGuaFateFit(GuaClass WithGua)
+    {
+        int[] nums = [GuaFateNames.IndexOf(this.GuaFate) + 1, GuaFateNames.IndexOf(WithGua.GuaFate) + 1];
+
+        return GetGuaNumFit(nums[0], nums[1]);
+    }
+
+    /// <summary>
+    /// 六爻卦合，适合卦气与雌雄正配合，利用上下卦是否相合，卦运则只是数不能用于雌雄正配
+    /// </summary>
+    /// <param name="Gua1"></param>
+    /// <param name="Gua2"></param>
+    /// <returns></returns>
+    public static GuaFitType GetGuaFit(GuaSubClass Gua1, GuaSubClass Gua2)
+    {
+        GuaFitType gft = GetGuaNumFit(Gua1.GuaQi.GuaQiNumber, Gua2.GuaQi.GuaQiNumber);//卦气的数合
+        gft = gft | GuaLiFit(Gua1, Gua2); //卦理合
+        return gft;
+    }
+
+
+    /// <summary>
+    /// 卦理合
+    /// </summary>
+    /// <param name="Gua1">卦1</param>
+    /// <param name="Gua2">卦2</param>
+    /// <returns></returns>
+    public static GuaFitType GuaLiFit(GuaSubClass Gua1, GuaSubClass Gua2)
+    {
+        string sn = Gua1.Name + Gua2.Name;
+        sn += sn; //多一次循环
+
+        string[] sd = ["乾坤", "震巽", "坎离", "艮兑"];//雌雄正配
+
+        bool b = sd.Any(x => sn.IndexOf(x) > -1);
+        if (b) return GuaFitType.CiXiong;
+
+        return GuaFitType.None;
+
+
+    }
+
+    /// <summary>
+    /// 卦数合
+    /// 卦气与卦运数合静态方法（只传数值），当使用卦气合时直接传卦气值，
+    /// 当传卦运时则传索引+1,因无五运卦，数组第五个数留空不影响索引+1
+    /// </summary>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public static GuaFitType GetGuaNumFit(int num1, int num2)
+    {
+
+        int[] nums = [num1, num2];
+
+        if ((nums[0] == 1 && nums[1] == 6 || nums[0] == 6 && nums[1] == 1))
+        {
+            return GuaFitType.GongZong;
+        }
+        else if (nums[0] == 2 && nums[1] == 7 || nums[0] == 7 && nums[1] == 2)
+        {
+            return GuaFitType.TongDao;
+        }
+        else if (nums[0] == 3 && nums[1] == 8 || nums[0] == 8 && nums[1] == 3)
+        {
+            return GuaFitType.WeiPeng;
+        }
+        else if (nums[0] == 4 && nums[1] == 9 || nums[0] == 9 && nums[1] == 4)
+        {
+            return GuaFitType.WeiPeng;
+        }
+        else if (nums[0] + nums[1] == 5 || nums[0] + nums[1] == 10 || nums[0] + nums[1] == 15)
+        {
+            return GuaFitType.TongTu;
+        }
+
+        return GuaFitType.None;
+    }
+
 
     #region 显式实现对比、运算符和 Key 方法
 

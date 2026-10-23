@@ -25,6 +25,24 @@ namespace CommLib
     {
 
         /// <summary>
+        /// 判断是否为数值类型（包含基础数值及其可空形式）
+        /// </summary>
+        public static bool IsNumericType(Type type)
+        {
+            type = Nullable.GetUnderlyingType(type) ?? type;
+
+            return type == typeof(byte) || type == typeof(sbyte) ||
+                   type == typeof(short) || type == typeof(ushort) ||
+                   type == typeof(int) || type == typeof(uint) ||
+                   type == typeof(long) || type == typeof(ulong) ||
+                   type == typeof(float) || type == typeof(double) ||
+                   type == typeof(decimal);
+        }
+
+
+
+
+        /// <summary>
         /// 利用JSON尝试复制对象
         /// </summary>
         /// <typeparam name="T"></typeparam>

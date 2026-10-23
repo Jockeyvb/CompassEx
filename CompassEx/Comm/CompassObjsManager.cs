@@ -138,8 +138,20 @@ public static class CompassObjsManager
 
                   new CompassObjsProvider<SkyStar24>  { ObjType = CompassObjType.RSkyStar24        , Dictionary = C3HEx.RSkyStar24s },
 
+
+
+
                    new CompassObjsProvider<CGuaYao>  { ObjType = CompassObjType.CGuaBeforeYao        , Dictionary = C3YEx.CGuaBeforeYaos },
                   new CompassObjsProvider<CGuaYao>  { ObjType = CompassObjType.CGuaAfterYao        , Dictionary = C3YEx.CGuaAfterYaos },
+
+                   new CompassObjsProvider<CGuaYao>  { ObjType = CompassObjType.CGuaBeforeYaoSymbol   , Dictionary = C3YEx.CGuaBeforeYaos },
+
+                    new CompassObjsProvider<CGuaYao>  { ObjType = CompassObjType.CGuaAfterYaoSymbol  , Dictionary = C3YEx.CGuaAfterYaos },
+
+                     new CompassObjsProvider<CGuaYao>  { ObjType = CompassObjType.CGuaBeforeYaoSixRelative   , Dictionary = C3YEx.CGuaBeforeYaos },
+
+                     new CompassObjsProvider<CGuaYao>  { ObjType = CompassObjType.CGuaAfterYaoSixRelative  , Dictionary = C3YEx.CGuaAfterYaos },
+
 
 
     };

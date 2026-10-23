@@ -10,6 +10,7 @@
 // // Contact: [Jockeyvb@gmail.com/微信:Jockeyvb1]
 //
 
+using CommLib;
 using CompassEx.Comm;
 using CompassEx.Gua;
 using Newtonsoft.Json;
@@ -36,11 +37,165 @@ public class CGuaYao
 
 
 
+
+
     /// <summary>
     /// 单爻度数范围
     /// </summary>
     private const double SingleDegree = C3YEx.CompassGuaDegree / 6;
 
+
+    private SixRelativeClass? _SixRelative;
+    /// <summary>
+    /// 六亲的
+    /// </summary>
+    [JsonIgnore]
+    public SixRelativeClass? SixRelative
+    {
+        get
+        {
+            var sr = this.CGua.Yaos[this.Index].SixRelative;
+
+            if (_SixRelative == null)
+            {
+                if (sr == null) this.CGua.LoadAllYaos();
+
+                _SixRelative = this.CGua.Yaos[this.Index].SixRelative;
+            }
+            return _SixRelative;
+        }
+    }
+
+
+    /// <summary>
+    /// 角度偏移量（双爻动（抽双爻）为吉时不为0）
+    /// </summary>
+    public float GoodSymbolAngleOffset
+    {
+        get
+        {
+
+            float fo = 0;
+            if (this.IsBothDoingGood == false) return 0; //不是双爻动不需要角度偏移
+            if (this.CGua.CGuaYaos.Any(x => x.IsDoingGood)) return 0;//如果本卦中有卦爻是单爻动则不需要角度偏移
+
+            fo = this.IsStartUp ? (float)SingleDegree / 2 : -(float)(SingleDegree / 2);
+            //上爻开始（阴卦）则偏移为正，阳卦开始的则为负数
+
+            return fo;
+        }
+
+    }
+
+
+    GuaFitType? _DoingGuaFitType;
+    /// <summary>
+    /// 单爻动变后的卦合类型
+    /// </summary>
+    public GuaFitType DoingGuaFitType
+    {
+        get
+        {
+
+            if (_DoingGuaFitType.HasValue == false) GetIsDoingGood();
+
+            return _DoingGuaFitType.GetValueOrDefault();
+        }
+
+    }
+
+    private FiveAttrRule? _DoingGuaFiveAttrRule;
+    /// <summary>
+    /// 单爻动时变出的卦五行关系
+    /// </summary>
+    public FiveAttrRule DoingGuaFiveAttrRule
+    {
+        get
+        {
+
+            if (_DoingGuaFiveAttrRule.HasValue == false) GetIsDoingGood();
+            return _DoingGuaFiveAttrRule.GetValueOrDefault();
+        }
+    }
+
+
+
+    private FiveAttrRule? _BothDoingGuaFiveAttrRule;
+    /// <summary>
+    /// 单爻动时变出的卦五行关系
+    /// </summary>
+    public FiveAttrRule BothDoingGuaFiveAttrRule
+    {
+        get
+        {
+
+            if (_BothDoingGuaFiveAttrRule.HasValue == false) GetIsDoingGood(true);
+            return _BothDoingGuaFiveAttrRule.GetValueOrDefault();
+        }
+    }
+
+
+    private GuaFitType? _BothDoingGuaFitType;
+
+    /// <summary>
+    /// 双爻动变后的卦合类型（则本爻累加1爻）
+    /// </summary>
+    public GuaFitType BothDoingGuaFitType
+    {
+        get
+        {
+
+            if (_BothDoingGuaFitType.HasValue == false) GetIsDoingGood(true);
+
+            return _BothDoingGuaFitType.GetValueOrDefault();
+        }
+    }
+
+
+
+    /// <summary>
+    /// 单爻可用点的符号(双爻动吉可用则需要加入罗盘上的偏移值调整位置，应是阳卦角度应该加0.46875度，阴卦角度-0.46875 位置上，在中间)
+    /// 有GoodSymbolAngleOffset角度偏移则是双爻动
+    /// </summary>
+    public string GoodSymbol
+    {
+        get => this.IsDoingGood || GoodSymbolAngleOffset != 0 ? "●" : "";
+
+    }
+
+
+    private bool? _IsDoingGood;
+    /// <summary>
+    /// 获得单爻动的吉凶可用
+    /// </summary>
+    public bool IsDoingGood
+    {
+        get
+        {
+            if (_IsDoingGood.HasValue == false) _IsDoingGood = GetIsDoingGood();
+            return _IsDoingGood.GetValueOrDefault();
+        }
+
+    }
+
+
+
+    private bool? _IsBothDoingGood;
+    /// <summary>
+    /// 获得双爻动的吉凶可用
+    /// </summary>
+    public bool IsBothDoingGood
+    {
+        get
+        {
+            if (_IsBothDoingGood.HasValue == false)
+            {
+                _IsBothDoingGood = this.Index == 5 ? false : GetIsDoingGood(true);
+            }
+            return _IsBothDoingGood.GetValueOrDefault();
+        }
+
+    }
 
     /// <summary>
     /// 起始卦度数
@@ -49,15 +204,19 @@ public class CGuaYao
     {
         get
         {
+
             return this.CGua.CRangeDegree.Start;
 
         }
     }
 
+
+
+
     /// <summary>
     /// 起始度数是否由上爻开始
     /// </summary>
-    public bool IsStartUp { get => this.CGua.CGuaIndex % 2 == 1; }
+    public bool IsStartUp { get => !this.CGua.IsSunRouter; }
 
 
     /// <summary>
@@ -116,6 +275,7 @@ public class CGuaYao
         this.CGua = cg;
         this.Index = YaoIndex;
 
+
     }
 
     /// <summary>
@@ -141,5 +301,82 @@ public class CGuaYao
         return ys.ToDictionary(x => x.CRangeDegree, y => y);
 
     }
+
+
+
+
+
+
+
+
+
+
+    //========抽爻换象吉爻规则参考钟义明《玄空大卦秘诀破译》与刘贲的《玄空大卦透析》===========
+    //抽爻换象中变出的卦以吉论的吉爻的条件其中之一：不合者以凶论（不可用）
+    //1、上卦与下卦先天洛数（卦气）能合五、十、十五（且卦五行不能克）
+    //2、上卦与下卦先天洛数（卦气）能合生成，即16、27、38、49。（且卦五行不能克）
+    //3、上卦与下卦合雌雄正配亦吉（不考虑五行相克）
+    //抽爻换象中变出的卦上下卦：如卦（非爻）五行相克，则应人伦发凶（不可用）：
+    //1、受克者大凶
+    //2、克人者亦凶
+    //=======抽爻换象吉爻规则参考钟义明《玄空大卦秘诀破译》与刘贲的《玄空大卦透析》===========
+    //经考究对比，市面上的罗盘有些是错误的，例如：有某某罗盘：中孚卦，上爻为为红点（则抽爻为吉），变出的卦为：水泽节，上卦坎卦气为7，下卦兑卦气为4，不相合，也不符合雌雄正配，虽五行相生，亦为不可用，学卦理者应该独立思考其合理性。
+    //有些卦，应该考虑卦理之余，应考虑24山，八卦分界线（空亡），因为有些卦如：【艮】三爻抽爻虽然为吉度但近空亡亦需慎重考虑使用,。
+
+
+    /// <summary>
+    /// 获得抽爻换象后是否为吉爻
+    /// </summary>
+    /// <param name="IsBoth">是否获得双爻动的吉凶</param>
+    /// <returns></returns>
+    public bool GetIsDoingGood(bool IsBoth = false)
+    {
+
+
+        if (IsBoth && this.Index == 5) return false;
+
+        GuaClass G = this.CGua.DeepJSONClone(); //不要改变本卦使用复制卦
+        if (!IsBoth || this.Index == 5)//如果是上爻只检测单爻
+        {
+
+            G.SetYaoDoing([this.Index], false);//设置单爻动
+
+        }
+        else
+        {
+            G.SetYaoDoing([this.Index, this.Index + 1], false);//设置双爻动（只能是相邻的爻动）
+        }
+
+        GuaClass CG = G.GetChangeGua();//获得变卦
+
+        var far = CG.GuaQiFit;//本卦的上、下卦，卦气关系
+        var gr = CG.UpWithDownGuaRule;
+        if (IsBoth)
+        {
+            this._BothDoingGuaFitType = far;
+            this._BothDoingGuaFiveAttrRule = gr;
+        }
+        else
+        {
+            this._DoingGuaFitType = far;
+            this._DoingGuaFiveAttrRule = gr;
+        }
+
+
+
+
+        if (far == GuaFitType.None) return false;//不合卦理则为凶
+
+        if (far.HasFlag(GuaFitType.CiXiong)) return true;//若卦理合雌雄则不需要判断五行相克
+
+
+        if (gr != FiveAttrRule.CanMe && gr != FiveAttrRule.MeCan) return true;//不是我克或克我则为吉
+
+        return false;
+
+
+
+    }
+
 
 }

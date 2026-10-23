@@ -43,10 +43,22 @@ namespace CompassEx.Gua
         /// 名称
         /// </summary>
         public static readonly string[] Names = ["阴", "阳", "老阴", "老阳"];
+
+        /// <summary>
+        /// 爻数名（阴爻称为六，阳爻称为九）
+        /// </summary>
+        public static readonly string[] NumberNames = ["六", "九"];
         /// <summary>
         /// 爻对应的图形
         /// </summary>
         public static readonly string[] Faces = ["━ ━ ", "━━━ ", "━ ━x", "━━━o"];
+
+
+
+        /// <summary>
+        /// 爻数名（阴爻称为六，阳爻称为九）
+        /// </summary>
+        public string NumberName { get => NumberNames[this.Value % 2]; }
 
         /// <summary>
         /// 爻所在的位置0为初爻
@@ -82,10 +94,17 @@ namespace CompassEx.Gua
         /// </summary>
         public SkyLoc SkyLoc { get; private set; } = default!;
 
+
         /// <summary>
         /// 爻中的六亲
         /// </summary>
-        [JsonIgnore] public SixRelativeClass? SixRelative { get; private set; } = default!;
+        [JsonIgnore]
+        public SixRelativeClass? SixRelative
+        {
+            get;
+
+            private set;
+        } = default!;
 
         /// <summary>
         /// 伏神(六亲)(无伏神时为null)
@@ -522,8 +541,8 @@ namespace CompassEx.Gua
 
             for (int i = 0; i < 3; i++)
             {
-                sValue = FiveAttr.BothConflict(lcs1[i].Name, lcs2[i].Name);
-                TorF = sValue.Length > 0;
+                TorF = FiveAttr.BothConflict(lcs1[i].Name, lcs2[i].Name);
+
                 if (TorF == false) break;//不是六冲卦
             }
             if (TorF)

@@ -186,15 +186,27 @@ namespace CompassEx.Comm
         /// <summary>
         /// 天盘六十四卦卦运
         /// </summary>
-        [Description("天盘六十四卦卦运"), Category("{TargetTypeName:'GuaClass',level:720, group: '六十四卦,三元',LayerHeight:30,FontSize:25,TextPropRef:'$this.GuaFate;'}")]
+        [Description("天盘六十四卦卦运"), Category("{TargetTypeName:'GuaClass',level:720, group: '六十四卦,三元',LayerHeight:30,FontSize:25,TextScaleX:1.5,TextPropRef:'$this.GuaFate;'}")]
         BeforeGuaFate = Star28 * 2,
 
         /// <summary>
         /// 天盘六十四卦384爻
         /// </summary>
-        [Description("天盘六十四卦384爻"), Category("{TargetTypeName:'CGuaYao',level:725, group: '六十四卦,三元',LayerHeight:30,FontSize:20,TextPropRef:'$this.ShortName;'}")]
+        [Description("天盘六十四卦384爻"), Category("{TargetTypeName:'CGuaYao',level:725, group: '六十四卦,三元',LayerHeight:30,FontSize:18,TextPropRef:'$this.ShortName;'}")]
         CGuaBeforeYao = BeforeGuaFate * 2,
 
+        /// <summary>
+        /// 抽爻换象吉爻符号
+        /// </summary>
+        [Description("天盘抽爻换象吉爻符号"), Category("{TargetTypeName:'CGuaYao',level:726, group: '六十四卦,三元',LayerHeight:30,FontSize:15,TextColor:'#ffff0000',TextPropRef:'$this.GoodSymbol;',AngleOffsetPropRef:'$this.GoodSymbolAngleOffset;'}")]
+        CGuaBeforeYaoSymbol = CGuaBeforeYao * 2,
+
+
+        /// <summary>
+        /// 天盘六十四卦384爻六亲
+        /// </summary>
+        [Description("天盘六十四卦384爻六亲"), Category("{TargetTypeName:'CGuaYao',level:727, group: '六十四卦,三元',LayerHeight:30,FontSize:18,TextPropRef:'$this.SixRelative.ShortName;'}")]
+        CGuaBeforeYaoSixRelative = CGuaBeforeYaoSymbol * 2,
 
 
 
@@ -202,29 +214,48 @@ namespace CompassEx.Comm
         /// 天盘六十四卦卦气
         /// </summary>
         [Description("天盘六十四卦卦气"), Category("{TargetTypeName:'GuaClass',level:680, group: '六十四卦,三元' ,LayerHeight:30,FontSize:20,TextPropRef:'$this.GuaQi.GuaQiNumber.toString() + $this.GuaQi.FiveAttr.Name;' }")]
-        BeforeGuaQi = CGuaBeforeYao * 2,
+        BeforeGuaQi = CGuaBeforeYaoSixRelative * 2,
 
 
 
         /// <summary>
         /// 地盘六十四卦卦运
         /// </summary>
-        [Description("地盘六十四卦卦运"), Category("{TargetTypeName:'GuaClass',level:620, group: '六十四卦,三元',LayerHeight:30,FontSize:25,TextPropRef:'$this.GuaFate;'}")]
+        [Description("地盘六十四卦卦运"), Category("{TargetTypeName:'GuaClass',level:620, group: '六十四卦,三元',LayerHeight:30,FontSize:25,TextScaleX:1.5,TextPropRef:'$this.GuaFate;'}")]
         AfterGuaFate = BeforeGuaQi * 2,
 
 
         /// <summary>
         /// 地盘六十四卦384爻
         /// </summary>
-        [Description("地盘六十四卦384爻"), Category("{TargetTypeName:'CGuaYao',level:625, group: '六十四卦,三元',LayerHeight:30,FontSize:20,TextPropRef:'$this.ShortName;'}")]
+        [Description("地盘六十四卦384爻"), Category("{TargetTypeName:'CGuaYao',level:625, group: '六十四卦,三元',LayerHeight:30,FontSize:18,TextPropRef:'$this.ShortName;'}")]
         CGuaAfterYao = AfterGuaFate * 2,
+
+
+
+
+        /// <summary>
+        /// 抽爻换象吉爻符号
+        /// </summary>
+        [Description("地盘抽爻换象吉爻符号"), Category("{TargetTypeName:'CGuaYao',level:626, group: '六十四卦,三元',LayerHeight:30,FontSize:15,TextColor:'#ffff0000',TextPropRef:'$this.GoodSymbol;',AngleOffsetPropRef:'$this.GoodSymbolAngleOffset;'}")]
+        CGuaAfterYaoSymbol = CGuaAfterYao * 2,
+
+
+
+
+        /// <summary>
+        /// 地盘六十四卦384爻六亲
+        /// </summary>
+        [Description("地盘六十四卦384爻六亲"), Category("{TargetTypeName:'CGuaYao',level:627, group: '六十四卦,三元',LayerHeight:30,FontSize:18,TextPropRef:'$this.SixRelative.ShortName;'}")]
+        CGuaAfterYaoSixRelative = CGuaAfterYaoSymbol * 2,
+
 
 
         /// <summary>
         /// 地盘六十四卦卦气
         /// </summary>
         [Description("地盘六十四卦卦气"), Category("{TargetTypeName:'GuaClass',level:580, group:'六十四卦,三元' ,LayerHeight:30,FontSize:20,TextPropRef:'$this.GuaQi.GuaQiNumber.toString() + $this.GuaQi.FiveAttr.Name;' }")]
-        AfterGuaQi = CGuaAfterYao * 2,
+        AfterGuaQi = CGuaAfterYaoSixRelative * 2,
 
 
 

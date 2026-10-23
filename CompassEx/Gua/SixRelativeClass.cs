@@ -37,7 +37,7 @@ namespace CompassEx.Gua
         /// <summary>
         /// 简称
         /// </summary>
-        public string? ShortName { get => Name?.Substring(0, 1); }
+        public string? ShortName { get => this.Index == 0 ? "才" : Name?.Substring(0, 1); }
 
         /// <summary>
         /// 获取当前六亲实体的字面名称（如“父母”、“子孙”等）。
@@ -53,7 +53,7 @@ namespace CompassEx.Gua
         /// <summary>
         /// 六新属性
         /// </summary>
-        public FiveAttrRule FiveAttrRule { get { return (FiveAttrRule)Index; } }
+        public FiveAttrRule FiveAttrRule { get { return (FiveAttrRule)Index + 1; } }
 
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace CompassEx.Gua
         [JsonConstructor]
         public SixRelativeClass([JsonProperty(nameof(FiveAttrRule))] FiveAttrRule far)
         {
-            int index = (int)far;
+            int index = (int)far - 1;
             if (index < 0 || index >= SixRelativeNames.Length)
                 throw new IndexOutOfRangeException($"生克规则转换值【{index}】超出了六亲元数据数组的合法边界。");
 
@@ -100,7 +100,7 @@ namespace CompassEx.Gua
         /// </remarks>
         public static SixRelativeClass GetSixRelative(FiveAttrRule far)
         {
-            int index = (int)far;
+            int index = (int)far - 1;
             if (index < 0 || index >= SixRelativeNames.Length)
                 throw new IndexOutOfRangeException($"生克规则转换值【{index}】超出了六亲元数据数组的合法边界。");
 

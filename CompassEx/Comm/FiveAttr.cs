@@ -23,28 +23,29 @@ namespace CompassEx.Comm
     /// </summary>
     public enum FiveAttrRule : uint
     {
+        None = 0,
         /// <summary>
         /// 我克为妻财
         /// </summary>
-        MeCan = 0,
+        MeCan = 1,
 
         /// <summary>
         /// 我生为子孙
         /// </summary>
-        MeBirth = 1
+        MeBirth = 2
             ,
         /// <summary>
         /// 同我为兄弟
         /// </summary>
-        SameMe = 2,
+        SameMe = 3,
         /// <summary>
         /// 克我为官鬼
         /// </summary>
-        CanMe = 3,
+        CanMe = 4,
         /// <summary>
         /// 生我为父母
         /// </summary>
-        BirthMe = 4
+        BirthMe = 5
 
     }
 
@@ -61,6 +62,17 @@ namespace CompassEx.Comm
         /// 五行名称数组
         /// </summary>
         public readonly static string[] FiveAttrNames = { "金", "木", "水", "火", "土" };
+
+        /// <summary>
+        /// 相克索引序列
+        /// </summary>
+        private readonly static string FiveAttrBothCans = "423014";
+
+        /// <summary>
+        /// 相生索引序列
+        /// </summary>
+        private readonly static string FiveAttrBothbirths = "402134";
+
 
         /// <summary>
         /// 五行名称
@@ -83,6 +95,7 @@ namespace CompassEx.Comm
         }
 
 
+
         /// <summary>
         /// 构造五行
         /// </summary>
@@ -95,23 +108,65 @@ namespace CompassEx.Comm
             this.Name = FiveAttrNames[iFiveAttrIndex];
         }
 
+
         /// <summary>
-        ///  根据名称获得两个地支之间的五行的关系：我克、我生、我同、克我、生我的关系。<br/>
-        /// 0表示我克，1表示我生，2表示我同，3表示克我，4表示生我
+        /// 五行之间获得的关系(金、木、水、火、土）
         /// </summary>
-        /// <param name="MeLocName">地支1</param>
-        /// <param name="LocName">地支2</param>
+        /// <param name="WithFiveAttr">相关的五行</param>
         /// <returns></returns>
-        public static FiveAttrRule GetBothLocRule(string MeLocName, string LocName)
+        public FiveAttrRule WhatRule(FiveAttr WithFiveAttr)
         {
-            int iMe = Array.IndexOf(LocClass.LocNames, MeLocName);
-            int il = Array.IndexOf(LocClass.LocNames, LocName);
-            FiveAttrRule far = GetBothLocRule(iMe, il);
 
 
-            return far;
+            if (this.Index == WithFiveAttr.Index)
+            {
+                return FiveAttrRule.SameMe;
+
+            }
+
+            //--------我克 和克我-------------------------- -
+
+
+            string s = this.Index.ToString() + WithFiveAttr.Index.ToString();//加起来看看能不能找到旁边的
+            int i = FiveAttrBothCans.IndexOf(s);
+            if (i > -1)
+            {
+                return FiveAttrRule.MeCan;//我克
+
+            }
+            s = WithFiveAttr.Index.ToString() + this.Index.ToString();//加起来看看能不能找到旁边的
+            i = FiveAttrBothCans.IndexOf(s);
+            if (i > -1)
+            {
+                return FiveAttrRule.CanMe;//克我
+
+            }
+            //----------------------我克和克我---------------------------
+
+            //----------------------我生和生我---------------------------
+
+
+            s = this.Index.ToString() + WithFiveAttr.Index.ToString();//加起来看看能不能找到旁边的
+            i = FiveAttrBothbirths.IndexOf(s);
+            if (i > -1)
+            {
+                return FiveAttrRule.MeBirth;//我生
+
+            }
+            s = WithFiveAttr.Index.ToString() + this.Index.ToString();//加起来看看能不能找到旁边的
+            i = FiveAttrBothbirths.IndexOf(s);
+            if (i > -1)
+            {
+                return FiveAttrRule.BirthMe;//生我
+
+            }
+
+
+            return FiveAttrRule.None;
 
         }
+
+
 
 
         /// <summary>
@@ -136,62 +191,11 @@ namespace CompassEx.Comm
         /// <returns></returns>
         public static FiveAttrRule GetBothLocRule(int iMeLoc1, int iLoc2)
         {
-            FiveAttrRule far = FiveAttrRule.MeCan;
+
 
             LocClass Mel = LocClass.GetLocClass(iMeLoc1);
             LocClass l2 = LocClass.GetLocClass(iLoc2);
-            if (Mel.FiveAttr.Name.Equals(l2.FiveAttr.Name))
-            {
-                far = FiveAttrRule.SameMe;//同我,兄弟
-            }
-            else
-            {
-                int iMePos = Array.IndexOf(FiveAttrNames, Mel.FiveAttr.Name);//我的五行位置
-                int iPos = Array.IndexOf(FiveAttrNames, l2.FiveAttr.Name);//对方的五行位置
-                                                                          //----------------------我克和克我---------------------------
-                String sFiveAttrBothCan = FiveAttrBothCan();
-                sFiveAttrBothCan += sFiveAttrBothCan;//增加一次，看作连续数做对比
-
-                String s = iMePos.ToString() + iPos.ToString();//加起来看看能不能找到旁边的
-                int i = sFiveAttrBothCan.IndexOf(s);
-                if (i > -1)
-                {
-                    far = FiveAttrRule.MeCan;//我克
-                    return far;
-                }
-                s = iPos.ToString() + iMePos.ToString();//加起来看看能不能找到旁边的
-                i = sFiveAttrBothCan.IndexOf(s);
-                if (i > -1)
-                {
-                    far = FiveAttrRule.CanMe;//克我
-                    return far;
-                }
-                //----------------------我克和克我---------------------------
-
-                //----------------------我生和生我---------------------------
-                String sFiveAttrBothBirth = FiveAttrBothbirth();
-                sFiveAttrBothBirth += sFiveAttrBothBirth;//增加一次，看作连续数做对比
-
-                s = iMePos.ToString() + iPos.ToString();//加起来看看能不能找到旁边的
-                i = sFiveAttrBothBirth.IndexOf(s);
-                if (i > -1)
-                {
-                    far = FiveAttrRule.MeBirth;//我生
-                    return far;
-                }
-                s = iPos.ToString() + iMePos.ToString();//加起来看看能不能找到旁边的
-                i = sFiveAttrBothBirth.IndexOf(s);
-                if (i > -1)
-                {
-                    far = FiveAttrRule.BirthMe;//生我
-                    return far;
-                }
-                //----------------------我生和生我---------------------------
-
-
-            }
-
-            return far;
+            return Mel.FiveAttr.WhatRule(l2.FiveAttr);
 
         }
 
@@ -222,86 +226,13 @@ namespace CompassEx.Comm
         /// <returns></returns>
         public static FiveAttrRule GetBothAttrRule(int iMeAttr, int iOtherAttr)
         {
-            FiveAttrRule far = FiveAttrRule.MeCan;
+            FiveAttr me = new FiveAttr(iMeAttr);
+            FiveAttr WithAttr = new FiveAttr(iOtherAttr);
 
-            if (iMeAttr == iOtherAttr)
-            {
-                far = FiveAttrRule.SameMe;//同我,兄弟
-            }
-            else
-            {
-
-                //----------------------我克和克我---------------------------
-                string sFiveAttrBothCan = FiveAttrBothCan();
-                sFiveAttrBothCan += sFiveAttrBothCan;//增加一次，看作连续数做对比
-
-                string s = iMeAttr.ToString() + iOtherAttr.ToString();//加起来看看能不能找到旁边的
-                int i = sFiveAttrBothCan.IndexOf(s);
-                if (i > -1)
-                {
-                    far = FiveAttrRule.MeCan;//我克
-                    return far;
-                }
-                s = iOtherAttr.ToString() + iMeAttr.ToString();//加起来看看能不能找到旁边的
-                i = sFiveAttrBothCan.IndexOf(s);
-                if (i > -1)
-                {
-                    far = FiveAttrRule.CanMe;//克我
-                    return far;
-                }
-                //----------------------我克和克我---------------------------
-
-                //----------------------我生和生我---------------------------
-                String sFiveAttrBothBirth = FiveAttrBothbirth();
-                sFiveAttrBothBirth += sFiveAttrBothBirth;//增加一次，看作连续数做对比
-
-                s = iMeAttr + iOtherAttr.ToString();//加起来看看能不能找到旁边的
-                i = sFiveAttrBothBirth.IndexOf(s);
-                if (i > -1)
-                {
-                    far = FiveAttrRule.MeBirth;//我生
-                    return far;
-                }
-                s = iOtherAttr.ToString() + iMeAttr;//加起来看看能不能找到旁边的
-                i = sFiveAttrBothBirth.IndexOf(s);
-                if (i > -1)
-                {
-                    far = FiveAttrRule.BirthMe;//生我
-                    return far;
-                }
-                //----------------------我生和生我---------------------------
-
-
-            }
-
-            return far;
+            return me.WhatRule(WithAttr);
 
         }
-        /// <summary>
-        /// 获取五行相克的相对顺序索引字符串。
-        /// </summary>
-        /// <returns>返回一个长度为 5 的数字字符串 <c>"42301"</c>。</returns>
-        /// <remarks>
-        /// <b>使用方法：</b>可将返回的字符串逐个字符取出并转换为整数 <c>i</c>，随后通过对应的五行名称数组（如 <c>FiveAttrNames[i]</c>）读取具体五行。
-        /// </remarks>
-        private static String FiveAttrBothCan()
-        {
-            string s = "42301";
-            return s;
-        }
 
-        /// <summary>
-        /// 获取五行相生的相对顺序索引字符串。
-        /// </summary>
-        /// <returns>返回一个长度为 5 的数字字符串 <c>"40213"</c>。</returns>
-        /// <remarks>
-        /// <b>使用方法：</b>可将返回的字符串逐个字符取出并转换为整数 <c>i</c>，随后通过对应的五行名称数组（如 <c>FiveAttrNames[i]</c>）读取具体五行。
-        /// </remarks>
-        private static String FiveAttrBothbirth()
-        {
-            String s = "40213";
-            return s;
-        }
         /// <summary>
         /// 判定并获取两个指定地支之间的“地支相害”关系描述（支持无序入参）。
         /// </summary>
@@ -313,7 +244,7 @@ namespace CompassEx.Comm
         /// <para>本方法已重构为<b>无序判定算法</b>。地支相害（又称六害）是由六合受冲推演而来。</para>
         /// <para>系统在获取到两地支在 <c>LocClass.LocNames</c> 中的索引后会执行升序排序。由此消除了参数传入先后顺序的严格限制，无论调用者传入 <c>("子", "未")</c> 还是 <c>("未", "子")</c> 均能精准识别，大幅提升了接口的健壮性。</para>
         /// </remarks>
-        public static String BothHarm(string sLoc1, string sLoc2)
+        public static string BothHarm(string sLoc1, string sLoc2)
         {
             String[] S = { sLoc1, sLoc2 };
             int[] r = { -1, -1 };
@@ -372,7 +303,7 @@ namespace CompassEx.Comm
         /// <para>本方法已重构为<b>无序判定算法</b>。包含三刑（寅巳申、丑戌未）、两刑（子卯）以及特殊地支（辰、午、酉、亥）的同支“自刑”判定。</para>
         /// <para>系统在获取到两地支在 <c>LocClass.LocNames</c> 中的索引后会执行升序排序，同时内部的比对矩阵也已同步调整为升序特征值。由此消除了参数传入先后顺序的严格限制，提升了系统的健壮性。</para>
         /// </remarks>
-        public static String BothTorture(string sLoc1, string sLoc2)
+        public static string BothTorture(string sLoc1, string sLoc2)
         {
             String[] S = { sLoc1, sLoc2 };
             int[] r = { -1, -1 };
@@ -437,14 +368,14 @@ namespace CompassEx.Comm
         /// <param name="sLoc1">参与比对的第一项地支名称。</param>
         /// <param name="sLoc2">参与比对的第二项地支名称。</param>
         /// <returns>若两地支在十二地支顺位中绝对间隔为 6（即对冲），则返回字符串 <c>"相冲"</c>；否则返回空字符串（<c>""</c>）。</returns>
-        public static String BothConflict(string sLoc1, string sLoc2)
+        public static bool BothConflict(string sLoc1, string sLoc2)
         {
             int iLoc1 = Array.IndexOf(LocClass.LocNames, sLoc1);
             int iLoc2 = Array.IndexOf(LocClass.LocNames, sLoc2);
 
-            if (Math.Abs(iLoc1 - iLoc2) == 6) return "相冲";
+            if (Math.Abs(iLoc1 - iLoc2) == 6) return true;
 
-            return "";
+            return false;
         }
 
         /// <summary>
@@ -555,6 +486,41 @@ namespace CompassEx.Comm
 
             return "";
         }
+
+        /// <summary>
+        /// 获得方位五行
+        /// </summary>
+        /// <param name="DirectionName">方位名称（东、南、西、北、中）</param>
+        /// <returns></returns>
+        public static FiveAttr GetDirectionFiveAttr(string DirectionName)
+        {
+            FiveAttr fa = null!;
+            if (DirectionName.Equals("东"))
+            {
+                fa = new("木");
+            }
+            else if (DirectionName.Equals("南"))
+            {
+                fa = new("火");
+            }
+            else if (DirectionName.Equals("西"))
+            {
+                fa = new("金");
+            }
+            else if (DirectionName.Equals("北"))
+            {
+                fa = new("水");
+            }
+            else if (DirectionName.Equals("中"))
+            {
+                fa = new("土");
+            }
+            return fa;
+        }
+
+
+
+
 
         /// <summary>
         /// 转成HTML
